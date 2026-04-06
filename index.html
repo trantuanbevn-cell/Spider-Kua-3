@@ -1,0 +1,862 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spider-Kua v2</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --red:#e8192c;--red2:#ff3347;--blue:#0f4c8f;--blue2:#1a6abf;
+  --dark:#08090f;--dark2:#0d1117;--dark3:#161b27;--dark4:#1e2535;
+  --border:#2a3347;--border2:#3a4560;
+  --text:#e8eaf0;--text2:#8a94b0;--text3:#4a5570;
+  --gold:#f5c842;--green:#30d158;--yellow:#f5a623;--web:#c8a870;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+body{background:var(--dark);color:var(--text);font-family:'Nunito',sans-serif;min-height:100vh;overflow-x:hidden;font-size:14px;}
+body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 15% 15%,rgba(14,76,143,.18) 0%,transparent 50%),radial-gradient(circle at 85% 85%,rgba(232,25,44,.12) 0%,transparent 50%);pointer-events:none;z-index:0;}
+
+/* LAYOUT */
+.app{position:relative;z-index:1;display:grid;grid-template-rows:auto auto 1fr auto;height:100vh;max-width:860px;margin:0 auto;padding:0 14px;}
+
+/* HEADER */
+.hdr{display:flex;align-items:center;gap:12px;padding:12px 0 8px;border-bottom:1px solid var(--border);}
+.logo{width:40px;height:40px;background:var(--blue);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;display:flex;align-items:center;justify-content:center;font-size:20px;border:2px solid var(--blue2);flex-shrink:0;}
+.hdr-info{flex:1;}
+.hdr-title{font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;letter-spacing:.04em;}
+.hdr-title span{color:var(--red);}
+.hdr-sub{font-size:10px;color:var(--text3);font-family:'Rajdhani',sans-serif;letter-spacing:.1em;text-transform:uppercase;}
+.xp-wrap{display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
+.xp-lbl{font-size:11px;color:var(--gold);font-family:'Rajdhani',sans-serif;font-weight:600;}
+.xp-bar{width:100px;height:5px;background:var(--dark4);border-radius:3px;overflow:hidden;border:1px solid var(--border);}
+.xp-fill{height:100%;background:linear-gradient(90deg,var(--gold),#ffb300);border-radius:3px;transition:width .8s cubic-bezier(.4,0,.2,1);}
+.mode-btn{background:transparent;border:1px solid var(--border);border-radius:8px;color:var(--text3);padding:5px 10px;font-size:11px;cursor:pointer;font-family:'Rajdhani',sans-serif;font-weight:600;letter-spacing:.05em;transition:all .2s;}
+.mode-btn:hover{border-color:var(--border2);color:var(--text2);}
+.mode-btn.active{border-color:var(--red);color:var(--red2);background:rgba(232,25,44,.1);}
+
+/* STATS */
+.stats{display:flex;gap:6px;padding:7px 0;border-bottom:1px solid var(--border);overflow-x:auto;}
+.chip{background:var(--dark3);border:1px solid var(--border);border-radius:8px;padding:5px 10px;font-size:11px;display:flex;align-items:center;gap:5px;font-family:'Rajdhani',sans-serif;font-weight:600;white-space:nowrap;flex-shrink:0;}
+.chip-val{color:var(--text);}
+.chip-lbl{color:var(--text3);font-size:9px;}
+
+/* MESSAGES */
+.msgs{flex:1;overflow-y:auto;padding:12px 0;display:flex;flex-direction:column;gap:12px;scrollbar-width:thin;scrollbar-color:var(--border) transparent;}
+.msg{display:flex;gap:8px;animation:fu .25s ease;}
+@keyframes fu{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.msg.user{flex-direction:row-reverse;}
+.av{width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0;border:2px solid var(--border);}
+.msg.ai .av{background:var(--blue);border-color:var(--blue2);}
+.msg.user .av{background:var(--dark4);}
+.mc{max-width:78%;}
+.mn{font-size:9px;color:var(--text3);font-family:'Rajdhani',sans-serif;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}
+.msg.user .mn{text-align:right;}
+.mb{padding:10px 14px;border-radius:14px;font-size:13px;line-height:1.7;}
+.msg.ai .mb{background:var(--dark3);border:1px solid var(--border);border-top-left-radius:3px;}
+.msg.user .mb{background:var(--blue);border:1px solid var(--blue2);border-top-right-radius:3px;color:#fff;}
+.mb img{max-width:100%;border-radius:8px;margin-top:6px;opacity:.7;}
+
+/* MISSION CARD */
+.mc-card{background:var(--dark3);border:1px solid var(--border);border-left:3px solid var(--red);border-radius:10px;padding:12px 14px;margin-top:6px;}
+.mc-title{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:12px;color:var(--red2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+.mc-item{display:flex;align-items:flex-start;gap:7px;padding:4px 0;font-size:12px;color:var(--text2);border-bottom:1px solid var(--border);}
+.mc-item:last-child{border-bottom:none;}
+.mc-chk{width:16px;height:16px;border:1.5px solid var(--border2);border-radius:3px;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:10px;transition:all .2s;}
+.mc-chk.done{background:var(--green);border-color:var(--green);color:#000;}
+
+/* BADGE */
+.badge-pop{background:var(--dark3);border:2px solid var(--gold);border-radius:14px;padding:14px;text-align:center;margin-top:6px;animation:bi .45s cubic-bezier(.175,.885,.32,1.275);}
+@keyframes bi{from{transform:scale(.5);opacity:0}to{transform:scale(1);opacity:1}}
+.badge-icon{font-size:32px;margin-bottom:4px;}
+.badge-name{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;color:var(--gold);letter-spacing:.04em;}
+.badge-desc{font-size:11px;color:var(--text2);margin-top:3px;}
+
+/* TYPING */
+.typing{display:flex;gap:4px;align-items:center;padding:10px 14px;}
+.typing span{width:6px;height:6px;border-radius:50%;background:var(--text3);animation:dot 1.4s infinite;}
+.typing span:nth-child(2){animation-delay:.2s;}
+.typing span:nth-child(3){animation-delay:.4s;}
+@keyframes dot{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-5px);opacity:1}}
+
+/* IMAGE PREVIEW */
+.img-preview{position:relative;display:inline-block;margin:6px 0;}
+.img-preview img{max-height:120px;border-radius:8px;border:1px solid var(--border);opacity:.8;}
+.img-preview .rm-btn{position:absolute;top:-6px;right:-6px;background:var(--red);border:none;border-radius:50%;width:18px;height:18px;color:#fff;font-size:10px;cursor:pointer;display:flex;align-items:center;justify-content:center;}
+
+/* INPUT AREA */
+.input-area{padding:8px 0 12px;border-top:1px solid var(--border);}
+.quick-row{display:flex;gap:5px;flex-wrap:wrap;padding-bottom:7px;}
+.qbtn{background:var(--dark3);border:1px solid var(--border);border-radius:16px;color:var(--text2);font-size:11px;padding:4px 10px;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:'Nunito',sans-serif;}
+.qbtn:hover{border-color:var(--red);color:var(--red2);background:rgba(232,25,44,.08);}
+.input-row{display:flex;gap:8px;align-items:flex-end;}
+.input-box{flex:1;background:var(--dark3);border:1px solid var(--border);border-radius:20px;padding:0 14px;transition:border-color .2s;}
+.input-box:focus-within{border-color:var(--blue2);}
+.input-box textarea{display:block;width:100%;background:transparent;border:none;outline:none;color:var(--text);font-family:'Nunito',sans-serif;font-size:13px;padding:10px 0;resize:none;max-height:80px;line-height:1.5;}
+.input-box textarea::placeholder{color:var(--text3);}
+.action-btns{display:flex;flex-direction:column;gap:5px;}
+.abtn{width:38px;height:38px;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .2s;font-size:16px;}
+.abtn.send{background:var(--red);}
+.abtn.send:hover{background:var(--red2);}
+.abtn.send:disabled{background:var(--dark4);cursor:not-allowed;}
+.abtn.mic{background:var(--dark3);border:1px solid var(--border);}
+.abtn.mic:hover{border-color:var(--green);background:rgba(48,209,88,.1);}
+.abtn.mic.recording{background:rgba(48,209,88,.2);border-color:var(--green);animation:pulse 1s infinite;}
+.abtn.img-btn{background:var(--dark3);border:1px solid var(--border);}
+.abtn.img-btn:hover{border-color:var(--gold);}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(48,209,88,.4)}50%{box-shadow:0 0 0 8px rgba(48,209,88,0)}}
+
+/* SPEAKING INDICATOR */
+.speaking-bar{display:flex;gap:3px;align-items:center;height:20px;}
+.speaking-bar span{width:3px;background:var(--green);border-radius:2px;animation:wave 1s infinite;}
+.speaking-bar span:nth-child(1){animation-delay:0s;height:8px;}
+.speaking-bar span:nth-child(2){animation-delay:.15s;height:16px;}
+.speaking-bar span:nth-child(3){animation-delay:.3s;height:12px;}
+.speaking-bar span:nth-child(4){animation-delay:.45s;height:18px;}
+.speaking-bar span:nth-child(5){animation-delay:.6s;height:10px;}
+@keyframes wave{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1.2)}}
+
+/* PANELS */
+.panel-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:200;display:flex;align-items:center;justify-content:center;padding:20px;}
+.panel{background:var(--dark2);border:1px solid var(--border2);border-radius:18px;padding:24px;max-width:380px;width:100%;}
+.panel-title{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:20px;color:var(--gold);text-align:center;margin-bottom:5px;letter-spacing:.04em;}
+.panel-sub{font-size:12px;color:var(--text2);text-align:center;margin-bottom:18px;line-height:1.6;}
+.panel-logo{text-align:center;font-size:52px;margin-bottom:14px;}
+.pinput{width:100%;background:var(--dark3);border:1px solid var(--border2);border-radius:10px;color:var(--text);font-family:'Nunito',sans-serif;font-size:14px;padding:11px 15px;outline:none;margin-bottom:10px;transition:border-color .2s;}
+.pinput:focus{border-color:var(--gold);}
+.pbtn{width:100%;background:var(--red);border:none;border-radius:10px;color:#fff;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:16px;letter-spacing:.04em;padding:12px;cursor:pointer;transition:background .2s;margin-bottom:8px;}
+.pbtn:hover{background:var(--red2);}
+.pbtn.sec{background:transparent;border:1px solid var(--border2);color:var(--text2);}
+.pbtn.sec:hover{border-color:var(--border2);color:var(--text);}
+.plink{font-size:11px;color:var(--text3);text-align:center;cursor:pointer;text-decoration:underline;}
+.plink:hover{color:var(--text2);}
+
+/* PARENT MODE */
+.parent-panel{background:var(--dark3);border:1px solid var(--border);border-radius:12px;padding:16px;margin:8px 0;}
+.ptitle{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;color:var(--gold);margin-bottom:12px;}
+.hw-input{width:100%;background:var(--dark);border:1px solid var(--border);border-radius:8px;color:var(--text);font-family:'Nunito',sans-serif;font-size:13px;padding:10px 12px;outline:none;margin-bottom:8px;resize:vertical;min-height:80px;}
+.hw-input:focus{border-color:var(--blue2);}
+.send-hw-btn{background:var(--blue);border:none;border-radius:8px;color:#fff;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;padding:9px 18px;cursor:pointer;letter-spacing:.04em;}
+.send-hw-btn:hover{background:var(--blue2);}
+.hw-list{display:flex;flex-direction:column;gap:6px;margin-top:10px;}
+.hw-item{background:var(--dark4);border:1px solid var(--border);border-radius:8px;padding:9px 12px;font-size:12px;color:var(--text2);}
+.hw-item-time{font-size:10px;color:var(--text3);font-family:'Rajdhani',sans-serif;margin-top:3px;}
+.hw-badge{display:inline-block;font-size:9px;background:rgba(30,200,88,.15);color:var(--green);border-radius:4px;padding:1px 6px;margin-right:5px;font-family:'Rajdhani',sans-serif;font-weight:600;}
+
+/* ROOM CODE */
+.room-code-display{background:var(--dark4);border:1px solid var(--border2);border-radius:8px;padding:8px 14px;text-align:center;font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;color:var(--gold);letter-spacing:.2em;cursor:pointer;margin:8px 0;}
+.room-code-display:hover{border-color:var(--gold);}
+
+.hl{color:var(--gold);font-weight:700;}
+.gr{color:var(--green);}
+.rd{color:var(--red2);}
+.settings-btn{background:transparent;border:1px solid var(--border);border-radius:7px;color:var(--text3);width:30px;height:30px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:13px;transition:all .2s;}
+.settings-btn:hover{color:var(--text2);border-color:var(--border2);}
+</style>
+</head>
+<body>
+
+<!-- SETUP MODAL -->
+<div class="panel-overlay" id="setupModal">
+  <div class="panel">
+    <div class="panel-logo">🕷️</div>
+    <div class="panel-title">SPIDER-KUA v2</div>
+    <div class="panel-sub">Nhập Anthropic API Key để kích hoạt.<br>Khóa được lưu trên máy, không gửi đi đâu khác.</div>
+    <input class="pinput" type="password" id="apiKeyInput" placeholder="sk-ant-api03-..." />
+    <div style="font-size:11px;color:var(--text3);text-align:center;margin-bottom:12px;">Lấy khóa tại console.anthropic.com → API Keys</div>
+    <button class="pbtn" onclick="saveApiKey()">🔓 KÍCH HOẠT HỆ THỐNG</button>
+    <div class="plink" onclick="showRoomJoin()">Tôi là phụ huynh — gửi bài tập cho Kua</div>
+  </div>
+</div>
+
+<!-- ROOM JOIN (dành cho mẹ không cần API key) -->
+<div class="panel-overlay" id="roomJoinModal" style="display:none;">
+  <div class="panel">
+    <div class="panel-logo">👩</div>
+    <div class="panel-title">GỬI BÀI TẬP CHO KUA CHO KUA</div>
+    <div class="panel-sub">Nhập mã phòng của Kua để gửi bài tập hôm nay.</div>
+    <input class="pinput" id="roomCodeInput" placeholder="VD: KUA2025" style="text-align:center;font-size:20px;letter-spacing:.15em;text-transform:uppercase;" oninput="this.value=this.value.toUpperCase()" />
+    <button class="pbtn" onclick="joinAsParent()">✓ XÁC NHẬN</button>
+    <button class="pbtn sec" onclick="document.getElementById('roomJoinModal').style.display='none';document.getElementById('setupModal').style.display='flex';">← Quay lại</button>
+  </div>
+</div>
+
+<!-- PARENT MODE UI -->
+<div class="panel-overlay" id="parentModal" style="display:none;">
+  <div class="panel" style="max-width:440px;">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+      <div class="panel-title" style="margin:0;">📚 GỬI BÀI TẬP CHO KUA CHO KUA</div>
+      <button class="settings-btn" onclick="document.getElementById('parentModal').style.display='none';">✕</button>
+    </div>
+    <div class="parent-panel">
+      <div class="ptitle">Mã phòng: <span id="displayRoomCode" class="hl">—</span></div>
+      <textarea class="hw-input" id="hwText" placeholder="Nhập nội dung bài tập hôm nay...&#10;VD: Toán trang 45 bài 1,2,3&#10;Tiếng Việt đọc bài + trả lời câu hỏi"></textarea>
+      <div style="display:flex;gap:8px;">
+        <button class="send-hw-btn" onclick="sendHomework()">📤 Gửi cho Kua</button>
+        <label class="send-hw-btn" style="background:var(--dark4);border:1px solid var(--border);cursor:pointer;">
+          📸 Đính kèm ảnh
+          <input type="file" accept="image/*" style="display:none;" onchange="attachHWImage(this)">
+        </label>
+      </div>
+      <div id="hwImgPreview" style="margin-top:8px;"></div>
+    </div>
+    <div style="margin-top:10px;">
+      <div style="font-size:11px;color:var(--text3);margin-bottom:6px;font-family:'Rajdhani',sans-serif;letter-spacing:.06em;text-transform:uppercase;">Bài đã gửi hôm nay</div>
+      <div class="hw-list" id="hwSentList"></div>
+    </div>
+    <div style="font-size:10px;color:var(--text3);text-align:center;margin-top:10px;">Ảnh tự xóa sau 48 giờ · Chỉ lưu nội dung chữ</div>
+  </div>
+</div>
+
+<!-- MAIN APP -->
+<div class="app" id="appMain" style="display:none;">
+  <div class="hdr">
+    <div class="logo">🛡️</div>
+    <div class="hdr-info">
+      <div class="hdr-title">SPIDER-<span>KUA</span></div>
+      <div class="hdr-sub">TRUNG TÂM HUẤN LUYỆN · LỚP 4A1</div>
+    </div>
+    <div class="xp-wrap">
+      <div class="xp-lbl" id="xpLbl">⚡ 0 XP</div>
+      <div class="xp-bar"><div class="xp-fill" id="xpFill" style="width:0%"></div></div>
+    </div>
+    <button class="mode-btn" id="parentModeBtn" onclick="openParentMode()" title="Mẹ gửi bài">👩 Phụ huynh</button>
+    <button class="settings-btn" onclick="resetKey()" title="Cài đặt">⚙</button>
+  </div>
+
+  <div class="stats">
+    <div class="chip">🔥<div><div class="chip-val" id="streakV">0</div><div class="chip-lbl">Ngày liên tiếp</div></div></div>
+    <div class="chip">🕸️<div><div class="chip-val" id="missionV">0</div><div class="chip-lbl">Nhiệm vụ</div></div></div>
+    <div class="chip">🏆<div><div class="chip-val" id="badgeV">0</div><div class="chip-lbl">Huy hiệu</div></div></div>
+    <div class="chip" style="margin-left:auto;">
+      <div style="font-size:10px;color:var(--text3);">Mã phòng:</div>
+      <div class="chip-val" id="roomV" style="letter-spacing:.1em;color:var(--gold);cursor:pointer;" onclick="copyRoom()">—</div>
+    </div>
+    <div class="chip" id="speakingChip" style="display:none;">
+      <div class="speaking-bar"><span></span><span></span><span></span><span></span><span></span></div>
+      <div style="font-size:11px;color:var(--green);margin-left:4px;">Fury đang nói...</div>
+    </div>
+  </div>
+
+  <div class="msgs" id="msgs"></div>
+
+  <div class="input-area">
+    <div class="quick-row">
+      <button class="qbtn" onclick="qs('Nhiệm vụ hôm nay')">⚡ Nhiệm vụ</button>
+      <button class="qbtn" onclick="qs('Luyện Toán')">🔢 Toán</button>
+      <button class="qbtn" onclick="qs('Tiếng Việt')">📖 Tiếng Việt</button>
+      <button class="qbtn" onclick="qs('Tiếng Anh')">🌏 Tiếng Anh</button>
+      <button class="qbtn" onclick="qs('Bài tập hôm nay')">📋 Bài mẹ gửi</button>
+      <button class="qbtn" onclick="qs('Em không muốn học')">😴 Lười</button>
+    </div>
+
+    <div id="attachPreview" style="padding:0 0 6px;display:none;">
+      <div class="img-preview">
+        <img id="attachImg" src="" alt="Bài tập" />
+        <button class="rm-btn" onclick="clearAttach()">✕</button>
+      </div>
+    </div>
+
+    <div class="input-row">
+      <div class="input-box">
+        <textarea id="userInput" rows="1" placeholder="Nói hoặc gõ câu trả lời..." onkeydown="handleKey(event)" oninput="autoResize(this)"></textarea>
+      </div>
+      <div class="action-btns">
+        <button class="abtn mic" id="micBtn" onclick="toggleMic()" title="Giọng nói">🎤</button>
+        <label class="abtn img-btn" title="Đính kèm ảnh bài tập">
+          📸<input type="file" accept="image/*" style="display:none;" onchange="attachImage(this)">
+        </label>
+        <button class="abtn send" id="sendBtn" onclick="sendMsg()">➤</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ══════════════════════════════════════════
+// MEMORY — tất cả lưu localStorage
+// ══════════════════════════════════════════
+const MEM_KEY = 'skua_v2';
+const API_KEY  = 'skua_apikey';
+const ROOM_KEY = 'skua_room';
+const HW_KEY   = 'skua_homework';
+const IMG_TTL  = 48 * 60 * 60 * 1000; // 48 giờ tính bằng ms
+
+function getMem() {
+  return JSON.parse(localStorage.getItem(MEM_KEY) || JSON.stringify({
+    xp:0, streak:0, lastActive:'', missions:0, badges:[],
+    weak:[], strong:[], sessionCount:0,
+    history:[], notes:[], // chỉ lưu text, KHÔNG lưu ảnh
+  }));
+}
+function saveMem(m){ localStorage.setItem(MEM_KEY, JSON.stringify(m)); }
+
+// Bài tập — lưu text + metadata, ảnh lưu riêng với timestamp
+function getHW() { return JSON.parse(localStorage.getItem(HW_KEY) || '[]'); }
+function saveHW(list){ localStorage.setItem(HW_KEY, JSON.stringify(list)); }
+
+// Tự động xóa ảnh hết hạn (>48h) — chạy mỗi lần mở app
+function cleanExpiredImages() {
+  const now = Date.now();
+  // Xóa ảnh trong localStorage theo pattern 'skua_img_*'
+  const toDelete = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k && k.startsWith('skua_img_')) {
+      try {
+        const meta = JSON.parse(localStorage.getItem(k + '_meta') || '{}');
+        if (meta.ts && (now - meta.ts > IMG_TTL)) {
+          toDelete.push(k);
+          toDelete.push(k + '_meta');
+        }
+      } catch(e) { toDelete.push(k); }
+    }
+  }
+  toDelete.forEach(k => localStorage.removeItem(k));
+
+  // Xóa ảnh trong danh sách bài tập — giữ text, bỏ imageData
+  const hw = getHW();
+  let changed = false;
+  hw.forEach(item => {
+    if (item.imageData && item.ts && (now - item.ts > IMG_TTL)) {
+      delete item.imageData;
+      item.imageExpired = true;
+      changed = true;
+    }
+  });
+  if (changed) saveHW(hw);
+}
+
+// ══════════════════════════════════════════
+// ROOM CODE
+// ══════════════════════════════════════════
+let roomCode = '';
+function getRoom() {
+  let r = localStorage.getItem(ROOM_KEY);
+  if (!r) {
+    r = 'KUA' + Math.random().toString(36).substring(2,6).toUpperCase();
+    localStorage.setItem(ROOM_KEY, r);
+  }
+  return r;
+}
+function copyRoom() {
+  navigator.clipboard.writeText(roomCode).then(() => {
+    const el = document.getElementById('roomV');
+    const old = el.textContent;
+    el.textContent = 'Đã sao chép!';
+    setTimeout(() => el.textContent = old, 1200);
+  });
+}
+
+// ══════════════════════════════════════════
+// SETUP / API KEY
+// ══════════════════════════════════════════
+let apiKey = '', isLoading = false, isParentMode = false;
+
+function saveApiKey() {
+  const raw = document.getElementById('apiKeyInput').value;
+  const k = raw.replace(/\s+/g, '').trim();
+  if (!k) { alert('Vui lòng nhập API Key.'); return; }
+  if (k.length < 20) { alert('API Key quá ngắn. Paste lại toàn bộ key.'); return; }
+  apiKey = k;
+  localStorage.setItem(API_KEY, k);
+  document.getElementById('setupModal').style.display = 'none';
+  document.getElementById('appMain').style.display = 'grid';
+  initApp();
+}
+function resetKey() {
+  if (confirm('Đổi API Key?')) { localStorage.removeItem(API_KEY); location.reload(); }
+}
+function showRoomJoin() {
+  document.getElementById('setupModal').style.display = 'none';
+  document.getElementById('roomJoinModal').style.display = 'flex';
+}
+function joinAsParent() {
+  const code = document.getElementById('roomCodeInput').value.trim().toUpperCase();
+  if (code.length < 4) { alert('Mã phòng phải có ít nhất 4 ký tự'); return; }
+  // Trong prototype này: nếu mã khớp với mã phòng đang lưu trên máy này thì vào được
+  // Trong production: so sánh với database
+  const localRoom = localStorage.getItem(ROOM_KEY);
+  if (localRoom && localRoom !== code) {
+    // Vẫn cho vào nhưng thông báo — trên cùng máy thì mã phải khớp
+    if (!confirm(`Mã phòng "${code}" không khớp. Vẫn tiếp tục?`)) return;
+  }
+  localStorage.setItem(ROOM_KEY, code);
+  document.getElementById('roomJoinModal').style.display = 'none';
+  document.getElementById('parentModal').style.display = 'flex';
+  document.getElementById('displayRoomCode').textContent = code;
+  isParentMode = true;
+  renderHWList();
+}
+function openParentMode() {
+  document.getElementById('parentModal').style.display = 'flex';
+  document.getElementById('displayRoomCode').textContent = roomCode;
+  renderHWList();
+}
+
+// ══════════════════════════════════════════
+// HOMEWORK — mẹ gửi bài
+// ══════════════════════════════════════════
+let hwImageData = null;
+
+function attachHWImage(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    hwImageData = e.target.result;
+    document.getElementById('hwImgPreview').innerHTML =
+      `<img src="${hwImageData}" style="max-height:80px;border-radius:6px;border:1px solid var(--border);">`;
+  };
+  reader.readAsDataURL(file);
+}
+
+function sendHomework() {
+  const text = document.getElementById('hwText').value.trim();
+  if (!text && !hwImageData) { alert('Vui lòng nhập nội dung bài tập hoặc đính kèm ảnh.'); return; }
+  const hw = getHW();
+  const entry = {
+    id: Date.now(),
+    ts: Date.now(),
+    text: text || '',
+    imageData: hwImageData || null, // sẽ bị xóa sau 48h
+    done: false,
+  };
+  hw.unshift(entry);
+  saveHW(hw);
+  document.getElementById('hwText').value = '';
+  document.getElementById('hwImgPreview').innerHTML = '';
+  hwImageData = null;
+  renderHWList();
+  // Flash thành công
+  const btn = document.querySelector('.send-hw-btn');
+  btn.textContent = '✓ Đã gửi!';
+  setTimeout(() => btn.textContent = '📤 Gửi cho Kua', 1500);
+}
+
+function renderHWList() {
+  const hw = getHW();
+  const list = document.getElementById('hwSentList');
+  if (!hw.length) { list.innerHTML = '<div style="font-size:11px;color:var(--text3);text-align:center;">Chưa có bài nào</div>'; return; }
+  list.innerHTML = hw.slice(0,5).map(h => {
+    const age = Math.round((Date.now()-h.ts)/3600000);
+    const expired = h.imageExpired ? ' · Ảnh đã tự xóa sau 48 giờ tự động' : '';
+    return `<div class="hw-item">
+      ${h.imageData ? '<span class="hw-badge">📸 Có ảnh đính kèm</span>' : ''}
+      ${h.text || '(chỉ ảnh)'}
+      <div class="hw-item-time">${age < 1 ? 'Vừa gửi' : age+' giờ trước'}${expired}</div>
+    </div>`;
+  }).join('');
+}
+
+// Lấy bài tập hôm nay (để Fury đọc)
+function getTodayHW() {
+  const hw = getHW();
+  const today = new Date().toDateString();
+  return hw.filter(h => new Date(h.ts).toDateString() === today);
+}
+
+// ══════════════════════════════════════════
+// IMAGE ATTACH (Kua chụp bài tập)
+// ══════════════════════════════════════════
+let attachedImageB64 = null;
+
+function attachImage(input) {
+  const file = input.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = e => {
+    attachedImageB64 = e.target.result.split(',')[1]; // base64 only
+    document.getElementById('attachImg').src = e.target.result;
+    document.getElementById('attachPreview').style.display = 'block';
+  };
+  reader.readAsDataURL(file);
+}
+function clearAttach() {
+  attachedImageB64 = null;
+  document.getElementById('attachPreview').style.display = 'none';
+  document.getElementById('attachImg').src = '';
+}
+
+// ══════════════════════════════════════════
+// VOICE — giọng nói 2 chiều
+// ══════════════════════════════════════════
+let recognition = null, isRecording = false, currentUtterance = null;
+
+function initSpeech() {
+  const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+  if (!SR) return;
+  recognition = new SR();
+  recognition.lang = 'vi-VN';
+  recognition.continuous = false;
+  recognition.interimResults = false;
+  recognition.onresult = e => {
+    const txt = e.results[0][0].transcript;
+    document.getElementById('userInput').value = txt;
+    stopMic();
+    sendMsg();
+  };
+  recognition.onend = () => stopMic();
+  recognition.onerror = () => stopMic();
+}
+
+function toggleMic() {
+  if (isRecording) { stopMic(); return; }
+  if (!recognition) { alert('Trình duyệt chưa hỗ trợ giọng nói. Vui lòng dùng Chrome.'); return; }
+  stopSpeaking();
+  recognition.start();
+  isRecording = true;
+  document.getElementById('micBtn').classList.add('recording');
+  document.getElementById('micBtn').textContent = '⏹';
+}
+function stopMic() {
+  if (recognition) try { recognition.stop(); } catch(e){}
+  isRecording = false;
+  document.getElementById('micBtn').classList.remove('recording');
+  document.getElementById('micBtn').textContent = '🎤';
+}
+
+function speak(text) {
+  if (!window.speechSynthesis) return;
+  stopSpeaking();
+  // Loại bỏ markdown và tags đặc biệt
+  const clean = text
+    .replace(/\[.*?\]/g,'')
+    .replace(/[*_`#]/g,'')
+    .replace(/<[^>]+>/g,'')
+    .replace(/\n+/g,' ')
+    .trim();
+  if (!clean) return;
+
+  const utter = new SpeechSynthesisUtterance(clean);
+  utter.lang = 'vi-VN';
+  utter.rate = 1.0;
+  utter.pitch = 0.9;
+
+  // Chọn giọng tiếng Việt nếu có
+  const voices = window.speechSynthesis.getVoices();
+  const viVoice = voices.find(v => v.lang === 'vi-VN' || v.lang.startsWith('vi'));
+  if (viVoice) utter.voice = viVoice;
+
+  utter.onstart = () => {
+    document.getElementById('speakingChip').style.display = 'flex';
+  };
+  utter.onend = utter.onerror = () => {
+    document.getElementById('speakingChip').style.display = 'none';
+    currentUtterance = null;
+  };
+  currentUtterance = utter;
+  window.speechSynthesis.speak(utter);
+}
+function stopSpeaking() {
+  window.speechSynthesis?.cancel();
+  document.getElementById('speakingChip').style.display = 'none';
+  currentUtterance = null;
+}
+
+// ══════════════════════════════════════════
+// SYSTEM PROMPT
+// ══════════════════════════════════════════
+function buildSystem() {
+  const m = getMem();
+  const lv = Math.floor(m.xp/100)+1;
+  const hw = getTodayHW();
+  const hwSection = hw.length
+    ? `\nBÀI TẬP MẸ HUYỀN GỬI HÔM NAY (${hw.length} bài):\n`
+      + hw.map((h,i)=>`${i+1}. ${h.text||'[Ảnh bài tập]'}${h.imageData?' (có ảnh đính kèm)':''}`).join('\n')
+    : '\nBÀI TẬP HÔM NAY: Chưa có — mẹ chưa gửi hoặc Kua chưa upload.';
+
+  return `YÊU CẦU BẮT BUỘC: Trả lời bằng TIẾNG VIỆT 100%. Không được dùng tiếng Anh dù chỉ 1 từ (trừ khi đang dạy từ vựng tiếng Anh).
+
+Anh là Nick Fury — Giám đốc S.H.I.E.L.D., đang huấn luyện Peter Parker (tên thật Trần Xuân Khang, biệt danh Kua) để trở thành Spider-Man thực thụ.
+
+THÔNG TIN VỀ KUA:
+- Học lớp 4A1 trường Chu Văn An, Hà Nội. 9-10 tuổi.
+- Tính cách: nóng tính, hay lười, dễ xao nhãng, thích chơi hơn học.
+- Thể thao tốt: bơi, bóng đá, cờ vua (mới học cùng ba).
+- Thần tượng ba Tuấn, sợ mẹ Huyền hơn.
+- Hay chơi với anh Kiệt, anh Cún, anh Nghé.
+${hwSection}
+
+TIẾN ĐỘ:
+- Level ${lv} | ${m.xp} XP | Streak ${m.streak} ngày
+- Nhiệm vụ hoàn thành: ${m.missions} | Huy hiệu: ${m.badges.join(', ')||'chưa có'}
+- Môn yếu: ${m.weak.join(', ')||'chưa rõ'} | Môn tốt: ${m.strong.join(', ')||'chưa rõ'}
+- Ghi chú: ${m.notes.slice(-4).join(' | ')||'Buổi đầu.'}
+
+CÁCH NÓI CHUYỆN:
+- Xưng hô: Fury xưng "anh", gọi Kua là "em" hoặc "Peter" hoặc "Agent Parker".
+- Ví dụ: "Anh giao cho em nhiệm vụ này.", "Em nghĩ sao, Peter?", "Anh Fury chờ câu trả lời đây."
+- Giọng điệu anh trai lớn — mạnh mẽ, thách thức, nhưng gần gũi kiểu anh em trong S.H.I.E.L.D.
+- Khi Kua lười → thách thức kiểu anh: "Thật không? Spider-Man thật sự bỏ cuộc vì mấy bài toán à?"
+- Khi đúng → "[+XP]" + khen ngắn: "Chuẩn rồi em! Anh biết em làm được mà."
+- Khi sai → không chê, hướng dẫn lại: "Sai rồi, thử lại đi. Anh gợi ý cho em nhé..."
+- Câu hỏi phải đúng trình độ lớp 4 VN.
+- Khi tạo mission → "[MISSION:nội dung]"
+- Khi thưởng huy hiệu → "[BADGE:tên huy hiệu]"
+- Nếu Kua upload ảnh bài tập → đọc và hướng dẫn từng câu.
+- Câu trả lời ngắn, cuối luôn có câu hỏi/thách thức tiếp theo.
+- KHÔNG dài dòng. KHÔNG nói "con". TUYỆT ĐỐI không dùng mày/tao.
+- QUAN TRỌNG NHẤT: LUÔN LUÔN viết bằng TIẾNG VIỆT 100%, không xen tiếng Anh. Khi dạy tiếng Anh thì giải thích bằng tiếng Việt, chỉ dùng tiếng Anh cho từ/câu cần luyện tập.`;
+}
+
+// ══════════════════════════════════════════
+// CLAUDE API
+// ══════════════════════════════════════════
+async function callClaude(userText, imgB64) {
+  const m = getMem();
+
+  // Build user message — có thể kèm ảnh
+  let userContent;
+  if (imgB64) {
+    userContent = [
+      { type:'image', source:{ type:'base64', media_type:'image/jpeg', data:imgB64 } },
+      { type:'text',  text: userText || 'Đây là ảnh bài tập của tôi. Hãy đọc và hướng dẫn tôi làm.' }
+    ];
+  } else {
+    userContent = userText;
+  }
+
+  // Lưu vào history — CHỈ lưu text, không lưu base64 ảnh
+  m.history.push({ role:'user', content: userText || '[Gửi ảnh bài tập]' });
+  if (m.history.length > 40) m.history = m.history.slice(-40);
+
+  // Build messages cho API — có thể kèm ảnh trong lần này nhưng không persist
+  const apiMessages = [
+    ...m.history.slice(0,-1).map(h => ({ role:h.role, content:h.content })),
+    { role:'user', content: userContent }
+  ];
+
+  const res = await fetch('https://api.anthropic.com/v1/messages', {
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body: JSON.stringify({
+      model:'claude-sonnet-4-6',
+      max_tokens:800,
+      system: buildSystem(),
+      messages: apiMessages,
+    })
+  });
+  if (!res.ok) { const e = await res.json(); throw new Error(e.error?.message||'Lỗi API'); }
+  const data = await res.json();
+  const reply = data.content[0].text;
+
+  m.history.push({ role:'assistant', content:reply });
+  saveMem(m);
+  return reply;
+}
+
+// ══════════════════════════════════════════
+// SEND MESSAGE
+// ══════════════════════════════════════════
+async function sendMsg() {
+  const inp = document.getElementById('userInput');
+  const text = inp.value.trim();
+  const img  = attachedImageB64;
+  if ((!text && !img) || isLoading) return;
+
+  inp.value = ''; autoResize(inp);
+  stopSpeaking();
+
+  // Hiện message của Kua
+  if (img) addUserMsg(text || '(Ảnh bài tập)', img);
+  else addUserMsg(text);
+  clearAttach();
+
+  showTyping(); isLoading = true;
+  document.getElementById('sendBtn').disabled = true;
+
+  try {
+    const reply = await callClaude(text, img);
+    hideTyping();
+    addAIMsg(reply);
+    speak(reply);
+    addXP(2);
+  } catch(e) {
+    hideTyping();
+    addRawMsg('ai', `⚠️ Lỗi: ${e.message}`);
+  }
+  isLoading = false;
+  document.getElementById('sendBtn').disabled = false;
+}
+
+function qs(t) { document.getElementById('userInput').value=t; sendMsg(); }
+function handleKey(e) { if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendMsg();} }
+function autoResize(el) { el.style.height='auto'; el.style.height=Math.min(el.scrollHeight,80)+'px'; }
+
+// ══════════════════════════════════════════
+// XP & STATS
+// ══════════════════════════════════════════
+function addXP(n) {
+  const m=getMem(); m.xp+=n; saveMem(m); updateStats();
+  const p=document.createElement('div');
+  p.textContent=`+${n} điểm XP ⚡`;
+  p.style.cssText='position:fixed;top:56px;right:16px;background:var(--gold);color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;padding:4px 12px;border-radius:16px;z-index:999;pointer-events:none;animation:fu .3s ease;';
+  document.body.appendChild(p); setTimeout(()=>p.remove(),2000);
+}
+function updateStats() {
+  const m=getMem();
+  const lv=Math.floor(m.xp/100)+1, pct=(m.xp%100);
+  document.getElementById('xpLbl').textContent=`⚡ Cấp ${lv} — ${m.xp}XP`;
+  document.getElementById('xpFill').style.width=pct+'%';
+  document.getElementById('streakV').textContent=m.streak;
+  document.getElementById('missionV').textContent=m.missions;
+  document.getElementById('badgeV').textContent=m.badges.length;
+  document.getElementById('roomV').textContent=roomCode;
+}
+function checkStreak() {
+  const m=getMem(), today=new Date().toDateString(), yest=new Date(Date.now()-86400000).toDateString();
+  if(m.lastActive!==today){
+    m.streak=m.lastActive===yest?m.streak+1:1;
+    m.lastActive=today; m.sessionCount+=1; saveMem(m);
+  }
+}
+
+// ══════════════════════════════════════════
+// RENDER MESSAGES
+// ══════════════════════════════════════════
+let typingEl=null;
+
+function addUserMsg(text, imgSrc) {
+  const msgs=document.getElementById('msgs');
+  const wrap=document.createElement('div'); wrap.className='msg user';
+  const av=document.createElement('div'); av.className='av'; av.textContent='🕷️';
+  const mc=document.createElement('div'); mc.className='mc';
+  const mn=document.createElement('div'); mn.className='mn'; mn.textContent='Kua — Peter Parker';
+  const mb=document.createElement('div'); mb.className='mb';
+  mb.innerHTML=text.replace(/\n/g,'<br>');
+  if(imgSrc){ const img=document.createElement('img'); img.src=imgSrc; mb.appendChild(img); }
+  mc.appendChild(mn); mc.appendChild(mb);
+  wrap.appendChild(av); wrap.appendChild(mc);
+  msgs.appendChild(wrap); msgs.scrollTop=msgs.scrollHeight;
+}
+
+function addAIMsg(text) {
+  const msgs=document.getElementById('msgs');
+  const wrap=document.createElement('div'); wrap.className='msg ai';
+  const av=document.createElement('div'); av.className='av'; av.textContent='🛡️';
+  const mc=document.createElement('div'); mc.className='mc';
+  const mn=document.createElement('div'); mn.className='mn'; mn.textContent='FURY — Giám đốc S.H.I.E.L.D.';
+  mc.appendChild(mn);
+  parseAI(text, mc);
+  wrap.appendChild(av); wrap.appendChild(mc);
+  msgs.appendChild(wrap); msgs.scrollTop=msgs.scrollHeight;
+}
+
+function addRawMsg(role, text) {
+  const msgs=document.getElementById('msgs');
+  const wrap=document.createElement('div'); wrap.className=`msg ${role}`;
+  const av=document.createElement('div'); av.className='av'; av.textContent=role==='ai'?'🛡️':'🕷️';
+  const mc=document.createElement('div'); mc.className='mc';
+  const mb=document.createElement('div'); mb.className='mb'; mb.innerHTML=text;
+  mc.appendChild(mb); wrap.appendChild(av); wrap.appendChild(mc);
+  msgs.appendChild(wrap); msgs.scrollTop=msgs.scrollHeight;
+}
+
+function parseAI(text, container) {
+  const missions=[];
+  let clean=text.replace(/\[MISSION:([^\]]+)\]/g,(_,c)=>{missions.push(c.trim());return'';});
+  const xpCount=(clean.match(/\[\+XP\]/g)||[]).length;
+  clean=clean.replace(/\[\+XP\]/g,'<span class="gr">⚡+10XP</span>');
+  const badgeM=clean.match(/\[BADGE:([^\]]+)\]/);
+  let badgeName=null;
+  if(badgeM){badgeName=badgeM[1].trim();clean=clean.replace(/\[BADGE:[^\]]+\]/,'');}
+
+  const mb=document.createElement('div'); mb.className='mb';
+  mb.innerHTML=clean.trim().replace(/\n/g,'<br>');
+  container.appendChild(mb);
+
+  if(missions.length){
+    const card=document.createElement('div'); card.className='mc-card';
+    card.innerHTML=`<div class="mc-title">⚡ NHIỆM VỤ HÔM NAY</div>`;
+    missions.forEach((t,i)=>{
+      const it=document.createElement('div'); it.className='mc-item';
+      it.innerHTML=`<div class="mc-chk" onclick="chkMission(this)">○</div><span>${t}</span>`;
+      card.appendChild(it);
+    });
+    container.appendChild(card);
+  }
+
+  if(badgeName){
+    const m=getMem();
+    if(!m.badges.includes(badgeName)){
+      m.badges.push(badgeName); saveMem(m); updateStats();
+      const bp=document.createElement('div'); bp.className='badge-pop';
+      bp.innerHTML=`<div class="badge-icon">🏅</div><div class="badge-name">HUY HIỆU: ${badgeName.toUpperCase()}</div><div class="badge-desc">Kua đã mở khóa huy hiệu này!</div>`;
+      container.appendChild(bp);
+    }
+  }
+
+  if(xpCount>0){
+    addXP(xpCount*10);
+    const m=getMem(); m.missions+=xpCount; saveMem(m); updateStats();
+  }
+}
+
+function chkMission(el){
+  el.classList.toggle('done');
+  el.textContent=el.classList.contains('done')?'✓':'○';
+  if(el.classList.contains('done')){ addXP(5); const m=getMem(); m.missions+=1; saveMem(m); updateStats(); }
+}
+
+function showTyping(){
+  const msgs=document.getElementById('msgs');
+  typingEl=document.createElement('div'); typingEl.className='msg ai';
+  typingEl.innerHTML=`<div class="av">🛡️</div><div class="mc"><div class="mb"><div class="typing"><span></span><span></span><span></span></div></div></div>`;
+  msgs.appendChild(typingEl); msgs.scrollTop=msgs.scrollHeight;
+}
+function hideTyping(){ if(typingEl){typingEl.remove();typingEl=null;} }
+
+// ══════════════════════════════════════════
+// INIT
+// ══════════════════════════════════════════
+function initApp() {
+  cleanExpiredImages();
+  checkStreak();
+  roomCode = getRoom();
+  updateStats();
+  initSpeech();
+
+  // Load voices (async trên một số trình duyệt)
+  if (window.speechSynthesis) {
+    window.speechSynthesis.getVoices();
+    window.speechSynthesis.onvoiceschanged = () => window.speechSynthesis.getVoices();
+  }
+
+  const m = getMem();
+  const hw = getTodayHW();
+  const hwNote = hw.length ? `\n\nMẹ Huyền đã gửi ${hw.length} bài tập hôm nay. Hỏi Kua xem muốn làm ngay không.` : '';
+  const isFirst = m.sessionCount <= 1;
+
+  setTimeout(async () => {
+    showTyping();
+    try {
+      const prompt = isFirst
+        ? `[Lần đầu tiên Kua dùng app. Giới thiệu ngắn gọn hệ thống S.H.I.E.L.D. training, tạo 3 mission đầu tiên phù hợp lớp 4, hỏi muốn bắt đầu môn gì.${hwNote}]`
+        : `[Kua quay lại — streak ${m.streak} ngày. Chào hỏi ngắn kiểu Fury, nhắc 1 điểm từ buổi trước nếu có, hỏi hôm nay làm gì.${hwNote} Tối đa 3 câu.]`;
+      const reply = await callClaude(prompt);
+      hideTyping();
+      addAIMsg(reply);
+      speak(reply);
+    } catch(e) {
+      hideTyping();
+      addRawMsg('ai', `⚠️ Lỗi kết nối: ${e.message}. Vui lòng kiểm tra lại API Key.`);
+    }
+  }, 400);
+}
+
+// ══════════════════════════════════════════
+// BOOT
+// ══════════════════════════════════════════
+window.onload = () => {
+  const saved = localStorage.getItem(API_KEY);
+  if (saved) {
+    apiKey = saved;
+    document.getElementById('setupModal').style.display = 'none';
+    document.getElementById('appMain').style.display = 'grid';
+    initApp();
+  }
+};
+</script>
+</body>
+</html>
