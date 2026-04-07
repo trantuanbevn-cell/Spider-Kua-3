@@ -262,7 +262,8 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
       </div>
       <div class="abtns">
         <button class="abtn mic" id="micBtn" onclick="toggleMic()">🎤</button>
-        <label class="abtn imgb">📸<input type="file" accept="image/*" multiple style="display:none" onchange="onImg(this)"></label>
+        <label class="abtn imgb" title="Chụp ảnh">📷<input type="file" accept="image/*" capture="environment" multiple style="display:none" onchange="onImg(this)"></label>
+        <label class="abtn imgb" title="Thư viện">🖼️<input type="file" accept="image/*" multiple style="display:none" onchange="onImg(this)"></label>
         <button class="abtn send" id="sendBtn" onclick="doSend()">➤</button>
       </div>
     </div>
@@ -367,11 +368,24 @@ const REWARDS=[
 function showShop(){
   const cur=getXu();const cups=JSON.parse(localStorage.getItem(K.cups)||'[]');
   const el=document.createElement('div');el.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
-  el.innerHTML='<div style="background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:22px;max-width:380px;width:100%;max-height:90vh;overflow-y:auto;">'
-    +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;"><div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:20px;color:var(--gold);">🪙 ĐỔI THƯỞNG</div><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:transparent;border:1px solid var(--bd);border-radius:7px;color:var(--tx2);padding:4px 10px;cursor:pointer;">✕</button></div>'
-    +'<div style="background:var(--s3);border-radius:10px;padding:12px;text-align:center;margin-bottom:16px;"><div style="font-size:11px;color:var(--tx2);margin-bottom:4px;">Xu hiện có</div><div style="font-family:Rajdhani,sans-serif;font-size:28px;font-weight:700;color:var(--gold);">'+cur.toLocaleString('vi-VN')+' 🪙</div><div style="font-size:11px;color:var(--tx3);margin-top:4px;">Cúp điểm 10: '+cups.length+' cái 🏆</div></div>'
-    +REWARDS.map(r=>{const ok=cur>=r.xu;return'<div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:'+(ok?'var(--s2)':'var(--s1)')+';border:1px solid '+(ok?'var(--bd2)':'var(--bd)')+';border-radius:10px;margin-bottom:6px;"><div style="font-size:22px;width:34px;text-align:center;">'+r.icon+'</div><div style="flex:1;"><div style="font-size:13px;color:'+(ok?'var(--tx)':'var(--tx3)')+';">'+r.name+'</div><div style="font-size:11px;color:var(--tx3);">'+r.desc+'</div></div><button onclick="buyReward(\''+r.id+'\','+r.xu+',\''+r.name+'\')" '+(ok?'':'disabled')+' style="background:'+(ok?'var(--gold)':'var(--s3)')+';color:'+(ok?'#000':'var(--tx3)')+';border:none;border-radius:8px;font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;padding:6px 10px;cursor:'+(ok?'pointer':'not-allowed')+';white-space:nowrap;">'+r.xu.toLocaleString('vi-VN')+' xu</button></div>';}).join('')
-    +'<div style="font-size:10px;color:var(--tx3);text-align:center;margin-top:10px;">PIN 2790 để xác nhận</div></div>';
+  el.innerHTML=`
+    <div style="background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:24px;max-width:360px;width:100%;">
+      <div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:20px;color:var(--gold);text-align:center;margin-bottom:6px;">🏆 NỘP ĐIỂM 10</div>
+      <div style="font-size:12px;color:var(--tx2);text-align:center;margin-bottom:18px;">Chụp ảnh bài kiểm tra có điểm 10<br>AI sẽ xác nhận và tặng 200 xu!</div>
+      <div style="display:flex;gap:10px;margin-bottom:14px;">
+        <label style="flex:1;background:#1e2535;border:2px dashed #e8192c;border-radius:12px;padding:16px;text-align:center;cursor:pointer;">
+          <div style="font-size:28px;margin-bottom:5px;">📷</div>
+          <div style="font-size:11px;color:var(--tx2);">Chụp ngay</div>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="verifyCup(this)">
+        </label>
+        <label style="flex:1;background:#1e2535;border:2px dashed #3a4560;border-radius:12px;padding:16px;text-align:center;cursor:pointer;">
+          <div style="font-size:28px;margin-bottom:5px;">🖼️</div>
+          <div style="font-size:11px;color:var(--tx2);">Thư viện</div>
+          <input type="file" accept="image/*" style="display:none" onchange="verifyCup(this)">
+        </label>
+      </div>
+      <button onclick="this.closest('div[style*=fixed]').remove()" style="width:100%;background:transparent;border:1px solid var(--bd);border-radius:10px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-size:14px;padding:10px;cursor:pointer;">Huỷ</button>
+    </div>`;
   document.body.appendChild(el);
 }
 function buyReward(id,xu,name){
@@ -399,10 +413,29 @@ function showCupCelebration(){
   updateUI();
 }
 function showCupUpload(){
-  const el=document.createElement('div');el.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
-  el.innerHTML='<div style="background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:24px;max-width:360px;width:100%;"><div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:20px;color:var(--gold);text-align:center;margin-bottom:6px;">🏆 NỘP ĐIỂM 10</div><div style="font-size:12px;color:var(--tx2);text-align:center;margin-bottom:18px;">Chụp ảnh bài kiểm tra có điểm 10<br>AI xác nhận → tặng 200 xu!</div><label style="display:block;background:var(--s3);border:2px dashed var(--bd2);border-radius:12px;padding:24px;text-align:center;cursor:pointer;margin-bottom:14px;"><div style="font-size:36px;margin-bottom:8px;">📸</div><div style="font-size:13px;color:var(--tx2);">Chạm để chụp / chọn ảnh</div><input type="file" accept="image/*" style="display:none" onchange="verifyCup(this)"></label><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="width:100%;background:transparent;border:1px solid var(--bd2);border-radius:10px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-size:14px;padding:10px;cursor:pointer;">Huỷ</button></div>';
+  const el=document.createElement('div');
+  el.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+  el.innerHTML=`
+    <div style="background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:24px;max-width:360px;width:100%;">
+      <div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:20px;color:var(--gold);text-align:center;margin-bottom:6px;">🏆 NỘP ĐIỂM 10</div>
+      <div style="font-size:12px;color:var(--tx2);text-align:center;margin-bottom:18px;">Chụp ảnh bài kiểm tra có điểm 10<br>AI sẽ xác nhận và tặng 200 xu!</div>
+      <div style="display:flex;gap:10px;margin-bottom:14px;">
+        <label style="flex:1;background:var(--s3);border:2px dashed #e8192c;border-radius:12px;padding:16px;text-align:center;cursor:pointer;">
+          <div style="font-size:28px;margin-bottom:5px;">📷</div>
+          <div style="font-size:11px;color:var(--tx2);">Chụp ngay</div>
+          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="verifyCup(this)">
+        </label>
+        <label style="flex:1;background:var(--s3);border:2px dashed var(--bd2);border-radius:12px;padding:16px;text-align:center;cursor:pointer;">
+          <div style="font-size:28px;margin-bottom:5px;">🖼️</div>
+          <div style="font-size:11px;color:var(--tx2);">Thư viện</div>
+          <input type="file" accept="image/*" style="display:none" onchange="verifyCup(this)">
+        </label>
+      </div>
+      <button onclick="this.closest('div[style*=fixed]').remove()" style="width:100%;background:transparent;border:1px solid var(--bd);border-radius:10px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-size:14px;padding:10px;cursor:pointer;">Huỷ</button>
+    </div>`;
   document.body.appendChild(el);
 }
+
 async function verifyCup(input){
   const f=input.files[0];if(!f)return;
   input.closest('div[style*=fixed]').remove();
