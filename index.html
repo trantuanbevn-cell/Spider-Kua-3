@@ -22,8 +22,8 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 #splash{
   position:fixed;inset:0;background:#000;z-index:9999;
   display:flex;flex-direction:column;align-items:center;
-  justify-content:space-between;
-  padding:80px 0;
+  justify-content:space-evenly;
+  padding:40px 24px;
   overflow:hidden;cursor:pointer;
 }
 #splash.hide{animation:splashOut .6s ease forwards;}
@@ -48,12 +48,16 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 /* Vùng 3: Logo Spider-Man */
 .spider-bottom{display:flex;flex-direction:column;align-items:center;gap:20px;}
 .spider-btn{
-  width:140px;height:140px;border-radius:50%;background:#c0101e;border:3px solid #e8192c;
-  display:flex;align-items:center;justify-content:center;
-  box-shadow:0 0 40px rgba(232,25,44,.5);transition:transform .2s;
+  width:110px;height:110px;border-radius:50%;background:#000;border:2.5px solid #e8192c;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  box-shadow:0 0 0 5px rgba(232,25,44,.12),0 0 30px rgba(232,25,44,.35);
+  transition:transform .2s;cursor:pointer;flex-shrink:0;
 }
-.spider-btn:active{transform:scale(.9);}
-.spider-img{width:90%;height:90%;object-fit:contain;filter:drop-shadow(0 0 15px rgba(232,25,44,.8));}
+.spider-btn:active{transform:scale(.95);}
+.spider-btn-fixed{width:110px;height:110px;border-radius:50%;overflow:hidden;border:2.5px solid #e8192c;box-shadow:0 0 0 5px rgba(232,25,44,.12),0 0 30px rgba(232,25,44,.35);cursor:pointer;transition:transform .2s;background:#000;flex-shrink:0;}
+.spider-btn-fixed:hover{transform:scale(1.07);}
+.spider-img-new{width:110px;height:110px;object-fit:cover;object-position:center;display:block;border-radius:0;}
+.spider-img{width:110px;height:110px;object-fit:cover;object-position:center;object-fit:contain;filter:drop-shadow(0 0 15px rgba(232,25,44,.8));}
 .tap-txt{font-family:'Rajdhani',sans-serif;font-size:12px;color:rgba(255,255,255,.3);letter-spacing:.3em;text-transform:uppercase;animation:blink 1.8s infinite;}
 @keyframes blink{0%,100%{opacity:.4;}50%{opacity:1;}}
 
@@ -147,6 +151,23 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 .overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:200;align-items:center;justify-content:center;padding:20px;}
 .obox{background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:22px;max-width:420px;width:100%;max-height:90vh;overflow-y:auto;}
 .otitle{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:18px;color:var(--gold);margin-bottom:12px;}
+
+/* Avengers ring */
+.av-ring-fixed{width:110px;height:110px;border-radius:50%;border:2.5px solid #c0a060;display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 25px rgba(192,160,96,.2);}
+.av-ring-fixed::before{content:'';position:absolute;inset:7px;border-radius:50%;border:1px solid rgba(192,160,96,.18);}
+.av-a-fixed{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:68px;color:#c0a060;line-height:1;text-shadow:0 0 20px rgba(192,160,96,.35);}
+
+/* Spider-Kua text */
+.name-txt-fixed{font-family:'Rajdhani',sans-serif;font-size:44px;font-weight:700;letter-spacing:.08em;color:#e8192c;animation:softGlow 2.5s ease infinite;line-height:1;}
+@keyframes softGlow{0%,100%{text-shadow:0 0 10px rgba(232,25,44,.6),0 0 30px rgba(232,25,44,.3);}50%{text-shadow:0 0 22px rgba(232,25,44,1),0 0 55px rgba(232,25,44,.5);}}
+
+/* Shield text */
+.shield-txt-fixed{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:.15em;color:#f5c842;text-transform:uppercase;text-shadow:0 0 12px rgba(245,200,66,.45);margin-top:4px;}
+
+/* Spider button */
+.spider-btn-fixed{width:82px;height:82px;border-radius:50%;overflow:hidden;border:2.5px solid #e8192c;box-shadow:0 0 0 4px rgba(232,25,44,.12),0 0 22px rgba(232,25,44,.35);cursor:pointer;transition:transform .2s;background:#000;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.spider-btn-fixed:hover{transform:scale(1.07);}
+.spider-img-new{width:82px;height:82px;object-fit:cover;object-position:center;display:block;}
 </style>
 </head>
 <body>
@@ -288,7 +309,10 @@ function playVoice(){
   u.lang='en-US';u.rate=0.85;u.pitch=0.65;
   const tryPlay=()=>{
     const vv=window.speechSynthesis.getVoices();
-    const v=vv.find(v=>v.name==='Google US English')
+    const v=vv.find(v=>v.name==='Google UK English Male')
+      ||vv.find(v=>v.name==='Microsoft David - English (United States)')
+      ||vv.find(v=>v.name==='Google US English')
+      ||vv.find(v=>v.lang.startsWith('en-')&&(v.name.toLowerCase().includes('male')||v.name.toLowerCase().includes('david')||v.name.toLowerCase().includes('mark')||v.name.toLowerCase().includes('james')))
       ||vv.find(v=>v.lang==='en-US'&&!v.name.toLowerCase().includes('female'))
       ||vv.find(v=>v.lang.startsWith('en'));
     if(v)u.voice=v;
@@ -668,7 +692,7 @@ window.onload=()=>{
 
   <!-- VÙNG 1: AVENGERS -->
   <div style="display:flex;flex-direction:column;align-items:center;gap:10px;animation:fadeDown .7s ease .1s both;">
-    <div class="av-ring-fixed"><span class="av-a-fixed">A</span></div>
+    <img src="https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/aven.png" style="width:110px;height:110px;object-fit:contain;filter:drop-shadow(0 0 20px rgba(192,160,96,.4)) contrast(1.15) saturate(1.2);image-rendering:crisp-edges;" alt="Avengers">
     <div style="font-family:'Rajdhani',sans-serif;font-size:16px;letter-spacing:.5em;color:#8a7040;text-transform:uppercase;margin-top:4px;">THE AVENGERS</div>
   </div>
 
@@ -799,7 +823,10 @@ function playVoice(){
   u.lang='en-US';u.rate=0.85;u.pitch=0.65;
   const tryPlay=()=>{
     const vv=window.speechSynthesis.getVoices();
-    const v=vv.find(v=>v.name==='Google US English')
+    const v=vv.find(v=>v.name==='Google UK English Male')
+      ||vv.find(v=>v.name==='Microsoft David - English (United States)')
+      ||vv.find(v=>v.name==='Google US English')
+      ||vv.find(v=>v.lang.startsWith('en-')&&(v.name.toLowerCase().includes('male')||v.name.toLowerCase().includes('david')||v.name.toLowerCase().includes('mark')||v.name.toLowerCase().includes('james')))
       ||vv.find(v=>v.lang==='en-US'&&!v.name.toLowerCase().includes('female'))
       ||vv.find(v=>v.lang.startsWith('en'));
     if(v)u.voice=v;
