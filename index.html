@@ -18,11 +18,11 @@
 body{background:var(--bg);color:var(--tx);font-family:'Nunito',sans-serif;font-size:14px;min-height:100vh;}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 15% 20%,rgba(15,76,143,.2) 0%,transparent 50%),radial-gradient(circle at 85% 80%,rgba(232,25,44,.12) 0%,transparent 50%);pointer-events:none;z-index:0;}
 
-/* ═══ SPLASH SCREEN CỐ ĐỊNH 3 VÙNG ═══ */
+/* ═══ SPLASH SCREEN - GEMINI DESIGN (3 VÙNG CỐ ĐỊNH) ═══ */
 #splash{
   position:fixed;inset:0;background:#000;z-index:9999;
   display:flex;flex-direction:column;align-items:center;
-  justify-content:space-between; 
+  justify-content:space-between;
   padding:80px 0;
   overflow:hidden;cursor:pointer;
 }
@@ -33,160 +33,1134 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 .av-top{display:flex;flex-direction:column;align-items:center;}
 .av-ring{
   width:140px;height:140px;border-radius:50%;border:4px solid #c0a060;
-  display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 30px rgba(192,160,96,0.3);
+  display:flex;align-items:center;justify-content:center;position:relative;
+  box-shadow:0 0 30px rgba(192,160,96,.3);
 }
 .av-a{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:90px;color:#c0a060;line-height:1;}
 .av-sub{font-family:'Rajdhani',sans-serif;font-size:16px;letter-spacing:.5em;color:#8a7040;text-transform:uppercase;margin-top:12px;}
 
 /* Vùng 2: Center */
 .info-center{display:flex;flex-direction:column;align-items:center;gap:12px;}
-.wel-txt{font-family:'Rajdhani',sans-serif;font-size:14px;letter-spacing:.6em;color:rgba(255,255,255,0.7);text-transform:uppercase;}
-.name-txt{font-family:'Rajdhani',sans-serif;font-size:52px;font-weight:700;letter-spacing:.1em;color:#e8192c;line-height:1;text-shadow:0 0 20px rgba(232,25,44,0.5);}
+.wel-txt{font-family:'Rajdhani',sans-serif;font-size:14px;letter-spacing:.6em;color:rgba(255,255,255,.7);text-transform:uppercase;}
+.name-txt{font-family:'Rajdhani',sans-serif;font-size:52px;font-weight:700;letter-spacing:.1em;color:#e8192c;line-height:1;text-shadow:0 0 20px rgba(232,25,44,.5);}
 .shield-txt{font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:600;letter-spacing:.15em;color:#f5c842;min-height:1.5em;}
 
-/* Vùng 3: Logo Mới */
+/* Vùng 3: Logo Spider-Man */
 .spider-bottom{display:flex;flex-direction:column;align-items:center;gap:20px;}
 .spider-btn{
   width:140px;height:140px;border-radius:50%;background:#c0101e;border:3px solid #e8192c;
-  display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(232,25,44,0.5);
-  transition: transform 0.2s;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 40px rgba(232,25,44,.5);transition:transform .2s;
 }
-.spider-btn:active{transform:scale(0.9);}
-.spider-img{width:90%;height:90%;object-fit:contain;filter:drop-shadow(0 0 15px rgba(232,25,44,0.8));}
-.tap-txt{font-family:'Rajdhani',sans-serif;font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:.3em;text-transform:uppercase;animation:blink 1.8s infinite;}
-
+.spider-btn:active{transform:scale(.9);}
+.spider-img{width:90%;height:90%;object-fit:contain;filter:drop-shadow(0 0 15px rgba(232,25,44,.8));}
+.tap-txt{font-family:'Rajdhani',sans-serif;font-size:12px;color:rgba(255,255,255,.3);letter-spacing:.3em;text-transform:uppercase;animation:blink 1.8s infinite;}
 @keyframes blink{0%,100%{opacity:.4;}50%{opacity:1;}}
 
-/* ═══ GIỮ NGUYÊN APP CLAUDE ═══ */
+/* ═══ SETUP ═══ */
+#setup{display:none;position:fixed;inset:0;background:var(--bg);z-index:100;align-items:center;justify-content:center;padding:20px;}
+.sbox{background:var(--s1);border:1px solid var(--bd2);border-radius:20px;padding:28px 24px;max-width:400px;width:100%;}
+.slbl{font-size:12px;color:var(--tx2);margin-bottom:6px;}
+.sta{width:100%;background:var(--bg);border:1px solid var(--bd2);border-radius:10px;color:var(--tx);font-family:monospace;font-size:12px;padding:12px;min-height:80px;outline:none;resize:none;margin-bottom:8px;transition:border-color .2s;}
+.sta:focus{border-color:var(--gold);}
+.shint{font-size:11px;color:var(--tx3);margin-bottom:14px;line-height:1.7;}
+.sbtn{width:100%;background:var(--red);border:none;border-radius:12px;color:#fff;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:17px;letter-spacing:.04em;padding:13px;cursor:pointer;}
+.sbtn:hover{background:var(--red2);}
+.serr{font-size:12px;color:var(--red2);text-align:center;margin-top:10px;min-height:18px;}
+
+/* ═══ APP ═══ */
 #app{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 14px;height:100vh;flex-direction:column;display:none;}
 .hdr{display:flex;align-items:center;gap:10px;padding:10px 0 8px;border-bottom:1px solid var(--bd);flex-shrink:0;}
-.hlogo{width:38px;height:38px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid var(--blue2);}
-.htitle{font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;}
+.hlogo{width:38px;height:38px;background:var(--blue);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid var(--blue2);flex-shrink:0;}
+.htitle{font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;letter-spacing:.04em;}
 .htitle span{color:var(--red);}
 .xpw{display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
 .xpl{font-size:11px;color:var(--gold);font-family:'Rajdhani',sans-serif;font-weight:700;}
 .xpb{width:90px;height:4px;background:var(--s3);border-radius:2px;overflow:hidden;}
 .xpf{height:100%;background:var(--gold);border-radius:2px;transition:width .8s;}
-.msgs{flex:1;overflow-y:auto;padding:12px 0;display:flex;flex-direction:column;gap:10px;}
-.mb{padding:10px 14px;border-radius:14px;font-size:13px;line-height:1.7;background:var(--s2);border:1px solid var(--bd);}
-.msg.user .mb{background:var(--blue);color:#fff;}
+.hbtn{background:transparent;border:1px solid var(--bd);border-radius:7px;color:var(--tx3);width:30px;height:30px;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:12px;flex-shrink:0;transition:all .2s;}
+.hbtn:hover{border-color:var(--bd2);color:var(--tx2);}
+.hbtn.red{background:var(--red);border-color:var(--red);color:#fff;width:auto;padding:0 10px;font-size:11px;font-family:'Rajdhani',sans-serif;font-weight:700;letter-spacing:.04em;}
+.stats{display:flex;gap:6px;padding:6px 0;border-bottom:1px solid var(--bd);flex-shrink:0;overflow-x:auto;}
+.chip{background:var(--s2);border:1px solid var(--bd);border-radius:7px;padding:4px 10px;font-size:11px;display:flex;align-items:center;gap:5px;font-family:'Rajdhani',sans-serif;font-weight:600;white-space:nowrap;flex-shrink:0;}
+.chipv{color:var(--tx);}
+.chipl{color:var(--tx3);font-size:9px;}
+.msgs{flex:1;overflow-y:auto;padding:12px 0;display:flex;flex-direction:column;gap:10px;scrollbar-width:thin;scrollbar-color:var(--bd) transparent;}
+.msg{display:flex;gap:8px;animation:fu .25s ease;}
+@keyframes fu{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+.msg.user{flex-direction:row-reverse;}
+.av{width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;border:2px solid var(--bd);}
+.msg.ai .av{background:var(--blue);border-color:var(--blue2);}
+.msg.user .av{background:var(--s3);}
+.mc{max-width:78%;}
+.mn{font-size:9px;color:var(--tx3);font-family:'Rajdhani',sans-serif;letter-spacing:.08em;text-transform:uppercase;margin-bottom:3px;}
+.msg.user .mn{text-align:right;}
+.mb{padding:10px 14px;border-radius:14px;font-size:13px;line-height:1.7;}
+.msg.ai .mb{background:var(--s2);border:1px solid var(--bd);border-top-left-radius:3px;}
+.msg.user .mb{background:var(--blue);border:1px solid var(--blue2);border-top-right-radius:3px;color:#fff;}
+.mcard{background:var(--s2);border:1px solid var(--bd);border-left:3px solid var(--red);border-radius:10px;padding:12px;margin-top:6px;}
+.mcardtitle{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:11px;color:var(--red2);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+.mitem{display:flex;align-items:flex-start;gap:7px;padding:4px 0;font-size:12px;color:var(--tx2);border-bottom:1px solid var(--bd);}
+.mitem:last-child{border-bottom:none;}
+.mchk{width:16px;height:16px;border:1.5px solid var(--bd2);border-radius:3px;flex-shrink:0;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:10px;transition:all .2s;}
+.mchk.done{background:var(--green);border-color:var(--green);color:#000;}
+.bdg{background:var(--s2);border:2px solid var(--gold);border-radius:12px;padding:12px;text-align:center;margin-top:6px;}
+.bdgi{font-size:28px;margin-bottom:4px;}
+.bdgn{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:13px;color:var(--gold);}
+.typing{display:flex;gap:4px;align-items:center;padding:10px 14px;}
+.typing span{width:6px;height:6px;border-radius:50%;background:var(--tx3);animation:dot 1.4s infinite;}
+.typing span:nth-child(2){animation-delay:.2s;}
+.typing span:nth-child(3){animation-delay:.4s;}
+@keyframes dot{0%,60%,100%{transform:translateY(0);opacity:.4}30%{transform:translateY(-5px);opacity:1}}
+.spk{display:none;align-items:center;gap:5px;font-size:10px;color:var(--green);font-family:'Rajdhani',sans-serif;}
+.spk.on{display:flex;}
+.spkb{display:flex;gap:2px;align-items:center;height:14px;}
+.spkb span{width:3px;background:var(--green);border-radius:2px;animation:wv 1s infinite;}
+.spkb span:nth-child(1){height:5px;}
+.spkb span:nth-child(2){height:12px;animation-delay:.15s;}
+.spkb span:nth-child(3){height:8px;animation-delay:.3s;}
+.spkb span:nth-child(4){height:14px;animation-delay:.45s;}
+.spkb span:nth-child(5){height:6px;animation-delay:.6s;}
+@keyframes wv{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1.2)}}
+.ipa{padding:8px 0 12px;border-top:1px solid var(--bd);flex-shrink:0;}
+.quick{display:flex;gap:5px;flex-wrap:wrap;padding-bottom:7px;}
+.qbtn{background:var(--s2);border:1px solid var(--bd);border-radius:14px;color:var(--tx2);font-size:11px;padding:4px 10px;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.qbtn:hover{border-color:var(--red);color:var(--red2);}
+.iprev{padding:0 0 6px;display:none;flex-wrap:wrap;gap:6px;}
+.irow{display:flex;gap:8px;align-items:flex-end;}
+.ibox{flex:1;background:var(--s2);border:1px solid var(--bd);border-radius:20px;padding:0 14px;transition:border-color .2s;}
+.ibox:focus-within{border-color:var(--blue2);}
+.ibox textarea{display:block;width:100%;background:transparent;border:none;outline:none;color:var(--tx);font-family:'Nunito',sans-serif;font-size:13px;padding:10px 0;resize:none;max-height:80px;line-height:1.5;}
+.ibox textarea::placeholder{color:var(--tx3);}
+.abtns{display:flex;flex-direction:column;gap:5px;}
+.abtn{width:38px;height:38px;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;transition:all .2s;}
+.abtn.send{background:var(--red);}
+.abtn.send:hover{background:var(--red2);}
+.abtn.send:disabled{background:var(--s3);cursor:not-allowed;}
+.abtn.mic{background:var(--s2);border:1px solid var(--bd);}
+.abtn.mic:hover,.abtn.mic.on{border-color:var(--green);background:rgba(48,209,88,.1);}
+.abtn.mic.on{animation:pulse 1s infinite;}
+.abtn.imgb{background:var(--s2);border:1px solid var(--bd);}
+.abtn.imgb:hover{border-color:var(--gold);}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(48,209,88,.4)}50%{box-shadow:0 0 0 6px rgba(48,209,88,0)}}
+.gr{color:var(--green);font-weight:700;}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:200;align-items:center;justify-content:center;padding:20px;}
+.obox{background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:22px;max-width:420px;width:100%;max-height:90vh;overflow-y:auto;}
+.otitle{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:18px;color:var(--gold);margin-bottom:12px;}
 </style>
 </head>
 <body>
 
+<!-- ═══ SPLASH - GEMINI DESIGN ═══ -->
 <div id="splash" onclick="hideSplash()">
+  <!-- Vùng 1: Avengers -->
   <div class="av-top">
     <div class="av-ring"><span class="av-a">A</span></div>
     <div class="av-sub">THE AVENGERS</div>
   </div>
 
+  <!-- Vùng 2: Welcome + Spider-Kua + Shield -->
   <div class="info-center">
     <div class="wel-txt">WELCOME</div>
     <div class="name-txt">SPIDER-KUA</div>
     <div id="sloganTxt" class="shield-txt"></div>
   </div>
 
+  <!-- Vùng 3: Logo + Tap -->
   <div class="spider-bottom">
     <div class="spider-btn">
-      <img src="https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/Spider-Man-Logo-PNG-Isolated-HD.png" class="spider-img" alt="Spider Logo">
+      <img src="https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/Spider-Man-Logo-PNG-Isolated-HD.png"
+           class="spider-img-new" alt="Spider-Man"
+           onerror="this.style.display='none';this.parentNode.innerHTML='<span style=\'font-size:80px;\'>🕷️</span>'">
     </div>
     <div class="tap-txt">TAP TO BEGIN</div>
   </div>
 </div>
 
-<div id="setup" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:100;align-items:center;justify-content:center;padding:20px;">
-  <div style="background:var(--s1);padding:30px;border-radius:20px;border:1px solid var(--bd2);width:100%;max-width:400px;text-align:center;">
-    <div style="font-size:50px;">🕷️</div>
-    <div style="font-family:Rajdhani;font-size:22px;color:var(--gold);margin-bottom:20px;">DÁN API KEY VÀO ĐÂY</div>
-    <textarea id="gemTA" style="width:100%;background:#000;color:#fff;border-radius:10px;padding:10px;height:80px;"></textarea>
-    <button onclick="activate()" style="width:100%;background:var(--red);color:#fff;border:none;border-radius:12px;padding:15px;margin-top:15px;cursor:pointer;font-weight:700;">🔓 KÍCH HOẠT</button>
+<!-- ═══ SETUP ═══ -->
+<div id="setup">
+  <div class="sbox">
+    <div style="text-align:center;font-size:42px;margin-bottom:10px;">🕷️</div>
+    <div style="font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;color:var(--gold);text-align:center;margin-bottom:4px;">SPIDER-KUA</div>
+    <div style="font-size:12px;color:var(--tx2);text-align:center;margin-bottom:18px;line-height:1.7;">Hệ thống huấn luyện S.H.I.E.L.D.<br>dành cho Peter Parker — Trần Xuân Khang</div>
+    <div class="slbl">Google Gemini API Key <span style="color:var(--green);font-size:11px;">(AI chính — miễn phí)</span></div>
+    <textarea class="sta" id="gemTA" placeholder="AIzaSy...&#10;&#10;Lấy miễn phí tại aistudio.google.com/apikey"></textarea>
+    <div class="slbl">Anthropic Claude API Key <span style="color:var(--tx3);font-size:11px;">(backup — có thể để trống)</span></div>
+    <textarea class="sta" id="keyTA" placeholder="sk-ant-..." style="min-height:65px;"></textarea>
+    <div class="shint">Key lưu trên thiết bị này, không gửi đi đâu khác.<br>Cần ít nhất <strong style="color:var(--green);">1 trong 2 key</strong> để dùng.</div>
+    <button class="sbtn" id="actBtn" onclick="activate()">🔓 KÍCH HOẠT HỆ THỐNG</button>
+    <div class="serr" id="serr"></div>
+    <div style="font-size:11px;color:var(--tx3);text-align:center;margin-top:10px;line-height:1.7;">🔒 Key lưu tự động — từ lần sau vào thẳng không cần nhập lại</div>
   </div>
 </div>
 
+<!-- ═══ APP ═══ -->
 <div id="app">
   <div class="hdr">
     <div class="hlogo">🛡️</div>
-    <div style="flex:1"><div class="htitle">SPIDER-<span>KUA</span></div></div>
-    <div class="xpw"><div class="xpl" id="xpLbl">⚡ 0XP</div><div class="xpb"><div class="xpf" id="xpFill"></div></div></div>
+    <div style="flex:1">
+      <div class="htitle">SPIDER-<span>KUA</span></div>
+      <div style="font-size:9px;color:var(--tx3);letter-spacing:.1em;text-transform:uppercase;font-family:'Rajdhani',sans-serif;">S.H.I.E.L.D. TRAINING · LỚP 4A1</div>
+    </div>
+    <div class="xpw">
+      <div class="xpl" id="xpLbl">⚡ 0XP</div>
+      <div class="xpb"><div class="xpf" id="xpFill" style="width:0%"></div></div>
+    </div>
+    <div class="spk" id="spkEl"><div class="spkb"><span></span><span></span><span></span><span></span><span></span></div>Fury</div>
+    <div class="chip" style="color:var(--gold);cursor:pointer;font-size:12px;" onclick="showShop()">🪙 <span class="xu-count">0</span></div>
+    <button class="hbtn" onclick="showParent()">👩</button>
+    <button class="hbtn red" onclick="doChangeKey()">KEY</button>
   </div>
-  <div id="msgs" class="msgs"></div>
-  <div style="padding:15px 0;display:flex;gap:10px;">
-    <input type="text" id="txtIn" style="flex:1;background:var(--s2);border:1px solid var(--bd);border-radius:20px;color:#fff;padding:10px 20px;outline:none;" placeholder="Báo cáo Fury...">
-    <button onclick="doSend()" style="background:var(--red);border:none;width:40px;height:40px;border-radius:50%;color:#fff;cursor:pointer;">➤</button>
+
+  <div class="stats">
+    <div class="chip">🔥<div><div class="chipv" id="sStreak">0</div><div class="chipl">Streak</div></div></div>
+    <div class="chip">🕸️<div><div class="chipv" id="sMission">0</div><div class="chipl">Mission</div></div></div>
+    <div class="chip">🏆<div><div class="chipv" id="sBadge">0</div><div class="chipl">Huy hiệu</div></div></div>
+    <div class="chip" style="margin-left:auto;color:var(--gold);cursor:pointer;" onclick="copyRoom()">📱 <span id="sRoom">—</span></div>
+  </div>
+
+  <div class="msgs" id="msgs"></div>
+
+  <div class="ipa">
+    <div class="quick">
+      <button class="qbtn" onclick="qs('Cho anh mission hôm nay')">⚡ Mission</button>
+      <button class="qbtn" onclick="qs('Luyện Toán đi anh')">🔢 Toán</button>
+      <button class="qbtn" onclick="qs('Học Tiếng Việt nào')">📖 TV</button>
+      <button class="qbtn" onclick="qs('Tiếng Anh hôm nay')">🌏 TA</button>
+      <button class="qbtn" onclick="showHWInChat()">📋 Bài mẹ gửi</button>
+      <button class="qbtn" onclick="qs('Em không muốn học đâu')">😴 Lười</button>
+      <button class="qbtn" onclick="showCupUpload()" style="border-color:var(--gold);color:#854F0B;">🏆 Điểm 10</button>
+      <button class="qbtn" onclick="showShop()" style="border-color:var(--gold);color:#854F0B;">🪙 Đổi xu</button>
+    </div>
+    <div class="iprev" id="iPrev"></div>
+    <div class="irow">
+      <div class="ibox">
+        <textarea id="txtIn" rows="1" placeholder="Nói hoặc gõ câu trả lời..." onkeydown="onKey(event)" oninput="resize(this)"></textarea>
+      </div>
+      <div class="abtns">
+        <button class="abtn mic" id="micBtn" onclick="toggleMic()">🎤</button>
+        <label class="abtn imgb">📸<input type="file" accept="image/*" multiple style="display:none" onchange="onImg(this)"></label>
+        <button class="abtn send" id="sendBtn" onclick="doSend()">➤</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PARENT PANEL -->
+<div class="overlay" id="parentOL">
+  <div class="obox">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+      <div class="otitle">📚 GỬI BÀI TẬP</div>
+      <button onclick="document.getElementById('parentOL').style.display='none'" style="background:transparent;border:1px solid var(--bd);border-radius:7px;color:var(--tx2);padding:4px 10px;cursor:pointer;">✕</button>
+    </div>
+    <div style="font-size:12px;color:var(--tx2);margin-bottom:6px;">Mã phòng: <strong style="color:var(--gold);" id="pRoom">—</strong></div>
+    <div style="font-size:11px;color:var(--tx3);font-family:'Rajdhani',sans-serif;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">Nội dung bài tập hôm nay</div>
+    <textarea id="hwTA" style="width:100%;background:var(--bg);border:1px solid var(--bd2);border-radius:8px;color:var(--tx);font-family:'Nunito',sans-serif;font-size:13px;padding:10px;min-height:140px;outline:none;resize:vertical;margin-bottom:8px;line-height:1.7;" placeholder="Copy nội dung bài tập vào đây...&#10;&#10;VD:&#10;📐 Toán: Trang 45 - Bài 1,2,3&#10;📖 Tiếng Việt: Đọc bài Cây tre VN&#10;🌏 Tiếng Anh: Unit 5 - Bài A,B"></textarea>
+    <button id="hwBtn" onclick="sendHW()" style="background:var(--blue);border:none;border-radius:8px;color:#fff;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:15px;padding:11px;cursor:pointer;width:100%;letter-spacing:.04em;">📤 LƯU BÀI TẬP CHO KUA</button>
+    <div id="hwList" style="margin-top:12px;"></div>
+    <div style="font-size:10px;color:var(--tx3);text-align:center;margin-top:8px;">PIN: 2790 · Kua bấm "Bài mẹ gửi" sẽ thấy</div>
   </div>
 </div>
 
 <script>
-const K={api:'sk3',gem:'gem3',mem:'mem3',xu:'xu3'};
-let gemKey='', busy=false;
+// ═══ CONFIG ═══
+const K={api:'sk3',gem:'gem3',mem:'mem3',hw:'hw3',room:'rm3',xu:'xu3',cups:'cups3'};
+let key='',gemKey='',busy=false,imgArr=[],SR=null,isRec=false;
 
-/* ══ LOGIC SLOGAN CHUẨN ══ */
-const SLOGAN_TEXT = "Shield Systems Online. Standing by!";
-const SLOGAN_VOICE = "Shield systems online. Standing by!";
+// ═══ SPLASH - GEMINI LOGIC ═══
+const SLOGAN_TEXT="Shield Systems Online. Standing by!";
+const SLOGAN_VOICE="Shield systems online. Standing by!";
 
 function animateSlogan(){
-  const el = document.getElementById('sloganTxt');
-  if(!el) return;
-  el.textContent = '';
-  let j = 0;
-  const interval = setInterval(() => {
-    if(j < SLOGAN_TEXT.length){ el.textContent += SLOGAN_TEXT[j]; j++; }
-    else { clearInterval(interval); playVoice(); }
-  }, 50);
+  const el=document.getElementById('sloganTxt');
+  if(!el)return;
+  el.textContent='';let j=0;
+  const iv=setInterval(()=>{
+    if(j<SLOGAN_TEXT.length){el.textContent+=SLOGAN_TEXT[j];j++;}
+    else{clearInterval(iv);playVoice();}
+  },50);
 }
 
 function playVoice(){
-  if(!window.speechSynthesis) return;
+  if(!window.speechSynthesis)return;
   window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(SLOGAN_VOICE);
-  u.lang = 'en-US'; u.rate = 0.85; u.pitch = 0.65;
-  window.speechSynthesis.speak(u);
+  const u=new SpeechSynthesisUtterance(SLOGAN_VOICE);
+  u.lang='en-US';u.rate=0.85;u.pitch=0.65;
+  const tryPlay=()=>{
+    const vv=window.speechSynthesis.getVoices();
+    const v=vv.find(v=>v.name==='Google US English')
+      ||vv.find(v=>v.lang==='en-US'&&!v.name.toLowerCase().includes('female'))
+      ||vv.find(v=>v.lang.startsWith('en'));
+    if(v)u.voice=v;
+    u.onend=()=>{};
+    window.speechSynthesis.speak(u);
+  };
+  if(window.speechSynthesis.getVoices().length>0)tryPlay();
+  else window.speechSynthesis.onvoiceschanged=()=>{tryPlay();window.speechSynthesis.onvoiceschanged=null;};
 }
 
 function hideSplash(){
-  window.speechSynthesis.cancel();
-  document.getElementById('splash').classList.add('hide');
-  setTimeout(() => {
-    document.getElementById('splash').remove();
-    const g = localStorage.getItem(K.gem);
-    if(g){ gemKey=g; boot(); }
-    else { document.getElementById('setup').style.display='flex'; }
-  }, 600);
+  window.speechSynthesis&&window.speechSynthesis.cancel();
+  const sp=document.getElementById('splash');
+  if(!sp)return;
+  sp.classList.add('hide');
+  setTimeout(()=>{
+    sp.remove();
+    const g=localStorage.getItem(K.gem),c=localStorage.getItem(K.api);
+    if(g)gemKey=g;if(c)key=c;
+    if(g||c)boot();
+    else document.getElementById('setup').style.display='flex';
+  },600);
 }
 
+// ═══ MEMORY ═══
+function M(){return JSON.parse(localStorage.getItem(K.mem)||JSON.stringify({xp:0,streak:0,lastDay:'',missions:0,badges:[],notes:[],history:[],sessions:0}));}
+function SM(m){localStorage.setItem(K.mem,JSON.stringify(m));}
+function HW(){return JSON.parse(localStorage.getItem(K.hw)||'[]');}
+function SHW(v){localStorage.setItem(K.hw,JSON.stringify(v));}
+function room(){let r=localStorage.getItem(K.room);if(!r){r='KUA'+Math.random().toString(36).slice(2,6).toUpperCase();localStorage.setItem(K.room,r);}return r;}
+
+// ═══ XU ═══
+function getXu(){return parseInt(localStorage.getItem(K.xu)||'0');}
+function addXu(n){const nw=getXu()+n;localStorage.setItem(K.xu,nw);updateXuUI();showXuPop(n);}
+function spendXu(n){const cur=getXu();if(cur<n)return false;localStorage.setItem(K.xu,cur-n);updateXuUI();return true;}
+function updateXuUI(){const x=getXu();document.querySelectorAll('.xu-count').forEach(el=>el.textContent=x.toLocaleString('vi-VN'));}
+function showXuPop(n){
+  const p=document.createElement('div');p.textContent='+'+n+' xu 🪙';
+  p.style.cssText='position:fixed;top:52px;left:50%;transform:translateX(-50%);background:var(--gold);color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;padding:4px 14px;border-radius:16px;z-index:9999;pointer-events:none;';
+  document.body.appendChild(p);setTimeout(()=>p.remove(),2000);
+}
+
+// ═══ SHOP ═══
+const REWARDS=[
+  {id:'tv',icon:'📺',name:'Xem tivi sau 10h30',desc:'30 phút tối nay',xu:30},
+  {id:'game',icon:'🎮',name:'Chơi game sau 10h',desc:'30 phút chơi game',xu:50},
+  {id:'toy1',icon:'🧸',name:'Đồ chơi dưới 200k',desc:'Ba mẹ chọn món quà',xu:1000},
+  {id:'toy2',icon:'🎁',name:'Đồ chơi dưới 500k',desc:'Phần thưởng lớn hơn',xu:3000},
+];
+function showShop(){
+  const cur=getXu();const cups=JSON.parse(localStorage.getItem(K.cups)||'[]');
+  const el=document.createElement('div');el.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+  el.innerHTML='<div style="background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:22px;max-width:380px;width:100%;max-height:90vh;overflow-y:auto;">'
+    +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;"><div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:20px;color:var(--gold);">🪙 ĐỔI THƯỞNG</div><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:transparent;border:1px solid var(--bd);border-radius:7px;color:var(--tx2);padding:4px 10px;cursor:pointer;">✕</button></div>'
+    +'<div style="background:var(--s3);border-radius:10px;padding:12px;text-align:center;margin-bottom:16px;"><div style="font-size:11px;color:var(--tx2);margin-bottom:4px;">Xu hiện có</div><div style="font-family:Rajdhani,sans-serif;font-size:28px;font-weight:700;color:var(--gold);">'+cur.toLocaleString('vi-VN')+' 🪙</div><div style="font-size:11px;color:var(--tx3);margin-top:4px;">Cúp điểm 10: '+cups.length+' cái 🏆</div></div>'
+    +REWARDS.map(r=>{const ok=cur>=r.xu;return'<div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:'+(ok?'var(--s2)':'var(--s1)')+';border:1px solid '+(ok?'var(--bd2)':'var(--bd)')+';border-radius:10px;margin-bottom:6px;"><div style="font-size:22px;width:34px;text-align:center;">'+r.icon+'</div><div style="flex:1;"><div style="font-size:13px;color:'+(ok?'var(--tx)':'var(--tx3)')+';">'+r.name+'</div><div style="font-size:11px;color:var(--tx3);">'+r.desc+'</div></div><button onclick="buyReward(\''+r.id+'\','+r.xu+',\''+r.name+'\')" '+(ok?'':'disabled')+' style="background:'+(ok?'var(--gold)':'var(--s3)')+';color:'+(ok?'#000':'var(--tx3)')+';border:none;border-radius:8px;font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;padding:6px 10px;cursor:'+(ok?'pointer':'not-allowed')+';white-space:nowrap;">'+r.xu.toLocaleString('vi-VN')+' xu</button></div>';}).join('')
+    +'<div style="font-size:10px;color:var(--tx3);text-align:center;margin-top:10px;">PIN 2790 để xác nhận</div></div>';
+  document.body.appendChild(el);
+}
+function buyReward(id,xu,name){
+  const pin=prompt('Nhập PIN của ba/mẹ:');
+  if(!pin)return;
+  if(pin.trim()!==(localStorage.getItem('parent_pin')||'2790')){alert('❌ PIN không đúng!');return;}
+  if(!spendXu(xu)){alert('Không đủ xu!');return;}
+  document.querySelector('div[style*="fixed"][style*="88"]')&&document.querySelector('div[style*="fixed"][style*="88"]').remove();
+  const pop=document.createElement('div');pop.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;';
+  pop.innerHTML='<div style="text-align:center;padding:20px;"><div style="font-size:56px;margin-bottom:12px;">🎉</div><div style="font-family:Rajdhani,sans-serif;font-size:22px;font-weight:700;color:var(--green);margin-bottom:8px;">Đổi thưởng thành công!</div><div style="font-size:15px;color:var(--tx);margin-bottom:6px;">'+name+'</div><div style="font-size:13px;color:var(--tx2);margin-bottom:20px;">Còn lại: '+getXu().toLocaleString('vi-VN')+' xu</div><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:var(--green);border:none;border-radius:12px;color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:16px;padding:12px 28px;cursor:pointer;">TUYỆT VỜI!</button></div>';
+  document.body.appendChild(pop);
+}
+
+// ═══ CUP ĐIỂM 10 ═══
+function showCupCelebration(){
+  const el=document.createElement('div');el.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;';
+  el.innerHTML='<div id="cfwrap" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div><div style="text-align:center;position:relative;z-index:2;padding:20px;"><div style="font-size:72px;margin-bottom:12px;animation:bounce .6s infinite alternate;">🏆</div><div style="font-family:Rajdhani,sans-serif;font-size:28px;font-weight:700;color:var(--gold);margin-bottom:8px;">ĐIỂM 10 XUẤT SẮC!</div><div style="font-size:14px;color:var(--tx2);margin-bottom:20px;">Anh Fury tự hào về em lắm!</div><div style="background:var(--gold);color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:22px;padding:10px 28px;border-radius:14px;display:inline-block;margin-bottom:20px;">+200 xu 🪙</div><br><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:transparent;border:2px solid var(--gold);border-radius:12px;color:var(--gold);font-family:Rajdhani,sans-serif;font-weight:700;font-size:16px;padding:10px 28px;cursor:pointer;margin-top:10px;">TIẾP TỤC</button></div>';
+  document.body.appendChild(el);
+  const wrap=el.querySelector('#cfwrap');
+  const colors=['#f5c842','#e8192c','#30d158','#1a6abf','#ff3347','#fff'];
+  for(let i=0;i<60;i++){const c=document.createElement('div');const col=colors[Math.floor(Math.random()*colors.length)];const sz=Math.random()*10+5;c.style.cssText='position:absolute;width:'+sz+'px;height:'+sz+'px;background:'+col+';border-radius:'+(Math.random()>.5?'50%':'2px')+';left:'+Math.random()*100+'%;top:-20px;animation:fall '+(Math.random()*2+2)+'s '+(Math.random()*2)+'s linear infinite;';wrap.appendChild(c);}
+  const st=document.createElement('style');st.textContent='@keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}@keyframes bounce{from{transform:scale(1);}to{transform:scale(1.15);}}';document.head.appendChild(st);
+  addXu(200);
+  const cups=JSON.parse(localStorage.getItem(K.cups)||'[]');cups.push({ts:Date.now()});localStorage.setItem(K.cups,JSON.stringify(cups));
+  updateUI();
+}
+function showCupUpload(){
+  const el=document.createElement('div');el.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+  el.innerHTML='<div style="background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:24px;max-width:360px;width:100%;"><div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:20px;color:var(--gold);text-align:center;margin-bottom:6px;">🏆 NỘP ĐIỂM 10</div><div style="font-size:12px;color:var(--tx2);text-align:center;margin-bottom:18px;">Chụp ảnh bài kiểm tra có điểm 10<br>AI xác nhận → tặng 200 xu!</div><label style="display:block;background:var(--s3);border:2px dashed var(--bd2);border-radius:12px;padding:24px;text-align:center;cursor:pointer;margin-bottom:14px;"><div style="font-size:36px;margin-bottom:8px;">📸</div><div style="font-size:13px;color:var(--tx2);">Chạm để chụp / chọn ảnh</div><input type="file" accept="image/*" style="display:none" onchange="verifyCup(this)"></label><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="width:100%;background:transparent;border:1px solid var(--bd2);border-radius:10px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-size:14px;padding:10px;cursor:pointer;">Huỷ</button></div>';
+  document.body.appendChild(el);
+}
+async function verifyCup(input){
+  const f=input.files[0];if(!f)return;
+  input.closest('div[style*=fixed]').remove();
+  const loading=document.createElement('div');loading.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;';
+  loading.innerHTML='<div style="font-size:48px;margin-bottom:16px;">🔍</div><div style="font-family:Rajdhani,sans-serif;font-size:18px;color:var(--tx);">Fury đang kiểm tra điểm...</div>';
+  document.body.appendChild(loading);
+  const r=new FileReader();
+  r.onload=async e=>{
+    const b64=e.target.result.split(',')[1];
+    try{
+      let result='';
+      if(gemKey){const res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key='+gemKey,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{role:'user',parts:[{inlineData:{mimeType:'image/jpeg',data:b64}},{text:'Đây có phải là ảnh bài kiểm tra có điểm 10 (hoặc 10/10) không? Chỉ trả lời YES hoặc NO.'}]}]})});const d=await res.json();result=d.candidates[0].content.parts[0].text.trim().toUpperCase();}
+      else if(key){const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:10,messages:[{role:'user',content:[{type:'image',source:{type:'base64',media_type:'image/jpeg',data:b64}},{type:'text',text:'Điểm 10 không? YES/NO'}]}]})});const d=await res.json();result=d.content[0].text.trim().toUpperCase();}
+      loading.remove();
+      if(result.includes('YES'))showCupCelebration();
+      else{const err=document.createElement('div');err.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px;';err.innerHTML='<div style="text-align:center;"><div style="font-size:48px;margin-bottom:12px;">🔎</div><div style="font-family:Rajdhani,sans-serif;font-size:18px;color:var(--tx);margin-bottom:8px;">Chưa thấy điểm 10</div><div style="font-size:13px;color:var(--tx2);margin-bottom:20px;">Chụp rõ hơn nhé!</div><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:var(--red);border:none;border-radius:12px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:15px;padding:12px 28px;cursor:pointer;">Thử lại</button></div>';document.body.appendChild(err);}
+    }catch(e){loading.remove();alert('Lỗi kết nối. Thử lại!');}
+  };r.readAsDataURL(f);
+}
+
+// ═══ ACTIVATE / KEY ═══
+function activate(){
+  const rawG=document.getElementById('gemTA').value;const rawC=document.getElementById('keyTA').value;
+  const gk=rawG.replace(/\s+/g,'').trim();const ck=rawC.replace(/\s+/g,'').trim();
+  const err=document.getElementById('serr');const btn=document.getElementById('actBtn');
+  if(!gk&&!ck){err.textContent='Cần ít nhất 1 API key.';return;}
+  if(gk&&gk.startsWith('sk-ant-')){err.textContent='⚠️ Paste Gemini key (AIzaSy...) vào ô Gemini.';return;}
+  if(ck&&ck.startsWith('AIzaSy')){err.textContent='⚠️ Paste Claude key (sk-ant-...) vào ô Claude.';return;}
+  err.textContent='';btn.disabled=true;btn.textContent='✓ Đang khởi động...';
+  if(gk)localStorage.setItem(K.gem,gk);
+  if(ck)localStorage.setItem(K.api,ck);
+  gemKey=gk;key=ck;
+  setTimeout(()=>{btn.disabled=false;boot();},400);
+}
+function doChangeKey(){
+  localStorage.removeItem(K.api);localStorage.removeItem(K.gem);key='';gemKey='';
+  document.getElementById('app').style.display='none';
+  document.getElementById('setup').style.display='flex';
+  document.getElementById('keyTA').value='';document.getElementById('gemTA').value='';
+  document.getElementById('serr').textContent='';
+  const btn=document.getElementById('actBtn');btn.disabled=false;btn.textContent='🔓 KÍCH HOẠT HỆ THỐNG';
+}
+
+// ═══ BOOT ═══
 function boot(){
   document.getElementById('setup').style.display='none';
-  document.getElementById('app').style.display='flex';
-  updateUI();
-  addAIMsg("Chào Agent Parker! Anh Fury đây. Hệ thống đã sẵn sàng.");
+  const app=document.getElementById('app');app.style.display='flex';app.style.flexDirection='column';
+  const m=M(),today=new Date().toDateString(),yest=new Date(Date.now()-86400000).toDateString();
+  if(m.lastDay!==today){m.streak=m.lastDay===yest?m.streak+1:1;m.lastDay=today;m.sessions+=1;SM(m);}
+  const r=room();document.getElementById('sRoom').textContent=r;document.getElementById('pRoom').textContent=r;
+  initVoice();updateUI();updateXuUI();startChat();
 }
 
-function activate(){
-  const val = document.getElementById('gemTA').value.trim();
-  if(val){ localStorage.setItem(K.gem, val); gemKey=val; boot(); }
+// ═══ SYSTEM PROMPT ═══
+function sys(){
+  const m=M(),lv=Math.floor(m.xp/100)+1;
+  const hw=HW().filter(h=>new Date(h.ts).toDateString()===new Date().toDateString());
+  const hwTxt=hw.length?'\nBÀI TẬP MẸ GỬI HÔM NAY:\n'+hw.map((h,i)=>(i+1)+'. '+h.text).join('\n'):'\nBÀI TẬP: Mẹ chưa gửi hôm nay.';
+  return 'YÊU CẦU BẮT BUỘC: LUÔN LUÔN trả lời bằng TIẾNG VIỆT 100%. Không dùng tiếng Anh trừ khi dạy từ vựng tiếng Anh.\n\nAnh là Nick Fury — Giám đốc S.H.I.E.L.D., huấn luyện Peter Parker (tên thật Trần Xuân Khang, biệt danh Kua) trở thành Spider-Man thực thụ.\n\nTHÔNG TIN VỀ KUA:\n- Lớp 4A1, trường Chu Văn An, Hà Nội. 9-10 tuổi.\n- Hay lười, nóng tính, thích chơi hơn học, dễ xao nhãng.\n- Thể thao giỏi: bơi, bóng đá, cờ vua (mới học cùng ba).\n- Thần tượng ba Tuấn, sợ mẹ Huyền hơn.'+hwTxt+'\n\nTIẾN ĐỘ: Level '+lv+' | '+m.xp+' XP | Streak '+m.streak+' ngày | Missions: '+m.missions+' | Huy hiệu: '+(m.badges.join(', ')||'chưa có')+'\nGhi chú: '+(m.notes.slice(-3).join(' | ')||'Buổi đầu tiên.')+'\n\nCÁCH GIAO TIẾP:\n- Fury xưng "anh", gọi Kua là "em" hoặc "Peter" hoặc "Agent Parker".\n- Giọng anh trai lớn: mạnh mẽ, thách thức, hài hước, gần gũi.\n- Khi lười: "Thật không? Spider-Man thật sự bỏ cuộc vì mấy bài toán à?"\n- Khi đúng nhanh trong 1 phút: "[+XU_NHANH]" thưởng 15 xu.\n- Khi đúng bình thường: "[+XP]" thưởng 5 xu.\n- Tạo nhiệm vụ: "[MISSION:nội dung]"\n- Thưởng huy hiệu: "[BADGE:tên]"\n- NGẮN GỌN. Cuối luôn có câu hỏi/thách thức. KHÔNG nói "con". KHÔNG dùng mày/tao.';
 }
 
+// ═══ API ═══
+async function callGemini(txt,imgs){
+  const parts=[];
+  if(imgs&&imgs.length)imgs.forEach(i=>parts.push({inlineData:{mimeType:'image/jpeg',data:i}}));
+  parts.push({text:txt||'Đây là ảnh bài tập. Hướng dẫn em làm nhé.'});
+  const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key='+gemKey,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({systemInstruction:{parts:[{text:sys()}]},contents:[{role:'user',parts}],generationConfig:{maxOutputTokens:800,temperature:0.9}})});
+  if(!r.ok){const e=await r.json();throw new Error(e.error?.message||'Gemini '+r.status);}
+  const d=await r.json();return d.candidates[0].content.parts[0].text;
+}
+async function callClaude(txt,imgs,m){
+  let content;
+  if(imgs&&imgs.length){content=imgs.map(i=>({type:'image',source:{type:'base64',media_type:'image/jpeg',data:i}}));content.push({type:'text',text:txt||'Đây là '+imgs.length+' trang bài tập. Hướng dẫn nhé.'});}
+  else content=txt;
+  const msgs=[...m.history.slice(0,-1).map(h=>({role:h.role,content:h.content})),{role:'user',content}];
+  const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:800,system:sys(),messages:msgs})});
+  if(!r.ok){const e=await r.json();throw new Error(e.error?.message||'Claude '+r.status);}
+  const d=await r.json();return d.content[0].text;
+}
+async function callAI(txt,imgs){
+  const m=M();
+  m.history.push({role:'user',content:txt||(imgs&&imgs.length?'[Gửi '+imgs.length+' ảnh]':'')});
+  if(m.history.length>40)m.history=m.history.slice(-40);
+  let reply;
+  if(gemKey){try{reply=await callGemini(txt,imgs);}catch(e){console.warn('Gemini err:',e.message);if(!key)throw e;reply=await callClaude(txt,imgs,m);}}
+  else if(key){reply=await callClaude(txt,imgs,m);}
+  else throw new Error('Chưa có API key.');
+  m.history.push({role:'assistant',content:reply});SM(m);return reply;
+}
+
+// ═══ SEND ═══
+async function doSend(){
+  const el=document.getElementById('txtIn'),txt=el.value.trim(),imgs=[...imgArr];
+  if((!txt&&!imgs.length)||busy)return;
+  el.value='';resize(el);clearImg();stopSpeak();
+  addUserMsg(txt,imgs);showTyp();busy=true;document.getElementById('sendBtn').disabled=true;
+  try{const r=await callAI(txt,imgs);hideTyp();addAIMsg(r);speak(r);addXu(2);}
+  catch(e){hideTyp();addRaw('ai','⚠️ Lỗi: '+e.message);}
+  busy=false;document.getElementById('sendBtn').disabled=false;
+}
+function qs(t){document.getElementById('txtIn').value=t;doSend();}
+function onKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();doSend();}}
+function resize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,80)+'px';}
+
+async function startChat(){
+  const m=M();
+  const hw=HW().filter(h=>new Date(h.ts).toDateString()===new Date().toDateString());
+  const hwN=hw.length?'\nMẹ Huyền đã gửi '+hw.length+' bài tập hôm nay.':'';
+  const isFirst=m.sessions<=1;
+  const p=isFirst?'[Lần đầu Kua dùng app. Giới thiệu ngắn kiểu Fury, tạo 3 mission phù hợp lớp 4, hỏi muốn học môn gì.'+hwN+']':'[Kua quay lại, streak '+m.streak+' ngày. Chào ngắn kiểu Fury, nhắc 1 điểm từ buổi trước, hỏi hôm nay học gì.'+hwN+' Tối đa 3 câu.]';
+  showTyp();
+  try{const r=await callAI(p);hideTyp();addAIMsg(r);}
+  catch(e){hideTyp();addRaw('ai','Xin chào Agent Parker! Anh Fury đây. Hôm nay luyện môn gì?');}
+}
+
+// ═══ XP & UI ═══
+function addXP(n){const m=M();m.xp+=n;SM(m);updateUI();}
 function updateUI(){
-  const m = JSON.parse(localStorage.getItem(K.mem)||'{"xp":0}');
-  document.getElementById('xpLbl').textContent=`⚡ ${m.xp}XP`;
-  document.getElementById('xpFill').style.width=(m.xp%100)+'%';
+  const m=M(),lv=Math.floor(m.xp/100)+1,pct=m.xp%100;
+  document.getElementById('xpLbl').textContent='⚡ Lv.'+lv+' '+m.xp+'XP';
+  document.getElementById('xpFill').style.width=pct+'%';
+  document.getElementById('sStreak').textContent=m.streak;
+  document.getElementById('sMission').textContent=m.missions;
+  document.getElementById('sBadge').textContent=m.badges.length;
+}
+function copyRoom(){const r=room();navigator.clipboard.writeText(r).then(()=>{const el=document.getElementById('sRoom');el.textContent='Đã copy!';setTimeout(()=>el.textContent=r,1200);});}
+
+// ═══ RENDER MESSAGES ═══
+function addAIMsg(text){
+  const msgs=document.getElementById('msgs');
+  const wrap=document.createElement('div');wrap.className='msg ai';
+  const av=document.createElement('div');av.className='av';av.textContent='🛡️';
+  const mc=document.createElement('div');mc.className='mc';
+  const mn=document.createElement('div');mn.className='mn';mn.textContent='FURY — S.H.I.E.L.D.';
+  mc.appendChild(mn);parseReply(text,mc);
+  wrap.appendChild(av);wrap.appendChild(mc);msgs.appendChild(wrap);msgs.scrollTop=msgs.scrollHeight;
+}
+function parseReply(text,con){
+  const ms=[];
+  let c=text.replace(/\[MISSION:([^\]]+)\]/g,(_,x)=>{ms.push(x.trim());return'';});
+  const xuN=(c.match(/\[\+XU_NHANH\]/g)||[]).length;
+  c=c.replace(/\[\+XU_NHANH\]/g,'<span style="color:var(--gold);font-weight:700;">🚀+15 xu</span>');
+  const xpN=(c.match(/\[\+XP\]/g)||[]).length;
+  c=c.replace(/\[\+XP\]/g,'<span class="gr">⚡+5 xu</span>');
+  const bm=c.match(/\[BADGE:([^\]]+)\]/);let badge=null;
+  if(bm){badge=bm[1].trim();c=c.replace(/\[BADGE:[^\]]+\]/,'');}
+  const mb=document.createElement('div');mb.className='mb';mb.innerHTML=c.trim().replace(/\n/g,'<br>');con.appendChild(mb);
+  if(ms.length){const card=document.createElement('div');card.className='mcard';card.innerHTML='<div class="mcardtitle">⚡ NHIỆM VỤ HÔM NAY</div>';ms.forEach(t=>{const it=document.createElement('div');it.className='mitem';it.innerHTML='<div class="mchk" onclick="chk(this)">○</div><span>'+t+'</span>';card.appendChild(it);});con.appendChild(card);}
+  if(badge){const m=M();if(!m.badges.includes(badge)){m.badges.push(badge);SM(m);updateUI();const bd=document.createElement('div');bd.className='bdg';bd.innerHTML='<div class="bdgi">🏅</div><div class="bdgn">HUY HIỆU: '+badge.toUpperCase()+'</div>';con.appendChild(bd);}}
+  if(xuN>0){addXu(xuN*15);addXP(xuN*15);}
+  if(xpN>0){addXu(xpN*5);addXP(xpN*10);const m=M();m.missions+=xpN;SM(m);updateUI();}
+}
+function chk(el){el.classList.toggle('done');el.textContent=el.classList.contains('done')?'✓':'○';if(el.classList.contains('done')){addXu(5);const m=M();m.missions+=1;SM(m);updateUI();}}
+function addUserMsg(txt,imgs){
+  const msgs=document.getElementById('msgs');
+  const wrap=document.createElement('div');wrap.className='msg user';
+  const av=document.createElement('div');av.className='av';av.textContent='🕷️';
+  const mc=document.createElement('div');mc.className='mc';
+  const mn=document.createElement('div');mn.className='mn';mn.textContent='Kua — Peter Parker';
+  const mb=document.createElement('div');mb.className='mb';mb.innerHTML=(txt||'').replace(/\n/g,'<br>');
+  if(imgs&&imgs.length){imgs.forEach(i=>{const img=document.createElement('img');img.src='data:image/jpeg;base64,'+i;img.style.cssText='max-width:100%;border-radius:6px;margin-top:6px;opacity:.8;display:block;';mb.appendChild(img);});}
+  mc.appendChild(mn);mc.appendChild(mb);wrap.appendChild(av);wrap.appendChild(mc);msgs.appendChild(wrap);msgs.scrollTop=msgs.scrollHeight;
+}
+function addRaw(role,txt){
+  const msgs=document.getElementById('msgs');
+  const wrap=document.createElement('div');wrap.className='msg '+role;
+  const av=document.createElement('div');av.className='av';av.textContent=role==='ai'?'🛡️':'🕷️';
+  const mc=document.createElement('div');mc.className='mc';
+  const mb=document.createElement('div');mb.className='mb';mb.innerHTML=txt;
+  mc.appendChild(mb);wrap.appendChild(av);wrap.appendChild(mc);msgs.appendChild(wrap);msgs.scrollTop=msgs.scrollHeight;
+}
+let typEl=null;
+function showTyp(){const msgs=document.getElementById('msgs');typEl=document.createElement('div');typEl.className='msg ai';typEl.innerHTML='<div class="av">🛡️</div><div class="mc"><div class="mb"><div class="typing"><span></span><span></span><span></span></div></div></div>';msgs.appendChild(typEl);msgs.scrollTop=msgs.scrollHeight;}
+function hideTyp(){if(typEl){typEl.remove();typEl=null;}}
+
+// ═══ IMAGE ═══
+function onImg(inp){
+  const files=Array.from(inp.files);if(!files.length)return;
+  const prev=document.getElementById('iPrev');prev.style.display='flex';
+  files.forEach(f=>{
+    const r=new FileReader();
+    r.onload=e=>{
+      imgArr.push(e.target.result.split(',')[1]);
+      const img=document.createElement('img');img.src=e.target.result;img.style.cssText='max-height:80px;border-radius:7px;border:1px solid var(--bd);';
+      const wrap=document.createElement('div');wrap.style.cssText='position:relative;display:inline-block;';
+      const rm=document.createElement('button');rm.textContent='✕';rm.style.cssText='position:absolute;top:-5px;right:-5px;background:var(--red);border:none;border-radius:50%;width:16px;height:16px;color:#fff;font-size:9px;cursor:pointer;';
+      const idx=imgArr.length-1;rm.onclick=()=>{imgArr.splice(idx,1);wrap.remove();if(!imgArr.length)prev.style.display='none';};
+      wrap.appendChild(img);wrap.appendChild(rm);prev.appendChild(wrap);
+    };r.readAsDataURL(f);
+  });inp.value='';
+}
+function clearImg(){imgArr=[];const p=document.getElementById('iPrev');p.innerHTML='';p.style.display='none';}
+
+// ═══ VOICE ═══
+function initVoice(){
+  const S=window.SpeechRecognition||window.webkitSpeechRecognition;if(!S)return;
+  SR=new S();SR.lang='vi-VN';SR.continuous=false;SR.interimResults=false;
+  SR.onresult=e=>{document.getElementById('txtIn').value=e.results[0][0].transcript;stopMic();doSend();};
+  SR.onend=()=>stopMic();SR.onerror=()=>stopMic();
+  window.speechSynthesis&&window.speechSynthesis.getVoices();
+}
+function toggleMic(){
+  if(isRec){stopMic();return;}
+  if(!SR){addRaw('ai','⚠️ Dùng Chrome để nhận giọng nói nhé em!');return;}
+  stopSpeak();try{SR.start();}catch(e){return;}
+  isRec=true;document.getElementById('micBtn').classList.add('on');document.getElementById('micBtn').textContent='⏹';
+}
+function stopMic(){try{SR&&SR.stop();}catch(e){}isRec=false;document.getElementById('micBtn').classList.remove('on');document.getElementById('micBtn').textContent='🎤';}
+function speak(text){
+  if(!window.speechSynthesis)return;stopSpeak();
+  const c=text.replace(/\[.*?\]/g,'').replace(/[*_`#<>]/g,'').replace(/\n+/g,' ').trim();if(!c)return;
+  const u=new SpeechSynthesisUtterance(c);u.lang='vi-VN';u.rate=1.0;u.pitch=0.75;
+  const vv=window.speechSynthesis.getVoices();
+  const vi=vv.find(v=>v.lang==='vi-VN'&&!v.name.toLowerCase().includes('female'))||vv.find(v=>v.lang.startsWith('vi'));
+  if(vi)u.voice=vi;
+  u.onstart=()=>document.getElementById('spkEl').classList.add('on');
+  u.onend=u.onerror=()=>document.getElementById('spkEl').classList.remove('on');
+  window.speechSynthesis.speak(u);
+}
+function stopSpeak(){window.speechSynthesis?.cancel();document.getElementById('spkEl').classList.remove('on');}
+
+// ═══ HOMEWORK ═══
+function showParent(){
+  const pin=prompt('Nhập mã PIN của ba/mẹ:');
+  if(!pin)return;
+  if(pin.trim()!==(localStorage.getItem('parent_pin')||'2790')){alert('❌ PIN không đúng!');return;}
+  document.getElementById('parentOL').style.display='flex';renderHW();
+}
+function sendHW(){
+  const txt=document.getElementById('hwTA').value.trim();
+  if(!txt){document.getElementById('hwTA').style.border='1px solid var(--red)';setTimeout(()=>document.getElementById('hwTA').style.border='1px solid var(--bd2)',1500);return;}
+  const hw=HW();hw.unshift({id:Date.now(),ts:Date.now(),text:txt});SHW(hw);
+  document.getElementById('hwTA').value='';renderHW();
+  const btn=document.getElementById('hwBtn');btn.textContent='✓ Đã lưu!';btn.style.background='var(--green)';
+  setTimeout(()=>{btn.textContent='📤 LƯU BÀI TẬP CHO KUA';btn.style.background='var(--blue)';},2000);
+}
+function renderHW(){
+  const hw=HW(),list=document.getElementById('hwList'),now=Date.now();
+  const clean=hw.filter(h=>(now-h.ts)<7*24*3600*1000);if(clean.length!==hw.length)SHW(clean);
+  if(!clean.length){list.innerHTML='<div style="font-size:11px;color:var(--tx3);text-align:center;padding:8px 0;">Chưa có bài nào</div>';return;}
+  list.innerHTML='<div style="font-size:11px;color:var(--tx3);font-family:Rajdhani,sans-serif;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">Đã lưu gần đây</div>'+
+  clean.slice(0,3).map(h=>{const age=Math.round((now-h.ts)/3600000);const isT=new Date(h.ts).toDateString()===new Date().toDateString();return'<div style="background:'+(isT?'rgba(26,107,191,.1)':'var(--s3)')+';border:1px solid '+(isT?'var(--blue2)':'var(--bd)')+';border-radius:8px;padding:10px 12px;margin-bottom:6px;"><div style="font-size:10px;font-weight:600;color:'+(isT?'var(--blue2)':'var(--tx3)')+';font-family:Rajdhani,sans-serif;margin-bottom:5px;">'+(isT?'HÔM NAY':'TRƯỚC ĐÓ')+' · '+(age<1?'Vừa lưu':age+'h trước')+'</div><div style="font-size:12px;color:var(--tx2);white-space:pre-line;line-height:1.6;">'+h.text+'</div></div>';}).join('');
+}
+function showHWInChat(){
+  const hw=HW();const today=hw.filter(h=>new Date(h.ts).toDateString()===new Date().toDateString());
+  if(!hw.length){addRaw('ai','📋 Mẹ chưa gửi bài tập nào. Nhờ mẹ mở app → bấm 👩 → nhập bài tập nhé em!');return;}
+  const show=today.length?today:hw.slice(0,1);
+  let html='<div style="background:rgba(26,107,191,.1);border:1px solid var(--blue2);border-radius:12px;padding:14px;margin-top:4px;"><div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:var(--blue2);margin-bottom:10px;">📋 BÀI TẬP CỦA KUA</div>';
+  show.forEach(h=>{html+='<div style="font-size:13px;color:var(--tx);white-space:pre-line;line-height:1.8;">'+h.text+'</div>';});
+  html+='</div>';
+  const msgs=document.getElementById('msgs');const wrap=document.createElement('div');wrap.className='msg ai';
+  const av=document.createElement('div');av.className='av';av.textContent='🛡️';
+  const mc=document.createElement('div');mc.className='mc';const mn=document.createElement('div');mn.className='mn';mn.textContent='FURY — BÀI TẬP';
+  const mb=document.createElement('div');mb.className='mb';mb.innerHTML=html;
+  mc.appendChild(mn);mc.appendChild(mb);wrap.appendChild(av);wrap.appendChild(mc);msgs.appendChild(wrap);msgs.scrollTop=msgs.scrollHeight;
+  if(today.length)setTimeout(()=>qs('Bài tập hôm nay: '+today[0].text+'. Anh hướng dẫn em bắt đầu từ đâu nhé?'),500);
 }
 
-function addAIMsg(t){
-  const ms = document.getElementById('msgs');
-  const d = document.createElement('div'); d.className='msg';
-  d.innerHTML=`<div class="mb">${t}</div>`;
-  ms.appendChild(d); ms.scrollTop=ms.scrollHeight;
+// ═══ INIT ═══
+window.onload=()=>{
+  setTimeout(animateSlogan,800);
+  // Key đã lưu → chờ user tap splash rồi tự boot
+  // Không boot trước để Kua luôn thấy splash screen
+  const k=localStorage.getItem('sk3');
+  const g=localStorage.getItem('gem3');
+  if(k) key=k;
+  if(g) gemKey=g;
+  if(k||g){
+    // Có key → hiện splash, chờ tap
+  } else {
+    // Chưa có key → sau khi tap splash mới hiện setup
+  }
+};
+</script>
+</body>
+</html><!-- SPLASH SCREEN -->
+<div id="splash" onclick="hideSplash()" style="position:fixed;inset:0;background:#000;z-index:9999;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:32px;padding:40px 24px;cursor:pointer;">
+
+  <!-- Nền lưới nhện mờ -->
+  <svg style="position:absolute;inset:0;width:100%;height:100%;opacity:.04;pointer-events:none;" viewBox="0 0 400 800" preserveAspectRatio="xMidYMid slice">
+    <g stroke="#e8192c" stroke-width="0.5" fill="none">
+      <line x1="200" y1="0" x2="200" y2="800"/>
+      <line x1="0" y1="400" x2="400" y2="400"/>
+      <line x1="0" y1="0" x2="400" y2="800"/>
+      <line x1="400" y1="0" x2="0" y2="800"/>
+      <circle cx="200" cy="400" r="100"/><circle cx="200" cy="400" r="200"/><circle cx="200" cy="400" r="300"/>
+    </g>
+  </svg>
+
+  <!-- VÙNG 1: AVENGERS -->
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px;animation:fadeDown .7s ease .1s both;">
+    <div class="av-ring-fixed"><span class="av-a-fixed">A</span></div>
+    <div style="font-family:'Rajdhani',sans-serif;font-size:16px;letter-spacing:.5em;color:#8a7040;text-transform:uppercase;margin-top:4px;">THE AVENGERS</div>
+  </div>
+
+  <!-- VÙNG 2: SPIDER-KUA -->
+  <div style="display:flex;flex-direction:column;align-items:center;gap:8px;animation:fadeUp .7s ease .35s both;">
+    <div style="font-family:'Rajdhani',sans-serif;font-size:13px;letter-spacing:.6em;color:rgba(255,255,255,.6);text-transform:uppercase;">WELCOME</div>
+    <div class="name-txt-fixed">SPIDER-KUA</div>
+    <div id="sloganTxt" class="shield-txt-fixed">Shield Systems Online. Standing by!</div>
+  </div>
+
+  <!-- VÙNG 3: ICON SPIDER + TAP -->
+  <div style="display:flex;flex-direction:column;align-items:center;gap:14px;animation:fadeUp .7s ease .55s both;">
+    <div class="spider-btn-fixed">
+      <img src="https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/Spider-Man-Logo-PNG-Isolated-HD.png" class="spider-img-new" alt="Spider-Man">
+    </div>
+    <div style="font-family:'Rajdhani',sans-serif;font-size:12px;color:rgba(255,255,255,.3);letter-spacing:.3em;text-transform:uppercase;animation:blink 1.8s ease infinite;">TAP TO BEGIN</div>
+  </div>
+
+</div>
+
+
+<div id="setup">
+  <div class="sbox">
+    <div style="text-align:center;font-size:42px;margin-bottom:10px;">🕷️</div>
+    <div style="font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;color:var(--gold);text-align:center;margin-bottom:4px;">SPIDER-KUA</div>
+    <div style="font-size:12px;color:var(--tx2);text-align:center;margin-bottom:18px;line-height:1.7;">Hệ thống huấn luyện S.H.I.E.L.D.<br>dành cho Peter Parker — Trần Xuân Khang</div>
+    <div class="slbl">Google Gemini API Key <span style="color:var(--green);font-size:11px;">(AI chính — miễn phí)</span></div>
+    <textarea class="sta" id="gemTA" placeholder="AIzaSy...&#10;&#10;Lấy miễn phí tại aistudio.google.com/apikey"></textarea>
+    <div class="slbl">Anthropic Claude API Key <span style="color:var(--tx3);font-size:11px;">(backup — có thể để trống)</span></div>
+    <textarea class="sta" id="keyTA" placeholder="sk-ant-..." style="min-height:65px;"></textarea>
+    <div class="shint">Key lưu trên thiết bị này, không gửi đi đâu khác.<br>Cần ít nhất <strong style="color:var(--green);">1 trong 2 key</strong> để dùng.</div>
+    <button class="sbtn" id="actBtn" onclick="activate()">🔓 KÍCH HOẠT HỆ THỐNG</button>
+    <div class="serr" id="serr"></div>
+    <div style="font-size:11px;color:var(--tx3);text-align:center;margin-top:10px;line-height:1.7;">🔒 Key lưu tự động — từ lần sau vào thẳng không cần nhập lại</div>
+  </div>
+</div>
+
+<!-- ═══ APP ═══ -->
+<div id="app">
+  <div class="hdr">
+    <div class="hlogo">🛡️</div>
+    <div style="flex:1">
+      <div class="htitle">SPIDER-<span>KUA</span></div>
+      <div style="font-size:9px;color:var(--tx3);letter-spacing:.1em;text-transform:uppercase;font-family:'Rajdhani',sans-serif;">S.H.I.E.L.D. TRAINING · LỚP 4A1</div>
+    </div>
+    <div class="xpw">
+      <div class="xpl" id="xpLbl">⚡ 0XP</div>
+      <div class="xpb"><div class="xpf" id="xpFill" style="width:0%"></div></div>
+    </div>
+    <div class="spk" id="spkEl"><div class="spkb"><span></span><span></span><span></span><span></span><span></span></div>Fury</div>
+    <div class="chip" style="color:var(--gold);cursor:pointer;font-size:12px;" onclick="showShop()">🪙 <span class="xu-count">0</span></div>
+    <button class="hbtn" onclick="showParent()">👩</button>
+    <button class="hbtn red" onclick="doChangeKey()">KEY</button>
+  </div>
+
+  <div class="stats">
+    <div class="chip">🔥<div><div class="chipv" id="sStreak">0</div><div class="chipl">Streak</div></div></div>
+    <div class="chip">🕸️<div><div class="chipv" id="sMission">0</div><div class="chipl">Mission</div></div></div>
+    <div class="chip">🏆<div><div class="chipv" id="sBadge">0</div><div class="chipl">Huy hiệu</div></div></div>
+    <div class="chip" style="margin-left:auto;color:var(--gold);cursor:pointer;" onclick="copyRoom()">📱 <span id="sRoom">—</span></div>
+  </div>
+
+  <div class="msgs" id="msgs"></div>
+
+  <div class="ipa">
+    <div class="quick">
+      <button class="qbtn" onclick="qs('Cho anh mission hôm nay')">⚡ Mission</button>
+      <button class="qbtn" onclick="qs('Luyện Toán đi anh')">🔢 Toán</button>
+      <button class="qbtn" onclick="qs('Học Tiếng Việt nào')">📖 TV</button>
+      <button class="qbtn" onclick="qs('Tiếng Anh hôm nay')">🌏 TA</button>
+      <button class="qbtn" onclick="showHWInChat()">📋 Bài mẹ gửi</button>
+      <button class="qbtn" onclick="qs('Em không muốn học đâu')">😴 Lười</button>
+      <button class="qbtn" onclick="showCupUpload()" style="border-color:var(--gold);color:#854F0B;">🏆 Điểm 10</button>
+      <button class="qbtn" onclick="showShop()" style="border-color:var(--gold);color:#854F0B;">🪙 Đổi xu</button>
+    </div>
+    <div class="iprev" id="iPrev"></div>
+    <div class="irow">
+      <div class="ibox">
+        <textarea id="txtIn" rows="1" placeholder="Nói hoặc gõ câu trả lời..." onkeydown="onKey(event)" oninput="resize(this)"></textarea>
+      </div>
+      <div class="abtns">
+        <button class="abtn mic" id="micBtn" onclick="toggleMic()">🎤</button>
+        <label class="abtn imgb">📸<input type="file" accept="image/*" multiple style="display:none" onchange="onImg(this)"></label>
+        <button class="abtn send" id="sendBtn" onclick="doSend()">➤</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PARENT PANEL -->
+<div class="overlay" id="parentOL">
+  <div class="obox">
+    <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+      <div class="otitle">📚 GỬI BÀI TẬP</div>
+      <button onclick="document.getElementById('parentOL').style.display='none'" style="background:transparent;border:1px solid var(--bd);border-radius:7px;color:var(--tx2);padding:4px 10px;cursor:pointer;">✕</button>
+    </div>
+    <div style="font-size:12px;color:var(--tx2);margin-bottom:6px;">Mã phòng: <strong style="color:var(--gold);" id="pRoom">—</strong></div>
+    <div style="font-size:11px;color:var(--tx3);font-family:'Rajdhani',sans-serif;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">Nội dung bài tập hôm nay</div>
+    <textarea id="hwTA" style="width:100%;background:var(--bg);border:1px solid var(--bd2);border-radius:8px;color:var(--tx);font-family:'Nunito',sans-serif;font-size:13px;padding:10px;min-height:140px;outline:none;resize:vertical;margin-bottom:8px;line-height:1.7;" placeholder="Copy nội dung bài tập vào đây...&#10;&#10;VD:&#10;📐 Toán: Trang 45 - Bài 1,2,3&#10;📖 Tiếng Việt: Đọc bài Cây tre VN&#10;🌏 Tiếng Anh: Unit 5 - Bài A,B"></textarea>
+    <button id="hwBtn" onclick="sendHW()" style="background:var(--blue);border:none;border-radius:8px;color:#fff;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:15px;padding:11px;cursor:pointer;width:100%;letter-spacing:.04em;">📤 LƯU BÀI TẬP CHO KUA</button>
+    <div id="hwList" style="margin-top:12px;"></div>
+    <div style="font-size:10px;color:var(--tx3);text-align:center;margin-top:8px;">PIN: 2790 · Kua bấm "Bài mẹ gửi" sẽ thấy</div>
+  </div>
+</div>
+
+<script>
+// ═══ CONFIG ═══
+let key='',gemKey='',busy=false,imgArr=[],SR=null,isRec=false;
+
+// ═══ SPLASH - GEMINI LOGIC ═══
+const SLOGAN_TEXT="Shield Systems Online. Standing by!";
+const SLOGAN_VOICE="Shield systems online. Standing by!";
+
+function animateSlogan(){
+  const el=document.getElementById('sloganTxt');
+  if(!el)return;
+  el.textContent='';let j=0;
+  const iv=setInterval(()=>{
+    if(j<SLOGAN_TEXT.length){el.textContent+=SLOGAN_TEXT[j];j++;}
+    else{clearInterval(iv);playVoice();}
+  },50);
 }
 
-function doSend(){
-  const i = document.getElementById('txtIn'), t = i.value.trim();
-  if(!t || busy) return;
-  i.value = ''; busy = true;
-  setTimeout(() => { addAIMsg("Fury đã nhận báo cáo."); busy = false; }, 1000);
+function playVoice(){
+  if(!window.speechSynthesis)return;
+  window.speechSynthesis.cancel();
+  const u=new SpeechSynthesisUtterance(SLOGAN_VOICE);
+  u.lang='en-US';u.rate=0.85;u.pitch=0.65;
+  const tryPlay=()=>{
+    const vv=window.speechSynthesis.getVoices();
+    const v=vv.find(v=>v.name==='Google US English')
+      ||vv.find(v=>v.lang==='en-US'&&!v.name.toLowerCase().includes('female'))
+      ||vv.find(v=>v.lang.startsWith('en'));
+    if(v)u.voice=v;
+    u.onend=()=>{};
+    window.speechSynthesis.speak(u);
+  };
+  if(window.speechSynthesis.getVoices().length>0)tryPlay();
+  else window.speechSynthesis.onvoiceschanged=()=>{tryPlay();window.speechSynthesis.onvoiceschanged=null;};
 }
 
-window.onload = () => { setTimeout(animateSlogan, 800); };
+function hideSplash(){
+  window.speechSynthesis&&window.speechSynthesis.cancel();
+  const sp=document.getElementById('splash');
+  if(!sp)return;
+  sp.classList.add('hide');
+  setTimeout(()=>{
+    sp.remove();
+    const g=localStorage.getItem(K.gem),c=localStorage.getItem(K.api);
+    if(g)gemKey=g;if(c)key=c;
+    if(g||c)boot();
+    else document.getElementById('setup').style.display='flex';
+  },600);
+}
+
+// ═══ MEMORY ═══
+function M(){return JSON.parse(localStorage.getItem(K.mem)||JSON.stringify({xp:0,streak:0,lastDay:'',missions:0,badges:[],notes:[],history:[],sessions:0}));}
+function SM(m){localStorage.setItem(K.mem,JSON.stringify(m));}
+function HW(){return JSON.parse(localStorage.getItem(K.hw)||'[]');}
+function SHW(v){localStorage.setItem(K.hw,JSON.stringify(v));}
+function room(){let r=localStorage.getItem(K.room);if(!r){r='KUA'+Math.random().toString(36).slice(2,6).toUpperCase();localStorage.setItem(K.room,r);}return r;}
+
+// ═══ XU ═══
+function getXu(){return parseInt(localStorage.getItem(K.xu)||'0');}
+function addXu(n){const nw=getXu()+n;localStorage.setItem(K.xu,nw);updateXuUI();showXuPop(n);}
+function spendXu(n){const cur=getXu();if(cur<n)return false;localStorage.setItem(K.xu,cur-n);updateXuUI();return true;}
+function updateXuUI(){const x=getXu();document.querySelectorAll('.xu-count').forEach(el=>el.textContent=x.toLocaleString('vi-VN'));}
+function showXuPop(n){
+  const p=document.createElement('div');p.textContent='+'+n+' xu 🪙';
+  p.style.cssText='position:fixed;top:52px;left:50%;transform:translateX(-50%);background:var(--gold);color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;padding:4px 14px;border-radius:16px;z-index:9999;pointer-events:none;';
+  document.body.appendChild(p);setTimeout(()=>p.remove(),2000);
+}
+
+// ═══ SHOP ═══
+const REWARDS=[
+  {id:'tv',icon:'📺',name:'Xem tivi sau 10h30',desc:'30 phút tối nay',xu:30},
+  {id:'game',icon:'🎮',name:'Chơi game sau 10h',desc:'30 phút chơi game',xu:50},
+  {id:'toy1',icon:'🧸',name:'Đồ chơi dưới 200k',desc:'Ba mẹ chọn món quà',xu:1000},
+  {id:'toy2',icon:'🎁',name:'Đồ chơi dưới 500k',desc:'Phần thưởng lớn hơn',xu:3000},
+];
+function showShop(){
+  const cur=getXu();const cups=JSON.parse(localStorage.getItem(K.cups)||'[]');
+  const el=document.createElement('div');el.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+  el.innerHTML='<div style="background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:22px;max-width:380px;width:100%;max-height:90vh;overflow-y:auto;">'
+    +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;"><div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:20px;color:var(--gold);">🪙 ĐỔI THƯỞNG</div><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:transparent;border:1px solid var(--bd);border-radius:7px;color:var(--tx2);padding:4px 10px;cursor:pointer;">✕</button></div>'
+    +'<div style="background:var(--s3);border-radius:10px;padding:12px;text-align:center;margin-bottom:16px;"><div style="font-size:11px;color:var(--tx2);margin-bottom:4px;">Xu hiện có</div><div style="font-family:Rajdhani,sans-serif;font-size:28px;font-weight:700;color:var(--gold);">'+cur.toLocaleString('vi-VN')+' 🪙</div><div style="font-size:11px;color:var(--tx3);margin-top:4px;">Cúp điểm 10: '+cups.length+' cái 🏆</div></div>'
+    +REWARDS.map(r=>{const ok=cur>=r.xu;return'<div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:'+(ok?'var(--s2)':'var(--s1)')+';border:1px solid '+(ok?'var(--bd2)':'var(--bd)')+';border-radius:10px;margin-bottom:6px;"><div style="font-size:22px;width:34px;text-align:center;">'+r.icon+'</div><div style="flex:1;"><div style="font-size:13px;color:'+(ok?'var(--tx)':'var(--tx3)')+';">'+r.name+'</div><div style="font-size:11px;color:var(--tx3);">'+r.desc+'</div></div><button onclick="buyReward(\''+r.id+'\','+r.xu+',\''+r.name+'\')" '+(ok?'':'disabled')+' style="background:'+(ok?'var(--gold)':'var(--s3)')+';color:'+(ok?'#000':'var(--tx3)')+';border:none;border-radius:8px;font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;padding:6px 10px;cursor:'+(ok?'pointer':'not-allowed')+';white-space:nowrap;">'+r.xu.toLocaleString('vi-VN')+' xu</button></div>';}).join('')
+    +'<div style="font-size:10px;color:var(--tx3);text-align:center;margin-top:10px;">PIN 2790 để xác nhận</div></div>';
+  document.body.appendChild(el);
+}
+function buyReward(id,xu,name){
+  const pin=prompt('Nhập PIN của ba/mẹ:');
+  if(!pin)return;
+  if(pin.trim()!==(localStorage.getItem('parent_pin')||'2790')){alert('❌ PIN không đúng!');return;}
+  if(!spendXu(xu)){alert('Không đủ xu!');return;}
+  document.querySelector('div[style*="fixed"][style*="88"]')&&document.querySelector('div[style*="fixed"][style*="88"]').remove();
+  const pop=document.createElement('div');pop.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;';
+  pop.innerHTML='<div style="text-align:center;padding:20px;"><div style="font-size:56px;margin-bottom:12px;">🎉</div><div style="font-family:Rajdhani,sans-serif;font-size:22px;font-weight:700;color:var(--green);margin-bottom:8px;">Đổi thưởng thành công!</div><div style="font-size:15px;color:var(--tx);margin-bottom:6px;">'+name+'</div><div style="font-size:13px;color:var(--tx2);margin-bottom:20px;">Còn lại: '+getXu().toLocaleString('vi-VN')+' xu</div><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:var(--green);border:none;border-radius:12px;color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:16px;padding:12px 28px;cursor:pointer;">TUYỆT VỜI!</button></div>';
+  document.body.appendChild(pop);
+}
+
+// ═══ CUP ĐIỂM 10 ═══
+function showCupCelebration(){
+  const el=document.createElement('div');el.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;';
+  el.innerHTML='<div id="cfwrap" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div><div style="text-align:center;position:relative;z-index:2;padding:20px;"><div style="font-size:72px;margin-bottom:12px;animation:bounce .6s infinite alternate;">🏆</div><div style="font-family:Rajdhani,sans-serif;font-size:28px;font-weight:700;color:var(--gold);margin-bottom:8px;">ĐIỂM 10 XUẤT SẮC!</div><div style="font-size:14px;color:var(--tx2);margin-bottom:20px;">Anh Fury tự hào về em lắm!</div><div style="background:var(--gold);color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:22px;padding:10px 28px;border-radius:14px;display:inline-block;margin-bottom:20px;">+200 xu 🪙</div><br><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:transparent;border:2px solid var(--gold);border-radius:12px;color:var(--gold);font-family:Rajdhani,sans-serif;font-weight:700;font-size:16px;padding:10px 28px;cursor:pointer;margin-top:10px;">TIẾP TỤC</button></div>';
+  document.body.appendChild(el);
+  const wrap=el.querySelector('#cfwrap');
+  const colors=['#f5c842','#e8192c','#30d158','#1a6abf','#ff3347','#fff'];
+  for(let i=0;i<60;i++){const c=document.createElement('div');const col=colors[Math.floor(Math.random()*colors.length)];const sz=Math.random()*10+5;c.style.cssText='position:absolute;width:'+sz+'px;height:'+sz+'px;background:'+col+';border-radius:'+(Math.random()>.5?'50%':'2px')+';left:'+Math.random()*100+'%;top:-20px;animation:fall '+(Math.random()*2+2)+'s '+(Math.random()*2)+'s linear infinite;';wrap.appendChild(c);}
+  const st=document.createElement('style');st.textContent='@keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}@keyframes bounce{from{transform:scale(1);}to{transform:scale(1.15);}}';document.head.appendChild(st);
+  addXu(200);
+  const cups=JSON.parse(localStorage.getItem(K.cups)||'[]');cups.push({ts:Date.now()});localStorage.setItem(K.cups,JSON.stringify(cups));
+  updateUI();
+}
+function showCupUpload(){
+  const el=document.createElement('div');el.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+  el.innerHTML='<div style="background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:24px;max-width:360px;width:100%;"><div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:20px;color:var(--gold);text-align:center;margin-bottom:6px;">🏆 NỘP ĐIỂM 10</div><div style="font-size:12px;color:var(--tx2);text-align:center;margin-bottom:18px;">Chụp ảnh bài kiểm tra có điểm 10<br>AI xác nhận → tặng 200 xu!</div><label style="display:block;background:var(--s3);border:2px dashed var(--bd2);border-radius:12px;padding:24px;text-align:center;cursor:pointer;margin-bottom:14px;"><div style="font-size:36px;margin-bottom:8px;">📸</div><div style="font-size:13px;color:var(--tx2);">Chạm để chụp / chọn ảnh</div><input type="file" accept="image/*" style="display:none" onchange="verifyCup(this)"></label><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="width:100%;background:transparent;border:1px solid var(--bd2);border-radius:10px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-size:14px;padding:10px;cursor:pointer;">Huỷ</button></div>';
+  document.body.appendChild(el);
+}
+async function verifyCup(input){
+  const f=input.files[0];if(!f)return;
+  input.closest('div[style*=fixed]').remove();
+  const loading=document.createElement('div');loading.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;';
+  loading.innerHTML='<div style="font-size:48px;margin-bottom:16px;">🔍</div><div style="font-family:Rajdhani,sans-serif;font-size:18px;color:var(--tx);">Fury đang kiểm tra điểm...</div>';
+  document.body.appendChild(loading);
+  const r=new FileReader();
+  r.onload=async e=>{
+    const b64=e.target.result.split(',')[1];
+    try{
+      let result='';
+      if(gemKey){const res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key='+gemKey,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{role:'user',parts:[{inlineData:{mimeType:'image/jpeg',data:b64}},{text:'Đây có phải là ảnh bài kiểm tra có điểm 10 (hoặc 10/10) không? Chỉ trả lời YES hoặc NO.'}]}]})});const d=await res.json();result=d.candidates[0].content.parts[0].text.trim().toUpperCase();}
+      else if(key){const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:10,messages:[{role:'user',content:[{type:'image',source:{type:'base64',media_type:'image/jpeg',data:b64}},{type:'text',text:'Điểm 10 không? YES/NO'}]}]})});const d=await res.json();result=d.content[0].text.trim().toUpperCase();}
+      loading.remove();
+      if(result.includes('YES'))showCupCelebration();
+      else{const err=document.createElement('div');err.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px;';err.innerHTML='<div style="text-align:center;"><div style="font-size:48px;margin-bottom:12px;">🔎</div><div style="font-family:Rajdhani,sans-serif;font-size:18px;color:var(--tx);margin-bottom:8px;">Chưa thấy điểm 10</div><div style="font-size:13px;color:var(--tx2);margin-bottom:20px;">Chụp rõ hơn nhé!</div><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:var(--red);border:none;border-radius:12px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:15px;padding:12px 28px;cursor:pointer;">Thử lại</button></div>';document.body.appendChild(err);}
+    }catch(e){loading.remove();alert('Lỗi kết nối. Thử lại!');}
+  };r.readAsDataURL(f);
+}
+
+// ═══ ACTIVATE / KEY ═══
+function activate(){
+  const rawG=document.getElementById('gemTA').value;const rawC=document.getElementById('keyTA').value;
+  const gk=rawG.replace(/\s+/g,'').trim();const ck=rawC.replace(/\s+/g,'').trim();
+  const err=document.getElementById('serr');const btn=document.getElementById('actBtn');
+  if(!gk&&!ck){err.textContent='Cần ít nhất 1 API key.';return;}
+  if(gk&&gk.startsWith('sk-ant-')){err.textContent='⚠️ Paste Gemini key (AIzaSy...) vào ô Gemini.';return;}
+  if(ck&&ck.startsWith('AIzaSy')){err.textContent='⚠️ Paste Claude key (sk-ant-...) vào ô Claude.';return;}
+  err.textContent='';btn.disabled=true;btn.textContent='✓ Đang khởi động...';
+  if(gk)localStorage.setItem(K.gem,gk);
+  if(ck)localStorage.setItem(K.api,ck);
+  gemKey=gk;key=ck;
+  setTimeout(()=>{btn.disabled=false;boot();},400);
+}
+function doChangeKey(){
+  localStorage.removeItem(K.api);localStorage.removeItem(K.gem);key='';gemKey='';
+  document.getElementById('app').style.display='none';
+  document.getElementById('setup').style.display='flex';
+  document.getElementById('keyTA').value='';document.getElementById('gemTA').value='';
+  document.getElementById('serr').textContent='';
+  const btn=document.getElementById('actBtn');btn.disabled=false;btn.textContent='🔓 KÍCH HOẠT HỆ THỐNG';
+}
+
+// ═══ BOOT ═══
+function boot(){
+  document.getElementById('setup').style.display='none';
+  const app=document.getElementById('app');app.style.display='flex';app.style.flexDirection='column';
+  const m=M(),today=new Date().toDateString(),yest=new Date(Date.now()-86400000).toDateString();
+  if(m.lastDay!==today){m.streak=m.lastDay===yest?m.streak+1:1;m.lastDay=today;m.sessions+=1;SM(m);}
+  const r=room();document.getElementById('sRoom').textContent=r;document.getElementById('pRoom').textContent=r;
+  initVoice();updateUI();updateXuUI();startChat();
+}
+
+// ═══ SYSTEM PROMPT ═══
+function sys(){
+  const m=M(),lv=Math.floor(m.xp/100)+1;
+  const hw=HW().filter(h=>new Date(h.ts).toDateString()===new Date().toDateString());
+  const hwTxt=hw.length?'\nBÀI TẬP MẸ GỬI HÔM NAY:\n'+hw.map((h,i)=>(i+1)+'. '+h.text).join('\n'):'\nBÀI TẬP: Mẹ chưa gửi hôm nay.';
+  return 'YÊU CẦU BẮT BUỘC: LUÔN LUÔN trả lời bằng TIẾNG VIỆT 100%. Không dùng tiếng Anh trừ khi dạy từ vựng tiếng Anh.\n\nAnh là Nick Fury — Giám đốc S.H.I.E.L.D., huấn luyện Peter Parker (tên thật Trần Xuân Khang, biệt danh Kua) trở thành Spider-Man thực thụ.\n\nTHÔNG TIN VỀ KUA:\n- Lớp 4A1, trường Chu Văn An, Hà Nội. 9-10 tuổi.\n- Hay lười, nóng tính, thích chơi hơn học, dễ xao nhãng.\n- Thể thao giỏi: bơi, bóng đá, cờ vua (mới học cùng ba).\n- Thần tượng ba Tuấn, sợ mẹ Huyền hơn.'+hwTxt+'\n\nTIẾN ĐỘ: Level '+lv+' | '+m.xp+' XP | Streak '+m.streak+' ngày | Missions: '+m.missions+' | Huy hiệu: '+(m.badges.join(', ')||'chưa có')+'\nGhi chú: '+(m.notes.slice(-3).join(' | ')||'Buổi đầu tiên.')+'\n\nCÁCH GIAO TIẾP:\n- Fury xưng "anh", gọi Kua là "em" hoặc "Peter" hoặc "Agent Parker".\n- Giọng anh trai lớn: mạnh mẽ, thách thức, hài hước, gần gũi.\n- Khi lười: "Thật không? Spider-Man thật sự bỏ cuộc vì mấy bài toán à?"\n- Khi đúng nhanh trong 1 phút: "[+XU_NHANH]" thưởng 15 xu.\n- Khi đúng bình thường: "[+XP]" thưởng 5 xu.\n- Tạo nhiệm vụ: "[MISSION:nội dung]"\n- Thưởng huy hiệu: "[BADGE:tên]"\n- NGẮN GỌN. Cuối luôn có câu hỏi/thách thức. KHÔNG nói "con". KHÔNG dùng mày/tao.';
+}
+
+// ═══ API ═══
+async function callGemini(txt,imgs){
+  const parts=[];
+  if(imgs&&imgs.length)imgs.forEach(i=>parts.push({inlineData:{mimeType:'image/jpeg',data:i}}));
+  parts.push({text:txt||'Đây là ảnh bài tập. Hướng dẫn em làm nhé.'});
+  const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key='+gemKey,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({systemInstruction:{parts:[{text:sys()}]},contents:[{role:'user',parts}],generationConfig:{maxOutputTokens:800,temperature:0.9}})});
+  if(!r.ok){const e=await r.json();throw new Error(e.error?.message||'Gemini '+r.status);}
+  const d=await r.json();return d.candidates[0].content.parts[0].text;
+}
+async function callClaude(txt,imgs,m){
+  let content;
+  if(imgs&&imgs.length){content=imgs.map(i=>({type:'image',source:{type:'base64',media_type:'image/jpeg',data:i}}));content.push({type:'text',text:txt||'Đây là '+imgs.length+' trang bài tập. Hướng dẫn nhé.'});}
+  else content=txt;
+  const msgs=[...m.history.slice(0,-1).map(h=>({role:h.role,content:h.content})),{role:'user',content}];
+  const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:800,system:sys(),messages:msgs})});
+  if(!r.ok){const e=await r.json();throw new Error(e.error?.message||'Claude '+r.status);}
+  const d=await r.json();return d.content[0].text;
+}
+async function callAI(txt,imgs){
+  const m=M();
+  m.history.push({role:'user',content:txt||(imgs&&imgs.length?'[Gửi '+imgs.length+' ảnh]':'')});
+  if(m.history.length>40)m.history=m.history.slice(-40);
+  let reply;
+  if(gemKey){try{reply=await callGemini(txt,imgs);}catch(e){console.warn('Gemini err:',e.message);if(!key)throw e;reply=await callClaude(txt,imgs,m);}}
+  else if(key){reply=await callClaude(txt,imgs,m);}
+  else throw new Error('Chưa có API key.');
+  m.history.push({role:'assistant',content:reply});SM(m);return reply;
+}
+
+// ═══ SEND ═══
+async function doSend(){
+  const el=document.getElementById('txtIn'),txt=el.value.trim(),imgs=[...imgArr];
+  if((!txt&&!imgs.length)||busy)return;
+  el.value='';resize(el);clearImg();stopSpeak();
+  addUserMsg(txt,imgs);showTyp();busy=true;document.getElementById('sendBtn').disabled=true;
+  try{const r=await callAI(txt,imgs);hideTyp();addAIMsg(r);speak(r);addXu(2);}
+  catch(e){hideTyp();addRaw('ai','⚠️ Lỗi: '+e.message);}
+  busy=false;document.getElementById('sendBtn').disabled=false;
+}
+function qs(t){document.getElementById('txtIn').value=t;doSend();}
+function onKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();doSend();}}
+function resize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,80)+'px';}
+
+async function startChat(){
+  const m=M();
+  const hw=HW().filter(h=>new Date(h.ts).toDateString()===new Date().toDateString());
+  const hwN=hw.length?'\nMẹ Huyền đã gửi '+hw.length+' bài tập hôm nay.':'';
+  const isFirst=m.sessions<=1;
+  const p=isFirst?'[Lần đầu Kua dùng app. Giới thiệu ngắn kiểu Fury, tạo 3 mission phù hợp lớp 4, hỏi muốn học môn gì.'+hwN+']':'[Kua quay lại, streak '+m.streak+' ngày. Chào ngắn kiểu Fury, nhắc 1 điểm từ buổi trước, hỏi hôm nay học gì.'+hwN+' Tối đa 3 câu.]';
+  showTyp();
+  try{const r=await callAI(p);hideTyp();addAIMsg(r);}
+  catch(e){hideTyp();addRaw('ai','Xin chào Agent Parker! Anh Fury đây. Hôm nay luyện môn gì?');}
+}
+
+// ═══ XP & UI ═══
+function addXP(n){const m=M();m.xp+=n;SM(m);updateUI();}
+function updateUI(){
+  const m=M(),lv=Math.floor(m.xp/100)+1,pct=m.xp%100;
+  document.getElementById('xpLbl').textContent='⚡ Lv.'+lv+' '+m.xp+'XP';
+  document.getElementById('xpFill').style.width=pct+'%';
+  document.getElementById('sStreak').textContent=m.streak;
+  document.getElementById('sMission').textContent=m.missions;
+  document.getElementById('sBadge').textContent=m.badges.length;
+}
+function copyRoom(){const r=room();navigator.clipboard.writeText(r).then(()=>{const el=document.getElementById('sRoom');el.textContent='Đã copy!';setTimeout(()=>el.textContent=r,1200);});}
+
+// ═══ RENDER MESSAGES ═══
+function addAIMsg(text){
+  const msgs=document.getElementById('msgs');
+  const wrap=document.createElement('div');wrap.className='msg ai';
+  const av=document.createElement('div');av.className='av';av.textContent='🛡️';
+  const mc=document.createElement('div');mc.className='mc';
+  const mn=document.createElement('div');mn.className='mn';mn.textContent='FURY — S.H.I.E.L.D.';
+  mc.appendChild(mn);parseReply(text,mc);
+  wrap.appendChild(av);wrap.appendChild(mc);msgs.appendChild(wrap);msgs.scrollTop=msgs.scrollHeight;
+}
+function parseReply(text,con){
+  const ms=[];
+  let c=text.replace(/\[MISSION:([^\]]+)\]/g,(_,x)=>{ms.push(x.trim());return'';});
+  const xuN=(c.match(/\[\+XU_NHANH\]/g)||[]).length;
+  c=c.replace(/\[\+XU_NHANH\]/g,'<span style="color:var(--gold);font-weight:700;">🚀+15 xu</span>');
+  const xpN=(c.match(/\[\+XP\]/g)||[]).length;
+  c=c.replace(/\[\+XP\]/g,'<span class="gr">⚡+5 xu</span>');
+  const bm=c.match(/\[BADGE:([^\]]+)\]/);let badge=null;
+  if(bm){badge=bm[1].trim();c=c.replace(/\[BADGE:[^\]]+\]/,'');}
+  const mb=document.createElement('div');mb.className='mb';mb.innerHTML=c.trim().replace(/\n/g,'<br>');con.appendChild(mb);
+  if(ms.length){const card=document.createElement('div');card.className='mcard';card.innerHTML='<div class="mcardtitle">⚡ NHIỆM VỤ HÔM NAY</div>';ms.forEach(t=>{const it=document.createElement('div');it.className='mitem';it.innerHTML='<div class="mchk" onclick="chk(this)">○</div><span>'+t+'</span>';card.appendChild(it);});con.appendChild(card);}
+  if(badge){const m=M();if(!m.badges.includes(badge)){m.badges.push(badge);SM(m);updateUI();const bd=document.createElement('div');bd.className='bdg';bd.innerHTML='<div class="bdgi">🏅</div><div class="bdgn">HUY HIỆU: '+badge.toUpperCase()+'</div>';con.appendChild(bd);}}
+  if(xuN>0){addXu(xuN*15);addXP(xuN*15);}
+  if(xpN>0){addXu(xpN*5);addXP(xpN*10);const m=M();m.missions+=xpN;SM(m);updateUI();}
+}
+function chk(el){el.classList.toggle('done');el.textContent=el.classList.contains('done')?'✓':'○';if(el.classList.contains('done')){addXu(5);const m=M();m.missions+=1;SM(m);updateUI();}}
+function addUserMsg(txt,imgs){
+  const msgs=document.getElementById('msgs');
+  const wrap=document.createElement('div');wrap.className='msg user';
+  const av=document.createElement('div');av.className='av';av.textContent='🕷️';
+  const mc=document.createElement('div');mc.className='mc';
+  const mn=document.createElement('div');mn.className='mn';mn.textContent='Kua — Peter Parker';
+  const mb=document.createElement('div');mb.className='mb';mb.innerHTML=(txt||'').replace(/\n/g,'<br>');
+  if(imgs&&imgs.length){imgs.forEach(i=>{const img=document.createElement('img');img.src='data:image/jpeg;base64,'+i;img.style.cssText='max-width:100%;border-radius:6px;margin-top:6px;opacity:.8;display:block;';mb.appendChild(img);});}
+  mc.appendChild(mn);mc.appendChild(mb);wrap.appendChild(av);wrap.appendChild(mc);msgs.appendChild(wrap);msgs.scrollTop=msgs.scrollHeight;
+}
+function addRaw(role,txt){
+  const msgs=document.getElementById('msgs');
+  const wrap=document.createElement('div');wrap.className='msg '+role;
+  const av=document.createElement('div');av.className='av';av.textContent=role==='ai'?'🛡️':'🕷️';
+  const mc=document.createElement('div');mc.className='mc';
+  const mb=document.createElement('div');mb.className='mb';mb.innerHTML=txt;
+  mc.appendChild(mb);wrap.appendChild(av);wrap.appendChild(mc);msgs.appendChild(wrap);msgs.scrollTop=msgs.scrollHeight;
+}
+let typEl=null;
+function showTyp(){const msgs=document.getElementById('msgs');typEl=document.createElement('div');typEl.className='msg ai';typEl.innerHTML='<div class="av">🛡️</div><div class="mc"><div class="mb"><div class="typing"><span></span><span></span><span></span></div></div></div>';msgs.appendChild(typEl);msgs.scrollTop=msgs.scrollHeight;}
+function hideTyp(){if(typEl){typEl.remove();typEl=null;}}
+
+// ═══ IMAGE ═══
+function onImg(inp){
+  const files=Array.from(inp.files);if(!files.length)return;
+  const prev=document.getElementById('iPrev');prev.style.display='flex';
+  files.forEach(f=>{
+    const r=new FileReader();
+    r.onload=e=>{
+      imgArr.push(e.target.result.split(',')[1]);
+      const img=document.createElement('img');img.src=e.target.result;img.style.cssText='max-height:80px;border-radius:7px;border:1px solid var(--bd);';
+      const wrap=document.createElement('div');wrap.style.cssText='position:relative;display:inline-block;';
+      const rm=document.createElement('button');rm.textContent='✕';rm.style.cssText='position:absolute;top:-5px;right:-5px;background:var(--red);border:none;border-radius:50%;width:16px;height:16px;color:#fff;font-size:9px;cursor:pointer;';
+      const idx=imgArr.length-1;rm.onclick=()=>{imgArr.splice(idx,1);wrap.remove();if(!imgArr.length)prev.style.display='none';};
+      wrap.appendChild(img);wrap.appendChild(rm);prev.appendChild(wrap);
+    };r.readAsDataURL(f);
+  });inp.value='';
+}
+function clearImg(){imgArr=[];const p=document.getElementById('iPrev');p.innerHTML='';p.style.display='none';}
+
+// ═══ VOICE ═══
+function initVoice(){
+  const S=window.SpeechRecognition||window.webkitSpeechRecognition;if(!S)return;
+  SR=new S();SR.lang='vi-VN';SR.continuous=false;SR.interimResults=false;
+  SR.onresult=e=>{document.getElementById('txtIn').value=e.results[0][0].transcript;stopMic();doSend();};
+  SR.onend=()=>stopMic();SR.onerror=()=>stopMic();
+  window.speechSynthesis&&window.speechSynthesis.getVoices();
+}
+function toggleMic(){
+  if(isRec){stopMic();return;}
+  if(!SR){addRaw('ai','⚠️ Dùng Chrome để nhận giọng nói nhé em!');return;}
+  stopSpeak();try{SR.start();}catch(e){return;}
+  isRec=true;document.getElementById('micBtn').classList.add('on');document.getElementById('micBtn').textContent='⏹';
+}
+function stopMic(){try{SR&&SR.stop();}catch(e){}isRec=false;document.getElementById('micBtn').classList.remove('on');document.getElementById('micBtn').textContent='🎤';}
+function speak(text){
+  if(!window.speechSynthesis)return;stopSpeak();
+  const c=text.replace(/\[.*?\]/g,'').replace(/[*_`#<>]/g,'').replace(/\n+/g,' ').trim();if(!c)return;
+  const u=new SpeechSynthesisUtterance(c);u.lang='vi-VN';u.rate=1.0;u.pitch=0.75;
+  const vv=window.speechSynthesis.getVoices();
+  const vi=vv.find(v=>v.lang==='vi-VN'&&!v.name.toLowerCase().includes('female'))||vv.find(v=>v.lang.startsWith('vi'));
+  if(vi)u.voice=vi;
+  u.onstart=()=>document.getElementById('spkEl').classList.add('on');
+  u.onend=u.onerror=()=>document.getElementById('spkEl').classList.remove('on');
+  window.speechSynthesis.speak(u);
+}
+function stopSpeak(){window.speechSynthesis?.cancel();document.getElementById('spkEl').classList.remove('on');}
+
+// ═══ HOMEWORK ═══
+function showParent(){
+  const pin=prompt('Nhập mã PIN của ba/mẹ:');
+  if(!pin)return;
+  if(pin.trim()!==(localStorage.getItem('parent_pin')||'2790')){alert('❌ PIN không đúng!');return;}
+  document.getElementById('parentOL').style.display='flex';renderHW();
+}
+function sendHW(){
+  const txt=document.getElementById('hwTA').value.trim();
+  if(!txt){document.getElementById('hwTA').style.border='1px solid var(--red)';setTimeout(()=>document.getElementById('hwTA').style.border='1px solid var(--bd2)',1500);return;}
+  const hw=HW();hw.unshift({id:Date.now(),ts:Date.now(),text:txt});SHW(hw);
+  document.getElementById('hwTA').value='';renderHW();
+  const btn=document.getElementById('hwBtn');btn.textContent='✓ Đã lưu!';btn.style.background='var(--green)';
+  setTimeout(()=>{btn.textContent='📤 LƯU BÀI TẬP CHO KUA';btn.style.background='var(--blue)';},2000);
+}
+function renderHW(){
+  const hw=HW(),list=document.getElementById('hwList'),now=Date.now();
+  const clean=hw.filter(h=>(now-h.ts)<7*24*3600*1000);if(clean.length!==hw.length)SHW(clean);
+  if(!clean.length){list.innerHTML='<div style="font-size:11px;color:var(--tx3);text-align:center;padding:8px 0;">Chưa có bài nào</div>';return;}
+  list.innerHTML='<div style="font-size:11px;color:var(--tx3);font-family:Rajdhani,sans-serif;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">Đã lưu gần đây</div>'+
+  clean.slice(0,3).map(h=>{const age=Math.round((now-h.ts)/3600000);const isT=new Date(h.ts).toDateString()===new Date().toDateString();return'<div style="background:'+(isT?'rgba(26,107,191,.1)':'var(--s3)')+';border:1px solid '+(isT?'var(--blue2)':'var(--bd)')+';border-radius:8px;padding:10px 12px;margin-bottom:6px;"><div style="font-size:10px;font-weight:600;color:'+(isT?'var(--blue2)':'var(--tx3)')+';font-family:Rajdhani,sans-serif;margin-bottom:5px;">'+(isT?'HÔM NAY':'TRƯỚC ĐÓ')+' · '+(age<1?'Vừa lưu':age+'h trước')+'</div><div style="font-size:12px;color:var(--tx2);white-space:pre-line;line-height:1.6;">'+h.text+'</div></div>';}).join('');
+}
+function showHWInChat(){
+  const hw=HW();const today=hw.filter(h=>new Date(h.ts).toDateString()===new Date().toDateString());
+  if(!hw.length){addRaw('ai','📋 Mẹ chưa gửi bài tập nào. Nhờ mẹ mở app → bấm 👩 → nhập bài tập nhé em!');return;}
+  const show=today.length?today:hw.slice(0,1);
+  let html='<div style="background:rgba(26,107,191,.1);border:1px solid var(--blue2);border-radius:12px;padding:14px;margin-top:4px;"><div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:var(--blue2);margin-bottom:10px;">📋 BÀI TẬP CỦA KUA</div>';
+  show.forEach(h=>{html+='<div style="font-size:13px;color:var(--tx);white-space:pre-line;line-height:1.8;">'+h.text+'</div>';});
+  html+='</div>';
+  const msgs=document.getElementById('msgs');const wrap=document.createElement('div');wrap.className='msg ai';
+  const av=document.createElement('div');av.className='av';av.textContent='🛡️';
+  const mc=document.createElement('div');mc.className='mc';const mn=document.createElement('div');mn.className='mn';mn.textContent='FURY — BÀI TẬP';
+  const mb=document.createElement('div');mb.className='mb';mb.innerHTML=html;
+  mc.appendChild(mn);mc.appendChild(mb);wrap.appendChild(av);wrap.appendChild(mc);msgs.appendChild(wrap);msgs.scrollTop=msgs.scrollHeight;
+  if(today.length)setTimeout(()=>qs('Bài tập hôm nay: '+today[0].text+'. Anh hướng dẫn em bắt đầu từ đâu nhé?'),500);
+}
+
+// ═══ INIT ═══
+window.onload=()=>{
+  setTimeout(animateSlogan,800);
+  // Key đã lưu → chờ user tap splash rồi tự boot
+  // Không boot trước để Kua luôn thấy splash screen
+  const k=localStorage.getItem('sk3');
+  const g=localStorage.getItem('gem3');
+  if(k) key=k;
+  if(g) gemKey=g;
+  if(k||g){
+    // Có key → hiện splash, chờ tap
+  } else {
+    // Chưa có key → sau khi tap splash mới hiện setup
+  }
+};
 </script>
 </body>
 </html>
