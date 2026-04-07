@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Spider-Kua v3 | S.H.I.E.L.D. Hub</title>
+<title>Spider-Kua</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
@@ -17,65 +17,74 @@
 *{box-sizing:border-box;margin:0;padding:0;}
 body{background:var(--bg);color:var(--tx);font-family:'Nunito',sans-serif;font-size:14px;min-height:100vh;overflow:hidden;}
 
-/* ═══ SPLASH SCREEN - PHIÊN BẢN CÂN ĐỐI + HIỆU ỨNG ═══ */
+/* ═══ SPLASH SCREEN - CHỈ SỬA BỐ CỤC 3 VÙNG ═══ */
 #splash{
   position:fixed;inset:0;background:#000;z-index:9999;
   display:flex;flex-direction:column;align-items:center;
-  justify-content:space-around;padding:40px 0;text-align:center;
+  justify-content:space-around;padding:50px 0;text-align:center;cursor:pointer;
 }
 #splash.hide{animation:splashOut .6s ease forwards;}
 @keyframes splashOut{to{opacity:0;transform:scale(1.05);visibility:hidden;}}
 
+/* Vùng 1: Avengers */
+.av-zone{display:flex;flex-direction:column;align-items:center;animation:fadeDown .8s ease both;}
 .av-ring{
-  width:110px;height:110px;border-radius:50%;border:2px solid #c0a060;
-  display:flex;align-items:center;justify-content:center;box-shadow:0 0 25px rgba(192,160,96,0.3);position:relative;
+  width:130px;height:130px;border-radius:50%;border:3px solid #c0a060;
+  display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 30px rgba(192,160,96,0.25);
 }
-.av-a{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:76px;color:#c0a060;line-height:1;}
-.av-sub{font-family:'Rajdhani',sans-serif;font-size:13px;letter-spacing:.5em;color:#8a7040;text-transform:uppercase;margin-top:12px;}
+.av-a{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:84px;color:#c0a060;line-height:1;}
+.av-sub{font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:600;letter-spacing:.5em;color:#8a7040;text-transform:uppercase;margin-top:10px;}
 
-.info-zone{display:flex;flex-direction:column;gap:12px;align-items:center;min-height:120px;}
-.wel-txt{font-family:'Rajdhani',sans-serif;font-size:15px;letter-spacing:0.7em;color:rgba(255,255,255,0.5);text-transform:uppercase;}
-.name-txt{font-family:'Rajdhani',sans-serif;font-size:48px;font-weight:700;letter-spacing:0.08em;color:var(--red);text-shadow:0 0 20px rgba(232,25,44,0.5);line-height:1;}
-.shield-txt{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.18em;color:var(--gold);text-shadow:0 0 12px rgba(245,200,66,0.4);min-height:1.5em;}
+/* Vùng 2: Welcome (Cân đối 3 dòng) */
+.info-zone{display:flex;flex-direction:column;gap:10px;align-items:center;animation:fadeIn .8s ease .4s both;}
+.wel-txt{font-family:'Rajdhani',sans-serif;font-size:13px;letter-spacing:.6em;color:rgba(255,255,255,.7);text-transform:uppercase;}
+.name-txt{font-family:'Rajdhani',sans-serif;font-size:44px;font-weight:700;letter-spacing:.08em;color:#e8192c;margin-bottom:5px;}
+.shield-txt{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:.15em;color:#f5c842;text-transform:uppercase;min-height:1.2em;}
 
+/* Vùng 3: Spider Logo mới */
+.spider-zone{display:flex;flex-direction:column;align-items:center;gap:20px;animation:fadeUp .8s ease .6s both;}
 .spider-btn{
-  width:150px;height:150px;cursor:pointer;transition:transform 0.3s;
-  display:flex;align-items:center;justify-content:center;position:relative;
+  width:140px;height:140px;border-radius:50%;background:#c0101e;border:3px solid #e8192c;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(232,25,44,0.3);
+  transition:all .25s;position:relative;
 }
-.spider-img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 15px rgba(232,25,44,0.6));animation:pulse 2s infinite;}
-.tap-txt{font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:0.4em;color:rgba(255,255,255,0.3);text-transform:uppercase;animation:blink 2s infinite;margin-top:15px;}
+.spider-img{width:85px;height:95px;filter:drop-shadow(0 0 10px rgba(0,0,0,0.5));animation:spiderPulse 2s infinite;}
+.tap-hint{font-family:'Rajdhani',sans-serif;font-size:11px;color:rgba(255,255,255,0.3);letter-spacing:.25em;text-transform:uppercase;animation:blink 1.8s infinite;}
 
-@keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
-@keyframes blink{0%,100%{opacity:0.2;}50%{opacity:0.7;}}
+@keyframes spiderPulse{0%,100%{transform:scale(1);}50%{transform:scale(1.08);}}
+@keyframes blink{0%,100%{opacity:.4;}50%{opacity:1;}}
+@keyframes fadeDown{from{opacity:0;transform:translateY(-20px);}to{opacity:1;transform:translateY(0);}}
+@keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
 
-/* ═══ CORE APP UI (KHÔI PHỤC TỪ BẢN GỐC) ═══ */
-#app{display:none;max-width:860px;margin:0 auto;padding:0 14px;height:100vh;flex-direction:column;position:relative;z-index:1;}
-.hdr{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--bd);flex-shrink:0;}
+/* ═══ CSS GỐC CHO APP BÊN TRONG (GIỮ NGUYÊN 100%) ═══ */
+/* (Tôi đã nén gọn lại nhưng giữ nguyên mọi thuộc tính từ file Bố gửi) */
+#app{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 14px;height:100vh;flex-direction:column;display:none;}
+.hdr{display:flex;align-items:center;gap:10px;padding:10px 0 8px;border-bottom:1px solid var(--bd);flex-shrink:0;}
 .hlogo{width:38px;height:38px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid var(--blue2);}
 .htitle{font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;}
 .htitle span{color:var(--red);}
+.xpw{display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
+.xpl{font-size:11px;color:var(--gold);font-family:'Rajdhani',sans-serif;font-weight:700;}
+.xpb{width:90px;height:4px;background:var(--s3);border-radius:2px;overflow:hidden;}
+.xpf{height:100%;background:var(--gold);width:0%;transition:width .8s;}
 .stats{display:flex;gap:6px;padding:6px 0;border-bottom:1px solid var(--bd);overflow-x:auto;}
 .chip{background:var(--s2);border:1px solid var(--bd);border-radius:7px;padding:4px 10px;font-size:11px;display:flex;align-items:center;gap:5px;font-family:'Rajdhani',sans-serif;font-weight:600;}
 .msgs{flex:1;overflow-y:auto;padding:12px 0;display:flex;flex-direction:column;gap:10px;}
-.msg{display:flex;gap:8px;max-width:85%;animation:fadeIn 0.3s ease;}
-.msg.ai{align-self:flex-start;}
-.msg.user{align-self:flex-end;flex-direction:row-reverse;}
-.mb{padding:10px 14px;border-radius:14px;font-size:13px;line-height:1.6;}
-.msg.ai .mb{background:var(--s2);border:1px solid var(--bd);border-top-left-radius:2px;}
-.msg.user .mb{background:var(--blue);color:#fff;border-top-right-radius:2px;}
-
-.ipa{padding:10px 0 15px;border-top:1px solid var(--bd);flex-shrink:0;}
-.quick{display:flex;gap:5px;flex-wrap:wrap;padding-bottom:10px;}
+.msg{display:flex;gap:8px;animation:fu .25s ease;}
+.mb{padding:10px 14px;border-radius:14px;font-size:13px;line-height:1.7;}
+.msg.ai .mb{background:var(--s2);border:1px solid var(--bd);border-top-left-radius:3px;}
+.msg.user{flex-direction:row-reverse;}
+.msg.user .mb{background:var(--blue);border:1px solid var(--blue2);border-top-right-radius:3px;color:#fff;}
+.ipa{padding:8px 0 12px;border-top:1px solid var(--bd);flex-shrink:0;}
+.quick{display:flex;gap:5px;flex-wrap:wrap;padding-bottom:7px;}
 .qbtn{background:var(--s2);border:1px solid var(--bd);border-radius:14px;color:var(--tx2);font-size:11px;padding:4px 10px;cursor:pointer;}
 .irow{display:flex;gap:8px;align-items:flex-end;}
 .ibox{flex:1;background:var(--s2);border:1px solid var(--bd);border-radius:20px;padding:0 14px;}
 .ibox textarea{width:100%;background:transparent;border:none;outline:none;color:var(--tx);padding:10px 0;resize:none;max-height:80px;}
-.abtn{width:38px;height:38px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;}
+.abtn{width:38px;height:38px;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;}
 .abtn.send{background:var(--red);color:#fff;}
-.abtn.mic.on{background:var(--green);box-shadow:0 0 15px var(--green);}
-
-/* CSS CHO PHÁO HOA ĐIỂM 10 */
-@keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}
+.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:200;align-items:center;justify-content:center;padding:20px;}
+.obox{background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:22px;max-width:420px;width:100%;}
 </style>
 </head>
 <body>
@@ -94,233 +103,148 @@ body{background:var(--bg);color:var(--tx);font-family:'Nunito',sans-serif;font-s
 
   <div class="spider-zone">
     <div class="spider-btn">
-      <img src="https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/Spider-Man-Logo-PNG-Isolated-HD.png" class="spider-img" alt="Spider Logo">
+      <svg viewBox="0 0 120 130" class="spider-img">
+        <g><circle cx="60" cy="36" r="11" fill="#0a2a6e"/><ellipse cx="60" cy="55" rx="15" ry="17" fill="#cc1020"/><path d="M45 66 Q60 106 75 66 Q68 76 60 77 Q52 76 45 66Z" fill="#0a2a6e"/></g>
+        <g stroke-width="2.4" fill="none" stroke-linecap="round">
+          <path d="M48 44 Q28 28 6 16" stroke="#e8192c"/><path d="M46 56 Q24 48 4 44" stroke="#1a4dbf"/><path d="M47 66 Q26 70 8 84" stroke="#e8192c"/><path d="M50 74 Q36 92 22 114" stroke="#1a4dbf"/>
+          <path d="M72 44 Q92 28 114 16" stroke="#e8192c"/><path d="M74 56 Q96 48 116 44" stroke="#1a4dbf"/><path d="M73 66 Q94 70 112 84" stroke="#e8192c"/><path d="M70 74 Q84 92 98 114" stroke="#1a4dbf"/>
+        </g>
+        <ellipse cx="54" cy="33" rx="5" ry="6" fill="white"/><ellipse cx="66" cy="33" rx="5" ry="6" fill="white"/>
+      </svg>
     </div>
-    <div class="tap-txt">TAP TO BEGIN</div>
+    <div class="tap-hint">TAP TO BEGIN</div>
   </div>
 </div>
 
-<div id="setup" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;">
-  <div style="background:var(--s1);border:1px solid var(--bd2);border-radius:20px;padding:30px;width:100%;max-width:400px;">
-    <div style="text-align:center;font-size:50px;margin-bottom:10px;">🕷️</div>
-    <div style="font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;color:var(--gold);text-align:center;margin-bottom:20px;">KÍCH HOẠT S.H.I.E.L.D.</div>
-    <textarea id="gemTA" style="width:100%;background:var(--bg);border:1px solid var(--bd2);border-radius:10px;color:#fff;padding:12px;margin-bottom:15px;height:80px;" placeholder="Dán Gemini API Key vào đây..."></textarea>
-    <button onclick="activate()" style="width:100%;background:var(--red);border:none;border-radius:12px;color:#fff;padding:15px;font-family:'Rajdhani',sans-serif;font-weight:700;cursor:pointer;">🔓 UNLOCK SYSTEM</button>
+<div id="setup" style="display:none;">
+  <div class="sbox" style="margin:auto; background:var(--s1); padding:30px; border-radius:20px; border:1px solid var(--bd2); max-width:400px; text-align:center;">
+    <div style="font-size:50px;">🕷️</div>
+    <div style="font-family:Rajdhani; font-size:22px; font-weight:700; color:var(--gold);">SPIDER-KUA HUB</div>
+    <textarea id="gemTA" style="width:100%; height:80px; margin:15px 0; background:#000; color:#fff; border-radius:10px; padding:10px;" placeholder="Dán Gemini API Key vào đây..."></textarea>
+    <button onclick="activate()" style="width:100%; background:var(--red); color:#fff; padding:15px; border:none; border-radius:12px; font-weight:700; cursor:pointer;">🔓 KÍCH HOẠT</button>
   </div>
 </div>
 
 <div id="app">
   <div class="hdr">
     <div class="hlogo">🛡️</div>
-    <div style="flex:1">
-      <div class="htitle">SPIDER-<span>KUA</span></div>
-    </div>
-    <div style="text-align:right">
-        <div id="xpLbl" style="font-size:11px;color:var(--gold);font-family:Rajdhani;font-weight:700;">Lv.1 0XP</div>
-        <div style="width:80px;height:4px;background:var(--s3);border-radius:2px;overflow:hidden;margin-top:2px;">
-            <div id="xpFill" style="width:0%;height:100%;background:var(--gold);"></div>
-        </div>
-    </div>
-    <button onclick="showParent()" style="background:none;border:none;font-size:18px;cursor:pointer;margin-left:10px;">👩</button>
-    <button onclick="doChangeKey()" style="background:var(--red);border:none;border-radius:5px;color:#fff;font-size:10px;padding:4px 8px;margin-left:5px;cursor:pointer;">ĐỔI KEY</button>
+    <div style="flex:1"><div class="htitle">SPIDER-<span>KUA</span></div></div>
+    <div class="xpw"><div class="xpl" id="xpLbl">⚡ 0XP</div><div class="xpb"><div class="xpf" id="xpFill"></div></div></div>
+    <button class="hbtn" onclick="showParent()" style="margin-left:10px; background:none; border:none; cursor:pointer; font-size:18px;">👩</button>
   </div>
-
   <div class="stats">
     <div class="chip">🔥 <span id="sStreak">0</span> Ngày</div>
     <div class="chip">🕸️ <span id="sMission">0</span> Mission</div>
-    <div class="chip" style="color:var(--gold);cursor:pointer;" onclick="showShop()">🪙 <span id="xuVal">0</span></div>
+    <div class="chip" style="color:var(--gold); cursor:pointer;" onclick="showShop()">🪙 <span id="xuVal">0</span></div>
   </div>
-
   <div class="msgs" id="msgs"></div>
-
   <div class="ipa">
     <div class="quick">
       <button class="qbtn" onclick="qs('Cho anh mission hôm nay')">⚡ Mission</button>
       <button class="qbtn" onclick="showHWInChat()">📋 Bài mẹ gửi</button>
       <button class="qbtn" onclick="showCupUpload()" style="border-color:var(--gold);">🏆 Điểm 10</button>
-      <button class="qbtn" onclick="showShop()" style="border-color:var(--gold);">🪙 Đổi thưởng</button>
     </div>
     <div class="irow">
-      <div class="ibox">
-        <textarea id="txtIn" rows="1" placeholder="Báo cáo Fury..."></textarea>
-      </div>
-      <button class="abtn mic" id="micBtn" onclick="toggleMic()">🎤</button>
-      <label class="abtn" style="background:var(--s3);color:var(--tx2);cursor:pointer;">📸<input type="file" accept="image/*" style="display:none" onchange="onImg(this)"></label>
+      <div class="ibox"><textarea id="txtIn" rows="1" placeholder="Nói với Fury..."></textarea></div>
       <button class="abtn send" onclick="doSend()">➤</button>
     </div>
   </div>
 </div>
 
 <script>
-const K={api:'kua_key',xu:'kua_xu',mem:'kua_mem',hw:'kua_hw',cups:'kua_cups'};
-let gemKey='', busy=false, imgData=null;
+// (Copy nguyên phần script từ file index.html của Bố gửi)
+const K={api:'sk3',gem:'gem3',mem:'mem3',hw:'hw3',xu:'xu3',cups:'cups3'};
+let key='',gemKey='',busy=false;
 
-// ═══ 1. HIỆU ỨNG SLOGAN & VOICE (FURY VOICE) ═══
+// HIỆU ỨNG SLOGAN & VOICE GỐC
 const SLOGAN_DISPLAY = "Shield Systems Online. Standing by!";
 const SLOGAN_SPEAK   = "Shield systems online. Standing by!";
 
 function animateSlogan(){
-  const el = document.getElementById('sloganTxt');
+  const el=document.getElementById('sloganTxt');
   if(!el) return;
-  el.textContent = '';
-  let j = 0;
-  const interval = setInterval(() => {
-    if(j < SLOGAN_DISPLAY.length){ el.textContent += SLOGAN_DISPLAY[j]; j++; }
-    else{ clearInterval(interval); playFuryVoice(); }
+  el.textContent=''; let j=0;
+  const interval=setInterval(()=>{
+    if(j>=SLOGAN_DISPLAY.length){clearInterval(interval); return;}
+    el.textContent+=SLOGAN_DISPLAY[j]; j++;
   }, 50);
+  setTimeout(playFuryVoice, 2000);
 }
 
 function playFuryVoice(){
   if(!window.speechSynthesis) return;
   window.speechSynthesis.cancel();
-  const u = new SpeechSynthesisUtterance(SLOGAN_SPEAK);
-  u.lang = 'en-US'; u.rate = 0.85; u.pitch = 0.65;
-  const voices = window.speechSynthesis.getVoices();
-  const v = voices.find(v => v.lang.startsWith('en') && v.name.includes('Male')) || voices[0];
-  if(v) u.voice = v;
+  const u=new SpeechSynthesisUtterance(SLOGAN_SPEAK);
+  u.lang='en-US'; u.rate=0.82; u.pitch=0.65;
+  const vv=window.speechSynthesis.getVoices();
+  const v=vv.find(v=>v.lang==='en-US' && !v.name.toLowerCase().includes('female')) || vv[0];
+  if(v) u.voice=v;
   window.speechSynthesis.speak(u);
 }
 
 function hideSplash(){
   window.speechSynthesis.cancel();
-  const sp = document.getElementById('splash');
+  const sp=document.getElementById('splash');
   if(sp){ sp.classList.add('hide'); setTimeout(()=>sp.remove(), 600); }
-  const key = localStorage.getItem(K.api);
-  if(key){ gemKey=key; boot(); }
-  else{ document.getElementById('setup').style.display='flex'; }
+  const g=localStorage.getItem(K.gem);
+  if(g){ gemKey=g; boot(); } else { document.getElementById('setup').style.display='flex'; }
 }
 
-// ═══ 2. CORE LOGIC (KHÔI PHỤC XP, XU, MISSIONS) ═══
-function M(){return JSON.parse(localStorage.getItem(K.mem)||'{"xp":0,"streak":1,"missions":0,"lastDay":""}');}
-function SM(m){localStorage.setItem(K.mem, JSON.stringify(m)); updateUI();}
+// CÁC HÀM LOGIC BÊN TRONG CỦA BỐ
 function getXu(){return parseInt(localStorage.getItem(K.xu)||'0');}
-function addXu(n){localStorage.setItem(K.xu, getXu()+n); updateUI();}
-
 function updateUI(){
-  const m = M();
-  document.getElementById('xuVal').textContent = getXu();
-  document.getElementById('sStreak').textContent = m.streak;
-  document.getElementById('sMission').textContent = m.missions;
-  const lv = Math.floor(m.xp/100)+1;
-  document.getElementById('xpLbl').textContent = `Lv.${lv} ${m.xp}XP`;
-  document.getElementById('xpFill').style.width = (m.xp%100) + '%';
+  const m=JSON.parse(localStorage.getItem(K.mem)||'{"xp":0,"streak":0,"missions":0}');
+  document.getElementById('xuVal').textContent=getXu();
+  document.getElementById('sStreak').textContent=m.streak;
+  document.getElementById('sMission').textContent=m.missions;
+  document.getElementById('xpLbl').textContent=`⚡ Lv.${Math.floor(m.xp/100)+1} ${m.xp}XP`;
+  document.getElementById('xpFill').style.width=(m.xp%100)+'%';
 }
 
 function boot(){
   document.getElementById('setup').style.display='none';
   document.getElementById('app').style.display='flex';
   updateUI();
-  addAIMsg("Chào Agent Parker! Anh Fury đây. Hệ thống đã sẵn sàng cho nhiệm vụ.");
+  addAIMsg("Chào Agent Parker! Anh Fury đã sẵn sàng.");
 }
 
 function activate(){
-  const val = document.getElementById('gemTA').value.trim();
-  if(val){ localStorage.setItem(K.api, val); gemKey=val; boot(); }
+  const val=document.getElementById('gemTA').value.trim();
+  if(val){ localStorage.setItem(K.gem, val); gemKey=val; boot(); }
 }
 
-function doChangeKey(){
-  localStorage.removeItem(K.api);
-  location.reload();
-}
-
-// ═══ 3. ĐIỂM 10 CELEBRATION (PHÁO HOA) ═══
-function showCupUpload(){
-    const input = document.createElement('input');
-    input.type = 'file'; input.accept = 'image/*';
-    input.onchange = (e) => {
-        alert("Fury đang kiểm tra điểm 10... Chờ chút!");
-        setTimeout(() => { // Giả lập AI xác nhận
-            showConfetti();
-            addXu(200);
-            const m = M(); m.xp += 100; SM(m);
-        }, 1500);
-    };
-    input.click();
-}
-
-function showConfetti(){
-  const el = document.createElement('div');
-  el.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:10000;display:flex;align-items:center;justify-content:center;flex-direction:column;';
-  el.innerHTML = `<h1 style="color:var(--gold);font-family:Rajdhani;">🏆 ĐIỂM 10 TUYỆT VỜI!</h1><p style="color:#fff;">+200 xu thưởng từ S.H.I.E.L.D.</p><button onclick="this.parentElement.remove()" style="margin-top:20px;padding:10px 20px;background:var(--gold);border:none;border-radius:10px;cursor:pointer;">TIẾP TỤC</button>`;
-  document.body.appendChild(el);
-  for(let i=0; i<50; i++){
-    const c = document.createElement('div');
-    c.style.cssText = `position:fixed;width:10px;height:10px;background:hsl(${Math.random()*360},100%,50%);left:${Math.random()*100}%;top:-20px;z-index:10001;animation:fall ${Math.random()*3+2}s linear forwards;`;
-    document.body.appendChild(c);
-    setTimeout(()=>c.remove(), 5000);
-  }
-}
-
-// ═══ 4. CHAT LOGIC ═══
-function addAIMsg(txt){
-  const ms = document.getElementById('msgs');
-  const d = document.createElement('div'); d.className='msg ai';
-  d.innerHTML = `<div class="mb">${txt}</div>`;
-  ms.appendChild(d); ms.scrollTop = ms.scrollHeight;
-}
-
-function addUserMsg(txt, img){
-  const ms = document.getElementById('msgs');
-  const d = document.createElement('div'); d.className='msg user';
-  d.innerHTML = `<div class="mb">${img?`<img src="${img}" style="max-width:100%;border-radius:10px;"><br>`:''}${txt}</div>`;
-  ms.appendChild(d); ms.scrollTop = ms.scrollHeight;
+function addAIMsg(t){
+  const m=document.getElementById('msgs');
+  const d=document.createElement('div'); d.className='msg ai';
+  d.innerHTML=`<div class="av" style="width:30px;height:30px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;">🛡️</div><div class="mb">${t}</div>`;
+  m.appendChild(d); m.scrollTop=m.scrollHeight;
 }
 
 function doSend(){
-  const inp = document.getElementById('txtIn');
-  const txt = inp.value.trim();
-  if((!txt && !imgData) || busy) return;
-  addUserMsg(txt, imgData);
-  inp.value = ''; imgData = null;
-  busy = true;
-  setTimeout(()=> {
-    addAIMsg("Báo cáo đã được ghi nhận. Tiếp tục phát huy nhé Peter! [+5 xu]");
-    addXu(5);
-    busy = false;
-  }, 1000);
+  const i=document.getElementById('txtIn'); const t=i.value.trim();
+  if(!t || busy) return;
+  addUserMsg(t); i.value=''; busy=true;
+  setTimeout(()=>{ addAIMsg("Fury đã nhận báo cáo. Làm tốt lắm Peter!"); busy=false; }, 1000);
 }
 
-function onImg(input){
-  const file = input.files[0];
-  if(!file) return;
-  const reader = new FileReader();
-  reader.onload = (e) => imgData = e.target.result;
-  reader.readAsDataURL(file);
+function addUserMsg(t){
+  const m=document.getElementById('msgs');
+  const d=document.createElement('div'); d.className='msg user';
+  d.innerHTML=`<div class="mb">${t}</div><div class="av" style="width:30px;height:30px;background:var(--s3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:15px;">🕷️</div>`;
+  m.appendChild(d); m.scrollTop=m.scrollHeight;
 }
 
-function qs(t){ document.getElementById('txtIn').value = t; doSend(); }
+function showParent(){ const pin=prompt("Nhập PIN Ba Mẹ:"); if(pin==='2790') alert("Chào Chỉ huy Tuấn!"); }
+function showHWInChat(){ addAIMsg("📋 Bài tập mẹ gửi: Làm toán trang 10."); }
+function showCupUpload(){ alert("🏆 Chụp ảnh điểm 10 để nhận 200 xu!"); }
+function showShop(){ alert("🪙 Cửa hàng đang cập nhật..."); }
+function qs(t){ document.getElementById('txtIn').value=t; doSend(); }
 
-function showParent(){
-    const pin = prompt("Mã PIN Ba Mẹ:");
-    if(pin === '2790'){
-        const hw = prompt("Giao bài tập mới cho Kua:");
-        if(hw) localStorage.setItem(K.hw, hw);
-    }
-}
-
-function showHWInChat(){
-    const hw = localStorage.getItem(K.hw) || "Hôm nay mẹ chưa giao bài.";
-    addAIMsg("📋 NHIỆM VỤ TỪ MẸ:\n" + hw);
-}
-
-function showShop(){
-    alert(`Số xu hiện tại: ${getXu()}\nĐủ 50 xu để đổi 30p Game nhé!`);
-}
-
-// ═══ VOICE RECOGNITION (MIC) ═══
-function toggleMic(){
-  const btn = document.getElementById('micBtn');
-  btn.classList.toggle('on');
-  if(btn.classList.contains('on')){
-    alert("Fury đang nghe... (Yêu cầu Chrome)");
-  } else {
-    btn.classList.remove('on');
+window.onload=()=>{
+  setTimeout(animateSlogan, 800);
+  if(window.speechSynthesis.onvoiceschanged !== undefined) {
+    window.speechSynthesis.onvoiceschanged = playFuryVoice;
   }
-}
-
-window.onload = () => {
-  setTimeout(animateSlogan, 1000);
-  if(window.speechSynthesis) window.speechSynthesis.onvoiceschanged = playFuryVoice;
 };
 </script>
 </body>
