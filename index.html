@@ -15,38 +15,40 @@
   --gold:#f5c842;--green:#30d158;
 }
 *{box-sizing:border-box;margin:0;padding:0;}
-body{background:var(--bg);color:var(--tx);font-family:'Nunito',sans-serif;font-size:14px;min-height:100vh;overflow-x:hidden;}
+body{background:var(--bg);color:var(--tx);font-family:'Nunito',sans-serif;font-size:14px;min-height:100vh;overflow:hidden;}
 
-/* ═══ SPLASH SCREEN - OPTIMIZED BY GEMINI ═══ */
+/* ═══ SPLASH SCREEN - PHIÊN BẢN CÂN ĐỐI + HIỆU ỨNG ═══ */
 #splash{
   position:fixed;inset:0;background:#000;z-index:9999;
   display:flex;flex-direction:column;align-items:center;
-  justify-content:space-around;padding:40px 0;
+  justify-content:space-around;padding:40px 0;text-align:center;
 }
 #splash.hide{animation:splashOut .6s ease forwards;}
 @keyframes splashOut{to{opacity:0;transform:scale(1.05);visibility:hidden;}}
 
 .av-ring{
-  width:120px;height:120px;border-radius:50%;border:3px solid #c0a060;
-  display:flex;align-items:center;justify-content:center;box-shadow:0 0 30px rgba(192,160,96,0.3);
+  width:110px;height:110px;border-radius:50%;border:2px solid #c0a060;
+  display:flex;align-items:center;justify-content:center;box-shadow:0 0 25px rgba(192,160,96,0.3);position:relative;
 }
-.av-a{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:80px;color:#c0a060;line-height:1;}
+.av-a{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:76px;color:#c0a060;line-height:1;}
+.av-sub{font-family:'Rajdhani',sans-serif;font-size:13px;letter-spacing:.5em;color:#8a7040;text-transform:uppercase;margin-top:12px;}
 
-.info-zone{text-align:center; display:flex; flex-direction:column; gap:12px;}
-.wel-txt{font-family:'Rajdhani',sans-serif;font-size:15px;letter-spacing:0.6em;color:rgba(255,255,255,0.5);text-transform:uppercase;}
-.name-txt{font-family:'Rajdhani',sans-serif;font-size:48px;font-weight:700;letter-spacing:0.1em;color:var(--red);text-shadow:0 0 20px rgba(232,25,44,0.5);}
-.shield-txt{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.15em;color:var(--gold);min-height:1.2em;}
+.info-zone{display:flex;flex-direction:column;gap:12px;align-items:center;min-height:120px;}
+.wel-txt{font-family:'Rajdhani',sans-serif;font-size:15px;letter-spacing:0.7em;color:rgba(255,255,255,0.5);text-transform:uppercase;}
+.name-txt{font-family:'Rajdhani',sans-serif;font-size:48px;font-weight:700;letter-spacing:0.08em;color:var(--red);text-shadow:0 0 20px rgba(232,25,44,0.5);line-height:1;}
+.shield-txt{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:600;letter-spacing:0.18em;color:var(--gold);text-shadow:0 0 12px rgba(245,200,66,0.4);min-height:1.5em;}
 
 .spider-btn{
   width:150px;height:150px;cursor:pointer;transition:transform 0.3s;
   display:flex;align-items:center;justify-content:center;position:relative;
 }
 .spider-img{width:100%;height:100%;object-fit:contain;filter:drop-shadow(0 0 15px rgba(232,25,44,0.6));animation:pulse 2s infinite;}
+.tap-txt{font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:0.4em;color:rgba(255,255,255,0.3);text-transform:uppercase;animation:blink 2s infinite;margin-top:15px;}
 
 @keyframes pulse{0%,100%{transform:scale(1);}50%{transform:scale(1.05);}}
 @keyframes blink{0%,100%{opacity:0.2;}50%{opacity:0.7;}}
 
-/* ═══ CORE INTERFACE (CLAUDE ORIGINAL RECOVERED) ═══ */
+/* ═══ CORE APP UI (KHÔI PHỤC TỪ BẢN GỐC) ═══ */
 #app{display:none;max-width:860px;margin:0 auto;padding:0 14px;height:100vh;flex-direction:column;position:relative;z-index:1;}
 .hdr{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid var(--bd);flex-shrink:0;}
 .hlogo{width:38px;height:38px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid var(--blue2);}
@@ -56,14 +58,13 @@ body{background:var(--bg);color:var(--tx);font-family:'Nunito',sans-serif;font-s
 .chip{background:var(--s2);border:1px solid var(--bd);border-radius:7px;padding:4px 10px;font-size:11px;display:flex;align-items:center;gap:5px;font-family:'Rajdhani',sans-serif;font-weight:600;}
 .msgs{flex:1;overflow-y:auto;padding:12px 0;display:flex;flex-direction:column;gap:10px;}
 .msg{display:flex;gap:8px;max-width:85%;animation:fadeIn 0.3s ease;}
-@keyframes fadeIn{from{opacity:0;transform:translateY(10px);}}
 .msg.ai{align-self:flex-start;}
 .msg.user{align-self:flex-end;flex-direction:row-reverse;}
 .mb{padding:10px 14px;border-radius:14px;font-size:13px;line-height:1.6;}
 .msg.ai .mb{background:var(--s2);border:1px solid var(--bd);border-top-left-radius:2px;}
 .msg.user .mb{background:var(--blue);color:#fff;border-top-right-radius:2px;}
 
-.ipa{padding:10px 0;border-top:1px solid var(--bd);flex-shrink:0;}
+.ipa{padding:10px 0 15px;border-top:1px solid var(--bd);flex-shrink:0;}
 .quick{display:flex;gap:5px;flex-wrap:wrap;padding-bottom:10px;}
 .qbtn{background:var(--s2);border:1px solid var(--bd);border-radius:14px;color:var(--tx2);font-size:11px;padding:4px 10px;cursor:pointer;}
 .irow{display:flex;gap:8px;align-items:flex-end;}
@@ -71,23 +72,18 @@ body{background:var(--bg);color:var(--tx);font-family:'Nunito',sans-serif;font-s
 .ibox textarea{width:100%;background:transparent;border:none;outline:none;color:var(--tx);padding:10px 0;resize:none;max-height:80px;}
 .abtn{width:38px;height:38px;border-radius:50%;border:none;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:16px;}
 .abtn.send{background:var(--red);color:#fff;}
-.abtn.img{background:var(--s3);color:var(--tx2);}
+.abtn.mic.on{background:var(--green);box-shadow:0 0 15px var(--green);}
 
-#setup{position:fixed;inset:0;background:var(--bg);z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;}
-.sbox{background:var(--s1);border:1px solid var(--bd2);border-radius:20px;padding:30px;width:100%;max-width:400px;}
-.sta{width:100%;background:var(--bg);border:1px solid var(--bd2);border-radius:10px;color:#fff;padding:12px;margin-bottom:15px;font-family:monospace;}
-.sbtn{width:100%;background:var(--red);border:none;border-radius:12px;color:#fff;padding:15px;font-family:'Rajdhani',sans-serif;font-weight:700;cursor:pointer;}
-
-.overlay{display:none;position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:200;align-items:center;justify-content:center;padding:20px;}
-.obox{background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:22px;max-width:420px;width:100%;}
+/* CSS CHO PHÁO HOA ĐIỂM 10 */
+@keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}
 </style>
 </head>
 <body>
 
-<div id="splash">
-  <div class="av-zone" style="display:flex;flex-direction:column;align-items:center;">
+<div id="splash" onclick="hideSplash()">
+  <div class="av-zone">
     <div class="av-ring"><span class="av-a">A</span></div>
-    <div style="font-family:'Rajdhani',sans-serif;font-size:14px;letter-spacing:.5em;color:#8a7040;text-transform:uppercase;margin-top:15px;">THE AVENGERS</div>
+    <div class="av-sub">THE AVENGERS</div>
   </div>
 
   <div class="info-zone">
@@ -96,20 +92,20 @@ body{background:var(--bg);color:var(--tx);font-family:'Nunito',sans-serif;font-s
     <div id="sloganTxt" class="shield-txt"></div>
   </div>
 
-  <div class="spider-zone" style="display:flex;flex-direction:column;align-items:center;gap:20px;">
-    <div class="spider-btn" onclick="hideSplash()">
+  <div class="spider-zone">
+    <div class="spider-btn">
       <img src="https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/Spider-Man-Logo-PNG-Isolated-HD.png" class="spider-img" alt="Spider Logo">
     </div>
-    <div style="font-family:'Rajdhani',sans-serif;font-size:12px;letter-spacing:0.4em;color:rgba(255,255,255,0.3);text-transform:uppercase;animation:blink 2s infinite;">TAP TO BEGIN</div>
+    <div class="tap-txt">TAP TO BEGIN</div>
   </div>
 </div>
 
-<div id="setup" style="display:none;">
-  <div class="sbox">
+<div id="setup" style="display:none;position:fixed;inset:0;background:var(--bg);z-index:100;display:none;align-items:center;justify-content:center;padding:20px;">
+  <div style="background:var(--s1);border:1px solid var(--bd2);border-radius:20px;padding:30px;width:100%;max-width:400px;">
     <div style="text-align:center;font-size:50px;margin-bottom:10px;">🕷️</div>
-    <div style="font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;color:var(--gold);text-align:center;margin-bottom:20px;">KÍCH HOẠT S.H.I.E.L.D.</div>
-    <textarea class="sta" id="gemTA" placeholder="Dán Gemini API Key vào đây..."></textarea>
-    <button class="sbtn" onclick="activate()">🔓 UNLOCK SYSTEM</button>
+    <div style="font-family:'Rajdhani',sans-serif;font-size:22px;font-weight:700;color:var(--gold);text-align:center;margin-bottom:20px;">KÍCH HOẠT S.H.I.E.L.D.</div>
+    <textarea id="gemTA" style="width:100%;background:var(--bg);border:1px solid var(--bd2);border-radius:10px;color:#fff;padding:12px;margin-bottom:15px;height:80px;" placeholder="Dán Gemini API Key vào đây..."></textarea>
+    <button onclick="activate()" style="width:100%;background:var(--red);border:none;border-radius:12px;color:#fff;padding:15px;font-family:'Rajdhani',sans-serif;font-weight:700;cursor:pointer;">🔓 UNLOCK SYSTEM</button>
   </div>
 </div>
 
@@ -119,14 +115,20 @@ body{background:var(--bg);color:var(--tx);font-family:'Nunito',sans-serif;font-s
     <div style="flex:1">
       <div class="htitle">SPIDER-<span>KUA</span></div>
     </div>
-    <div class="chip" style="color:var(--gold); cursor:pointer;" onclick="showShop()">🪙 <span id="xuVal">0</span></div>
-    <button onclick="showParent()" style="background:none;border:none;font-size:18px;cursor:pointer;">👩</button>
+    <div style="text-align:right">
+        <div id="xpLbl" style="font-size:11px;color:var(--gold);font-family:Rajdhani;font-weight:700;">Lv.1 0XP</div>
+        <div style="width:80px;height:4px;background:var(--s3);border-radius:2px;overflow:hidden;margin-top:2px;">
+            <div id="xpFill" style="width:0%;height:100%;background:var(--gold);"></div>
+        </div>
+    </div>
+    <button onclick="showParent()" style="background:none;border:none;font-size:18px;cursor:pointer;margin-left:10px;">👩</button>
+    <button onclick="doChangeKey()" style="background:var(--red);border:none;border-radius:5px;color:#fff;font-size:10px;padding:4px 8px;margin-left:5px;cursor:pointer;">ĐỔI KEY</button>
   </div>
 
   <div class="stats">
     <div class="chip">🔥 <span id="sStreak">0</span> Ngày</div>
     <div class="chip">🕸️ <span id="sMission">0</span> Mission</div>
-    <div class="chip" style="margin-left:auto;color:var(--gold);" id="roomID">—</div>
+    <div class="chip" style="color:var(--gold);cursor:pointer;" onclick="showShop()">🪙 <span id="xuVal">0</span></div>
   </div>
 
   <div class="msgs" id="msgs"></div>
@@ -135,50 +137,44 @@ body{background:var(--bg);color:var(--tx);font-family:'Nunito',sans-serif;font-s
     <div class="quick">
       <button class="qbtn" onclick="qs('Cho anh mission hôm nay')">⚡ Mission</button>
       <button class="qbtn" onclick="showHWInChat()">📋 Bài mẹ gửi</button>
+      <button class="qbtn" onclick="showCupUpload()" style="border-color:var(--gold);">🏆 Điểm 10</button>
       <button class="qbtn" onclick="showShop()" style="border-color:var(--gold);">🪙 Đổi thưởng</button>
     </div>
     <div class="irow">
       <div class="ibox">
         <textarea id="txtIn" rows="1" placeholder="Báo cáo Fury..."></textarea>
       </div>
-      <label class="abtn img">📸<input type="file" accept="image/*" style="display:none" onchange="onImg(this)"></label>
+      <button class="abtn mic" id="micBtn" onclick="toggleMic()">🎤</button>
+      <label class="abtn" style="background:var(--s3);color:var(--tx2);cursor:pointer;">📸<input type="file" accept="image/*" style="display:none" onchange="onImg(this)"></label>
       <button class="abtn send" onclick="doSend()">➤</button>
     </div>
   </div>
 </div>
 
-<div class="overlay" id="parentOL">
-  <div class="obox">
-    <div style="display:flex;justify-content:space-between;margin-bottom:15px;">
-      <div style="font-family:Rajdhani;font-weight:700;color:var(--gold);">📚 GỬI BÀI TẬP</div>
-      <button onclick="document.getElementById('parentOL').style.display='none'">✕</button>
-    </div>
-    <textarea id="hwTA" style="width:100%;height:150px;background:#000;color:#fff;padding:10px;border-radius:8px;border:1px solid var(--bd2);"></textarea>
-    <button onclick="sendHW()" style="width:100%;padding:10px;margin-top:10px;background:var(--blue);color:#fff;border:none;border-radius:8px;">LƯU BÀI TẬP</button>
-  </div>
-</div>
-
 <script>
-const K={api:'kua_key',xu:'kua_xu',mem:'kua_mem',hw:'kua_hw',room:'kua_room'};
+const K={api:'kua_key',xu:'kua_xu',mem:'kua_mem',hw:'kua_hw',cups:'kua_cups'};
 let gemKey='', busy=false, imgData=null;
 
-// --- HIỆU ỨNG SLOGAN & VOICE ---
-const SLOGAN_TEXT = "SHIELD SYSTEMS ONLINE. STANDING BY!";
-const SLOGAN_VOICE = "Shield systems online. Standing by!";
+// ═══ 1. HIỆU ỨNG SLOGAN & VOICE (FURY VOICE) ═══
+const SLOGAN_DISPLAY = "Shield Systems Online. Standing by!";
+const SLOGAN_SPEAK   = "Shield systems online. Standing by!";
 
 function animateSlogan(){
   const el = document.getElementById('sloganTxt');
-  let i = 0;
-  const timer = setInterval(() => {
-    if(i < SLOGAN_TEXT.length){ el.textContent += SLOGAN_TEXT[i]; i++; }
-    else{ clearInterval(timer); playVoice(); }
+  if(!el) return;
+  el.textContent = '';
+  let j = 0;
+  const interval = setInterval(() => {
+    if(j < SLOGAN_DISPLAY.length){ el.textContent += SLOGAN_DISPLAY[j]; j++; }
+    else{ clearInterval(interval); playFuryVoice(); }
   }, 50);
 }
 
-function playVoice(){
+function playFuryVoice(){
   if(!window.speechSynthesis) return;
-  const u = new SpeechSynthesisUtterance(SLOGAN_VOICE);
-  u.lang = 'en-US'; u.rate = 0.85; u.pitch = 0.7;
+  window.speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(SLOGAN_SPEAK);
+  u.lang = 'en-US'; u.rate = 0.85; u.pitch = 0.65;
   const voices = window.speechSynthesis.getVoices();
   const v = voices.find(v => v.lang.startsWith('en') && v.name.includes('Male')) || voices[0];
   if(v) u.voice = v;
@@ -187,66 +183,101 @@ function playVoice(){
 
 function hideSplash(){
   window.speechSynthesis.cancel();
-  document.getElementById('splash').classList.add('hide');
-  setTimeout(() => {
-    document.getElementById('splash').remove();
-    const key = localStorage.getItem(K.api);
-    if(key){ gemKey=key; boot(); }
-    else{ document.getElementById('setup').style.display='flex'; }
-  }, 600);
+  const sp = document.getElementById('splash');
+  if(sp){ sp.classList.add('hide'); setTimeout(()=>sp.remove(), 600); }
+  const key = localStorage.getItem(K.api);
+  if(key){ gemKey=key; boot(); }
+  else{ document.getElementById('setup').style.display='flex'; }
 }
 
-// --- CORE SYSTEM (RECOVERED) ---
-function M(){return JSON.parse(localStorage.getItem(K.mem)||'{"xp":0,"streak":1,"missions":0}');}
+// ═══ 2. CORE LOGIC (KHÔI PHỤC XP, XU, MISSIONS) ═══
+function M(){return JSON.parse(localStorage.getItem(K.mem)||'{"xp":0,"streak":1,"missions":0,"lastDay":""}');}
+function SM(m){localStorage.setItem(K.mem, JSON.stringify(m)); updateUI();}
 function getXu(){return parseInt(localStorage.getItem(K.xu)||'0');}
-function addXu(n){const nw=getXu()+n;localStorage.setItem(K.xu,nw);updateUI();}
+function addXu(n){localStorage.setItem(K.xu, getXu()+n); updateUI();}
+
+function updateUI(){
+  const m = M();
+  document.getElementById('xuVal').textContent = getXu();
+  document.getElementById('sStreak').textContent = m.streak;
+  document.getElementById('sMission').textContent = m.missions;
+  const lv = Math.floor(m.xp/100)+1;
+  document.getElementById('xpLbl').textContent = `Lv.${lv} ${m.xp}XP`;
+  document.getElementById('xpFill').style.width = (m.xp%100) + '%';
+}
 
 function boot(){
   document.getElementById('setup').style.display='none';
   document.getElementById('app').style.display='flex';
-  document.getElementById('roomID').textContent = localStorage.getItem(K.room) || 'KUA-A5';
   updateUI();
-  addAIMsg("Chào Agent Parker! Anh Fury đã sẵn sàng. Hôm nay em có bài tập gì không?");
+  addAIMsg("Chào Agent Parker! Anh Fury đây. Hệ thống đã sẵn sàng cho nhiệm vụ.");
 }
 
-function updateUI(){
-  document.getElementById('xuVal').textContent = getXu();
-  const m = M();
-  document.getElementById('sStreak').textContent = m.streak;
-  document.getElementById('sMission').textContent = m.missions;
+function activate(){
+  const val = document.getElementById('gemTA').value.trim();
+  if(val){ localStorage.setItem(K.api, val); gemKey=val; boot(); }
 }
 
-// Giả lập gọi API (Bố sẽ dán Logic API thật của Claude vào đây nếu cần xử lý sâu)
-async function doSend(){
+function doChangeKey(){
+  localStorage.removeItem(K.api);
+  location.reload();
+}
+
+// ═══ 3. ĐIỂM 10 CELEBRATION (PHÁO HOA) ═══
+function showCupUpload(){
+    const input = document.createElement('input');
+    input.type = 'file'; input.accept = 'image/*';
+    input.onchange = (e) => {
+        alert("Fury đang kiểm tra điểm 10... Chờ chút!");
+        setTimeout(() => { // Giả lập AI xác nhận
+            showConfetti();
+            addXu(200);
+            const m = M(); m.xp += 100; SM(m);
+        }, 1500);
+    };
+    input.click();
+}
+
+function showConfetti(){
+  const el = document.createElement('div');
+  el.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,0.8);z-index:10000;display:flex;align-items:center;justify-content:center;flex-direction:column;';
+  el.innerHTML = `<h1 style="color:var(--gold);font-family:Rajdhani;">🏆 ĐIỂM 10 TUYỆT VỜI!</h1><p style="color:#fff;">+200 xu thưởng từ S.H.I.E.L.D.</p><button onclick="this.parentElement.remove()" style="margin-top:20px;padding:10px 20px;background:var(--gold);border:none;border-radius:10px;cursor:pointer;">TIẾP TỤC</button>`;
+  document.body.appendChild(el);
+  for(let i=0; i<50; i++){
+    const c = document.createElement('div');
+    c.style.cssText = `position:fixed;width:10px;height:10px;background:hsl(${Math.random()*360},100%,50%);left:${Math.random()*100}%;top:-20px;z-index:10001;animation:fall ${Math.random()*3+2}s linear forwards;`;
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(), 5000);
+  }
+}
+
+// ═══ 4. CHAT LOGIC ═══
+function addAIMsg(txt){
+  const ms = document.getElementById('msgs');
+  const d = document.createElement('div'); d.className='msg ai';
+  d.innerHTML = `<div class="mb">${txt}</div>`;
+  ms.appendChild(d); ms.scrollTop = ms.scrollHeight;
+}
+
+function addUserMsg(txt, img){
+  const ms = document.getElementById('msgs');
+  const d = document.createElement('div'); d.className='msg user';
+  d.innerHTML = `<div class="mb">${img?`<img src="${img}" style="max-width:100%;border-radius:10px;"><br>`:''}${txt}</div>`;
+  ms.appendChild(d); ms.scrollTop = ms.scrollHeight;
+}
+
+function doSend(){
   const inp = document.getElementById('txtIn');
   const txt = inp.value.trim();
   if((!txt && !imgData) || busy) return;
   addUserMsg(txt, imgData);
   inp.value = ''; imgData = null;
   busy = true;
-  setTimeout(() => {
-    addAIMsg("Anh đã nhận được báo cáo. Làm tốt lắm Peter! [+5 Xu]");
+  setTimeout(()=> {
+    addAIMsg("Báo cáo đã được ghi nhận. Tiếp tục phát huy nhé Peter! [+5 xu]");
     addXu(5);
     busy = false;
-  }, 1200);
-}
-
-function addUserMsg(txt, img){
-  const msgs = document.getElementById('msgs');
-  const div = document.createElement('div');
-  div.className = 'msg user';
-  div.innerHTML = `<div class="mb">${img?`<img src="${img}" style="max-width:100%;border-radius:8px;margin-bottom:5px;"><br>`:''}${txt}</div>`;
-  msgs.appendChild(div);
-  msgs.scrollTop = msgs.scrollHeight;
-}
-
-function addAIMsg(txt){
-  const msgs = document.getElementById('msgs');
-  const div = document.createElement('div');
-  div.className = 'msg ai';
-  div.innerHTML = `<div class="mb">${txt}</div>`;
-  msgs.appendChild(div);
-  msgs.scrollTop = msgs.scrollHeight;
+  }, 1000);
 }
 
 function onImg(input){
@@ -257,30 +288,39 @@ function onImg(input){
   reader.readAsDataURL(file);
 }
 
-function showParent(){
-  const pin = prompt("Nhập mã PIN Ba Mẹ:");
-  if(pin === '2790') document.getElementById('parentOL').style.display='flex';
-}
+function qs(t){ document.getElementById('txtIn').value = t; doSend(); }
 
-function sendHW(){
-  const val = document.getElementById('hwTA').value;
-  localStorage.setItem(K.hw, val);
-  alert("Đã lưu bài tập cho Kua!");
-  document.getElementById('parentOL').style.display='none';
+function showParent(){
+    const pin = prompt("Mã PIN Ba Mẹ:");
+    if(pin === '2790'){
+        const hw = prompt("Giao bài tập mới cho Kua:");
+        if(hw) localStorage.setItem(K.hw, hw);
+    }
 }
 
 function showHWInChat(){
-  const hw = localStorage.getItem(K.hw) || "Chưa có bài tập nào.";
-  addAIMsg("📋 BÀI TẬP CỦA EM:\n" + hw);
+    const hw = localStorage.getItem(K.hw) || "Hôm nay mẹ chưa giao bài.";
+    addAIMsg("📋 NHIỆM VỤ TỪ MẸ:\n" + hw);
 }
 
-function qs(t){ document.getElementById('txtIn').value = t; doSend(); }
+function showShop(){
+    alert(`Số xu hiện tại: ${getXu()}\nĐủ 50 xu để đổi 30p Game nhé!`);
+}
+
+// ═══ VOICE RECOGNITION (MIC) ═══
+function toggleMic(){
+  const btn = document.getElementById('micBtn');
+  btn.classList.toggle('on');
+  if(btn.classList.contains('on')){
+    alert("Fury đang nghe... (Yêu cầu Chrome)");
+  } else {
+    btn.classList.remove('on');
+  }
+}
 
 window.onload = () => {
   setTimeout(animateSlogan, 1000);
-  if(window.speechSynthesis.onvoiceschanged !== undefined) {
-    window.speechSynthesis.onvoiceschanged = playVoice;
-  }
+  if(window.speechSynthesis) window.speechSynthesis.onvoiceschanged = playFuryVoice;
 };
 </script>
 </body>
