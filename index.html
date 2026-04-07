@@ -6,7 +6,6 @@
 <title>Spider-Kua</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-/* ═══ GIỮ NGUYÊN TOÀN BỘ CSS GỐC CỦA CLAUDE ═══ */
 :root{
   --bg:#08090f;--s1:#0d1117;--s2:#161b27;--s3:#1e2535;
   --bd:#2a3347;--bd2:#3a4560;
@@ -19,19 +18,18 @@
 body{background:var(--bg);color:var(--tx);font-family:'Nunito',sans-serif;font-size:14px;min-height:100vh;}
 body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle at 15% 20%,rgba(15,76,143,.2) 0%,transparent 50%),radial-gradient(circle at 85% 80%,rgba(232,25,44,.12) 0%,transparent 50%);pointer-events:none;z-index:0;}
 
-/* ═══ SỬA LẠI BỐ CỤC SPLASH SCREEN (GIÃN CÁCH 3 VÙNG) ═══ */
+/* ═══ BỐ CỤC SPLASH SCREEN (GIÃN CÁCH 3 VÙNG CHUẨN) ═══ */
 #splash{
   position:fixed;inset:0;background:#000;z-index:9999;
   display:flex;flex-direction:column;align-items:center;
-  justify-content:space-between; /* Đẩy 3 cụm ra xa nhau: Trên - Giữa - Dưới */
-  padding:60px 0; /* Tạo lề trên dưới 60px */
+  justify-content:space-between; /* Đẩy 3 cụm ra xa nhau */
+  padding:70px 0; /* Tạo lề trên dưới rộng rãi */
   overflow:hidden;cursor:pointer;
 }
 #splash.hide{animation:splashOut .6s ease forwards;}
 @keyframes splashOut{to{opacity:0;transform:scale(1.05);visibility:hidden;}}
 
-/* Vùng 1: Avengers (Nằm trên cùng) */
-.av-zone-fixed{display:flex;flex-direction:column;align-items:center;}
+/* Vùng 1: Avengers (Top) */
 .av-ring-fixed{
   width:140px;height:140px;border-radius:50%;border:4px solid #c0a060;
   display:flex;align-items:center;justify-content:center;position:relative;box-shadow:0 0 30px rgba(192,160,96,0.3);
@@ -39,28 +37,29 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 .av-a-fixed{font-family:'Rajdhani',sans-serif;font-weight:700;font-size:90px;color:#c0a060;line-height:1;}
 .av-sub-fixed{font-family:'Rajdhani',sans-serif;font-size:16px;letter-spacing:.5em;color:#8a7040;text-transform:uppercase;margin-top:12px;}
 
-/* Vùng 2: Thông tin (Nằm chính giữa) */
+/* Vùng 2: Welcome & Slogan (Center) */
 .info-zone-fixed{display:flex;flex-direction:column;align-items:center;gap:12px;}
 .wel-txt-fixed{font-family:'Rajdhani',sans-serif;font-size:14px;letter-spacing:.6em;color:rgba(255,255,255,0.7);text-transform:uppercase;}
 .name-txt-fixed{font-family:'Rajdhani',sans-serif;font-size:52px;font-weight:700;letter-spacing:.1em;color:#e8192c;line-height:1;text-shadow:0 0 20px rgba(232,25,44,0.5);}
-.shield-txt-fixed{font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:600;letter-spacing:.15em;color:#f5c842;text-transform:uppercase;min-height:1.2em;}
+.shield-txt-fixed{font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:600;letter-spacing:.15em;color:#f5c842;text-transform:uppercase;min-height:1.5em;}
 
-/* Vùng 3: Spider Logo (Nằm dưới cùng) */
+/* Vùng 3: Spider Logo & Tap (Bottom) */
 .spider-zone-fixed{display:flex;flex-direction:column;align-items:center;gap:20px;}
 .spider-btn-fixed{
-  width:120px;height:120px;border-radius:50%;background:#c0101e;border:3px solid #e8192c;
+  width:110px;height:110px;border-radius:50%;background:#c0101e;border:3px solid #e8192c;
   display:flex;align-items:center;justify-content:center;box-shadow:0 0 40px rgba(232,25,44,0.4);
 }
 .tap-hint-fixed{font-family:'Rajdhani',sans-serif;font-size:12px;color:rgba(255,255,255,0.3);letter-spacing:.3em;text-transform:uppercase;animation:blink 1.8s infinite;}
 
 @keyframes blink{0%,100%{opacity:.4;}50%{opacity:1;}}
+@keyframes scanLine{0%{top:0;opacity:0;}10%{opacity:1;}90%{opacity:1;}100%{top:100%;opacity:0;}}
 
 /* ═══ GIỮ NGUYÊN TOÀN BỘ CSS APP CÒN LẠI ═══ */
 #setup{position:fixed;inset:0;background:var(--bg);z-index:100;display:flex;align-items:center;justify-content:center;padding:20px;}
 .sbox{background:var(--s1);border:1px solid var(--bd2);border-radius:20px;padding:28px 24px;max-width:400px;width:100%;}
 #app{position:relative;z-index:1;max-width:860px;margin:0 auto;padding:0 14px;height:100vh;flex-direction:column;display:none;}
 .hdr{display:flex;align-items:center;gap:10px;padding:10px 0 8px;border-bottom:1px solid var(--bd);flex-shrink:0;}
-.hlogo{width:38px;height:38px;background:var(--blue);border-radius:50% 50% 50% 50%/60% 60% 40% 40%;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid var(--blue2);flex-shrink:0;}
+.hlogo{width:38px;height:38px;background:var(--blue);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:18px;border:2px solid var(--blue2);flex-shrink:0;}
 .htitle{font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;}
 .htitle span{color:var(--red);}
 .xpw{display:flex;flex-direction:column;align-items:flex-end;gap:3px;}
@@ -103,7 +102,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 
   <div class="spider-zone-fixed">
     <div class="spider-btn-fixed">
-      <svg viewBox="0 0 120 130" width="90" height="100">
+      <svg viewBox="0 0 120 130" width="85" height="95">
         <g><circle cx="60" cy="36" r="11" fill="#0a2a6e"/><ellipse cx="60" cy="55" rx="15" ry="17" fill="#cc1020"/><path d="M45 66 Q60 106 75 66 Q68 76 60 77 Q52 76 45 66Z" fill="#0a2a6e"/></g>
         <g stroke-width="2.4" fill="none" stroke-linecap="round">
           <path d="M48 44 Q28 28 6 16" stroke="#e8192c"/><path d="M46 56 Q24 48 4 44" stroke="#1a4dbf"/><path d="M47 66 Q26 70 8 84" stroke="#e8192c"/><path d="M50 74 Q36 92 22 114" stroke="#1a4dbf"/><path d="M72 44 Q92 28 114 16" stroke="#e8192c"/><path d="M74 56 Q96 48 116 44" stroke="#1a4dbf"/><path d="M73 66 Q94 70 112 84" stroke="#e8192c"/><path d="M70 74 Q84 92 98 114" stroke="#1a4dbf"/>
@@ -115,73 +114,64 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
   </div>
 </div>
 
+<div id="setup" style="display:none;">
+  <div class="sbox">
+    <div class="slogo">🕷️</div>
+    <div class="stitle">KÍCH HOẠT S.H.I.E.L.D.</div>
+    <textarea class="sta" id="gemTA" placeholder="AIzaSy..."></textarea>
+    <button class="sbtn" onclick="activate()">🔓 UNLOCK SYSTEM</button>
+  </div>
+</div>
+
+<div id="app">
+  <div class="hdr">
+    <div class="hlogo">🛡️</div>
+    <div style="flex:1">
+      <div class="htitle">SPIDER-<span>KUA</span></div>
+    </div>
+    <div class="xpw">
+      <div class="xpl" id="xpLbl">⚡ 0XP</div>
+      <div class="xpb"><div class="xpf" id="xpFill"></div></div>
+    </div>
+    <button class="hbtn" onclick="showParent()">👩</button>
+  </div>
+
+  <div class="stats">
+    <div class="chip">🔥 <span id="sStreak">0</span> Ngày</div>
+    <div class="chip">🕸️ <span id="sMission">0</span> Mission</div>
+    <div class="chip" style="color:var(--gold); cursor:pointer;" onclick="showShop()">🪙 <span id="xuVal">0</span></div>
+  </div>
+
+  <div class="msgs" id="msgs"></div>
+
+  <div class="ipa">
+    <div class="quick">
+      <button class="qbtn" onclick="qs('Cho anh mission hôm nay')">⚡ Mission</button>
+      <button class="qbtn" onclick="showHWInChat()">📋 Bài mẹ gửi</button>
+      <button class="qbtn" onclick="showShop()" style="border-color:var(--gold);">🪙 Đổi thưởng</button>
+    </div>
+    <div class="irow">
+      <div class="ibox">
+        <textarea id="txtIn" rows="1" placeholder="Báo cáo Fury..."></textarea>
+      </div>
+      <button class="abtn send" onclick="doSend()">➤</button>
+    </div>
+  </div>
+</div>
+
 <script>
 const K={api:'sk3',gem:'gem3',mem:'mem3',hw:'hw3',room:'rm3',xu:'xu3',cups:'cups3'};
-let key='',gemKey='',busy=false;
+let gemKey='', busy=false;
 
-// HIỆU ỨNG SLOGAN & VOICE GỐC (GIỮ NGUYÊN)
+// HIỆU ỨNG SLOGAN & VOICE (ĐÃ KHÔI PHỤC KHỚP VỚI ID sloganTxt)
 const SLOGAN_DISPLAY = "Shield Systems Online. Standing by!";
 const SLOGAN_SPEAK   = "Shield systems online. Standing by!";
 
 function animateSlogan(){
   const el=document.getElementById('sloganTxt');
   if(!el) return;
-  el.textContent=''; let j=0;
+  el.textContent=''; 
+  let j=0;
   const interval=setInterval(()=>{
     if(j>=SLOGAN_DISPLAY.length){clearInterval(interval);return;}
-    el.textContent+=SLOGAN_DISPLAY[j]; j++;
-  }, 50);
-  setTimeout(()=>{
-    if(!window.speechSynthesis) return;
-    window.speechSynthesis.cancel();
-    const u=new SpeechSynthesisUtterance(SLOGAN_SPEAK);
-    u.lang='en-US'; u.rate=0.82; u.pitch=0.65;
-    window.speechSynthesis.speak(u);
-  }, 2000);
-}
-
-function hideSplash(){
-  window.speechSynthesis&&window.speechSynthesis.cancel();
-  const sp=document.getElementById('splash');
-  if(sp){ sp.classList.add('hide'); setTimeout(()=>sp.remove(), 600); }
-  const g=localStorage.getItem(K.gem);
-  if(g){ gemKey=g; boot(); } else { document.getElementById('setup').style.display='flex'; }
-}
-
-function boot(){
-  document.getElementById('setup').style.display='none';
-  document.getElementById('app').style.display='flex';
-  updateUI();
-}
-
-function updateUI(){
-  const m=JSON.parse(localStorage.getItem(K.mem)||'{"xp":0,"streak":1,"missions":0}');
-  document.getElementById('xpLbl').textContent=`⚡ Lv.${Math.floor(m.xp/100)+1} ${m.xp}XP`;
-  document.getElementById('xpFill').style.width=(m.xp%100)+'%';
-  document.getElementById('sStreak').textContent=m.streak;
-  document.getElementById('sMission').textContent=m.missions;
-  const xuEl = document.querySelector('.xu-count');
-  if(xuEl) xuEl.textContent=(localStorage.getItem(K.xu)||0)+' 🪙';
-}
-
-function activate(){
-  const val=document.getElementById('gemTA').value.trim();
-  if(val){ localStorage.setItem(K.gem, val); gemKey=val; boot(); }
-}
-
-function showParent(){ const pin=prompt("Nhập PIN:"); if(pin==='2790') alert("Chào Chỉ huy!"); }
-function showHWInChat(){ alert("📋 Bài mẹ gửi: ..."); }
-function showShop(){ alert("🪙 Đổi thưởng..."); }
-function showCupUpload(){ alert("🏆 Nộp điểm 10..."); }
-function qs(t){ alert("Quick command: " + t); }
-
-window.onload=()=>{
-  setTimeout(animateSlogan, 800);
-  // Đảm bảo voice sẵn sàng
-  if(window.speechSynthesis.onvoiceschanged !== undefined) {
-    window.speechSynthesis.onvoiceschanged = animateSlogan;
-  }
-};
-</script>
-</body>
-</html>
+    el.textContent+=SLOGAN_
