@@ -128,9 +128,12 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
     <div class="slogo">🕷️</div>
     <div class="stitle">SPIDER-KUA</div>
     <div class="ssub">Hệ thống huấn luyện S.H.I.E.L.D.<br>dành cho Peter Parker — Trần Xuân Khang</div>
-    <div class="slbl">Paste toàn bộ Anthropic API Key vào đây</div>
-    <textarea class="sta" id="keyTA" placeholder="sk-ant-api03-...&#10;&#10;Paste cả key vào đây, kể cả nhiều dòng cũng được"></textarea>
-    <div class="shint">Lấy key tại <strong>console.anthropic.com → API Keys</strong><br>Key chỉ lưu trên trình duyệt này, không gửi đi đâu khác.</div>
+    <div class="slbl">Google Gemini API Key <span style="color:var(--green);font-size:11px;">(AI chính — miễn phí)</span></div>
+    <textarea class="sta" id="gemTA" placeholder="AIzaSy... (Gemini key bắt đầu bằng AIzaSy)&#10;&#10;Lấy miễn phí tại aistudio.google.com/apikey"></textarea>
+    <div class="shint">Lấy key miễn phí tại <strong>aistudio.google.com/apikey</strong></div>
+    <div class="slbl" style="margin-top:8px;">Anthropic Claude API Key <span style="color:var(--tx3);font-size:11px;">(backup)</span></div>
+    <textarea class="sta" id="keyTA" placeholder="sk-ant-... (Claude key bắt đầu bằng sk-ant-)&#10;&#10;Lấy tại console.anthropic.com/api-keys&#10;(Có thể để trống nếu đã có Gemini key)" style="min-height:70px;"></textarea>
+    <div class="shint">Key lưu trên trình duyệt này, không gửi đi đâu khác.<br>Cần ít nhất <strong style="color:var(--green);">1 trong 2 key</strong> để dùng.</div>
     <button class="sbtn" id="actBtn" onclick="activate()">🔓 KÍCH HOẠT HỆ THỐNG</button>
     <div class="serr" id="serr"></div>
   </div>
@@ -199,8 +202,8 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 </div>
 
 <script>
-const K={api:'sk3',mem:'mem3',hw:'hw3',room:'rm3'};
-let key='',busy=false,imgArr=[],SR=null,isRec=false;
+const K={api:'sk3',gem:'gem3',mem:'mem3',hw:'hw3',room:'rm3'};
+let key='',gemKey='',busy=false,imgArr=[],SR=null,isRec=false;
 
 // MEMORY
 function M(){return JSON.parse(localStorage.getItem(K.mem)||JSON.stringify({xp:0,streak:0,lastDay:'',missions:0,badges:[],notes:[],history:[],sessions:0}));}
@@ -211,34 +214,31 @@ function room(){let r=localStorage.getItem(K.room);if(!r){r='KUA'+Math.random().
 
 // ACTIVATE
 function activate(){
-  const raw=document.getElementById('keyTA').value;
-  const k=raw.replace(/\s+/g,'').trim();
+  const rawG=document.getElementById('gemTA').value;
+  const rawC=document.getElementById('keyTA').value;
+  const gk=rawG.replace(/\s+/g,'').trim();
+  const ck=rawC.replace(/\s+/g,'').trim();
   const err=document.getElementById('serr');
   const btn=document.getElementById('actBtn');
-  if(!k){err.textContent='Vui lòng paste API key vào ô trên.';return;}
-  if(k.length<30){err.textContent='Key quá ngắn. Paste toàn bộ key.';return;}
-  err.textContent='Đang kiểm tra key...';
-  btn.disabled=true;
-  fetch('https://api.anthropic.com/v1/messages',{
-    method:'POST',
-    headers:{'Content-Type':'application/json','x-api-key':k,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
-    body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:10,messages:[{role:'user',content:'hi'}]})
-  }).then(r=>{
-    btn.disabled=false;
-    if(r.status===401){err.textContent='❌ Key không hợp lệ. Kiểm tra lại key tại console.anthropic.com';return;}
-    key=k; localStorage.setItem(K.api,k); boot();
-  }).catch(()=>{
-    btn.disabled=false;
-    // Nếu lỗi mạng, vẫn thử dùng
-    key=k; localStorage.setItem(K.api,k); boot();
-  });
+  // Kiểm tra cần ít nhất 1 key
+  if(!gk&&!ck){err.textContent='Cần ít nhất 1 API key (Gemini hoặc Claude).';return;}
+  // Kiểm tra không paste nhầm key
+  if(gk && gk.startsWith('sk-ant-')){err.textContent='⚠️ Bạn đang paste Claude key vào ô Gemini. Hãy paste key AIzaSy... vào ô Gemini.';return;}
+  if(ck && ck.startsWith('AIzaSy')){err.textContent='⚠️ Bạn đang paste Gemini key vào ô Claude. Hãy paste key sk-ant-... vào ô Claude.';return;}
+  err.textContent=''; btn.disabled=true;
+  if(gk) localStorage.setItem(K.gem,gk);
+  if(ck) localStorage.setItem(K.api,ck);
+  gemKey=gk; key=ck;
+  btn.disabled=false; boot();
 }
 
 function doChangeKey(){
-  localStorage.removeItem(K.api);
+  localStorage.removeItem(K.api); localStorage.removeItem(K.gem);
+  key=''; gemKey='';
   document.getElementById('app').style.display='none';
   document.getElementById('setup').style.display='flex';
   document.getElementById('keyTA').value='';
+  document.getElementById('gemTA').value='';
   document.getElementById('serr').textContent='';
   document.getElementById('actBtn').disabled=false;
 }
@@ -291,25 +291,61 @@ CÁCH GIAO TIẾP:
 - NGẮN GỌN. Cuối luôn có câu hỏi/thách thức. KHÔNG nói "con". KHÔNG dùng mày/tao.`;
 }
 
-// API
+// GEMINI API
+async function callGemini(txt,imgs){
+  const parts=[];
+  if(imgs&&imgs.length){
+    imgs.forEach(i=>parts.push({inlineData:{mimeType:'image/jpeg',data:i}}));
+  }
+  parts.push({text:txt||'Đây là ảnh bài tập. Hãy đọc và hướng dẫn làm nhé.'});
+  const r=await fetch(`https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-pro:generateContent?key=${gemKey}`,{
+    method:'POST',
+    headers:{'Content-Type':'application/json'},
+    body:JSON.stringify({
+      systemInstruction:{parts:[{text:sys()}]},
+      contents:[{role:'user',parts}],
+      generationConfig:{maxOutputTokens:800,temperature:0.9}
+    })
+  });
+  if(!r.ok){const e=await r.json();throw new Error(e.error?.message||`Gemini lỗi ${r.status}`);}
+  const d=await r.json();
+  return d.candidates[0].content.parts[0].text;
+}
+
+// API — dùng Gemini trước, Claude làm backup
 async function callAI(txt,imgs){
   const m=M();
+  m.history.push({role:'user',content:txt||(imgs&&imgs.length?`[Gửi ${imgs.length} ảnh bài tập]`:'')});
+  if(m.history.length>40)m.history=m.history.slice(-40);
+  let reply;
+  // Ưu tiên Gemini
+  if(gemKey){
+    try{ reply=await callGemini(txt,imgs); }
+    catch(e){
+      console.warn('Gemini lỗi, dùng Claude backup:',e.message);
+      if(!key) throw new Error('Gemini lỗi: '+e.message+'. Chưa có Claude key backup.');
+      reply=await callClaude(txt,imgs,m);
+    }
+  } else if(key){
+    reply=await callClaude(txt,imgs,m);
+  } else { throw new Error('Chưa có API key nào.'); }
+  m.history.push({role:'assistant',content:reply});SM(m);return reply;
+}
+
+async function callClaude(txt,imgs,m){
   let content;
   if(imgs&&imgs.length){
     content=imgs.map(i=>({type:'image',source:{type:'base64',media_type:'image/jpeg',data:i}}));
     content.push({type:'text',text:txt||'Đây là ảnh bài tập ('+imgs.length+' trang). Anh đọc từng trang và hướng dẫn em làm nhé.'});
   } else { content=txt; }
-  m.history.push({role:'user',content:txt||(imgs&&imgs.length?`[Gửi ${imgs.length} ảnh bài tập]`:'')});
-  if(m.history.length>40)m.history=m.history.slice(-40);
   const msgs=[...m.history.slice(0,-1).map(h=>({role:h.role,content:h.content})),{role:'user',content}];
   const r=await fetch('https://api.anthropic.com/v1/messages',{
     method:'POST',
     headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},
     body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:800,system:sys(),messages:msgs})
   });
-  if(!r.ok){const e=await r.json();throw new Error(e.error?.message||`Lỗi ${r.status}`);}
-  const d=await r.json(),reply=d.content[0].text;
-  m.history.push({role:'assistant',content:reply});SM(m);return reply;
+  if(!r.ok){const e=await r.json();throw new Error(e.error?.message||`Claude lỗi ${r.status}`);}
+  const d=await r.json();return d.content[0].text;
 }
 
 // SEND
@@ -489,7 +525,13 @@ function renderHW(){
   list.innerHTML=clean.slice(0,5).map(h=>{const age=Math.round((now-h.ts)/3600000);return`<div style="background:var(--s3);border-radius:7px;padding:8px 10px;margin-bottom:5px;font-size:12px;color:var(--tx2);">${h.text}<div style="font-size:10px;color:var(--tx3);margin-top:3px;">${age<1?'Vừa gửi':age+'h trước'}</div></div>`;}).join('');
 }
 
-window.onload=()=>{const k=localStorage.getItem(K.api);if(k){key=k;boot();}};
+window.onload=()=>{
+  const k=localStorage.getItem(K.api);
+  const g=localStorage.getItem(K.gem);
+  if(k) key=k;
+  if(g) gemKey=g;
+  if(k||g) boot();
+};
 </script>
 </body>
 </html>
