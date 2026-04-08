@@ -170,6 +170,14 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 .spider-btn-fixed{width:82px;height:82px;border-radius:50%;overflow:hidden;border:2.5px solid #e8192c;box-shadow:0 0 0 4px rgba(232,25,44,.12),0 0 22px rgba(232,25,44,.35);cursor:pointer;transition:transform .2s;background:#000;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .spider-btn-fixed:hover{transform:scale(1.07);}
 .spider-img-new{width:82px;height:82px;object-fit:cover;object-position:center;display:block;}
+/* NÚT POWER + TKB */
+.power-btn{width:30px;height:30px;border-radius:50%;background:rgba(232,25,44,.15);border:2px solid var(--red);color:var(--red2);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:15px;flex-shrink:0;transition:all .2s;}
+.power-btn:hover{background:var(--red);color:#fff;}
+.tkb-btn{width:30px;height:30px;border-radius:7px;background:var(--s2);border:1px solid var(--bd);color:var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;transition:all .2s;}
+.tkb-btn:hover{border-color:var(--gold);}
+.tkb-popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:500;align-items:center;justify-content:center;padding:20px;}
+.tkb-popup.open{display:flex;}
+.tkb-box{background:var(--s1);border:1px solid var(--bd2);border-radius:16px;padding:20px;max-width:400px;width:100%;max-height:85vh;overflow-y:auto;}
 </style>
 </head>
 <body>
@@ -236,10 +244,23 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
   </div>
 
   <div class="stats">
+    <button class="tkb-btn" onclick="toggleTKB()" title="Thời khóa biểu">📅</button>
     <div class="chip">🔥<div><div class="chipv" id="sStreak">0</div><div class="chipl">Streak</div></div></div>
     <div class="chip">🕸️<div><div class="chipv" id="sMission">0</div><div class="chipl">Mission</div></div></div>
     <div class="chip">🏆<div><div class="chipv" id="sBadge">0</div><div class="chipl">Huy hiệu</div></div></div>
+    <button class="power-btn" onclick="endSession()" title="Kết thúc buổi học">⏻</button>
     <div class="chip" style="margin-left:auto;color:var(--gold);cursor:pointer;" onclick="copyRoom()">📱 <span id="sRoom">—</span></div>
+  </div>
+
+  <!-- THỜI KHÓA BIỂU POPUP -->
+  <div class="tkb-popup" id="tkbPopup" onclick="if(event.target===this)toggleTKB()">
+    <div class="tkb-box">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+        <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:18px;color:var(--gold);">📅 THỜI KHÓA BIỂU</div>
+        <button onclick="toggleTKB()" style="background:transparent;border:1px solid var(--bd);border-radius:7px;color:var(--tx2);padding:4px 10px;cursor:pointer;">✕</button>
+      </div>
+      <div id="tkbContent"></div>
+    </div>
   </div>
 
   <div class="msgs" id="msgs"></div>
@@ -280,6 +301,10 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
     <div style="font-size:12px;color:var(--tx2);margin-bottom:6px;">Mã phòng: <strong style="color:var(--gold);" id="pRoom">—</strong></div>
     <div style="font-size:11px;color:var(--tx3);font-family:'Rajdhani',sans-serif;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">Nội dung bài tập hôm nay</div>
     <textarea id="hwTA" style="width:100%;background:var(--bg);border:1px solid var(--bd2);border-radius:8px;color:var(--tx);font-family:'Nunito',sans-serif;font-size:13px;padding:10px;min-height:140px;outline:none;resize:vertical;margin-bottom:8px;line-height:1.7;" placeholder="Copy nội dung bài tập vào đây...&#10;&#10;VD:&#10;📐 Toán: Trang 45 - Bài 1,2,3&#10;📖 Tiếng Việt: Đọc bài Cây tre VN&#10;🌏 Tiếng Anh: Unit 5 - Bài A,B"></textarea>
+    <div style="display:flex;gap:8px;margin-bottom:8px;">
+      <button id="micHWBtn" onclick="toggleMicHW()" style="background:var(--s2);border:1px solid var(--bd);border-radius:8px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;padding:10px 14px;cursor:pointer;display:flex;align-items:center;gap:6px;">🎤 Nói bài tập</button>
+      <div id="micHWStatus" style="font-size:11px;color:var(--green);align-self:center;display:none;">● Đang nghe...</div>
+    </div>
     <button id="hwBtn" onclick="sendHW()" style="background:var(--blue);border:none;border-radius:8px;color:#fff;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:15px;padding:11px;cursor:pointer;width:100%;letter-spacing:.04em;">📤 LƯU BÀI TẬP CHO KUA</button>
     <div id="hwList" style="margin-top:12px;"></div>
     <div style="font-size:10px;color:var(--tx3);text-align:center;margin-top:8px;">PIN: 2790 · Kua bấm "Bài mẹ gửi" sẽ thấy</div>
@@ -362,32 +387,41 @@ function showXuPop(n){
 const REWARDS=[
   {id:'tv',icon:'📺',name:'Xem tivi sau 10h30',desc:'30 phút tối nay',xu:30},
   {id:'game',icon:'🎮',name:'Chơi game sau 10h',desc:'30 phút chơi game',xu:50},
-  {id:'toy1',icon:'🧸',name:'Đồ chơi dưới 200k',desc:'Ba mẹ chọn món quà',xu:1000},
-  {id:'toy2',icon:'🎁',name:'Đồ chơi dưới 500k',desc:'Phần thưởng lớn hơn',xu:3000},
+  {id:'toy1',icon:'🧸',name:'Đồ chơi dưới 200k',desc:'Tương đương 2000xu = 200k',xu:2000},
+  {id:'toy2',icon:'🎁',name:'Đồ chơi dưới 500k',desc:'Tương đương 5000xu = 500k',xu:5000},
 ];
 function showShop(){
-  const cur=getXu();const cups=JSON.parse(localStorage.getItem(K.cups)||'[]');
-  const el=document.createElement('div');el.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+  const cur=getXu();
+  const cups=JSON.parse(localStorage.getItem(K.cups)||'[]');
+  const el=document.createElement('div');
+  el.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
   el.innerHTML=`
-    <div style="background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:24px;max-width:360px;width:100%;">
-      <div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:20px;color:var(--gold);text-align:center;margin-bottom:6px;">🏆 NỘP ĐIỂM 10</div>
-      <div style="font-size:12px;color:var(--tx2);text-align:center;margin-bottom:18px;">Chụp ảnh bài kiểm tra có điểm 10<br>AI sẽ xác nhận và tặng 200 xu!</div>
-      <div style="display:flex;gap:10px;margin-bottom:14px;">
-        <label style="flex:1;background:#1e2535;border:2px dashed #e8192c;border-radius:12px;padding:16px;text-align:center;cursor:pointer;">
-          <div style="font-size:28px;margin-bottom:5px;">📷</div>
-          <div style="font-size:11px;color:var(--tx2);">Chụp ngay</div>
-          <input type="file" accept="image/*" capture="environment" style="display:none" onchange="verifyCup(this)">
-        </label>
-        <label style="flex:1;background:#1e2535;border:2px dashed #3a4560;border-radius:12px;padding:16px;text-align:center;cursor:pointer;">
-          <div style="font-size:28px;margin-bottom:5px;">🖼️</div>
-          <div style="font-size:11px;color:var(--tx2);">Thư viện</div>
-          <input type="file" accept="image/*" style="display:none" onchange="verifyCup(this)">
-        </label>
+    <div style="background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:22px;max-width:400px;width:100%;max-height:90vh;overflow-y:auto;">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
+        <div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:20px;color:var(--gold);">🪙 ĐỔI THƯỞNG</div>
+        <button onclick="this.closest('div[style*=fixed]').remove()" style="background:transparent;border:1px solid var(--bd);border-radius:7px;color:var(--tx2);padding:4px 10px;cursor:pointer;">✕</button>
       </div>
-      <button onclick="this.closest('div[style*=fixed]').remove()" style="width:100%;background:transparent;border:1px solid var(--bd);border-radius:10px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-size:14px;padding:10px;cursor:pointer;">Huỷ</button>
+      <div style="background:var(--s3);border-radius:10px;padding:12px;text-align:center;margin-bottom:14px;">
+        <div style="font-size:11px;color:var(--tx2);margin-bottom:4px;">Xu hiện có</div>
+        <div style="font-family:Rajdhani,sans-serif;font-size:28px;font-weight:700;color:var(--gold);">${cur.toLocaleString('vi-VN')} 🪙</div>
+        <div style="font-size:11px;color:var(--tx3);margin-top:4px;">Cúp điểm 10: ${cups.length} cái 🏆</div>
+      </div>
+      ${REWARDS.map(r=>{
+        const ok=cur>=r.xu;
+        return `<div style="display:flex;align-items:center;gap:10px;padding:10px 12px;background:${ok?'var(--s2)':'var(--s1)'};border:1px solid ${ok?'var(--bd2)':'var(--bd)'};border-radius:10px;margin-bottom:6px;">
+          <div style="font-size:22px;width:34px;text-align:center;">${r.icon}</div>
+          <div style="flex:1;">
+            <div style="font-size:13px;font-weight:500;color:${ok?'var(--tx)':'var(--tx3)'};">${r.name}</div>
+            <div style="font-size:11px;color:var(--tx3);">${r.desc}</div>
+          </div>
+          <button onclick="buyReward('${r.id}',${r.xu},'${r.name}')" ${!ok?'disabled':''} style="background:${ok?'var(--gold)':'var(--s3)'};color:${ok?'#000':'var(--tx3)'};border:none;border-radius:8px;font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;padding:6px 10px;cursor:${ok?'pointer':'not-allowed'};white-space:nowrap;">${r.xu.toLocaleString('vi-VN')} xu</button>
+        </div>`;
+      }).join('')}
+      <div style="font-size:10px;color:var(--tx3);text-align:center;margin-top:8px;">Cần PIN ba/mẹ để xác nhận</div>
     </div>`;
   document.body.appendChild(el);
 }
+
 function buyReward(id,xu,name){
   const pin=prompt('Nhập PIN của ba/mẹ:');
   if(!pin)return;
@@ -494,7 +528,7 @@ function sys(){
   const m=M(),lv=Math.floor(m.xp/100)+1;
   const hw=HW().filter(h=>new Date(h.ts).toDateString()===new Date().toDateString());
   const hwTxt=hw.length?'\nBÀI TẬP MẸ GỬI HÔM NAY:\n'+hw.map((h,i)=>(i+1)+'. '+h.text).join('\n'):'\nBÀI TẬP: Mẹ chưa gửi hôm nay.';
-  return 'YÊU CẦU BẮT BUỘC: LUÔN LUÔN trả lời bằng TIẾNG VIỆT 100%. Không dùng tiếng Anh trừ khi dạy từ vựng tiếng Anh.\n\nAnh là Nick Fury — Giám đốc S.H.I.E.L.D., huấn luyện Peter Parker (tên thật Trần Xuân Khang, biệt danh Kua) trở thành Spider-Man thực thụ.\n\nTHÔNG TIN VỀ KUA:\n- Lớp 4A1, trường Chu Văn An, Hà Nội. 9-10 tuổi.\n- Hay lười, nóng tính, thích chơi hơn học, dễ xao nhãng.\n- Thể thao giỏi: bơi, bóng đá, cờ vua (mới học cùng ba).\n- Thần tượng ba Tuấn, sợ mẹ Huyền hơn.'+hwTxt+'\n\nTIẾN ĐỘ: Level '+lv+' | '+m.xp+' XP | Streak '+m.streak+' ngày | Missions: '+m.missions+' | Huy hiệu: '+(m.badges.join(', ')||'chưa có')+'\nGhi chú: '+(m.notes.slice(-3).join(' | ')||'Buổi đầu tiên.')+'\n\nCÁCH GIAO TIẾP:\n- Fury xưng "anh", gọi Kua là "em" hoặc "Peter" hoặc "Agent Parker".\n- Giọng anh trai lớn: mạnh mẽ, thách thức, hài hước, gần gũi.\n- Khi lười: "Thật không? Spider-Man thật sự bỏ cuộc vì mấy bài toán à?"\n- Khi đúng nhanh trong 1 phút: "[+XU_NHANH]" thưởng 15 xu.\n- Khi đúng bình thường: "[+XP]" thưởng 5 xu.\n- Tạo nhiệm vụ: "[MISSION:nội dung]"\n- Thưởng huy hiệu: "[BADGE:tên]"\n- NGẮN GỌN. Cuối luôn có câu hỏi/thách thức. KHÔNG nói "con". KHÔNG dùng mày/tao.';
+  return 'YÊU CẦU BẮT BUỘC: LUÔN LUÔN trả lời bằng TIẾNG VIỆT 100%. Không dùng tiếng Anh trừ khi dạy từ vựng tiếng Anh.\n\nAnh là Nick Fury — Giám đốc Shield, huấn luyện Peter Parker (tên thật Trần Xuân Khang, biệt danh Kua) trở thành Spider-Man thực thụ.\n\nTHÔNG TIN VỀ KUA:\n- Lớp 4A1, trường Chu Văn An, Hà Nội. 9-10 tuổi.\n- Hay lười, nóng tính, thích chơi hơn học, dễ xao nhãng.\n- Thể thao giỏi: bơi, bóng đá, cờ vua (mới học cùng ba).\n- Thần tượng ba Tuấn, sợ mẹ Huyền hơn.\n- Lịch học thêm: T2/T4/T5 sáng cô Hảo 5h30-6h45; T3/T5 tối T.Anh 19h45-21h15; T6/CN cô Hòa 15h15-19h.'+hwTxt+'\n\nTIẾN ĐỘ: Level '+lv+' | '+m.xp+' XP | Streak '+m.streak+' ngày | Missions: '+m.missions+' | Huy hiệu: '+(m.badges.join(', ')||'chưa có')+'\nGhi chú: '+(m.notes.slice(-3).join(' | ')||'Buổi đầu tiên.')+'\n\nCÁCH GIAO TIẾP:\n- Fury xưng "anh", gọi Kua là "em" hoặc "Peter" hoặc "Agent Parker".\n- Giọng anh trai lớn: mạnh mẽ, thách thức, hài hước, gần gũi.\n- Khi lười: "Thật không? Spider-Man thật sự bỏ cuộc vì mấy bài toán à?"\n- Khi đúng nhanh trong 1 phút: "[+XU_NHANH]" thưởng 15 xu.\n- Khi đúng bình thường: "[+XP]" thưởng 5 xu.\n- Tạo nhiệm vụ: "[MISSION:nội dung]"\n- Thưởng huy hiệu: "[BADGE:tên]"\n- NGẮN GỌN. Cuối luôn có câu hỏi/thách thức. KHÔNG nói "con". KHÔNG dùng mày/tao.';
 }
 
 // ═══ API ═══
@@ -646,7 +680,7 @@ function toggleMic(){
 function stopMic(){try{SR&&SR.stop();}catch(e){}isRec=false;document.getElementById('micBtn').classList.remove('on');document.getElementById('micBtn').textContent='🎤';}
 function speak(text){
   if(!window.speechSynthesis)return;stopSpeak();
-  const c=text.replace(/\[.*?\]/g,'').replace(/[*_`#<>]/g,'').replace(/\n+/g,' ').trim();if(!c)return;
+  const c=text.replace(/\[.*?\]/g,'').replace(/[*_`#<>]/g,'').replace(/\n+/g,' ').replace(/S\.H\.I\.E\.L\.D\./gi,'Shield').trim();if(!c)return;
   const u=new SpeechSynthesisUtterance(c);u.lang='vi-VN';u.rate=1.0;u.pitch=0.75;
   const vv=window.speechSynthesis.getVoices();
   const vi=vv.find(v=>v.lang==='vi-VN'&&!v.name.toLowerCase().includes('female'))||vv.find(v=>v.lang.startsWith('vi'));
@@ -664,6 +698,41 @@ function showParent(){
   if(pin.trim()!==(localStorage.getItem('parent_pin')||'2790')){alert('❌ PIN không đúng!');return;}
   document.getElementById('parentOL').style.display='flex';renderHW();
 }
+let srHW=null,isRecHW=false;
+function toggleMicHW(){
+  const S=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(!S){alert('Trình duyệt không hỗ trợ. Dùng Chrome nhé!');return;}
+  if(isRecHW){
+    srHW&&srHW.stop();
+    isRecHW=false;
+    document.getElementById('micHWBtn').textContent='🎤 Nói bài tập';
+    document.getElementById('micHWBtn').style.borderColor='var(--bd)';
+    document.getElementById('micHWStatus').style.display='none';
+    return;
+  }
+  srHW=new S();
+  srHW.lang='vi-VN';
+  srHW.continuous=true;
+  srHW.interimResults=false;
+  srHW.onresult=e=>{
+    const txt=Array.from(e.results).map(r=>r[0].transcript).join(' ');
+    const ta=document.getElementById('hwTA');
+    ta.value=(ta.value?ta.value+' ':'')+txt;
+  };
+  srHW.onend=()=>{
+    isRecHW=false;
+    document.getElementById('micHWBtn').textContent='🎤 Nói bài tập';
+    document.getElementById('micHWBtn').style.borderColor='var(--bd)';
+    document.getElementById('micHWStatus').style.display='none';
+  };
+  srHW.onerror=()=>srHW.onend();
+  srHW.start();
+  isRecHW=true;
+  document.getElementById('micHWBtn').textContent='⏹ Dừng';
+  document.getElementById('micHWBtn').style.borderColor='var(--green)';
+  document.getElementById('micHWStatus').style.display='block';
+}
+
 function sendHW(){
   const txt=document.getElementById('hwTA').value.trim();
   if(!txt){document.getElementById('hwTA').style.border='1px solid var(--red)';setTimeout(()=>document.getElementById('hwTA').style.border='1px solid var(--bd2)',1500);return;}
@@ -694,8 +763,127 @@ function showHWInChat(){
   if(today.length)setTimeout(()=>qs('Bài tập hôm nay: '+today[0].text+'. Anh hướng dẫn em bắt đầu từ đâu nhé?'),500);
 }
 
+// ═══ THỜI KHÓA BIỂU ═══
+const TKB={
+  t2:['HĐTT','T.Anh','Toán','TV-Đọc','—','T.Anh','Thể dục','BDKTKN'],
+  t3:['T.Anh','T.Anh','Toán','LTVC','—','T.Anh(STEM)','Khoa học','HĐTN'],
+  t4:['Âm nhạc','Toán','TV-Đọc','TV-Đọc','—','Sử-Địa','Tin học','BDKTKN'],
+  t5:['Toán','TV-Viết','T.Anh','Công nghệ','—','Mỹ thuật','Khoa học','BDKTKN'],
+  t6:['Toán','Nói-nghe','Sử-Địa','Đạo đức','—','Thể dục','SH lớp','T.Anh'],
+};
+// Lịch học thêm
+const EXTRA={
+  t2:'Cô Hảo 5h30-6h45',
+  t3:'T.Anh 19h45-21h15',
+  t4:'Cô Hảo 5h30-6h45',
+  t5:'Cô Hảo 5h30-6h45 | T.Anh 19h45',
+  t6:'Cô Hòa 15h15-19h',
+  t7:'Cô Hòa 15h15-19h',
+};
+const DAYS_VI=['CN','T2','T3','T4','T5','T6','T7'];
+const DAYS_KEY=['t7','t2','t3','t4','t5','t6','t7'];
+const DAYS_SHOW=['CN','T2','T3','T4','T5','T6','T7'];
+
+function toggleTKB(){
+  const popup=document.getElementById('tkbPopup');
+  if(popup.classList.contains('open')){popup.classList.remove('open');return;}
+  renderTKB(); popup.classList.add('open');
+}
+
+function renderTKB(){
+  const today=new Date().getDay();
+  // Ngày mai
+  const tmr=(today+1)%7;
+  const days=[
+    {name:'Thứ Hai',key:'t2',dow:1},{name:'Thứ Ba',key:'t3',dow:2},
+    {name:'Thứ Tư',key:'t4',dow:3},{name:'Thứ Năm',key:'t5',dow:4},
+    {name:'Thứ Sáu',key:'t6',dow:5},{name:'Thứ Bảy',key:'t7',dow:6},
+    {name:'Chủ Nhật',key:null,dow:0},
+  ];
+  const con=document.getElementById('tkbContent');
+  if(!con)return;
+  // Hiện ngày mai trước, rồi các ngày còn lại
+  var sorted=[];
+  var idx=days.findIndex(d=>d.dow===tmr);
+  for(var i=0;i<days.length;i++) sorted.push(days[(idx+i)%days.length]);
+
+  var html='';
+  sorted.forEach(function(d){
+    var isToday=d.dow===today;
+    var isTmr=d.dow===tmr;
+    var subs=TKB[d.key]||[];
+    var extra=EXTRA[d.key]||'';
+    var border=isTmr?'border-color:var(--gold)':isToday?'border-color:var(--red)':'';
+    var label=isTmr?' 👉 Ngày mai':isToday?' (Hôm nay)':'';
+    html+='<div style="background:var(--s2);border:1px solid var(--bd);'+border+';border-radius:10px;padding:10px 12px;margin-bottom:8px;">';
+    html+='<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:'+(isTmr?'var(--gold)':isToday?'var(--red2)':'var(--tx)')+';margin-bottom:6px;">'+d.name+label+'</div>';
+    if(subs.length){
+      html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:6px;">';
+      subs.forEach(function(s,i){
+        html+='<div style="font-size:11px;color:var(--tx2);background:var(--s3);border-radius:5px;padding:3px 6px;">'+(i+1)+'. '+s+'</div>';
+      });
+      html+='</div>';
+    }
+    if(extra) html+='<div style="font-size:11px;color:var(--gold);">📚 Học thêm: '+extra+'</div>';
+    html+='</div>';
+  });
+  con.innerHTML=html;
+}
+
+function buildTKB(){
+  const row=document.getElementById('tkbRow');
+  if(!row)return;
+  const today=new Date().getDay();
+  const days=[
+    {name:'T2',key:'t2',dow:1},{name:'T3',key:'t3',dow:2},
+    {name:'T4',key:'t4',dow:3},{name:'T5',key:'t5',dow:4},
+    {name:'T6',key:'t6',dow:5},{name:'T7',key:'t7',dow:6},
+    {name:'CN',key:null,dow:0},
+  ];
+  row.innerHTML=days.map(function(d){
+    var isToday=d.dow===today;
+    var subs=(TKB[d.key]||[]).slice(0,4);
+    var extra=EXTRA[d.key]||'';
+    var html='<div class="tkb-day'+(isToday?' today':'')+'"><div class="tkb-dname">'+d.name+(isToday?' ◀':'')+'</div>';
+    subs.forEach(function(s){html+='<div class="tkb-sub">'+s+'</div>';});
+    if(extra) html+='<div class="tkb-extra">📚'+extra+'</div>';
+    html+='</div>';
+    return html;
+  }).join('');
+}
+
+// ═══ KẾT THÚC BUỔI HỌC ═══
+async function endSession(){
+  const m=M(), xu=getXu(), today=new Date();
+  const dayKey=DAYS_KEY[today.getDay()];
+  const extra=EXTRA[dayKey]||'không có lịch thêm';
+  const p='[Kua vừa kết thúc buổi học hôm nay. Tổng kết: XP hôm nay='+m.xp+', Tổng xu='+xu+', Streak='+m.streak+' ngày, Missions='+m.missions+'. Lịch học thêm hôm nay: '+extra+'. Hãy: 1) Tổng kết ngắn việc Kua đã làm. 2) Khen thưởng. 3) Nhắc soạn sách vở cho ngày mai. 4) Nhắc lịch học thêm tiếp theo. Giọng Fury vui, ngắn gọn.]';
+  qs(p);
+}
+
+
 // ═══ INIT ═══
 window.onload=()=>{
+  // Unlock AudioContext sớm để TTS hoạt động không bị block
+  const unlockAudio=()=>{
+    if(window._audioUnlocked) return;
+    try{
+      const ctx=new(window.AudioContext||window.webkitAudioContext)();
+      const buf=ctx.createBuffer(1,1,22050);
+      const src=ctx.createBufferSource();
+      src.buffer=buf; src.connect(ctx.destination); src.start(0);
+      ctx.resume().then(()=>{window._audioUnlocked=true;});
+    }catch(e){}
+    // Cũng warm up speechSynthesis
+    if(window.speechSynthesis){
+      const u=new SpeechSynthesisUtterance('');
+      window.speechSynthesis.speak(u);
+      window.speechSynthesis.cancel();
+    }
+  };
+  // Unlock khi có bất kỳ tương tác nào
+  document.addEventListener('touchstart', unlockAudio, {once:true});
+  document.addEventListener('click', unlockAudio, {once:true});
   setTimeout(animateSlogan,800);
   // Key đã lưu → chờ user tap splash rồi tự boot
   // Không boot trước để Kua luôn thấy splash screen
