@@ -258,6 +258,39 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
     <div class="chip" style="margin-left:auto;color:var(--gold);cursor:pointer;" onclick="copyRoom()">📱 <span id="sRoom">—</span></div>
   </div>
 
+  <!-- FURY SEARCH POPUP -->
+  <div id="furySearchPopup" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:600;align-items:center;justify-content:center;padding:20px;" onclick="if(event.target===this)closeFurySearch()">
+    <div style="background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:22px;max-width:340px;width:100%;">
+      <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px;">
+        <img src="https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/the-avengers-seeklogo.png" style="width:26px;height:26px;object-fit:contain;">
+        <div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:18px;color:var(--gold);">FURY TRA SÁCH</div>
+      </div>
+      <div style="font-size:12px;color:var(--tx2);margin-bottom:16px;">Chọn cách tra nội dung sách:</div>
+
+      <!-- Gõ tay -->
+      <div style="background:var(--s2);border:1px solid var(--bd);border-radius:12px;padding:14px;margin-bottom:10px;">
+        <div style="font-size:12px;color:var(--tx2);margin-bottom:8px;">⌨️ Gõ tên bài:</div>
+        <input id="furySearchInput" type="text" placeholder='VD: "vbt trang 45" hoặc "tiếng việt trang 10"'
+          style="width:100%;background:var(--s3);border:1px solid var(--bd2);border-radius:8px;color:var(--tx);font-size:13px;padding:9px 12px;box-sizing:border-box;outline:none;font-family:inherit;"
+          onkeydown="if(event.key==='Enter')furySearchGo()">
+        <button onclick="furySearchGo()" style="width:100%;margin-top:8px;background:var(--red);border:none;border-radius:8px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;padding:9px;cursor:pointer;">
+          ⚡ Tra ngay
+        </button>
+      </div>
+
+      <!-- Mic -->
+      <div style="background:var(--s2);border:1px solid var(--bd);border-radius:12px;padding:14px;">
+        <div style="font-size:12px;color:var(--tx2);margin-bottom:8px;">🎤 Nói tên bài:</div>
+        <button id="micFuryBtn" onclick="toggleMicFury()" style="width:100%;background:var(--s3);border:1px solid var(--bd2);border-radius:8px;color:var(--tx);font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;padding:9px;cursor:pointer;">
+          🎤 Bấm để nói
+        </button>
+        <div id="micFuryStatus" style="font-size:11px;color:var(--tx3);text-align:center;margin-top:6px;min-height:16px;"></div>
+      </div>
+
+      <button onclick="closeFurySearch()" style="width:100%;margin-top:12px;background:transparent;border:1px solid var(--bd);border-radius:10px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-size:13px;padding:9px;cursor:pointer;">Đóng</button>
+    </div>
+  </div>
+
   <!-- THỜI KHÓA BIỂU POPUP -->
   <div class="tkb-popup" id="tkbPopup" onclick="if(event.target===this)toggleTKB()">
     <div class="tkb-box">
@@ -273,7 +306,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 
   <div class="ipa">
     <div class="quick">
-      <button class="qbtn" onclick="testSach()" style="border-color:#c0a060;color:#c0a060;" title="Tra nội dung sách + Fury hướng dẫn"><img src="https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/the-avengers-seeklogo.png" style="width:14px;height:14px;object-fit:contain;vertical-align:middle;margin-right:3px;">Fury</button>
+      <button class="qbtn" onclick="showFurySearch()" style="border-color:#c0a060;color:#c0a060;" title="Tra nội dung sách"><img src="https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/the-avengers-seeklogo.png" style="width:14px;height:14px;object-fit:contain;vertical-align:middle;margin-right:3px;">Fury</button>
       <button class="qbtn" onclick="qs('Luyện Toán đi anh')">🔢 Toán</button>
       <button class="qbtn" onclick="qs('Học Tiếng Việt nào')">📖 TV</button>
       <button class="qbtn" onclick="qs('Tiếng Anh hôm nay')">🌏 TA</button>
@@ -3531,6 +3564,93 @@ function renderHW(){
   clean.slice(0,3).map(h=>{const age=Math.round((now-h.ts)/3600000);const isT=new Date(h.ts).toDateString()===new Date().toDateString();return'<div style="background:'+(isT?'rgba(26,107,191,.1)':'var(--s3)')+';border:1px solid '+(isT?'var(--blue2)':'var(--bd)')+';border-radius:8px;padding:10px 12px;margin-bottom:6px;"><div style="font-size:10px;font-weight:600;color:'+(isT?'var(--blue2)':'var(--tx3)')+';font-family:Rajdhani,sans-serif;margin-bottom:5px;">'+(isT?'HÔM NAY':'TRƯỚC ĐÓ')+' · '+(age<1?'Vừa lưu':age+'h trước')+'</div><div style="font-size:12px;color:var(--tx2);white-space:pre-line;line-height:1.6;">'+h.text+'</div></div>';}).join('');
 }
 let srSach=null,isRecSach=false;
+let srFury=null,isRecFury=false;
+
+function showFurySearch(){
+  var p=document.getElementById('furySearchPopup');
+  if(p){p.style.display='flex';setTimeout(function(){document.getElementById('furySearchInput')&&document.getElementById('furySearchInput').focus();},100);}
+}
+function closeFurySearch(){
+  var p=document.getElementById('furySearchPopup');
+  if(p){p.style.display='none';}
+  // Dừng mic nếu đang nghe
+  if(isRecFury&&srFury){srFury.stop();}
+}
+function furySearchGo(){
+  var inp=document.getElementById('furySearchInput');
+  var txt=inp?inp.value.trim():'';
+  if(!txt){inp&&(inp.style.border='1px solid var(--red)');setTimeout(function(){inp&&(inp.style.border='1px solid var(--bd2)');},1500);return;}
+  closeFurySearch();
+  runTestSach(txt);
+}
+
+function toggleMicFury(){
+  var S=window.SpeechRecognition||window.webkitSpeechRecognition;
+  var btn=document.getElementById('micFuryBtn');
+  var status=document.getElementById('micFuryStatus');
+  if(!S){alert('Dùng Chrome để dùng giọng nói nhé!');return;}
+  if(isRecFury){srFury&&srFury.stop();return;}
+
+  srFury=new S();srFury.lang='vi-VN';srFury.continuous=false;srFury.interimResults=false;
+
+  srFury.onresult=function(e){
+    var txt=e.results[0][0].transcript;
+    if(status) status.textContent='✅ Nghe được: "'+txt+'"';
+    setTimeout(function(){
+      closeFurySearch();
+      setTimeout(function(){runTestSach(txt);},200);
+    },600);
+  };
+  srFury.onend=function(){
+    isRecFury=false;
+    if(btn){btn.textContent='🎤 Bấm để nói';btn.style.background='var(--s3)';btn.style.borderColor='var(--bd2)';}
+  };
+  srFury.onerror=function(e){
+    isRecFury=false;
+    if(btn){btn.textContent='🎤 Bấm để nói';btn.style.background='var(--s3)';}
+    if(status) status.textContent='';
+    if(e.error!=='aborted'&&status) status.textContent='❌ Không nghe được, thử lại!';
+  };
+  srFury.start();isRecFury=true;
+  if(btn){btn.textContent='⏹ Đang nghe...';btn.style.background='rgba(232,25,44,.15)';btn.style.borderColor='var(--red)';}
+  if(status) status.textContent='Hãy nói: "VBT Toán trang 45"...';
+}
+
+function toggleMicSach(){
+  const S=window.SpeechRecognition||window.webkitSpeechRecognition;
+  const btn=document.getElementById('micFuryBtn');
+  if(!S){alert('Dùng Chrome để dùng giọng nói nhé!');return;}
+  if(isRecFury){
+    srFury&&srFury.stop();
+    return;
+  }
+  srFury=new S();
+  srFury.lang='vi-VN';
+  srFury.continuous=false;
+  srFury.interimResults=false;
+
+  srFury.onresult=function(e){
+    const txt=e.results[0][0].transcript;
+    addRaw('ai','🎤 Nghe được: <b>"'+txt+'"</b> — đang tra sách...');
+    setTimeout(function(){ runTestSach(txt); }, 300);
+  };
+
+  srFury.onend=function(){
+    isRecFury=false;
+    if(btn){btn.textContent='🎤';btn.style.borderColor='#c0a060';btn.style.background='';}
+  };
+
+  srFury.onerror=function(e){
+    isRecFury=false;
+    if(btn){btn.textContent='🎤';btn.style.borderColor='#c0a060';btn.style.background='';}
+    if(e.error!=='aborted') addRaw('ai','❌ Không nghe được, thử lại nhé!');
+  };
+
+  srFury.start();
+  isRecFury=true;
+  if(btn){btn.textContent='⏹ Đang nghe...';btn.style.borderColor='var(--red)';btn.style.background='rgba(232,25,44,.1)';}
+}
+
 function toggleMicSach(){
   const S=window.SpeechRecognition||window.webkitSpeechRecognition;
   const btn=document.getElementById('micSachBtn');
@@ -3564,58 +3684,6 @@ function testSach(){
   if(!inp)return;
   runTestSach(inp);
 }
-
-async function showHWInChat(){
-  // Trước tiên sync từ cloud
-  await syncHWFromCloud();
-
-  const hw=HW();
-  const today=hw.filter(h=>new Date(h.ts).toDateString()===new Date().toDateString());
-  const recent=hw.filter(h=>new Date(h.ts).toDateString()!==new Date().toDateString()).slice(0,1);
-  const list=today.length?today:recent;
-
-  if(!hw.length){
-    addRaw('ai','📋 Mẹ chưa gửi bài tập nào.<br>Nhờ mẹ mở app → bấm 👩 → nhập bài tập nhé em!');
-    return;
-  }
-
-  var html='<div style="background:rgba(26,107,191,.1);border:1px solid var(--blue2);border-radius:12px;padding:14px;margin-top:4px;">';
-  html+='<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:var(--blue2);margin-bottom:10px;">📋 BÀI TẬP CỦA KUA</div>';
-  html+='<div style="font-size:11px;font-weight:600;color:'+(today.length?'var(--green)':'var(--tx3)')+';font-family:Rajdhani,sans-serif;margin-bottom:6px;">'+(today.length?'HÔM NAY':'GẦN ĐÂY NHẤT')+'</div>';
-
-  var promptParts=[];
-  list.forEach(function(h){
-    html+='<div style="font-size:13px;color:var(--tx);white-space:pre-line;line-height:1.8;margin-bottom:6px;">'+h.text+'</div>';
-    var parsed=parseAndEnrichHW(h.text);
-    if(parsed.found.length){
-      html+='<div style="background:rgba(48,209,88,.08);border:1px solid rgba(48,209,88,.25);border-radius:8px;padding:10px;margin-bottom:6px;">';
-      html+='<div style="font-size:11px;color:var(--green);font-family:Rajdhani,sans-serif;font-weight:700;margin-bottom:6px;">📖 ĐỀ BÀI TỪ SÁCH</div>';
-      parsed.found.forEach(function(f){
-        html+='<div style="font-size:11px;color:var(--tx2);font-weight:600;margin-bottom:3px;">'+f.mon+' - Trang '+f.trang+(f.bai?' - Bài '+f.bai:'')+'</div>';
-        html+='<div style="font-size:12px;color:var(--tx);white-space:pre-line;font-family:monospace;background:var(--s3);border-radius:6px;padding:8px;margin-bottom:6px;">'+f.noiDung+'</div>';
-        promptParts.push(f.mon+' trang '+f.trang+(f.bai?' bài '+f.bai:'')+': '+f.noiDung);
-      });
-      html+='</div>';
-    }
-  });
-  html+='</div>';
-
-  var msgs=document.getElementById('msgs');
-  var wrap=document.createElement('div');wrap.className='msg ai';
-  var av=document.createElement('div');av.className='av';av.textContent='🛡️';
-  var mc=document.createElement('div');mc.className='mc';
-  var mn=document.createElement('div');mn.className='mn';mn.textContent='FURY — BÀI TẬP';
-  var mb=document.createElement('div');mb.className='mb';mb.innerHTML=html;
-  mc.appendChild(mn);mc.appendChild(mb);wrap.appendChild(av);wrap.appendChild(mc);
-  msgs.appendChild(wrap);msgs.scrollTop=msgs.scrollHeight;
-
-  var hwText=list.length?list[0].text:'';
-  var sachInfo=promptParts.length?'\nĐề bài từ sách:\n'+promptParts.join('\n'):'';
-  setTimeout(function(){
-    qs('Bài tập hôm nay: '+hwText+sachInfo+'\nAnh đọc đề và hướng dẫn em làm từng bước nhé!');
-  },600);
-}
-
 
 function runTestSach(inp){
   var parsed=parseAndEnrichHW(inp);
@@ -3712,6 +3780,133 @@ async function syncHWFromCloud(){
   // Giữ tối đa 10 bài
   if(existing.length>10) existing.splice(10);
   localStorage.setItem('hw3', JSON.stringify(existing));
+}
+
+async function showHWInChat(){
+  // Sync bài mới từ cloud trước
+  try{ await syncHWFromCloud(); }catch(e){ console.warn('sync err',e); }
+
+  const hw=HW();
+  if(!hw.length){
+    addRaw('ai','📋 Mẹ chưa gửi bài tập nào. Nhờ mẹ mở app → bấm 👩 → nhập bài tập nhé em!');
+    return;
+  }
+
+  const today=hw.filter(function(h){return new Date(h.ts).toDateString()===new Date().toDateString();});
+  const list=today.length?today:hw.slice(0,1);
+  const label=today.length?'HÔM NAY':'GẦN ĐÂY NHẤT';
+
+  var html='<div style="background:rgba(26,107,191,.1);border:1px solid var(--blue2);border-radius:12px;padding:14px;">';
+  html+='<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:var(--blue2);margin-bottom:10px;">📋 BÀI TẬP CỦA KUA</div>';
+  html+='<div style="font-size:11px;font-weight:600;color:'+(today.length?'var(--green)':'var(--tx3)')+';font-family:Rajdhani,sans-serif;margin-bottom:6px;">'+label+'</div>';
+
+  var promptParts=[];
+  list.forEach(function(h){
+    html+='<div style="font-size:13px;color:var(--tx);white-space:pre-line;line-height:1.8;margin-bottom:6px;">'+h.text+'</div>';
+    try{
+      var parsed=parseAndEnrichHW(h.text);
+      if(parsed&&parsed.found&&parsed.found.length){
+        html+='<div style="background:rgba(48,209,88,.08);border:1px solid rgba(48,209,88,.25);border-radius:8px;padding:10px;margin-bottom:6px;">';
+        html+='<div style="font-size:11px;color:var(--green);font-family:Rajdhani,sans-serif;font-weight:700;margin-bottom:6px;">📖 ĐỀ BÀI TỪ SÁCH</div>';
+        parsed.found.forEach(function(f){
+          html+='<div style="font-size:11px;color:var(--tx2);font-weight:600;margin-bottom:3px;">'+f.mon+' - Trang '+f.trang+(f.bai?' - Bài '+f.bai:'')+'</div>';
+          html+='<div style="font-size:12px;color:var(--tx);white-space:pre-line;font-family:monospace;background:var(--s3);border-radius:6px;padding:8px;margin-bottom:6px;">'+f.noiDung+'</div>';
+          promptParts.push(f.mon+' trang '+f.trang+(f.bai?' bài '+f.bai:'')+': '+f.noiDung);
+        });
+        html+='</div>';
+      }
+    }catch(e){ console.warn('parse err',e); }
+  });
+  html+='</div>';
+
+  var msgs=document.getElementById('msgs');
+  var wrap=document.createElement('div');wrap.className='msg ai';
+  var av=document.createElement('div');av.className='av';av.textContent='🛡️';
+  var mc=document.createElement('div');mc.className='mc';
+  var mn=document.createElement('div');mn.className='mn';mn.textContent='FURY — BÀI TẬP';
+  var mb=document.createElement('div');mb.className='mb';mb.innerHTML=html;
+  mc.appendChild(mn);mc.appendChild(mb);wrap.appendChild(av);wrap.appendChild(mc);
+  msgs.appendChild(wrap);msgs.scrollTop=msgs.scrollHeight;
+
+  var hwText=list[0]?list[0].text:'';
+  var sachInfo=promptParts.length?'\nĐề bài từ sách:\n'+promptParts.join('\n'):'';
+  setTimeout(function(){
+    qs('Bài tập hôm nay: '+hwText+sachInfo+'\nAnh đọc đề và hướng dẫn em làm từng bước nhé!');
+  },600);
+}
+
+
+
+// ═══ THỜI KHÓA BIỂU ═══
+const TKB={
+  t2:['HĐTT','T.Anh','Toán','TV-Đọc','—','T.Anh','Thể dục','BDKTKN'],
+  t3:['T.Anh','T.Anh','Toán','LTVC','—','T.Anh(STEM)','Khoa học','HĐTN'],
+  t4:['Âm nhạc','Toán','TV-Đọc','TV-Đọc','—','Sử-Địa','Tin học','BDKTKN'],
+  t5:['Toán','TV-Viết','T.Anh','Công nghệ','—','Mỹ thuật','Khoa học','BDKTKN'],
+  t6:['Toán','Nói-nghe','Sử-Địa','Đạo đức','—','Thể dục','SH lớp','T.Anh'],
+};
+const EXTRA={
+  t2:'Cô Hảo (CN) tại trường 5h30-6h45',
+  t3:'T.Anh MS Hoa 19h45-21h15',
+  t4:'Cô Hảo (CN) tại trường 5h30-6h45',
+  t5:'Cô Hảo (CN) tại trường 5h30-6h45 | T.Anh MS Hoa 19h45-21h15',
+  t6:'Nhà cô Hòa 15h15-19h',
+  t7:'Nhà cô Hòa 15h15-19h',
+};
+const DAYS_VI=['CN','T2','T3','T4','T5','T6','T7'];
+const DAYS_KEY=['t7','t2','t3','t4','t5','t6','t7'];
+
+function toggleTKB(){
+  var popup=document.getElementById('tkbPopup');
+  if(!popup) return;
+  if(popup.classList.contains('open')){
+    popup.classList.remove('open');
+    return;
+  }
+  renderTKB();
+  popup.classList.add('open');
+}
+
+function renderTKB(){
+  var con=document.getElementById('tkbContent');
+  if(!con) return;
+  var today=new Date().getDay();
+  var tmr=(today+1)%7;
+  var days=[
+    {name:'Thứ Hai',key:'t2',dow:1},{name:'Thứ Ba',key:'t3',dow:2},
+    {name:'Thứ Tư',key:'t4',dow:3},{name:'Thứ Năm',key:'t5',dow:4},
+    {name:'Thứ Sáu',key:'t6',dow:5},{name:'Thứ Bảy',key:'t7',dow:6},
+    {name:'Chủ Nhật',key:null,dow:0},
+  ];
+  // Sắp xếp: ngày mai lên đầu
+  var idx=days.findIndex(function(d){return d.dow===tmr;});
+  var sorted=[];
+  for(var i=0;i<days.length;i++) sorted.push(days[(idx+i)%days.length]);
+
+  var html='';
+  sorted.forEach(function(d){
+    var isToday=d.dow===today;
+    var isTmr=d.dow===tmr;
+    var subs=TKB[d.key]||[];
+    var extra=EXTRA[d.key]||'';
+    var borderColor=isTmr?'var(--gold)':isToday?'var(--red)':'var(--bd)';
+    var nameColor=isTmr?'var(--gold)':isToday?'var(--red2)':'var(--tx)';
+    var label=isTmr?' 👉 Ngày mai':isToday?' (Hôm nay)':'';
+
+    html+='<div style="background:var(--s2);border:1px solid '+borderColor+';border-radius:10px;padding:10px 12px;margin-bottom:8px;">';
+    html+='<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:'+nameColor+';margin-bottom:6px;">'+d.name+label+'</div>';
+    if(subs.length){
+      html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:6px;">';
+      subs.forEach(function(s,i){
+        if(s==='—') return;
+        html+='<div style="font-size:11px;color:var(--tx2);background:var(--s3);border-radius:5px;padding:3px 6px;">'+(i+1)+'. '+s+'</div>';
+      });
+      html+='</div>';
+    }
+    if(extra) html+='<div style="font-size:11px;color:var(--gold);">📚 '+extra+'</div>';
+    html+='</div>';
+  });
+  con.innerHTML=html;
 }
 
 // ═══ INIT ═══
