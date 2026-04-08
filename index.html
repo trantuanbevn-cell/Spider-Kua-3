@@ -347,6 +347,11 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
     <button id="hwBtn" onclick="sendHW()" style="background:var(--blue);border:none;border-radius:8px;color:#fff;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:15px;padding:11px;cursor:pointer;width:100%;letter-spacing:.04em;">📤 LƯU BÀI TẬP CHO KUA</button>
     <div id="hwList" style="margin-top:12px;"></div>
     <div style="font-size:10px;color:var(--tx3);text-align:center;margin-top:8px;">PIN: 2790 · Kua bấm "Bài mẹ gửi" sẽ thấy</div>
+    <button onclick="markAsKuaDevice()" style="margin-top:8px;width:100%;background:rgba(48,209,88,.1);border:1px solid #30d158;border-radius:8px;color:#30d158;font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;padding:6px;cursor:pointer;">
+      📱 Đặt thiết bị này là máy Kua (nguồn dữ liệu chính)
+    </button>
+    <div style="font-size:10px;color:var(--tx3);margin-top:4px">Hiện tại: <b id="deviceTypeLabel"></b></div>
+    <script>document.getElementById("deviceTypeLabel").textContent=localStorage.getItem("isKuaDevice")==="true"?"Máy Kua ✅":"Máy bố/mẹ 👁️";</script></div>
   </div>
 </div>
 
@@ -3512,6 +3517,8 @@ function showParent(){
   if(!pin)return;
   if(pin.trim()!==(localStorage.getItem('parent_pin')||'2790')){alert('❌ PIN không đúng!');return;}
   document.getElementById('parentOL').style.display='flex';renderHW();
+  const dtl=document.getElementById('deviceTypeLabel');
+  if(dtl) dtl.textContent=localStorage.getItem('isKuaDevice')==='true'?'Máy Kua ✅':'Máy bố/mẹ 👁️';
 }
 let srHW=null,isRecHW=false;
 function toggleMicHW(){
@@ -3867,11 +3874,26 @@ async function loadProgressFromCloud(){
     const data=await sbFetch('progress?room_code=eq.KUA&limit=1');
     if(!data||!data.length)return;
     const p=data[0];
-    const localXu=getXu();
-    if(p.xu>localXu){localStorage.setItem(K.xu,p.xu);updateXuUI();}
-    if(p.cups>parseInt(localStorage.getItem(K.cups)||'0'))
-      localStorage.setItem(K.cups,p.cups);
+    // Nếu là máy Kua (thiết bị chính) → KHÔNG đọc từ cloud
+    // Máy Kua luôn là nguồn dữ liệu mới nhất, chỉ ghi lên cloud
+    const isKuaDevice=localStorage.getItem('isKuaDevice')==='true';
+    if(isKuaDevice){
+      // Máy Kua: push dữ liệu local lên cloud (đảm bảo cloud = máy Kua)
+      await syncProgressToCloud();
+      return;
+    }
+    // Máy bố/mẹ: đọc từ cloud về để xem tiến độ Kua
+    localStorage.setItem(K.xu, p.xu||0);
+    localStorage.setItem(K.cups, p.cups||0);
+    updateXuUI();
   }catch(e){console.warn('progress load err:',e.message);}
+}
+
+// Đánh dấu thiết bị này là máy Kua (gọi 1 lần khi setup)
+function markAsKuaDevice(){
+  localStorage.setItem('isKuaDevice','true');
+  syncProgressToCloud();
+  alert('✅ Đã đặt thiết bị này là máy Kua!\nDữ liệu xu và huy hiệu sẽ luôn được lấy từ máy này.');
 }
 
 // ═══ THỜI KHÓA BIỂU ═══
