@@ -420,7 +420,15 @@ function room(){let r=localStorage.getItem(K.room);if(!r){r='KUA'+Math.random().
 
 // ═══ XU ═══
 function getXu(){return parseInt(localStorage.getItem(K.xu)||'0');}
-function addXu(n){const nw=getXu()+n;localStorage.setItem(K.xu,nw);updateXuUI();showXuPop(n);}
+function setXu(v){localStorage.setItem(K.xu,v);updateXuUI();}
+function addXu(n){
+  const nw=getXu()+n;
+  localStorage.setItem(K.xu,nw);
+  updateXuUI();showXuPop(n);
+  // Sync lên cloud sau 2s (debounce tránh gọi liên tục)
+  clearTimeout(window._xuSyncTimer);
+  window._xuSyncTimer=setTimeout(syncProgressToCloud,2000);
+}
 function spendXu(n){const cur=getXu();if(cur<n)return false;localStorage.setItem(K.xu,cur-n);updateXuUI();return true;}
 function updateXuUI(){const x=getXu();document.querySelectorAll('.xu-count').forEach(el=>el.textContent=x.toLocaleString('vi-VN'));}
 function showXuPop(n){
@@ -3228,6 +3236,8 @@ function showCupCelebration(){
   addXu(200);
   const cups=JSON.parse(localStorage.getItem(K.cups)||'[]');cups.push({ts:Date.now()});localStorage.setItem(K.cups,JSON.stringify(cups));
   updateUI();
+
+  setTimeout(syncProgressToCloud,1000);
 }
 function showCupUpload(){
   const el=document.createElement('div');
@@ -3836,6 +3846,33 @@ async function showHWInChat(){
 }
 
 
+
+
+// ═══ PROGRESS SYNC (xu + huy hiệu) ═══
+async function syncProgressToCloud(){
+  try{
+    const xu=getXu();
+    const cups=parseInt(localStorage.getItem(K.cups)||'0');
+    const m=M();
+    await sbFetch('progress?room_code=eq.KUA',{
+      method:'PATCH',
+      prefer:'return=minimal',
+      body:JSON.stringify({xu:xu,cups:cups,streak:m.streak||0,xp:m.xp||0,updated_at:new Date().toISOString()})
+    });
+  }catch(e){console.warn('progress sync err:',e.message);}
+}
+
+async function loadProgressFromCloud(){
+  try{
+    const data=await sbFetch('progress?room_code=eq.KUA&limit=1');
+    if(!data||!data.length)return;
+    const p=data[0];
+    const localXu=getXu();
+    if(p.xu>localXu){localStorage.setItem(K.xu,p.xu);updateXuUI();}
+    if(p.cups>parseInt(localStorage.getItem(K.cups)||'0'))
+      localStorage.setItem(K.cups,p.cups);
+  }catch(e){console.warn('progress load err:',e.message);}
+}
 
 // ═══ THỜI KHÓA BIỂU ═══
 const TKB={
