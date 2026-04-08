@@ -318,7 +318,14 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 </div>
 
 <script>
+// ═══ SUPABASE CONFIG ═══
+
+
+// Lấy bài tập từ Supabase
+
 // ═══ CONFIG ═══
+const SB_URL='https://fwzlxitynbpfjngiakqw.supabase.co';
+const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ3emx4aXR5bmJwZmpuZ2lha3F3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU2MzYzNDYsImV4cCI6MjA5MTIxMjM0Nn0.uz1adH8f7ASyIgPg03d7cb6OMXaP_KFrJ7BPVi8ZHkk';
 const K={api:'sk3',gem:'gem3',mem:'mem3',hw:'hw3',room:'rm3',xu:'xu3',cups:'cups3'};
 let key='',gemKey='',busy=false,imgArr=[],SR=null,isRec=false;
 
@@ -3501,11 +3508,21 @@ function toggleMicHW(){
 function sendHW(){
   const txt=document.getElementById('hwTA').value.trim();
   if(!txt){document.getElementById('hwTA').style.border='1px solid var(--red)';setTimeout(()=>document.getElementById('hwTA').style.border='1px solid var(--bd2)',1500);return;}
+  // Lưu localStorage
   const hw=HW();hw.unshift({id:Date.now(),ts:Date.now(),text:txt});SHW(hw);
   document.getElementById('hwTA').value='';renderHW();
-  const btn=document.getElementById('hwBtn');btn.textContent='✓ Đã lưu!';btn.style.background='var(--green)';
-  setTimeout(()=>{btn.textContent='📤 LƯU BÀI TẬP CHO KUA';btn.style.background='var(--blue)';},2000);
+  // Lưu Supabase cloud
+  const btn=document.getElementById('hwBtn');
+  if(btn){btn.textContent='⏳ Đang đồng bộ...';btn.disabled=true;}
+  saveHWToCloud(txt).then(function(ok){
+    if(btn){
+      btn.textContent=ok?'✅ Đã lưu & đồng bộ cloud!':'📤 LƯU BÀI TẬP CHO KUA';
+      btn.disabled=false;
+      if(ok) setTimeout(function(){btn.textContent='📤 LƯU BÀI TẬP CHO KUA';},3000);
+    }
+  });
 }
+
 function renderHW(){
   const hw=HW(),list=document.getElementById('hwList'),now=Date.now();
   const clean=hw.filter(h=>(now-h.ts)<7*24*3600*1000);if(clean.length!==hw.length)SHW(clean);
@@ -3579,6 +3596,70 @@ function furyHuongDan(btn){
   var sach=decodeURIComponent(btn.getAttribute('data-sach'));
   btn.disabled=true;btn.textContent='Đang gọi Fury...';
   qs('Đây là đề bài từ sách:\n'+sach+'\nAnh đọc kỹ đề và hướng dẫn em làm từng bước theo đúng cách SGK nhé!');
+}
+
+
+// ═══ SUPABASE SYNC ═══
+async function sbFetch(path, opts={}){
+  const res = await fetch(SB_URL+'/rest/v1/'+path, {
+    headers: {
+      'apikey': SB_KEY,
+      'Authorization': 'Bearer '+SB_KEY,
+      'Content-Type': 'application/json',
+      'Prefer': opts.prefer||'',
+    },
+    ...opts,
+  });
+  if(!res.ok){ const e=await res.text(); throw new Error(e); }
+  return res.status===204?null:res.json();
+}
+
+// Mẹ lưu bài tập lên Supabase
+async function saveHWToCloud(text){
+  try {
+    await sbFetch('homework', {
+      method:'POST',
+      prefer:'return=minimal',
+      body: JSON.stringify({text, room_code:'KUA'})
+    });
+    return true;
+  } catch(e){
+    console.warn('Supabase save err:', e.message);
+    return false;
+  }
+}
+
+// Kua lấy bài tập mới nhất từ Supabase
+async function loadHWFromCloud(){
+  try {
+    const data = await sbFetch('homework?room_code=eq.KUA&order=created_at.desc&limit=5');
+    return data||[];
+  } catch(e){
+    console.warn('Supabase load err:', e.message);
+    return [];
+  }
+}
+
+// Ping để tránh project bị pause (chạy mỗi 6 ngày)
+async function pingSupabase(){
+  try { await sbFetch('homework?limit=1'); } catch(e){}
+}
+
+// Tự động sync bài tập từ cloud khi mở app
+async function syncHWFromCloud(){
+  const rows = await loadHWFromCloud();
+  if(!rows.length) return;
+  // Lưu vào localStorage để dùng offline
+  const existing = HW();
+  rows.forEach(function(r){
+    const exists = existing.find(h=>h.id===r.id);
+    if(!exists){
+      existing.unshift({id:r.id, ts:r.created_at, text:r.text});
+    }
+  });
+  // Giữ tối đa 10 bài
+  if(existing.length>10) existing.splice(10);
+  localStorage.setItem('hw3', JSON.stringify(existing));
 }
 
 // ═══ INIT ═══
