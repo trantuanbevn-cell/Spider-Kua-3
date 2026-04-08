@@ -3565,6 +3565,58 @@ function testSach(){
   runTestSach(inp);
 }
 
+async function showHWInChat(){
+  // Trước tiên sync từ cloud
+  await syncHWFromCloud();
+
+  const hw=HW();
+  const today=hw.filter(h=>new Date(h.ts).toDateString()===new Date().toDateString());
+  const recent=hw.filter(h=>new Date(h.ts).toDateString()!==new Date().toDateString()).slice(0,1);
+  const list=today.length?today:recent;
+
+  if(!hw.length){
+    addRaw('ai','📋 Mẹ chưa gửi bài tập nào.<br>Nhờ mẹ mở app → bấm 👩 → nhập bài tập nhé em!');
+    return;
+  }
+
+  var html='<div style="background:rgba(26,107,191,.1);border:1px solid var(--blue2);border-radius:12px;padding:14px;margin-top:4px;">';
+  html+='<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:var(--blue2);margin-bottom:10px;">📋 BÀI TẬP CỦA KUA</div>';
+  html+='<div style="font-size:11px;font-weight:600;color:'+(today.length?'var(--green)':'var(--tx3)')+';font-family:Rajdhani,sans-serif;margin-bottom:6px;">'+(today.length?'HÔM NAY':'GẦN ĐÂY NHẤT')+'</div>';
+
+  var promptParts=[];
+  list.forEach(function(h){
+    html+='<div style="font-size:13px;color:var(--tx);white-space:pre-line;line-height:1.8;margin-bottom:6px;">'+h.text+'</div>';
+    var parsed=parseAndEnrichHW(h.text);
+    if(parsed.found.length){
+      html+='<div style="background:rgba(48,209,88,.08);border:1px solid rgba(48,209,88,.25);border-radius:8px;padding:10px;margin-bottom:6px;">';
+      html+='<div style="font-size:11px;color:var(--green);font-family:Rajdhani,sans-serif;font-weight:700;margin-bottom:6px;">📖 ĐỀ BÀI TỪ SÁCH</div>';
+      parsed.found.forEach(function(f){
+        html+='<div style="font-size:11px;color:var(--tx2);font-weight:600;margin-bottom:3px;">'+f.mon+' - Trang '+f.trang+(f.bai?' - Bài '+f.bai:'')+'</div>';
+        html+='<div style="font-size:12px;color:var(--tx);white-space:pre-line;font-family:monospace;background:var(--s3);border-radius:6px;padding:8px;margin-bottom:6px;">'+f.noiDung+'</div>';
+        promptParts.push(f.mon+' trang '+f.trang+(f.bai?' bài '+f.bai:'')+': '+f.noiDung);
+      });
+      html+='</div>';
+    }
+  });
+  html+='</div>';
+
+  var msgs=document.getElementById('msgs');
+  var wrap=document.createElement('div');wrap.className='msg ai';
+  var av=document.createElement('div');av.className='av';av.textContent='🛡️';
+  var mc=document.createElement('div');mc.className='mc';
+  var mn=document.createElement('div');mn.className='mn';mn.textContent='FURY — BÀI TẬP';
+  var mb=document.createElement('div');mb.className='mb';mb.innerHTML=html;
+  mc.appendChild(mn);mc.appendChild(mb);wrap.appendChild(av);wrap.appendChild(mc);
+  msgs.appendChild(wrap);msgs.scrollTop=msgs.scrollHeight;
+
+  var hwText=list.length?list[0].text:'';
+  var sachInfo=promptParts.length?'\nĐề bài từ sách:\n'+promptParts.join('\n'):'';
+  setTimeout(function(){
+    qs('Bài tập hôm nay: '+hwText+sachInfo+'\nAnh đọc đề và hướng dẫn em làm từng bước nhé!');
+  },600);
+}
+
+
 function runTestSach(inp){
   var parsed=parseAndEnrichHW(inp);
   if(!parsed.found.length){
