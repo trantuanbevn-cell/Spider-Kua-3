@@ -2,7 +2,10 @@
 <html lang="vi">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="theme-color" content="#0a0f1a">
 <title>Spider-Kua</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
@@ -291,6 +294,102 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
   position:absolute;width:12px;height:12px;
   border-color:var(--red);border-style:solid;opacity:.5;
 }
+
+/* ═══ TỐI ƯU SAMSUNG GALAXY TAB A11 - CHIỀU DỌC ═══ */
+
+/* Ngăn double-tap zoom Android */
+* { touch-action: manipulation; }
+
+/* Tăng kích thước touch target tối thiểu 48px */
+.qbtn {
+  min-height: 48px !important;
+  font-size: 13px !important;
+  padding: 8px 10px !important;
+}
+button { min-height: 44px; }
+
+/* Header tối ưu cho màn dọc */
+.hdr {
+  padding: 10px 14px !important;
+}
+.htitle { font-size: 18px !important; }
+
+/* Stats chips lớn hơn */
+.chip {
+  padding: 6px 10px !important;
+  font-size: 11px !important;
+  gap: 5px !important;
+}
+.chipv { font-size: 15px !important; }
+
+/* Quick buttons - 2 hàng cho màn dọc */
+.quick {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  gap: 6px !important;
+  padding: 8px 0 !important;
+}
+.qbtn {
+  flex: 1 1 auto !important;
+  min-width: calc(25% - 6px) !important;
+  max-width: calc(33% - 6px) !important;
+}
+
+/* Chat bubbles rộng hơn */
+.mb {
+  font-size: 15px !important;
+  line-height: 1.7 !important;
+  padding: 12px 14px !important;
+}
+.mn { font-size: 10px !important; }
+
+/* Input area lớn hơn - dễ gõ */
+.inp {
+  font-size: 16px !important; /* Ngăn iOS zoom, cũng tốt cho Android */
+  padding: 12px 14px !important;
+  min-height: 48px !important;
+}
+
+/* XP bar tối ưu */
+.xpw { width: 70px !important; }
+
+/* Power button to hơn */
+.power-btn {
+  width: 38px !important;
+  height: 38px !important;
+}
+.tkb-btn {
+  width: 38px !important;
+  height: 38px !important;
+}
+
+/* Popup chiều dọc tối ưu */
+.tkb-box { max-height: 80vh !important; }
+
+/* Thông báo bài tập - full width trên màn dọc */
+.hw-alert-box {
+  width: min(94vw, 420px) !important;
+}
+
+/* Scroll mượt hơn trên Android */
+.msgs, .tkb-box, .hw-alert-content, .hw-alert-sach-content {
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* Avatar nhỏ hơn trên màn dọc */
+.av { 
+  width: 32px !important; 
+  height: 32px !important; 
+  font-size: 16px !important;
+}
+
+/* Splash tối ưu dọc */
+@media (max-width: 800px) {
+  .splash-title { font-size: 42px !important; }
+  #sloganTxt { font-size: 13px !important; }
+}
+
 </style>
 </head>
 <body>
@@ -4195,6 +4294,26 @@ async function endSession(){
   // Sync progress lên cloud khi kết thúc buổi học
   setTimeout(syncProgressToCloud, 1000);
 }
+
+// ═══ TỐI ƯU TAB A11 ═══
+// Ngăn pinch-to-zoom trên Android tablet
+document.addEventListener('touchstart', function(e){
+  if(e.touches.length > 1) e.preventDefault();
+}, {passive: false});
+
+// Ngăn double-tap zoom
+let lastTap=0;
+document.addEventListener('touchend', function(e){
+  const now=Date.now();
+  if(now-lastTap < 300) e.preventDefault();
+  lastTap=now;
+}, {passive: false});
+
+// Khi bàn phím ảo hiện lên → scroll chat xuống cuối
+window.addEventListener('resize', function(){
+  const msgs=document.getElementById('msgs');
+  if(msgs) setTimeout(function(){msgs.scrollTop=msgs.scrollHeight;}, 200);
+});
 
 // ═══ INIT ═══
 window.onload=()=>{
