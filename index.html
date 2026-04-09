@@ -3886,7 +3886,7 @@ function sendHW(){
   const txt=document.getElementById('hwTA').value.trim();
   if(!txt){document.getElementById('hwTA').style.border='1px solid var(--red)';setTimeout(()=>document.getElementById('hwTA').style.border='1px solid var(--bd2)',1500);return;}
   // Lưu localStorage
-  const hw=HW();hw.unshift({id:Date.now(),ts:Date.now(),text:txt});SHW(hw);
+  const hw=HW();hw.unshift({id:Date.now().toString(),ts:new Date().toISOString(),text:txt});SHW(hw);
   document.getElementById('hwTA').value='';renderHW();
   // Lưu Supabase cloud
   const btn=document.getElementById('hwBtn');
@@ -3916,7 +3916,10 @@ function renderHW(){
     const ts=new Date(h.ts);
     const age=Math.round((now-ts.getTime())/3600000);
     const isToday=ts.toDateString()===new Date().toDateString();
-    const isDone=h.ts<=doneMark;
+    // Chuẩn hóa ts về timestamp số để so sánh
+    var hTs=typeof h.ts==='number'?h.ts:new Date(h.ts).getTime();
+    var doneTs=doneMark==='0'?0:new Date(doneMark).getTime();
+    const isDone=hTs<=doneTs;
     const timeStr=ts.getHours().toString().padStart(2,'0')+':'+ts.getMinutes().toString().padStart(2,'0');
     const dateStr=ts.getDate()+'/'+(ts.getMonth()+1);
 
@@ -4289,7 +4292,10 @@ async function checkAndShowHWAlert(){
   const lastSeen=localStorage.getItem(HW_ALERT_KEY)||'0';
 
   // Chỉ hiện nếu bài mới hơn lần cuối Kua xem
-  if(latest.ts<=lastSeen) return;
+  // Chuẩn hóa để so sánh
+  var latestTs=typeof latest.ts==='number'?new Date(latest.ts).getTime():new Date(latest.ts).getTime();
+  var lastSeenTs=lastSeen==='0'?0:new Date(lastSeen).getTime();
+  if(latestTs<=lastSeenTs) return;
 
   // Hiển thị alert
   const overlay=document.getElementById('hwAlertOverlay');
@@ -4335,7 +4341,12 @@ function dismissHWAlert(){
 function startMissionNow(){
   // Đánh dấu đã xem → không hiện lại
   const hw=HW();
-  if(hw.length) localStorage.setItem(HW_ALERT_KEY, hw[0].ts);
+  if(hw.length){
+    // Chuẩn hóa về ISO string
+    var hts=hw[0].ts;
+    var isoTs=typeof hts==='number'?new Date(hts).toISOString():hts;
+    localStorage.setItem(HW_ALERT_KEY, isoTs);
+  }
   const overlay=document.getElementById('hwAlertOverlay');
   if(overlay) overlay.style.display='none';
   // Gọi showHWInChat để Fury hướng dẫn
