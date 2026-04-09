@@ -133,23 +133,24 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 @keyframes wv{0%,100%{transform:scaleY(.5)}50%{transform:scaleY(1.2)}}
 .ipa{padding:8px 0 12px;border-top:1px solid var(--bd);flex-shrink:0;}
 .quick{display:flex;gap:5px;flex-wrap:wrap;padding-bottom:7px;}
-.qbtn{background:var(--s2);border:1px solid var(--bd);border-radius:14px;color:var(--tx2);font-size:11px;padding:4px 10px;cursor:pointer;transition:all .2s;white-space:nowrap;}
+.qbtn{background:var(--s2);border:1px solid var(--bd);border-radius:12px;color:var(--tx2);font-size:11px;padding:5px 10px;cursor:pointer;transition:all .2s;white-space:nowrap;display:flex;align-items:center;gap:3px;height:34px;}
 .qbtn:hover{border-color:var(--red);color:var(--red2);}
 .iprev{padding:0 0 6px;display:none;flex-wrap:wrap;gap:6px;}
-.irow{display:flex;gap:8px;align-items:flex-end;}
+.irow{display:flex;flex-direction:column;gap:6px;}
+.irow-top{display:flex;gap:8px;align-items:flex-end;}
 .ibox{flex:1;background:var(--s2);border:1px solid var(--bd);border-radius:20px;padding:0 14px;transition:border-color .2s;}
 .ibox:focus-within{border-color:var(--blue2);}
 .ibox textarea{display:block;width:100%;background:transparent;border:none;outline:none;color:var(--tx);font-family:'Nunito',sans-serif;font-size:13px;padding:10px 0;resize:none;max-height:80px;line-height:1.5;}
 .ibox textarea::placeholder{color:var(--tx3);}
-.abtns{display:flex;flex-direction:column;gap:5px;}
-.abtn{width:38px;height:38px;border:none;border-radius:50%;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:15px;transition:all .2s;}
-.abtn.send{background:var(--red);}
+.abtns{display:flex;flex-direction:row;gap:8px;}
+.abtn{flex:1;height:46px;border:none;border-radius:14px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;gap:5px;font-family:'Rajdhani',sans-serif;font-weight:600;letter-spacing:.03em;transition:all .2s;}
+.abtn.send{width:46px;height:46px;flex:none;border-radius:50%;background:var(--red);color:#fff;font-size:20px;}
 .abtn.send:hover{background:var(--red2);}
 .abtn.send:disabled{background:var(--s3);cursor:not-allowed;}
-.abtn.mic{background:var(--s2);border:1px solid var(--bd);}
+.abtn.mic{background:var(--s2);border:1px solid var(--bd);color:var(--tx2);}
 .abtn.mic:hover,.abtn.mic.on{border-color:var(--green);background:rgba(48,209,88,.1);}
 .abtn.mic.on{animation:pulse 1s infinite;}
-.abtn.imgb{background:var(--s2);border:1px solid var(--bd);}
+.abtn.imgb{background:var(--s2);border:1px solid var(--bd);color:var(--tx2);}
 .abtn.imgb:hover{border-color:var(--gold);}
 @keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(48,209,88,.4)}50%{box-shadow:0 0 0 6px rgba(48,209,88,0)}}
 .gr{color:var(--green);font-weight:700;}
@@ -302,11 +303,24 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 
 /* Tăng kích thước touch target tối thiểu 48px */
 .qbtn {
-  min-height: 48px !important;
-  font-size: 13px !important;
-  padding: 8px 10px !important;
+  height: 36px !important;
+  min-height: 36px !important;
+  max-height: 36px !important;
+  font-size: 12px !important;
+  padding: 5px 10px !important;
 }
-button { min-height: 44px; }
+/* button min-height removed - causes distortion */
+
+/* Tablet override cho action buttons */
+.abtn.mic, .abtn.imgb {
+  font-size: 15px !important;
+  height: 46px !important;
+}
+.abtn.send {
+  width: 46px !important;
+  height: 46px !important;
+  font-size: 20px !important;
+}
 
 /* Header tối ưu cho màn dọc */
 .hdr {
@@ -325,14 +339,19 @@ button { min-height: 44px; }
 /* Quick buttons - 2 hàng cho màn dọc */
 .quick {
   display: flex !important;
-  flex-wrap: wrap !important;
-  gap: 6px !important;
-  padding: 8px 0 !important;
+  flex-wrap: nowrap !important;
+  gap: 5px !important;
+  padding: 6px 0 !important;
+  overflow-x: auto !important;
+  -webkit-overflow-scrolling: touch !important;
+  scrollbar-width: none !important;
 }
+.quick::-webkit-scrollbar { display: none; }
 .qbtn {
-  flex: 1 1 auto !important;
-  min-width: calc(25% - 6px) !important;
-  max-width: calc(33% - 6px) !important;
+  flex: 0 0 auto !important;
+  min-width: unset !important;
+  max-width: unset !important;
+  white-space: nowrap !important;
 }
 
 /* Chat bubbles rộng hơn */
@@ -357,10 +376,17 @@ button { min-height: 44px; }
 .power-btn {
   width: 38px !important;
   height: 38px !important;
+  min-height: 38px !important;
+  max-height: 38px !important;
+  flex-shrink: 0 !important;
+  padding: 0 !important;
 }
 .tkb-btn {
   width: 38px !important;
   height: 38px !important;
+  min-height: 38px !important;
+  max-height: 38px !important;
+  flex-shrink: 0 !important;
 }
 
 /* Popup chiều dọc tối ưu */
@@ -549,25 +575,31 @@ button { min-height: 44px; }
 
   <div class="ipa">
     <div class="quick">
-      <button class="qbtn" onclick="showFurySearch()" style="border-color:#c0a060;color:#c0a060;" title="Tra nội dung sách"><img src="https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/the-avengers-seeklogo.png" style="width:14px;height:14px;object-fit:contain;vertical-align:middle;margin-right:3px;">Fury</button>
+      <button class="qbtn qbtn-fury" onclick="showFurySearch()" title="Tra nội dung sách">
+        <img src="https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/the-avengers-seeklogo.png" style="width:13px;height:13px;object-fit:contain;display:block;flex-shrink:0;">
+        <span>Fury</span>
+      </button>
       <button class="qbtn" onclick="qs('Luyện Toán đi anh')">🔢 Toán</button>
       <button class="qbtn" onclick="qs('Học Tiếng Việt nào')">📖 TV</button>
       <button class="qbtn" onclick="qs('Tiếng Anh hôm nay')">🌏 TA</button>
-      <button class="qbtn" onclick="showHWInChat()">📋 Bài mẹ gửi</button>
-      <button class="qbtn" onclick="qs('Em không muốn học đâu')">😴 Lười</button>
-      <button class="qbtn" onclick="showCupUpload()" style="border-color:var(--gold);color:#854F0B;">🏆 Điểm 10</button>
-      <button class="qbtn" onclick="showShop()" style="border-color:var(--gold);color:#854F0B;">🪙 Đổi xu</button>
+      <button class="qbtn" onclick="showHWInChat()">📋 Mẹ gửi</button>
+      <button class="qbtn" onclick="showCupUpload()" style="border-color:var(--gold);color:var(--gold);">🏆 Điểm 10</button>
+      <button class="qbtn" onclick="showShop()" style="border-color:var(--gold);color:var(--gold);">🪙 Đổi xu</button>
     </div>
     <div class="iprev" id="iPrev"></div>
     <div class="irow">
-      <div class="ibox">
-        <textarea id="txtIn" rows="1" placeholder="Nói hoặc gõ câu trả lời..." onkeydown="onKey(event)" oninput="resize(this)"></textarea>
-      </div>
-      <div class="abtns">
-        <button class="abtn mic" id="micBtn" onclick="toggleMic()">🎤</button>
-        <label class="abtn imgb" title="Chụp ảnh">📷<input type="file" accept="image/*" capture="environment" multiple style="display:none" onchange="onImg(this)"></label>
-        <label class="abtn imgb" title="Thư viện">🖼️<input type="file" accept="image/*" multiple style="display:none" onchange="onImg(this)"></label>
+      <!-- Hàng trên: textarea + send -->
+      <div class="irow-top">
+        <div class="ibox">
+          <textarea id="txtIn" rows="1" placeholder="Nói hoặc gõ câu trả lời..." onkeydown="onKey(event)" oninput="resize(this)"></textarea>
+        </div>
         <button class="abtn send" id="sendBtn" onclick="doSend()">➤</button>
+      </div>
+      <!-- Hàng dưới: mic, camera, gallery nằm ngang -->
+      <div class="abtns">
+        <button class="abtn mic" id="micBtn" onclick="toggleMic()">🎤 Mic</button>
+        <label class="abtn imgb" title="Chụp ảnh">📷 Chụp<input type="file" accept="image/*" capture="environment" multiple style="display:none" onchange="onImg(this)"></label>
+        <label class="abtn imgb" title="Thư viện ảnh">🖼️ Ảnh<input type="file" accept="image/*" multiple style="display:none" onchange="onImg(this)"></label>
       </div>
     </div>
   </div>
