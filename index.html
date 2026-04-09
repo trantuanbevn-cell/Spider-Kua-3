@@ -179,6 +179,118 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 .tkb-popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:500;align-items:center;justify-content:center;padding:20px;}
 .tkb-popup.open{display:flex;}
 .tkb-box{background:var(--s1);border:1px solid var(--bd2);border-radius:16px;padding:20px;max-width:400px;width:100%;max-height:85vh;overflow-y:auto;}
+
+/* ═══ THÔNG BÁO BÀI TẬP KHẨN ═══ */
+@keyframes hwAlertIn {
+  0%{transform:translateY(-120%) scale(.9);opacity:0;}
+  60%{transform:translateY(8%) scale(1.02);}
+  100%{transform:translateY(0) scale(1);opacity:1;}
+}
+@keyframes hwPulse {
+  0%,100%{box-shadow:0 0 0 0 rgba(232,25,44,.4);}
+  50%{box-shadow:0 0 0 16px rgba(232,25,44,0);}
+}
+@keyframes hwScan {
+  0%{transform:translateY(-100%);}
+  100%{transform:translateY(400%);}
+}
+@keyframes hwBlink {
+  0%,100%{opacity:1;} 50%{opacity:.3;}
+}
+.hw-alert-overlay{
+  position:fixed;inset:0;z-index:9000;
+  background:rgba(0,0,0,.75);
+  backdrop-filter:blur(4px);
+  display:flex;align-items:flex-start;justify-content:center;
+  padding-top:40px;
+}
+.hw-alert-box{
+  width:min(90vw,400px);
+  background:linear-gradient(160deg,#0a0f1a 0%,#0d1525 60%,#120808 100%);
+  border:2px solid var(--red);
+  border-radius:18px;
+  overflow:hidden;
+  animation:hwAlertIn .5s cubic-bezier(.34,1.56,.64,1) forwards,
+             hwPulse 2s ease-in-out infinite;
+  position:relative;
+}
+.hw-alert-scan{
+  position:absolute;inset:0;overflow:hidden;pointer-events:none;z-index:0;
+}
+.hw-alert-scan::after{
+  content:'';position:absolute;left:0;right:0;height:3px;
+  background:linear-gradient(90deg,transparent,rgba(232,25,44,.6),transparent);
+  animation:hwScan 2.5s linear infinite;
+}
+.hw-alert-header{
+  position:relative;z-index:1;
+  background:linear-gradient(90deg,#e8192c,#8b0010);
+  padding:12px 16px;
+  display:flex;align-items:center;gap:10px;
+}
+.hw-alert-badge{
+  width:32px;height:32px;background:rgba(255,255,255,.15);
+  border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-size:16px;animation:hwBlink 1s ease infinite;flex-shrink:0;
+}
+.hw-alert-title{
+  font-family:'Rajdhani',sans-serif;font-weight:700;
+  font-size:15px;letter-spacing:.08em;color:#fff;text-transform:uppercase;
+  line-height:1.2;
+}
+.hw-alert-sub{
+  font-size:10px;color:rgba(255,255,255,.7);letter-spacing:.06em;margin-top:2px;
+}
+.hw-alert-body{
+  position:relative;z-index:1;padding:16px;
+}
+.hw-alert-meta{
+  font-size:10px;color:var(--tx3);font-family:'Rajdhani',sans-serif;
+  letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;
+  display:flex;align-items:center;gap:6px;
+}
+.hw-alert-meta::before{
+  content:'';width:6px;height:6px;border-radius:50%;
+  background:var(--red);animation:hwBlink .8s infinite;flex-shrink:0;
+}
+.hw-alert-content{
+  background:rgba(255,255,255,.04);border:1px solid rgba(232,25,44,.2);
+  border-radius:10px;padding:12px 14px;
+  font-size:14px;color:var(--tx);line-height:1.8;
+  white-space:pre-line;max-height:180px;overflow-y:auto;
+  margin-bottom:14px;
+}
+.hw-alert-sach{
+  background:rgba(48,209,88,.06);border:1px solid rgba(48,209,88,.2);
+  border-radius:8px;padding:10px;margin-bottom:14px;display:none;
+}
+.hw-alert-sach-title{
+  font-size:10px;color:var(--green);font-family:'Rajdhani',sans-serif;
+  font-weight:700;letter-spacing:.06em;margin-bottom:6px;
+}
+.hw-alert-sach-content{
+  font-size:11px;color:var(--tx2);white-space:pre-line;
+  font-family:monospace;line-height:1.6;max-height:100px;overflow-y:auto;
+}
+.hw-alert-btns{
+  display:flex;gap:8px;
+}
+.hw-alert-btn-main{
+  flex:1;background:linear-gradient(90deg,var(--red),#8b0010);
+  border:none;border-radius:10px;color:#fff;
+  font-family:'Rajdhani',sans-serif;font-weight:700;font-size:14px;
+  letter-spacing:.04em;padding:11px;cursor:pointer;
+}
+.hw-alert-btn-later{
+  background:rgba(255,255,255,.06);border:1px solid var(--bd2);
+  border-radius:10px;color:var(--tx2);
+  font-family:'Rajdhani',sans-serif;font-size:13px;
+  padding:11px 14px;cursor:pointer;white-space:nowrap;
+}
+.hw-alert-corner{
+  position:absolute;width:12px;height:12px;
+  border-color:var(--red);border-style:solid;opacity:.5;
+}
 </style>
 </head>
 <body>
@@ -227,6 +339,38 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 </div>
 
 <!-- ═══ APP ═══ -->
+<div id="hwAlertOverlay" class="hw-alert-overlay" style="display:none;" onclick="if(event.target===this)dismissHWAlert()">
+  <div class="hw-alert-box" id="hwAlertBox">
+    <div class="hw-alert-scan"></div>
+    <!-- Góc trang trí -->
+    <div class="hw-alert-corner" style="top:8px;left:8px;border-width:2px 0 0 2px;border-radius:3px 0 0 0;"></div>
+    <div class="hw-alert-corner" style="top:8px;right:8px;border-width:2px 2px 0 0;border-radius:0 3px 0 0;"></div>
+    <div class="hw-alert-corner" style="bottom:8px;left:8px;border-width:0 0 2px 2px;border-radius:0 0 0 3px;"></div>
+    <div class="hw-alert-corner" style="bottom:8px;right:8px;border-width:0 2px 2px 0;border-radius:0 0 3px 0;"></div>
+    <!-- Header -->
+    <div class="hw-alert-header">
+      <div class="hw-alert-badge">📋</div>
+      <div>
+        <div class="hw-alert-title">⚡ Nhiệm vụ mới từ S.H.I.E.L.D.</div>
+        <div class="hw-alert-sub">MẸ GỬI BÀI TẬP — AGENT PARKER CHÚ Ý</div>
+      </div>
+    </div>
+    <!-- Body -->
+    <div class="hw-alert-body">
+      <div class="hw-alert-meta" id="hwAlertMeta">Đang tải...</div>
+      <div class="hw-alert-content" id="hwAlertContent"></div>
+      <div class="hw-alert-sach" id="hwAlertSach">
+        <div class="hw-alert-sach-title">📖 ĐỀ BÀI TỪ SÁCH</div>
+        <div class="hw-alert-sach-content" id="hwAlertSachContent"></div>
+      </div>
+      <div class="hw-alert-btns">
+        <button class="hw-alert-btn-main" onclick="startMissionNow()">⚡ Làm ngay!</button>
+        <button class="hw-alert-btn-later" onclick="dismissHWAlert()">Để sau</button>
+      </div>
+    </div>
+  </div>
+</div>
+
 <div id="app">
   <div class="hdr">
     <div class="hlogo">🛡️</div>
@@ -3898,6 +4042,75 @@ function markAsKuaDevice(){
   alert('✅ Đã đặt thiết bị này là máy Kua!\nDữ liệu xu và huy hiệu sẽ luôn được lấy từ máy này.');
 }
 
+// ═══ THÔNG BÁO BÀI TẬP KHẨN ═══
+const HW_ALERT_KEY='hw_last_seen';
+
+async function checkAndShowHWAlert(){
+  // Chỉ hiển thị sau khi app đã load xong (qua splash)
+  if(document.getElementById('splash')&&
+     document.getElementById('splash').style.display!=='none') return;
+
+  // Sync bài mới từ cloud
+  try{ await syncHWFromCloud(); }catch(e){}
+
+  const hw=HW();
+  if(!hw.length) return;
+
+  const latest=hw[0];
+  const lastSeen=localStorage.getItem(HW_ALERT_KEY)||'0';
+
+  // Chỉ hiện nếu bài mới hơn lần cuối Kua xem
+  if(latest.ts<=lastSeen) return;
+
+  // Hiển thị alert
+  const overlay=document.getElementById('hwAlertOverlay');
+  const contentEl=document.getElementById('hwAlertContent');
+  const metaEl=document.getElementById('hwAlertMeta');
+  const sachEl=document.getElementById('hwAlertSach');
+  const sachContent=document.getElementById('hwAlertSachContent');
+  if(!overlay) return;
+
+  // Điền nội dung
+  contentEl.textContent=latest.text;
+
+  // Format thời gian
+  const d=new Date(latest.ts);
+  const timeStr=d.getHours().toString().padStart(2,'0')+':'+d.getMinutes().toString().padStart(2,'0');
+  const dateStr=d.getDate()+'/'+( d.getMonth()+1);
+  metaEl.textContent='Gửi lúc '+timeStr+' ngày '+dateStr;
+
+  // Tra sách tự động
+  try{
+    const parsed=parseAndEnrichHW(latest.text);
+    if(parsed&&parsed.found&&parsed.found.length){
+      var sachTxt='';
+      parsed.found.forEach(function(f){
+        sachTxt+=f.mon+' trang '+f.trang+(f.bai?' bài '+f.bai:'')+':'+' '+f.noiDung+'\n\n';
+      });
+      sachContent.textContent=sachTxt.trim();
+      sachEl.style.display='block';
+    } else {
+      sachEl.style.display='none';
+    }
+  }catch(e){ sachEl.style.display='none'; }
+
+  overlay.style.display='flex';
+}
+
+function dismissHWAlert(){
+  const overlay=document.getElementById('hwAlertOverlay');
+  if(overlay) overlay.style.display='none';
+  // Đánh dấu đã xem bài này
+  const hw=HW();
+  if(hw.length) localStorage.setItem(HW_ALERT_KEY, hw[0].ts);
+}
+
+function startMissionNow(){
+  dismissHWAlert();
+  // Gọi showHWInChat để Fury hướng dẫn
+  setTimeout(showHWInChat, 300);
+}
+
 // ═══ THỜI KHÓA BIỂU ═══
 const TKB={
   t2:['HĐTT','T.Anh','Toán','TV-Đọc','—','T.Anh','Thể dục','BDKTKN'],
@@ -4008,6 +4221,8 @@ window.onload=()=>{
     }
     // Ping Supabase mỗi 6 ngày
     setInterval(pingSupabase, 6*24*60*60*1000);
+    // Kiểm tra bài tập mới sau khi load xong
+    setTimeout(checkAndShowHWAlert, 500);
   }, 1500);
 };
 </script>
