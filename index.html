@@ -201,8 +201,8 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
   position:fixed;inset:0;z-index:9000;
   background:rgba(0,0,0,.75);
   backdrop-filter:blur(4px);
-  display:flex;align-items:flex-start;justify-content:center;
-  padding-top:40px;
+  display:flex;align-items:center;justify-content:center;
+  padding:20px;
 }
 .hw-alert-box{
   width:min(90vw,400px);
@@ -4098,15 +4098,17 @@ async function checkAndShowHWAlert(){
 }
 
 function dismissHWAlert(){
+  // Chỉ đóng popup, KHÔNG lưu timestamp → lần sau mở máy vẫn hiện lại
   const overlay=document.getElementById('hwAlertOverlay');
   if(overlay) overlay.style.display='none';
-  // Đánh dấu đã xem bài này
-  const hw=HW();
-  if(hw.length) localStorage.setItem(HW_ALERT_KEY, hw[0].ts);
 }
 
 function startMissionNow(){
-  dismissHWAlert();
+  // Đánh dấu đã xem → không hiện lại
+  const hw=HW();
+  if(hw.length) localStorage.setItem(HW_ALERT_KEY, hw[0].ts);
+  const overlay=document.getElementById('hwAlertOverlay');
+  if(overlay) overlay.style.display='none';
   // Gọi showHWInChat để Fury hướng dẫn
   setTimeout(showHWInChat, 300);
 }
