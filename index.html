@@ -3386,7 +3386,7 @@ async function doSend(){
   if((!txt&&!imgs.length)||busy)return;
   el.value='';resize(el);clearImg();stopSpeak();
   addUserMsg(txt,imgs);showTyp();busy=true;document.getElementById('sendBtn').disabled=true;
-  try{const r=await callAI(txt,imgs);hideTyp();addAIMsg(r);speak(r);addXu(2);}
+  try{const r=await callAI(txt,imgs);hideTyp();addAIMsg(r);speak(r);}
   catch(e){hideTyp();addRaw('ai','⚠️ Lỗi: '+e.message);}
   busy=false;document.getElementById('sendBtn').disabled=false;
 }
@@ -3966,6 +3966,17 @@ function renderTKB(){
     html+='</div>';
   });
   con.innerHTML=html;
+}
+
+// ═══ KẾT THÚC BUỔI HỌC ═══
+async function endSession(){
+  const m=M(), xu=getXu(), today=new Date();
+  const dayKey=DAYS_KEY[today.getDay()];
+  const extra=EXTRA[dayKey]||'không có lịch thêm';
+  const p='[Kua vừa kết thúc buổi học hôm nay. Tổng kết: XP hôm nay='+m.xp+', Tổng xu='+xu+', Streak='+m.streak+' ngày, Missions='+m.missions+'. Lịch học thêm hôm nay: '+extra+'. Hãy: 1) Tổng kết ngắn việc Kua đã làm. 2) Khen thưởng. 3) Nhắc soạn sách vở cho ngày mai. 4) Nhắc lịch học thêm tiếp theo. Giọng Fury vui, ngắn gọn.]';
+  qs(p);
+  // Sync progress lên cloud khi kết thúc buổi học
+  setTimeout(syncProgressToCloud, 1000);
 }
 
 // ═══ INIT ═══
