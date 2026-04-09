@@ -3738,14 +3738,16 @@ function furyHuongDan(btn){
 
 // ═══ SUPABASE SYNC ═══
 async function sbFetch(path, opts={}){
+  const headers={
+    'apikey': SB_KEY,
+    'Authorization': 'Bearer '+SB_KEY,
+    'Content-Type': 'application/json',
+  };
+  if(opts.prefer) headers['Prefer']=opts.prefer;
+  const {prefer,...restOpts}=opts;
   const res = await fetch(SB_URL+'/rest/v1/'+path, {
-    headers: {
-      'apikey': SB_KEY,
-      'Authorization': 'Bearer '+SB_KEY,
-      'Content-Type': 'application/json',
-      'Prefer': opts.prefer||'',
-    },
-    ...opts,
+    headers,
+    ...restOpts,
   });
   if(!res.ok){ const e=await res.text(); throw new Error(e); }
   return res.status===204?null:res.json();
@@ -3993,6 +3995,20 @@ window.onload=()=>{
   const g=localStorage.getItem('gem3');
   if(k)key=k;
   if(g)gemKey=g;
+  // Sync dữ liệu khi mở app
+  setTimeout(async function(){
+    try{ await syncHWFromCloud(); }catch(e){}
+    try{ await loadProgressFromCloud(); }catch(e){}
+    // Máy bố/mẹ: auto-refresh xu mỗi 30s
+    const isKua=localStorage.getItem('isKuaDevice')==='true';
+    if(!isKua){
+      setInterval(async function(){
+        try{ await loadProgressFromCloud(); }catch(e){}
+      }, 30000);
+    }
+    // Ping Supabase mỗi 6 ngày
+    setInterval(pingSupabase, 6*24*60*60*1000);
+  }, 1500);
 };
 </script>
 </body>
