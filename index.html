@@ -3371,90 +3371,6 @@ function parseAndEnrichHW(hwText){
   return {original:hwText,found:found};
 }
 
-function traCuuSach(mon,trang,bai){
-  var sach='';var m=(mon||'').toLowerCase();
-  if(m.includes('vbt')||m.includes('vở')) sach=VBT_TOAN;
-  else if(m.includes('toán')||m.includes('toan')) sach=SGK_TOAN;
-  else if(m.includes('tiếng')||m.includes('tv')) sach=SGK_TV;
-  if(!sach) return '';
-  var lines=sach.split('\n');var start=-1,end=-1;
-  var trangStr='--- TRANG '+trang+' ---';
-  for(var i=0;i<lines.length;i++){if(lines[i].includes(trangStr)){start=i;break;}}
-  if(start===-1) return '';
-  for(var i=start+1;i<lines.length;i++){if(lines[i].match(/^--- TRANG \d+ ---/)){end=i;break;}}
-  if(end===-1) end=Math.min(start+50,lines.length);
-  var pg=lines.slice(start,end).join('\n');
-  if(bai){
-    var bl=pg.split('\n');var bs=-1;
-    for(var i=0;i<bl.length;i++){if(bl[i].trim().startsWith(bai+'.')){bs=i;break;}}
-    if(bs>-1){
-      var be=bl.length;
-      for(var i=bs+1;i<bl.length;i++){if(bl[i].trim().match(/^\d+\./)){be=i;break;}}
-      return bl.slice(bs,be).join('\n');
-    }
-  }
-  return pg;
-}
-
-function parseAndEnrichHW(hwText){
-  var found=[];var m;
-  // Pattern rộng hơn - nhận mọi dạng mẹ giao
-  var patterns=[
-    {re:/(?:vbt|vở\s*bài\s*tập|vở)\s*(?:toán)?\s*trang\s*(\d+)(?:\s*bài\s*(\d+))?/gi, mon:'vbt'},
-    {re:/(?:sgk\s*)?toán\s*trang\s*(\d+)(?:\s*bài\s*(\d+))?/gi, mon:'toan'},
-    {re:/tiếng\s*việt\s*trang\s*(\d+)(?:\s*bài\s*(\d+))?/gi, mon:'tv'},
-    {re:/tv\s*trang\s*(\d+)(?:\s*bài\s*(\d+))?/gi, mon:'tv'},
-    // Dạng "toán trang X" không có prefix
-    {re:/(?:^|\s)toán\s+trang\s+(\d+)(?:\s+bài\s+(\d+))?/gi, mon:'vbt'},
-  ];
-  patterns.forEach(function(p){
-    var re=p.re;
-    while((m=re.exec(hwText))!==null){
-      var trang=m[1], bai=m[2]||null;
-      var nd=traCuuSach(p.mon,trang,bai);
-      if(nd && !found.find(function(f){return f.trang===trang&&f.mon===p.mon;}))
-        found.push({mon:p.mon==='vbt'?'VBT Toán':p.mon==='toan'?'SGK Toán':'Tiếng Việt',trang:trang,bai:bai,noiDung:nd});
-    }
-  });
-  return {original:hwText,found:found};
-}
-
-function traCuuSach(mon,trang,bai){
-  var sach='';var m=(mon||'').toLowerCase();
-  if(m.includes('vbt')||m.includes('vở')) sach=VBT_TOAN;
-  else if(m.includes('toán')||m.includes('toan')) sach=SGK_TOAN;
-  else if(m.includes('tiếng')||m.includes('tv')) sach=SGK_TV;
-  if(!sach) return '';
-  var lines=sach.split('\n');var start=-1,end=-1;
-  var trangStr='--- TRANG '+trang+' ---';
-  for(var i=0;i<lines.length;i++){if(lines[i].includes(trangStr)){start=i;break;}}
-  if(start===-1) return '';
-  for(var i=start+1;i<lines.length;i++){if(lines[i].match(/^--- TRANG \d+ ---/)){end=i;break;}}
-  if(end===-1) end=Math.min(start+50,lines.length);
-  var pg=lines.slice(start,end).join('\n');
-  if(bai){
-    var bl=pg.split('\n');var bs=-1;
-    for(var i=0;i<bl.length;i++){if(bl[i].trim().startsWith(bai+'.')){bs=i;break;}}
-    if(bs>-1){
-      var be=bl.length;
-      for(var i=bs+1;i<bl.length;i++){if(bl[i].trim().match(/^\d+\./)){be=i;break;}}
-      return bl.slice(bs,be).join('\n');
-    }
-  }
-  return pg;
-}
-
-function parseAndEnrichHW(hwText){
-  var found=[];var m;
-  var r1=/(?:vbt|vở)\s*(?:toán)?\s*trang\s*(\d+)(?:\s*bài\s*(\d+))?/gi;
-  while((m=r1.exec(hwText))!==null){var nd=traCuuSach('vbt',m[1],m[2]||null);if(nd)found.push({mon:'VBT Toán',trang:m[1],bai:m[2]||null,noiDung:nd});}
-  var r2=/(?:sgk\s*toán|toán\s*trang)\s*(\d+)(?:\s*bài\s*(\d+))?/gi;
-  while((m=r2.exec(hwText))!==null){var nd=traCuuSach('toan',m[1],m[2]||null);if(nd)found.push({mon:'SGK Toán',trang:m[1],bai:m[2]||null,noiDung:nd});}
-  var r3=/(?:tiếng việt|tv)\s*trang\s*(\d+)(?:\s*bài\s*(\d+))?/gi;
-  while((m=r3.exec(hwText))!==null){var nd=traCuuSach('tv',m[1],m[2]||null);if(nd)found.push({mon:'Tiếng Việt',trang:m[1],bai:m[2]||null,noiDung:nd});}
-  return {original:hwText,found:found};
-}
-
 const REWARDS=[
   {id:'tv',icon:'📺',name:'Xem tivi sau 10h30',desc:'30 phút tối nay',xu:30},
   {id:'game',icon:'🎮',name:'Chơi game sau 10h',desc:'30 phút chơi game',xu:50},
@@ -4058,34 +3974,6 @@ function toggleMicSach(){
   srFury.start();
   isRecFury=true;
   if(btn){btn.textContent='⏹ Đang nghe...';btn.style.borderColor='var(--red)';btn.style.background='rgba(232,25,44,.1)';}
-}
-
-function toggleMicSach(){
-  const S=window.SpeechRecognition||window.webkitSpeechRecognition;
-  const btn=document.getElementById('micSachBtn');
-  if(!S){alert('Dùng Chrome để dùng giọng nói nhé!');return;}
-  if(isRecSach){
-    srSach&&srSach.stop();return;
-  }
-  srSach=new S();srSach.lang='vi-VN';srSach.continuous=false;srSach.interimResults=false;
-  srSach.onresult=function(e){
-    const txt=e.results[0][0].transcript;
-    const parsed=parseAndEnrichHW(txt);
-    if(parsed.found.length){
-      // Có kết quả - chạy testSach với text này
-      runTestSach(txt);
-    } else {
-      addRaw('ai','🎤 Nghe được: "'+txt+'"<br>❌ Không tìm thấy. Thử nói: <b>"VBT Toán trang 45"</b> hoặc <b>"Tiếng Việt trang 10"</b>');
-    }
-  };
-  srSach.onend=function(){
-    isRecSach=false;
-    if(btn){btn.textContent='🎤 Tra sách';btn.style.borderColor='#30d158';}
-  };
-  srSach.onerror=function(){srSach.onend();};
-  srSach.start();
-  isRecSach=true;
-  if(btn){btn.textContent='⏹ Đang nghe...';btn.style.borderColor='var(--red)';}
 }
 
 function testSach(){
