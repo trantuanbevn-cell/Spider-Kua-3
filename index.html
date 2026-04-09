@@ -3505,63 +3505,115 @@ function buyReward(id,xu,name){
 }
 
 // ═══ CUP ĐIỂM 10 ═══
-function showCupCelebration(){
+function showCupCelebration(xuAmt, label){
   const el=document.createElement('div');el.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;';
-  el.innerHTML='<div id="cfwrap" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div><div style="text-align:center;position:relative;z-index:2;padding:20px;"><div style="font-size:72px;margin-bottom:12px;animation:bounce .6s infinite alternate;">🏆</div><div style="font-family:Rajdhani,sans-serif;font-size:28px;font-weight:700;color:var(--gold);margin-bottom:8px;">ĐIỂM 10 XUẤT SẮC!</div><div style="font-size:14px;color:var(--tx2);margin-bottom:20px;">Anh Fury tự hào về em lắm!</div><div style="background:var(--gold);color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:22px;padding:10px 28px;border-radius:14px;display:inline-block;margin-bottom:20px;">+200 xu 🪙</div><br><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:transparent;border:2px solid var(--gold);border-radius:12px;color:var(--gold);font-family:Rajdhani,sans-serif;font-weight:700;font-size:16px;padding:10px 28px;cursor:pointer;margin-top:10px;">TIẾP TỤC</button></div>';
+  el.innerHTML='<div id="cfwrap" style="position:absolute;inset:0;pointer-events:none;overflow:hidden;"></div><div style="text-align:center;position:relative;z-index:2;padding:20px;"><div style="font-size:72px;margin-bottom:12px;animation:bounce .6s infinite alternate;">🏆</div><div style="font-family:Rajdhani,sans-serif;font-size:28px;font-weight:700;color:var(--gold);margin-bottom:8px;">🏆 '+_label.toUpperCase()+'!</div><div style="font-size:14px;color:var(--tx2);margin-bottom:20px;">Anh Fury tự hào về em lắm!</div><div style="background:var(--gold);color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:22px;padding:10px 28px;border-radius:14px;display:inline-block;margin-bottom:20px;">+'+_xu+' xu 🪙</div><br><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:transparent;border:2px solid var(--gold);border-radius:12px;color:var(--gold);font-family:Rajdhani,sans-serif;font-weight:700;font-size:16px;padding:10px 28px;cursor:pointer;margin-top:10px;">TIẾP TỤC</button></div>';
   document.body.appendChild(el);
   const wrap=el.querySelector('#cfwrap');
   const colors=['#f5c842','#e8192c','#30d158','#1a6abf','#ff3347','#fff'];
   for(let i=0;i<60;i++){const c=document.createElement('div');const col=colors[Math.floor(Math.random()*colors.length)];const sz=Math.random()*10+5;c.style.cssText='position:absolute;width:'+sz+'px;height:'+sz+'px;background:'+col+';border-radius:'+(Math.random()>.5?'50%':'2px')+';left:'+Math.random()*100+'%;top:-20px;animation:fall '+(Math.random()*2+2)+'s '+(Math.random()*2)+'s linear infinite;';wrap.appendChild(c);}
   const st=document.createElement('style');st.textContent='@keyframes fall{0%{transform:translateY(-20px) rotate(0deg);opacity:1;}100%{transform:translateY(110vh) rotate(720deg);opacity:0;}}@keyframes bounce{from{transform:scale(1);}to{transform:scale(1.15);}}';document.head.appendChild(st);
-  addXu(200);
+  var _xu=xuAmt||200;var _label=label||"Điểm 10";addXu(_xu);
   const cups=JSON.parse(localStorage.getItem(K.cups)||'[]');cups.push({ts:Date.now()});localStorage.setItem(K.cups,JSON.stringify(cups));
   updateUI();
 
   setTimeout(syncProgressToCloud,1000);
 }
+// ═══ THÀNH TÍCH - ĐIỂM 10 / BẰNG KHEN / GIẤY KHEN ═══
 function showCupUpload(){
   const el=document.createElement('div');
-  el.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+  el.id='cupUploadPop';
+  el.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
   el.innerHTML=`
-    <div style="background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:24px;max-width:360px;width:100%;">
-      <div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:20px;color:var(--gold);text-align:center;margin-bottom:6px;">🏆 NỘP ĐIỂM 10</div>
-      <div style="font-size:12px;color:var(--tx2);text-align:center;margin-bottom:18px;">Chụp ảnh bài kiểm tra có điểm 10<br>AI sẽ xác nhận và tặng 200 xu!</div>
+    <div style="background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:22px;max-width:380px;width:100%;">
+      <div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:20px;color:var(--gold);text-align:center;margin-bottom:4px;">🏆 NỘP THÀNH TÍCH</div>
+      <div style="font-size:11px;color:var(--tx3);text-align:center;margin-bottom:16px;">Điểm 10 · Bằng khen · Giấy khen · Bài cô khen</div>
+
+      <!-- Chọn loại thành tích -->
+      <div style="margin-bottom:14px;">
+        <div style="font-size:11px;color:var(--tx2);font-family:Rajdhani,sans-serif;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;">Loại thành tích:</div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:6px;">
+          <label style="display:flex;align-items:center;gap:6px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:8px 10px;cursor:pointer;">
+            <input type="radio" name="achType" value="diem10" checked style="accent-color:var(--gold);"> <span style="font-size:12px;color:var(--tx);">⭐ Điểm 10</span>
+          </label>
+          <label style="display:flex;align-items:center;gap:6px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:8px 10px;cursor:pointer;">
+            <input type="radio" name="achType" value="bangkhen" style="accent-color:var(--gold);"> <span style="font-size:12px;color:var(--tx);">🥇 Bằng khen</span>
+          </label>
+          <label style="display:flex;align-items:center;gap:6px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:8px 10px;cursor:pointer;">
+            <input type="radio" name="achType" value="giayKhen" style="accent-color:var(--gold);"> <span style="font-size:12px;color:var(--tx);">📜 Giấy khen</span>
+          </label>
+          <label style="display:flex;align-items:center;gap:6px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:8px 10px;cursor:pointer;">
+            <input type="radio" name="achType" value="baiKhen" style="accent-color:var(--gold);"> <span style="font-size:12px;color:var(--tx);">📝 Bài cô khen</span>
+          </label>
+        </div>
+      </div>
+
+      <!-- Chụp ảnh -->
       <div style="display:flex;gap:10px;margin-bottom:14px;">
-        <label style="flex:1;background:var(--s3);border:2px dashed #e8192c;border-radius:12px;padding:16px;text-align:center;cursor:pointer;">
-          <div style="font-size:28px;margin-bottom:5px;">📷</div>
+        <label style="flex:1;background:var(--s3);border:2px dashed var(--red);border-radius:12px;padding:14px;text-align:center;cursor:pointer;">
+          <div style="font-size:26px;margin-bottom:4px;">📷</div>
           <div style="font-size:11px;color:var(--tx2);">Chụp ngay</div>
           <input type="file" accept="image/*" capture="environment" style="display:none" onchange="verifyCup(this)">
         </label>
-        <label style="flex:1;background:var(--s3);border:2px dashed var(--bd2);border-radius:12px;padding:16px;text-align:center;cursor:pointer;">
-          <div style="font-size:28px;margin-bottom:5px;">🖼️</div>
+        <label style="flex:1;background:var(--s3);border:2px dashed var(--bd2);border-radius:12px;padding:14px;text-align:center;cursor:pointer;">
+          <div style="font-size:26px;margin-bottom:4px;">🖼️</div>
           <div style="font-size:11px;color:var(--tx2);">Thư viện</div>
           <input type="file" accept="image/*" style="display:none" onchange="verifyCup(this)">
         </label>
       </div>
-      <button onclick="this.closest('div[style*=fixed]').remove()" style="width:100%;background:transparent;border:1px solid var(--bd);border-radius:10px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-size:14px;padding:10px;cursor:pointer;">Huỷ</button>
+
+      <!-- PIN mẹ xác nhận -->
+      <div style="background:rgba(232,25,44,.06);border:1px solid rgba(232,25,44,.2);border-radius:10px;padding:12px;margin-bottom:12px;">
+        <div style="font-size:11px;color:var(--red2);font-family:Rajdhani,sans-serif;font-weight:700;letter-spacing:.06em;margin-bottom:6px;">🔐 XÁC NHẬN CỦA MẸ</div>
+        <input id="cupPinInput" type="password" inputmode="numeric" maxlength="4" placeholder="Nhập mật khẩu của mẹ"
+          style="width:100%;background:var(--s2);border:1px solid var(--bd2);border-radius:8px;color:var(--tx);font-size:16px;padding:8px 12px;outline:none;box-sizing:border-box;letter-spacing:.3em;text-align:center;font-family:Rajdhani,sans-serif;">
+        <div id="cupPinErr" style="font-size:11px;color:var(--red2);text-align:center;margin-top:4px;display:none;">❌ PIN không đúng!</div>
+      </div>
+
+      <button onclick="document.getElementById('cupUploadPop').remove()" style="width:100%;background:transparent;border:1px solid var(--bd);border-radius:10px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-size:14px;padding:10px;cursor:pointer;">Huỷ</button>
     </div>`;
   document.body.appendChild(el);
 }
 
 async function verifyCup(input){
+  // Kiểm tra PIN mẹ trước
+  const pinEl=document.getElementById('cupPinInput');
+  const pin=pinEl?pinEl.value.trim():'';
+  const correctPin=localStorage.getItem('parent_pin')||'2790';
+  if(pin!==correctPin){
+    const errEl=document.getElementById('cupPinErr');
+    if(errEl){errEl.style.display='block';}
+    setTimeout(function(){if(errEl)errEl.style.display='none';},2000);
+    return;
+  }
+
+  // Lấy loại thành tích
+  const typeEl=document.querySelector('input[name="achType"]:checked');
+  const achType=typeEl?typeEl.value:'diem10';
+  const achLabels={diem10:'Điểm 10',bangkhen:'Bằng khen',giayKhen:'Giấy khen',baiKhen:'Bài cô khen'};
+  const achXu={diem10:200,bangkhen:500,giayKhen:500,baiKhen:150};
+  const achLabel=achLabels[achType]||'Thành tích';
+  const xuReward=achXu[achType]||200;
+
   const f=input.files[0];if(!f)return;
-  input.closest('div[style*=fixed]').remove();
-  const loading=document.createElement('div');loading.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;';
-  loading.innerHTML='<div style="font-size:48px;margin-bottom:16px;">🔍</div><div style="font-family:Rajdhani,sans-serif;font-size:18px;color:var(--tx);">Fury đang kiểm tra điểm...</div>';
+  document.getElementById('cupUploadPop').remove();
+
+  // Loading
+  const loading=document.createElement('div');
+  loading.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;';
+  loading.innerHTML='<div style="font-size:48px;margin-bottom:16px;">🔍</div><div style="font-family:Rajdhani,sans-serif;font-size:18px;color:var(--tx);">Fury đang xác nhận thành tích...</div>';
   document.body.appendChild(loading);
+
   const r=new FileReader();
-  r.onload=async e=>{
+  r.onload=async function(e){
     const b64=e.target.result.split(',')[1];
-    try{
-      let result='';
-      if(gemKey){const res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+gemKey,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{role:'user',parts:[{inlineData:{mimeType:'image/jpeg',data:b64}},{text:'Đây có phải là ảnh bài kiểm tra có điểm 10 (hoặc 10/10) không? Chỉ trả lời YES hoặc NO.'}]}]})});const d=await res.json();result=d.candidates[0].content.parts[0].text.trim().toUpperCase();}
-      else if(key){const res=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:10,messages:[{role:'user',content:[{type:'image',source:{type:'base64',media_type:'image/jpeg',data:b64}},{type:'text',text:'Điểm 10 không? YES/NO'}]}]})});const d=await res.json();result=d.content[0].text.trim().toUpperCase();}
-      loading.remove();
-      if(result.includes('YES'))showCupCelebration();
-      else{const err=document.createElement('div');err.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.9);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;padding:20px;';err.innerHTML='<div style="text-align:center;"><div style="font-size:48px;margin-bottom:12px;">🔎</div><div style="font-family:Rajdhani,sans-serif;font-size:18px;color:var(--tx);margin-bottom:8px;">Chưa thấy điểm 10</div><div style="font-size:13px;color:var(--tx2);margin-bottom:20px;">Chụp rõ hơn nhé!</div><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:var(--red);border:none;border-radius:12px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:15px;padding:12px 28px;cursor:pointer;">Thử lại</button></div>';document.body.appendChild(err);}
-    }catch(e){loading.remove();alert('Lỗi kết nối. Thử lại!');}
-  };r.readAsDataURL(f);
+    // PIN đã xác nhận → không cần AI verify, xác nhận trực tiếp
+    loading.remove();
+    showCupCelebration(xuReward, achLabel);
+  };
+  r.readAsDataURL(f);
 }
+
 
 // ═══ ACTIVATE / KEY ═══
 function activate(){
@@ -3850,10 +3902,56 @@ function sendHW(){
 
 function renderHW(){
   const hw=HW(),list=document.getElementById('hwList'),now=Date.now();
-  const clean=hw.filter(h=>(now-h.ts)<7*24*3600*1000);if(clean.length!==hw.length)SHW(clean);
-  if(!clean.length){list.innerHTML='<div style="font-size:11px;color:var(--tx3);text-align:center;padding:8px 0;">Chưa có bài nào</div>';return;}
-  list.innerHTML='<div style="font-size:11px;color:var(--tx3);font-family:Rajdhani,sans-serif;letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;">Đã lưu gần đây</div>'+
-  clean.slice(0,3).map(h=>{const age=Math.round((now-h.ts)/3600000);const isT=new Date(h.ts).toDateString()===new Date().toDateString();return'<div style="background:'+(isT?'rgba(26,107,191,.1)':'var(--s3)')+';border:1px solid '+(isT?'var(--blue2)':'var(--bd)')+';border-radius:8px;padding:10px 12px;margin-bottom:6px;"><div style="font-size:10px;font-weight:600;color:'+(isT?'var(--blue2)':'var(--tx3)')+';font-family:Rajdhani,sans-serif;margin-bottom:5px;">'+(isT?'HÔM NAY':'TRƯỚC ĐÓ')+' · '+(age<1?'Vừa lưu':age+'h trước')+'</div><div style="font-size:12px;color:var(--tx2);white-space:pre-line;line-height:1.6;">'+h.text+'</div></div>';}).join('');
+  // Xóa bài quá 7 ngày
+  const clean=hw.filter(h=>(now-new Date(h.ts).getTime())<7*24*3600*1000);
+  if(clean.length!==hw.length)SHW(clean);
+  if(!clean.length){
+    list.innerHTML='<div style="font-size:12px;color:var(--tx3);text-align:center;padding:16px 0;">✅ Chưa có bài nào</div>';
+    return;
+  }
+  // Lấy timestamp Kua đã bắt đầu làm (đánh dấu là xem alert)
+  const doneMark=localStorage.getItem('hw_last_seen')||'0';
+  var html='<div style="font-size:11px;color:var(--tx3);font-family:Rajdhani,sans-serif;letter-spacing:.06em;text-transform:uppercase;margin-bottom:8px;">📋 BÀI ĐÃ GIAO ('+clean.length+')</div>';
+  clean.forEach(function(h){
+    const ts=new Date(h.ts);
+    const age=Math.round((now-ts.getTime())/3600000);
+    const isToday=ts.toDateString()===new Date().toDateString();
+    const isDone=h.ts<=doneMark;
+    const timeStr=ts.getHours().toString().padStart(2,'0')+':'+ts.getMinutes().toString().padStart(2,'0');
+    const dateStr=ts.getDate()+'/'+(ts.getMonth()+1);
+
+    html+='<div style="background:'+(isToday?'rgba(26,107,191,.08)':'var(--s3)')+';border:1px solid '+(isToday?'var(--blue2)':'var(--bd)')+';border-radius:10px;padding:10px 12px;margin-bottom:8px;position:relative;">';
+
+    // Header row: ngày + trạng thái + nút xóa
+    html+='<div style="display:flex;align-items:center;gap:6px;margin-bottom:7px;">';
+    html+='<span style="font-size:10px;font-weight:700;color:'+(isToday?'var(--blue2)':'var(--tx3)')+';font-family:Rajdhani,sans-serif;text-transform:uppercase;">'+(isToday?'HÔM NAY':'TRƯỚC ĐÓ')+' · '+timeStr+' '+dateStr+'</span>';
+    html+='<span style="font-size:10px;padding:2px 7px;border-radius:6px;font-family:Rajdhani,sans-serif;font-weight:700;background:'+(isDone?'rgba(48,209,88,.15)':'rgba(255,180,0,.15)')+';color:'+(isDone?'var(--green)':'#ffb400')+'">'+(isDone?'✓ Đã làm':'⏳ Chờ làm')+'</span>';
+    html+='<button data-id="'+h.id+'" onclick="window._delHW(this)" style="margin-left:auto;background:rgba(232,25,44,.1);border:1px solid rgba(232,25,44,.3);border-radius:6px;color:var(--red2);font-size:11px;padding:3px 8px;cursor:pointer;font-family:Rajdhani,sans-serif;font-weight:700;">✕ Xóa</button>';
+    html+='</div>';
+
+    // Nội dung bài
+    html+='<div style="font-size:12px;color:var(--tx2);white-space:pre-line;line-height:1.7;">'+h.text+'</div>';
+    html+='</div>';
+  });
+  list.innerHTML=html;
+}
+
+// Handler tránh quote conflict trong innerHTML
+window._delHW=function(btn){deleteHW(btn.getAttribute('data-id'));};
+
+async function deleteHW(id){
+  if(!confirm('Xóa bài tập này? Kua sẽ không nhận thông báo về bài này nữa.')) return;
+  // Xóa khỏi localStorage
+  const hw=HW().filter(function(h){return h.id!=id;});
+  SHW(hw);
+  // Nếu xóa bài mới nhất, cập nhật hw_last_seen để không hiện thông báo
+  const allHW=HW();
+  if(!allHW.length) localStorage.setItem('hw_last_seen', new Date().toISOString());
+  // Xóa trên Supabase cloud
+  try{
+    await sbFetch('homework?id=eq.'+id, {method:'DELETE'});
+  }catch(e){console.warn('delete cloud err:',e);}
+  renderHW();
 }
 let srSach=null,isRecSach=false;
 let srFury=null,isRecFury=false;
