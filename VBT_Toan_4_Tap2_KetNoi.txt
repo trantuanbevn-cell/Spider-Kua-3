@@ -1,0 +1,2339 @@
+--- TRANG 1 ---
+LÊ ANH VINH (Chủ biên)
+NGUYỄN ÁNG - VŨ VĂN DƯƠNG - NGUYỄN MINH HẢI
+HOÀNG QUẾ HƯỜNG - VŨ VĂN LUÂN - BÙI BÁ MẠNH
+KẾT NỐI TRI THỨC VỚI CUỘC SỐNG
+Vở bài tập
+TOÁN 4
+TẬP HAI
+NHÀ XUẤT BẢN GIÁO DỤC VIỆT NAM
+
+--- TRANG 2 ---
+LÊ ANH VỊNH (Chủ biên)
+NGUYỄN ÁNG - VŨ VĂN DƯƠNG - NGUYỄN MINH HẢI
+HOÀNG QUẾ HƯỜNG - VŨ VĂN LUÂN - BÙI BÁ MẠNH
+Vở bài tập
+TOÁN 4
+VỚI CUỘC SỐNG
+TẬP HAI
+NHÀ XUẤT BẢN GIÁO DỤC VIỆT NAM
+
+--- TRANG 3 ---
+MỤC LỤC
+[Bảng mục lục]
+Bài 38. Nhân với số có một chữ số, Trang 4
+Bài 39. Chia cho số có một chữ số, Trang 6
+Bài 40. Tính chất giao hoán và kết hợp của phép nhân, Trang 10
+Bài 41. Nhân, chia với 10, 100, 1000,.., Trang 14
+Bài 42. Tính chất phân phối của phép nhân đối với phép cộng, Trang 17
+Bài 43. Nhân với số có hai chữ số, Trang 21
+Bài 44. Chia cho số có hai chữ số, Trang 25
+Bài 45. Thực hành và trải nghiệm ước lượng trong tính toán, Trang 29
+Bài 46. Tìm số trung bình cộng, Trang 31
+Bài 47. Bài toán liên quan đến rút về đơn vị, Trang 34
+Bài 48. Luyện tập chung, Trang 37
+Bài 49. Dãy số liệu thống kê, Trang 42
+Bài 50. Biểu đồ cột, Trang 45
+Bài 51. Số lần xuất hiện của một sự kiện, Trang 50
+Bài 52. Luyện tập chung, Trang 53
+Bài 53. Khái niệm phân số, Trang 56
+Bài 54. Phân số và phép chia số tự nhiên, Trang 59
+Bài 55. Tính chất cơ bản của phân số, Trang 62
+2
+
+--- TRANG 4 ---
+[Bảng mục lục tiếp tục]
+Bài 56. Rút gọn phân số, Trang 64
+Bài 57. Quy đồng mẫu số các phân số, Trang 66
+Bài 58. So sánh phân số, Trang 68
+Bài 59. Luyện tập chung, Trang 71
+Bài 60. Phép cộng phân số, Trang 75
+Bài 61. Phép trừ phân số, Trang 80
+Bài 62. Luyện tập chung, Trang 84
+Bài 63. Phép nhân phân số, Trang 88
+Bài 64. Phép chia phân số, Trang 93
+Bài 65. Tìm phân số của một số, Trang 97
+Bài 66. Luyện tập chung, Trang 100
+Bài 67. Ôn tập số tự nhiên, Trang 104
+Bài 68. Ôn tập phép tính với số tự nhiên, Trang 108
+Bài 69. Ôn tập phân số, Trang 111
+Bài 70. Ôn tập phép tính với phân số, Trang 114
+Bài 71. Ôn tập hình học và đo lường, Trang 117
+Bài 72. Ôn tập một số yếu tố thống kê và xác suất, Trang 120
+Bài 73. Ôn tập chung, Trang 122
+3
+
+--- TRANG 5 ---
+BÀI 38: NHÂN VỚI SỐ CÓ MỘT CHỮ SỐ
+Tiết 1
+1. Đặt tính rồi tính.
+12 305 × 4
+20 318 × 5
+391 507 × 2
+2. Đ, S?
+a) [Hình phép tính 31 161 × 3 = 93 384] 13 128
+b) [Hình phép tính 61 500 × 4 = 246 000] 61 500
+c) [Hình phép tính 150 000 × 5 = 650 000] 150 000
+3. Người ta sử dụng 2 xe bồn chở nước để rửa đường và tưới cây. Biết mỗi xe bồn chở 20 000 l nước. Hỏi cả hai xe bồn chở bao nhiêu lít nước?
+Bài giải
+4. Khoanh vào chữ đặt trước câu trả lời đúng.
+Bác Dương mua 6 bình nước, mỗi bình nước có giá 60 000 đồng. Biết phí giao hàng là 30 000 đồng. Hỏi bác Dương phải trả tất cả bao nhiêu tiền?
+A. 360 000 đồng
+B. 390 000 đồng
+C. 420 000 đồng
+4
+
+--- TRANG 6 ---
+Tiết 2
+1. Đặt tính rồi tỉnh.
+16 015 × 4
+71 206 × 5
+191 832 × 3
+2. Khoanh vào chữ đặt trước câu trả lời đúng.
+Cô Hoa có 250 000 đồng. Cô Hoa mua 3 chiếc khăn trải bàn, mỗi chiếc có giá 70 000 đồng. Hỏi cô Hoa còn lại bao nhiêu tiền?
+A. 20 000 đồng
+B. 40 000 đồng
+C. 60 000 đồng
+3. Tính giá trị của biểu thức.
+a) 214 728 + 391 028 × 2 =
+b) 920 312 - 18 021 × 5 =
+4. Anh Khoai khắc số lên các đốt tre theo quy tắc: đốt tre thứ nhất khắc số 1, đốt tre thứ hai khắc số 2, đốt tre thứ ba khắc số 4 và cứ như vậy, số khắc ở đốt tre sau gấp đôi số khắc ở đốt tre trước đó. Biết rằng ở đốt tre thứ mười tám, anh Khoai khắc số 131 072. Hỏi anh Khoai khắc số bao nhiêu lên đốt tre thứ hai mươi?
+Bài giải
+5
+
+--- TRANG 7 ---
+BÀI 39: CHIA CHO SỐ CÓ MỘT CHỮ SỐ
+Tiết 1
+1. Đặt tính rồi tính.
+253 719 : 3
+721 520 : 4
+809 516 : 7
+2. a) Đ, S?
+Bạn Việt thực hiện hai phép chia như sau:
+[Hình đặt tính 58 321 : 6 = 972 dư 1]
+58 321 : 6 = 972 (dư 1)
+[Hình đặt tính 137 045 : 5 = 2 749]
+137 045 : 5 = 2 749
+b) Viết câu trả lời thích hợp vào chỗ chấm.
+Với phép tỉnh bạn Việt thực hiện sai, em hãy sửa lại cho đúng.
+6
+
+--- TRANG 8 ---
+3. Bác Vân có 150 000 đồng. Sau khi mua 4 kg cam thì bác còn lại 30 000 đồng. Hỏi mỗi ki-lô-gam cam có giá bao nhiêu tiền?
+Bài giải
+4. Khoanh vào chữ đặt trước câu trả lời đúng.
+Sóng vô tuyến được phát ra từ điểm A đi thẳng đến điểm B rồi quay ngược trở lại thẳng về điểm A và dừng lại. Biết rằng, sóng vô tuyến đã đi được 982 250 km. Hỏi điểm A cách điểm B bao nhiêu ki-lô-mét?
+[Hình điểm A và B, có sóng vô tuyến]
+A. 491 125 km
+B. 982 250 km
+C. 1 964 500 km
+7
+
+--- TRANG 9 ---
+Tiết 2
+1. Đặt tính rồi tính.
+382 820 : 5
+301 537 : 4
+281 972 : 6
+2. Khoanh vào chữ đặt trước câu trả lời đúng.
+Hai số có tổng và hiệu của chúng lần lượt là 23 400 và 3 400.
+a) Số bé là:
+A. 15 000
+B. 13 400
+C. 10 000
+D. 3 400
+b) Số lớn là:
+A. 10 000
+B. 13 400
+C. 15 000
+D. 23 400
+3. Cứ 6 viên thuốc đóng được 1 vỉ thuốc. Hỏi 412 739 viên thuốc đóng được nhiều nhất bao nhiêu vỉ thuốc như vậy và còn thừa mấy viên thuốc?
+Bài giải
+8
+
+--- TRANG 10 ---
+4. Khoanh vào chữ đặt trước câu trả lời đúng.
+Có 300 000 kg hàng hoá. Người ta chia số hàng hoá đó thành ba phần bằng nhau rồi cho một phần lên chiếc tàu màu xanh, lượng hàng hoá còn lại được cho lên chiếc tàu màu trắng. Hỏi người ta đã cho bao nhiêu ki-lô-gam hàng hoá lên chiếc tàu màu trắng?
+A. 100 000 kg
+B. 150 000 kg
+C. 200 000 kg
+5. Khoanh vào chữ đặt trước câu trả lời đúng.
+Kết quả của phép tính ghi bên cạnh mỗi món quà là giá tiền của món quà đó (đơn vị: đồng). Nam có thể mua được món quà nào?
+[Hình bạn Nam nói: Mình có 20 000 đồng.]
+A. [Hình hộp quà 42 800 : 2]
+B. [Hình hộp quà 65 400 : 3]
+C. [Hình hộp quà 115 200 : 6]
+9
+
+--- TRANG 11 ---
+BÀI 40: TÍNH CHẤT GIAO HOÁN VÀ KẾT HỢP CỦA PHÉP NHÂN
+Tiết 1
+1. Nối hai phép tính có cùng kết quả.
+1 300 × 5 với 5 × 1 300
+7 × 105 với 105 × 7
+62 × 4 với 4 × 62
+2 910 × 3 với 3 × 2 910
+2. Viết số thích hợp vào chỗ chấm.
+a) 6 × 9 = 9 × ...
+b) 8 × 12 = ... × 8
+c) 632 × 2 = ... × 632
+d) 31 140 × 7 = 7 × ...
+3. Viết tiếp vào chỗ chấm cho thích hợp.
+Dùng tính chất giao hoán để tìm kết quả của phép tính: 3 × 215
+Ta có: 3 × 215 = 215 × ...
+Đặt tính:
+Vậy 3 × 215 =
+4. Khoanh vào chữ đặt trước câu trả lời đúng.
+Học sinh đứng xếp thành 12 hàng, mỗi hàng có 8 học sinh. Hỏi có bao nhiêu học sinh đứng xếp hàng?
+A. 20 học sinh
+B. 86 học sinh
+C. 96 học sinh
+D. 168 học sinh
+10
+
+--- TRANG 12 ---
+Tiết 2
+1. Tính bằng hai cách (theo mẫu).
+Mẫu: 4 × 3 × 2 = ?
+Cách 1: 4 × 3 × 2 = (4 × 3) × 2 = 12 × 2 = 24
+Cách 2: 4 × 3 × 2 = 4 × (3 × 2) = 4 × 6 = 24.
+a) 3 × 2 × 5 = ?
+Cách 1: 3 × 2 × 5 = (3 × 2) × 5 =
+Cách 2: 3 × 2 × 5 = 3 × (2 × 5) =
+b) 8 × 3 × 2 = ?
+Cách 1: 8 × 3 × 2 =
+Cách 2: 8 × 3 × 2 =
+c) 7 × 2 × 4 = ?
+Cách 1: 7 × 2 × 4 =
+Cách 2: 7 × 2 × 4 =
+d) 5 × 3 × 3 = ?
+Cách 1: 5 × 3 × 3 =
+Cách 2: 5 × 3 × 3 =
+2. Tô cùng màu các đám mây ghi biểu thức có giá trị bằng nhau.
+8 × 4 × 2
+7 × 3 × 3
+32 × 2
+8 × 8
+7 × 9
+(10 - 1) × 7
+11
+
+--- TRANG 13 ---
+3. Đội hoạt náo viên xếp thành 8 hàng, mỗi hàng có 5 người, mỗi người cầm 2 bông tua. Hỏi đội hoạt náo viên cầm tất cả bao nhiêu bông tua?
+Bài giải
+4. Khoanh vào chữ đặt trước câu trả lời đúng.
+a) Trong các biểu thức dưới đây, biểu thức nào có giá trị lớn nhất?
+A. 12 × 9
+B. 8 × 5 × 2
+C. 4 × 3 × 8
+b) Trong các biểu thức dưới đây, biểu thức nào có giá trị bé nhất?
+A. 12 × 9
+B. 8 × 5 × 2
+C. 4 × 3 × 8
+Tiết 3
+1. Số?
+[Bảng giá trị a, b, c, a × b, b × a, (a × b) × c, a × (b × c)]
+a = 10, b = 2, c = 3
+a = 9, b = 5, c = 2
+a = 6, b = 2, c = 4
+2. Biết 8 × 35 610 = 284 880 và 284 880 × 3 = 854 640. Không thực hiện phép tính, em hãy viết ngay giá trị của mỗi biểu thức sau vào chỗ chấm và giải thích tại sao.
+12
+
+--- TRANG 14 ---
+a) 35 610 × 8 =
+Giải thích:
+b) 3 × 284 880 =
+Giải thích:
+c) 8 × 35 610 × 3 =
+Giải thích:
+d) 3 × 8 × 35 610 =
+Giải thích:
+3. a) Viết chữ cái thích hợp vào ô trống.
+Biết mỗi chữ cái tương ứng với giá trị của mỗi biểu thức như sau:
+A: 20 × 3 × 3
+H: 6 × 20 × 5
+N: 50 × 2 × 4
+U: 2 × 25 × 4
+[Bảng 2 hàng: Giá trị 600, 200, 400, 180, 400. Chữ cái C, V, Ă]
+b) Viết tiếp vào chỗ chấm cho thích hợp.
+Ô chữ nhận được ở câu a là:
+4. Viết số thích hợp vào chỗ chấm.
+a) 129 × ... = 3 × 129
+b) 3 × 25 = (... + 20) × 3
+c) (12 × 7) × 20 = 12 × (... × 20)
+d) 16 × 4 × 2 = 2 × ... = 8 × ...
+13
+
+--- TRANG 15 ---
+BÀI 41: NHÂN, CHIA VỚI 10, 100, 1000,...
+Tiết 1
+1. Tính nhẩm.
+23 × 10 =
+1 729 × 100 =
+381 × 1 000 =
+4 810 : 10 =
+628 000 : 100 =
+123 000 : 1 000 =
+2. Khoanh vào chữ đặt trước câu trả lời đúng.
+Chú Hải chạy 10 vòng quanh hồ. Biết mỗi vòng quanh hồ dài 350 m. Hỏi chú Hải đã chạy bao nhiêu mét vòng quanh hồ?
+A. 3 500 m
+B. 35 000 m
+C. 350 000 m
+3. Học sinh xếp hàng đều nhau ở hai bên lối đi. Biết mỗi bên lối đi có 10 hàng và mỗi hàng đều có 6 học sinh. Hỏi có tất cả bao nhiêu học sinh đứng xếp hàng?
+Bài giải
+14
+
+--- TRANG 16 ---
+4. Khoanh vào chữ đặt trước câu trả lời đúng.
+[Hình Nam, Việt, Mai và Rô-bốt tham gia chạy tiếp sức]
+Nam, Việt, Mai và Rô-bốt tham gia một cuộc thi chạy tiếp sức. Mỗi bạn cần chạy 100 m. Hỏi đoạn đường chạy tiếp sức dài bao nhiêu mét?
+A. 40 m
+B. 400 m
+C. 4 000 m
+Tiết 2
+1. Số?
+[Bảng 3 hàng: Số bị chia, Số chia, Thương]
+Số bị chia: 250, 37 800, 21 000, 3 920, ..., ...
+Số chia: 10, 100, ..., ..., 17, 279
+Thương: ..., ..., 1000, 10, 1000, 100
+2. Viết số thích hợp vào chỗ chấm.
+a) 400 kg = ... tạ
+600 yến = ... tạ
+12 000 kg = ... tấn
+b) 90 kg = ... yến
+300 kg = ... tạ
+10 000 kg = ... tấn
+3. Tính bằng cách thuận tiện.
+a) 3 829 × 2 × 5 =
+b) 5 × 2 × 30 293 =
+c) 2 × 326 × 5 =
+d) 5 × 92 × 2 =
+15
+
+--- TRANG 17 ---
+4. Đoàn lạc đà có 15 con đang di chuyển trên sa mạc theo một hàng dọc. Người ta sử dụng các con lạc đà từ con thứ 3 đến con thứ 12 để chở hàng. Biết mỗi con lạc đà đó chở 150 kg hàng. Hỏi đoàn lạc đà chở tất cả bao nhiêu ki-lô-gam hàng?
+[Hình đàn lạc đà]
+Bài giải
+5. Khoanh vào chữ đặt trước câu trả lời đúng.
+Trên một đoạn dây đèn nháy dài 2 m, cứ 10 cm lại có một bóng đèn. Biết cả hai đầu đoạn dây đều có bóng đèn. Hỏi trên đoạn dây đó có bao nhiêu bóng đèn?
+A. 19 bóng đèn
+B. 20 bóng đèn
+C. 21 bóng đèn
+D. 200 bóng đèn
+16
+
+--- TRANG 18 ---
+BÀI 42: TÍNH CHẤT PHÂN PHỐI CỦA PHÉP NHÂN ĐỐI VỚI PHÉP CỘNG
+Tiết 1
+1. Tính bằng hai cách (theo mẫu).
+Mẫu: 26 × (5 + 4) = ?
+Cách 1: 26 × (5 + 4) = 26 × 9 = 234
+Cách 2: 26 × (5 + 4) = 26 × 5 + 26 × 4 = 130 + 104 = 234.
+a) 25 × (3 + 4) = ?
+Cách 1:
+Cách 2:
+b) (15 + 9) × 8 = ?
+Cách 1:
+Cách 2:
+2. a) Tính giá trị của biểu thức với m = 4, n = 2, p = 7
+m × (n + p) =
+(m + n) × p =
+m × n + m × p =
+m × p + n × p =
+b) Đ, S?
+Trong câu a, ta có:
+m × (n + p) = (m × n) + p.
+m × (n + p) = m × n + m × p.
+(m + n) × p = m + n × p.
+(m + n) × p = m × p + n × p.
+17
+
+--- TRANG 19 ---
+3. Có 5 túi cam và 4 túi xoài, mỗi túi đều có 12 quả. Hỏi cả cam và xoài có bao nhiêu quả?
+Bài giải
+4. Viết số thích hợp vào chỗ chấm.
+Với a = 50, b = 30, c = 20, giá trị của biểu thức 36 × (a + b + c) là:
+Tiết 2
+1. Tính bằng hai cách (theo mẫu).
+Mẫu: 34 × 8 + 34 × 2 = ?
+Cách 1: 34 × 8 + 34 × 2 = 272 + 68 = 340.
+Cách 2: 34 × 8 + 34 × 2 = 34 × (8 + 2) = 34 × 10 = 340.
+a) 37 × 4 + 37 × 3 = ?
+Cách 1:
+Cách 2:
+b) 103 × 4 + 103 × 6 = ?
+Cách 1:
+Cách 2:
+18
+
+--- TRANG 20 ---
+2. Tính bằng cách thuận tiện.
+a) 76 × 7 + 76 × 3
+b) 136 × 80 + 136 × 20
+c) 41 × 5 + 59 × 5
+3. Tính.
+a) 417 × 5 + 417 × 2 + 417 × 3 =
+b) 87 × 3 + 87 × 6 + 87 =
+4. Cô giáo mua cho lớp học vẽ 5 hộp bút chì màu loại 55 000 đồng một hộp và 5 hộp bút chì màu loại 45 000 đồng một hộp. Hỏi cô giáo đã mua hết tất cả bao nhiêu tiền?
+Bài giải
+Tiết 3
+1. a) Tính.
+24 × (8 - 4) =
+(9 - 3) × 8 =
+24 × 8 - 24 × 4 =
+9 × 8 - 3 × 8 =
+b) >; <; = ?
+24 × (8 - 4) ? 24 × 8 - 24 × 4
+15 × (6 - 3) ? 15 × 6 - 15 × 4
+(9 - 3) × 8 ? 9 × 8 - 3 × 8
+25 × (10 - 5) ? 25 × 10 - 25 × 5
+19
+--- TRANG 21 ---
+2. a) Tính giá trị của biểu thức (theo mẫu) rồi viết dấu >; < hoặc = thích hợp vào chỗ chấm.
+[Bảng 5 cột: a, b, c, a × (b - c), a × b - a × c]
+Ta có: a × (b - c) ... a × b - a × c
+b) Nối mỗi biểu thức với giá trị của biểu thức đó.
+17 × 5 - 17 × 3 nối với 34
+(41 - 35) × 8 nối với 48
+41 × 8 - 35 × 8 nối với 48
+17 × (5 - 3) nối với 34
+3. Tính bằng cách thuận tiện.
+a) 125 × 8 - 125 × 7
+b) 208 × 9 - 108 × 9
+4. Cửa hàng văn phòng phẩm có 100 hộp bút màu, mỗi hộp có 12 chiếc bút màu. Cửa hàng đã bán 90 hộp bút màu như vậy. Hỏi cửa hàng còn lại bao nhiêu chiếc bút màu loại đó?
+Bài giải
+
+--- TRANG 22 ---
+BÀI 43: NHÂN VỚI SỐ CÓ HAI CHỮ SỐ
+Tiết 1
+1. Đặt tính rồi tính.
+48 × 32
+208 × 44
+3 207 × 26
+2. Nối mỗi phép tính với kết quả của phép tính đó.
+[Hình nối các phép tính với kết quả]
+48 × 16 nối với 768
+42 × 14 nối với 588
+18 × 41 nối với 738
+3. Cửa hàng có 25 bao gạo, mỗi bao chứa 45 kg gạo. Cửa hàng đã bán được 12 bao gạo đó. Hỏi cửa hàng còn lại bao nhiêu ki-lô-gam gạo?
+Bài giải
+
+--- TRANG 23 ---
+4. >; <; = ?
+a) 107 × 18 ... 18 × 107
+b) 74 × 25 ... 74 × 13 + 74 × 11
+Tiết 2
+1. Số ?
+[Bảng 3 cột: Thừa số, Thừa số, Tích]
+Thừa số: 109, 271, 6 604
+Thừa số: 56, 32, 22
+Tích: ...
+2. Tính.
+72 × 30 = ...
+230 × 70 = ...
+63 × 40 = ...
+2 050 × 70 = ...
+3. Viết số thích hợp vào chỗ chấm.
+85 × 60 = ...
+7 400 × 50 = ...
+4. Diện tích S của hình chữ nhật có chiều dài a và chiều rộng b được tính theo công thức: S = a × b (a, b cùng đơn vị đo).
+a) Với a = 35 dm, b = 23 dm thì S = ........ dm2.
+b) Với a = 76 m, b = 470 dm thì S = ......... m2.
+5. Một người mang trứng gà và trứng vịt ra chợ bán. Người đó đã bán được 35 quả trứng gà với giá 4 000 đồng một quả và 45 quả trứng vịt với giá 3 500 đồng một quả. Hỏi người đó đã thu về được bao nhiêu tiền bán trứng gà và trứng vịt?
+Bài giải
+
+--- TRANG 24 ---
+Tiết 3
+1. a) Đặt tính rồi tính.
+62 × 37
+b) Số ?
+45 × 29
+315 × 46
+2. Số ?
+[Bảng 3 cột: Thừa số, Thừa số, Tích]
+Thừa số: 74, 43
+Thừa số: 21, 58
+Tích: 2 494, 1 554
+Từ các thừa số và tích đã cho, lập các phép nhân thích hợp là:
+... × ... = ...
+... × ... = ...
+
+--- TRANG 25 ---
+3. Hộp A đựng 22 gói kẹo chanh, mỗi gói có 24 cái kẹo. Hộp B đựng 18 gói kẹo dừa, mỗi gói có 25 cái kẹo. Hỏi số kẹo ở hai hộp hơn kém nhau bao nhiêu cái?
+Bài giải
+4. a) Đ, S?
+[Hình phép tính 64 nhân 11]
+b) Số ?
+Khi nhân một số với 11, Nam đã đặt hai tích riêng thẳng cột với nhau nên kết quả sai là 42. Kết quả đúng của số đó nhân với 11 là ...
+
+--- TRANG 26 ---
+BÀI 44: CHIA CHO SỐ CÓ HAI CHỮ SỐ
+Tiết 1
+1. Đặt tính rồi tính.
+1 288 : 28
+1 554 : 42
+3 109 : 35
+2. Nối mỗi phép tính với kết quả của phép tính đó.
+[Hình nối các phép chia với kết quả 7, 62, 9, 140, 910, 249]
+450 : 50
+560 : 80
+4 340 : 70
+72 800 : 80
+74 700 : 300
+126 000 : 900
+
+--- TRANG 27 ---
+3. Trong một hội trường, người ta xếp đều 432 cái ghế vào 36 dãy. Hỏi mỗi dãy đã xếp bao nhiêu cái ghế?
+Bài giải
+4. >; <; = ?
+a) 384 : 24 ... 384 : 12
+b) 960 : 24 ... 480 : 12
+Tiết 2
+1. Đặt tính rồi tính.
+2 294 : 31
+4 896 : 24
+17 850 : 34
+2. Tính giá trị của biểu thức.
+a) 84 : (2 × 3)
+84 : 2 : 3
+84 : 3 : 2
+b) (64 × 48) : 16
+(64 : 16) × 48
+64 × (48 : 16)
+
+--- TRANG 28 ---
+3. Một mảnh vườn hình chữ nhật có diện tích 792 m2 chiều dài 36 m.
+a) Tính chu vi của mảnh vườn đó.
+b) Nếu giữ nguyên chiều dài và tăng chiều rộng thêm 3 m nữa thì diện tích mảnh vườn đó tăng thêm bao nhiêu mét vuông?
+Bài giải
+Tiết 3
+1. Số ?
+[Bảng 3 cột: Thừa số, Thừa số, Tích]
+Thừa số: 86, 74, ...
+Thừa số: ..., ..., 28
+Tích: 3 870, 3 996, 1 288
+
+--- TRANG 29 ---
+2. Viết số thích hợp vào ô trống (theo mẫu).
+[Bảng 5 cột: Số bị chia, Số chia, Thương, Số dư, Viết là]
+Số bị chia: 3 875, 15 820
+Số chia: 45, 54
+Thương: 86, ...
+Số dư: 5, ...
+Viết là: 3 875 : 45 = 86 (dư 5)
+3. Khoanh vào chữ đặt trước câu trả lời đúng.
+Một đội đồng diễn xếp thành 36 hàng, mỗi hàng có 16 người. Hỏi nếu đội đồng diễn đó xếp thành 24 hàng thì mỗi hàng có bao nhiêu người?
+A. 16 người
+B. 20 người
+C. 24 người
+D. 36 người
+4. Nếu xếp 16 người lên một ô tô thì tất cả số người xếp vừa đủ lên 11 ô tô như vậy. Hỏi nếu xếp tất cả số người đó lên ô tô, mỗi ô tô 24 người thì cần nhiều nhất bao nhiêu ô tô như vậy và còn thừa ra mấy người?
+Bài giải
+
+--- TRANG 30 ---
+BÀI 45: THỰC HÀNH VÀ TRẢI NGHIỆM ƯỚC LƯỢNG TRONG TÍNH TOÁN
+1. Số ?
+a) Trong hai tuần đầu tháng Tư, trang trại của bác Ba lần lượt bán được 3 890 và 2 950 con cá dầy giống. Trong hai tuần đó, bác Ba đã bán được khoảng ... nghìn con cá dầy giống.
+b) Ước lượng kết quả mỗi phép tính.
+7 025 + 4 870 khoảng ... nghìn.
+8 952 - 2 095 khoảng ... nghìn.
+38 971 + 19 458 khoảng ... chục nghìn.
+60 813 - 21 344 khoảng ... chục nghìn.
+2. Viết số thích hợp vào chỗ chấm.
+a) Khu nuôi ếch của bác Năm có kích thước như hình bên. Nếu làm tròn chiều dài mỗi cạnh đến hàng chục thì khu nuôi ếch có diện tích khoảng ... m2.
+[Hình chữ nhật kích thước 49 m và 21 m]
+b) Ao thả ba ba của bác Năm có diện tích và chiều dài như hình bên. Làm tròn diện tích đến hàng trăm và chiều dài đến hàng chục, em ước lượng chiều rộng của cái ao được khoảng ... m.
+[Hình chữ nhật diện tích 799 m2 và chiều dài 41 m]
+c) 713 × 29 có kết quả khoảng ....... nghìn.
+804 : 41 có kết quả khoảng ....... chục.
+
+--- TRANG 31 ---
+3. Đ, S?
+a) 4 878 + 3 901 = 9 079
+b) 9 050 - 2 855 > 6 000
+c) 82 × 105 > 7 910
+d) 928 : 29 < 30
+4. Số ?
+Số cân nặng của mỗi con trâu, con bò, con bê được ghi trong hình dưới đây.
+[Hình con trâu 498 kg, con bò 396 kg, con bê 98 kg]
+a) Cả bò và bê cân nặng khoảng ... tạ.
+b) Bò cân nặng hơn bê khoảng ... tạ.
+c) Cân nặng của trâu gấp khoảng ... lần cân nặng của bê.
+5. Viết số thích hợp vào chỗ chấm.
+Một tên lửa mang 30 vệ tinh lên vũ trụ, trong đó có 10 vệ tinh, mỗi vệ tinh nặng 69 kg và 20 vệ tinh, mỗi vệ tinh nặng 71 kg. Làm tròn cân nặng mỗi vệ tinh đến hàng chục, tổng cân nặng các vệ tinh mà tên lửa đó mang khoảng ....... tạ.
+[Hình vệ tinh trên vũ trụ]
+
+--- TRANG 32 ---
+BÀI 46: TÌM SỐ TRUNG BÌNH CỘNG
+Tiết 1
+1. Viết tiếp vào chỗ chấm cho thích hợp.
+a) Số trung bình cộng của hai số 10 và 20 là: ...
+b) Số trung bình cộng của ba số 20, 40 và 60 là: ...
+c) Số trung bình cộng của ba số 3, 11 và 16 là: ...
+2. Cân nặng của 4 học sinh lần lượt là 27 kg, 30 kg, 32 kg và 35 kg. Hỏi trung bình mỗi bạn nặng bao nhiêu ki-lô-gam?
+Bài giải
+3. Số học sinh xuất sắc của các lớp khối Bốn ở một trường trong năm học vừa qua được cho như bảng sau:
+[Bảng 2 cột: Tên lớp, Số học sinh xuất sắc]
+4A1: 15
+4A2: 12
+4A3: 16
+4A4: 13
+Hỏi trong năm học vừa qua, trung bình mỗi lớp có bao nhiêu học sinh xuất sắc?
+Bài giải
+
+--- TRANG 33 ---
+4. Viết câu trả lời thích hợp vào chỗ chấm.
+Chiều cao của 5 cầu thủ trong đội bóng đá thiếu niên nhi đồng của Trường Tiểu học Thành Công được cho như bảng sau:
+[Bảng 2 cột: Cầu thủ, Chiều cao (cm)]
+An: 125
+Hùng: 130
+Dũng: 132
+Mạnh: 133
+Hải: 135
+Chiều cao của 5 cầu thủ trong đội bóng đá thiếu niên nhi đồng của Trường Tiểu học Quyết Thắng được cho như bảng sau:
+[Bảng 2 cột: Cầu thủ, Chiều cao (cm)]
+Phương: 125
+Trường: 131
+Đạt: 133
+Luân: 136
+Tải: 140
+Không thực hiện phép tính, em hãy cho biết chiều cao trung bình của một cầu thủ trong đội bóng đá thiếu niên – nhi đồng của trường nào cao hơn. Tại sao?
+Trả lời: ...
+
+--- TRANG 34 ---
+Tiết 2
+1. Viết số thích hợp vào mỗi hình tròn, biết số ghi ở hình tròn bằng trung bình cộng của các số ghi ở hình vuông.
+[Hình các số trong hình vuông nối với hình tròn ở giữa]
+2. Khoanh vào chữ đặt trước câu trả lời đúng.
+Chú Luân có 6 chai nước nắp màu xanh và 8 chai nước nắp màu trắng. Các chai nước có nắp màu xanh chứa tất cả 1 320 ml nước, các chai nước có nắp màu trắng chứa tất cả 1 480 ml nước. Hỏi trung bình mỗi chai nước của chú Luân đựng bao nhiêu mi-li-lít nước?
+A. 150 ml
+B. 250 ml
+C. 200 ml
+3. Ngày thứ nhất, Nam đạp xe được 1 500 m. Ngày thứ hai, Nam đạp xe được nhiều hơn ngày thứ nhất là 500 m. Hỏi trung bình mỗi ngày Nam đạp xe được bao nhiêu mét?
+Bài giải
+4. Khoanh vào chữ đặt trước câu trả lời đúng.
+Mai có hai ngăn để sách. Ngăn trên có 15 quyển sách. Biết rằng, trung bình mỗi ngăn có 20 quyển sách. Hỏi ngăn dưới có bao nhiêu quyển sách?
+A. 40 quyển sách
+B. 35 quyển sách
+C. 25 quyển sách
+
+--- TRANG 35 ---
+BÀI 47: BÀI TOÁN LIÊN QUAN ĐẾN RÚT VỀ ĐƠN VỊ
+Tiết 1
+1. Có 72 hộp sữa chua chia đều vào 12 vỉ. Hỏi 5 vỉ như vậy có bao nhiêu hộp sữa chua?
+Bài giải
+2. Mẹ cắm đều 54 bông hoa cúc vào 6 lọ và cắm đều 45 bông hoa hồng vào 9 lọ khác. Hỏi:
+a) 5 lọ hoa cúc như vậy có bao nhiêu bông?
+b) 4 lọ hoa hồng như vậy có bao nhiêu bông?
+Bài giải
+
+--- TRANG 36 ---
+3. Số ?
+a)
+[Bảng 2 hàng: Số quyển vở, Số tiền mua (đồng)]
+Số quyển vở: 5, 2, 6
+Số tiền mua (đồng): 42 500, ..., ...
+b) Số tiền mua 6 quyển vở gấp ... lần số tiền mua 2 quyển vở.
+Tiết 2
+1. Mẹ mua 4 kg cam phải trả tất cả 100 000 đồng. Hỏi nếu mẹ có 125 000 đồng thì mua được mấy ki-lô-gam cam loại đó?
+Bài giải
+2. Có 84 chiếc bánh được đóng đều vào 14 hộp. Hỏi 54 chiếc bánh cùng loại đó sẽ đóng được bao nhiêu hộp như vậy?
+Bài giải
+3. Từ một đoạn dây nhôm dài 52 cm, Việt gấp được một hình vuông (hình A). Hỏi nếu Mai muốn gấp một hình ngôi sao (hình B) thì phải dùng đoạn dây nhôm dài bao nhiêu xăng-ti-mét? Biết độ dài cạnh hình vuông bằng độ dài cạnh ngôi sao.
+[Hình ngôi sao B]
+
+--- TRANG 37 ---
+Bài giải
+4. Đội áo đỏ có 100 người xếp đều vào các hàng thì được 20 hàng.
+a) Nếu đội áo xanh có 85 người cũng xếp hàng như đội áo đỏ thì được bao nhiêu hàng?
+b) Đội áo vàng có số người nhiều hơn đội áo xanh là 50 người. Hỏi nếu cũng xếp hàng như đội áo đỏ thì đội áo vàng có số hàng nhiều hơn đội áo xanh bao nhiêu hàng?
+Bài giải
+
+--- TRANG 38 ---
+BÀI 48: LUYỆN TẬP CHUNG
+Tiết 1
+1. Tính nhẩm.
+a) 52 613 × 10 = ...
+8 482 × 100 = ...
+9 358 × 1 000 = ...
+b) 235 400 : 100 = ...
+943 700 : 10 = ...
+740 000 : 1 000 = ...
+2. Đặt tính rồi tính.
+81 207 × 6
+41 072 : 8
+3 512 × 54
+159 200 : 67
+3. Đ, S?
+Trường Tiểu học Nguyễn Trãi có hai mảnh vườn trồng hoa. Mảnh vườn trồng hoa hồng dạng hình chữ nhật có chiều dài 16 m, chiều rộng 10 m. Mảnh vườn trồng hoa cúc dạng hình vuông có cạnh 13 m.
+[Hình chữ nhật kích thước 16 m và 10 m. Hình vuông cạnh 13 m]
+
+--- TRANG 39 ---
+a) Chu vi của hai mảnh vườn bằng nhau.
+b) Diện tích mảnh vườn trồng hoa hồng bằng diện tích mảnh vườn trồng hoa cúc.
+c) Diện tích mảnh vườn trồng hoa hồng bé hơn diện tích mảnh vườn trồng hoa cúc.
+4. Khối 4 của Trường Tiểu học Hoà Bình gồm 6 lớp, mỗi lớp có 35 học sinh và 3 lớp, mỗi lớp có 32 học sinh. Hỏi trung bình mỗi lớp khối 4 của trường đó có bao nhiêu học sinh?
+Bài giải
+5. Tính giá trị của biểu thức.
+89 175 - 37 076 : 46 × 100 = ...
+Tiết 2
+1. Tính nhẩm (theo mẫu).
+a) Mẫu: 20 × 30 = ?
+Nhẩm: 2 × 3 = 6
+20 × 30 = 600
+700 × 20 = ?
+Nhẩm: 7 × 2 = 14
+700 × 20 = 14 000
+30 × 30 = ...
+300 × 20 = ...
+60 × 50 = ...
+800 × 60 = ...
+
+--- TRANG 40 ---
+b) Mẫu: 600 : 30 = ?
+Nhẩm: 600 : 30 = 60 : 3 = 20
+600 : 30 = 20
+1 200 : 400 = ?
+Nhẩm: 1 200 : 400 = 12 : 4 = 3
+1 200 : 400 = 3
+800 : 20 = ...
+270 : 90 = ...
+4 800 : 800 = ...
+35 000 : 500 = ...
+2. Một cửa hàng hoa quả nhập về 765 kg quả vú sữa được đóng đều vào 17 thùng. Cửa hàng đã bán hết 9 thùng. Hỏi cửa hàng còn lại bao nhiêu ki-lô-gam quả vú sữa?
+Bài giải
+3. Viết tiếp vào chỗ chấm cho thích hợp.
+Mi đã đặt một món quà sau ô cửa ghi phép tính có kết quả bé nhất. Mai, Việt, Nam và Rô-bốt theo thứ tự đi vào các ô cửa A, B, C, D. Hỏi bạn nào nhận được món quà của Mi?
+[Hình các ô cửa A, B, C, D chứa phép tính: 198 000 : 6, 2 800 × 8, 864 000 : 40, 500 × 50]
+Bạn ... nhận được món quà của Mi.
+--- TRANG 41 ---
+4. Tính bằng cách thuận tiện.
+a) 416 × 25 × 4 =
+b) 125 × 53 × 8 × 30 =
+Tiết 3
+1. Đ, S?
+a)
+121 304
+× 6
+749 128
+b)
+4100
+× 38
+37624
+14 109
+51 733
+c) 970 410 : 35 = 918
+2. Số ?
+a) ? × 6 = 15 078
+b) 21 095 : ? = 46
+3. Có 56 cái áo xếp đều vào 7 hộp. Hỏi nếu 765 cái áo cùng loại đó thì xếp được bao nhiêu hộp như thế và còn thừa mấy cái áo?
+Bài giải
+
+--- TRANG 42 ---
+[Hình Rô-bốt cầm đèn pin]
+4. Rô-bốt đến toà nhà chứa kho báu theo các đoạn đường ghi phép tính có kết quả là số chẵn.
+Đoạn đường:
+20 300 : 50
+80 040 : 40
+2 507 × 9
+518 × 15
+10 928 : 8
+1 403 × 7
+631 000 : 1000
+2 004 × 26
+Tô màu đường đi đến toà nhà chứa kho báu và viết chữ thích hợp vào chỗ chấm.
+Kho báu ở trong toà nhà ...
+5. Tính bằng cách thuận tiện.
+a) 750 × 46 + 46 × 250 =
+b) 79 × 65 - 79 × 55 + 210 =
+
+--- TRANG 43 ---
+[Hình Rô-bốt giơ ngón tay chỉ vào bảng ghi "19 câu"]
+BÀI 49: DÃY SỐ LIỆU THỐNG KÊ
+Tiết 1
+1. Trong một trận đấu bóng rổ dành cho học sinh khối lớp 4, các bạn Hùng, Dũng, Huy và Hoàng lần lượt ghi được số điểm là: 13, 7, 8, 21. Đây cũng là những bạn ghi được nhiều điểm nhất trong trận đấu đó.
+Dựa vào dãy số liệu trên, hãy viết số thích hợp vào chỗ chấm.
+a) Số điểm lớn nhất đã ghi được trong trận đấu đó là ... điểm.
+b) Có ....... bạn ghi được nhiều hơn 10 điểm.
+2. Hình dưới đây cho biết số câu đố mà mỗi bạn đã giải được trong chương trình "Giải đố giải ngố".
+[Hình 4 bạn nhỏ với số câu đố giải được: 27 câu, 31 câu, 28 câu, 19 câu]
+Viết dãy số liệu chỉ số câu đố mà mỗi bạn đã giải được theo thứ tự:
+a) Từ bé đến lớn: ...
+b) Từ lớn đến bé: ...
+3. Rô-bốt ghi chép số con cá theo từng loài trong một bể cá thành một dãy số liệu như sau: 5, 2, 6, 4, 3, 7, 4, 4.
+Dựa vào dãy số liệu trên, hãy viết câu trả lời cho các câu hỏi sau.
+a) Dãy số liệu trên gồm bao nhiêu số? ...
+b) Loài có số lượng nhiều nhất có bao nhiêu con? ...
+Loài có số lượng ít nhất có bao nhiêu con? ...
+
+--- TRANG 44 ---
+c) Có loài cá nào chỉ có 1 con duy nhất hay không? Vì sao?
+...
+4. Đ, S?
+Cho dãy số liệu về tổng số bánh (đơn vị: cái) mà cửa hàng bán được trong 1 tuần (từ thứ Hai đến Chủ nhật) như sau: 90, 87, 85, 79, 75, 72, 70.
+a) Dãy số liệu trên gồm 8 số. [ ]
+b) Cửa hàng bán được nhiều bánh nhất vào ngày đầu tiên trong tuần. [ ]
+c) Số bánh cửa hàng bán được trong mỗi ngày là tăng dần (tức là ngày hôm sau luôn bán được số bánh nhiều hơn ngày hôm trước). [ ]
+Tiết 2
+1. Cho dãy số liệu về số ki-lô-gam giấy loại mà ban tổ chức kế hoạch nhỏ nhận được sau 5 ngày đầu phát động: 35 kg, 40 kg, 42 kg, 56 kg, 61 kg.
+Dựa vào dãy số liệu trên, hãy viết câu trả lời cho các câu hỏi sau.
+a) Số lượng giấy loại mà ban tổ chức nhận được ít nhất vào ngày nào?
+...
+b) Số lượng giấy loại mà ban tổ chức nhận được trong mỗi ngày là tăng hay giảm sau mỗi ngày?
+...
+c) Sau 5 ngày phát động, ban tổ chức nhận được tất cả bao nhiêu ki-lô-gam giấy loại?
+...
+
+--- TRANG 45 ---
+2. Các bạn trong tổ của Nam vừa thực hành làm diều để tặng các em lớp Một.
+Số con diều mà mỗi bạn trong tổ đã làm được ghi lại thành một dãy số liệu như sau: 8, 3, 2, 7, 5, 5, 5, 5, 6, 4.
+Dựa vào dãy số liệu trên, hãy viết câu trả lời cho các câu hỏi sau.
+a) Tổ của Nam có bao nhiêu bạn tham gia làm diều?
+...
+b) Trung bình mỗi bạn làm được mấy con diều?
+...
+3. a) Hãy thực hiện một cuộc khảo sát về số giờ tự học trong một ngày của các bạn trong nhóm em và ghi lại kết quả thành dãy số liệu.
+...
+b) Dựa vào dãy số liệu vừa thu thập được, hãy viết câu trả lời cho các câu hỏi sau.
+Có bao nhiêu bạn đã tham gia cuộc khảo sát? ...
+Có bao nhiêu bạn dành nhiều hơn 1 giờ cho việc tự học mỗi ngày? ...
+4. Mai vừa tham gia trò chơi đuổi hình bắt chữ.
+Sau 4 lượt chơi đầu tiên, Mai nhận được các số điểm là: 14, 8, 19, 11.
+Dựa vào dãy số liệu trên, hãy viết câu trả lời cho các câu hỏi sau.
+a) Trung bình mỗi lượt chơi, Mai nhận được bao nhiêu điểm?
+...
+b) Để nhận được số điểm trung bình sau 5 lượt chơi là 15 thì Mai cần ghi được bao nhiêu điểm trong lượt chơi thứ năm?
+...
+
+--- TRANG 46 ---
+[Biểu đồ SỐ THÍ NGHIỆM KHOA HỌC]
+BÀI 50: BIỂU ĐỒ CỘT
+Tiết 1
+1. Biểu đồ dưới đây cho biết số thí nghiệm khoa học của các bạn học sinh khối lớp 4 đã thực hiện trong học kì 1.
+SỐ THÍ NGHIỆM KHOA HỌC
+Trục đứng: (Thí nghiệm) từ 0 đến 6.
+Trục ngang: (Tháng) Tháng 9, Tháng 10, Tháng 11, Tháng 12.
+Cột: Tháng 9 (3), Tháng 10 (5), Tháng 11 (3), Tháng 12 (2).
+Quan sát biểu đồ trên, hãy viết câu trả lời cho các câu hỏi sau.
+a) Trong mỗi tháng, các học sinh khối lớp 4 đã thực hiện bao nhiêu thí nghiệm khoa học?
+...
+b) Trong tháng nào các học sinh khối lớp 4 thực hiện số thí nghiệm khoa học nhiều nhất?
+...
+c) Trong tháng nào các học sinh khối lớp 4 thực hiện số thí nghiệm khoa học ít nhất?
+...
+
+--- TRANG 47 ---
+[Biểu đồ SỐ CON SÂU ĐÃ BẮT ĐƯỢC]
+2. Cho bảng thống kê số lượng sâu mà nhóm bạn của Rô-bốt đã bắt được vào mỗi buổi sáng trong tuần vừa qua tại vườn rau của trường.
+Bảng: Ngày (Thứ Hai, Thứ Ba, Thứ Tư, Thứ Năm, Thứ Sáu), Số con sâu (15, 12, 28, 15, 20).
+a) Hoàn thành biểu đồ dưới đây bằng cách viết số thích hợp vào chỗ chấm.
+SỐ CON SÂU ĐÃ BẮT ĐƯỢC
+Trục đứng: (Con sâu) từ 0 đến 30.
+Trục ngang: (Ngày) Thứ Hai, Thứ Ba, Thứ Tư, Thứ Năm, Thứ Sáu.
+Cột: Thứ Hai (15), Thứ Ba (12), Thứ Tư (28), Thứ Năm (15), Thứ Sáu (20).
+b) Dựa vào biểu đồ, hãy viết câu trả lời cho các câu hỏi sau.
+Những ngày nào nhóm bạn của Rô-bốt bắt được số sâu bằng nhau?
+...
+Trung bình mỗi ngày, nhóm bạn của Rô-bốt bắt được bao nhiêu con sâu?
+...
+
+--- TRANG 48 ---
+[Biểu đồ SỐ THÀNH VIÊN CỦA CÂU LẠC BỘ BƠI]
+3. Biểu đồ dưới đây cho biết số thành viên của câu lạc bộ bơi trong 6 năm đầu hoạt động.
+a) Hoàn thành biểu đồ bằng cách viết số thích hợp vào chỗ chấm.
+SỐ THÀNH VIÊN CỦA CÂU LẠC BỘ BƠI
+Trục đứng: (Thành viên) từ 0 đến 40.
+Trục ngang: (Năm) Năm thứ nhất, Năm thứ hai, Năm thứ ba, Năm thứ tư, Năm thứ năm, Năm thứ sáu.
+Cột: Năm thứ nhất (15), Năm thứ hai (20), Năm thứ ba (25), Năm thứ tư (30), Năm thứ năm (35), Năm thứ sáu (40).
+b) Dựa vào biểu đồ, hãy viết câu trả lời cho các câu hỏi sau.
+Trong năm đầu tiên, câu lạc bộ có bao nhiêu thành viên?
+...
+Sau mỗi năm, số lượng thành viên của câu lạc bộ thay đổi như thế nào (tăng lên hay giảm đi)? Tăng lên hay giảm đi bao nhiêu thành viên?
+...
+
+--- TRANG 49 ---
+[Biểu đồ SỐ MÉT VẢI CỬA HÀNG ĐÃ BÁN ĐƯỢC]
+[Biểu đồ SỐ GIỎ TRE XƯỞNG THỦ CÔNG ĐAN ĐƯỢC]
+Tiết 2
+1. Biểu đồ bên cho biết số mét vải một cửa hàng đã bán được trong 4 quý của một năm.
+Dựa vào biểu đồ, hãy viết câu trả lời cho các câu hỏi sau.
+a) Trong mỗi quý, cửa hàng bán được bao nhiêu mét vải?
+...
+b) Trong quý 4, cửa hàng bán được nhiều hơn trong quý 3 bao nhiêu mét vải?
+...
+c) Trung bình mỗi quý, cửa hàng bán được bao nhiêu mét vải?
+...
+2. Biểu đồ bên cho biết số giỏ tre một xưởng thủ công đan được trong 5 ngày.
+Dựa vào biểu đồ, hãy viết câu trả lời cho các câu hỏi sau.
+a) Trong ngày thứ tư, xưởng thủ công đan được bao nhiêu chiếc giỏ?
+...
+
+--- TRANG 50 ---
+[Biểu đồ SỐ QUE KEM CỬA HÀNG BÁN ĐƯỢC]
+b) Trung bình trong 5 ngày, mỗi ngày xưởng thủ công đan được bao nhiêu chiếc giỏ?
+...
+c) Số giỏ đan được trong mỗi ngày thay đổi như thế nào so với ngày trước đó?
+...
+3. Cho dãy số liệu về số que kem cửa hàng đã bán được từ thứ Hai đến Chủ nhật tuần vừa qua: 460 que, 600 que, 380 que, 570 que, 600 que, 1 280 que, 1 500 que.
+a) Hoàn thành biểu đồ dưới đây bằng cách viết số thích hợp vào chỗ chấm.
+SỐ QUE KEM CỬA HÀNG BÁN ĐƯỢC
+Trục đứng: (Que) từ 0 đến 1 600.
+Trục ngang: (Ngày) Thứ Hai, Thứ Ba, Thứ Tư, Thứ Năm, Thứ Sáu, Thứ Bảy, Chủ nhật.
+Cột: Thứ Hai (460), Thứ Ba (600), Thứ Tư (380), Thứ Năm (570), Thứ Sáu (600), Thứ Bảy (1 280), Chủ nhật (1 500).
+b) Hãy viết câu trả lời cho các câu hỏi sau.
+Vào những ngày nào cửa hàng bán được nhiều hơn 1 000 que kem?
+...
+Theo em, tại sao vào những ngày đó, cửa hàng bán được nhiều kem như vậy?
+...
+
+--- TRANG 51 ---
+BÀI 51: SỐ LẦN XUẤT HIỆN CỦA MỘT SỰ KIỆN
+Tiết 1
+1. Viết tiếp vào chỗ chấm cho thích hợp.
+Trong hộp có 4 chiếc bút mực xanh và 2 chiếc bút mực đen.
+a) Việt lấy 1 chiếc bút ra khỏi hộp và quan sát màu mực của chiếc bút lấy được.
+Các sự kiện có thể xảy ra là: ...
+b) Mỗi lần, Việt lấy 1 chiếc bút ra khỏi hộp, quan sát màu mực và ghi lại kết quả vào bảng kiểm đếm rồi trả bút lại hộp.
+Lấy được 1 chiếc bút mực xanh: [vạch kiểm]
+Lấy được 1 chiếc bút mực đen: [vạch kiểm]
+Dựa vào bảng kiểm đếm, ta thấy số lần Việt lấy được bút mực xanh là ... lần và số lần Việt lấy được bút mực đen là ... lần.
+Sự kiện xuất hiện nhiều lần hơn là ...
+2. a) Gieo xúc xắc, quan sát số chấm ở mặt trên của xúc xắc và ghi lại kết quả kiểm đếm chẵn – lẻ của mặt xúc xắc nhận được vào bảng sau đây. Thực hiện 20 lần.
+Chẵn: ...
+Lẻ: ...
+b) Viết tiếp vào chỗ chấm cho thích hợp.
+Dựa vào bảng kiểm đếm, số lần nhận được mặt chẵn là ... lần và số lần nhận được mặt lẻ là ... lần.
+Sự kiện xuất hiện nhiều lần hơn là ...
+
+--- TRANG 52 ---
+3. Khoanh vào chữ đặt trước câu trả lời đúng.
+Trong túi có 2 viên bi màu vàng và 2 viên bi màu đỏ. Không nhìn vào trong túi, Mai lấy 2 viên bi bất kì ra khỏi túi, quan sát màu bi và ghi lại kết quả vào bảng kiểm đếm rồi trả lại bi vào túi.
+Bảng kiểm đếm:
+Lấy được 2 viên bi màu vàng: [vạch kiểm]
+Lấy được 2 viên bi màu đỏ: [vạch kiểm]
+Lấy được 1 viên bi màu vàng và 1 viên bi màu đỏ: [vạch kiểm]
+a) Sự kiện nào xuất hiện nhiều lần nhất?
+A. Lấy được 2 viên bi màu vàng.
+B. Lấy được 2 viên bi màu đỏ.
+C. Lấy được 1 viên bi màu vàng và 1 viên bi màu đỏ.
+b) Nếu Mai chỉ lấy 2 viên bi ra khỏi túi trong một lần thì câu nào dưới đây là đúng?
+A. Mai chắc chắn lấy được 2 viên bi khác màu.
+B. Mai có thể lấy được 2 viên bi cùng màu.
+C. Mai không thể lấy được 2 viên bi khác màu.
+Tiết 2
+1. a) Em hãy gieo một xúc xắc, quan sát số chấm ở mặt trên của xúc xắc, ghi lại kết quả vào bảng kiểm đếm. Thực hiện 20 lần.
+...
+b) Từ bảng kiểm đếm ở câu a, hãy cho biết sự kiện nào có số lần xuất hiện ít nhất.
+...
+
+--- TRANG 53 ---
+[Hình mê cung xuất phát từ 1 điểm đi đến các điểm A, B, C]
+2. a) Em hãy vẽ hình trên giấy rồi cắt để được 2 con thỏ đen và 2 con thỏ trắng.
+b) Không nhìn vào hộp, lấy 2 con thỏ ra khỏi hộp và quan sát màu của những con thỏ lấy được.
+Viết các sự kiện có thể xảy ra: ...
+c) Thực hiện yêu cầu ở câu b, ghi lại kết quả vào bảng kiểm đếm rồi đặt lại thỏ vào trong hộp. Thực hiện 10 lần.
+2 thỏ trắng: ...
+2 thỏ đen: ...
+1 thỏ trắng và 1 thỏ đen: ...
+d) Từ bảng kiểm đếm, hãy so sánh số lần xuất hiện của sự kiện lấy được 2 con thỏ cùng màu và sự kiện lấy được 2 con thỏ khác màu.
+...
+3. Cho mê cung ngẫu nhiên như hình vẽ. Cách chơi: Bắt đầu ở điểm Xuất phát. Tại mỗi lượt chơi, người chơi lần lượt gieo xúc xắc hai lần và quan sát số chấm ở mặt trên của xúc xắc. Nếu nhận được mặt có số chấm lẻ thì đi theo hướng bên phải, nếu nhận được mặt có số chấm chẵn thì đi theo hướng bên trái đến điểm tiếp theo. Lượt chơi kết thúc khi người chơi đến được điểm A, B hoặc C.
+Ví dụ: Người chơi bắt đầu ở điểm Xuất phát, gieo xúc xắc nhận được mặt có 3 chấm rồi sau đó là mặt có 2 chấm thì người chơi kết thúc ở điểm B.
+Thực hiện 10 lần và ghi lại kết quả vào bảng kiểm đếm.
+Kết thúc ở điểm A: ...
+Kết thúc ở điểm B: ...
+Kết thúc ở điểm C: ...
+
+--- TRANG 54 ---
+[Biểu đồ SỐ CỦ CÀ RỐT CON THỎ ĐÃ ĂN]
+BÀI 52: LUYỆN TẬP CHUNG
+1. Khoanh vào chữ đặt trước câu trả lời đúng.
+Rô-bốt cùng các bạn tham gia giải bóng đá cấp trường. Số điểm mà mỗi đội nhận được cho một trận thắng, hoà, thua lần lượt là 3 điểm, 1 điểm và 0 điểm. Cho dãy số liệu về số điểm mà đội của Rô-bốt nhận được sau 6 trận đấu vòng bảng như sau: 3 điểm, 0 điểm, 1 điểm, 1 điểm, 3 điểm, 3 điểm.
+Hỏi đội của Rô-bốt đã giành chiến thắng bao nhiêu trận?
+A. 1 trận
+B. 2 trận
+C. 3 trận
+D. 4 trận
+2. a) Rô-bốt đã ghi chép số củ cà rốt mà con thỏ của Rô-bốt đã ăn trong 5 ngày và vẽ lại thành biểu đồ cột. Em hãy hoàn thành biểu đồ cột đó bằng cách viết số thích hợp vào chỗ chấm.
+SỐ CỦ CÀ RỐT CON THỎ ĐÃ ĂN
+Trục đứng: (Củ) từ 0 đến 7.
+Trục ngang: (Ngày) Ngày 1, Ngày 2, Ngày 3, Ngày 4, Ngày 5.
+Cột: Ngày 1 (3), Ngày 2 (4), Ngày 3 (6), Ngày 4 (4), Ngày 5 (3).
+
+--- TRANG 55 ---
+[Biểu đồ ĐỘ DÀI QUÃNG ĐƯỜNG ĐI ĐƯỢC CỦA RÙA CON]
+b) Dựa vào biểu đồ, hãy viết câu trả lời cho các câu hỏi sau.
+Vào ngày nào con thỏ ăn nhiều cà rốt nhất? Hôm đó, con thỏ ăn bao nhiêu củ cà rốt?
+...
+Trung bình mỗi ngày thỏ ăn bao nhiêu củ cà rốt?
+...
+3. Biểu đồ dưới đây cho biết độ dài quãng đường đi được của rùa con sau 5 ngày đầu tập luyện để chuẩn bị cho một cuộc chạy thi.
+ĐỘ DÀI QUÃNG ĐƯỜNG ĐI ĐƯỢC CỦA RÙA CON
+Trục đứng: (m) từ 0 đến 1 800.
+Trục ngang: (Ngày) Ngày 1, Ngày 2, Ngày 3, Ngày 4, Ngày 5.
+Cột: Ngày 1 (700), Ngày 2 (600), Ngày 3 (1 400), Ngày 4 (1 640), Ngày 5 (1 520).
+
+--- TRANG 56 ---
+Dựa vào biểu đồ, hãy trả lời các câu hỏi sau.
+a) Số ? Mỗi ngày tập luyện, rùa con đi được bao nhiêu mét?
+Bảng: Ngày (Ngày 1, Ngày 2, Ngày 3, Ngày 4, Ngày 5), Độ dài quãng đường đi được (m) (700, 600, 1 400, 1 640, 1 520).
+b) Quá trình tập luyện của rùa con có sự tiến bộ đáng kể vào ngày nào? (Độ chênh lệch về quãng đường đi được trong hai ngày liên tiếp là lớn nhất.)
+...
+c) Trung bình mỗi ngày tập luyện, rùa con đi được bao nhiêu mét?
+...
+4. Em hãy chuẩn bị 5 lá thăm, trên mỗi lá thăm ghi các số: 5, 5, 10, 10, 10.
+a) Gập mỗi lá thăm hai lần, cho các lá thăm vào một chiếc hộp. Sau đó, lần lượt lấy 2 lá thăm bất kì, tính tổng các số ghi trên hai lá thăm đó và ghi lại kết quả vào bảng kiểm đếm dưới đây. Sau đó, cho lại lá thăm vào hộp. Thực hiện 20 lần như vậy.
+Tổng nhận được là 10: ...
+Tổng nhận được là 15: ...
+Tổng nhận được là 20: ...
+b) Dựa vào kết quả kiểm đếm, hãy cho biết sự kiện nào có số lần xuất hiện nhiều nhất.
+...
+
+--- TRANG 57 ---
+BÀI 53: KHÁI NIỆM PHÂN SỐ
+Tiết 1
+1. Viết phân số chỉ phần đã tô màu của mỗi hình vào chỗ chấm (theo mẫu).
+Mẫu: [Hình chữ nhật chia 4 phần, tô màu 1 phần] Phân số: 1/4. Tử số: 1. Mẫu số: 4.
+a) [Hình lục giác chia 6 phần, tô màu 3 phần] Phân số: 3/6. Tử số: 3. Mẫu số: 6.
+b) [Hình tròn chia 10 phần, tô màu 5 phần] Phân số: 5/10. Tử số: 5. Mẫu số: 10.
+c) [Hình tam giác chia 9 phần nhỏ, tô màu 4 phần] Phân số: 4/9. Tử số: 4. Mẫu số: 9.
+2. Số ?
+Bảng:
+Phân số: 3/7, Tử số: 3, Mẫu số: 7
+Phân số: 5/11, Tử số: 5, Mẫu số: 11
+Phân số: 5/9, Tử số: 5, Mẫu số: 9
+Phân số: 7/21, Tử số: 7, Mẫu số: 21
+3. Nối mỗi phân số với cách đọc của phân số đó.
+4/7 nối với Bốn phần bảy
+5/8 nối với Năm phần tám
+7/11 nối với Bảy phần mười một
+8/13 nối với Tám phần mười ba
+
+--- TRANG 58 ---
+[Hình 1: Hình bình hành chia 8 tam giác nhỏ, tô màu 4 phần]
+[Hình 2: Lưới vuông 3x3, tô màu 4 ô ở 4 góc]
+[Hình 3: Hình vuông chia 8 tam giác nhỏ, tô màu 3 phần]
+[Hình 4: Hình lục giác ghép từ 7 lục giác nhỏ, tô màu 3 phần]
+[Hình 5: Hình tam giác lớn chia 9 tam giác nhỏ, tô màu 6 phần]
+[Hình 6: Hình ziczac gồm 8 hình vuông nhỏ, tô màu 4 phần]
+4. Khoanh vào chữ đặt trước câu trả lời đúng.
+Phân số chỉ phần đã tô màu của hình bên [Hình tròn chia 10 phần, tô màu 3 phần] là:
+A. 7/10
+B. 7/3
+C. 3/6
+D. 3/10
+Tiết 2
+1. Viết phân số và cách đọc phân số đó vào chỗ chấm (theo mẫu).
+Mẫu: 4/9 ; bốn phần chín
+a) ...
+b) ...
+c) ...
+d) ...
+2. Viết phân số thích hợp vào chỗ chấm.
+a) Tám phần mười lăm viết là ...
+b) Bảy phần mười bảy viết là ...
+c) Mười một phần hai mươi lăm viết là ...
+d) Hai mươi ba phần bốn mươi tám viết là ...
+
+--- TRANG 59 ---
+[Hình 1: Hình vuông có 5 hình tròn nhỏ bên trong, 2 hình tròn tô màu xanh]
+[Hình 2: Hình chữ nhật có 15 hình tròn nhỏ bên trong, 5 hình tròn tô màu xanh]
+[Hình 3: Hình chữ nhật có 15 hình tròn nhỏ bên trong, 6 hình tròn tô màu xanh]
+[Hình 4: Hình chữ nhật chia 10 phần bằng nhau, 4 phần tô màu xanh]
+3. Viết dấu “x” vào ô trống dưới hình đã tô màu 3/5 số hình tròn của hình đó.
+[ ] [ ] [ ] [ ]
+4. Khoanh vào chữ đặt trước câu trả lời đúng.
+a) Phân số chỉ phần đã tô màu của hình bên [Hình chữ nhật chia 12 phần, tô màu 7 phần] là:
+A. 7/5
+B. 5/12
+C. 7/12
+D. 5/7
+b) Phân số chỉ phần chưa tô màu của hình bên là:
+A. 7/12
+B. 5/12
+C. 12/7
+D. 12/5
+5. Tô màu vào 3/4 số con cá trong hình dưới đây.
+[Hình ảnh các con cá, cần tô màu 3/4 số lượng]
+
+--- TRANG 60 ---
+BÀI 54: PHÂN SỐ VÀ PHÉP CHIA SỐ TỰ NHIÊN
+Tiết 1
+1. a) Viết thương của mỗi phép chia dưới dạng phân số vào chỗ chấm.
+15 : 68 = 15/68
+30 : 17 = 30/17
+120 : 233 = 120/233
+27 : 89 = 27/89
+b) Viết (theo mẫu).
+Mẫu: 18 : 9 = 18/9 = 2.
+144 : 24 = 144/24 = 6
+180 : 20 = 180/20 = 9
+2. Số ?
+Mẫu: 17 = 17/1.
+34 = 34/1
+37 = 37/1
+125 = 125/1
+19 = 19/1
+3. Viết phân số thích hợp vào chỗ chấm.
+Có 4 quả cam như nhau.
+a) Nếu chia đều cho 3 người thì mỗi người được 4/3 quả cam.
+b) Nếu chia đều cho 5 người thì mỗi người được 4/5 quả cam.
+4. Khoanh vào chữ đặt trước câu trả lời đúng.
+Có 3 thùng như nhau đựng đầy nước. Người ta đã lấy hết lượng nước của 3 thùng đó chia đều vào 5 can. Hỏi lượng nước ở mỗi can bằng mấy phần lượng nước của một thùng?
+A. 5/8 thùng
+B. 5/3 thùng
+C. 3/5 thùng
+D. 8/5 thùng
+--- TRANG 61 ---
+4. Nối số đo thích hợp với cách đọc số đo đó.
+[Các số đo: 7/10 l; 9/4 tấn; 4/5 m2; 5/6 kg]
+[Các cách đọc: Năm phần sáu ki-lô-gam; Bốn phần năm mét vuông; Bảy phần mười lít; Chín phần tư tấn]
+5. Viết phân số thích hợp vào chỗ chấm (theo mẫu).
+a) Chia đoạn thẳng AB thành 5 đoạn bằng nhau (như hình vẽ).
+[Hình đoạn thẳng AB được chia thành 5 phần bằng nhau bởi các điểm C, D, E, G]
+Mẫu: AC = 1/5 AB
+CD = ... CB
+AE = ... AG
+DG = ... AB
+b) Trong câu a, nếu AB = 1 m thì độ dài các đoạn thẳng AC, CD, CE, CG bằng mấy phần của 1 m?
+Mẫu: AC = 1/5 m
+CD = ... m
+CE = ... m
+CG = ... m
+
+--- TRANG 62 ---
+BÀI 55: TÍNH CHẤT CƠ BẢN CỦA PHÂN SỐ
+Tiết 1
+1. Số?
+a) 3/7 = (3 × 4) / (7 × 4) = ?/?
+2/9 = (2 × 3) / (9 × 3) = ?/?
+15/46 = (15 × 7) / (46 × 7) = ?/?
+b) 28/60 = (28 : 4) / (60 : 4) = ?/?
+48/56 = (48 : 8) / (56 : 8) = ?/?
+125/75 = (125 : 25) / (75 : 25) = ?/?
+2. Số?
+a) 3/7 = (3 × ?) / (7 × 5) = ?/35
+5/9 = (5 × 7) / (9 × ?) = ?/?
+b) 72/80 = (72 : 8) / (80 : ?) = ?/?
+26/52 = (26 : 26) / (52 : 13) = ?/?
+3. Khoanh vào chữ đặt trước câu trả lời đúng.
+Cùng giảm 5 lần tử số và mẫu số của phân số trong tấm thẻ bên, ta được phân số nào bằng phân số trong tấm thẻ đó?
+[Hình tấm thẻ ghi phân số 60/95]
+A. 12/95
+B. 60/19
+C. 12/19
+D. 19/12
+4. Khoanh vào các phân số bằng nhau trong các phân số sau.
+4/6; 8/12; 2/3; 60/95
+
+--- TRANG 63 ---
+Tiết 2
+1. Số?
+a) 5/8 = ?/16
+b) 24/30 = ?/5
+c) ?/18 = 5/6
+d) 7/12 = ?/48
+2. Nối hai phép tính có thương bằng nhau (theo mẫu).
+[Các phép tính: 27 : 9; 33 : 3; 165 : 15; 1 088 : 16; 136 : 2; 81 : 27]
+Mẫu: 27 : 9 nối với 81 : 27
+3. Viết số thích hợp vào chỗ chấm.
+Mỗi con bướm, con ong che mất một số trong các phân số như hình vẽ.
+[Hình vẽ phân số 18/6 = 72/? = ?/8 với con bướm và con ong che các số]
+Con bướm che mất số ...; con ong che mất số ...
+4. Viết số thích hợp vào chỗ chấm.
+Mỗi hình vuông, hình tam giác, hình tròn che lấp một số trong các phân số như hình vẽ.
+3/5 = 6/? = ?/20 = 48/?
+Cộng các số bị che lấp bởi ba hình đó được kết quả là ...
+
+--- TRANG 64 ---
+BÀI 56: RÚT GỌN PHÂN SỐ
+Tiết 1
+1. Cho các phân số: 2/6; 19/21; 25/17; 13/42; 20/35; 27/57
+a) Viết tiếp vào chỗ chấm cho thích hợp.
+• Các phân số tối giản là: ...
+• Các phân số chưa tối giản là: ...
+b) Rút gọn các phân số chưa tối giản ở câu a.
+2. Nối hai phân số bằng nhau (theo mẫu).
+14/18 nối với 7/9
+27/36 nối với 3/4
+3/13 nối với 12/52
+1/5 nối với 20/100
+3. Đ, S?
+a) Rút gọn phân số 42/36 được:
+7/6 [ ]
+6/7 [ ]
+b) Rút gọn phân số 24/48 được phân số tối giản là:
+12/24 [ ]
+6/12 [ ]
+1/2 [ ]
+
+--- TRANG 65 ---
+Tiết 2
+1. a) Số?
+60/45 = 12/? = 4/?
+b) Rút gọn các phân số.
+16/40 = ...
+34/64 = ...
+100/125 = ...
+2. Khoanh vào chữ đặt trước câu trả lời đúng.
+Rút gọn phân số 60/75 được phân số tối giản là:
+A. 20/25
+B. 12/15
+C. 4/5
+D. 5/4
+3. Tính.
+a) (15 × 16 × 17) / (17 × 18 × 15) = ...
+b) (51 × 53 × 55 × 44) / (44 × 53 × 55 × 24) = ...
+4. Khoanh vào chữ đặt trước câu trả lời đúng.
+Cô giáo đưa cho bốn bạn bốn băng giấy như nhau, mỗi bạn một băng giấy. Biết rằng, Việt tô màu 3/4 băng giấy, Nam tô màu 6/12 băng giấy, Mai tô màu 3/6 băng giấy, Rô-bốt tô màu 1/2 băng giấy. Hỏi ba bạn nào tô màu số phần băng giấy bằng nhau?
+A. Việt, Nam, Mai
+B. Việt, Nam, Rô-bốt
+C. Mai, Việt, Rô-bốt
+
+--- TRANG 66 ---
+BÀI 57: QUY ĐỒNG MẪU SỐ CÁC PHÂN SỐ
+Tiết 1
+1. Quy đồng mẫu số các phân số.
+a) 15/19 và 17/38
+b) 23/60 và 11/15
+c) 12/13 và 16/39
+2. Số?
+a) 4/5 = (4 × ?) / (5 × ?) = ?/15
+2/3 = (2 × ?) / (3 × ?) = ?/15
+b) 2/7 = (2 × ?) / (7 × ?) = ?/28
+3/4 = (3 × ?) / (4 × ?) = ?/28
+3. Tìm hai phân số lần lượt bằng 1/3; 4/5 và có mẫu số chung là 15.
+Bài giải
+
+--- TRANG 67 ---
+Tiết 2
+1. Quy đồng mẫu số các phân số.
+a) 7/8 và 13/32
+b) 17/35 và 19/70
+c) 23/33 và 67/330
+2. Rút gọn rồi quy đồng mẫu số các phân số.
+a) 20/72 và 12/36
+b) 35/75 và 22/60
+3. Quy đồng mẫu số các phân số.
+a) 4/9 và 7/36
+b) 19/76 và 11/38
+4. Khoanh vào chữ đặt trước câu trả lời đúng.
+Phân số nào dưới đây có mẫu số là 75 và bằng phân số 4/15?
+A. 12/75
+B. 8/30
+C. 20/75
+D. 16/75
+
+--- TRANG 68 ---
+BÀI 58: SO SÁNH PHÂN SỐ
+Tiết 1
+1. So sánh hai phân số chỉ số phần đã tô màu của mỗi hình.
+a) [Hình tròn chia phần bằng nhau]
+b) [Hình chia phần bằng nhau]
+c) [Hình chia phần bằng nhau]
+d) [Hình chia phần bằng nhau]
+2. >; <; = ?
+a) 12/15 ... 13/15
+b) 27/19 ... 27/19
+c) 13/13 ... 1
+d) 999/1000 ... 1
+3. Sắp xếp các phân số 19/23; 13/23; 39/23; 7/23:
+a) Theo thứ tự từ bé đến lớn: ...
+b) Theo thứ tự từ lớn đến bé: ...
+4. Khoanh vào chữ đặt trước câu trả lời đúng.
+Trong các phân số 15/16; 31/30; 99/100; 47/48 phân số lớn nhất là:
+A. 15/16
+B. 31/30
+C. 99/100
+D. 47/48
+
+--- TRANG 69 ---
+Tiết 2
+1. So sánh hai phân số.
+a) 14/15 và 17/45
+b) 21/48 và 7/12
+c) 14/27 và 19/54
+2. Sắp xếp các phân số 7/5; 13/15; 47/60; 23/30 theo thứ tự từ bé đến lớn.
+...
+3. Số?
+[Hình vẽ 3 chú ốc sên đi đến cây chuối]
+Đoạn đường từ ốc sên số 1 đến cây chuối dài 14/25 m, đoạn đường từ ốc sên số 2 đến cây chuối dài 51/100 m, đoạn đường từ ốc sên số 3 đến cây chuối dài 3/5 m.
+a) Đoạn đường dài nhất là đoạn đường từ ốc sên số ... đến cây chuối.
+b) Đoạn đường ngắn nhất là đoạn đường từ ốc sên số ... đến cây chuối.
+
+--- TRANG 70 ---
+Tiết 3
+1. >; <; = ?
+a) 24/173 ... 26/173
+45/100 ... 9/20
+32/48 ... 2/3
+43/63 ... 16/21
+b) 27/29 ... 29/27
+18/19 ... 19/19
+c) 35/39 ... 1
+37/38 ... 35/36
+12/13 ... 43/39
+2. Khoanh vào chữ đặt trước câu trả lời đúng.
+Có ba tờ giấy như nhau, mỗi bạn lấy một tờ giấy để tô màu. Việt tô màu 75/100 tờ giấy, Mai tô màu 7/10 tờ giấy, Nam tô màu 3/4 tờ giấy. Hỏi phần tô màu của bạn nào bé nhất?
+A. Việt
+B. Mai
+C. Nam
+3. Bốn bình nước A, B, C, D lần lượt đựng lượng nước như sau: 7/10 l; 4/5 l; 7/6 l; 51/60 l.
+Viết tên các bình nước theo thứ tự đựng lượng nước từ ít nhất đến nhiều nhất: ...
+4. Viết phân số thích hợp vào chỗ chấm.
+Mỗi bạn thỏ A, B, C có cân nặng là một trong ba số đo 25/4 kg; 13/2 kg; 49/8 kg. Biết các bạn thỏ ngồi lên cầu thăng bằng như hình vẽ.
+[Hình vẽ bập bênh so sánh khối lượng của thỏ A, B, C]
+• Thỏ A cân nặng ... kg.
+• Thỏ B cân nặng ... kg.
+• Thỏ C cân nặng ... kg.
+
+--- TRANG 71 ---
+BÀI 59: LUYỆN TẬP CHUNG
+Tiết 1
+1. a) Số?
+60/48 = ?/24 = 5/?
+b) Rút gọn các phân số.
+84/32 = ...
+15/25 = 3/? = ?/15 = 27/?
+15/27 = ...
+2. Khoanh vào chữ đặt trước câu trả lời đúng.
+a) Đã tô màu 4/9 hình nào dưới đây?
+A. [Hình A]
+B. [Hình B]
+C. [Hình C]
+D. [Hình D]
+b) Đã tô màu 3/10 số ngôi sao của hình nào dưới đây?
+A. [Hình A]
+B. [Hình B]
+c) Phân số 4/7 bằng phân số nào dưới đây?
+A. 6/14
+B. 12/27
+C. 16/28
+D. 45/72
+
+--- TRANG 72 ---
+3. Tính.
+a) (4 × 8 × 13) / (13 × 7 × 8) = ...
+b) (6 × 17 × 11) / (17 × 11 × 9) = ...
+4. Viết phân số thích hợp vào chỗ chấm.
+Từ hai số 13 và 9 lập được:
+a) Phân số bé hơn 1 là ...
+b) Phân số lớn hơn 1 là ...
+c) Các phân số bằng 1 là ...
+5. Khoanh vào chữ đặt trước câu trả lời đúng.
+Phân số 16/24 không bằng phân số nào dưới đây?
+A. 1/7
+B. 32/48
+C. 3/4
+D. 8/12
+Tiết 2
+1. a) Quy đồng mẫu số các phân số.
+1/7 và 5/21
+5/6 và 7/72
+b) Rút gọn rồi quy đồng mẫu số các phân số.
+9/12 và 11/20
+8/24 và 8/27
+2. Quy đồng mẫu số các phân số.
+a) 1/5; 17/18 và 11/54
+b) 3/4; 5/6; 7/9 và 17/36
+
+--- TRANG 73 ---
+3. Viết phân số thích hợp vào chỗ chấm (theo mẫu).
+a) [Hình đoạn thẳng AC, điểm B nằm giữa A và C]
+AB = 3/4 AC; BC = ... AC
+b) [Hình đoạn thẳng MP, điểm N nằm giữa M và P]
+MN = ... MP; NP = ... MP
+4. Viết 7/8; 5/6 thành ba phân số đều có mẫu số là 24.
+5. Đố em!
+Làm thế nào lấy được đoạn dây dài 1/6 m từ đoạn dây dài 2/3 m?
+Cách làm: ...
+
+--- TRANG 74 ---
+Tiết 3
+1. >; <; = ?
+a) 32/37 ... 31/37
+5/6 ... 17/24
+b) 13/17 ... 13/18
+45/15 ... 3
+35/56 ... 5/8
+c) 12/13 ... 1
+10/10 ... 1
+43/39 ... 1
+12/13 ... 43/39
+2. Đ, S?
+Mai có một số viên bi. Mai cho Nam 1/2 số viên bi và cho Việt 3/8 số viên bi đó. Như vậy:
+a) Việt được Mai cho nhiều bi hơn Nam. [ ]
+b) Nam được Mai cho nhiều bi hơn Việt. [ ]
+3. Khoanh vào chữ đặt trước câu trả lời đúng.
+Có một cái bánh pi-da, Nam ăn 1/2 cái bánh, Mai ăn 3/10 cái bánh, Việt ăn 1/5 cái bánh. Bạn ăn nhiều bánh nhất là:
+A. Nam
+B. Mai
+C. Việt
+4. Viết tiếp vào chỗ chấm cho thích hợp.
+[Hình hàng rào với các phân số bên ngoài và bên trong]
+a) Các phân số ở ngoài hàng rào viết theo thứ tự từ bé đến lớn là: ...
+b) Các phân số ở trong hàng rào viết theo thứ tự từ lớn đến bé là: ...
+5. Đố em!
+Quả thanh long cân nặng 9/11 kg, quả bưởi cân nặng 7/6 kg. Hỏi quả nào nặng hơn?
+Viết tiếp vào chỗ chấm cho thích hợp.
+Quả ... nặng hơn.
+
+--- TRANG 75 ---
+BÀI 60: PHÉP CỘNG PHÂN SỐ
+Tiết 1
+1. Tính.
+a) 5/11 + 3/11 = ...
+13/27 + 76/27 = ...
+b) 8/13 + 7/13 = ...
+d) 14/131 + 17/131 = ...
+2. Viết phép tính thích hợp để tính tổng số lít nước ở hai bình.
+a) 5/10 l + 1/10 l = ...
+b) 2/8 l + 4/8 l = ...
+3. Số?
+a) 5/17 + ?/17 = 11/17
+c) ?/31 + 101/31 = 130/31
+b) 75/50 + 18/? = 93/50
+d) 18/125 + 12/125 = 30/?
+4. Một hôm, chú Đạt đi cày thửa ruộng của mình. Buổi sáng, chú cày được 3/11 thửa ruộng. Buổi chiều, chú cày thêm được 4/11 thửa ruộng. Hỏi trong ngày hôm đó, chú Đạt đã cày được tất cả bao nhiêu phần thửa ruộng của mình?
+Bài giải
+
+--- TRANG 76 ---
+5. Bạn Việt nói rằng: “Để cộng hai phân số có cùng mẫu số, ta cộng hai tử số với nhau và cộng hai mẫu số với nhau.”.
+Hỏi Việt nói đúng hay sai? Nếu sai, em hãy sửa lại cho đúng.
+Trả lời: ...
+Tiết 2
+1. Đ, S?
+a) 5/10 + 6/10 = (5 + 6)/(10 + 10) = 11/20 [ ]
+b) 9/17 + 2/17 = (9 + 2)/17 = 11/17 [ ]
+c) 8/7 + 8/7 = 8/(7 + 7) = 8/14 [ ]
+d) 1/3 + 1/3 = 1/3 [ ]
+2. Tính rồi viết dấu >; < hoặc = thích hợp vào ô trống.
+a) 15/17 + 4/17 ... 4/17 + 15/17
+b) 1/81 + 2/81 + 3/81 ... 2/81 + 3/81 + 1/81
+3. Tính.
+a) 20/47 + 93/47 + 80/47 = ...
+b) 25/31 + 118/31 + 75/31 = ...
+
+--- TRANG 77 ---
+4. Có ba vòi nước cùng chảy vào một bể. Trong 1 giờ, vòi thứ nhất chảy được 2/10 bể, vòi thứ hai chảy được 1/10 bể, vòi thứ ba chảy được 4/10 bể. Hỏi trong 1 giờ, cả ba vòi chảy được bao nhiêu phần của bể nước?
+Bài giải
+5. Viết phân số thích hợp vào ô trống.
+8/31 + 1/31 -> ... + 10/31 -> ... + 52/31 -> ...
+Tiết 3
+1. Tính.
+a) 3/8 + 1/4 = ...
+b) 1/2 + 4/10 = ...
+c) 1/3 + 5/9 = ...
+2. Rút gọn rồi tính.
+a) 3/5 + 8/10 = ...
+b) 4/20 + 2/5 = ...
+c) 4/12 + 7/3 = ...
+
+--- TRANG 78 ---
+3. Nam và Việt cùng ăn một cái bánh. Nam đã ăn 1/4 cái bánh, Việt đã ăn 1/2 cái bánh. Hỏi hai bạn đã ăn tất cả bao nhiêu phần của cái bánh?
+Bài giải
+4. Viết phân số thích hợp vào ô trống.
+3/10 + 1/5 -> ... + 7/2 -> ... + 1/10 -> ...
+Tiết 4
+1. Tính.
+a) 2/15 + 11/15 = ...
+c) 5/12 + 1/4 = ...
+b) 8/19 + 7/19 = ...
+d) 7/20 + 3/10 = ...
+2. >; <; = ?
+a) 4/11 + 2/11 + 9/11 ... 4/11 + (2/11 + 9/11)
+b) 8/23 + (15/23 + 7/23) ... (8/23 + 15/23) + 7/23
+
+--- TRANG 79 ---
+3. Tính bằng cách thuận tiện.
+a) 40/41 + 93/41 + 60/41 = ...
+b) 8/150 + 56/150 + 4/150 = ...
+4. Mai cần 1/2 giờ để quét xong nhà. Bạn ấy cần thêm 1/6 giờ để lau xong nhà. Hỏi Mai cần tất cả bao nhiêu thời gian để quét xong nhà và lau xong nhà?
+Bài giải
+5. Ngày Chủ nhật, Nam đọc một cuốn sách. Buổi sáng, Nam đọc được 1/2 cuốn sách. Buổi chiều, Nam đọc thêm được 1/3 cuốn sách. Đến buổi tối, Nam đọc thêm được 1/12 cuốn sách. Hỏi trong ngày Chủ nhật, Nam đã đọc được tất cả mấy phần của cuốn sách?
+Bài giải
+
+--- TRANG 80 ---
+BÀI 61: PHÉP TRỪ PHÂN SỐ
+Tiết 1
+1. Tính.
+a) 9/13 - 4/13 = ...
+b) 15/19 - 4/19 = ...
+c) 8/7 - 5/7 = ...
+d) 85/57 - 23/57 = ...
+2. Viết phép tính thích hợp với mỗi hình (theo mẫu).
+[Hình minh họa phép trừ phân số]
+Mẫu: 2/3 - 1/3 = 1/3
+a) ...
+b) ...
+c) ...
+3. Đ, S?
+a) 6/5 - 3/5 = (6 + 3)/5 = 9/5 [ ]
+b) 7/9 - 2/9 = (7 - 2)/9 = 5/9 [ ]
+c) 11/8 - 5/8 = (11 - 5)/8 = 6/8 [ ]
+d) 3/11 - 2/11 = (3 - 2)/(11 - 11) = 1/0 [ ]
+--- TRANG 81 ---
+Tiết 2
+1. Tính.
+a) 11/12 - 2/3 = ...
+5/7 - 8/21 = ...
+2. Số ?
+a) 23/27 - 2/3 = 23/27 - ?/27 = ?/27
+8/10 - 1/2 = 8/10 - 5/? = ?/10
+b) 5/9 - 5/18 = ...
+d) 17/18 - 5/6 = ...
+b) 5/6 - 1/12 = ?/12 - 1/12 = 3/?
+d) 3/4 - 9/20 = ?/20 - 9/20 = ?/20
+3. Để được một mẻ bánh ngon, Mai cần nướng bánh trong 3/2 giờ. Biết rằng Mai đã nướng mẻ bánh được 1/4 giờ. Hỏi Mai cần nướng thêm bao nhiêu giờ nữa để được một mẻ bánh ngon?
+Bài giải
+4. Viết phân số thích hợp vào ô trống.
+12/17 -> + 7/17 -> [ ] -> - 5/17 -> [ ] -> - 6/17 -> [ ]
+
+--- TRANG 82 ---
+Tiết 3
+1. Tính.
+a) 2/3 - 1/6 = ...
+7/15 - 2/5 = ...
+2. Rút gọn rồi tính.
+a) 14/16 - 3/8 = ...
+6/10 - 1/5 = ...
+5/7 - 6/21 = ...
+d) 6/9 - 1/3 = ...
+b) 4/6 - 5/12 = ...
+d) 19/12 - 5/4 = ...
+3. Trong hai bình A và B, bình nào đang chứa nhiều nước hơn và nhiều hơn bao nhiêu lít nước?
+a) [Hình bình A chứa 7/10 l nước, bình B chứa 2/5 l nước]
+b) [Hình bình A chứa 3/4 l nước, bình B chứa 3/8 l nước]
+
+--- TRANG 83 ---
+4. Nối (theo mẫu).
+[Hình nối các phép tính với nhau]
+5/12 + 5/12 nối với 5/6 - 1/18
+1/6 + 4/3 + 1/18
+2/7 + 1/14
+1/2 + 7/12 - 3/12
+1/18 + 3/2
+15/14 - 7/14 - 3/14
+5/6 - 1/18
+7/18 + 7/18
+5. Ca thứ nhất có 4/9 l nước. Ca thứ hai có 5/18 l nước. Bạn Mai rót hết nước từ hai ca đó vào một chiếc bình.
+a) Tính lượng nước có trong bình.
+b) Sau đó, Mai lấy 1/2 l nước từ trong chiếc bình đó. Tính lượng nước còn lại trong bình.
+Bài giải
+
+--- TRANG 84 ---
+BÀI 62: LUYỆN TẬP CHUNG
+Tiết 1
+1. Tính.
+a) 31/44 + 2/11 = ...
+3/7 - 18/49 = ...
+b) 9/10 + 4/5 = ...
+d) 35/40 - 11/20 = ...
+2. Viết phân số thích hợp vào ô trống.
+4/5 -> + 1/15 -> [ ] -> - 2/3 -> [ ] -> - 1/5 -> [ ]
+3. Tính bằng cách thuận tiện.
+a) 199/500 + 99/500 - 101/500 = ...
+b) 36/50 + 9/5 + 4/50 = ...
+4. Trong ngày Chủ nhật, bạn Việt dành 1/12 thời gian để học bài; 1/6 thời gian để đi chơi, 1/3 thời gian để đi ngủ; thời gian còn lại, Việt dành để làm những việc khác. Hỏi Việt dành bao nhiêu thời gian của ngày Chủ nhật để làm những việc khác?
+Bài giải
+
+--- TRANG 85 ---
+5. Tính tổng các phân số trên mỗi hàng, mỗi cột (theo mẫu).
+[Bảng các phân số để cộng]
+2/30; 1/2; 1/3; 9/10
+1/10; 3/5; 1/2; [ ]
+1/15; 3/10; 7/30; 7/30
+Tiết 2
+1. Đ, S?
+a) 7/4 - 1/8 = 13/8 [ ]
+13/15 + 1/5 = 14/20 [ ]
+b) 11/12 - 1/3 = 10/9 [ ]
+7/6 + 1/3 = 9/6 [ ]
+2. Rút gọn rồi tính.
+a) 10/24 + 1/12 = ...
+c) 3/7 - 6/21 = ...
+b) 15/18 - 1/6 = ...
+d) 2/3 + 5/15 = ...
+3. Trong bình có 4/5 l nước. Sau đó, Việt rót thêm 1/5 l nước vào bình. Tính số lít nước có trong bình sau khi rót thêm.
+Bài giải
+
+--- TRANG 86 ---
+4. Một chiếc gậy dài 3/4 m. Biết rằng, khúc thứ nhất dài 1/2 m; khúc thứ hai dài 1/8 m. Người ta chia chiếc gậy thành ba khúc. Tính chiều dài của khúc thứ ba.
+Bài giải
+5. Viết tiếp vào chỗ chấm cho thích hợp.
+Nam xếp các tấm thẻ thành một phép cộng hai phân số nhưng bị sai như hình bên.
+[Hình các tấm thẻ: 4/12 + 1/6 = 9/12]
+Để được phép tính đúng, Nam cần đổi chỗ 2 tấm thẻ ghi số ... và ... khi đó phép tính đúng là: ...
+Tiết 3
+1. Tính.
+a) 1 - 1/4 = ...
+c) 7/3 - 2 = ...
+b) 3 - 5/2 = ...
+d) 1 + 4/7 = ...
+
+--- TRANG 87 ---
+2. Viết phân số thích hợp vào ô trống.
+a) 1/4 -> + 1 -> [ ] -> - 1/2 -> [ ] -> + 5/8 -> [ ]
+b) [ ] <- - 7/3 <- [ ] <- + 1/9 <- [ ] <- - 7/18 <- [ ]
+3. Mai đọc xong một cuốn truyện trong ba ngày. Ngày thứ nhất, Mai đọc được 1/6 cuốn truyện. Ngày thứ hai, Mai đọc thêm được 1/3 cuốn truyện. Hỏi ngày thứ ba, Mai đọc được mấy phần của cuốn truyện?
+Bài giải
+4. Viết tiếp vào chỗ chấm cho thích hợp.
+[Hình tứ giác MNPQ có các cạnh 8/7 m, 1/2 m, 5/12 m, 1 m và tam giác ABC có các cạnh 2/3 m, 11/14 m, 2 m]
+a) Chu vi hình tam giác ABC là: ...
+b) Chu vi hình tứ giác MNPQ là: ...
+
+--- TRANG 88 ---
+BÀI 63: PHÉP NHÂN PHÂN SỐ
+Tiết 1
+1. Tính.
+a) 2/3 × 7/10 = ...
+3/8 × 3/4 = ...
+b) 21/14 × 3/7 = ...
+d) 2/8 × 12/8 = ...
+2. Rút gọn rồi tính.
+a) 3/6 × 13/8 = ...
+b) 1/2 × 5/6 = ...
+d) 1/5 × 10/7 = ...
+3. Viết phân số thích hợp vào chỗ chấm.
+Tấm gỗ hình chữ nhật có chiều dài 3/4 m và chiều rộng 3/5 m.
+Diện tích tấm gỗ đó là ... m2.
+4. Tô màu vào những cây hoa súng ghi phép tính có kết quả lớn hơn 1.
+[Hình cây hoa súng chứa các phép tính: 1/2 + 2/3 ; 1 - 1/7 ; 6/5 × 3/1 ; 2/3 × 2/3]
+
+--- TRANG 89 ---
+Tiết 2
+1. Tính.
+a) 5/12 × 9 = ...
+c) 3/17 × 1 = ...
+b) 9/4 × 7 = ...
+d) 1 × 21/23 = ...
+2. Tính.
+a) 5 × 7/3 = ...
+0 × 2/3 = ...
+b) 19/15 × 0 = ...
+d) 11 × 2/27 = ...
+3. Viết tiếp vào chỗ chấm cho thích hợp.
+[Hình tam giác ABC có 3 cạnh đều bằng 7/3 dm]
+Chu vi của hình tam giác ABC là ... dm.
+4. Chó Mực chạy theo Mèo đúng 4 vòng quanh một cái sân hình chữ nhật có chu vi là 173/2 m rồi đứng nghỉ.
+Tính độ dài quãng đường Chó Mực đã chạy.
+Bài giải
+
+--- TRANG 90 ---
+Tiết 3
+1. >; <; = ?
+a) 1/7 × 11/23 ... 11/23 × 1/7
+b) (6/10 × 2/9) × 1/5 ... 6/10 × (2/9 × 1/5)
+c) (5/3 + 1/3) × 1/2 ... 5/3 × 1/2 + 1/3 × 1/2
+2. Tính.
+a) 1/13 × 13/9 × 9 = ...
+b) (7/6 + 5/6) × 6 = ...
+c) 1/3 × 9/8 + 9/8 × 1/6 = ...
+3. Viết tiếp vào chỗ chấm cho thích hợp.
+Bác Yên nuôi 10 bè cá trắm lẫn cá mè. Trung bình mỗi bữa, một bè cá ăn hết 71/10 yến cỏ.
+Vậy mỗi bữa, 10 bè cá của bác Yên ăn hết ... yến cỏ.
+4. Viết phân số thích hợp vào chỗ chấm.
+Có hai toà nhà và một cái cây như hình vẽ.
+Biết ở mỗi toà nhà, các tầng cao bằng nhau và toà nhà cao hơn có chiều cao là 18 m.
+Chiều cao của cái cây là ... m.
+[Hình vẽ hai toà nhà và một cái cây]
+
+--- TRANG 91 ---
+5. Viết phân số thích hợp vào chỗ chấm.
+Bạn Hiển cắt một chiếc hộp giấy không nắp được tấm bìa như hình vẽ.
+Biết mỗi hình vuông có cạnh 5/3 dm.
+Diện tích tấm bìa là ... dm2.
+[Hình vẽ tấm bìa ghép từ các hình vuông]
+Tiết 4
+1. Tính rồi rút gọn.
+a) 9/10 × 5/9 = ...
+b) 7/13 × 13/21 = ...
+c) 8 × 3/16 = ...
+2. Tính bằng cách thuận tiện.
+a) 21/23 × 5/15 × 23 = ...
+b) 24/25 × 3/5 + 7/5 × 24/25 = ...
+
+--- TRANG 92 ---
+3. Viết phân số thích hợp vào chỗ chấm.
+Trên một bức tường người ta gắn các tủ tài liệu, mỗi tủ chiếm một vị trí có dạng hình chữ nhật có chiều dài 15/2 dm, chiều rộng 4 dm.
+a) Diện tích phần bức tường gắn mỗi tủ tài liệu loại đó là ... dm2.
+b) Người ta gắn 3 tủ tài liệu cùng loại đó sát nhau trên một bức tường.
+Diện tích phần bức tường gắn 3 tủ tài liệu đó là ... dm2.
+4. Khoanh vào chữ đặt trước câu trả lời đúng.
+Ngôi làng của Bọ Rùa có dạng một hình vuông với chu vi là 3 m. Diện tích của ngôi làng đó là:
+A. 9 m2
+B. 9/16 m2
+C. 16/9 m2
+D. 6/8 m2
+5. Để chuẩn bị thực phẩm cho một chuyến đi dã ngoại, mỗi người trong đoàn đã chuẩn bị 3/5 kg ruốc và 7/10 kg giò lụa. Biết đoàn đi dã ngoại có tất cả 10 người. Hỏi đoàn đi dã ngoại đã chuẩn bị tất cả bao nhiêu ki-lô-gam ruốc và giò lụa?
+Bài giải
+
+--- TRANG 93 ---
+BÀI 64: PHÉP CHIA PHÂN SỐ
+Tiết 1
+1. a) Viết phân số thích hợp vào chỗ chấm.
+Phân số đảo ngược của 5/4 là: ...
+Phân số đảo ngược của 1/9 là: ...
+b) Tính.
+17/6 : 5/4 = ...
+21/2 : 13/9 = ...
+2. Viết phân số thích hợp vào ô trống.
+[ ] × 2/7 = 4/5
+[ ] : 2/7 = ...
+3. Viết tiếp vào chỗ chấm cho thích hợp.
+Bức tranh hình chữ nhật ABCD có diện tích là 66/5 dm2 và chiều rộng 11/5 dm.
+a) Chiều dài của bức tranh là ... dm.
+b) Anh Long lắp một cái móc treo ở trung điểm I của cạnh AB. Điểm I cách điểm A ... dm.
+
+--- TRANG 94 ---
+4. Tô màu vào con cá ghi phép tính có kết quả không phải lớn nhất và không phải bé nhất.
+[Hình các con cá ghi phép tính: 23/5 : 3/4 ; 23/5 × 3/4 ; 1/8 : 1/9]
+Tiết 2
+1. Tính rồi rút gọn.
+a) 4/9 : 4/11 = ...
+b) 5/15 : 10/2 = ...
+2. Viết phân số thích hợp vào chỗ chấm.
+a) 7/15 × ... = 49/30
+b) 1/12 : ... = 1/9
+3. Tính.
+a) (1/2 + 1/4) : 10/11 = ...
+b) 12/13 : 1/4 - 4/13 = ...
+
+--- TRANG 95 ---
+4. Viết tiếp vào chỗ chấm cho thích hợp.
+Chú Văn quấn một sợi dây đồng dài 135/2 dm quanh một cái ống, độ dài mỗi vòng là 3/4 dm. Vậy chú Văn quấn được ... vòng.
+5. Tễu thả bèo xuống chiếc ao hình vuông. Cứ sau mỗi tuần, phần diện tích bèo phủ sẽ tăng gấp đôi tuần trước đó. Biết sau tuần thứ nhất, bèo phủ 1/4 diện tích ao (phần được tô màu trong hình vẽ).
+a) Khoanh vào chữ đặt trước câu trả lời đúng.
+Hình nào sau đây thể hiện phần diện tích bèo phủ chiếc ao sau tuần thứ ba?
+A. [Hình]
+B. [Hình]
+C. [Hình]
+b) Biết diện tích ao nhà Tễu là 81/2 m2. Tính diện tích bèo phủ chiếc ao sau tuần thứ hai.
+Bài giải
+
+--- TRANG 96 ---
+Tiết 3
+1. Tính rồi rút gọn.
+a) 6/7 : 3/4 = ...
+22/5 : 11/5 = ...
+24/7 : 12/35 = ...
+2. Tính.
+a) 4 : 8/9 = ...
+45/41 : 1 = ...
+0 : 2/3 = ...
+b) 1 : 5/9 = ...
+1/18 : 2 = ...
+25/7 : 3/4 = ...
+3. Vào một buổi sáng, người ta đo được độ dài cái bóng của khóm trúc là 19/2 m. Biết độ dài cái bóng gấp đôi chiều cao của khóm trúc. Tính chiều cao của khóm trúc đó.
+Bài giải
+4. Viết phân số thích hợp vào chỗ chấm.
+Tổng diện tích 4 hình chữ nhật như nhau là 8/5 cm2, chiều rộng của mỗi hình chữ nhật là 1/2 cm. Chiều dài của mỗi hình chữ nhật là ... cm.
+
+--- TRANG 97 ---
+BÀI 65: TÌM PHÂN SỐ CỦA MỘT SỐ
+Tiết 1
+1. Số ?
+Trong hộp có 32 cái bánh quy, trong đó 1/2 số cái bánh được rắc vừng. Tính số cái bánh quy được rắc vừng.
+Bài giải
+Số bánh quy rắc vừng là: [ ] × [ ]/[ ] = [ ] (cái)
+Đáp số: [ ] cái bánh.
+2. Một chai còn 120 ml nước giặt. Bạn Hoà dùng 1/4 lượng nước giặt đó để giặt chăn. Hỏi bạn ấy đã dùng bao nhiêu mi-li-lít nước giặt để giặt chăn?
+Bài giải
+3. Viết số thích hợp vào chỗ chấm.
+Một dàn nhạc giao hưởng có 45 nghệ sĩ, trong đó 2/3 số nghệ sĩ chơi nhạc cụ thuộc bộ dây.
+Vậy dàn nhạc đó có ... nghệ sĩ chơi nhạc cụ thuộc bộ dây.
+
+--- TRANG 98 ---
+4. Ở làng Võng Thị có 950 hộ gia đình, trong đó 3/5 số hộ gia đình trồng hoa cúc. Hỏi làng Võng Thị có bao nhiêu hộ trồng hoa cúc?
+Bài giải
+Tiết 2
+1. Viết số thích hợp vào chỗ chấm.
+Trên cây có 18 quả hồng. Chào mào ăn hết 1/3 số quả hồng. Vậy chào mào ăn hết ... quả hồng.
+2. Viết tiếp vào chỗ chấm cho thích hợp.
+Khi được hỏi về tuổi của mình, một bác thợ rèn cho biết: “Tính đến bây giờ, tôi đã sống được 1/4 thế kỉ. Quãng thời gian thơ ấu của tôi là 1/12 số tuổi. Sau đó, tôi dành 3/5 số tuổi để học nghề rèn. Khi học xong nghề rèn, tôi làm việc ở xưởng đóng tàu sắt. Tính đến nay cũng đã được tròn 40 năm tôi làm việc ở đó.”
+a) Số tuổi của bác thợ rèn là ... tuổi.
+b) Bác thợ rèn học nghề rèn trong ... năm.
+
+--- TRANG 99 ---
+c) Tính đến bây giờ, quãng thời gian bác thợ rèn làm việc ở xưởng đóng tàu sắt chiếm ... số tuổi của bác ấy.
+3. Một con chim cắt bay 1 635 m hết 1/4 phút. Hỏi trung bình mỗi giây con chim cắt bay được bao nhiêu mét?
+Bài giải
+4. Viết số thích hợp vào chỗ chấm.
+Ông Bưởi là chủ một đội thuyền buôn. Ông đặt mục tiêu sau mỗi năm sẽ mua thêm những chiếc thuyền buôn để số chiếc thuyền buôn của mình tăng thêm 1/10 số chiếc thuyền buôn so với năm trước đó. Biết ban đầu, ông Bưởi có 100 chiếc thuyền buôn.
+a) Số thuyền buôn ông Bưởi đặt mục tiêu ở năm thứ hai là ... chiếc.
+b) Số thuyền buôn ông Bưởi đặt mục tiêu ở năm thứ ba là ... chiếc.
+--- TRANG 100 ---
+BÀI 66: LUYỆN TẬP CHUNG
+Luyện tập
+1. Tính.
+a) 2/3 × 4/5 = 8/15
+b) 3/4 : 5/8 = 3/4 × 8/5 = 24/20 = 6/5
+c) 1/2 × 1/3 × 1/4 = 1/24
+2. Tính.
+a) 5/6 : 2/3 × 1/5 = 5/6 × 3/2 × 1/5 = 15/12 × 1/5 = 15/60 = 1/4
+b) 4/7 × 7/8 : 1/2 = 4/8 : 1/2 = 1/2 : 1/2 = 1
+3. Rút gọn rồi tính.
+a) 6/8 × 4/9 = 3/4 × 4/9 = 12/36 = 1/3
+b) 10/15 : 2/5 = 2/3 : 2/5 = 2/3 × 5/2 = 10/6 = 5/3
+c) 12/16 × 8/10 = 3/4 × 4/5 = 12/20 = 3/5
+
+--- TRANG 101 ---
+4. Khoanh vào chữ đặt trước câu trả lời đúng.
+Một công ty Kim Sơn nhận được đơn hàng làm 600 chiếc hộp cói. Trong đó tổ của bác Diễm nhận đan 1/4 đơn hàng.
+a) Tổ của bác Diễm nhận đan số chiếc hộp cói là:
+A. 2 400 chiếc
+B. 150 chiếc
+C. 1 500 chiếc
+D. 125 chiếc
+b) Sau khi làm xong, toàn bộ số hộp cói của tổ bác Diễm được một rô-bốt chuyển đến kho. Biết mỗi hộp cói nặng 2 kg. Vậy rô-bốt đã chuyển tất cả số ki-lô-gam là:
+A. 4 800 kg
+B. 300 kg
+C. 3 000 kg
+D. 250 kg
+5. Ban đầu, một cái bánh chưng được cắt ra thành các miếng như hình bên. Tí và Tèo đã lấy ra một số miếng rồi nói chuyện với nhau.
+Tí nói: "Tèo đã lấy 1/5 số miếng bánh chưng."
+Tèo nói: "Tí đã lấy 1/4 số miếng bánh chưng."
+Biết chỉ có một trong hai bạn Tèo, Tí đã nói sai. Hỏi ai đã nói sai?
+[Hình vẽ một cái bánh chưng được cắt thành 8 miếng bằng nhau]
+Bài giải
+
+--- TRANG 102 ---
+CHỦ ĐỀ 13: ÔN TẬP CUỐI NĂM
+BÀI 67: ÔN TẬP SỐ TỰ NHIÊN
+1. Viết số và đọc số (theo mẫu).
+[Bảng gồm 3 cột: Số gồm có, Viết số, Đọc số]
+3 chục nghìn, 5 nghìn, 1 trăm và 7 đơn vị | 35 107 | Ba mươi lăm nghìn một trăm linh bảy.
+8 trăm nghìn, 2 chục nghìn, 4 trăm, 5 chục và 3 đơn vị | 820 453 | Tám trăm hai mươi nghìn bốn trăm năm mươi ba.
+7 triệu, 1 trăm nghìn, 6 nghìn, 4 trăm và 9 chục | 7 106 490 | Bảy triệu một trăm linh sáu nghìn bốn trăm chín mươi.
+40 triệu, 2 triệu, 5 trăm nghìn, 3 chục nghìn và 8 trăm | 42 530 800 | Bốn mươi hai triệu năm trăm ba mươi nghìn tám trăm.
+2. a) Viết mỗi số sau thành tổng (theo mẫu):
+Mẫu: 23 807 = 20 000 + 3 000 + 800 + 7
+92 513 = 90 000 + 2 000 + 500 + 10 + 3
+308 050 = 300 000 + 8 000 + 50
+4 207 900 = 4 000 000 + 200 000 + 7 000 + 900
+b) Số?
+67 304 = 60 000 + 7 000 + 300 + 4
+250 819 = 200 000 + 50 000 + 800 + 10 + 9
+3. Trong dãy số tự nhiên:
+a) Hai số liên tiếp hơn kém nhau mấy đơn vị?
+b) Hai số chẵn liên tiếp hơn kém nhau mấy đơn vị?
+c) Hai số lẻ liên tiếp hơn kém nhau mấy đơn vị?
+
+--- TRANG 103 ---
+4. Số?
+[Bảng gồm 2 hàng: Số và Giá trị của chữ số 6]
+26 304 | 6 000
+650 819 | 600 000
+4 207 960 | 60
+5. Viết số thích hợp vào chỗ chấm để được:
+a) Bốn số tự nhiên liên tiếp: 999, 1 000, 1 001, 1 002
+b) Bốn số lẻ liên tiếp: 97, 99, 101, 103
+c) Bốn số chẵn liên tiếp: 74 500, 74 502, 74 504, 74 506
+Tiết 2
+1. Viết tiếp vào chỗ chấm cho thích hợp.
+a) Số tự nhiên bé nhất là: 0
+b) Số liền sau của số 999 999 là: 1 000 000
+c) Trong dãy số tự nhiên không có số lớn nhất.
+2. Khoanh vào chữ đặt trước câu trả lời đúng.
+a) Con voi nào dưới đây nặng nhất?
+[Hình vẽ 4 con voi A: 5 432 kg, B: 5 419 kg, C: 5 500 kg, D: 5 397 kg]
+A. Voi A
+B. Voi B
+C. Voi C
+D. Voi D
+b) Xe đạp nào dưới đây có giá tiền thấp nhất?
+[Hình vẽ 4 xe đạp A: 1 950 000 đồng, B: 2 100 000 đồng, C: 1 935 000 đồng, D: 2 050 000 đồng]
+A. Xe A
+B. Xe B
+C. Xe C
+D. Xe D
+
+--- TRANG 104 ---
+3. Cho biết số học sinh của bốn trường tiểu học Nguyễn Trãi, Quang Trung, Nguyễn Du, Lê Lợi là: 1 056 học sinh; 1 100 học sinh; 948 học sinh; 1 003 học sinh.
+Trong đó, Trường Tiểu học Nguyễn Trãi có nhiều học sinh nhất. Trường Tiểu học Quang Trung có nhiều học sinh hơn Trường Tiểu học Nguyễn Du và số học sinh của Trường Tiểu học Lê Lợi là số lẻ.
+a) Viết tên mỗi trường vào chỗ chấm cho thích hợp.
+Trường Tiểu học Nguyễn Trãi có 1 100 học sinh.
+Trường Tiểu học Quang Trung có 1 056 học sinh.
+Trường Tiểu học Lê Lợi có 1 003 học sinh.
+Trường Tiểu học Nguyễn Du có 948 học sinh.
+b) Viết số học sinh của bốn trường tiểu học đó theo thứ tự từ bé đến lớn.
+948; 1 003; 1 056; 1 100
+4. Cho biết số dân của Việt Nam ở thời điểm 0 giờ ngày 1 tháng 4 năm 2019 là 96 208 984 người (theo Tổng cục Thống kê).
+Viết tiếp vào chỗ chấm cho thích hợp.
+a) Làm tròn đến hàng nghìn, số dân của Việt Nam có khoảng: 96 209 000 người.
+b) Làm tròn đến hàng chục nghìn, số dân của Việt Nam có khoảng: 96 210 000 người.
+c) Làm tròn đến hàng trăm nghìn, số dân của Việt Nam có khoảng: 96 200 000 người.
+5. Viết số thích hợp vào chỗ chấm.
+Từ bốn thẻ số 0, 1, 2, 3 có thể lập được số chẵn bé nhất có bốn chữ số là: 1 032
+
+--- TRANG 105 ---
+BÀI 68: ÔN TẬP PHÉP TÍNH VỚI SỐ TỰ NHIÊN
+Tiết 1
+1. Đặt tính rồi tính.
+a) 46 728 + 32 506
+814 620 - 50 317
+b) 412 × 15
+18 312 : 24
+2. Không thực hiện phép tính, hãy viết số thích hợp vào chỗ chấm.
+a) 48 × 25 = 25 × 48
+b) (14 + 18) + 22 = 14 + (18 + 22)
+c) 15 × (20 + 30) = 15 × 20 + 15 × 30
+d) (24 × 48) : 12 = 24 : 12 × 48
+3. Hai xe bồn chở tất cả 35 000 l nước. Xe thứ nhất chở nhiều hơn xe thứ hai 3 000 l nước. Hỏi mỗi xe chở bao nhiêu lít nước?
+Bài giải
+
+--- TRANG 106 ---
+4. Một đoàn tàu chở hàng gồm 10 toa. Trong đó có 4 toa, mỗi toa chở 12 500 kg hàng và 6 toa, mỗi toa chở 13 000 kg hàng. Hỏi trung bình mỗi toa chở bao nhiêu ki-lô-gam hàng?
+Bài giải
+5. Tính bằng cách thuận tiện.
+a) 25 × 71 × 4 = (25 × 4) × 71 = 100 × 71 = 7 100
+b) 125 × 49 × 8 = (125 × 8) × 49 = 1 000 × 49 = 49 000
+Tiết 2
+1. Đặt tính rồi tính.
+a) 357 800 + 42 107
+602 513 - 308 050
+b) 207 × 32
+15 078 : 46
+
+--- TRANG 107 ---
+BÀI 69: ÔN TẬP PHÂN SỐ
+Tiết 1
+1. Khoanh vào chữ đặt trước câu trả lời đúng.
+a) Phân số chỉ phần đã tô màu của hình bên là:
+[Hình vẽ hình tròn chia 8 phần, tô màu 3 phần]
+A. 3/8
+B. 5/8
+C. 3/5
+D. 8/3
+b) Đã tô màu 1/5 số con ếch của hình nào dưới đây?
+[Hình vẽ 4 nhóm ếch A, B, C, D]
+A. Hình A
+B. Hình B
+C. Hình C
+D. Hình D
+2. Số?
+a) 12/1 = 12
+42/14 = 3
+15/5 = 3
+0/7 = 0
+b) 1 = 8/8
+1 = 12/12
+0 = 0/9
+0 = 0/100
+
+--- TRANG 108 ---
+3. Quy đồng mẫu số các phân số.
+a) 4/7 và 5/14
+b) 2/5 và 3/100
+c) 5/6 và 11/4
+4. >; <; = ?
+a) 5/8 kg < 6/8 kg
+b) 11/15 l > 11/14 l
+c) 5/6 m < 7/6 m
+d) 11/9 > 1
+e) 1 > 14/15
+g) 8/8 = 1
+5. Có ba vòi nước cùng chảy vào một bể. Trong 1 giờ, vòi thứ nhất chảy được 1/4 bể nước, vòi thứ hai chảy được 1/5 bể nước, vòi thứ ba chảy được 3/10 bể nước. Hỏi trong 1 giờ, vòi nào chảy được nhiều nước nhất? Vòi nào chảy được ít nước nhất?
+Bài giải
+
+--- TRANG 109 ---
+Tiết 2
+1. Khoanh vào chữ đặt trước câu trả lời đúng.
+a) Phân số nào dưới đây bé hơn 1/4?
+A. 3/4
+B. 1/2
+C. 1/5
+D. 4/7
+b) Phân số nào dưới đây bằng phân số 5/7?
+A. 10/14
+B. 15/28
+C. 15/14
+D. 10/21
+c) Phân số nào dưới đây lớn hơn phân số 1?
+A. 4/4
+B. 5/6
+C. 8/7
+D. 9/10
+2. Viết tên các con vật vào chỗ chấm theo thứ tự có cân nặng từ bé đến lớn.
+[Hình vẽ 4 con vật: Chuột (5/100 kg), Chim (4/10 kg), Sóc (1/2 kg), Thỏ (4/5 kg)]
+Chuột, Chim, Sóc, Thỏ.
+3. Các bạn Mai, Nam, Việt và Rô-bốt chạy thi theo chiều dài sân trường. Mai chạy hết 5/6 phút, Nam chạy hết 2/3 phút, Việt chạy hết 8/9 phút, Rô-bốt chạy hết 11/12 phút. Hỏi bạn nào về đích đầu tiên? Bạn nào về đích cuối cùng?
+Bài giải
+
+--- TRANG 110 ---
+BÀI 70: ÔN TẬP PHÉP TÍNH VỚI PHÂN SỐ
+Tiết 1
+1. Tính.
+a) 7/12 + 1/6 = 7/12 + 2/12 = 9/12 = 3/4
+b) 5/8 + 1 = 5/8 + 8/8 = 13/8
+c) 2 - 7/9 = 18/9 - 7/9 = 11/9
+d) 21/10 - 3/5 = 21/10 - 6/10 = 15/10 = 3/2
+2. Tính giá trị của biểu thức.
+a) 4/5 - 1/2 + 1/3 = 8/10 - 5/10 + 1/3 = 3/10 + 1/3 = 9/30 + 10/30 = 19/30
+b) 1 - (1/2 + 1/3) = 1 - (3/6 + 2/6) = 1 - 5/6 = 1/6
+3. Bác Tư có một khu đất. Bác đã sử dụng 1/2 diện tích khu đất để xây nhà và 1/3 diện tích khu đất để trồng cây, diện tích còn lại để làm sân và lối đi. Hỏi bác Tư đã dành bao nhiêu phần diện tích khu đất để làm sân và lối đi?
+Bài giải
+4. Tính bằng cách thuận tiện.
+4/15 + 5/9 + 11/15 - 2/9 = (4/15 + 11/15) + (5/9 - 2/9) = 15/15 + 3/9 = 1 + 1/3 = 4/3
+--- TRANG 111 ---
+Tiết 2
+1. Tính.
+a) 5/7 × 7/15 = 1/3
+b) 5/12 × 9 = 15/4
+c) 14/15 : 7/3 = 14/15 × 3/7 = 2/5
+d) 9 : 3/5 = 9 × 5/3 = 15
+2. Rút gọn rồi tính giá trị của biểu thức.
+a) 60/45 × 6/12 × 1/2 = 4/3 × 1/2 × 1/2 = 1/3
+b) 15/20 : 1/4 × 5/9 = 3/4 × 4/1 × 5/9 = 3 × 5/9 = 5/3
+3. Nam có 350 000 đồng tiền tiết kiệm. Nam đã dùng 1/5 số tiền đó để mua sách vở và đồ dùng học tập. Số tiền còn lại Nam góp vào quỹ giúp đỡ các bạn có hoàn cảnh khó khăn. Hỏi Nam đã góp vào quỹ giúp đỡ các bạn có hoàn cảnh khó khăn bao nhiêu tiền?
+Bài giải
+4. Một tấm bìa hình chữ nhật có diện tích là 4/7 m2 và chiều rộng là 4/5 m. Tính chu vi của tấm bìa đó.
+Bài giải
+5. Tính bằng cách thuận tiện.
+a) 5/11 × 7/13 × 11/5 × 13/7 = (5/11 × 11/5) × (7/13 × 13/7) = 1 × 1 = 1
+b) 3/5 × 5/8 + 3/5 × 3/8 = 3/5 × (5/8 + 3/8) = 3/5 × 1 = 3/5
+
+--- TRANG 112 ---
+BÀI 71: ÔN TẬP HÌNH HỌC VÀ ĐO LƯỜNG
+Tiết 1
+1. Viết tên các góc nhọn, góc tù, góc vuông có trong hình bên (theo mẫu).
+[Hình vẽ gồm hai tam giác ghép lại tạo thành các đỉnh A, B, C, D và điểm M nằm trên cạnh AC]
+Mẫu: Góc nhọn đỉnh B; cạnh BA, BM.
+2. Số?
+a) 1 yến = 10 kg; 1 tạ = 100 kg; 1 tấn = 1000 kg; 1 tạ = 10 yến; 1 tấn = 10 tạ; 1 tấn = 100 yến.
+b) 20 kg = 2 yến; 400 kg = 4 tạ; 3000 kg = 3 tấn.
+c) 2 tấn 5 tạ = 25 tạ; 3 tạ 5 kg = 305 kg; 4 tấn 50 kg = 4050 kg.
+3. Dùng thước đo góc để đo các góc của hình thoi ABCD.
+[Hình vẽ hình thoi ABCD]
+4. Một cửa hàng có 1 tấn 200 kg gạo tẻ và số gạo nếp bằng 1/3 số gạo tẻ. Hỏi cửa hàng đó có tất cả bao nhiêu ki-lô-gam gạo tẻ và gạo nếp?
+Bài giải
+5. Khoanh vào chữ đặt trước câu trả lời đúng.
+Số khối lập phương nhỏ dùng để xếp thành hình bên là:
+[Hình vẽ một khối đa diện được ghép từ các khối lập phương nhỏ]
+A. 16
+B. 18
+C. 20
+D. 24
+
+--- TRANG 113 ---
+Tiết 2
+1. Viết tên các hình bình hành có trong hình bên rồi cho biết cạnh AD song song và bằng những cạnh nào.
+[Hình vẽ một hình chữ nhật lớn ABCD có các đường kẻ chia thành nhiều hình bình hành nhỏ bên trong]
+2. Số?
+a) 2 giờ = 120 phút; 3 phút = 180 giây; 1 thế kỉ = 100 năm.
+b) 1 giờ 20 phút = 80 phút; 2 giờ 5 phút = 125 phút; 3 phút 10 giây = 190 giây.
+c) 1/2 giờ = 30 phút; 1/5 phút = 12 giây; 1/4 thế kỉ = 25 năm.
+3. Năm nay Nam 10 tuổi, Nam kém mẹ 30 tuổi. Hỏi mẹ của Nam sinh năm nào và năm đó thuộc thế kỉ bao nhiêu?
+Bài giải
+4. Số?
+a) 1 m2 = 100 dm2; 100 cm2 = 1 dm2; 100 mm2 = 1 cm2; 400 dm2 = 4 m2; 5 cm2 = 500 mm2.
+b) 2 m2 50 dm2 = 250 dm2; 3 cm2 15 mm2 = 315 mm2; 4 dm2 5 cm2 = 405 cm2.
+5. Người ta dùng loại gạch men hình vuông có cạnh 30 cm để lát nền một phòng học hình chữ nhật có chiều dài 9 m, chiều rộng 6 m. Hỏi cần bao nhiêu viên gạch men loại đó để vừa đủ lát kín nền phòng học? (Diện tích phần mạch vữa không đáng kể).
+Bài giải
+
+--- TRANG 114 ---
+BÀI 72: ÔN TẬP MỘT SỐ YẾU TỐ THỐNG KÊ VÀ XÁC SUẤT
+Tiết 1
+1. Chiều cao lần lượt của các vận động viên bóng chuyền Thắng, Hùng, Bình, Trung là: 185 cm, 180 cm, 182 cm, 193 cm.
+a) Số?
+[Bảng thống kê chiều cao: Thắng (185 cm), Hùng (180 cm), Bình (182 cm), Trung (193 cm)]
+b) Sắp xếp các số đo chiều cao của bốn vận động viên trên theo thứ tự từ thấp đến cao.
+c) Vận động viên nào thấp hơn vận động viên Thắng? Vận động viên nào cao hơn vận động viên Bình?
+2. Biểu đồ dưới đây cho biết số học sinh tham gia các lớp ngoại khoá của một trường tiểu học.
+SỐ HỌC SINH THAM GIA CÁC LỚP NGOẠI KHOÁ
+[Biểu đồ cột biểu diễn 4 lớp: Hát (45 học sinh), Múa (35 học sinh), Vẽ (40 học sinh), Võ thuật (40 học sinh)]
+Dựa vào biểu đồ trên, hãy trả lời các câu hỏi sau:
+a) Có mấy lớp ngoại khoá? Đó là những lớp ngoại khoá nào?
+b) Lớp ngoại khoá nào có số học sinh nhiều nhất? Lớp nào có số học sinh ít nhất? Hai lớp ngoại khoá nào có số học sinh bằng nhau?
+c) Trung bình mỗi lớp ngoại khoá có bao nhiêu học sinh tham gia?
+Bài giải
+
+--- TRANG 115 ---
+Tiết 2
+1. Trong một hộp có 10 quả bóng gồm 5 quả màu đỏ, 3 quả màu xanh và 2 quả màu vàng. Không nhìn vào hộp, Rô-bốt lấy ra 1 quả bóng bất kì, ghi lại màu của quả bóng đó rồi trả lại vào hộp. Bóng màu đỏ ghi Đ, bóng màu xanh ghi X, bóng màu vàng ghi V. Rô-bốt đã thực hiện 30 lần lấy bóng như trên và ghi được kết quả như sau:
+[Bảng kết quả 30 lần lấy bóng: Đ, X, Đ, V, Đ, X, Đ, Đ, V, X, Đ, Đ, Đ, X, V, Đ, X, Đ, V, Đ, Đ, X, Đ, Đ, V, X, Đ, Đ, X, Đ]
+a) Hoàn thành bảng kiểm đếm sau:
+Màu bóng: Đỏ (Đ); Số lần: ...
+Màu bóng: Xanh (X); Số lần: ...
+Màu bóng: Vàng (V); Số lần: ...
+b) Viết tiếp vào chỗ chấm cho thích hợp.
+Trong 30 lần lấy bóng trên:
+- Bóng màu ... xuất hiện nhiều lần nhất.
+- Bóng màu ... xuất hiện ít lần nhất.
+2. Mai lấy một quả bóng từ trong hộp ra, quan sát màu của quả bóng đó rồi trả lại vào hộp. Mai lặp lại như vậy 20 lần.
+[Hình vẽ chiếc hộp chứa các quả bóng màu xanh và đỏ]
+Dưới đây là bảng ghi lại kết quả các lần lấy bóng của Mai:
+[Bảng kiểm đếm: Bóng xanh (12 lần), Bóng đỏ (8 lần)]
+Dựa vào bảng trên, hãy viết câu trả lời cho các câu hỏi dưới đây:
+a) Sự kiện "Mai lấy được bóng xanh" xảy ra bao nhiêu lần?
+b) Sự kiện "Mai lấy được bóng đỏ" xảy ra bao nhiêu lần?
+c) Sự kiện nào xảy ra nhiều lần hơn?
+
+--- TRANG 116 ---
+BÀI 73: ÔN TẬP CHUNG
+Tiết 1
+1. Viết số và đọc số (theo mẫu).
+[Bảng 3 cột: Số gồm có, Viết số, Đọc số]
+8 triệu, 5 trăm nghìn, 3 chục nghìn, 2 nghìn và 1 trăm | 8 532 100 | Tám triệu năm trăm ba mươi hai nghìn một trăm.
+2. Đặt tính rồi tính.
+a) 45 728 + 19 315
+b) 814 620 - 50 317
+c) 412 × 34
+d) 15 078 : 46
+3. Sắp xếp các số 543 210; 543 120; 534 210; 534 120:
+a) Theo thứ tự từ bé đến lớn.
+b) Theo thứ tự từ lớn đến bé.
+4. Trong ba ngày, mỗi ngày cửa hàng bán được số mét vải lần lượt là: 350 m, 420 m, 380 m. Hỏi trung bình mỗi ngày cửa hàng bán được bao nhiêu mét vải?
+Bài giải
+5. Một mảnh đất hình chữ nhật có chiều rộng 25 m, chiều dài gấp 3 lần chiều rộng. Tính chu vi và diện tích mảnh đất đó.
+Bài giải
+
+--- TRANG 117 ---
+Tiết 2
+1. Khoanh vào chữ đặt trước câu trả lời đúng.
+Đã tô màu 1/5 hình nào dưới đây?
+[Hình vẽ 4 hình A, B, C, D được chia phần và tô màu khác nhau]
+A. Hình A
+B. Hình B
+C. Hình C
+D. Hình D
+2. Rút gọn các phân số: 15/25; 18/27; 36/64.
+3. Tính.
+a) 5/12 + 7/12 = 12/12 = 1
+b) 11/15 - 2/5 = 11/15 - 6/15 = 5/15 = 1/3
+c) 16/25 × 5/8 = (16 × 5)/(25 × 8) = 2/5
+d) 14/15 : 7/3 = 14/15 × 3/7 = 2/5
+4. Có 56 bạn tham gia đội văn nghệ của trường. Trong đó số bạn nam ít hơn số bạn nữ là 8 bạn. Hỏi đội văn nghệ đó có bao nhiêu bạn nam, bao nhiêu bạn nữ?
+Bài giải
+5. Một kho có 3 tấn 5 tạ muối. Người ta chuyển muối từ kho lên miền núi 2 đợt. Đợt một chuyển được 1/5 số muối trong kho, đợt hai chuyển được 1/7 số muối trong kho. Hỏi cả hai đợt đã chuyển được bao nhiêu tạ muối?
+Bài giải
+
+--- TRANG 118 ---
+Tiết 3
+1. Đặt tính rồi tính.
+a) 357 800 + 42 107
+b) 602 513 - 308 050
+c) 207 × 32
+d) 15 820 : 54
+2. Biểu đồ dưới đây cho biết số người tham gia đồng diễn của 4 đội trong một hội thao.
+SỐ NGƯỜI THAM GIA ĐỒNG DIỄN CỦA 4 ĐỘI
+[Biểu đồ cột: Đội 1 (40 người), Đội 2 (50 người), Đội 3 (45 người), Đội 4 (45 người)]
+Dựa vào biểu đồ, hãy trả lời các câu hỏi sau:
+a) Mỗi đội có bao nhiêu người tham gia đồng diễn?
+b) Trung bình mỗi đội có bao nhiêu người tham gia đồng diễn?
+c) Đội đồng diễn nào có số người tham gia nhiều nhất? Đội nào có số người tham gia ít nhất? Hai đội đó hơn kém nhau bao nhiêu người?
+3. Khoanh vào chữ đặt trước câu trả lời đúng.
+Cùng đi một quãng đường, ô tô màu đỏ đi hết 1/5 giờ, ô tô màu xanh đi hết 720 giây, ô tô màu đen đi hết 1/6 giờ, ô tô màu trắng đi hết 12 phút. Hỏi ô tô nào đi hết nhiều thời gian nhất?
+A. Ô tô màu đỏ
+B. Ô tô màu xanh
+C. Ô tô màu đen
+D. Ô tô màu trắng
+4. Trong thùng có 60 l dầu. Người ta lấy 1/5 số lít dầu trong thùng rót đều vào 3 cái can. Hỏi 2 can như vậy có bao nhiêu lít dầu?
+Bài giải
+
+--- TRANG 119 ---
+[Hình vẽ hình chữ nhật ABCD và hình thoi MNPQ]
+Hãy nêu các cặp cạnh vuông góc và các cặp cạnh song song trong mỗi hình đó.
+- Hình chữ nhật ABCD:
++ Các cặp cạnh vuông góc: ...
++ Các cặp cạnh song song: ...
+- Hình thoi MNPQ:
++ Các cặp cạnh song song: ...
+
+--- TRANG 120 ---
+MỘT SỐ THUẬT NGỮ DÙNG TRONG SÁCH
+[Bảng 2 cột: Thuật ngữ, Trang]
+Thuật ngữ | Trang
+Biểu đồ cột | 45
+Dãy số liệu | 42
+Phân số | 56
+Quy đồng mẫu số | 66
+Rút gọn phân số | 64
+Rút về đơn vị | 34
+So sánh phân số | 68
+Số lần xuất hiện của một sự kiện | 50
+Số trung bình cộng | 31
+--- TRANG 121 ---
+Tiết 4
+1. Đúng ghi Đ, sai ghi S.
+a) 3/4 + 1/2 = 5/4 [ ]
+b) 5/8 – 1/4 = 3/8 [ ]
+c) 2/3 × 3/2 = 1 [ ]
+d) 4/5 : 2/5 = 1/2 [ ]
+2. Khoanh vào chữ đặt trước câu trả lời đúng.
+a) Phân số nào dưới đây là phân số tối giản?
+A. 2/4
+B. 3/6
+C. 5/7
+D. 9/12
+b) Phân số nào dưới đây lớn hơn 1?
+A. 3/4
+B. 5/5
+C. 7/6
+D. 8/9
+3. Mỗi ô tô chở 4 250 kg gạo. Hỏi 3 ô tô như vậy chở bao nhiêu ki-lô-gam gạo?
+Bài giải
+4. Trong một đợt trồng cây, khối lớp Bốn trồng được 120 cây, khối lớp Năm trồng được 150 cây. Hỏi trung bình mỗi khối lớp trồng được bao nhiêu cây?
+Bài giải
+
+--- TRANG 122 ---
+5. Một cửa hàng có 1 250 kg gạo. Ngày thứ nhất cửa hàng bán được 1/5 số gạo đó. Ngày thứ hai cửa hàng bán được 1/4 số gạo còn lại. Hỏi sau hai ngày, cửa hàng còn lại bao nhiêu ki-lô-gam gạo?
+Bài giải
+Tiết 5
+1. Tính.
+a) 3/5 + 1/2 = 11/10
+b) 7/8 – 1/4 = 5/8
+c) 2/3 × 4/7 = 8/21
+d) 5/6 : 2/3 = 5/4
+2. Tính giá trị của biểu thức.
+a) 1/2 + 1/3 × 2/5 = 1/2 + 2/15 = 19/30
+b) (3/4 – 1/2) : 2/3 = 1/4 : 2/3 = 3/8
+3. Một mảnh đất hình chữ nhật có chu vi là 120 m. Chiều rộng kém chiều dài 20 m.
+a) Tính chiều dài và chiều rộng của mảnh đất đó.
+b) Tính diện tích của mảnh đất đó.
+Bài giải
+
+--- TRANG 123 ---
+4. Một trường học có 450 học sinh, trong đó số học sinh nam bằng 4/5 số học sinh nữ. Hỏi trường đó có bao nhiêu học sinh nam, bao nhiêu học sinh nữ?
+Bài giải
+5. Tính bằng cách thuận tiện.
+a) 2/3 × 4/5 + 2/3 × 1/5 = 2/3 × (4/5 + 1/5) = 2/3 × 1 = 2/3
+b) 5/6 × 7/8 – 5/6 × 3/8 = 5/6 × (7/8 – 3/8) = 5/6 × 1/2 = 5/12
+
+--- TRANG 124 ---
+HƯỚNG DẪN – ĐÁP SỐ
+CHỦ ĐỀ 8: PHÉP NHÂN VÀ PHÉP CHIA
+BÀI 38: NHÂN VỚI SỐ CÓ MỘT CHỮ SỐ
+Tiết 1
+1. 49 220; 101 590; 783 014.
+2. a) S; b) Đ; c) S.
+3. 40 000 l.
+4. B.
+Tiết 2
+1. 64 060; 356 030; 575 496.
+2. B.
+3. a) 996 784; b) 830 207.
+4. 524 288.
+BÀI 39: CHIA CHO SỐ CÓ MỘT CHỮ SỐ
+Tiết 1
+1. 84 573; 180 380; 115 645 (dư 1).
+2. a) Đ; S. b) 27 409.
+3. 30 000 đồng.
+4. A.
+
+--- TRANG 125 ---
+Tiết 2
+1. 76 564; 75 384 (dư 1); 46 995 (dư 2).
+2. a) C; b) C.
+3. 68 789 vỉ và dư 5 viên.
+4. C.
+5. C.
+BÀI 40: TÍNH CHẤT GIAO HOÁN VÀ KẾT HỢP CỦA PHÉP NHÂN
+Tiết 1
+1. 1 300 × 5 nối với 5 × 1 300; 7 × 105 nối với 105 × 7; 62 × 4 nối với 4 × 62; 2 910 × 3 nối với 3 × 2 910.
+2. a) 6; b) 12; c) 2; d) 31 140.
+3. 215 × 3; 645.
+4. C.
+Tiết 2
+1. a) 6; 30. b) 24; 48. c) 14; 56. d) 15; 45.
+2. 8 × 4 × 2; 32 × 2; 8 × 8 tô cùng một màu. 7 × 3 × 3; 7 × 9; (10 - 1) × 7 tô cùng một màu.
+3. 80 bông tua.
+4. a) C; b) B.
+Tiết 3
+1. a = 10, b = 2, c = 3: 20; 20; 60; 60. a = 9, b = 5, c = 2: 45; 45; 90; 90. a = 6, b = 2, c = 4: 12; 12; 48; 48.
+2. a) 284 880 (Tính chất giao hoán). b) 854 640 (Tính chất giao hoán). c) 854 640. d) 854 640 (Tính chất kết hợp).
+3. b) CHU VĂN AN.
+4. a) 3; b) 5; c) 7; d) 64; 128.
+
+--- TRANG 126 ---
+BÀI 41: NHÂN, CHIA VỚI 10, 100, 1000, ...
+Tiết 1
+1. 230; 172 900; 381 000; 481; 6 280; 123.
+2. A.
+3. 120 học sinh.
+4. B.
+Tiết 2
+1. 25; 378; 21; 392; 17 000; 27 900.
+2. a) 4; 6; 12. b) 9; 3; 10.
+3. a) 38 290; b) 302 930; c) 3 260; d) 920.
+4. 1 500 kg.
+5. C.
+BÀI 42: TÍNH CHẤT PHÂN PHỐI CỦA PHÉP NHÂN ĐỐI VỚI PHÉP CỘNG
+Tiết 1
+1. a) 175; b) 192.
+2. a) 36; 42; 36; 63. b) S; Đ; S; Đ.
+3. 108 quả.
+4. 3 600.
+Tiết 2
+1. a) 259; b) 1 030.
+2. a) 760; b) 13 600; c) 500.
+3. a) 4 170; b) 870.
+4. 500 000 đồng.
+Tiết 3
+1. a) 96; 48; 96; 48. b) =; >; =; =.
+2. b) 17 × 5 - 17 × 3 nối với 34; (41 – 35) × 8 nối với 48; 41 × 8 - 35 × 8 nối với 48; 17 × (5 – 3) nối với 34.
+3. a) 125; b) 900.
+4. 120 chiếc bút.
+
+--- TRANG 127 ---
+BÀI 43: NHÂN VỚI SỐ CÓ HAI CHỮ SỐ
+Tiết 1
+1. 1 536; 9 152; 83 382.
+2. 48 × 16 nối với 768; 42 × 14 nối với 588; 18 × 41 nối với 738.
+3. 585 kg.
+4. a) =; b) =.
+Tiết 2
+1. 6 104; 8 672; 145 288.
+2. 2 160; 16 100; 2 520; 143 500.
+3. 5 100; 370 000.
+4. a) 805; b) 3 572.
+5. 297 500 đồng.
+Tiết 3
+1. a) 2 294; 1 305; 14 490.
+2. 74 × 21 = 1 554; 43 × 58 = 2 494.
+3. 78 cái.
+4. a) Đ; S. b) 462.
+BÀI 44: CHIA CHO SỐ CÓ HAI CHỮ SỐ
+Tiết 1
+1. 46; 37; 88 (dư 29).
+2. 450 : 50 nối với 9; 560 : 80 nối với 7; 4 340 : 70 nối với 62; 72 800 : 80 nối với 910; 74 700 : 300 nối với 249; 126 000 : 900 nối với 140.
+3. 12 cái ghế.
+4. a) <; b) =.
+Tiết 2
+1. 74; 204; 525.
+2. a) 14; 14; 14. b) 192; 192; 192.
+3. a) 116 m; b) 108 m2.
+
+--- TRANG 128 ---
+Tiết 3
+1. 45; 54; 46.
+2. 292; 52; 15 820 : 54 = 292 (dư 52).
+3. C.
+4. 7 ô tô và thừa 8 người.
+BÀI 45: THỰC HÀNH VÀ TRẢI NGHIỆM ƯỚC LƯỢNG IN TÍNH TOÁN
+1. a) 7; b) 12; 7; 6; 4.
+2. a) 1 000; b) 20; c) 21; 20.
+3. a) S; b) Đ; c) Đ; d) S.
+4. a) 5; b) 3; c) 5.
+5. 21.
+BÀI 46: TÌM SỐ TRUNG BÌNH CỘNG
+Tiết 1
+1. a) 15; b) 40; c) 10.
+2. 31 kg.
+3. 14 học sinh.
+4. Quyết Thắng; 133 > 131.
+Tiết 2
+1. 15; 20.
+2. C.
+3. 1 750 m.
+4. C.
+BÀI 47: BÀI TOÁN LIÊN QUAN ĐẾN RÚT VỀ ĐƠN VỊ
+Tiết 1
+1. 30 hộp.
+2. a) 45 bông; b) 20 bông.
+3. a) 17 000; 51 000. b) 3.
+Tiết 2
+1. 5 kg.
+2. 9 hộp.
+3. 65 cm.
+4. a) 17 hàng; b) 10 hàng.
