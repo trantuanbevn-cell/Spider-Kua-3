@@ -684,7 +684,7 @@ function showPinModal(onSuccess){
   // Backdrop
   var bd=document.createElement('div');
   bd.id='pinModalBD';
-  bd.style.cssText='position:fixed;inset:0;z-index:800;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(3px);';
+  bd.style.cssText='position:fixed;inset:0;z-index:10001;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(3px);';
   bd.onclick=function(e){ if(e.target===bd) closePinModal(); };
 
   // Box
@@ -1031,12 +1031,26 @@ function buyReward(id,xu,name){
     const dow=new Date().getDay();
     if(dow!==0&&dow!==6){alert('⚠️ Game cuối tuần chỉ dùng được vào Thứ 7 hoặc Chủ Nhật!');return;}
   }
+  var shopEl=document.querySelector('div[style*="z-index:9999"]');
+  if(shopEl) shopEl.style.display='none';
   showPinModal(function(){
+    if(shopEl) shopEl.remove();
     if(!spendXu(xu)){alert('Không đủ xu!');return;}
-  document.querySelector('div[style*="fixed"][style*="88"]')&&document.querySelector('div[style*="fixed"][style*="88"]').remove();
-  const pop=document.createElement('div');pop.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;';
-  pop.innerHTML='<div style="text-align:center;padding:20px;"><div style="font-size:56px;margin-bottom:12px;">🎉</div><div style="font-family:Rajdhani,sans-serif;font-size:22px;font-weight:700;color:var(--green);margin-bottom:8px;">Đổi thưởng thành công!</div><div style="font-size:15px;color:var(--tx);margin-bottom:6px;">'+name+'</div><div style="font-size:13px;color:var(--tx2);margin-bottom:20px;">Còn lại: '+getXu().toLocaleString('vi-VN')+' xu</div><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:var(--green);border:none;border-radius:12px;color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:16px;padding:12px 28px;cursor:pointer;">TUYỆT VỜI!</button></div>';
-  document.body.appendChild(pop);
+    var pop=document.createElement('div');
+    pop.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;';
+    var inner=document.createElement('div');
+    inner.style.cssText='text-align:center;padding:20px;';
+    inner.innerHTML='<div style="font-size:56px;margin-bottom:12px;">🎉</div>'+
+      '<div style="font-family:Rajdhani,sans-serif;font-size:22px;font-weight:700;color:var(--green);margin-bottom:8px;">Đổi thưởng thành công!</div>'+
+      '<div style="font-size:15px;color:var(--tx);margin-bottom:6px;">'+name+'</div>'+
+      '<div style="font-size:13px;color:var(--tx2);margin-bottom:20px;">Còn lại: '+getXu().toLocaleString('vi-VN')+' xu</div>';
+    var okBtn=document.createElement('button');
+    okBtn.textContent='TUYỆT VỜI!';
+    okBtn.style.cssText='background:var(--green);border:none;border-radius:12px;color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:16px;padding:12px 28px;cursor:pointer;';
+    okBtn.onclick=function(){ pop.remove(); };
+    inner.appendChild(okBtn);
+    pop.appendChild(inner);
+    document.body.appendChild(pop);
   });
 }
 
@@ -2672,7 +2686,7 @@ function endSession(){
   // Build overlay
   var ov=document.createElement('div');
   ov.id='endSessionOL';
-  ov.style.cssText='position:fixed;inset:0;z-index:900;background:rgba(0,0,0,.88);display:flex;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto;backdrop-filter:blur(4px);';
+  ov.style.cssText='position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.88);display:flex;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto;backdrop-filter:blur(4px);';
 
   var box=document.createElement('div');
   box.style.cssText='position:relative;background:#0e0e12;border:2px solid #ff7a00;border-radius:18px;padding:20px;width:100%;max-width:360px;margin:auto;overflow:hidden;animation:esFadeIn .35s ease,esPulse 3s ease-in-out infinite;';
