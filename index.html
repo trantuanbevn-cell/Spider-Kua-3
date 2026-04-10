@@ -659,6 +659,149 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 const SB_URL='https://fwzlxitynbpfjngiakqw.supabase.co';
 const SB_KEY='eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImZ3emx4aXR5bmJwZmpuZ2lha3F3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzU2MzYzNDYsImV4cCI6MjA5MTIxMjM0Nn0.uz1adH8f7ASyIgPg03d7cb6OMXaP_KFrJ7BPVi8ZHkk';
 const K={api:'sk3',gem:'gem3',mem:'mem3',hw:'hw3',room:'rm3',xu:'xu3',cups:'cups3'};
+// ═══ CUSTOM PIN MODAL (thay prompt()) ═══
+function showPinModal(onSuccess){
+  var existing=document.getElementById('pinModalOL');
+  if(existing) existing.remove();
+  var bd=document.getElementById('pinModalBD');
+  if(bd) bd.remove();
+
+  // Inject keyframe CSS once
+  if(!document.getElementById('pinModalCSS')){
+    var style=document.createElement('style');
+    style.id='pinModalCSS';
+    style.textContent=
+      '@keyframes laserScan{0%{top:0%;opacity:.9}100%{top:100%;opacity:.4}}'+
+      '@keyframes pinGlow{0%,100%{box-shadow:0 0 8px #ff7a00,0 0 20px rgba(255,122,0,.3)}50%{box-shadow:0 0 18px #ff9500,0 0 40px rgba(255,149,0,.5),0 0 60px rgba(255,122,0,.2)}}'+
+      '@keyframes pinBorderPulse{0%,100%{border-color:#ff7a00}50%{border-color:#ffb347}}'+
+      '@keyframes pinFadeIn{from{opacity:0;transform:scale(.92)}to{opacity:1;transform:scale(1)}}'+
+      '@keyframes scanLine{0%{top:-2px}100%{top:calc(100% + 2px)}}'+
+      '@keyframes titleFlicker{0%,95%,100%{opacity:1;text-shadow:0 0 10px #ff7a00,0 0 20px rgba(255,122,0,.5)}96%,98%{opacity:.7;text-shadow:none}}'+
+      '@keyframes okBtnPulse{0%,100%{background:#ff7a00}50%{background:#ff9500}}';
+    document.head.appendChild(style);
+  }
+
+  // Backdrop
+  var bd=document.createElement('div');
+  bd.id='pinModalBD';
+  bd.style.cssText='position:fixed;inset:0;z-index:800;background:rgba(0,0,0,.82);display:flex;align-items:center;justify-content:center;padding:20px;backdrop-filter:blur(3px);';
+  bd.onclick=function(e){ if(e.target===bd) closePinModal(); };
+
+  // Box
+  var box=document.createElement('div');
+  box.id='pinModalOL';
+  box.style.cssText='position:relative;background:#0e0e12;border:2px solid #ff7a00;border-radius:16px;padding:22px 20px 20px;width:100%;max-width:310px;overflow:hidden;animation:pinFadeIn .25s ease,pinGlow 2s ease-in-out infinite,pinBorderPulse 2s ease-in-out infinite;';
+  box.onclick=function(e){ e.stopPropagation(); };
+
+  // Laser scan line (moving top→bottom)
+  var laser=document.createElement('div');
+  laser.style.cssText='position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#ff7a00,#ffb347,#ff7a00,transparent);animation:scanLine 2s linear infinite;pointer-events:none;z-index:2;top:0;box-shadow:0 0 8px #ff9500,0 0 20px rgba(255,122,0,.6);';
+  box.appendChild(laser);
+
+  // Corner accents
+  ['top:0;left:0;border-top:2px solid #ff7a00;border-left:2px solid #ff7a00;',
+   'top:0;right:0;border-top:2px solid #ff7a00;border-right:2px solid #ff7a00;',
+   'bottom:0;left:0;border-bottom:2px solid #ff7a00;border-left:2px solid #ff7a00;',
+   'bottom:0;right:0;border-bottom:2px solid #ff7a00;border-right:2px solid #ff7a00;'
+  ].forEach(function(s){
+    var c=document.createElement('div');
+    c.style.cssText='position:absolute;width:14px;height:14px;'+s+'z-index:3;';
+    box.appendChild(c);
+  });
+
+  // Shield icon row
+  var iconRow=document.createElement('div');
+  iconRow.style.cssText='text-align:center;font-size:32px;margin-bottom:8px;position:relative;z-index:4;';
+  iconRow.textContent='🛡️';
+  box.appendChild(iconRow);
+
+  // Title with flicker
+  var t=document.createElement('div');
+  t.style.cssText='font-family:Rajdhani,sans-serif;font-weight:700;font-size:17px;color:#ff9500;text-align:center;margin-bottom:4px;letter-spacing:.06em;animation:titleFlicker 4s ease-in-out infinite;position:relative;z-index:4;text-shadow:0 0 10px rgba(255,122,0,.5);';
+  t.textContent='AGENT MẸ XÁC NHẬN';
+  box.appendChild(t);
+
+  var sub=document.createElement('div');
+  sub.style.cssText='font-size:11px;color:#a0836e;text-align:center;margin-bottom:16px;letter-spacing:.08em;text-transform:uppercase;position:relative;z-index:4;';
+  sub.textContent='Nhập Mã Xác Nhận để tiếp tục';
+  box.appendChild(sub);
+
+  // Input wrapper with inner glow
+  var inpWrap=document.createElement('div');
+  inpWrap.style.cssText='position:relative;margin-bottom:8px;z-index:4;';
+  var inp=document.createElement('input');
+  inp.type='password';
+  inp.inputMode='numeric';
+  inp.maxLength=6;
+  inp.placeholder='• • • •';
+  inp.style.cssText='width:100%;background:#1a1a20;border:1px solid #ff7a00;border-radius:10px;color:#ff9500;font-size:26px;text-align:center;padding:11px;outline:none;box-sizing:border-box;letter-spacing:8px;font-family:Rajdhani,sans-serif;font-weight:700;transition:box-shadow .2s;';
+  inp.addEventListener('focus',function(){ this.style.boxShadow='0 0 0 2px rgba(255,122,0,.4),0 0 16px rgba(255,122,0,.2)'; });
+  inp.addEventListener('blur', function(){ this.style.boxShadow='none'; });
+  inpWrap.appendChild(inp);
+  box.appendChild(inpWrap);
+
+  // Error
+  var err=document.createElement('div');
+  err.style.cssText='font-size:12px;color:#ff453a;text-align:center;min-height:18px;margin-bottom:12px;z-index:4;position:relative;';
+  box.appendChild(err);
+
+  // Buttons
+  var btnRow=document.createElement('div');
+  btnRow.style.cssText='display:flex;gap:8px;position:relative;z-index:4;';
+
+  var cancelBtn=document.createElement('button');
+  cancelBtn.textContent='Huỷ';
+  cancelBtn.style.cssText='flex:1;background:transparent;border:1px solid #555;border-radius:9px;color:#888;font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;padding:11px;cursor:pointer;letter-spacing:.04em;transition:border-color .2s,color .2s;';
+  cancelBtn.onmouseover=function(){ this.style.borderColor='#ff7a00'; this.style.color='#ff9500'; };
+  cancelBtn.onmouseout=function(){ this.style.borderColor='#555'; this.style.color='#888'; };
+  cancelBtn.onclick=function(){ closePinModal(); };
+
+  var okBtn=document.createElement('button');
+  okBtn.textContent='✓ XÁC NHẬN';
+  okBtn.style.cssText='flex:2;background:#ff7a00;border:none;border-radius:9px;color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;padding:11px;cursor:pointer;letter-spacing:.06em;animation:okBtnPulse 2s ease-in-out infinite;transition:transform .1s;';
+  okBtn.onmousedown=function(){ this.style.transform='scale(.97)'; };
+  okBtn.onmouseup=function(){ this.style.transform='scale(1)'; };
+
+  function doCheck(){
+    var pin=inp.value.trim();
+    var correct=localStorage.getItem('parent_pin')||'2790';
+    if(pin===correct){
+      // Success flash
+      box.style.borderColor='#30d158';
+      box.style.boxShadow='0 0 30px rgba(48,209,88,.4)';
+      setTimeout(function(){ closePinModal(); onSuccess(); }, 200);
+    } else {
+      err.textContent='❌ Mã không đúng, thử lại!';
+      inp.value='';
+      inp.style.borderColor='#ff453a';
+      inp.style.boxShadow='0 0 0 2px rgba(255,69,58,.4)';
+      setTimeout(function(){
+        inp.style.borderColor='#ff7a00';
+        inp.style.boxShadow='none';
+        err.textContent='';
+      }, 1500);
+      inp.focus();
+    }
+  }
+
+  okBtn.onclick=doCheck;
+  inp.addEventListener('keydown', function(e){ if(e.keyCode===13) doCheck(); });
+
+  btnRow.appendChild(cancelBtn);
+  btnRow.appendChild(okBtn);
+  box.appendChild(btnRow);
+  bd.appendChild(box);
+  document.body.appendChild(bd);
+  setTimeout(function(){ inp.focus(); }, 150);
+}
+
+function closePinModal(){
+  var bd=document.getElementById('pinModalBD');
+  var box=document.getElementById('pinModalOL');
+  if(bd) bd.remove();
+  if(box) box.remove();
+}
+
 let key='',gemKey='',busy=false,imgArr=[],SR=null,isRec=false;
 
 // ═══ SPLASH - GEMINI LOGIC ═══
@@ -888,14 +1031,13 @@ function buyReward(id,xu,name){
     const dow=new Date().getDay();
     if(dow!==0&&dow!==6){alert('⚠️ Game cuối tuần chỉ dùng được vào Thứ 7 hoặc Chủ Nhật!');return;}
   }
-  const pin=prompt('Nhập Mã Xác Nhận:');
-  if(!pin)return;
-  if(pin.trim()!==(localStorage.getItem('parent_pin')||'2790')){alert('❌ Mã không đúng!');return;}
-  if(!spendXu(xu)){alert('Không đủ xu!');return;}
+  showPinModal(function(){
+    if(!spendXu(xu)){alert('Không đủ xu!');return;}
   document.querySelector('div[style*="fixed"][style*="88"]')&&document.querySelector('div[style*="fixed"][style*="88"]').remove();
   const pop=document.createElement('div');pop.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:9999;display:flex;align-items:center;justify-content:center;flex-direction:column;';
   pop.innerHTML='<div style="text-align:center;padding:20px;"><div style="font-size:56px;margin-bottom:12px;">🎉</div><div style="font-family:Rajdhani,sans-serif;font-size:22px;font-weight:700;color:var(--green);margin-bottom:8px;">Đổi thưởng thành công!</div><div style="font-size:15px;color:var(--tx);margin-bottom:6px;">'+name+'</div><div style="font-size:13px;color:var(--tx2);margin-bottom:20px;">Còn lại: '+getXu().toLocaleString('vi-VN')+' xu</div><button onclick="this.closest(\'div[style*=fixed]\').remove()" style="background:var(--green);border:none;border-radius:12px;color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:16px;padding:12px 28px;cursor:pointer;">TUYỆT VỜI!</button></div>';
   document.body.appendChild(pop);
+  });
 }
 
 // ═══ CUP ĐIỂM 10 ═══
@@ -1413,12 +1555,11 @@ function stopSpeak(){window.speechSynthesis?.cancel();document.getElementById('s
 
 // ═══ HOMEWORK ═══
 function showParent(){
-  const pin=prompt('Nhập Mã Xác Nhận:');
-  if(!pin)return;
-  if(pin.trim()!==(localStorage.getItem('parent_pin')||'2790')){alert('❌ Mã không đúng!');return;}
-  document.getElementById('parentOL').style.display='flex';renderHW();
-  const dtl=document.getElementById('deviceTypeLabel');
-  if(dtl) dtl.textContent=localStorage.getItem('isKuaDevice')==='true'?'Máy Kua ✅':'Máy bố/mẹ 👁️';
+  showPinModal(function(){
+    document.getElementById('parentOL').style.display='flex';renderHW();
+    const dtl=document.getElementById('deviceTypeLabel');
+    if(dtl) dtl.textContent=localStorage.getItem('isKuaDevice')==='true'?'Máy Kua ✅':'Máy bố/mẹ 👁️';
+  });
 }
 let srHW=null,isRecHW=false;
 function toggleMicHW(){
@@ -2360,6 +2501,17 @@ function trackQuestion(){
   saveStats(s);
 }
 function trackAnswer(correct){
+  // Track session topic from last AI message
+  try{
+    var msgs=document.getElementById('msgs');
+    if(msgs){
+      var aiMsgs=msgs.querySelectorAll('.msg.ai .mc');
+      if(aiMsgs.length){
+        var lastText=aiMsgs[aiMsgs.length-1].innerText||'';
+        trackSessionTopic(lastText, correct);
+      }
+    }
+  }catch(e){}
   var s=getStats();
   if(correct){
     s.correct=(s.correct||0)+1;
@@ -2375,28 +2527,26 @@ function closeStatsOverlay(){
   if(o) o.remove();
 }
 function showStats(){
-  var pin=prompt('Nhập Mã Xác Nhận:');
-  if(!pin||pin.trim()!==(localStorage.getItem('parent_pin')||'2790')){ alert('❌ Mã không đúng!'); return; }
-  var isKua=localStorage.getItem('isKuaDevice')==='true';
-  if(isKua){
-    // Máy Kua: đọc local, sync lên cloud luôn
-    _renderStatsOverlay(getStats());
-    syncStatsToCloud();
-  } else {
-    // Máy mẹ/bố: fetch từ cloud
-    var loading=document.createElement('div');
-    loading.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:700;display:flex;align-items:center;justify-content:center;';
-    loading.innerHTML='<div style="color:#fff;font-family:Rajdhani,sans-serif;font-size:16px;">⏳ Đang tải thống kê Kua...</div>';
-    document.body.appendChild(loading);
-    loadStatsFromCloud().then(function(s){
-      loading.remove();
-      if(!s){ alert('⚠️ Chưa có dữ liệu từ máy Kua. Kua chưa học buổi nào hoặc chưa đồng bộ.'); return; }
-      _renderStatsOverlay(s);
-    }).catch(function(){
-      loading.remove();
-      alert('❌ Không lấy được dữ liệu. Kiểm tra kết nối mạng.');
-    });
-  }
+  showPinModal(function(){
+    var isKua=localStorage.getItem('isKuaDevice')==='true';
+    if(isKua){
+      _renderStatsOverlay(getStats());
+      syncStatsToCloud();
+    } else {
+      var loading=document.createElement('div');
+      loading.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:700;display:flex;align-items:center;justify-content:center;';
+      loading.innerHTML='<div style="color:#fff;font-family:Rajdhani,sans-serif;font-size:16px;">⏳ Đang tải thống kê Kua...</div>';
+      document.body.appendChild(loading);
+      loadStatsFromCloud().then(function(s){
+        loading.remove();
+        if(!s){ alert('⚠️ Chưa có dữ liệu từ máy Kua. Kua chưa học buổi nào hoặc chưa đồng bộ.'); return; }
+        _renderStatsOverlay(s);
+      }).catch(function(){
+        loading.remove();
+        alert('❌ Không lấy được dữ liệu. Kiểm tra kết nối mạng.');
+      });
+    }
+  });
 }
 
 function _renderStatsOverlay(s){
@@ -2448,15 +2598,284 @@ function _renderStatsOverlay(s){
 }
 
 // ═══ KẾT THÚC BUỔI HỌC ═══
-async function endSession(){
-  const m=M(), xu=getXu(), today=new Date();
-  const dayKey=DAYS_KEY[today.getDay()];
-  const extra=EXTRA[dayKey]||'không có lịch thêm';
-  const p='[Kua vừa kết thúc buổi học hôm nay. Tổng kết: XP hôm nay='+m.xp+', Tổng xu='+xu+', Streak='+m.streak+' ngày, Missions='+m.missions+'. Lịch học thêm hôm nay: '+extra+'. Hãy: 1) Tổng kết ngắn việc Kua đã làm. 2) Khen thưởng. 3) Nhắc soạn sách vở cho ngày mai. 4) Nhắc lịch học thêm tiếp theo. Giọng Fury vui, ngắn gọn.]';
-  qs(p);
-  // Sync progress + stats lên cloud khi kết thúc buổi học
+async // ═══ SESSION TOPIC TRACKER ═══
+function getSessionTopics(){
+  try{ return JSON.parse(sessionStorage.getItem('kua_session_topics')||'[]'); }
+  catch(e){ return []; }
+}
+function saveSessionTopics(arr){ sessionStorage.setItem('kua_session_topics', JSON.stringify(arr)); }
+
+function trackSessionTopic(aiText, correct){
+  // Extract topic keywords from AI response
+  var topicMap = [
+    {keys:['nhân','phép nhân','×','multiplication','nhân với'],   label:'Phép nhân'},
+    {keys:['chia','phép chia','÷','division','chia cho'],         label:'Phép chia'},
+    {keys:['cộng','phép cộng','+','addition','cộng phân số'],    label:'Phép cộng'},
+    {keys:['trừ','phép trừ','-','subtraction','trừ phân số'],    label:'Phép trừ'},
+    {keys:['phân số','tử số','mẫu số','rút gọn','quy đồng'],      label:'Phân số'},
+    {keys:['so sánh phân số','phân số lớn','phân số nhỏ'],        label:'So sánh phân số'},
+    {keys:['trung bình cộng','số trung bình'],                    label:'Trung bình cộng'},
+    {keys:['biểu đồ','thống kê','cột','số liệu'],                 label:'Thống kê & biểu đồ'},
+    {keys:['lời giải','bài toán','đề bài','tóm tắt'],             label:'Toán có lời văn'},
+    {keys:['hình học','chu vi','diện tích','tam giác','hình chữ nhật','hình vuông'], label:'Hình học'},
+    {keys:['đọc','viết','chính tả','tiếng việt','câu văn'],       label:'Tiếng Việt'},
+    {keys:['tiếng anh','english','vocabulary','grammar','từ vựng'],label:'Tiếng Anh'},
+    {keys:['khoa học','thí nghiệm','tự nhiên'],                   label:'Khoa học'},
+  ];
+  var lower = aiText.toLowerCase();
+  var matched = null;
+  for(var i=0;i<topicMap.length;i++){
+    var found = topicMap[i].keys.some(function(k){ return lower.indexOf(k)>-1; });
+    if(found){ matched=topicMap[i].label; break; }
+  }
+  if(!matched) return;
+  var topics = getSessionTopics();
+  var existing = topics.find(function(t){ return t.label===matched; });
+  if(existing){
+    existing.total++;
+    if(correct) existing.correct++;
+  } else {
+    topics.push({label:matched, total:1, correct:correct?1:0, stars:0});
+  }
+  saveSessionTopics(topics);
+}
+
+function clearSessionTopics(){ sessionStorage.removeItem('kua_session_topics'); }
+
+// ═══ END SESSION — màn hình tổng kết ═══
+function endSession(){
+  var topics = getSessionTopics();
+  var m=M(), xu=getXu(), today=new Date();
+  var dayKey=DAYS_KEY[today.getDay()];
+  var extra=EXTRA[dayKey]||'không có lịch thêm';
+  var stats=getStats();
+  var todayKey=today.toISOString().slice(0,10);
+  var todayStats=stats.daily&&stats.daily[todayKey]||{total:0,correct:0};
+  var pct=todayStats.total>0?Math.round(todayStats.correct/todayStats.total*100):0;
+
+  // Inject CSS once
+  if(!document.getElementById('endSessionCSS')){
+    var style=document.createElement('style');
+    style.id='endSessionCSS';
+    style.textContent=
+      '@keyframes esLaserScan{0%{top:-2px}100%{top:calc(100% + 2px)}}'+
+      '@keyframes esPulse{0%,100%{box-shadow:0 0 10px rgba(255,122,0,.3),0 0 30px rgba(255,122,0,.1)}50%{box-shadow:0 0 20px rgba(255,122,0,.5),0 0 50px rgba(255,122,0,.2)}}'+
+      '@keyframes esFadeIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}'+
+      '@keyframes starPop{0%{transform:scale(0)}70%{transform:scale(1.3)}100%{transform:scale(1)}}'+
+      '@keyframes confettiDrop{0%{transform:translateY(-10px) rotate(0deg);opacity:1}100%{transform:translateY(60px) rotate(360deg);opacity:0}}'+
+      '.es-star{font-size:26px;cursor:pointer;transition:transform .15s;display:inline-block;line-height:1;}'+
+      '.es-star:hover{transform:scale(1.3);}'+
+      '.es-star.lit{animation:starPop .2s ease;}';
+    document.head.appendChild(style);
+  }
+
+  // Build overlay
+  var ov=document.createElement('div');
+  ov.id='endSessionOL';
+  ov.style.cssText='position:fixed;inset:0;z-index:900;background:rgba(0,0,0,.88);display:flex;align-items:flex-start;justify-content:center;padding:16px;overflow-y:auto;backdrop-filter:blur(4px);';
+
+  var box=document.createElement('div');
+  box.style.cssText='position:relative;background:#0e0e12;border:2px solid #ff7a00;border-radius:18px;padding:20px;width:100%;max-width:360px;margin:auto;overflow:hidden;animation:esFadeIn .35s ease,esPulse 3s ease-in-out infinite;';
+
+  // Laser line
+  var laser=document.createElement('div');
+  laser.style.cssText='position:absolute;left:0;right:0;height:2px;background:linear-gradient(90deg,transparent,#ff7a00,#ffb347,#ff7a00,transparent);animation:esLaserScan 2.5s linear infinite;pointer-events:none;z-index:2;box-shadow:0 0 8px #ff9500;top:0;';
+  box.appendChild(laser);
+
+  // Header
+  var hdr=document.createElement('div');
+  hdr.style.cssText='text-align:center;margin-bottom:14px;position:relative;z-index:3;';
+  hdr.innerHTML='<div style="font-size:36px;margin-bottom:4px;">🛡️</div>'+
+    '<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:18px;color:#ff9500;letter-spacing:.06em;">KẾT THÚC BUỔI HỌC</div>'+
+    '<div style="font-size:11px;color:#888;letter-spacing:.1em;text-transform:uppercase;margin-top:2px;">Mission Complete — Agent Parker</div>';
+  box.appendChild(hdr);
+
+  // Stats row
+  var statsRow=document.createElement('div');
+  statsRow.style.cssText='display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:14px;position:relative;z-index:3;';
+  [
+    {icon:'⚡',val:m.xp,label:'XP'},
+    {icon:'🪙',val:xu,label:'Xu'},
+    {icon:'🎯',val:pct+'%',label:'Đúng hôm nay'},
+  ].forEach(function(s){
+    var cell=document.createElement('div');
+    cell.style.cssText='background:#1a1a20;border:1px solid #333;border-radius:10px;padding:10px 6px;text-align:center;';
+    cell.innerHTML='<div style="font-size:18px;">'+s.icon+'</div>'+
+      '<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:18px;color:#ff9500;">'+s.val+'</div>'+
+      '<div style="font-size:10px;color:#666;">'+s.label+'</div>';
+    statsRow.appendChild(cell);
+  });
+  box.appendChild(statsRow);
+
+  // Topics rating section
+  if(topics.length>0){
+    var topicHdr=document.createElement('div');
+    topicHdr.style.cssText='font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:#ff9500;letter-spacing:.06em;margin-bottom:8px;position:relative;z-index:3;border-top:1px solid #222;padding-top:12px;';
+    topicHdr.textContent='📚 Kua tự đánh giá mức hiểu';
+    box.appendChild(topicHdr);
+
+    var topicNote=document.createElement('div');
+    topicNote.style.cssText='font-size:11px;color:#666;margin-bottom:10px;position:relative;z-index:3;';
+    topicNote.textContent='Bấm sao để đánh giá từng dạng bài (1★ = chưa hiểu, 5★ = hiểu rõ)';
+    box.appendChild(topicNote);
+
+    topics.forEach(function(topic, ti){
+      var row=document.createElement('div');
+      row.style.cssText='background:#1a1a20;border:1px solid #2a2a30;border-radius:10px;padding:10px 12px;margin-bottom:8px;position:relative;z-index:3;';
+
+      // Topic name + accuracy
+      var topRow=document.createElement('div');
+      topRow.style.cssText='display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;';
+      var name=document.createElement('div');
+      name.style.cssText='font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:#ddd;';
+      name.textContent=topic.label;
+      var acc=document.createElement('div');
+      var accPct=topic.total>0?Math.round(topic.correct/topic.total*100):0;
+      var accColor=accPct>=80?'#30d158':accPct>=50?'#ff9500':'#ff453a';
+      acc.style.cssText='font-size:11px;font-family:Rajdhani,sans-serif;font-weight:700;color:'+accColor+';';
+      acc.textContent=topic.correct+'/'+topic.total+' đúng ('+accPct+'%)';
+      topRow.appendChild(name); topRow.appendChild(acc);
+      row.appendChild(topRow);
+
+      // Stars
+      var starRow=document.createElement('div');
+      starRow.style.cssText='display:flex;gap:4px;align-items:center;';
+      for(var s=1;s<=5;s++){
+        (function(starVal){
+          var star=document.createElement('span');
+          star.className='es-star';
+          star.textContent='☆';
+          star.dataset.topic=ti;
+          star.dataset.val=starVal;
+          star.onclick=function(){
+            topics[ti].stars=starVal;
+            saveSessionTopics(topics);
+            // Update all stars in this row
+            var siblings=starRow.querySelectorAll('.es-star');
+            siblings.forEach(function(st,si){
+              st.textContent=si<starVal?'⭐':'☆';
+              if(si<starVal) st.classList.add('lit');
+              else st.classList.remove('lit');
+            });
+            checkAllRated();
+          };
+          starRow.appendChild(star);
+        })(s);
+      }
+      // Low accuracy auto-warning
+      if(accPct < 60){
+        var warn=document.createElement('div');
+        warn.style.cssText='font-size:10px;color:#ff453a;margin-left:4px;';
+        warn.textContent='⚠️ Cần ôn thêm';
+        starRow.appendChild(warn);
+      }
+      row.appendChild(starRow);
+      box.appendChild(row);
+    });
+  } else {
+    // No topic data — just show encouragement  
+    var noTopic=document.createElement('div');
+    noTopic.style.cssText='background:#1a1a20;border:1px solid #2a2a30;border-radius:10px;padding:12px;text-align:center;margin-bottom:10px;position:relative;z-index:3;';
+    noTopic.innerHTML='<div style="font-size:13px;color:#888;">Fury sẽ tổng kết buổi học hôm nay!</div>';
+    box.appendChild(noTopic);
+  }
+
+  // Done button
+  var doneBtn=document.createElement('button');
+  doneBtn.id='esDoneBtn';
+  doneBtn.style.cssText='width:100%;margin-top:12px;background:#ff7a00;border:none;border-radius:11px;color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:15px;padding:13px;cursor:pointer;letter-spacing:.05em;position:relative;z-index:3;opacity:.5;pointer-events:none;transition:opacity .3s;';
+  doneBtn.textContent='✓ GỬI TỔNG KẾT CHO FURY';
+  doneBtn.onclick=function(){
+    ov.remove();
+    _sendEndSessionPrompt(topics, m, xu, extra, pct);
+  };
+  box.appendChild(doneBtn);
+
+  // Skip button
+  var skipBtn=document.createElement('div');
+  skipBtn.style.cssText='text-align:center;margin-top:8px;font-size:11px;color:#555;cursor:pointer;position:relative;z-index:3;';
+  skipBtn.textContent='Bỏ qua đánh giá →';
+  skipBtn.onclick=function(){
+    ov.remove();
+    _sendEndSessionPrompt(topics, m, xu, extra, pct);
+  };
+  box.appendChild(skipBtn);
+
+  ov.appendChild(box);
+  document.body.appendChild(ov);
+
+  function checkAllRated(){
+    if(topics.length===0){
+      var btn=document.getElementById('esDoneBtn');
+      if(btn){ btn.style.opacity='1'; btn.style.pointerEvents='auto'; }
+      return;
+    }
+    var allRated=topics.every(function(t){ return t.stars>0; });
+    var btn=document.getElementById('esDoneBtn');
+    if(btn){
+      btn.style.opacity=allRated?'1':'0.5';
+      btn.style.pointerEvents=allRated?'auto':'none';
+      if(allRated){
+        btn.style.animation='okBtnPulse 1.5s ease-in-out infinite';
+      }
+    }
+  }
+  // If no topics, enable button right away
+  if(topics.length===0) checkAllRated();
+
+  // Sync
   setTimeout(syncProgressToCloud, 1000);
   setTimeout(syncStatsToCloud, 1500);
+}
+
+function _sendEndSessionPrompt(topics, mem, xu, extra, pct){
+  var topicSummary='';
+  var weakTopics=[];
+  if(topics.length>0){
+    topicSummary='\nCÁC DẠNG BÀI HÔM NAY:\n';
+    topics.forEach(function(t){
+      var stars=t.stars>0?'\u2605'.repeat(t.stars)+'\u2606'.repeat(5-t.stars):'(chua danh gia)';
+      var accPct=t.total>0?Math.round(t.correct/t.total*100):0;
+      topicSummary+=('- '+t.label+': '+t.correct+'/'+t.total+' dung ('+accPct+'%), Kua tu cham: '+stars+'\n');
+      if(t.stars>0 && t.stars<=2) weakTopics.push(t.label);
+    });
+    if(weakTopics.length>0){
+      topicSummary+='\nCHU Y: Kua cham thap (1-2 sao) cac dang: '+weakTopics.join(', ')+' → Fury PHAI ghi nho nhac on lai o buoi hoc sau!';
+    }
+  }
+  var lines=[
+    '[KET THUC BUOI HOC. Du lieu:',
+    '- XP: '+mem.xp+' | Xu: '+xu+' | Streak: '+mem.streak+' ngay',
+    '- Ti le dung hom nay: '+pct+'%',
+    '- Lich hoc them: '+extra,
+    topicSummary,
+    'NHIEM VU CUA FURY:',
+    '1. Nhan xet tich cuc, khich le Kua (khong che, chi khen va dong vien)',
+    '2. Tom tat NGAN GON tung dang bai da hoc, nhac lai diem cot loi can nho',
+    '3. Dua ra danh gia muc do hieu cua Kua dua tren % dung va sao tu cham',
+    weakTopics.length>0?('4. Dac biet nhan nho se on lai: '+weakTopics.join(', ')+' o buoi sau'):'',
+    '5. Nhac lich hoc them tiep theo va nhac soan sach vo',
+    '6. Ket thuc bang cau thach thuc ngau de Kua hao huc buoi hoc mai',
+    'Giong Fury: manh me, am ap, ngan gon. KHONG dai dong. Viet thanh doan ngan khong bullet.]'
+  ];
+  var p=lines.filter(function(l){return l;}).join('\n');
+  if(busy) return;
+  busy=true;
+  document.getElementById('sendBtn').disabled=true;
+  showTyp();
+  callAI(p,[]).then(function(r){
+    hideTyp();
+    addAIMsg(r);
+    speak(r);
+    busy=false;
+    document.getElementById('sendBtn').disabled=false;
+  }).catch(function(e){
+    hideTyp();
+    addRaw('ai','\u26a0\ufe0f Loi ket noi: '+e.message);
+    busy=false;
+    document.getElementById('sendBtn').disabled=false;
+  });
+  clearSessionTopics();
 }
 
 // ═══ TỐI ƯU TAB A11 ═══
