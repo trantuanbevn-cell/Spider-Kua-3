@@ -184,6 +184,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 .power-btn:hover{background:var(--red);color:#fff;}
 .power-btn svg{display:block;width:16px;height:16px;}
 .tkb-btn{width:30px;height:30px;border-radius:7px;background:var(--s2);border:1px solid var(--bd);color:var(--gold);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;transition:all .2s;}
+@keyframes examPulse{0%,100%{opacity:1;}50%{opacity:0.65;}}
 .tkb-btn:hover{border-color:var(--gold);}
 .tkb-popup{display:none;position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:500;align-items:center;justify-content:center;padding:20px;}
 .tkb-popup.open{display:flex;}
@@ -566,13 +567,24 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
   </div>
 
   <!-- THỜI KHÓA BIỂU POPUP -->
+  <!-- EXAM BANNER -->
+  <div id="examBanner" onclick="openTKBTab(1)" style="display:none;position:fixed;top:0;left:0;right:0;z-index:300;background:linear-gradient(90deg,#c0392b,#e74c3c);color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;padding:6px 14px;text-align:center;cursor:pointer;letter-spacing:.04em;animation:examPulse 1.5s infinite;"></div>
+
   <div class="tkb-popup" id="tkbPopup" onclick="if(event.target===this)toggleTKB()">
     <div class="tkb-box">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">
-        <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:18px;color:var(--gold);">📅 THỜI KHÓA BIỂU</div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
+        <div style="font-family:'Rajdhani',sans-serif;font-weight:700;font-size:17px;color:var(--gold);">📅 THỜI KHÓA BIỂU</div>
         <button onclick="toggleTKB()" style="background:transparent;border:1px solid var(--bd);border-radius:7px;color:var(--tx2);padding:4px 10px;cursor:pointer;">✕</button>
       </div>
-      <div id="tkbContent"></div>
+      <!-- TABS -->
+      <div style="display:flex;gap:4px;margin-bottom:12px;">
+        <button id="tkbTab0" onclick="switchTKBTab(0)" style="flex:1;padding:6px 4px;border-radius:7px;border:1px solid var(--gold);background:var(--gold);color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;cursor:pointer;">📋 TKB</button>
+        <button id="tkbTab1" onclick="switchTKBTab(1)" style="flex:1;padding:6px 4px;border-radius:7px;border:1px solid var(--bd);background:transparent;color:var(--tx2);font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;cursor:pointer;">🎯 Lịch thi</button>
+        <button id="tkbTab2" onclick="switchTKBTab(2)" style="flex:1;padding:6px 4px;border-radius:7px;border:1px solid var(--bd);background:transparent;color:var(--tx2);font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;cursor:pointer;">✏️ Chỉnh sửa</button>
+      </div>
+      <div id="tkbTab0Content"></div>
+      <div id="tkbTab1Content" style="display:none;"></div>
+      <div id="tkbTab2Content" style="display:none;"></div>
     </div>
   </div>
 
@@ -590,6 +602,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
       <button class="qbtn" onclick="showHWInChat()">📋 Mẹ gửi</button>
       <button class="qbtn" onclick="showCupUpload()" style="border-color:var(--gold);color:var(--gold);">🏆 Điểm 10</button>
       <button class="qbtn" onclick="showShop()" style="border-color:var(--gold);color:var(--gold);">🪙 Đổi xu</button>
+      <button class="qbtn" onclick="showStats()" style="border-color:#5e9cf5;color:#5e9cf5;">📊 Thống kê</button>
     </div>
     <div class="iprev" id="iPrev"></div>
     <div class="irow">
@@ -724,2597 +737,56 @@ function showXuPop(n){
 
 // ═══ SHOP ═══
 // ═══ SÁCH GIÁO KHOA ═══
-const SGK_TOAN=`--- TRANG 21 ---
-BÀI 43: NHÂN VỚI SỐ CÓ HAI CHỮ SỐ
-
-[LÝ THUYẾT]
-- Mỗi hàng ghế trong rạp hát có 22 ghế. Hỏi 14 hàng ghế như thế có tất cả bao nhiêu ghế?
-- Phép tính: 22 x 14 = ?
-- Cách đặt tính:
-  + Bước 1: Nhân đơn vị (4 x 22 = 88) -> Tích riêng thứ nhất.
-  + Bước 2: Nhân chục (1 x 22 = 22, viết lùi sang trái một cột) -> Tích riêng thứ hai.
-  + Bước 3: Cộng hai tích riêng.
-
-Tiết 1:
-1. Đặt tính rồi tính:
-   a) 36 x 23
-   b) 54 x 45
-   c) 124 x 32
-
---- TRANG 22 ---
-2. Mỗi quyển vở có 48 trang. Hỏi 25 quyển vở cùng loại có tất cả bao nhiêu trang?
-
-3. Tính diện tích mảnh đất hình chữ nhật có chiều dài 24 m, chiều rộng 15 m.
-
-Luyện tập:
-1. Tính:
-   a) 42 x 20 = ..........
-   b) 15 x 30 = ..........
-   c) 11 x 50 = ..........
-
---- TRANG 25 ---
-BÀI 44: THƯƠNG CÓ CHỮ SỐ 0
-
-[LÝ THUYẾT]
-[VÍ DỤ] 9 620 : 32 = ?
-- 96 chia 32 được 3, viết 3. 3 nhân 32 bằng 96; 96 trừ 96 bằng 0.
-- Hạ 2; 2 chia 32 được 0, viết 0. 0 nhân 32 bằng 0; 2 trừ 0 bằng 2.
-- Hạ 0 được 20; 20 chia 32 được 0, viết 0. 0 nhân 32 bằng 0; 20 trừ 0 bằng 20.
-Vậy: 9 620 : 32 = 300 (dư 20)
-
---- TRANG 28 ---
-BÀI 45: THỰC HIỆN PHÉP CHIA CHO SỐ CÓ HAI CHỮ SỐ
-
-Tiết 1:
-1. Đặt tính rồi tính:
-   a) 8 120 : 35
-   b) 12 345 : 15
-   c) 40 800 : 25
-
-2. Một chuyến xe chở được 25 tạ hàng. Hỏi để chở hết 150 tạ hàng cần ít nhất bao nhiêu chuyến xe như thế?
-
---- TRANG 31 ---
-BÀI 46: LUYỆN TẬP CHUNG
-
-1. Mỗi bảng con hình chữ nhật có chiều dài 30 cm, chiều rộng 20
---- TRANG 41 ---
-BÀI 50: RÚT GỌN PHÂN SỐ
-
-[LÝ THUYẾT]
-- Rút gọn phân số là tìm một phân số bằng phân số đã cho nhưng có tử số và mẫu số bé hơn.
-- Cách thực hiện: Xét xem tử số và mẫu số cùng chia hết cho số tự nhiên nào lớn hơn 1. Chia cả tử số và mẫu số cho số đó. Cứ làm như thế cho đến khi nhận được phân số tối giản.
-
-1. Rút gọn các phân số sau:
-   a) 6/8 = ..........
-   b) 15/25 = ..........
-   c) 18/27 = ..........
-
---- TRANG 43 ---
-BÀI 51: QUY ĐỒNG MẪU SỐ CÁC PHÂN SỐ
-
-[LÝ THUYẾT]
-- Khi quy đồng mẫu số hai phân số, ta thường lấy mẫu số của phân số này nhân với tử số và mẫu số của phân số kia.
-- Mẫu số chung là tích của hai mẫu số (hoặc là số nhỏ nhất chia hết cho cả hai mẫu số).
-
-Tiết 1:
-1. Quy đồng mẫu số hai phân số:
-   a) 1/2 và 1/3
-   b) 2/5 và 3/7
-
---- TRANG 46 ---
-BÀI 52: SO SÁNH HAI PHÂN SỐ CÙNG MẪU SỐ
-
-[LÝ THUYẾT]
-- Trong hai phân số có cùng mẫu số:
-  + Phân số nào có tử số bé hơn thì bé hơn.
-  + Phân số nào có tử số lớn hơn thì lớn hơn.
-  + Nếu tử số bằng nhau thì hai phân số đó bằng nhau.
-
-1. Điền dấu >, <, = vào chỗ chấm:
-   a) 2/5 .......... 3/5
-   b) 7/8 .......... 5/8
-   c) 11/11 .......... 1
-
---- TRANG 49 ---
-BÀI 53: SO SÁNH HAI PHÂN SỐ KHÁC MẪU SỐ
-
-[LÝ THUYẾT]
-- Muốn so sánh hai phân số khác mẫu số, ta có thể quy đồng mẫu số hai phân số đó, rồi so sánh các tử số của hai phân số mới.
-
-[VÍ DỤ] So sánh 2/3 và 3/4.
-- Quy đồng: 2/3 = 8/12; 3/4 = 9/12.
-- Vì 8 < 9 nên 8/12 < 9/12. Vậy 2/3 < 3/4.
-
---- TRANG 52 ---
-BÀI 54: LUYỆN TẬP CHUNG
-
-1. Sắp xếp các phân số sau theo thứ tự từ bé đến lớn:
-   1/2; 1/4; 5/8.
-
-2. Rút gọn rồi so sánh hai phân số:
-   6/9 và 10/15.
-
---- TRANG 55 ---
-BÀI 55: PHÉP CỘNG PHÂN SỐ
-
-[LÝ THUYẾT]
-- Muốn cộng hai phân số cùng mẫu số, ta cộng hai tử số và giữ nguyên mẫu số.
-- Muốn cộng hai phân số khác mẫu số, ta quy đồng mẫu số rồi cộng hai phân số đó.
-
-1. Tính:
-   a) 3/8 + 2/8 = ..........
-   b) 1/4 + 5/12 = ..........
-
---- TRANG 58 ---
-BÀI 56: PHÉP TRỪ PHÂN SỐ
-
-[LÝ THUYẾT]
-- Muốn trừ hai phân số cùng mẫu số, ta lấy tử số của phân số thứ nhất trừ đi tử số của phân số thứ hai và giữ nguyên mẫu số.
-- Muốn trừ hai phân số khác mẫu số, ta quy đồng mẫu số rồi trừ hai phân số đó.
-
-1. Tính:
-   a) 7/10 - 3/10 = ..........
-   b) 2/3 - 1/6 = ..........
-
---- TRANG 60 ---
-Luyện tập:
-1. Một vòi nước chảy vào bể. Giờ thứ nhất chảy được 2/9 bể, giờ thứ hai chảy được 1/3 bể. Hỏi sau hai giờ, vòi nước đó chảy được bao nhiêu phần của bể?
-
-2. Tính giá trị của biểu thức:
-   a) 1 - (1/3 + 1/6) = ..........
-   b) 5/8 + 1/4 - 1/2 = ..........
-
-==============================================
-ĐÃ HOÀN THÀNH 20 TRANG TIẾP THEO (TRANG 41 - 60)
-==============================================
---- TRANG 61 ---
-BÀI 57: PHÉP NHÂN PHÂN SỐ
-
-[LÝ THUYẾT]
-- Muốn nhân hai phân số, ta lấy tử số nhân với tử số, mẫu số nhân với mẫu số.
-  (a/b) x (c/d) = (a x c) / (b x d)
-
-1. Tính:
-   a) 4/5 x 6/7 = ..........
-   b) 2/9 x 1/2 = ..........
-   c) 1/2 x 8/3 = ..........
-
---- TRANG 64 ---
-[LÝ THUYẾT]
-- Muốn nhân một phân số với một số tự nhiên, ta có thể nhân tử số với số tự nhiên đó và giữ nguyên mẫu số.
-- Muốn nhân một số tự nhiên với một phân số, ta có thể nhân số tự nhiên đó với tử số và giữ nguyên mẫu số.
-
-1. Tính (theo mẫu):
-   - Mẫu: 5/7 x 3 = (5 x 3) / 7 = 15/7
-   a) 9/11 x 8 = ..........
-   b) 4/5 x 1 = ..........
-   c) 5/8 x 0 = ..........
-
---- TRANG 67 ---
-BÀI 58: PHÉP CHIA PHÂN SỐ
-
-[LÝ THUYẾT]
-- Để thực hiện phép chia hai phân số, ta lấy phân số thứ nhất nhân với phân số thứ hai đảo ngược.
-- Phân số đảo ngược của phân số a/b là phân số b/a (với a, b khác 0).
-
-1. Tìm phân số đảo ngược của mỗi phân số sau:
-   2/3; 4/7; 1/5.
-
-2. Tính:
-   a) 3/7 : 5/8 = ..........
-   b) 1/2 : 1/3 = ..........
-
---- TRANG 70 ---
-BÀI 59: LUYỆN TẬP CHUNG
-
-1. Tính giá trị biểu thức:
-   a) 2/3 x 4/5 + 1/3 = ..........
-   b) 3/4 : 1/2 - 1/4 = ..........
-
-2. Một hình chữ nhật có diện tích 2/3 m2, chiều rộng là 3/4 m. Tính chiều dài của hình chữ nhật đó.
-
---- TRANG 72 ---
-CHỦ ĐỀ 11: HÌNH HỌC VÀ ĐO LƯỜNG
-BÀI 60: HÌNH BÌNH HÀNH
-
-[LÝ THUYẾT]
-- Hình bình hành ABCD có:
-  + Cạnh AB song song và bằng cạnh CD.
-  + Cạnh AD song song và bằng cạnh BC.
-- Hình bình hành có hai cặp cạnh đối diện song song và bằng nhau.
-
-1. Trong các hình dưới đây, hình nào là hình bình hành?
-   [Hình minh họa]
-
---- TRANG 74 ---
-BÀI 61: DIỆN TÍCH HÌNH BÌNH HÀNH
-
-[LÝ THUYẾT]
-- Diện tích hình bình hành bằng độ dài đáy nhân với chiều cao (cùng đơn vị đo).
-  S = a x h (a là độ dài đáy, h là chiều cao).
-
-1. Tính diện tích mỗi hình bình hành sau:
-   a) Đáy 15 cm, chiều cao 7 cm.
-   b) Đáy 2 dm, chiều cao 12 cm.
-
---- TRANG 77 ---
-BÀI 62: HÌNH THOI
-
-[LÝ THUYẾT]
-- Hình thoi ABCD có:
-  + Cạnh AB song song với CD; cạnh AD song song với BC.
-  + Bốn cạnh bằng nhau: AB = BC = CD = DA.
-- Hình thoi có hai cặp cạnh đối diện song song và bốn cạnh bằng nhau.
-
-1. Trong các hình sau, hình nào là hình thoi?
-   [Hình minh họa]
-
---- TRANG 79 ---
-BÀI 63: DIỆN TÍCH HÌNH THOI
-
-[LÝ THUYẾT]
-- Diện tích hình thoi bằng tích độ dài hai đường chéo chia cho 2 (cùng đơn vị đo).
-  S = (m x n) / 2 (m, n là độ dài hai đường chéo).
-
-1. Tính diện tích hình thoi biết độ dài hai đường chéo là:
-   a) 12 cm và 15 cm.
-   b) 4 dm và 32 cm.
-
-==============================================
-ĐÃ HOÀN THÀNH 20 TRANG TIẾP THEO (TRANG 61 - 80)
-==============================================
---- TRANG 81 ---
-BÀI 64: MÉT VUÔNG
-
-[LÝ THUYẾT]
-- Mét vuông là diện tích của hình vuông có cạnh dài 1 m.
-- Mét vuông viết tắt là m2.
-- 1 m2 = 100 dm2 = 10 000 cm2.
-
-1. Đọc các số đo diện tích sau:
-   15 m2; 105 m2; 2 000 m2.
-2. Viết số thích hợp vào chỗ chấm:
-   a) 3 m2 = .......... dm2
-   b) 10 m2 = .......... dm2
-   c) 1 m2 = .......... cm2
-
---- TRANG 84 ---
-BÀI 65: MI-LI-MÉT VUÔNG
-
-[LÝ THUYẾT]
-- Mi-li-mét vuông là diện tích của hình vuông có cạnh dài 1 mm.
-- Mi-li-mét vuông viết tắt là mm2.
-- 1 cm2 = 100 mm2.
-
-1. Số thích hợp vào chỗ chấm:
-   a) 5 cm2 = .......... mm2
-   b) 200 mm2 = .......... cm2
-
---- TRANG 87 ---
-BÀI 66: LUYỆN TẬP CHUNG
-
-1. Chọn đơn vị đo diện tích (m2, dm2, cm2, mm2) thích hợp để đặt vào chỗ chấm:
-   a) Diện tích một viên gạch lát nền khoảng 16 ..........
-   b) Diện tích một phòng học khoảng 40 ..........
-   c) Diện tích một con tem khoảng 4 ..........
-
---- TRANG 90 ---
-CHỦ ĐỀ 12: MỘT SỐ YẾU TỐ THỐNG KÊ VÀ XÁC SUẤT
-BÀI 67: DÃY SỐ LIỆU THỐNG KÊ
-
-[LÝ THUYẾT]
-- Khi quan sát, đo đạc,... trên các đối tượng ta được các số liệu. Các số liệu được viết theo một thứ tự tạo thành dãy số liệu thống kê.
-
-1. Dưới đây là chiều cao của các bạn trong tổ (đơn vị cm): 135, 138, 132, 140.
-   - Số thấp nhất là: ..........
-   - Số cao nhất là: ..........
-
---- TRANG 93 ---
-BÀI 68: BIỂU ĐỒ CỘT
-
-[LÝ THUYẾT]
-- Biểu đồ cột giúp ta so sánh các số liệu thống kê một cách trực quan. Chiều cao của các cột biểu thị cho độ lớn của số liệu.
-
-1. [Hình minh họa - Biểu đồ cột]
-   Dựa vào biểu đồ số học sinh tham gia câu lạc bộ, hãy cho biết:
-   - Câu lạc bộ nào có nhiều học sinh nhất? ..........
-   - Có bao nhiêu học sinh tham gia câu lạc bộ Mỹ thuật? ..........
-
---- TRANG 96 ---
-BÀI 69: SỐ TRUNG BÌNH CỘNG
-
-[LÝ THUYẾT]
-- Muốn tìm số trung bình cộng của nhiều số, ta tính tổng của các số đó rồi chia tổng đó cho số các số hạng.
-
-[VÍ DỤ] Tìm số trung bình cộng của 12, 14 và 16.
-- Tổng các số là: 12 + 14 + 16 = 42.
-- Trung bình cộng là: 42 : 3 = 14.
-
-1. Tìm số trung bình cộng của các số:
-   a) 20 và 40.
-   b) 10, 20 và 30.
-
---- TRANG 99 ---
-BÀI 70: KIỂM TRA KHẢ NĂNG XẢY RA CỦA MỘT SỰ KIỆN
-
-[LÝ THUYẾT]
-- Khi thực hiện một hoạt động (như tung đồng xu, lấy bóng,...), ta có thể dự đoán sự kiện đó là: Có thể, Chắc chắn hoặc Không thể xảy ra.
-
-1. Trong hộp có 3 quả bóng xanh. Việt lấy ra 1 quả bóng.
-   - Sự kiện "Việt lấy được bóng xanh" là: [Chắc chắn / Không thể]
-   - Sự kiện "Việt lấy được bóng đỏ" là: [Chắc chắn / Không thể]
-
-==============================================
-ĐÃ HOÀN THÀNH 20 TRANG TIẾP THEO (TRANG 81 - 100)
-==============================================
---- TRANG 101 ---
-BÀI 71: LUYỆN TẬP CHUNG
-
-1. Tính giá trị của biểu thức:
-   a) 250 x 12 - 1 500 = ..........
-   b) 8 400 : 40 + 250 = ..........
-
-2. Một cửa hàng có 2 tấn gạo. Ngày thứ nhất bán được 3/5 tấn gạo, ngày thứ hai bán được nhiều hơn ngày thứ nhất 1/10 tấn gạo. Hỏi sau hai ngày cửa hàng còn lại bao nhiêu tấn gạo?
-
---- TRANG 104 ---
-BÀI 72: ÔN TẬP TỔNG HỢP CUỐI NĂM
-
-Tiết 1: Ôn tập về số tự nhiên và phân số
-1. Viết số và đọc số:
-   - Tám triệu, bốn trăm nghìn, không trăm linh năm: ..........
-   - Phân số có tử số là 7, mẫu số là 12: ..........
-
-2. Sắp xếp các phân số sau theo thứ tự từ bé đến lớn:
-   3/4; 1/2; 5/6; 2/3.
-
---- TRANG 107 ---
-Tiết 2: Ôn tập các phép tính
-1. Đặt tính rồi tính:
-   a) 125 400 + 36 700
-   b) 450 000 - 123 000
-   c) 1 204 x 25
-   d) 15 600 : 45
-
-2. Tính bằng cách thuận tiện:
-   a) 125 x 4 x 2 = ..........
-   b) 2/5 + 1/3 + 3/5 = ..........
-
---- TRANG 110 ---
-Tiết 3: Ôn tập hình học và đo lường
-1. Viết số thích hợp vào chỗ chấm:
-   a) 5 m2 = .......... cm2
-   b) 2 tấn 50 kg = .......... kg
-   c) 3 giờ 15 phút = .......... phút
-
-2. [Hình minh họa]
-   Tính diện tích hình bình hành có độ dài đáy 20 cm và chiều cao 15 cm.
-
-3. Một mảnh đất hình thoi có độ dài hai đường chéo lần lượt là 10 m và 12 m. Tính diện tích mảnh đất đó.
-
---- TRANG 113 ---
-Tiết 4: Ôn tập về thống kê và xác suất
-1. [Hình minh họa - Biểu đồ cột]
-   Dựa vào biểu đồ cột về số lượng sách đã đọc của các bạn trong nhóm, hãy trả lời:
-   - Bạn nào đọc nhiều sách nhất?
-   - Trung bình mỗi bạn đọc được bao nhiêu quyển sách?
-
-2. Việt có 2 quả bóng đỏ và 1 quả bóng xanh. Việt lấy ngẫu nhiên 2 quả bóng. Hãy nêu các khả năng có thể xảy ra về màu sắc của 2 quả bóng đó.
-
---- TRANG 116 ---
-BÀI 73: ÔN TẬP CHUNG (Tiếp theo)
-
-1. Tính:
-   a) 2/3 + 1/4 x 2/5 = ..........
---- TRANG 121 ---
-LUYỆN TẬP KIỂM TRA CUỐI NĂM (Tiếp theo)
-
-3. Một thửa ruộng hình chữ nhật có chiều dài 40 m, chiều rộng bằng 3/4 chiều dài.
-   a) Tính diện tích thửa ruộng đó.
-   b) Biết rằng cứ 10 m2 thu hoạch được 5 kg thóc. Hỏi cả thửa ruộng thu hoạch được bao nhiêu ki-lô-gam thóc?
-
-4. Tính bằng cách thuận tiện:
-   a) 25 x 123 x 4 = ..........
-   b) 3/5 x 4/7 + 3/5 x 3/7 = ..........
-
---- TRANG 124 ---
-BÀI 74: ÔN TẬP CHUNG CUỐI NĂM
-
-Tiết 5: Ôn tập tổng hợp các kỹ năng
-1. Viết số thích hợp vào chỗ chấm:
-   - 1/2 thế kỉ = .......... năm
-   - 2 kg 50 g = .......... g
-   - 4 m2 5 dm2 = .......... dm2
-
-2. [Hình minh họa]
-   Cho hình thoi có độ dài hai đường chéo lần lượt là 15 cm và 20 cm. Diện tích hình thoi là .......... cm2.
-
---- TRANG 127 ---
-BÀI 75: THỰC HÀNH VÀ TRẢI NGHIỆM TỔNG HỢP
-
-1. Em hãy quan sát các đồ vật xung quanh và chỉ ra các hình học đã học: Hình bình hành, Hình thoi.
-2. Sử dụng bản đồ Việt Nam, hãy tìm hiểu về khoảng cách giữa các thành phố lớn và thực hiện phép tính nhân, chia với số liệu đó.
-
---- TRANG 129 ---
-BẢNG TRA CỨU THUẬT NGỮ
-
-- Biểu đồ cột: Trang 93
-- Dãy số liệu thống kê: Trang 90
-- Hình bình hành: Trang 72
-- Hình thoi: Trang 77
-- Mét vuông: Trang 81
-- Mi-li-mét vuông: Trang 84
-- Phân số: Trang 33
-- Số trung bình cộng: Trang 96
-
---- TRANG 130 ---
-BẢNG GIẢI THÍCH KÍ HIỆU VÀ CÁC THUẬT NGỮ TOÁN HỌC ĐẶC BIỆT
-(Dành cho giáo viên và học sinh tra cứu)
-
-==============================================
-HẾT TÀI LIỆU: SGK TOÁN 4 TẬP 2
-==============================================
-`;
-const VBT_TOAN=`==============================================
-TÀI LIỆU: VỞ BÀI TẬP TOÁN 4 - TẬP 2 (KẾT NỐI TRI THỨC VỚI CUỘC SỐNG)
-==============================================
-
---- TRANG 3 ---
-BÀI 45: THỰC HIỆN PHÉP NHÂN VỚI SỐ CÓ HAI CHỮ SỐ
-
-Tiết 1:
-1. Đặt tính rồi tính:
-   a) 34 x 12
-      ..........
-   b) 156 x 24
-      ..........
-   c) 407 x 36
-      ..........
-
-2. Tính giá trị của biểu thức 25 x m với m = 14, 28, 35.
-   - Với m = 14, 25 x 14 = ..........
-   - Với m = 28, 25 x 28 = ..........
-   - Với m = 35, 25 x 35 = ..........
-
-3. Khoanh vào chữ đặt trước câu trả lời đúng.
-   Một cửa hàng nhập về 24 bao gạo, mỗi bao cân nặng 50 kg. Hỏi cửa hàng đó nhập về tất cả bao nhiêu ki-lô-gam gạo?
-   A. 1 200 kg
-   B. 1 000 kg
-   C. 120 kg
-   D. 240 kg
-
---- TRANG 4 ---
-Tiết 2:
-1. Tính:
-   a) 123 x 30 = ..........
-   b) 24 x 50 = ..........
-   c) 105 x 40 = ..........
-
-2. Tìm x:
-   a) x : 15 = 12
-      ..........
-   b) x : 24 = 35
-      ..........
-
-3. Viết số thích hợp vào chỗ chấm.
-   Một tấm kính hình chữ nhật có chiều dài 25 cm, chiều rộng 18 cm. Diện tích tấm kính đó là .......... cm2.
-
-4. Tính bằng cách thuận tiện nhất.
-   a) 14 x 2 x 5 = ..........
-   b) 25 x 2 x 4 = ..........
-
---- TRANG 5 ---
-BÀI 46: PHÉP CHIA CHO SỐ CÓ HAI CHỮ SỐ
-
-Tiết 1:
-1. Tính:
-   a) 84 : 21 = ..........
-   b) 96 : 32 = ..........
-   c) 75 : 25 = ..........
-
-2. Đặt tính rồi tính:
-   a) 148 : 37
-      ..........
-   b) 288 : 72
-      ..........
-   c) 552 : 92
-      ..........
-
-3. Một trường học có 480 học sinh chia đều vào 15 lớp. Hỏi mỗi lớp có bao nhiêu học sinh?
-   Bài giải:
-   ..........
-
---- TRANG 6 ---
-Tiết 2:
-1. Đặt tính rồi tính:
-   a) 369 : 12
-      ..........
-   b) 584 : 24
-      ..........
-   c) 875 : 35
-      ..........
-
-2. Viết số thích hợp vào chỗ chấm:
-   a) 240 : 40 = ..........
-   b) 630 : 70 = ..........
-   c) 400 : 50 = ..........
-
-3. Một đội xe có 12 xe tải chở được tất cả 540 bao thóc. Hỏi mỗi xe tải đó chở được bao nhiêu bao thóc? (Biết mỗi xe tải chở số bao thóc bằng nhau).
-   Bài giải:
-   ..........
-
---- TRANG 7 ---
-Tiết 3:
-1. Đặt tính rồi tính:
-   a) 6 720 : 42
-      ..........
-   b) 8 505 : 63
-      ..........
-   c) 9 620 : 52
-      ..........
-
-2. Tính giá trị biểu thức:
-   a) 4 500 : 15 : 3 = ..........
-   b) 8 400 : (20 x 2) = ..........
-
-3. Một xưởng may công nghiệp mỗi ngày may được 125 bộ quần áo. Hỏi sau 24 ngày làm việc xưởng đó may được tất cả bao nhiêu bộ quần áo?
-   Bài giải:
-   ..........
-
---- TRANG 8 ---
-BÀI 47: CHIA CHO SỐ CÓ HAI CHỮ SỐ (Tiếp theo)
-
-Tiết 1:
-1. Đặt tính rồi tính:
-   a) 2 352 : 14
-      ..........
-   b) 4 250 : 25
-      ..........
-   c) 9 144 : 36
-      ..........
-
-2. Tìm x:
-   a) x x 12 = 480
-      ..........
-   b) 25 x x = 750
-      ..........
-
-3. Khoanh vào chữ đặt trước câu trả lời đúng.
-   Kết quả của phép tính 3 600 : 45 là:
-   A. 8
-   B. 80
-   C. 800
-   D. 8 000
-
---- TRANG 9 ---
-Tiết 2:
-1. Đặt tính rồi tính:
-   a) 12 345 : 15
-      ..........
-   b) 24 690 : 30
-      ..........
-
-2. Viết số thích hợp vào chỗ chấm.
-   Một trang trại nuôi 1 200 con gà, mỗi ngày một con gà ăn hết 105 g cám. Số cám trang trại đó cần trong một ngày là .......... g.
-
-3. Tính bằng cách thuận tiện nhất:
-   a) (1 200 x 45) : 12 = ..........
-   b) (3 600 : 15) : 4 = ..........
-
---- TRANG 10 ---
-BÀI 48: LUYỆN TẬP CHUNG
-
-Tiết 1:
-1. Đặt tính rồi tính:
-   a) 45 x 12
-   b) 123 x 24
-   c) 3 600 : 45
-   d) 8 400 : 25
-
-2. Tính giá trị biểu thức:
-   a) 125 x 4 + 250 : 5 = ..........
-   b) (1 200 - 450) : 15 = ..........
-
-3. [Hình minh họa]
-   Một mảnh vườn hình chữ nhật có diện tích 450 m2, chiều rộng 15 m. Chiều dài mảnh vườn đó là .......... m.
-
---- TRANG 11 ---
-Tiết 2:
-1. Đúng ghi Đ, sai ghi S:
-   a) 120 x 20 = 2 400 [ ]
-   b) 4 500 : 50 = 9 [ ]
-   c) 15 x 30 = 450 [ ]
-
-2. Nối phép tính với kết quả thích hợp:
-   - 25 x 12     | 80
-   - 3 200 : 40  | 300
-   - 15 x 40     | 600
-   - 4 800 : 60  | 80
-
-3. Một đoàn tàu có 15 toa, mỗi toa chở 35 tấn hàng. Hỏi đoàn tàu đó chở được tất cả bao nhiêu tấn hàng?
-   Bài giải:
-   ..........
-
---- TRANG 12 ---
-Tiết 3:
-1. Viết số thích hợp vào chỗ chấm:
-   a) 15 x .......... = 450
-   b) .......... : 12 = 25
-   c) 1 200 : .......... = 40
-
-2. Tính giá trị biểu thức m x n - p với m = 25, n = 12, p = 150.
-   ..........
-
-3. Một bể nước có dung tích 1 500 lít. Mỗi giờ vòi nước chảy vào bể được 125 lít. Hỏi sau bao lâu bể đầy nước?
-   Bài giải:
-   ..........
-
---- TRANG 13 ---
-BÀI 49: DÃY SỐ LIỆU THỐNG KÊ
-
-[LÝ THUYẾT]
-Dãy số liệu thống kê là một hàng các số liệu được sắp xếp theo một thứ tự nhất định.
-
-Tiết 1:
-1. Dưới đây là chiều cao của 4 bạn Nam, Việt, Chúc, Cúc lần lượt là: 138 cm, 140 cm, 135 cm, 142 cm.
-   a) Viết dãy số liệu chiều cao của 4 bạn: ..........
-   b) Bạn cao nhất là: ..........
-   c) Bạn thấp nhất là: ..........
-
-2. Số lượt khách du lịch đến một bảo tàng trong 5 ngày là: 120, 150, 100, 180, 200.
-   a) Ngày có lượt khách đông nhất là ngày thứ: ..........
-   b) Tổng lượt khách trong 5 ngày là: ..........
-
---- TRANG 14 ---
-Tiết 2:
-1. Số kg giấy vụn các lớp khối 4 quyên góp được là: 15, 18, 12, 20, 15.
-   a) Dãy số liệu trên có tất cả .......... số.
-   b) Lớp quyên góp được nhiều nhất là .......... kg.
-   c) Trung bình mỗi lớp quyên góp được .......... kg.
-
-2. [Hình minh họa]
-   Viết tiếp vào chỗ chấm cho thích hợp dựa trên dãy số liệu thời gian tự học của Việt trong tuần: 45, 60, 50, 45, 60, 90, 120 (phút).
-   - Ngày Việt học nhiều nhất là: ..........
-   - Những ngày Việt học 45 phút là: ..........
-
---- TRANG 15 ---
-BÀI 50: BIỂU ĐỒ CỘT
-
-[LÝ THUYẾT]
-Biểu đồ cột dùng các cột để biểu diễn số liệu thống kê. Chiều cao của cột cho biết số liệu của đối tượng đó.
-
-Tiết 1:
-1. [Hình minh họa - Biểu đồ cột về số cây trồng được của các lớp]
-   Dựa vào biểu đồ, viết số thích hợp vào chỗ chấm:
-   - Lớp 4A trồng được: .......... cây.
-   - Lớp 4B trồng được: .......... cây.
-   - Lớp trồng được nhiều cây nhất là: ..........
-
-2. [Hình minh họa - Biểu đồ cột về số điểm 10 của các bạn]
-   - Bạn có nhiều điểm 10 nhất là: ..........
-   - Tổng số điểm 10 của 4 bạn là: ..........
-
---- TRANG 16 ---
-Tiết 2:
-1. [Hình minh họa - Biểu đồ cột về số lượng con vật nuôi]
-   Dựa vào biểu đồ, trả lời các câu hỏi:
-   - Có bao nhiêu con gà? ..........
-   - Con vật nào có số lượng ít nhất? ..........
-   - Tổng số con vật là: ..........
-
-2. [Hình minh họa]
-   Vẽ tiếp các cột vào biểu đồ dựa trên số liệu sau:
-   - Lớp 4C: 25 học sinh giỏi.
-   - Lớp 4D: 20 học sinh giỏi.
-
---- TRANG 17 ---
-BÀI 51: SỐ TRUNG BÌNH CỘNG
-
-[LÝ THUYẾT]
-Muốn tìm số trung bình cộng của nhiều số, ta tính tổng của các số đó rồi chia tổng đó cho số các số hạng.
-
-Tiết 1:
-1. Tìm số trung bình cộng của các số sau:
-   a) 25 và 35: (25 + 35) : 2 = ..........
-   b) 12, 18 và 30: ..........
-   c) 10, 20, 30 và 40: ..........
-
-2. Số kg giấy vụn 3 lớp quyên góp được lần lượt là 15 kg, 18 kg và 12 kg. Hỏi trung bình mỗi lớp quyên góp được bao nhiêu ki-lô-gam?
-   Bài giải:
-   ..........
-
---- TRANG 18 ---
-Tiết 2:
-1. Viết số thích hợp vào chỗ chấm:
-   - Trung bình cộng của 120 và 180 là: ..........
-   - Trung bình cộng của 15, 25, 35, 45 là: ..........
-
-2. Một đội xe chở hàng, 2 xe đầu mỗi xe chở 35 tạ, 3 xe sau mỗi xe chở 45 tạ. Hỏi trung bình mỗi xe chở được bao nhiêu tạ hàng?
-   Bài giải:
-   ..........
-
-3. Số đo chiều cao của 4 bạn là 138 cm, 142 cm, 140 cm, 144 cm. Tính chiều cao trung bình của mỗi bạn.
-   ..........
-
---- TRANG 19 ---
-BÀI 52: LUYỆP TẬP CHUNG
-
-Tiết 1:
-1. Viết tiếp vào chỗ chấm cho thích hợp dựa trên dãy số liệu cân nặng của 5 bạn: 32, 35, 30, 38, 35 (kg).
-   - Bạn nặng nhất: .......... kg.
-   - Trung bình cân nặng 5 bạn: .......... kg.
-
-2. [Hình minh họa - Biểu đồ cột về số trang sách đọc được]
-   Dựa vào biểu đồ, tính tổng số trang sách đọc được trong tuần:
-   ..........
-
-3. Tìm trung bình cộng của các số lẻ từ 1 đến 9:
-   ..........
-
---- TRANG 20 ---
---- TRANG 21 ---
-BÀI 53: KHÁI NIỆM PHÂN SỐ
-
-[LÝ THUYẾT]
-- Mỗi phân số có tử số và mẫu số. Tử số là số tự nhiên viết trên gạch ngang. Mẫu số là số tự nhiên khác 0 viết dưới gạch ngang.
-- Mẫu số cho biết một đơn vị được chia thành bao nhiêu phần bằng nhau. Tử số cho biết ta đã lấy bao nhiêu phần như thế.
-
-Tiết 1:
-1. Viết phân số chỉ phần đã tô màu trong mỗi hình dưới đây (theo mẫu):
-   - Hình 1: 3/4
-   - Hình 2: ..........
-   - Hình 3: ..........
-   - Hình 4: ..........
-
-2. Viết vào chỗ chấm cho thích hợp:
-   a) Phân số 5/8 có tử số là .........., mẫu số là ..........
-   b) Phân số 11/20 có tử số là .........., mẫu số là ..........
-   c) Phân số 7/12 có tử số là .........., mẫu số là ..........
-
-3. Viết phân số thích hợp vào chỗ chấm:
-   a) Chín phần mười: ..........
-   b) Mười tám phần ba mươi lăm: ..........
-   c) Sáu phần mười một: ..........
-
---- TRANG 22 ---
-Tiết 2:
-1. Viết theo mẫu:
-   - 3/5: Ba phần năm
-   - 7/10: ..........
-   - 12/25: ..........
-   - 80/100: ..........
-
-2. [Hình minh họa]
-   Nối mỗi phân số với hình vẽ có phần tô màu tương ứng:
-   - 1/2 | 2/3 | 3/4 | 4/5
-
-3. Viết phân số thích hợp vào chỗ chấm (theo mẫu):
-   - Mẫu: 3 chia cho 5 bằng 3/5
-   - 5 chia cho 8 bằng ..........
-   - 7 chia cho 10 bằng ..........
-   - 1 chia cho 2 bằng ..........
-
---- TRANG 23 ---
-BÀI 54: PHÂN SỐ VÀ PHÉP CHIA SỐ TỰ NHIÊN
-
-[LÝ THUYẾT]
-- Thương của phép chia số tự nhiên cho số tự nhiên (khác 0) có thể viết thành một phân số, tử số là số bị chia và mẫu số là số chia.
-- Mọi số tự nhiên có thể viết thành một phân số có mẫu số là 1.
-
-Tiết 1:
-1. Viết thương của mỗi phép chia sau dưới dạng phân số:
-   a) 5 : 8 = ..........
-   b) 7 : 11 = ..........
-   c) 3 : 4 = ..........
-   d) 9 : 15 = ..........
-
-2. Viết số tự nhiên dưới dạng phân số có mẫu số là 1:
-   a) 6 = ..........
-   b) 12 = ..........
-   c) 100 = ..........
-   d) 0 = ..........
-
-3. Viết tiếp vào chỗ chấm cho thích hợp:
-   Có 3 cái bánh chia đều cho 4 bạn. Mỗi bạn được .......... cái bánh.
-
---- TRANG 24 ---
-Tiết 2:
-1. Viết phân số thích hợp vào chỗ chấm:
-   - Chia 5 lít sữa vào 8 chai bằng nhau. Mỗi chai có .......... lít sữa.
-   - Chia đoạn thẳng dài 2m thành 3 phần bằng nhau. Mỗi phần dài .......... m.
-
-2. Đúng ghi Đ, sai ghi S:
-   a) 4 : 5 = 5/4 [ ]
-   b) 7 : 9 = 7/9 [ ]
-   c) 8 : 1 = 8/1 [ ]
-
-3. [Hình minh họa]
-   Viết phân số chỉ số phần cam mỗi bạn nhận được khi chia 2 quả cam cho 3 bạn: ..........
-
---- TRANG 25 ---
-BÀI 55: TÍNH CHẤT CƠ BẢN CỦA PHÂN SỐ
-
-[LÝ THUYẾT]
-- Nếu nhân cả tử số và mẫu số của một phân số với cùng một số tự nhiên khác 0 thì được một phân số bằng phân số đã cho.
-- Nếu chia cả tử số và mẫu số của một phân số cho cùng một số tự nhiên khác 0 (nếu chúng cùng chia hết cho số đó) thì được một phân số bằng phân số đã cho.
-
-Tiết 1:
-1. Viết số thích hợp vào ô trống:
-   a) 2/3 = (2 x 3) / (3 x 3) = [ ] / [ ]
-   b) 15/20 = (15 : 5) / (20 : 5) = [ ] / [ ]
-   c) 4/5 = [ ] / 15
-
-2. Tìm các phân số bằng nhau trong các phân số sau:
-   2/3; 4/6; 8/12; 5/7
-   ..........
-
---- TRANG 26 ---
-Tiết 2:
-1. Viết tiếp vào chỗ chấm cho thích hợp:
-   a) 1/2 = 2/4 = .......... / 8 = 8 / ..........
-   b) 24/36 = 12/18 = .......... / 9 = 2 / ..........
-
-2. [Hình minh họa]
-   Tô màu vào hình vẽ để có các phân số bằng nhau:
-   1/3 và 2/6
-
-3. Nhân cả tử số và mẫu số của phân số 3/4 với 2, 3, 4 để được các phân số mới:
-   ..........
-
---- TRANG 27 ---
-BÀI 56: RÚT GỌN PHÂN SỐ
-
-[LÝ THUYẾT]
-Rút gọn phân số là tìm một phân số bằng phân số đã cho nhưng có tử số và mẫu số bé hơn. Phân số không thể rút gọn được nữa gọi là phân số tối giản.
-
-Tiết 1:
-1. Rút gọn các phân số sau:
-   a) 4/6 = ..........
-   b) 12/18 = ..........
-   c) 15/25 = ..........
-
-2. Khoanh vào các phân số tối giản:
-   2/3; 4/10; 5/7; 9/12; 11/13
-
-3. Rút gọn phân số 20/30 về phân số tối giản:
-   ..........
-
---- TRANG 28 ---
-Tiết 2:
-1. Đúng ghi Đ, sai ghi S:
-   a) 8/12 rút gọn được 2/3 [ ]
-   b) 15/20 rút gọn được 3/5 [ ]
-   c) 10/15 là phân số tối giản [ ]
-
-2. Nối phân số với phân số tối giản của nó:
-   - 6/9    | 1/2
-   - 10/20  | 2/3
-   - 12/16  | 3/4
-
-3. Rút gọn các phân số sau thành phân số tối giản:
-   18/24; 25/50; 36/48
-   ..........
-
---- TRANG 29 ---
-BÀI 57: QUY ĐỒNG MẪU SỐ CÁC PHÂN SỐ
-
-[LÝ THUYẾT]
-Quy đồng mẫu số là làm cho mẫu số của các phân số bằng nhau mà giá trị của các phân số không đổi.
-
-Tiết 1:
-1. Quy đồng mẫu số hai phân số 2/3 và 4/5:
-   - Mẫu số chung là: 15
-   - 2/3 = (2 x 5) / (3 x 5) = ..........
-   - 4/5 = (4 x 3) / (5 x 3) = ..........
-
-2. Quy đồng mẫu số hai phân số 1/4 và 3/8 (chọn mẫu số chung là 8):
-   - 1/4 = (1 x 2) / (4 x 2) = ..........
-   - Giữ nguyên phân số 3/8.
-
---- TRANG 30 ---
-Tiết 2:
-1. Quy đồng mẫu số các phân số sau:
-   a) 3/5 và 2/7: ..........
-   b) 5/6 và 7/12: ..........
-
-2. Viết số thích hợp vào chỗ chấm:
-   Để quy đồng mẫu số 1/2, 1/3 và 1/4, ta chọn mẫu số chung là: ..........
-
-3. Quy đồng mẫu số 3/4 và 5/6 (chọn mẫu số chung nhỏ nhất):
-   ..........
-
---- TRANG 31 ---
-BÀI 58: SO SÁNH HAI PHÂN SỐ CÙNG MẪU SỐ
-
-[LÝ THUYẾT]
-Trong hai phân số cùng mẫu số: Phân số nào có tử số bé hơn thì bé hơn. Phân số nào có tử số lớn hơn thì lớn hơn. Nếu tử số bằng nhau thì hai phân số đó bằng nhau.
-
-Tiết 1:
-1. Điền dấu >, <, = vào chỗ chấm:
-   a) 3/5 .......... 4/5
-   b) 7/10 .......... 7/10
-   c) 8/9 .......... 5/9
-
-2. [Hình minh họa]
-   Sắp xếp các phân số sau theo thứ tự từ bé đến lớn: 2/7; 5/7; 1/7; 4/7
-   ..........
-
-3. Viết phân số thích hợp vào ô trống trên tia số:
-   0 | 1/5 | [ ] | 3/5 | [ ] | 1
-
---- TRANG 32 ---
-Tiết 2:
-1. Khoanh vào phân số lớn nhất:
-   3/11; 7/11; 5/11; 9/11
-
-2. Viết các phân số 5/8; 3/8; 7/8 theo thứ tự từ lớn đến bé:
-   ..........
-
-3. Tìm x biết 2/5 < x/5 < 4/5 (x là số tự nhiên):
-   x = ..........
-
---- TRANG 33 ---
-BÀI 59: SO SÁNH HAI PHÂN SỐ KHÁC MẪU SỐ
-
-[LÝ THUYẾT]
-Muốn so sánh hai phân số khác mẫu số, ta quy đồng mẫu số hai phân số đó rồi so sánh các tử số của chúng.
-
-Tiết 1:
-1. So sánh 2/3 và 3/4:
-   - Quy đồng: 2/3 = 8/12; 3/4 = 9/12
-   - Vì 8/12 < 9/12 nên 2/3 .......... 3/4
-
-2. Điền dấu >, <, = vào chỗ chấm:
-   a) 1/2 .......... 2/4
-   b) 3/5 .......... 4/7
-   c) 5/6 .......... 7/8
-
---- TRANG 34 ---
-Tiết 2:
-1. Khoanh vào phân số bé nhất:
-   1/2; 1/3; 1/4; 1/5
-
-2. So sánh các phân số sau với 1:
-   - 3/4 .......... 1
-   - 5/5 .......... 1
-   - 7/4 .......... 1
-
-3. Sắp xếp các phân số 1/2; 2/3; 3/4 theo thứ tự từ bé đến lớn:
-   ..........
-
---- TRANG 35 ---
-BÀI 60: LUYỆN TẬP CHUNG
-
-Tiết 1:
-1. Rút gọn rồi so sánh hai phân số:
-   6/10 và 4/5
-   ..........
-
-2. Quy đồng rồi so sánh hai phân số:
-   2/3 và 5/9
-   ..........
-
-3. [Hình minh họa]
-   Một túi cam nặng 1/2 kg, một túi táo nặng 3/4 kg. Túi nào nặng hơn?
-   ..........
-
---- TRANG 36 ---
-Tiết 2:
-1. Đúng ghi Đ, sai ghi S:
-   a) 2/5 > 3/5 [ ]
-   b) 1/2 = 5/10 [ ]
-   c) 4/3 < 1 [ ]
-
-2. Tìm phân số ở giữa 1/4 và 3/4 có mẫu số là 4:
-   ..........
-
-3. Sắp xếp các phân số 5/6; 1/2; 2/3 theo thứ tự từ lớn đến bé:
-   ..........
-
---- TRANG 37 ---
-BÀI 61: PHÉP CỘNG PHÂN SỐ
-
-[LÝ THUYẾT]
-- Muốn cộng hai phân số cùng mẫu số, ta cộng hai tử số và giữ nguyên mẫu số.
-- Muốn cộng hai phân số khác mẫu số, ta quy đồng mẫu số rồi cộng như cùng mẫu số.
-
-Tiết 1:
-1. Tính:
-   a) 2/7 + 3/7 = ..........
-   b) 4/11 + 5/11 = ..........
-   c) 1/15 + 8/15 = ..........
-
-2. Tính rồi rút gọn:
-   a) 1/6 + 2/6 = ..........
-   b) 3/10 + 2/10 = ..........
-
-3. Một vòi nước giờ thứ nhất chảy được 1/3 bể, giờ thứ hai chảy được 2/5 bể. Hỏi cả hai giờ chảy được bao nhiêu phần bể?
-   ..........
-
---- TRANG 38 ---
-Tiết 2:
-1. Tính:
-   a) 1/2 + 1/3 = ..........
-   b) 2/5 + 3/10 = ..........
-   c) 1/4 + 5/6 = ..........
-
-2. Viết tiếp vào chỗ chấm cho thích hợp (Tính chất giao hoán):
-   2/5
---- TRANG 41 ---
-Tiết 3:
-1. Tính:
-   a) 1/3 + 2/9 = ..........
-   b) 5/6 - 1/2 = ..........
-   c) 3/4 + 1/12 = ..........
-
-2. Tính giá trị biểu thức:
-   a) 1/2 + 1/4 + 1/8 = ..........
-   b) 7/10 - (1/5 + 1/10) = ..........
-
-3. Một bức tường được sơn màu xanh và màu vàng. Diện tích sơn màu xanh chiếm 1/2 diện tích bức tường, diện tích sơn màu vàng chiếm 1/4 diện tích bức tường. Hỏi diện tích sơn màu xanh và màu vàng chiếm bao nhiêu phần diện tích bức tường?
-   ..........
-
---- TRANG 42 ---
-BÀI 63: LUYỆN TẬP CHUNG
-
-Tiết 1:
-1. Tính:
-   a) 3/5 + 1/2 = ..........
-   b) 7/8 - 1/4 = ..........
-   c) 5/6 + 2/3 = ..........
-
-2. Tìm x:
-   a) x - 1/2 = 1/6
-   b) x + 2/3 = 5/6
-
-3. Viết phân số thích hợp vào chỗ chấm:
-   Một sợi dây dài 3/2 m. Bạn Nam cắt đi 2/3 m. Sợi dây còn lại dài .......... m.
-
---- TRANG 43 ---
-Tiết 2:
-1. Tính bằng cách thuận tiện:
-   a) 1/5 + 3/10 + 4/5 = ..........
-   b) 7/12 + 1/6 + 5/12 = ..........
-
-2. Đúng ghi Đ, sai ghi S:
-   a) 1/2 + 1/4 = 3/4 [ ]
-   b) 1 - 1/3 = 1/3 [ ]
-   c) 2/3 - 1/6 = 1/2 [ ]
-
-3. Trong một ngày, bạn Việt dành 1/3 thời gian để học, 1/8 thời gian để giúp đỡ cha mẹ. Hỏi thời gian Việt học và giúp đỡ cha mẹ chiếm bao nhiêu phần của ngày?
-   ..........
-
---- TRANG 44 ---
-BÀI 64: PHÉP NHÂN PHÂN SỐ
-
-[LÝ THUYẾT]
-Muốn nhân hai phân số, ta lấy tử số nhân với tử số, mẫu số nhân với mẫu số.
-
-Tiết 1:
-1. Tính:
-   a) 2/3 x 4/5 = ..........
-   b) 1/2 x 3/7 = ..........
-   c) 5/6 x 1/4 = ..........
-
-2. Tính rồi rút gọn:
-   a) 3/8 x 4/9 = ..........
-   b) 5/10 x 2/5 = ..........
-
-3. Một hình chữ nhật có chiều dài 4/5 m, chiều rộng 2/3 m. Tính diện tích hình chữ nhật đó.
-   ..........
-
---- TRANG 45 ---
-Tiết 2:
-1. Tính (theo mẫu):
-   - Mẫu: 2/3 x 5 = (2 x 5) / 3 = 10/3
-   a) 3/4 x 2 = ..........
-   b) 5 x 1/6 = ..........
-   c) 0 x 7/8 = ..........
-
-2. Viết tiếp vào chỗ chấm cho thích hợp (Tính chất giao hoán và kết hợp):
-   a) 1/2 x 1/3 = 1/3 x ..........
-   b) (1/4 x 2/3) x 3/4 = 1/4 x (.......... x ..........)
-
-3. Một tàu hỏa mỗi giờ đi được 45 km. Hỏi sau 2/3 giờ tàu hỏa đó đi được bao nhiêu ki-lô-mét?
-   ..........
-
---- TRANG 46 ---
-BÀI 65: PHÉP CHIA PHÂN SỐ
-
-[LÝ THUYẾT]
-Muốn chia một phân số cho một phân số, ta lấy phân số thứ nhất nhân với phân số thứ hai đảo ngược.
-
-Tiết 1:
-1. Viết phân số đảo ngược của mỗi phân số sau:
-   - 2/3 đảo ngược là: ..........
-   - 4/7 đảo ngược là: ..........
-   - 1/5 đảo ngược là: ..........
-
-2. Tính:
-   a) 3/4 : 2/5 = 3/4 x 5/2 = ..........
-   b) 1/2 : 1/3 = ..........
-   c) 5/6 : 3/4 = ..........
-
-3. Tìm x:
-   a) x x 1/2 = 1/4
-   b) x : 2/3 = 3/5
-
---- TRANG 47 ---
-Tiết 2:
-1. Tính:
-   a) 2/3 : 4 = ..........
-   b) 5 : 1/2 = ..........
-   c) 0 : 3/5 = ..........
-
-2. Một hình chữ nhật có diện tích 5/8 m2, chiều dài 3/4 m. Tính chiều rộng của hình chữ nhật đó.
-   ..........
-
-3. Tính rồi rút gọn:
-   a) 3/10 : 2/5 = ..........
-   b) 4/7 : 8/14 = ..........
-
---- TRANG 48 ---
-BÀI 66: LUYỆN TẬP CHUNG
-
-Tiết 1:
-1. Tính:
-   a) 1/2 x 2/3 : 1/3 = ..........
-   b) 3/4 : 1/2 x 3/5 = ..........
-
-2. Viết phân số thích hợp vào chỗ chấm:
-   Một vòi nước chảy đầy bể trong 3 giờ. Trung bình mỗi giờ vòi đó chảy được .......... phần của bể.
-
-3. Tính giá trị biểu thức:
-   a) 1/2 + 1/3 x 1/4 = ..........
-   b) (1/2 + 1/3) : 1/6 = ..........
-
---- TRANG 49 ---
-Tiết 2:
-1. Đúng ghi Đ, sai ghi S:
-   a) 2/3 x 3/2 = 1 [ ]
-   b) 1/2 : 2 = 1 [ ]
-   c) 3/4 x 0 = 0 [ ]
-
-2. Một cửa hàng có 50 kg đường, đã bán 2/5 số đường đó. Hỏi cửa hàng đã bán bao nhiêu ki-lô-gam đường?
-   ..........
-
-3. Tìm một phân số, biết rằng nếu lấy phân số đó chia cho 1/2 rồi nhân với 3/4 thì được 1/4.
-   ..........
-
---- TRANG 50 ---
-BÀI 67: HÌNH BÌNH HÀNH
-
-[LÝ THUYẾT]
-- Hình bình hành có hai cặp cạnh đối diện song song và bằng nhau.
-- Diện tích hình bình hành bằng độ dài đáy nhân với chiều cao (cùng đơn vị đo): S = a x h.
-
-Tiết 1:
-1. [Hình minh họa]
-   Trong các hình dưới đây, hình nào là hình bình hành?
-   ..........
-
-2. Viết tên các cặp cạnh song song và bằng nhau của hình bình hành ABCD:
-   ..........
-
-3. Vẽ thêm hai đoạn thẳng để được một hình bình hành:
-   [Hình minh họa]
-
---- TRANG 51 ---
-Tiết 2:
-1. Tính diện tích hình bình hành, biết:
-   a) Độ dài đáy là 12 cm, chiều cao là 8 cm.
-      ..........
-   b) Độ dài đáy là 2 dm, chiều cao là 15 cm.
-      ..........
-
-2. Viết số thích hợp vào chỗ chấm:
-   Một mảnh đất hình bình hành có độ dài đáy 30 m, chiều cao bằng 1/2 độ dài đáy. Diện tích mảnh đất đó là .......... m2.
-
-3. [Hình minh họa]
-   So sánh diện tích hình chữ nhật và diện tích hình bình hành trong hình vẽ sau:
-   ..........
-
---- TRANG 52 ---
-BÀI 68: HÌNH THOI
-
-[LÝ THUYẾT]
-- Hình thoi có hai cặp cạnh đối diện song song và bốn cạnh bằng nhau.
-- Diện tích hình thoi bằng tích độ dài hai đường chéo chia cho 2 (cùng đơn vị đo): S = (m x n) : 2.
-
-Tiết 1:
-1. [Hình minh họa]
-   Trong các hình dưới đây, hình nào là hình thoi?
-   ..........
-
-2. Viết tên các cặp cạnh song song của hình thoi MNPQ:
-   ..........
-
-3. Đúng ghi Đ, sai ghi S:
-   - Hình thoi có 4 cạnh bằng nhau [ ]
-   - Hình thoi là hình chữ nhật đặc biệt [ ]
-
---- TRANG 53 ---
-Tiết 2:
-1. Tính diện tích hình thoi, biết độ dài hai đường chéo là:
-   a) 10 cm và 12 cm.
-      ..........
-   b) 4 dm và 25 cm.
-      ..........
-
-2. Một miếng kính hình thoi có độ dài hai đường chéo lần lượt là 15 cm và 20 cm. Diện tích miếng kính đó là .......... cm2.
-
-3. [Hình minh họa]
-   Vẽ đường chéo của hình thoi và tính diện tích dựa trên số đo cho trước:
-   ..........
-
---- TRANG 54 ---
-BÀI 69: MÉT VUÔNG, MI-LI-MÉT VUÔNG
-
-[LÝ THUYẾT]
-- Mét vuông là diện tích của hình vuông có cạnh dài 1 m. Kí hiệu: m2.
-- Mi-li-mét vuông là diện tích của hình vuông có cạnh dài 1 mm. Kí hiệu: mm2.
-- 1 m2 = 100 dm2 = 10 000 cm2.
-- 1 cm2 = 100 mm2.
-
-Tiết 1:
-1. Viết số thích hợp vào chỗ chấm:
-   a) 2 m2 = .......... dm2
-   b) 500 dm2 = .......... m2
-   c) 3 cm2 = .......... mm2
-
-2. Viết số hoặc đơn vị đo thích hợp vào chỗ chấm:
-   - Diện tích một lớp học khoảng 40 ..........
-   - Diện tích một chiếc tem khoảng 200 ..........
-
---- TRANG 55 ---
-Tiết 2:
-1. Tính:
-   a) 125 m2 + 300 m2 = ..........
-   b) 450 mm2 - 150 mm2 = ..........
-   c) 12 m2 x 3 = ..........
-
-2. Một sân trường hình chữ nhật có chiều dài 50 m, chiều rộng 30 m. Diện tích sân trường đó là .......... m2.
-
-3. So sánh:
-   a) 2 m2 5 dm2 .......... 25 dm2
-   b) 400 mm2 .......... 4 cm2
-
---- TRANG 56 ---
-BÀI 70: LUYỆN TẬP CHUNG
-
-Tiết 1:
-1. Tính diện tích hình bình hành có độ dài đáy 15 cm, chiều cao 10 cm:
-   ..........
-
-2. Tính diện tích hình thoi có độ dài hai đường chéo là 8 cm và 10 cm:
-   ..........
-
-3. Viết số thích hợp vào chỗ chấm:
-   2 m2 30 dm2 = .......... dm2
-
---- TRANG 57 ---
-Tiết 2:
-1. Đúng ghi Đ, sai ghi S:
-   - Hình thoi có hai cặp cạnh đối diện song song [ ]
-   - Diện tích hình bình hành bằng đáy cộng chiều cao [ ]
-
-2. Một nền nhà hình chữ nhật có chiều dài 8 m, chiều rộng 4 m. Người ta lát nền bằng gạch hình vuông cạnh 4 dm. Hỏi cần bao nhiêu viên gạch?
-   ..........
-
-3. [Hình minh họa]
-   Tính diện tích phần tô màu trong hình vẽ:
-   ..........
-
---- TRANG 58 ---
-BÀI 71: ÔN TẬP PHÉP NHÂN, PHÉP CHIA
-
-Tiết 1:
-1. Đặt tính rồi tính:
-   a) 125 x 34
-   b) 4 560 : 12
-
-2. Tính giá trị biểu thức:
-   a) 1/2 x 3/4 + 1/4 = ..........
-   b) 5/6 : (1/2 + 1/3) = ..........
-
-3. Một kho hàng có 1 200 bộ quần áo. Người ta đã xuất kho 1/3 số bộ quần áo đó. Hỏi trong kho còn lại bao nhiêu bộ quần áo?
-   ..........
-
---- TRANG 59 ---
-Tiết 2:
-1. Tìm x:
-   a) x : 15 = 120
-   b) 24 x x = 600
-
-2. Tính bằng cách thuận tiện:
-   a) 125 x 8 x 7 = ..........
-   b) 45 x 11 = ..........
-
-3. Trung bình mỗi ngày một con bò ăn hết 15 kg cỏ. Hỏi 10 con bò ăn hết bao nhiêu ki-lô-gam cỏ trong 7 ngày?
-   ..........
-
---- TRANG 60 ---
-BÀI 72: ÔN TẬP HÌNH HỌC VÀ ĐO LƯỜNG
-
-Tiết 1:
-1. Viết số thích hợp vào chỗ chấm:
-   a) 3 m2 = .......... cm2
-   b) 4 000 mm2 = .......... cm2
-
-2. [Hình minh họa]
-   Ghi tên các góc nhọn, góc tù, góc vuông có trong hình vẽ:
-   ..........
-
-3. Một mảnh lưới hình thoi có độ dài hai đường chéo là 2 m và 3 m. Diện tích mảnh lưới đó là .......... m2.
-
-==============================================
-HẾT 20 TRANG TIẾP THEO (TRANG 41 - 60)
-==============================================
---- TRANG 61 ---
-Tiết 2:
-1. Tính diện tích hình chữ nhật có chiều dài 4/5 m, chiều rộng 1/2 m.
-   ..........
-2. Một hình thoi có độ dài hai đường chéo là 15 cm và 20 cm. Diện tích hình thoi đó là .......... cm2.
-3. [Hình minh họa]
-   Vẽ một hình bình hành có độ dài đáy 4 cm, chiều cao 3 cm vào lưới ô vuông dưới đây.
-
---- TRANG 62 ---
-BÀI 73: ÔN TẬP KIỂM TRA HỌC KÌ II
-
-Tiết 1:
-1. Đặt tính rồi tính:
-   a) 234 x 15          b) 1 080 : 45
-2. Tính giá trị biểu thức:
-   a) 3/4 + 1/2 : 2 = ..........
-   b) (5/6 - 1/3) x 4 = ..........
-3. Viết số thích hợp vào chỗ chấm:
-   2 m2 50 dm2 = .......... dm2
-
---- TRANG 63 ---
-Tiết 2:
-1. Tìm x:
-   a) x - 3/4 = 1/2
-   b) x x 1/3 = 5/6
-2. Một lớp học có 35 học sinh, trong đó 3/5 số học sinh là nữ. Hỏi lớp đó có bao nhiêu học sinh nam?
-   ..........
-3. [Hình minh họa]
-   Tính chu vi và diện tích hình bình hành có kích thước như hình vẽ.
-
---- TRANG 64 ---
-BÀI 74: ÔN TẬP CHUNG CUỐI NĂM
-
-Tiết 1:
-1. Khoanh vào chữ đặt trước câu trả lời đúng.
-   Phân số nào sau đây bằng phân số 3/4?
-   A. 6/12    B. 9/12    C. 12/15    D. 3/8
-2. Rút gọn các phân số sau:
-   15/20; 24/36; 50/100.
-3. So sánh các phân số:
-   a) 5/7 và 6/7          b) 3/4 và 5/8
-
---- TRANG 65 ---
-Tiết 2:
-1. Tính:
-   a) 1/2 + 3/8 = ..........
-   b) 5/6 - 1/3 = ..........
-   c) 2/5 x 3/4 = ..........
-   d) 3/7 : 1/2 = ..........
-2. Một cửa hàng có 100 kg gạo. Buổi sáng bán được 2/5 số gạo, buổi chiều bán được 1/4 số gạo. Hỏi cửa hàng còn lại bao nhiêu ki-lô-gam gạo?
-   ..........
-
---- TRANG 66 ---
-Tiết 3:
-1. Tính bằng cách thuận tiện:
-   a) 2/5 x 3/7 + 2/5 x 4/7 = ..........
-   b) 7/9 x 1/2 - 7/9 x 1/3 = ..........
-2. [Hình minh họa]
-   Một hình thoi có diện tích 24 cm2, một đường chéo dài 6 cm. Tính độ dài đường chéo còn lại.
-   ..........
-
---- TRANG 67 ---
-BÀI 75: THỰC HÀNH VÀ TRẢI NGHIỆM
-
-Tiết 1:
-1. [LÝ THUYẾT]
-   Sử dụng thước kẻ và compa để vẽ các hình học cơ bản.
-2. Vẽ hình thoi có độ dài hai đường chéo là 4 cm và 6 cm.
-3. [Hình minh họa]
-   Dùng các miếng hình tam giác để ghép thành một hình bình hành.
-
---- TRANG 68 ---
-Tiết 2:
-1. Đo độ dài các cạnh của nền lớp học và tính diện tích lớp học đó.
-   ..........
-2. Em hãy ước lượng diện tích của một số đồ vật trong lớp (bảng, mặt bàn, cửa sổ).
-   ..........
-
---- TRANG 69 ---
-BÀI 76: ÔN TẬP CÁC SỐ ĐẾN LỚP TRIỆU
-
-1. Viết số thích hợp vào chỗ chấm:
-   - Số gồm 5 triệu, 3 trăm nghìn và 2 đơn vị là: ..........
-   - Đọc số 12 300 450: ..........
-2. Sắp xếp các số sau theo thứ tự từ bé đến lớn:
-   1 234 567; 1 243 567; 1 324 567.
-
---- TRANG 70 ---
-BÀI 77: ÔN TẬP CÁC PHÉP TÍNH VỚI SỐ TỰ NHIÊN
-
-1. Đặt tính rồi tính:
-   a) 456 123 + 123 456
-   b) 789 456 - 456 123
-   c) 1 234 x 56
-   d) 12 600 : 35
-2. Tính giá trị biểu thức (m + n) x p với m = 120, n = 80, p = 15.
-   ..........
-
---- TRANG 71 ---
-BÀI 78: ÔN TẬP PHÂN SỐ
-
-1. Viết phân số thích hợp vào chỗ chấm chỉ phần đã tô màu:
-   - [Hình minh họa]: ..........
-2. Quy đồng mẫu số hai phân số 2/3 và 3/5.
-3. Tìm phân số x biết: x + 1/4 = 5/8.
-
---- TRANG 72 ---
-BÀI 79: ÔN TẬP CÁC PHÉP TÍNH VỚI PHÂN SỐ
-
-1. Tính:
-   a) 2/5 + 3/10 = ..........
-   b) 7/8 - 1/4 = ..........
-   c) 2/3 x 9/10 = ..........
-   d) 5/6 : 2/3 = ..........
-2. Một vòi nước chảy 2 giờ thì đầy bể. Giờ thứ nhất chảy được 2/5 bể. Hỏi giờ thứ hai chảy được bao nhiêu phần bể?
-
---- TRANG 73 ---
-BÀI 80: ÔN TẬP HÌNH HỌC
-
-1. [Hình minh họa]
-   Xác định các cặp cạnh song song và vuông góc trong hình vẽ sau.
-2. Tính diện tích hình bình hành có đáy 20 cm, chiều cao 1/4 đáy.
-3. Một hình thoi có tổng độ dài hai đường chéo là 30 cm, hiệu độ dài hai đường chéo là 6 cm. Tính diện tích hình thoi đó.
-
---- TRANG 74 ---
-BÀI 81: ÔN TẬP ĐO LƯỜNG
-
-1. Viết số thích hợp vào chỗ chấm:
-   a) 5 tấn = .......... kg
-   b) 2 giờ 15 phút = .......... phút
-   c) 3 m2 5 dm2 = .......... cm2
-2. So sánh:
-   a) 1/2 tạ .......... 50 kg
-   b) 1/4 thế kỉ .......... 25 năm
-
---- TRANG 75 ---
-BÀI 82: ÔN TẬP THỐNG KÊ VÀ XÁC SUẤT
-
-1. [Hình minh họa - Biểu đồ cột]
-   Dựa vào biểu đồ số học sinh giỏi của 4 lớp, trả lời các câu hỏi:
-   - Lớp có nhiều học sinh giỏi nhất?
-   - Trung bình mỗi lớp có bao nhiêu học sinh giỏi?
-2. Có 3 quả bóng xanh, 2 quả bóng đỏ trong hộp. Lấy ngẫu nhiên 1 quả. Nêu các khả năng có thể xảy ra.
-
---- TRANG 76 ---
-BÀI 83: LUYỆN TẬP CHUNG
-
-1. Tính giá trị biểu thức:
-   a) 125 x (100 + 4) = ..........
-   b) 3 600 : (12 x 3) = ..........
-2. Một mảnh đất hình chữ nhật có chu vi 120 m, chiều dài hơn chiều rộng 20 m. Tính diện tích mảnh đất đó.
-
---- TRANG 77 ---
-BÀI 84: ÔN TẬP CUỐI NĂM - TIẾT 1
-
-1. Đặt tính rồi tính:
-   a) 25 400 x 30          b) 84 000 : 40
-2. Tìm trung bình cộng của các số: 150, 250 và 350.
-3. Tính: 1/2 + 1/4 + 1/8 = ..........
-
---- TRANG 78 ---
-BÀI 85: ÔN TẬP CUỐI NĂM - TIẾT 2
-
-1. Tính diện tích hình bình hành có độ dài đáy 4 dm, chiều cao 25 cm.
-2. [Hình minh họa]
-   Sắp xếp các phân số sau theo thứ tự từ lớn đến bé: 1/2; 3/4; 5/8.
-3. Một tàu hỏa đi quãng đường 180 km trong 4 giờ. Hỏi trung bình mỗi giờ tàu đi được bao nhiêu ki-lô-mét?
-
---- TRANG 79 ---
-BÀI 86: ÔN TẬP CUỐI NĂM - TIẾT 3
-
-1. Viết số thích hợp vào chỗ chấm:
-   a) 2 kg 50 g = .......... g
-   b) 3 phút 20 giây = .......... giây
-2. Một kho hàng có 2/5 số hàng là vải, 1/3 số hàng là sợi. Hỏi số vải và sợi chiếm bao nhiêu phần kho hàng?
-
---- TRANG 80 ---
-BÀI 87: ÔN TẬP CUỐI NĂM - TIẾT 4
-
-1. [Hình minh họa]
-   Vẽ một hình thoi có cạnh 3 cm trên lưới ô vuông.
-2. Tính diện tích một hình vuông có chu vi 20 cm.
-3. Tìm x: 4/5 - x = 1/2.
-
-==============================================
-HẾT 20 TRANG TIẾP THEO (TRANG 61 - 80)
-==============================================
---- TRANG 81 ---
-BÀI 88: ÔN TẬP CUỐI NĂM - TIẾT 5
-
-1. [Hình minh họa]
-   Đếm số hình tam giác và hình tứ giác có trong hình vẽ sau.
-2. Một hình chữ nhật có chiều dài 2/3 m, chiều rộng bằng 1/2 chiều dài. Tính diện tích hình chữ nhật đó.
-3. Đúng ghi Đ, sai ghi S:
-   - 1 m2 = 100 dm2 [ ]
-   - 1 cm2 = 10 mm2 [ ]
-
---- TRANG 82 ---
-BÀI 89: ÔN TẬP CHUNG
-
-1. Đặt tính rồi tính:
-   a) 15 200 x 40          b) 96 000 : 300
-2. Tìm x:
-   a) x + 2/5 = 1          b) x - 3/8 = 1/4
-3. Một tổ công nhân ngày thứ nhất sửa được 1/4 quãng đường, ngày thứ hai sửa được 1/3 quãng đường. Hỏi cả hai ngày tổ đó sửa được bao nhiêu phần quãng đường?
-
---- TRANG 83 ---
-BÀI 90: ÔN TẬP CHUNG (Tiếp theo)
-
-1. Tính bằng cách thuận tiện:
-   a) 250 x 4 x 2 = ..........
-   b) 125 x 7 x 8 = ..........
-2. Một hình bình hành có độ dài đáy 25 cm, chiều cao 18 cm. Tính diện tích hình bình hành đó.
-3. [Hình minh họa - Biểu đồ cột]
-   Dựa vào biểu đồ số cây xanh lớp 4A đã trồng trong 4 tuần, hãy tính trung bình mỗi tuần lớp trồng được bao nhiêu cây.
-
---- TRANG 84 ---
-BÀI 91: LUYỆN TẬP CHUNG
-
-1. Viết số thích hợp vào chỗ chấm:
-   a) 1/2 giờ = .......... phút
-   b) 1/4 thế kỉ = .......... năm
-   c) 2 kg 5 g = .......... g
-2. Một cửa hàng có 200 kg gạo, đã bán 3/4 số gạo đó. Hỏi cửa hàng còn lại bao nhiêu ki-lô-gam gạo?
-
---- TRANG 85 ---
-BÀI 92: LUYỆN TẬP CHUNG (Tiếp theo)
-
-1. Tính giá trị biểu thức:
-   a) 2/3 + 1/6 x 2 = ..........
-   b) (5/8 - 1/4) : 1/2 = ..........
-2. [Hình minh họa]
-   Tính diện tích phần tô màu xanh trong hình chữ nhật có kích thước cho trước.
-3. Tìm x: x : 1/2 = 4/5.
-
---- TRANG 86 ---
-BÀI 93: ÔN TẬP KIỂM TRA CUỐI NĂM - ĐỀ 1
-
-1. Khoanh vào chữ đặt trước câu trả lời đúng.
-   Giá trị của chữ số 5 trong số 1 502 300 là:
-   A. 500 000    B. 50 000    C. 5 000    D. 500
-2. Đặt tính rồi tính:
-   a) 456 x 23          b) 8 160 : 34
-3. Một mảnh đất hình chữ nhật có nửa chu vi là 60 m, chiều dài hơn chiều rộng 10 m. Tính diện tích mảnh đất.
-
---- TRANG 87 ---
-BÀI 94: ÔN TẬP KIỂM TRA CUỐI NĂM - ĐỀ 2
-
-1. Đúng ghi Đ, sai ghi S:
-   a) 3/4 > 5/8 [ ]
-   b) 2/5 + 1/5 = 3/10 [ ]
-2. Tính:
-   a) 1/2 + 2/3 x 3/4 = ..........
-   b) 5/6 : 1/2 - 1/3 = ..........
-3. [Hình minh họa]
-   Một hình thoi có diện tích 30 cm2, một đường chéo dài 5 cm. Tìm đường chéo còn lại.
-
---- TRANG 88 ---
-BÀI 95: THỰC HÀNH TỔNG HỢP
-
-1. Em hãy đo kích thước của bìa sách Toán 4 và tính diện tích của nó.
-   ..........
-2. Quan sát biểu đồ nhiệt độ trong tuần và nêu nhận xét về ngày nóng nhất, ngày lạnh nhất.
-   ..........
-
---- TRANG 89 ---
-BÀI 96: TỰ KIỂM TRA - TIẾT 1
-
-1. Viết số thích hợp vào chỗ chấm:
-   a) 4 tạ 5 kg = .......... kg
-   b) 1/3 ngày = .......... giờ
-2. Tính rồi rút gọn:
-   a) 4/15 + 11/15 = ..........
-   b) 12/18 - 4/18 = ..........
-3. Trung bình cộng của hai số là 50. Biết một số là 40, tìm số kia.
-
---- TRANG 90 ---
-BÀI 97: TỰ KIỂM TRA - TIẾT 2
-
-1. Khoanh vào phân số lớn nhất:
-   2/3; 5/6; 3/4; 7/12
-2. Một xe máy đi quãng đường 90 km hết 2 giờ. Hỏi trung bình mỗi phút xe máy đó đi được bao nhiêu mét?
-3. [Hình minh họa]
-   Xác định các góc nhọn, góc tù trong hình thoi ABCD.
-
---- TRANG 91 ---
-BÀI 98: LUYỆN TẬP CHUNG CUỐI CÙNG
-
-1. Tính bằng cách thuận tiện:
-   a) 125 x 12 x 8 = ..........
-   b) 45 x 11 + 45 x 89 = ..........
-`;
-const SGK_TV=`==============================================
-TÀI LIỆU: TIẾNG VIỆT 4 - TẬP HAI - KẾT NỐI TRI THỨC VỚI CUỘC SỐNG
-==============================================
-
---- TRANG 1 ---
-[Hình minh họa]
-KẾT NỐI TRI THỨC VỚI CUỘC SỐNG
-BÙI MẠNH HÙNG (Tổng Chủ biên)
-TRẦN THỊ HIỀN LƯƠNG (Chủ biên)
-VŨ THỊ THANH HƯƠNG – VŨ THỊ LAN
-TRẦN KIM PHƯỢNG – ĐẶNG THỊ HẢO TÂM
-TIẾNG VIỆT 4
-TẬP HAI
-NHÀ XUẤT BẢN GIÁO DỤC VIỆT NAM
-BẢN MẪU - Tháng 12-2022
-
---- TRANG 2 ---
-[Hình minh họa]
-TIẾNG VIỆT 4 - TẬP HAI
-KẾT NỐI TRI THỨC VỚI CUỘC SỐNG
-NHÀ XUẤT BẢN GIÁO DỤC VIỆT NAM
-
---- TRANG 3 ---
-Kí hiệu dùng trong sách:
-- Khởi động
-- Đọc văn bản
-- Trả lời câu hỏi
-- Luyện tập theo văn bản đọc
-- Vận dụng
-M: Mẫu
-G: Gợi ý
-
---- TRANG 4 ---
-MỤC LỤC
-Tuần 19: SỐNG ĐỂ YÊU THƯƠNG
-BÀI 1: Hải Thượng Lãn Ông .......... 8
-Luyện từ và câu: Câu .......... 9
-Viết: Tìm hiểu cách viết đoạn văn nêu tình cảm, cảm xúc .......... 10
-BÀI 2: Vệt phấn trên mặt bàn .......... 12
-Viết: Tìm ý cho đoạn văn nêu tình cảm, cảm xúc về một người gần gũi, thân thiết .......... 14
-Nói và nghe: Giúp bạn .......... 15
-
-Tuần 20:
-BÀI 3: Ông Bụt đã đến .......... 16
-Luyện từ và câu: Hai thành phần chính của câu .......... 18
-Viết: Viết đoạn văn nêu tình cảm, cảm xúc về một người gần gũi, thân thiết .......... 19
-BÀI 4: Quả ngọt cuối mùa .......... 20
-Viết: Tìm ý cho đoạn văn nêu tình cảm, cảm xúc về một nhân vật trong văn học .......... 22
-Đọc mở rộng .......... 23
-
---- TRANG 5 ---
-Tuần 21:
-BÀI 5: Tờ báo tường của tôi .......... 24
-Luyện từ và câu: Luyện tập về chủ ngữ của câu .......... 26
-Viết: Viết đoạn văn nêu tình cảm, cảm xúc về một nhân vật trong văn học .......... 27
-BÀI 6: Tiếng ru .......... 28
-Viết: Trả bài viết đoạn văn nêu tình cảm, cảm xúc về một nhân vật trong văn học .......... 29
-Nói và nghe: Kể chuyện Bài học quý .......... 30
-
-Tuần 22:
-BÀI 7: Con muốn làm một cái cây .......... 31
-Luyện từ và câu: Luyện tập về vị ngữ của câu .......... 32
-Viết: Tìm hiểu cách viết hướng dẫn sử dụng một sản phẩm .......... 33
-BÀI 8: Trên khóm tre đầu ngõ .......... 35
-Viết: Viết hướng dẫn sử dụng một sản phẩm .......... 37
-Đọc mở rộng .......... 38
-
---- TRANG 6 ---
-Tuần 23: UỐNG NƯỚC NHỚ NGUỒN
-BÀI 9: Sự tích con Rồng cháu Tiên .......... 40
-Luyện từ và câu: Luyện tập về hai thành phần chính của câu .......... 42
-Viết: Lập dàn ý cho bài văn kể lại một câu chuyện .......... 43
-BÀI 10: Cảm xúc Trường Sa .......... 44
-Viết: Viết bài văn kể lại một câu chuyện .......... 45
-Nói và nghe: Những tấm gương sáng .......... 46
-
---- TRANG 7 ---
-Tuần 24:
-BÀI 11: Sáng tháng Năm .......... 48
-Luyện từ và câu: Trạng ngữ .......... 49
-Viết: Trả bài văn kể lại một câu chuyện .......... 50
-BÀI 12: Chàng trai làng Phù Ủng .......... 51
-Viết: Viết đoạn văn nêu ý kiến .......... 53
-Đọc mở rộng .......... 54
-
-Tuần 25:
-BÀI 13: Vườn của ông tôi .......... 55
-Luyện từ và câu: Trạng ngữ chỉ thời gian, nơi chốn .......... 57
-Viết: Trả bài viết đoạn văn nêu ý kiến .......... 58
-BÀI 14: Trong lời mẹ hát .......... 59
-Viết: Lập dàn ý cho bài văn thuật lại một sự việc .......... 61
-Nói và nghe: Truyền thống Uống nước nhớ nguồn .......... 62
-
---- TRANG 8 ---
-BÀI 1: HẢI THƯỢNG LÃN ÔNG
-ĐỌC
-[VÍ DỤ] Em hiểu thế nào về câu nói “Thầy thuốc như mẹ hiền.”?
-
-HẢI THƯỢNG LÃN ÔNG
-Hải Thượng Lãn Ông là một thầy thuốc nổi tiếng của nước ta ở thế kỉ XVIII. Ông là người thông minh, học rộng. Khi còn trẻ, có lần bị ốm nặng, ông được một thầy thuốc giỏi chữa khỏi. Nhận thấy rằng biết chữa bệnh không chỉ cứu mình mà còn giúp được người đời, ông đã quyết học nghề y.
-Lên kinh đô nhưng không tìm được thầy giỏi để học, ông về quê “đóng cửa để đọc sách”, vừa tự học vừa chữa bệnh giúp dân. Ông không quản ngày đêm, mưa nắng, trèo đèo lội suối đi chữa bệnh cứu người.
-Đối với người nghèo, hoàn cảnh khó khăn, ông thường khám bệnh và cho thuốc không lấy tiền. Có lần, một người thuyền chài nghèo có đứa con nhỏ bị bệnh nặng nhưng không có tiền chữa trị. Khi bệnh tình của đứa trẻ nguy cấp, người thuyền chài chạy đến nhờ cậy Hải Thượng Lãn Ông. Ông đã đi lại thăm khám, thuốc thang ròng rã hơn một tháng trời, nhờ vậy mà bệnh của đứa trẻ thuyên giảm. Không những không lấy tiền, ông còn cho gia đình họ gạo, củi, dầu đèn,...
-Bên cạnh việc làm thuốc, chữa bệnh, Hải Thượng Lãn Ông cũng dành nhiều công sức nghiên cứu, viết sách, để lại cho đời nhiều tác phẩm lớn, có giá trị về y học, văn hóa và lịch sử. Ông được coi là một bậc danh y của Việt Nam.
-(Theo Nguyễn Liêm)
-
---- TRANG 9 ---
-1. Hải Thượng Lãn Ông là ai? Vì sao ông quyết học nghề y?
-2. Hải Thượng Lãn Ông đã học nghề y như thế nào?
-3. Những chi tiết nào cho thấy ông rất thương người nghèo?
-4. Vì sao Hải Thượng Lãn Ông được coi là một bậc danh y của Việt Nam?
-
-LUYỆN TỪ VÀ CÂU: CÂU
-1. Đoạn văn dưới đây có mấy câu? Nhờ đâu em biết như vậy?
-- Bạn hãy kể chuyện cuộc đời bạn cho tôi nghe đi!
-- Cuộc đời tôi bình thường lắm!
-- Bạn đừng giấu! Nếu cuộc đời bạn bình thường, sao bông hoa kia lại biết ơn bạn?
-
---- TRANG 10 ---
-[LÝ THUYẾT]
-- Câu là một tập hợp từ diễn đạt một ý trọn vẹn.
-- Chữ cái đầu câu phải viết hoa. Cuối câu phải có dấu kết thúc câu.
-
-3. Sắp xếp các từ ngữ thành câu:
-a) chữa bệnh/ ông/ cứu người/ để -> ..........
-b) khám bệnh/ miễn phí/ ông/ cho ai -> ..........
-
---- TRANG 11 ---
-VIẾT: TÌM HIỂU CÁCH VIẾT ĐOẠN VĂN NÊU TÌNH CẢM, CẢM XÚC
-1. Đọc đoạn văn và thực hiện yêu cầu:
-(1) Nhỏ Thắm là cô bạn thân duy nhất của tôi. (2) Chúng tôi cùng lớn lên bên nhau... (3) Tình cảm mà tôi cảm nhận được ở nhỏ Thắm là một tình bạn ấm áp...
-
---- TRANG 12 ---
-[LÝ THUYẾT]
-- Đoạn văn nêu tình cảm, cảm xúc thường có 3 phần: mở đoạn, thân đoạn, kết đoạn.
-
-Vận dụng: Viết 2 - 3 câu nêu tình cảm, cảm xúc của em về Hải Thượng Lãn Ông.
-
---- TRANG 13 ---
-BÀI 2: VỆT PHẤN TRÊN MẶT BÀN
-ĐỌC
-[VÍ DỤ] Kể về một việc tốt em đã làm cho bạn.
-
-VỆT PHẤN TRÊN MẶT BÀN
-Lớp Minh có thêm học sinh mới. Đó là một bạn gái có cái tên rất ngộ: Thi Ca. Cô giáo xếp Thi Ca ngồi ngay cạnh Minh...
-Tới lần thứ tư, Minh lấy phấn kẻ một đường chia đôi mặt bàn:
-- Đây là ranh giới. Bạn không được để tay thò qua chỗ mình nhé!
-Thi Ca nhìn đường phấn, gương mặt thoáng buồn...
-
---- TRANG 14 ---
-Cô giáo nói:
-- Hi vọng lần này bác sĩ sẽ chữa lành cánh tay mặt để bạn không phải viết bằng tay trái nữa!
-Lời của cô giáo làm Minh chợt nhớ ra Thi Ca hay giấu bàn tay mặt trong hộc bàn... Càng nhớ càng ân hận. Minh đè mạnh chiếc khăn xoá vệt phấn trên mặt bàn.
-
-1. Minh có suy nghĩ gì khi cô giáo xếp Thi Ca ngồi cạnh mình?
-2. Điều gì làm cho Minh bực mình khi ngồi chung bàn với Thi Ca?
-3. Khi biết tin Thi Ca phải đi bệnh viện, Minh có thay đổi gì?
-
---- TRANG 15 ---
-VIẾT: TÌM Ý CHO ĐOẠN VĂN NÊU TÌNH CẢM, CẢM XÚC VỀ MỘT NGƯỜI GẦN GŨI, THÂN THIẾT
-1. Chuẩn bị:
-- Em muốn bày tỏ tình cảm với ai?
-- Điều gì ở người đó làm em xúc động?
-
---- TRANG 16 ---
-NÓI VÀ NGHE: GIÚP BẠN
-Thảo luận để tìm cách giúp một bạn có hoàn cảnh khó khăn.
-
---- TRANG 17 ---
-BÀI 3: ÔNG BỤT ĐÃ ĐẾN
-ĐỌC
-ÔNG BỤT ĐÃ ĐẾN
-Mai thích mấy chậu hoa của ông nhạc sĩ lắm... Bỗng chỉ một chút sơ ý, cành hoa bị gãy. Mai rụt rè đưa tay gõ nhẹ cánh cửa xin lỗi nhưng cửa không mở.
-Hôm sau, Mai vô cùng ngạc nhiên khi nhìn thấy chậu lan vẫn bung nở tuyệt đẹp. Ông nhạc sĩ đã mua chậu lan mới thay cho chậu cũ vì ông đã nhìn thấy những giọt nước mắt của Mai.
-
---- TRANG 18 ---
-1. Những chi tiết nào cho thấy Mai rất yêu hoa?
-2. Vì sao ông nhạc sĩ lại mua chậu lan mới thay cho chậu lan cũ?
-3. Ai được xem là ông Bụt trong câu chuyện?
-
---- TRANG 19 ---
-LUYỆN TỪ VÀ CÂU: HAI THÀNH PHẦN CHÍNH CỦA CÂU
-1. Tách mỗi câu thành hai thành phần:
-- Mẹ của Mai / lo lắng.
-- Nhành lan ấy / rất đẹp.
-
-[LÝ THUYẾT]
-Câu thường gồm 2 thành phần chính: Chủ ngữ và Vị ngữ.
-
---- TRANG 20 ---
-VIẾT: VIẾT ĐOẠN VĂN NÊU TÌNH CẢM, CẢM XÚC VỀ MỘT NGƯỜI GẦN GŨI, THÂN THIẾT
-Đề bài: Viết đoạn văn nêu tình cảm, cảm xúc về một người gần gũi, thân thiết (ông bà, bố mẹ, thầy cô...).
-
-==============================================
-HẾT TÀI LIỆU (TRANG 1-20)
-==============================================
-==============================================
-TÀI LIỆU: TIẾNG VIỆT 4 - TẬP HAI - KẾT NỐI TRI THỨC VỚI CUỘC SỐNG
-==============================================
-
---- TRANG 21 ---
-BÀI 4: QUẢ NGỌT CUỐI MÙA
-
-ĐỌC
-[VÍ DỤ] Chia sẻ với bạn về một món quà em đã được nhận từ người thân.
-
-QUẢ NGỌT CUỐI MÙA
-Bà em ở tận quê xa
-Chẳng dâng được quả, dâng hoa cho rằm.
-Nắng mưa đã trải bao năm
-Gió sương đã thấm mấy lần áo nâu.
-...
-Mẹ ơi! Quả ngọt cuối mùa
-Bà để phần cháu lúc vừa về thăm.
-(Theo Võ Thanh An)
-
-1. Những từ ngữ, hình ảnh nào cho thấy sự vất vả của bà?
-2. Tại sao dù quả đã chín nhưng bà "vẫn chưa trẩy vào"?
-3. Tình cảm của bà đối với các cháu được thể hiện qua những chi tiết nào?
-
---- TRANG 22 ---
-VIẾT: TÌM Ý CHO ĐOẠN VĂN NÊU TÌNH CẢM, CẢM XÚC VỀ MỘT NHÂN VẬT TRONG VĂN HỌC
-[LÝ THUYẾT]
-- Mở đoạn: Giới thiệu nhân vật và tác phẩm.
-- Thân đoạn: Nêu đặc điểm nhân vật (ngoại hình, tính cách, hành động) và cảm xúc của em.
-- Kết đoạn: Khẳng định tình cảm, cảm xúc.
-
---- TRANG 23 ---
-ĐỌC MỞ RỘNG
-1. Tìm đọc câu chuyện, bài thơ về những người có tấm lòng nhân hậu.
-2. Viết phiếu đọc sách: Ngày đọc, Tên bài, Tác giả, Nhân vật yêu thích...
-
---- TRANG 24 ---
-Tuần 21
-BÀI 5: TỜ BÁO TƯỜNG CỦA TÔI
-
-ĐỌC
-TỜ BÁO TƯỜNG CỦA TÔI
-Lớp tôi chuẩn bị làm báo tường để chào mừng Ngày Nhà giáo Việt Nam 20-11... Tổ tôi quyết định đặt tên tờ báo là "Nắng Thu"... Nhìn tờ báo tường, tôi thấy lòng ngập tràn niềm vui và tự hào.
-
-1. Lớp của bạn nhỏ làm báo tường vào dịp nào?
-2. Các bạn trong tổ đã phân công công việc như thế nào?
-
---- TRANG 25 ---
-LUYỆN TẬP THEO VĂN BẢN ĐỌC
-1. Tìm những từ ngữ chỉ hoạt động của các bạn nhỏ khi làm báo tường.
-2. Đặt câu với một từ ngữ vừa tìm được.
-
---- TRANG 26 ---
-LUYỆN TỪ VÀ CÂU: LUYỆN TẬP VỀ CHỦ NGỮ CỦA CÂU
-1. Xác định chủ ngữ trong các câu sau:
-a) Những bông hoa hồng / đang tỏa hương thơm ngát.
-b) Chúng tôi / cùng nhau dọn dẹp sân trường.
-c) Quyển sách này / rất hay và bổ ích.
-
---- TRANG 27 ---
-VIẾT: VIẾT ĐOẠN VĂN NÊU TÌNH CẢM, CẢM XÚC VỀ MỘT NHÂN VẬT TRONG VĂN HỌC
-[VÍ DỤ] Đoạn văn mẫu về hai mẹ con bà góa trong truyện "Sự tích hồ Ba Bể"...
-
---- TRANG 28 ---
-BÀI 6: TIẾNG RU
-ĐỌC
-TIẾNG RU
-Con ong làm mật, yêu hoa
-Con cá bơi, yêu nước; con chim ca, yêu trời.
-Con người muốn sống, con ơi
-Phải yêu đồng chí, yêu người anh em.
-(Tố Hữu)
-
-1. Tác giả dùng những hình ảnh nào để nói về sự gắn bó giữa cá nhân và cộng đồng?
-2. Bài thơ khuyên chúng ta điều gì?
-
---- TRANG 29 ---
-VIẾT: TRẢ BÀI VIẾT ĐOẠN VĂN NÊU TÌNH CẢM, CẢM XÚC VỀ MỘT NHÂN VẬT TRONG VĂN HỌC
-- Chỉnh sửa lỗi chính tả, dùng từ.
-- Học tập những câu văn hay của bạn.
-
---- TRANG 30 ---
-NÓI VÀ NGHE: KỂ CHUYỆN BÀI HỌC QUÝ
-1. Nghe và kể lại câu chuyện về chim Sẻ và chim Chích.
-2. Bài học rút ra: Biết chia sẻ và quan tâm đến bạn bè.
-
---- TRANG 31 ---
-Tuần 22
-BÀI 7: CON MUỐN LÀM MỘT CÁI CÂY
-ĐỌC
-CON MUỐN LÀM MỘT CÁI CÂY
-Hồi Bum mới sinh ra, ông nội đã trồng một cây ổi trong vườn... Bum viết trong bài tập làm văn: "Con muốn làm một cái cây. Con muốn làm cây ổi ở vườn quê để được che bóng mát cho ông...".
-
-1. Cây ổi đã gắn bó với tuổi thơ của Bum như thế nào?
-2. Ước mơ của Bum trong bài tập làm văn là gì?
-
---- TRANG 32 ---
-LUYỆN TỪ VÀ CÂU: LUYỆN TẬP VỀ VỊ NGỮ CỦA CÂU
-1. Xác định vị ngữ:
-a) Sóng biển / vỗ rì rào vào mạn thuyền.
-b) Mẹ em / là giáo viên dạy Toán.
-
---- TRANG 33 ---
-VIẾT: TÌM HIỂU CÁCH VIẾT HƯỚNG DẪN SỬ DỤNG MỘT SẢN PHẨM
-[VÍ DỤ] Hướng dẫn cách pha trà chanh:
-- Bước 1: Ngâm trà.
-- Bước 2: Khuấy đường.
-- Bước 3: Vắt chanh.
-- Bước 4: Thêm đá.
-
---- TRANG 34 ---
-[LÝ THUYẾT] 
-Cách viết hướng dẫn cần: Ngắn gọn, rõ ràng, theo trình tự các bước.
-
---- TRANG 35 ---
-BÀI 8: TRÊN KHÓM TRE ĐẦU NGÕ
-ĐỌC
-TRÊN KHÓM TRE ĐẦU NGÕ
-Đầu ngõ nhà tôi có một khóm tre già... Đó là ngôi nhà chung của anh đâm cắt, gia đình nhà chim sẻ và cặp chim chìa vôi bận rộn xây tổ.
-
---- TRANG 36 ---
-1. Những loài chim nào được nhắc đến trong bài?
-2. Cách chim chìa vôi xây tổ cho thấy điều gì?
-
---- TRANG 37 ---
-VIẾT: VIẾT HƯỚNG DẪN SỬ DỤNG MỘT SẢN PHẨM
-Đề bài: Viết hướng dẫn các bước làm một món đồ chơi đơn giản (máy bay giấy, con diều...).
-
---- TRANG 38 ---
-ĐỌC MỞ RỘNG
-Tìm đọc báo dành cho thiếu nhi và ghi lại thông tin thú vị.
-
---- TRANG 39 ---
-CHỦ ĐIỂM: UỐNG NƯỚC NHỚ NGUỒN
-[Hình minh họa]
-
---- TRANG 40 ---
-Tuần 23
-BÀI 9: SỰ TÍCH CON RỒNG CHÁU TIÊN
-ĐỌC
-SỰ TÍCH CON RỒNG CHÁU TIÊN
-Lạc Long Quân nòi Rồng kết duyên cùng Âu Cơ dòng giống Tiên. Âu Cơ sinh ra bọc trăm trứng, nở thành trăm người con... Lạc Long Quân đưa 50 con xuống biển, Âu Cơ đưa 50 con lên núi... Người con trưởng lên ngôi vua, hiệu là Hùng Vương, đặt tên nước là Văn Lang.
-
-1. Chuyện lạ gì đã xảy ra khi Âu Cơ sinh con?
-2. Mục đích của việc chia con là gì?
-
-==============================================
-HẾT TÀI LIỆU (TRANG 21-40)
-==============================================
-==============================================
-TÀI LIỆU: TIẾNG VIỆT 4 - TẬP HAI - KẾT NỐI TRI THỨC VỚI CUỘC SỐNG
-==============================================
-
---- TRANG 41 ---
-[TIẾP TỤC BÀI 9]
-4. Đọc lại đoạn cuối câu chuyện và cho biết:
-a) Người con trưởng được tôn làm gì? ..........
-b) Tên nước đầu tiên của ta là gì? ..........
-c) Kinh đô đặt ở đâu? ..........
-
---- TRANG 42 ---
-LUYỆN TỪ VÀ CÂU: LUYỆN TẬP VỀ HAI THÀNH PHẦN CHÍNH CỦA CÂU
-
-1. Tìm chủ ngữ và vị ngữ của mỗi câu trong đoạn văn sau:
-Lạc Long Quân / có sức khỏe vô địch. Thần / có nhiều phép lạ. Âu Cơ / xinh đẹp tuyệt trần. Hai người / yêu nhau rồi thành vợ chồng.
-
-2. Đặt 2 câu nói về các vua Hùng:
-a) Câu có chủ ngữ là "Các vua Hùng": ..........
-b) Câu có vị ngữ là "là con cháu của Lạc Long Quân và Âu Cơ": ..........
-
---- TRANG 43 ---
-VIẾT: LẬP DÀN Ý CHO BÀI VĂN KỂ LẠI MỘT CÂU CHUYỆN
-Đề bài: Lập dàn ý cho bài văn kể lại một câu chuyện về nguồn gốc dân tộc Việt Nam.
-
-[LÝ THUYẾT]
-- Mở bài: Giới thiệu câu chuyện (tên truyện, nhân vật chính).
-- Thân bài: Kể lại diễn biến (Bắt đầu -> Diễn biến -> Kết thúc).
-- Kết bài: Nêu suy nghĩ, cảm xúc về câu chuyện.
-
---- TRANG 44 ---
-BÀI 10: CẢM XÚC TRƯỜNG SA
-ĐỌC
-CẢM XÚC TRƯỜNG SA
-Đi giữa sóng cát Trường Sa
-Nghe trong gió thổi bài ca quê mình.
-Đảo xa trắng xóa bình minh
-Cây bàng vuông vẫn biếc xanh giữa trời.
-Chú bộ đội nở nụ cười
-Tay súng vững chãi giữ nơi biên thùy.
-...
-(Theo Nguyễn Phan Quế Mai)
-
-1. Hình ảnh nào trong bài thơ gợi lên vẻ đẹp của Trường Sa?
-2. Chú bộ đội Hải quân được miêu tả như thế nào?
-3. Cây bàng vuông tượng trưng cho điều gì trên đảo?
-
---- TRANG 45 ---
-VIẾT: VIẾT BÀI VĂN KỂ LẠI MỘT CÂU CHUYỆN
-Đề bài: Viết bài văn kể lại câu chuyện "Sự tích con Rồng cháu Tiên" dựa trên dàn ý đã lập.
-
-[GỢI Ý]
-Sử dụng các từ ngữ kết nối: Ngày xửa ngày xưa, Thuở ấy, Từ đó về sau...
-
---- TRANG 46 ---
-NÓI VÀ NGHE: NHỮNG TẤM GƯƠNG SÁNG
-1. Kể tên một số anh hùng dân tộc mà em biết.
-2. Thảo luận: Tại sao chúng ta cần ghi nhớ công ơn của các vị anh hùng?
-3. Chia sẻ cảm xúc của em khi đến thăm các khu di tích lịch sử.
-
---- TRANG 47 ---
-VẬN DỤNG
-Tìm hiểu về ngày Giỗ Tổ Hùng Vương (10-3 âm lịch). Em và gia đình thường làm gì vào ngày này?
-
---- TRANG 48 ---
-Tuần 24
-BÀI 11: SÁNG THÁNG NĂM
-ĐỌC
-SÁNG THÁNG NĂM
-Vui sao sáng sớm tháng Năm
-Hà Nội bừng lên trong nắng hồng.
-Bác Hồ đi giữa đàn con cháu
-Ánh mắt hiền từ, nụ cười tươi.
-...
-(Theo Tố Hữu)
-
-1. Bài thơ miêu tả cảnh đẹp của Hà Nội vào thời điểm nào?
-2. Những từ ngữ nào miêu tả tình cảm của thiếu nhi đối với Bác Hồ?
-
---- TRANG 49 ---
-LUYỆN TỪ VÀ CÂU: TRẠNG NGỮ
-1. Đọc các câu sau và chú ý các phần in đậm:
-- **Sáng nay**, lớp em đi thăm Bảo tàng Hồ Chí Minh.
-- **Ở trong vườn**, hoa hồng đang đua nhau khoe sắc.
-
-[LÝ THUYẾT]
-Trạng ngữ là thành phần phụ của câu, bổ sung ý nghĩa về thời gian, nơi chốn, nguyên nhân, mục đích... cho câu. Trạng ngữ thường đứng đầu câu và ngăn cách với chủ ngữ, vị ngữ bằng dấu phẩy.
-
---- TRANG 50 ---
-VIẾT: TRẢ BÀI VĂN KỂ LẠI MỘT CÂU CHUYỆN
-1. Nghe cô giáo nhận xét về cách sắp xếp các sự việc.
-2. Sửa lại các đoạn văn kể chưa sinh động.
-
---- TRANG 51 ---
-BÀI 12: CHÀNG TRAI LÀNG PHÙ ỦNG
-ĐỌC
-CHÀNG TRAI LÀNG PHÙ ỦNG
-Phạm Ngũ Lão là một danh tướng đời nhà Trần. Thuở nhỏ, ông rất chăm chỉ học hành và rèn luyện võ nghệ.
-Có lần, Phạm Ngũ Lão đang ngồi bên vệ đường đan sọt, mải mê suy nghĩ về việc quân nên không biết kiệu của Hưng Đạo Vương đang đi tới. Một lính hộ vệ đâm giáo vào đùi, máu chảy ròng rã nhưng ông vẫn không hề hay biết.
-Thấy lạ, Hưng Đạo Vương dừng kiệu hỏi chuyện. Biết ông là người có chí lớn, Hưng Đạo Vương đã thu nạp và dạy dỗ thêm. Sau này, Phạm Ngũ Lão đã lập nhiều chiến công hiển hách.
-(Theo Truyện danh nhân Việt Nam)
-
-1. Phạm Ngũ Lão là người ở đâu? Ông sống vào đời vua nào?
-2. Chi tiết nào cho thấy Phạm Ngũ Lão rất tập trung vào việc nước?
-3. Tại sao Hưng Đạo Vương lại thu nạp Phạm Ngũ Lão?
-
---- TRANG 52 ---
-LUYỆN TẬP:
-Tìm trạng ngữ trong câu: "Bên vệ đường, một chàng trai đang mải mê đan sọt."
-
---- TRANG 53 ---
-VIẾT: VIẾT ĐOẠN VĂN NÊU Ý KIẾN
-Đề bài: Viết đoạn văn nêu ý kiến của em về nhân vật Phạm Ngũ Lão trong câu chuyện vừa đọc.
-
-[GỢI Ý]
-- Nêu tên nhân vật.
-- Nêu nhận xét về tính cách/hành động của nhân vật.
-- Nêu lí do vì sao em có nhận xét đó.
-
---- TRANG 54 ---
-ĐỌC MỞ RỘNG
-Tìm đọc những câu chuyện về các danh tướng hoặc anh hùng nhỏ tuổi của nước ta (Trần Quốc Toản, Kim Đồng...).
-
---- TRANG 55 ---
-Tuần 25
-BÀI 13: VƯỜN CỦA ÔNG TÔI
-ĐỌC
-VƯỜN CỦA ÔNG TÔI
-Vườn của ông tôi không rộng lắm nhưng có đủ loại cây trái. Nào là cây na lá mướt xanh, cây bưởi trĩu quả, cây mít thơm lừng mỗi khi hè về...
-Ông nâng niu từng mầm non, chăm chút từng gốc cây như người bạn. Chiều chiều, ông thường dắt tôi ra vườn, kể cho tôi nghe về đặc điểm của từng loài cây. Vườn của ông không chỉ cho quả ngọt mà còn chứa đựng bao tình yêu thương.
-
-1. Vườn của ông có những loại cây nào?
-2. Ông chăm sóc khu vườn như thế nào?
-3. Khu vườn có ý nghĩa gì đối với nhân vật "tôi"?
-
---- TRANG 56 ---
-LUYỆN TẬP THEO VĂN BẢN ĐỌC
-Tìm các tính từ miêu tả vẻ đẹp của các loài cây trong vườn của ông.
-
---- TRANG 57 ---
-LUYỆN TỪ VÀ CÂU: TRẠNG NGỮ CHỈ THỜI GIAN, NƠI CHỐN
-1. Tìm trạng ngữ chỉ thời gian và nơi chốn trong đoạn văn sau:
-"Mùa xuân, trăm hoa đua nở. Trong vườn, bướm bay dập dìu."
-- Trạng ngữ chỉ thời gian: ..........
-- Trạng ngữ chỉ nơi chốn: ..........
-
---- TRANG 58 ---
-VIẾT: TRẢ BÀI VIẾT ĐOẠN VĂN NÊU Ý KIẾN
-Đọc và học tập cách đưa ra lí do thuyết phục từ bài viết của các bạn.
-
---- TRANG 59 ---
-BÀI 14: TRONG LỜI MẸ HÁT
-ĐỌC
-TRONG LỜI MẸ HÁT
-Tuổi thơ chở đầy cổ tích
-Dòng sông lời mẹ ngọt ngào.
-Đưa con đi cùng đất nước
-Chòng chành nhịp võng ca dao.
-...
-(Theo Trương Nam Hương)
-
-1. Lời ru của mẹ mang đến cho con những hình ảnh nào?
-2. Em cảm nhận được tình yêu của mẹ dành cho con như thế nào qua bài thơ?
-
---- TRANG 60 ---
-VIẾT: LẬP DÀN Ý CHO BÀI VĂN THUẬT LẠI MỘT SỰ VIỆC
-Đề bài: Lập dàn ý thuật lại một hoạt động bảo vệ môi trường mà em đã tham gia.
-
-[GỢI Ý]
-- Thời gian, địa điểm diễn ra hoạt động?
-- Có những ai tham gia?
-- Các công việc đã làm (Quét dọn, trồng cây, thu gom rác...)?
-- Kết quả và cảm xúc sau khi hoàn thành?
-
-==============================================
-HẾT TÀI LIỆU (TRANG 41-60)
-==============================================
-==============================================
-TÀI LIỆU: TIẾNG VIỆT 4 - TẬP HAI - KẾT NỐI TRI THỨC VỚI CUỘC SỐNG
-==============================================
-
---- TRANG 61 ---
-[TIẾP TỤC BÀI 14]
-VIẾT: LẬP DÀN Ý CHO BÀI VĂN THUẬT LẠI MỘT SỰ VIỆC
-Đề bài: Lập dàn ý cho bài văn thuật lại một hoạt động trải nghiệm thú vị của em.
-
-[VÍ DỤ] Dàn ý tham khảo:
-- Mở bài: Giới thiệu thời gian, địa điểm, mục đích của chuyến đi (ví dụ: tham quan Bảo tàng Dân tộc học).
-- Thân bài:
-  + Cả lớp tập trung, lên xe khởi hành.
-  + Đến nơi, nghe hướng dẫn viên giới thiệu.
-  + Tham quan các khu trưng bày, xem biểu diễn múa rối nước.
-- Kết bài: Cảm xúc sau chuyến đi (vui vẻ, học được nhiều điều bổ ích).
-
---- TRANG 62 ---
-NÓI VÀ NGHE: TRUYỀN THỐNG UỐNG NƯỚC NHỚ NGUỒN
-1. Trao đổi về ý nghĩa của câu tục ngữ "Uống nước nhớ nguồn".
-2. Kể về một việc em hoặc trường em đã làm để thể hiện lòng biết ơn các anh hùng liệt sĩ hoặc người có công với đất nước.
-
---- TRANG 63 ---
-Tuần 26
-BÀI 15: NGƯỜI THẦY ĐẦU TIÊN CỦA BỐ TÔI
-ĐỌC
-NGƯỜI THẦY ĐẦU TIÊN CỦA BỐ TÔI
-Bố tôi thường kể về thầy giáo dạy lớp Một của mình với sự trân trọng. Đó là thầy Vinh, một người thầy hiền từ và hết lòng vì học trò.
-Ngày ấy, bố tôi là một cậu bé nhút nhát. Chính thầy Vinh đã kiên nhẫn dạy bố cách cầm bút, cách đánh vần từng chữ cái đầu tiên. Thầy không bao giờ quát mắng khi học trò làm sai mà luôn động viên: "Cố lên các em, rồi các em sẽ làm được thôi!".
-Nhiều năm trôi qua, dù đã trở thành một kỹ sư giỏi, bố vẫn không quên dáng hình gầy gò và ánh mắt ấm áp của thầy.
-
-1. Thầy Vinh đã giúp đỡ bố của nhân vật "tôi" như thế nào khi bố còn nhỏ?
-2. Tại sao bố vẫn luôn nhớ về thầy giáo cũ dù đã nhiều năm trôi qua?
-
---- TRANG 64 ---
-LUYỆN TẬP THEO VĂN BẢN ĐỌC
-Tìm những từ ngữ thể hiện tình cảm của người bố đối với thầy giáo của mình.
-
---- TRANG 65 ---
-LUYỆN TỪ VÀ CÂU: TRẠNG NGỮ CHỈ NGUYÊN NHÂN, MỤC ĐÍCH
-1. Tìm trạng ngữ trong các câu sau:
-- **Vì mải chơi**, Nam quên chưa làm bài tập.
-- **Để học tốt môn Tiếng Việt**, em cần đọc sách nhiều hơn.
-
-[LÝ THUYẾT]
-- Trạng ngữ chỉ nguyên nhân trả lời cho câu hỏi: Vì sao? Nhờ đâu? Tại đâu? (thường bắt đầu bằng từ: Vì, Do, Nhờ...).
-- Trạng ngữ chỉ mục đích trả lời cho câu hỏi: Để làm gì? Nhằm mục đích gì? (thường bắt đầu bằng từ: Để, Nhằm...).
-
---- TRANG 66 ---
-VIẾT: VIẾT BÀI VĂN THUẬT LẠI MỘT SỰ VIỆC
-Đề bài: Viết bài văn thuật lại một hoạt động có ý nghĩa mà trường hoặc lớp em đã tổ chức.
-
-[GỢI Ý]
-Chú ý sử dụng các từ ngữ chỉ trình tự: Đầu tiên, Sau đó, Tiếp theo, Cuối cùng.
-
---- TRANG 67 ---
-BÀI 16: NGỰA BIÊN PHÒNG
-ĐỌC
-NGỰA BIÊN PHÒNG
-Trên những nẻo đường tuần tra biên giới, chú ngựa biên phòng là người bạn đồng hành tin cậy của các chiến sĩ. Ngựa giúp các chú bộ đội thồ hàng, vượt qua những con dốc dựng đứng hay những dòng suối chảy xiết.
-Hình ảnh chú ngựa lầm lũi bước đi giữa sương mù miền biên viễn gợi lên vẻ đẹp của sự kiên trì và bền bỉ. Các chiến sĩ coi ngựa như người thân, luôn chăm sóc, vỗ về sau mỗi chuyến hành quân vất vả.
-
-1. Chú ngựa có vai trò gì trong việc tuần tra biên giới?
-2. Tình cảm của các chiến sĩ biên phòng đối với chú ngựa được thể hiện như thế nào?
-
---- TRANG 68 ---
-VIẾT: TRẢ BÀI VĂN THUẬT LẠI MỘT SỰ VIỆC
-- Đánh giá cách dùng từ ngữ gợi tả, gợi cảm trong bài văn.
-- Sửa lỗi về cấu trúc câu (chủ ngữ, vị ngữ, trạng ngữ).
-
---- TRANG 69 ---
-ĐỌC MỞ RỘNG
-Tìm đọc những câu chuyện về tình cảm thầy trò hoặc về cuộc sống của các chiến sĩ nơi biên giới, hải đảo.
-
---- TRANG 70 ---
-ÔN TẬP VÀ ĐÁNH GIÁ GIỮA HỌC KÌ II
-Tiết 1 - 2:
-1. Đọc lại các bài tập đọc từ bài 1 đến bài 8.
-2. Hệ thống hóa các kiến thức về câu, chủ ngữ, vị ngữ.
-
---- TRANG 71 ---
-Tiết 3 - 4:
-Luyện tập viết đoạn văn nêu tình cảm, cảm xúc về một người thân hoặc nhân vật văn học.
-
---- TRANG 72 ---
-Tiết 5: Ôn tập về trạng ngữ.
-Đặt câu có sử dụng trạng ngữ chỉ thời gian, nơi chốn, nguyên nhân, mục đích.
-
---- TRANG 73 ---
-[BÀI KIỂM TRA ĐỌC HIỂU TỔNG HỢP]
-Đọc văn bản "Hạt gạo làng ta" và trả lời câu hỏi...
-
---- TRANG 74 ---
-[BÀI KIỂM TRA VIẾT TỔNG HỢP]
-Viết bài văn thuật lại một buổi lễ kỷ niệm hoặc một hội diễn văn nghệ của trường em.
-
---- TRANG 75 ---
-[BẮT ĐẦU CHƯƠNG MỚI]
-TUẦN 28: THẾ GIỚI TRONG MẮT EM
-
-[Hình minh họa: Các bạn nhỏ quan sát thiên văn / Vẽ tranh phong cảnh]
-
---- TRANG 76 ---
-BÀI 17: BẦU TRỜI TRONG QUẢ TRỨNG
-ĐỌC
-BẦU TRỜI TRONG QUẢ TRỨNG
-Tôi chưa biết có bầu trời
-Cho đến khi tôi là gà con
-Nằm trong cái vỏ trứng tròn
-Ấm ơi là ấm!
-...
-Bỗng nhiên một ngày
-Vỏ trứng vỡ ra
-Một chân trời mới
-Hiện ra bao la!
-(Theo Xuân Quỳnh)
-
-1. Trước khi nở, chú gà con cảm nhận thế giới như thế nào?
-2. Khoảnh khắc vỏ trứng vỡ ra mang lại cho chú gà cảm giác gì?
-3. Bài thơ gợi cho em suy nghĩ gì về việc khám phá thế giới xung quanh?
-
---- TRANG 77 ---
-LUYỆN TẬP THEO VĂN BẢN ĐỌC
-Tìm các từ ngữ miêu tả cảm xúc của chú gà con trong bài thơ.
-
---- TRANG 78 ---
-LUYỆN TỪ VÀ CÂU: LUYỆN TẬP VỀ TRẠNG NGỮ
-1. Thêm trạng ngữ phù hợp cho các câu sau:
-a) .........., hoa phượng nở đỏ rực sân trường.
-b) .........., chúng em thường cùng nhau đá bóng.
-c) .........., em đã đạt điểm 10 môn Toán.
-
---- TRANG 79 ---
-VIẾT: TÌM HIỂU CÁCH VIẾT ĐOẠN VĂN NÊU Ý KIẾN VỀ MỘT VẤN ĐỀ TRONG ĐỜI SỐNG
-[LÝ THUYẾT]
-- Nêu vấn đề (Hiện tượng, việc làm...).
-- Nêu ý kiến tán thành hoặc không tán thành.
-- Đưa ra lí lẽ và dẫn chứng thuyết phục.
-
---- TRANG 80 ---
-BÀI 18: TIẾNG CHIM HÓT SÁNG NAY
-ĐỌC
-TIẾNG CHIM HÓT SÁNG NAY
-Sáng nay, tiếng chim hót vang cả khu vườn. Hình như chúng đang kể cho nhau nghe về những chuyến bay xa, về những miền đất lạ mà chúng vừa đi qua.
-Mỗi loài chim có một giọng hót riêng: sơn ca thánh thót, sáo sậu vui vẻ, chìa vôi ríu rít... Tất cả tạo nên một không gian tràn đầy sức sống, thôi thúc em bước vào một ngày mới thật hào hứng.
-
-1. Tiếng chim hót sáng nay gợi cho nhân vật "tôi" những liên tưởng gì?
-2. Kể tên các loài chim xuất hiện trong bài và giọng hót của chúng.
-
-==============================================
-HẾT TÀI LIỆU (TRANG 61-80)
-==============================================
-==============================================
-TÀI LIỆU: TIẾNG VIỆT 4 - TẬP HAI - KẾT NỐI TRI THỨC VỚI CUỘC SỐNG
-==============================================
-
---- TRANG 81 ---
-[TIẾP TỤC BÀI 18]
-3. Em thích nhất hình ảnh nào trong bài "Tiếng chim hót sáng nay"? Vì sao?
-4. Qua bài văn, tác giả muốn nhắn nhủ chúng ta điều gì về tình yêu thiên nhiên?
-
-LUYỆN TẬP THEO VĂN BẢN ĐỌC
-1. Tìm các từ ngữ gợi tả âm thanh của tiếng chim trong bài.
-2. Đặt một câu có trạng ngữ chỉ nơi chốn nói về hoạt động của loài chim.
-
---- TRANG 82 ---
-VIẾT: VIẾT ĐOẠN VĂN NÊU Ý KIẾN VỀ MỘT VẤN ĐỀ TRONG ĐỜI SỐNG
-Đề bài: Viết đoạn văn nêu ý kiến của em về việc học sinh cần tích cực tham gia các hoạt động ngoại khóa.
-
-[GỢI Ý]
-- Hoạt động ngoại khóa giúp rèn luyện sức khỏe.
-- Giúp mở rộng kiến thức và kỹ năng giao tiếp.
-- Tạo tinh thần thoải mái sau những giờ học căng thẳng.
-
---- TRANG 83 ---
-NÓI VÀ NGHE: KHÁM PHÁ THẾ GIỚI
-1. Chia sẻ về một vùng đất hoặc một hiện tượng thiên nhiên mà em muốn khám phá.
-2. Thảo luận: Chúng ta cần chuẩn bị những gì khi đi thám hiểm hoặc tham quan những địa danh mới?
-
---- TRANG 84 ---
-Tuần 29
-BÀI 19: ÁNH SÁNG CỦA ĐẢO
-ĐỌC
-ÁNH SÁNG CỦA ĐẢO
-Giữa đại dương bao la, những ngọn hải đăng như những con mắt thần không bao giờ chợp mắt. Ánh sáng từ ngọn hải đăng giúp tàu thuyền định hướng, tránh xa những bãi đá ngầm nguy hiểm.
-Những người thợ canh hải đăng lầm lũi làm việc bất kể đêm ngày, mưa bão. Đối với họ, giữ cho ngọn đèn luôn sáng chính là giữ gìn sự bình yên cho biển đảo quê hương.
-
-1. Ngọn hải đăng được ví với hình ảnh gì?
-2. Công việc của những người thợ canh hải đăng có ý nghĩa như thế nào?
-3. Em cảm nhận được điều gì về sự hy sinh của những người làm việc trên đảo xa?
-
---- TRANG 85 ---
-LUYỆN TỪ VÀ CÂU: LUYỆN TẬP VỀ TRẠNG NGỮ (TIẾP THEO)
-1. Thêm trạng ngữ chỉ mục đích cho các câu sau:
-a) .........., em tích cực luyện tập thể thao.
-b) .........., chúng em luôn giữ gìn vệ sinh lớp học.
-
-2. Chuyển phần in đậm thành trạng ngữ:
-Em đi học **để biết thêm nhiều điều hay**. -> .........., em đi học.
-
---- TRANG 86 ---
-VIẾT: TRẢ BÀI VIẾT ĐOẠN VĂN NÊU Ý KIẾN VỀ MỘT VẤN ĐỀ TRONG ĐỜI SỐNG
-- Xem xét cách trình bày lí lẽ và dẫn chứng.
-- Học tập cách dùng từ ngữ liên kết ý (Thứ nhất, Bên cạnh đó, Hơn nữa...).
-
---- TRANG 87 ---
-BÀI 20: NHỮNG CÁNH BUỒM TRẮNG
-ĐỌC
-NHỮNG CÁNH BUỒM TRẮNG
-Phía sau cánh buồm trắng
-Là chân trời bao la.
-Đưa thuyền đi khắp ngả
-Ghé thăm từng đảo xa.
-...
-(Theo Hoàng Trung Thông)
-
-1. Hình ảnh cánh buồm trắng gợi cho em liên tưởng đến điều gì?
-2. Những cánh buồm đưa con người đi đâu?
-
---- TRANG 88 ---
-VIẾT: TÌM Ý CHO BÀI VĂN MIÊU TẢ CON VẬT
-Đề bài: Miêu tả một con vật mà em yêu thích.
-
-[GỢI Ý]
-- Mở bài: Giới thiệu con vật (tên, loài, hoàn cảnh em gặp).
-- Thân bài:
-  + Tả ngoại hình (hình dáng, màu lông, mắt, tai...).
-  + Tả thói quen, hoạt động (cách ăn, cách chơi, đặc điểm riêng).
-- Kết bài: Nêu tình cảm của em đối với con vật đó.
-
---- TRANG 89 ---
-ĐỌC MỞ RỘNG
-Tìm đọc những câu chuyện về các nhà thám hiểm nổi tiếng thế giới (Columbus, Magellan...).
-
---- TRANG 90 ---
-Tuần 30
-BÀI 21: CHUYẾN DU HÀNH VỀ QUÁ KHỨ
-ĐỌC
-CHUYẾN DU HÀNH VỀ QUÁ KHỨ
-Tại bảo tàng, em như được bước vào một thế giới khác. Những cổ vật từ hàng ngàn năm trước kể cho chúng ta nghe về đời sống của cha ông: cách họ săn bắn, trồng trọt và làm đồ gốm.
-Chuyến tham quan không chỉ mang lại kiến thức lịch sử mà còn giúp chúng ta thêm trân trọng những giá trị truyền thống của dân tộc.
-
-1. Những cổ vật trong bảo tàng cho biết điều gì về cuộc sống của cha ông?
-2. Tại sao chúng ta cần bảo tồn các di tích lịch sử?
-
---- TRANG 91 ---
-LUYỆN TỪ VÀ CÂU: LỰA CHỌN TRẠNG NGỮ PHÙ HỢP
-Điền trạng ngữ phù hợp (Vì, Để, Lúc, Ở) vào chỗ trống:
-a) .......... bầu trời trong xanh, nắng vàng rực rỡ.
-b) .......... muốn học giỏi, Lan luôn chăm chỉ làm bài.
-c) .......... mưa to, mặt đường rất trơn.
-
---- TRANG 92 ---
-VIẾT: LẬP DÀN Ý CHO BÀI VĂN MIÊU TẢ CON VẬT
-Đề bài: Lập dàn ý miêu tả một con vật nuôi trong nhà (chó, mèo, gà...).
-
-[VÍ DỤ] Dàn ý tả chú mèo:
-- Mở bài: Chú mèo mướp nhà em tên là Miu.
-- Thân bài: Bộ lông xám, mắt xanh như ngọc, đôi tai thính, bốn chân có đệm thịt êm...
-- Kết bài: Em rất yêu Miu, Miu là dũng sĩ diệt chuột của nhà em.
-
---- TRANG 93 ---
-BÀI 22: NGÔI NHÀ CỦA CHÚNG TA
-ĐỌC
-NGÔI NHÀ CỦA CHÚNG TA
-Trái Đất là ngôi nhà chung của muôn loài. Từ những cánh rừng đại ngàn đến những dòng sông xanh mát, tất cả đều cần được bảo vệ.
-Chúng ta hãy cùng nhau hành động để giữ cho bầu không khí trong lành và nguồn nước không bị ô nhiễm. Mỗi hành động nhỏ hôm nay sẽ góp phần tạo nên một tương lai xanh ngày mai.
-
-1. "Ngôi nhà chung" trong bài nói về điều gì?
-2. Em có thể làm gì để bảo vệ ngôi nhà chung đó?
-
---- TRANG 94 ---
-NÓI VÀ NGHE: BẢO VỆ MÔI TRƯỜNG
-1. Thảo luận về tác hại của rác thải nhựa.
-2. Đề xuất các biện pháp giảm thiểu ô nhiễm môi trường tại trường học.
-
---- TRANG 95 ---
-VIẾT: VIẾT BÀI VĂN MIÊU TẢ CON VẬT
-Viết bài văn hoàn chỉnh dựa trên dàn ý đã lập ở trang 92. Chú ý sử dụng các hình ảnh so sánh, nhân hóa để bài viết thêm sinh động.
-
---- TRANG 96 ---
-Tuần 31
-BÀI 23: KHÁM PHÁ ĐẠI DƯƠNG
-ĐỌC
-KHÁM PHÁ ĐẠI DƯƠNG
-Dưới lòng đại dương là một thế giới kỳ thú với vô vàn loài sinh vật rực rỡ sắc màu. Những rặng san hô như những đóa hoa khổng lồ, những đàn cá nhỏ tung tăng bơi lội giữa những khe đá.
-Các nhà khoa học vẫn đang không ngừng thám hiểm để tìm hiểu thêm về bí mật của lòng biển sâu.
-
-1. Đại dương được miêu tả như thế nào trong bài?
-2. Em ấn tượng nhất với hình ảnh nào dưới lòng biển?
-
---- TRANG 97 ---
-LUYỆN TỪ VÀ CÂU: LUYỆN TẬP TỔNG HỢP VỀ CÂU
-1. Xác định CN, VN, TN trong câu: "Sáng sớm, trên những cành cây, chim chóc hót líu lo."
-2. Đặt một câu hỏi về một loài sinh vật biển mà em thích.
-
---- TRANG 98 ---
-VIẾT: TRẢ BÀI VĂN MIÊU TẢ CON VẬT
-- Nhận xét về cách tả đặc điểm ngoại hình và tính cách của con vật.
-- Sửa lỗi dùng từ lặp, lỗi diễn đạt.
-
---- TRANG 99 ---
-BÀI 24: NHỮNG BƯỚC CHÂN KHÔNG MỎI
-ĐỌC
-NHỮNG BƯỚC CHÂN KHÔNG MỎI
-Chuyện về các vận động viên leo núi đang chinh phục đỉnh Fansipan. Dù đường đi đầy trắc trở, dốc cao vực thẳm, nhưng với ý chí kiên cường, họ đã đặt chân lên "nóc nhà Đông Dương".
-
-1. Những khó khăn nào mà các vận động viên gặp phải khi leo núi?
-2. Điều gì đã giúp họ vượt qua thử thách?
-
---- TRANG 100 ---
-VẬN DỤNG
-Em có ước mơ được đi thám hiểm nơi nào không? Hãy vẽ một bức tranh về nơi đó và giới thiệu với các bạn.
-
-==============================================
-HẾT TÀI LIỆU (TRANG 81-100)
-==============================================
-==============================================
-TÀI LIỆU: TIẾNG VIỆT 4 - TẬP HAI - KẾT NỐI TRI THỨC VỚI CUỘC SỐNG
-==============================================
-
---- TRANG 101 ---
-Tuần 32
-BÀI 25: CÁNH CHIM TRÊN ĐẢO TRẦN
-ĐỌC
-CÁNH CHIM TRÊN ĐẢO TRẦN
-Đảo Trần nằm giữa biển khơi bao la. Những cánh chim hải âu sải cánh tự do trên bầu trời xanh ngắt. Đối với các chiến sĩ và người dân trên đảo, tiếng chim không chỉ là âm thanh của thiên nhiên mà còn là tín hiệu của sự bình yên và sức sống mãnh liệt.
-
-1. Đảo Trần được miêu tả như thế nào?
-2. Hình ảnh cánh chim hải âu mang ý nghĩa gì đối với con người nơi đây?
-
---- TRANG 102 ---
-LUYỆN TỪ VÀ CÂU: LUYỆN TẬP VỀ THÀNH PHẦN CÂU
-Xác định trạng ngữ và các thành phần chính trong câu:
-"Trên mặt biển, những cánh buồm trắng đang trôi lững lờ."
-- TN: ..........
-- CN: ..........
-- VN: ..........
-
---- TRANG 103 ---
-VIẾT: VIẾT ĐOẠN VĂN NÊU Ý KIẾN VỀ MỘT NHÂN VẬT TRONG CÂU CHUYỆN ĐÃ ĐỌC
-Đề bài: Viết đoạn văn nêu ý kiến của em về nhân vật chú bộ đội trong bài "Cánh chim trên đảo Trần".
-
---- TRANG 104 ---
-BÀI 26: KHÁM PHÁ THẾ GIỚI ĐỘNG VẬT
-ĐỌC
-KHÁM PHÁ THẾ GIỚI ĐỘNG VẬT
-Thế giới động vật vô cùng phong phú và đa dạng. Mỗi loài đều có những đặc điểm sinh học và tập tính riêng biệt để thích nghi với môi trường sống. Bảo vệ động vật chính là bảo vệ sự cân bằng của hệ sinh thái trên Trái Đất.
-
-1. Tại sao nói thế giới động vật vô cùng phong phú?
-2. Việc bảo vệ động vật có ý nghĩa như thế nào?
-
---- TRANG 105 ---
-NÓI VÀ NGHE: NHỮNG ĐIỀU EM BIẾT VỀ CÁC LOÀI ĐỘNG VẬT
-1. Kể tên một loài động vật có tập tính đặc biệt mà em biết (ví dụ: gấu ngủ đông, chim di cư...).
-2. Thảo luận: Chúng ta nên làm gì để chung tay bảo vệ các loài động vật quý hiếm?
-
---- TRANG 106 ---
-Tuần 33
-BÀI 27: CÂU CHUYỆN CỦA NHỮNG DÒNG SÔNG
-ĐỌC
-CÂU CHUYỆN CỦA NHỮNG DÒNG SÔNG
-Những dòng sông bắt nguồn từ núi cao, chảy qua những cánh đồng bát ngát rồi hòa mình vào biển cả. Sông bồi đắp phù sa, cung cấp nguồn nước ngọt quý giá cho cuộc sống con người. Sông cũng là nơi lưu giữ biết bao kỷ niệm tuổi thơ.
-
-1. Hành trình của những dòng sông bắt đầu và kết thúc ở đâu?
-2. Dòng sông mang lại lợi ích gì cho con người?
-
---- TRANG 107 ---
-LUYỆN TỪ VÀ CÂU: LUYỆN TẬP VỀ TRẠNG NGỮ (TỔNG HỢP)
-Điền trạng ngữ phù hợp chỉ nguyên nhân hoặc mục đích vào chỗ trống:
-a) .........., chúng em luôn chăm sóc cây xanh trong trường.
-b) .........., bạn Nam được cô giáo khen ngợi.
-
---- TRANG 108 ---
-VIẾT: VIẾT BÀI VĂN MIÊU TẢ CON VẬT (TỰ CHỌN)
-Học sinh tự chọn một con vật bất kỳ (đã quan sát trực tiếp hoặc qua tivi) để miêu tả. Chú ý tả những nét nổi bật về hình dáng và hoạt động.
-
---- TRANG 109 ---
-BÀI 28: NHỮNG VÙNG ĐẤT XA XÔI
-ĐỌC
-NHỮNG VÙNG ĐẤT XA XÔI
-Kể về những trải nghiệm của một nhà thám hiểm trẻ tuổi khi đặt chân đến những vùng đất mới lạ, nơi có những phong tục tập quán độc đáo và cảnh sắc thiên nhiên kỳ vĩ.
-
-1. Điều gì làm cho những vùng đất xa xôi trở nên hấp dẫn?
-2. Qua câu chuyện, em học được gì về tinh thần dũng cảm khám phá?
-
---- TRANG 110 ---
-ĐỌC MỞ RỘNG
-Tìm đọc sách khoa học khám phá về Trái Đất và vũ trụ dành cho thiếu nhi.
-
---- TRANG 111 ---
-Tuần 34
-BÀI 29: KHO BÁU CỦA ĐẠI DƯƠNG
-ĐỌC
-KHO BÁU CỦA ĐẠI DƯƠNG
-Đại dương không chỉ có sinh vật biển mà còn chứa đựng những khoáng sản quý giá và nguồn năng lượng vô tận. Khám phá đại dương là chìa khóa để con người hướng tới một tương lai bền vững.
-
---- TRANG 112 ---
-BÀI 30: TRÁI ĐẤT XANH
-ĐỌC
-TRÁI ĐẤT XANH
-Bài thơ kêu gọi mọi người cùng chung tay giữ gìn màu xanh cho Trái Đất: trồng thêm cây, bảo vệ rừng, không xả rác bừa bãi.
-
---- TRANG 113 ---
-VIẾT: TRẢ BÀI VĂN MIÊU TẢ CON VẬT (CUỐI KÌ)
-- Tuyên dương những bài viết có hình ảnh so sánh, nhân hóa sáng tạo.
-- Sửa lỗi diễn đạt và cấu trúc bài văn.
-
---- TRANG 114 ---
-Tuần 35
-ÔN TẬP VÀ ĐÁNH GIÁ CUỐI HỌC KÌ II
-Tiết 1 - 2: Ôn tập các văn bản đọc đã học trong học kì II.
-
---- TRANG 115 ---
-Tiết 3: Ôn tập về câu kể, câu hỏi, câu khiến, câu cảm.
-
---- TRANG 116 ---
-Tiết 4: Ôn tập về chủ ngữ, vị ngữ, trạng ngữ.
-
---- TRANG 117 ---
-Tiết 5: Luyện tập viết đoạn văn nêu ý kiến và đoạn văn nêu tình cảm, cảm xúc.
-
---- TRANG 118 ---
-Tiết 6: Luyện tập viết bài văn thuật lại một sự việc và bài văn miêu tả con vật.
-
---- TRANG 119 ---
-BÀI KIỂM TRA CUỐI HỌC KÌ II (ĐỀ MINH HỌA)
-I. Đọc hiểu văn bản: "Cây chuối quê em"
-1. Cây chuối gắn bó với đời sống người nông dân như thế nào?
-2. Tìm các trạng ngữ trong bài văn.
-
---- TRANG 120 ---
-II. Viết (Đề minh họa):
-Chọn 1 trong 2 đề sau:
-1. Viết bài văn miêu tả một con vật nuôi mà em yêu thích.
-2. Thuật lại một buổi tham quan, dã ngoại của lớp em.
-
---- TRANG 121 ---
-BẢNG TRA CỨU TỪ NGỮ
-(Liệt kê các từ khó và giải thích nghĩa xuất hiện trong sách)
-
---- TRANG 122 ---
-BẢNG TRA CỨU TÊN RIÊNG NƯỚC NGOÀI
-(Hướng dẫn cách đọc và viết tên các nhân vật, địa danh nước ngoài)
-
---- TRANG 123 ---
-[MỤC LỤC CHI TIẾT VÀ LỜI CẢM ƠN]
-(Thông tin về bản quyền và đội ngũ biên soạn)
-
-==============================================
-HẾT TÀI LIỆU
-==============================================
-`;
+// ═══ SÁCH GIÁO KHOA — GITHUB FETCH ═══
+const SACH_URLS = {
+  sgk: 'https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/SGK_Toan_4_Tap2_KetNoi.txt',
+  vbt: 'https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/VBT_Toan_4_Tap2_KetNoi.txt',
+  tv:  'https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/SGK_TiengViet_4_Tap2_KetNoi.txt',
+};
+const SACH_CACHE_KEY = { sgk: 'kua_sgk_cache', vbt: 'kua_vbt_cache', tv: 'kua_sgktv_cache' };
+var SGK_TOAN = localStorage.getItem(SACH_CACHE_KEY.sgk) || '';
+var VBT_TOAN = localStorage.getItem(SACH_CACHE_KEY.vbt) || '';
+
+async function fetchSach(key) {
+  try {
+    const res = await fetch(SACH_URLS[key] + '?t=' + Date.now());
+    if (!res.ok) throw new Error('HTTP ' + res.status);
+    const text = await res.text();
+    if (text && text.length > 100) {
+      localStorage.setItem(SACH_CACHE_KEY[key], text);
+      if (key === 'sgk') SGK_TOAN = text;
+      else if (key === 'vbt') VBT_TOAN = text;
+      else if (key === 'tv') SGK_TV = text;
+      console.log('[Sach] ' + key.toUpperCase() + ' loaded: ' + text.length + ' chars');
+    }
+  } catch(e) {
+    console.warn('[Sach] Fetch ' + key + ' failed:', e.message, '— dùng cache');
+  }
+}
+
+async function initSach() {
+  const hasSGK = SGK_TOAN && SGK_TOAN.length > 100;
+  const hasVBT = VBT_TOAN && VBT_TOAN.length > 100;
+  const hasTV  = SGK_TV   && SGK_TV.length   > 100;
+  const allCached = hasSGK && hasVBT && hasTV;
+  if (!allCached) {
+    const el = document.createElement('div');
+    el.id = 'sachLoadingEl';
+    el.style.cssText = 'position:fixed;bottom:120px;left:50%;transform:translateX(-50%);z-index:400;background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:6px 14px;font-family:Rajdhani,sans-serif;font-size:12px;color:var(--tx2);';
+    el.textContent = '📚 Đang tải sách giáo khoa...';
+    document.body.appendChild(el);
+    const toFetch = [];
+    if (!hasSGK) toFetch.push(fetchSach('sgk'));
+    if (!hasVBT) toFetch.push(fetchSach('vbt'));
+    if (!hasTV)  toFetch.push(fetchSach('tv'));
+    await Promise.all(toFetch);
+    el.remove();
+  } else {
+    // Có đủ cache — fetch mới ngầm, không block
+    Promise.all([fetchSach('sgk'), fetchSach('vbt'), fetchSach('tv')]);
+  }
+}
+var SGK_TV = localStorage.getItem('kua_sgktv_cache') || '';
 
 
 function traCuuSach(mon,trang,bai){
@@ -3565,6 +1037,8 @@ function boot(){
   const app=document.getElementById('app');app.style.display='flex';app.style.flexDirection='column';
   const m=M(),today=new Date().toDateString(),yest=new Date(Date.now()-86400000).toDateString();
   if(m.lastDay!==today){m.streak=m.lastDay===yest?m.streak+1:1;m.lastDay=today;m.sessions+=1;SM(m);}
+  // Tải SGK/VBT từ GitHub (có cache offline)
+  setTimeout(initSach, 800);
   const r=room();document.getElementById('sRoom').textContent=r;document.getElementById('pRoom').textContent=r;
   initVoice();updateUI();updateXuUI();startChat();
 }
@@ -3587,8 +1061,9 @@ function sys(){
   const ngayMaiInfo=thuNgay==='Thứ Bảy'||thuNgay==='Chủ Nhật'?ngayMai+' không có lịch học chính':ngayMai+': '+tkbNgayMai.filter(s=>s!=='—').join(', ')+(extraNgayMai?' | Học thêm: '+extraNgayMai:'');
   return 'THỜI GIAN THỰC TẾ HIỆN TẠI: '+thoiGian+'\n'
     +'NGÀY MAI ('+ngayMai+'): '+ngayMaiInfo+'\n'
-    +'(Fury PHẢI dùng thông tin ngày giờ này khi Kua hỏi về lịch, thời khóa biểu, buổi học)\n\n'
-    +'YÊU CẦU BẮT BUỘC: LUÔN LUÔN trả lời bằng TIẾNG VIỆT 100%. Không dùng tiếng Anh trừ khi dạy từ vựng tiếng Anh.\n\nAnh là Nick Fury — Giám đốc Shield, huấn luyện Peter Parker (tên thật Trần Xuân Khang, biệt danh Kua) trở thành Spider-Man thực thụ.\n\nTHÔNG TIN VỀ KUA:\n- Lớp 4A1, trường Chu Văn An, Hà Nội. 9-10 tuổi.\n- Hay lười, nóng tính, thích chơi hơn học, dễ xao nhãng.\n- Thể thao giỏi: bơi, bóng đá, cờ vua (mới học cùng ba).\n- Thần tượng ba Tuấn, sợ mẹ Huyền hơn.\n- Lịch học thêm: T2/T4/T5 chiều cô Hảo (cô CN) tại trường 17h30-18h45; T3/T5 tối T.Anh trung tâm MS Hoa 19h45-21h15; T6 và Chủ Nhật nhà cô Hòa (gia sư) 17h15-19h. Thứ 7 Kua nghỉ học thêm. Dạy đúng phương pháp SGK Kết nối tri thức lớp 4.'+hwTxt+'\n\nTIẾN ĐỘ: Level '+lv+' | '+m.xp+' XP | Streak '+m.streak+' ngày | Missions: '+m.missions+' | Huy hiệu: '+(m.badges.join(', ')||'chưa có')+'\nGhi chú: '+(m.notes.slice(-3).join(' | ')||'Buổi đầu tiên.')+'\n\nCÁCH GIAO TIẾP:\n- Fury xưng "anh", gọi Kua là "em" hoặc "Peter" hoặc "Agent Parker".\n- Giọng anh trai lớn: mạnh mẽ, thách thức, hài hước, gần gũi.\n- Khi lười: "Thật không? Spider-Man thật sự bỏ cuộc vì mấy bài toán à?"\n- Khi đúng nhanh trong 1 phút: "[+XU_NHANH]" thưởng 15 xu.\n- Khi đúng bình thường: "[+XP]" thưởng 5 xu.\n- Tạo nhiệm vụ: "[MISSION:nội dung]"\n- Thưởng huy hiệu: "[BADGE:tên]"\n- NGẮN GỌN. Cuối luôn có câu hỏi/thách thức. KHÔNG nói "con". KHÔNG dùng mày/tao.';
+    +'(Fury PHẢI dùng thông tin ngày giờ này khi Kua hỏi về lịch, thời khóa biểu, buổi học)\n'
+    +getExamSysInfo()+'\n\n'
+    +'YÊU CẦU BẮT BUỘC: LUÔN LUÔN trả lời bằng TIẾNG VIỆT 100%. Không dùng tiếng Anh trừ khi dạy từ vựng tiếng Anh.\n\nAnh là Nick Fury — Giám đốc Shield, huấn luyện Peter Parker (tên thật Trần Xuân Khang, biệt danh Kua) trở thành Spider-Man thực thụ.\n\nTHÔNG TIN VỀ KUA:\n- Lớp 4A1, trường Chu Văn An, Hà Nội. 9-10 tuổi.\n- Hay lười, nóng tính, thích chơi hơn học, dễ xao nhãng.\n- Thể thao giỏi: bơi, bóng đá, cờ vua (mới học cùng ba).\n- Thần tượng ba Tuấn, sợ mẹ Huyền hơn.\n- Lịch học thêm: T2/T4/T5 chiều cô Hảo (cô CN) tại trường 17h30-18h45; T3/T5 tối T.Anh trung tâm MS Hoa 19h45-21h15; T6 và Chủ Nhật nhà cô Hòa (gia sư) 17h15-19h. Thứ 7 Kua nghỉ học thêm. Dạy đúng phương pháp SGK Kết nối tri thức lớp 4.'+hwTxt+'\n\nTIẾN ĐỘ: Level '+lv+' | '+m.xp+' XP | Streak '+m.streak+' ngày | Missions: '+m.missions+' | Huy hiệu: '+(m.badges.join(', ')||'chưa có')+'\nGhi chú: '+(m.notes.slice(-3).join(' | ')||'Buổi đầu tiên.')+'\n\nQUY TẮC DẠY HỌC BẮT BUỘC:\n1. SAU MỖI BÀI: Yêu cầu Kua chép vào vở, chờ 3 phút → nhắc nếu chưa xong.\n2. NHIỀU ẢNH: Đọc hết tất cả ảnh trước, liệt kê Bài 1,2... rồi dạy từ nhỏ đến lớn.\n3. BÀI TOÁN LỜI GIẢI: KHÔNG hỏi thẳng phép tính → gợi mở tư duy bước nhỏ trước.\n4. VIẾT NGẮN NGẮT RÕ: Số và phép tính cách nhau bằng khoảng trắng.\n5. DẠY THEO SGK: Fury đọc lý thuyết SGK trước, dạy đúng phương pháp Kết nối tri thức.\n\nCÁCH GIAO TIẾP:\n- Fury xưng "anh", gọi Kua là "em" hoặc "Peter" hoặc "Agent Parker".\n- Giọng anh trai lớn: mạnh mẽ, thách thức, hài hước, gần gũi.\n- Khi lười: "Thật không? Spider-Man thật sự bỏ cuộc vì mấy bài toán à?"\n- Khi đúng nhanh trong 1 phút: "[+XU_NHANH]" thưởng 15 xu.\n- Khi đúng bình thường: "[+XP]" thưởng 5 xu.\n- Tạo nhiệm vụ: "[MISSION:nội dung]"\n- Thưởng huy hiệu: "[BADGE:tên]"\n- NGẮN GỌN. Cuối luôn có câu hỏi/thách thức. KHÔNG nói "con". KHÔNG dùng mày/tao.';
 }
 
 // ═══ API ═══
@@ -3648,6 +1123,7 @@ async function doSend(){
   if((!txt&&!imgs.length)||busy)return;
   el.value='';resize(el);clearImg();stopSpeak();
   addUserMsg(txt,imgs);showTyp();busy=true;document.getElementById('sendBtn').disabled=true;
+  trackQuestion();
   try{const r=await callAI(txt,imgs);hideTyp();addAIMsg(r);speak(r);}
   catch(e){hideTyp();addRaw('ai','⚠️ Lỗi: '+e.message);}
   busy=false;document.getElementById('sendBtn').disabled=false;
@@ -3688,6 +1164,9 @@ function addAIMsg(text){
   const mn=document.createElement('div');mn.className='mn';mn.textContent='FURY — S.H.I.E.L.D.';
   mc.appendChild(mn);parseReply(text,mc);
   wrap.appendChild(av);wrap.appendChild(mc);msgs.appendChild(wrap);msgs.scrollTop=msgs.scrollHeight;
+  // Hooks
+  parseTimerChep(text);
+  if(text&&(text.includes('[+XP]')||text.includes('[+XU_NHANH]')))trackAnswer(true);
 }
 function parseReply(text,con){
   const ms=[];
@@ -3763,7 +1242,9 @@ function stopMic(){try{SR&&SR.stop();}catch(e){}isRec=false;document.getElementB
 function speak(text){
   if(!window.speechSynthesis)return;stopSpeak();
   const c=text.replace(/\[.*?\]/g,'').replace(/[*_`#<>]/g,'').replace(/\n+/g,' ').replace(/S\.H\.I\.E\.L\.D\./gi,'Shield').trim();if(!c)return;
-  const u=new SpeechSynthesisUtterance(c);u.lang='vi-VN';u.rate=1.0;u.pitch=0.75;
+  // Thêm khoảng dừng sau số, phép tính, dấu chấm
+  const cc=c.replace(/(\d+)/g,'$1,').replace(/([+\-×÷=])/g,' $1 ').replace(/\.\s/g,'. , ');
+  const u=new SpeechSynthesisUtterance(cc);u.lang='vi-VN';u.rate=0.82;u.pitch=0.70;
   const vv=window.speechSynthesis.getVoices();
   const vi=vv.find(v=>v.lang==='vi-VN'&&!v.name.toLowerCase().includes('female'))||vv.find(v=>v.lang.startsWith('vi'));
   if(vi)u.voice=vi;
@@ -4270,24 +1751,47 @@ function isHWDone(id){
 }
 
 // ═══ THỜI KHÓA BIỂU ═══
-const TKB={
-  t2:['HĐTT','T.Anh','Toán','TV-Đọc','—','T.Anh','Thể dục','BDKTKN'],
-  t3:['T.Anh','T.Anh','Toán','LTVC','—','T.Anh(STEM)','Khoa học','HĐTN'],
-  t4:['Âm nhạc','Toán','TV-Đọc','TV-Đọc','—','Sử-Địa','Tin học','BDKTKN'],
-  t5:['Toán','TV-Viết','T.Anh','Công nghệ','—','Mỹ thuật','Khoa học','BDKTKN'],
-  t6:['Toán','Nói-nghe','Sử-Địa','Đạo đức','—','Thể dục','SH lớp','T.Anh'],
+// ═══ TKB DEFAULT ═══
+const TKB_DEFAULT={
+  t2:['Chào cờ','Toán','Tiếng Việt','Tiếng Việt','Tiếng Anh'],
+  t3:['Toán','Tiếng Việt','Khoa học','Đạo đức','Tin học'],
+  t4:['Toán','Tiếng Việt','Lịch sử & Địa lý','Mĩ thuật'],
+  t5:['Toán','Tiếng Việt','Khoa học','Thể dục'],
+  t6:['Toán','Tiếng Việt','Tiếng Anh','Âm nhạc','Sinh hoạt'],
+  t7:[],tcn:[],
 };
-const EXTRA={
-  t2:'Cô Hảo (CN) tại trường 17h30-18h45',
-  t3:'T.Anh trung tâm MS Hoa 19h45-21h15',
-  t4:'Cô Hảo (CN) tại trường 17h30-18h45',
-  t5:'Cô Hảo (CN) tại trường 17h30-18h45 | T.Anh trung tâm MS Hoa 19h45-21h15',
-  t6:'Nhà cô Hòa (gia sư) 17h15-19h',
+const EXTRA_DEFAULT={
+  t2:'Cô Hảo tại trường 17h30-18h45',
+  t3:'T.Anh MS Hoa 19h45-21h15',
+  t4:'Cô Hảo tại trường 17h30-18h45',
+  t5:'Cô Hảo tại trường 17h30-18h45 | T.Anh MS Hoa 19h45-21h15',
+  t6:'Cô Hòa (gia sư) 17h15-19h',
   t7:'',
-  tcn:'Nhà cô Hòa (gia sư) 17h15-19h',
+  tcn:'Cô Hòa (gia sư) 17h15-19h',
 };
+function getTKB(){
+  try{const s=localStorage.getItem('kua_tkb');return s?JSON.parse(s):JSON.parse(JSON.stringify(TKB_DEFAULT));}
+  catch(e){return JSON.parse(JSON.stringify(TKB_DEFAULT));}
+}
+function getEXTRA(){
+  try{const s=localStorage.getItem('kua_extra');return s?JSON.parse(s):JSON.parse(JSON.stringify(EXTRA_DEFAULT));}
+  catch(e){return JSON.parse(JSON.stringify(EXTRA_DEFAULT));}
+}
+function saveTKB(d){localStorage.setItem('kua_tkb',JSON.stringify(d));}
+function saveEXTRA(d){localStorage.setItem('kua_extra',JSON.stringify(d));}
+function getExams(){
+  try{const s=localStorage.getItem('kua_exams');return s?JSON.parse(s):[];}
+  catch(e){return [];}
+}
+function saveExams(arr){localStorage.setItem('kua_exams',JSON.stringify(arr));}
+// Compat shim — code cũ dùng TKB/EXTRA trực tiếp
+var TKB=getTKB();
+var EXTRA=getEXTRA();
 const DAYS_VI=['CN','T2','T3','T4','T5','T6','T7'];
 const DAYS_KEY=['tcn','t2','t3','t4','t5','t6','t7'];
+
+// ═══ TKB 3-TAB SYSTEM ═══
+var _tkbCurrentTab=0;
 
 function toggleTKB(){
   var popup=document.getElementById('tkbPopup');
@@ -4296,13 +1800,39 @@ function toggleTKB(){
     popup.classList.remove('open');
     return;
   }
-  renderTKB();
+  TKB=getTKB(); EXTRA=getEXTRA();
+  switchTKBTab(_tkbCurrentTab);
   popup.classList.add('open');
 }
 
-function renderTKB(){
-  var con=document.getElementById('tkbContent');
+function openTKBTab(tab){
+  _tkbCurrentTab=tab;
+  var popup=document.getElementById('tkbPopup');
+  if(!popup) return;
+  TKB=getTKB(); EXTRA=getEXTRA();
+  switchTKBTab(tab);
+  popup.classList.add('open');
+}
+
+function switchTKBTab(tab){
+  _tkbCurrentTab=tab;
+  [0,1,2].forEach(function(i){
+    var btn=document.getElementById('tkbTab'+i);
+    var con=document.getElementById('tkbTab'+i+'Content');
+    if(btn){ btn.style.background=i===tab?'var(--gold)':'transparent'; btn.style.color=i===tab?'#000':'var(--tx2)'; btn.style.borderColor=i===tab?'var(--gold)':'var(--bd)'; }
+    if(con) con.style.display=i===tab?'block':'none';
+  });
+  if(tab===0) renderTKBView();
+  else if(tab===1) renderExamTab();
+  else if(tab===2) renderEditTab();
+}
+
+function renderTKB(){ renderTKBView(); } // compat
+
+function renderTKBView(){
+  var con=document.getElementById('tkbTab0Content');
   if(!con) return;
+  var tkb=getTKB(), extra=getEXTRA();
   var today=new Date().getDay();
   var tmr=(today+1)%7;
   var days=[
@@ -4311,35 +1841,453 @@ function renderTKB(){
     {name:'Thứ Sáu',key:'t6',dow:5},{name:'Thứ Bảy',key:'t7',dow:6},
     {name:'Chủ Nhật',key:'tcn',dow:0},
   ];
-  // Sắp xếp: ngày mai lên đầu
-  var idx=days.findIndex(function(d){return d.dow===tmr;});
+  var idx=days.findIndex(function(d){return d.dow===today;});
   var sorted=[];
   for(var i=0;i<days.length;i++) sorted.push(days[(idx+i)%days.length]);
 
-  var html='';
+  // Exam banner inside tab
+  var exams=getExams();
+  var upcoming=exams.filter(function(e){ var d=new Date(e.date+'T00:00:00'); return d>=new Date(new Date().toDateString()); }).sort(function(a,b){return a.date.localeCompare(b.date);});
+  var bannerHtml='';
+  if(upcoming.length){
+    var nx=upcoming[0];
+    var diff=Math.ceil((new Date(nx.date+'T00:00:00')-new Date(new Date().toDateString()))/(1000*60*60*24));
+    var urgCls=diff<=3?'color:#ff453a;font-weight:900;':'color:var(--gold);';
+    bannerHtml='<div onclick="switchTKBTab(1)" style="background:var(--s2);border:1px solid var(--red);border-radius:9px;padding:8px 12px;margin-bottom:10px;cursor:pointer;">'+
+      '<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;color:var(--red2);">🎯 THI SẮP TỚI — bấm xem chi tiết</div>'+
+      '<div style="font-size:13px;color:var(--tx);margin-top:2px;">'+nx.subject+' ('+( nx.type==='gk'?'Giữa kỳ':'Học kỳ')+') — <span style="'+urgCls+'">'+diff+' ngày nữa</span></div>'+
+      '</div>';
+  }
+
+  var html=bannerHtml;
   sorted.forEach(function(d){
     var isToday=d.dow===today;
     var isTmr=d.dow===tmr;
-    var subs=TKB[d.key]||[];
-    var extra=EXTRA[d.key]||'';
-    var borderColor=isTmr?'var(--gold)':isToday?'var(--red)':'var(--bd)';
-    var nameColor=isTmr?'var(--gold)':isToday?'var(--red2)':'var(--tx)';
-    var label=isTmr?' 👉 Ngày mai':isToday?' (Hôm nay)':'';
-
+    var subs=tkb[d.key]||[];
+    var ex=extra[d.key]||'';
+    var borderColor=isToday?'var(--red)':isTmr?'var(--gold)':'var(--bd)';
+    var nameColor=isToday?'var(--red2)':isTmr?'var(--gold)':'var(--tx)';
+    var label=isToday?' (Hôm nay)':isTmr?' 👉 Ngày mai':'';
     html+='<div style="background:var(--s2);border:1px solid '+borderColor+';border-radius:10px;padding:10px 12px;margin-bottom:8px;">';
     html+='<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:'+nameColor+';margin-bottom:6px;">'+d.name+label+'</div>';
     if(subs.length){
-      html+='<div style="display:grid;grid-template-columns:1fr 1fr;gap:4px;margin-bottom:6px;">';
+      html+='<div style="display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;">';
       subs.forEach(function(s,i){
-        if(s==='—') return;
-        html+='<div style="font-size:11px;color:var(--tx2);background:var(--s3);border-radius:5px;padding:3px 6px;">'+(i+1)+'. '+s+'</div>';
+        if(!s||s==='—') return;
+        html+='<div style="font-size:11px;color:var(--tx2);background:var(--s3);border-radius:5px;padding:3px 7px;">'+s+'</div>';
       });
       html+='</div>';
     }
-    if(extra) html+='<div style="font-size:11px;color:var(--gold);">📚 '+extra+'</div>';
+    if(ex) html+='<div style="font-size:11px;color:var(--gold);">📚 '+ex+'</div>';
     html+='</div>';
   });
   con.innerHTML=html;
+}
+
+function renderExamTab(){
+  var con=document.getElementById('tkbTab1Content');
+  if(!con) return;
+  var exams=getExams();
+  var today=new Date(new Date().toDateString());
+  var html='<div style="margin-bottom:10px;">'+
+    '<button onclick="showAddExamForm()" style="width:100%;background:var(--blue);border:none;border-radius:8px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;padding:9px;cursor:pointer;">+ Thêm lịch thi</button>'+
+    '</div>';
+  html+='<div id="addExamForm" style="display:none;background:var(--s2);border:1px solid var(--bd2);border-radius:10px;padding:12px;margin-bottom:10px;">'+
+    '<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:var(--gold);margin-bottom:8px;">📝 Thêm lịch thi</div>'+
+    '<select id="examSubject" style="width:100%;background:var(--s1);border:1px solid var(--bd);border-radius:7px;color:var(--tx);font-size:13px;padding:7px;margin-bottom:6px;outline:none;">'+
+    '<option value="Toán">Toán</option><option value="Tiếng Việt">Tiếng Việt</option><option value="Tiếng Anh">Tiếng Anh</option>'+
+    '<option value="Khoa học">Khoa học</option><option value="Lịch sử & Địa lý">Lịch sử & Địa lý</option>'+
+    '<option value="Đạo đức">Đạo đức</option><option value="Tin học">Tin học</option><option value="Khác">Khác...</option>'+
+    '</select>'+
+    '<select id="examType" style="width:100%;background:var(--s1);border:1px solid var(--bd);border-radius:7px;color:var(--tx);font-size:13px;padding:7px;margin-bottom:6px;outline:none;">'+
+    '<option value="gk">Giữa kỳ</option><option value="hk">Học kỳ</option><option value="tx">Thường xuyên</option></select>'+
+    '<input id="examDate" type="date" style="width:100%;background:var(--s1);border:1px solid var(--bd);border-radius:7px;color:var(--tx);font-size:13px;padding:7px;margin-bottom:6px;outline:none;box-sizing:border-box;">'+
+    '<input id="examNote" type="text" placeholder="Ghi chú (tuỳ chọn)" style="width:100%;background:var(--s1);border:1px solid var(--bd);border-radius:7px;color:var(--tx);font-size:13px;padding:7px;margin-bottom:8px;outline:none;box-sizing:border-box;">'+
+    '<div style="display:flex;gap:6px;">'+
+    '<button onclick="submitExam()" style="flex:1;background:var(--green);border:none;border-radius:7px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;padding:8px;cursor:pointer;">✓ Lưu</button>'+
+    '<button onclick="document.getElementById(\'addExamForm\').style.display=\'none\'" style="flex:1;background:var(--s3);border:1px solid var(--bd);border-radius:7px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;padding:8px;cursor:pointer;">✕ Huỷ</button>'+
+    '</div></div>';
+
+  if(exams.length===0){
+    html+='<div style="text-align:center;color:var(--tx3);font-size:13px;padding:20px;">Chưa có lịch thi nào 🎉</div>';
+  } else {
+    var sorted=exams.slice().sort(function(a,b){return a.date.localeCompare(b.date);});
+    sorted.forEach(function(e){
+      var examDate=new Date(e.date+'T00:00:00');
+      var done=examDate<today;
+      var diff=Math.ceil((examDate-today)/(1000*60*60*24));
+      var diffTxt=done?'✓ Đã thi':(diff===0?'Hôm nay!':(diff+' ngày nữa'));
+      var urgent=!done&&diff<=3;
+      var typeLabel=e.type==='gk'?'Giữa kỳ':e.type==='hk'?'Học kỳ':'Thường xuyên';
+      html+='<div style="background:var(--s2);border:1px solid '+( urgent?'var(--red)':done?'var(--bd)':'var(--bd2)')+';border-radius:10px;padding:10px 12px;margin-bottom:8px;opacity:'+( done?'0.5':'1')+'">'+
+        '<div style="display:flex;justify-content:space-between;align-items:center;">'+
+        '<div>'+
+        '<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;color:var(--tx);">'+e.subject+' — '+typeLabel+'</div>'+
+        '<div style="font-size:11px;color:var(--tx2);">'+e.date.split('-').reverse().join('/')+(e.note?' · '+e.note:'')+'</div>'+
+        '</div>'+
+        '<div style="display:flex;align-items:center;gap:6px;">'+
+        '<span style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;'+( urgent?'color:var(--red);animation:examPulse 1s infinite':(done?'color:var(--green)':'color:var(--gold)'))+'">'+diffTxt+'</span>'+
+        '<button onclick="deleteExam(\''+e.id+'\')" style="background:transparent;border:1px solid var(--bd);border-radius:5px;color:var(--tx3);padding:2px 7px;cursor:pointer;font-size:11px;">✕</button>'+
+        '</div></div></div>';
+    });
+  }
+  con.innerHTML=html;
+  // set default date to tomorrow
+  var tomorrow=new Date(); tomorrow.setDate(tomorrow.getDate()+1);
+  var d=document.getElementById('examDate');
+  if(d) d.value=tomorrow.toISOString().slice(0,10);
+}
+
+function showAddExamForm(){
+  var f=document.getElementById('addExamForm');
+  if(f) f.style.display=f.style.display==='none'?'block':'none';
+}
+
+function submitExam(){
+  var sub=document.getElementById('examSubject').value;
+  var typ=document.getElementById('examType').value;
+  var dat=document.getElementById('examDate').value;
+  var note=document.getElementById('examNote').value;
+  if(!dat){alert('Chọn ngày thi nhé!');return;}
+  var exams=getExams();
+  exams.push({id:'ex_'+Date.now(),subject:sub,type:typ,date:dat,note:note});
+  saveExams(exams);
+  renderExamTab();
+  updateExamBanner();
+}
+
+function deleteExam(id){
+  var exams=getExams().filter(function(e){return e.id!==id;});
+  saveExams(exams);
+  renderExamTab();
+  updateExamBanner();
+}
+
+function updateExamBanner(){
+  var banner=document.getElementById('examBanner');
+  if(!banner) return;
+  var exams=getExams();
+  var today=new Date(new Date().toDateString());
+  var upcoming=exams.filter(function(e){ return new Date(e.date+'T00:00:00')>=today; }).sort(function(a,b){return a.date.localeCompare(b.date);});
+  if(!upcoming.length){ banner.style.display='none'; return; }
+  var nx=upcoming[0];
+  var diff=Math.ceil((new Date(nx.date+'T00:00:00')-today)/(1000*60*60*24));
+  banner.style.display='block';
+  banner.textContent='🎯 THI SẮP TỚI: '+nx.subject+' ('+( nx.type==='gk'?'Giữa kỳ':'Học kỳ')+') — còn '+diff+' ngày — bấm để xem';
+}
+
+function getExamSysInfo(){
+  var exams=getExams();
+  var today=new Date(new Date().toDateString());
+  var upcoming=exams.filter(function(e){ return new Date(e.date+'T00:00:00')>=today; }).sort(function(a,b){return a.date.localeCompare(b.date);});
+  if(!upcoming.length) return '';
+  return '\nLỊCH THI SẮP TỚI: '+upcoming.slice(0,3).map(function(e){
+    var diff=Math.ceil((new Date(e.date+'T00:00:00')-today)/(1000*60*60*24));
+    return e.subject+' ('+( e.type==='gk'?'Giữa kỳ':'Học kỳ')+') ngày '+e.date.split('-').reverse().join('/')+', còn '+diff+' ngày';
+  }).join(' | ')+' — Fury PHẢI nhắc Kua ôn thi!';
+}
+
+function renderEditTab(){
+  var con=document.getElementById('tkbTab2Content');
+  if(!con) return;
+  var tkb=getTKB(), extra=getEXTRA();
+  var days=[
+    {name:'Thứ Hai',key:'t2'},{name:'Thứ Ba',key:'t3'},
+    {name:'Thứ Tư',key:'t4'},{name:'Thứ Năm',key:'t5'},
+    {name:'Thứ Sáu',key:'t6'},{name:'Thứ Bảy',key:'t7'},
+    {name:'Chủ Nhật',key:'tcn'},
+  ];
+  var frag=document.createDocumentFragment();
+  days.forEach(function(d){
+    var subs=tkb[d.key]||[];
+    var ex=extra[d.key]||'';
+    var card=document.createElement('div');
+    card.style.cssText='background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:10px 12px;margin-bottom:8px;';
+    var title=document.createElement('div');
+    title.style.cssText='font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;color:var(--gold);margin-bottom:6px;';
+    title.textContent=d.name;
+    card.appendChild(title);
+    var chipRow=document.createElement('div');
+    chipRow.id='chips_'+d.key;
+    chipRow.style.cssText='display:flex;flex-wrap:wrap;gap:4px;margin-bottom:6px;';
+    subs.forEach(function(s,i){
+      var chip=document.createElement('span');
+      chip.style.cssText='background:var(--s3);border:1px solid var(--bd);border-radius:14px;font-size:11px;color:var(--tx2);padding:3px 8px;display:inline-flex;align-items:center;gap:4px;';
+      var txt=document.createTextNode(s+' ');
+      chip.appendChild(txt);
+      var del=document.createElement('span');
+      del.textContent='x';
+      del.style.cssText='cursor:pointer;color:var(--tx3);font-weight:bold;';
+      (function(dk,di){del.onclick=function(){removeSubject(dk,di);};})(d.key,i);
+      chip.appendChild(del);
+      chipRow.appendChild(chip);
+    });
+    card.appendChild(chipRow);
+    var addRow=document.createElement('div');
+    addRow.style.cssText='display:flex;gap:4px;margin-bottom:6px;';
+    var inp=document.createElement('input');
+    inp.id='addSub_'+d.key;
+    inp.type='text';
+    inp.placeholder='Them mon hoc...';
+    inp.style.cssText='flex:1;background:var(--s1);border:1px solid var(--bd);border-radius:7px;color:var(--tx);font-size:12px;padding:5px 8px;outline:none;';
+    (function(dk){inp.addEventListener('keydown',function(e){if(e.keyCode===13)addSubject(dk);});})(d.key);
+    var addBtn=document.createElement('button');
+    addBtn.textContent='+';
+    addBtn.style.cssText='background:var(--blue);border:none;border-radius:7px;color:#fff;font-size:11px;padding:5px 10px;cursor:pointer;';
+    (function(dk){addBtn.onclick=function(){addSubject(dk);};})(d.key);
+    addRow.appendChild(inp); addRow.appendChild(addBtn);
+    card.appendChild(addRow);
+    var exLabel=document.createElement('div');
+    exLabel.style.cssText='font-size:11px;color:var(--tx3);margin-bottom:2px;';
+    exLabel.textContent='Hoc them:';
+    card.appendChild(exLabel);
+    var exInp=document.createElement('input');
+    exInp.id='extra_'+d.key;
+    exInp.type='text';
+    exInp.value=ex;
+    exInp.placeholder='Lich hoc them...';
+    exInp.style.cssText='width:100%;background:var(--s1);border:1px solid var(--bd);border-radius:7px;color:var(--tx);font-size:12px;padding:5px 8px;outline:none;box-sizing:border-box;';
+    (function(dk){
+      exInp.addEventListener('blur',function(){saveExtraDay(dk);});
+      exInp.addEventListener('keydown',function(e){if(e.keyCode===13)this.blur();});
+    })(d.key);
+    card.appendChild(exInp);
+    frag.appendChild(card);
+  });
+  var resetBtn=document.createElement('button');
+  resetBtn.textContent='Khoi phuc mac dinh';
+  resetBtn.style.cssText='width:100%;margin-top:4px;background:transparent;border:1px solid var(--bd);border-radius:8px;color:var(--tx3);font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;padding:8px;cursor:pointer;';
+  resetBtn.onclick=resetTKBDefault;
+  frag.appendChild(resetBtn);
+  con.innerHTML='';
+  con.appendChild(frag);
+}
+
+function addSubject(dayKey){
+  var inp=document.getElementById('addSub_'+dayKey);
+  if(!inp||!inp.value.trim()) return;
+  var tkb=getTKB();
+  if(!tkb[dayKey]) tkb[dayKey]=[];
+  tkb[dayKey].push(inp.value.trim());
+  saveTKB(tkb); TKB=tkb;
+  inp.value='';
+  renderEditTab();
+}
+
+function removeSubject(dayKey,idx){
+  var tkb=getTKB();
+  if(tkb[dayKey]) tkb[dayKey].splice(parseInt(idx),1);
+  saveTKB(tkb); TKB=tkb;
+  renderEditTab();
+}
+
+function saveExtraDay(dayKey){
+  var inp=document.getElementById('extra_'+dayKey);
+  if(!inp) return;
+  var extra=getEXTRA();
+  extra[dayKey]=inp.value.trim();
+  saveEXTRA(extra); EXTRA=extra;
+}
+
+function resetTKBDefault(){
+  if(!confirm('Khôi phục TKB về mặc định? Dữ liệu chỉnh sửa sẽ mất.')) return;
+  saveTKB(JSON.parse(JSON.stringify(TKB_DEFAULT)));
+  saveEXTRA(JSON.parse(JSON.stringify(EXTRA_DEFAULT)));
+  TKB=getTKB(); EXTRA=getEXTRA();
+  renderEditTab();
+}
+
+
+// ═══ SGK/VBT LOOKUP FUNCTIONS ═══
+function traCuuSachTheoBai(sachName, soBai){
+  var sach = sachName === 'vbt' ? VBT_TOAN : SGK_TOAN;
+  var baiStr = 'BÀI ' + soBai;
+  var baiStr2 = 'Bài ' + soBai;
+  var lines = sach.split('\n');
+  var startIdx = -1;
+  for(var i=0;i<lines.length;i++){
+    if(lines[i].toUpperCase().indexOf(baiStr.toUpperCase())>-1 && lines[i].indexOf('BÀI')>-1){
+      startIdx = i; break;
+    }
+  }
+  if(startIdx<0) return 'Không tìm thấy '+baiStr2+' trong '+sachName.toUpperCase();
+  // Lấy tối đa 80 dòng từ bài đó
+  var result=[];
+  for(var j=startIdx;j<Math.min(startIdx+80,lines.length);j++){
+    result.push(lines[j]);
+    // Dừng khi gặp bài tiếp theo
+    if(j>startIdx+5 && lines[j].toUpperCase().indexOf('BÀI ')>-1 && j>startIdx+2) break;
+  }
+  return result.join('\n');
+}
+function getLyThuyetSGK(baiSo){
+  return traCuuSachTheoBai('sgk', baiSo);
+}
+
+// ═══ TIMER CHÉP BÀI ═══
+var _chepTimer = null;
+var _chepTimerEl = null;
+
+function startChepTimer(minutes){
+  minutes = minutes || 3;
+  if(_chepTimer) clearInterval(_chepTimer);
+  var sec = minutes * 60;
+  // Tạo UI timer nếu chưa có
+  if(!document.getElementById('chepTimerEl')){
+    var div = document.createElement('div');
+    div.id = 'chepTimerEl';
+    div.style.cssText = 'position:fixed;bottom:80px;right:14px;z-index:400;background:var(--gold);color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;border-radius:10px;padding:6px 12px;cursor:pointer;box-shadow:0 4px 12px rgba(0,0,0,.4);';
+    div.onclick = function(){ if(_chepTimer){clearInterval(_chepTimer);_chepTimer=null;this.style.display='none';} };
+    document.body.appendChild(div);
+  }
+  _chepTimerEl = document.getElementById('chepTimerEl');
+  _chepTimerEl.style.display = 'block';
+  _chepTimer = setInterval(function(){
+    sec--;
+    var m = Math.floor(sec/60), s = sec%60;
+    _chepTimerEl.textContent = '✏️ ' + m + ':' + (s<10?'0':'')+s;
+    if(sec <= 0){
+      clearInterval(_chepTimer); _chepTimer = null;
+      _chepTimerEl.style.display = 'none';
+      // Nhắc Kua
+      appendMsg('Fury','⏰ Chép xong chưa Peter? Nếu xong rồi thì mình tiếp tục nhé!','ai');
+    }
+  }, 1000);
+  _chepTimerEl.textContent = '✏️ ' + minutes + ':00';
+}
+
+function parseTimerChep(text){
+  // Hook: nếu Fury nói "chép vào vở" → tự động bật timer
+  if(text && (text.includes('chép vào vở') || text.includes('chép bài') || text.includes('Chép vào vở') || text.includes('Chép bài'))){
+    setTimeout(function(){ startChepTimer(3); }, 500);
+  }
+}
+
+// ═══ THỐNG KÊ HỌC TẬP ═══
+function getStats(){
+  try{ return JSON.parse(localStorage.getItem('kua_stats')||'{"total":0,"correct":0,"times":[],"daily":{}}'); }
+  catch(e){ return {total:0,correct:0,times:[],daily:{}}; }
+}
+function saveStats(s){ localStorage.setItem('kua_stats',JSON.stringify(s)); }
+
+// ═══ STATS CLOUD SYNC ═══
+async function syncStatsToCloud(){
+  const isKua = localStorage.getItem('isKuaDevice')==='true';
+  if(!isKua) return; // chỉ máy Kua mới push
+  try{
+    const s = getStats();
+    await sbFetch('progress?room_code=eq.KUA', {
+      method: 'PATCH',
+      prefer: 'return=minimal',
+      body: JSON.stringify({ stats_json: JSON.stringify(s), stats_updated: new Date().toISOString() })
+    });
+    console.log('[Stats] synced to cloud');
+  }catch(e){ console.warn('[Stats] sync err:', e.message); }
+}
+
+async function loadStatsFromCloud(){
+  try{
+    const data = await sbFetch('progress?room_code=eq.KUA&limit=1');
+    if(!data||!data.length||!data[0].stats_json) return null;
+    return JSON.parse(data[0].stats_json);
+  }catch(e){ console.warn('[Stats] load err:', e.message); return null; }
+}
+function trackQuestion(){
+  var s=getStats();
+  s.total=(s.total||0)+1;
+  var today=new Date().toISOString().slice(0,10);
+  s.daily=s.daily||{};
+  s.daily[today]=s.daily[today]||{total:0,correct:0};
+  s.daily[today].total++;
+  s._lastQ=Date.now();
+  saveStats(s);
+}
+function trackAnswer(correct){
+  var s=getStats();
+  if(correct){
+    s.correct=(s.correct||0)+1;
+    var today=new Date().toISOString().slice(0,10);
+    s.daily=s.daily||{};
+    if(s.daily[today]) s.daily[today].correct=(s.daily[today].correct||0)+1;
+    if(s._lastQ){ s.times=s.times||[]; s.times.push(Date.now()-s._lastQ); if(s.times.length>50) s.times=s.times.slice(-50); }
+  }
+  saveStats(s);
+}
+function closeStatsOverlay(){
+  var o=document.getElementById('statsOverlay');
+  if(o) o.remove();
+}
+function showStats(){
+  var pin=prompt('Nhập PIN mẹ (2790):');
+  if(!pin||pin.trim()!==(localStorage.getItem('parent_pin')||'2790')){ alert('❌ PIN không đúng!'); return; }
+  var isKua=localStorage.getItem('isKuaDevice')==='true';
+  if(isKua){
+    // Máy Kua: đọc local, sync lên cloud luôn
+    _renderStatsOverlay(getStats());
+    syncStatsToCloud();
+  } else {
+    // Máy mẹ/bố: fetch từ cloud
+    var loading=document.createElement('div');
+    loading.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.7);z-index:700;display:flex;align-items:center;justify-content:center;';
+    loading.innerHTML='<div style="color:#fff;font-family:Rajdhani,sans-serif;font-size:16px;">⏳ Đang tải thống kê Kua...</div>';
+    document.body.appendChild(loading);
+    loadStatsFromCloud().then(function(s){
+      loading.remove();
+      if(!s){ alert('⚠️ Chưa có dữ liệu từ máy Kua. Kua chưa học buổi nào hoặc chưa đồng bộ.'); return; }
+      _renderStatsOverlay(s);
+    }).catch(function(){
+      loading.remove();
+      alert('❌ Không lấy được dữ liệu. Kiểm tra kết nối mạng.');
+    });
+  }
+}
+
+function _renderStatsOverlay(s){
+  var pct=s.total>0?Math.round(s.correct/s.total*100):0;
+  var avgTime=s.times&&s.times.length?Math.round(s.times.reduce(function(a,b){return a+b;},0)/s.times.length/1000):0;
+  var days7='';
+  for(var i=6;i>=0;i--){
+    var d=new Date(); d.setDate(d.getDate()-i);
+    var dk=d.toISOString().slice(0,10);
+    var dd=s.daily&&s.daily[dk]||{total:0,correct:0};
+    var pct2=dd.total>0?Math.round(dd.correct/dd.total*100):0;
+    var bar=''; for(var b=0;b<Math.round(pct2/10);b++) bar+='█'; for(var b2=Math.round(pct2/10);b2<10;b2++) bar+='░';
+    var isToday=i===0;
+    days7+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:5px;">'+
+      '<div style="font-size:11px;color:'+(isToday?'var(--gold)':'var(--tx3)')+';width:40px;font-weight:'+(isToday?'700':'400')+';">'+dk.slice(5)+'</div>'+
+      '<div style="font-size:11px;color:var(--gold);letter-spacing:1px;">'+bar+'</div>'+
+      '<div style="font-size:11px;color:var(--tx2);">'+dd.total+' câu '+pct2+'%</div>'+
+      '</div>';
+  }
+  var cloudNote=localStorage.getItem('isKuaDevice')==='true'?
+    '<div style="font-size:10px;color:var(--tx3);text-align:center;margin-top:8px;">📱 Máy Kua — dữ liệu thực</div>':
+    '<div style="font-size:10px;color:var(--green);text-align:center;margin-top:8px;">☁️ Dữ liệu từ cloud Kua</div>';
+  var existing=document.getElementById('statsOverlay');
+  if(existing) existing.remove();
+  var ov=document.createElement('div');
+  ov.id='statsOverlay';
+  ov.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.85);z-index:600;display:flex;align-items:center;justify-content:center;padding:20px;';
+  ov.onclick=function(e){if(e.target===ov)ov.remove();};
+  ov.innerHTML='<div style="background:var(--s1);border:1px solid var(--bd2);border-radius:16px;padding:20px;max-width:380px;width:100%;max-height:85vh;overflow-y:auto;">'+
+    '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:14px;">'+
+    '<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:18px;color:var(--gold);">📊 THỐNG KÊ HỌC TẬP</div>'+
+    '<button onclick="closeStatsOverlay()" style="background:transparent;border:1px solid var(--bd);border-radius:7px;color:var(--tx2);padding:4px 10px;cursor:pointer;">✕</button>'+
+    '</div>'+
+    '<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;margin-bottom:16px;">'+
+    '<div style="background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:10px;text-align:center;">'+
+    '<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:22px;color:var(--tx);">'+s.total+'</div>'+
+    '<div style="font-size:10px;color:var(--tx3);">Tổng câu</div></div>'+
+    '<div style="background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:10px;text-align:center;">'+
+    '<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:22px;color:var(--green);">'+pct+'%</div>'+
+    '<div style="font-size:10px;color:var(--tx3);">Đúng</div></div>'+
+    '<div style="background:var(--s2);border:1px solid var(--bd);border-radius:10px;padding:10px;text-align:center;">'+
+    '<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:22px;color:var(--gold);">'+(avgTime||'?')+'s</div>'+
+    '<div style="font-size:10px;color:var(--tx3);">TB/câu</div></div>'+
+    '</div>'+
+    '<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;color:var(--tx3);letter-spacing:.08em;text-transform:uppercase;margin-bottom:8px;">📅 7 ngày gần nhất</div>'+
+    days7+cloudNote+
+    '</div>';
+  document.body.appendChild(ov);
 }
 
 // ═══ KẾT THÚC BUỔI HỌC ═══
@@ -4349,8 +2297,9 @@ async function endSession(){
   const extra=EXTRA[dayKey]||'không có lịch thêm';
   const p='[Kua vừa kết thúc buổi học hôm nay. Tổng kết: XP hôm nay='+m.xp+', Tổng xu='+xu+', Streak='+m.streak+' ngày, Missions='+m.missions+'. Lịch học thêm hôm nay: '+extra+'. Hãy: 1) Tổng kết ngắn việc Kua đã làm. 2) Khen thưởng. 3) Nhắc soạn sách vở cho ngày mai. 4) Nhắc lịch học thêm tiếp theo. Giọng Fury vui, ngắn gọn.]';
   qs(p);
-  // Sync progress lên cloud khi kết thúc buổi học
+  // Sync progress + stats lên cloud khi kết thúc buổi học
   setTimeout(syncProgressToCloud, 1000);
+  setTimeout(syncStatsToCloud, 1500);
 }
 
 // ═══ TỐI ƯU TAB A11 ═══
@@ -4383,6 +2332,7 @@ window.onload=()=>{
   document.addEventListener('touchstart',unlockAudio,{once:true});
   document.addEventListener('click',unlockAudio,{once:true});
   setTimeout(animateSlogan,800);
+  setTimeout(updateExamBanner,500);
   const k=localStorage.getItem('sk3');
   const g=localStorage.getItem('gem3');
   if(k)key=k;
@@ -4400,6 +2350,11 @@ window.onload=()=>{
     }
     // Ping Supabase mỗi 6 ngày
     setInterval(pingSupabase, 6*24*60*60*1000);
+    // Máy Kua: auto-sync stats lên cloud mỗi 5 phút
+    const isKuaDev = localStorage.getItem('isKuaDevice')==='true';
+    if(isKuaDev){
+      setInterval(function(){ syncStatsToCloud(); }, 5*60*1000);
+    }
     // Kiểm tra bài tập mới sau khi load xong
     setTimeout(checkAndShowHWAlert, 500);
   }, 1500);
