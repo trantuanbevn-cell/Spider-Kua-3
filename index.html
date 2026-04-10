@@ -1282,9 +1282,18 @@ function speak(text){
 }
 
 function showTTSSettings(){
-  const tts=getTTSSettings();
+  // Toggle: if already open, close
   const existing=document.getElementById('ttsSettingsOL');
   if(existing){existing.remove();return;}
+  const tts=getTTSSettings();
+
+  // Backdrop (transparent, closes on click outside)
+  const bd=document.createElement('div');
+  bd.id='ttsSettingsBD';
+  bd.style.cssText='position:fixed;inset:0;z-index:499;';
+  bd.onclick=function(){ closeTTSPanel(); };
+  document.body.appendChild(bd);
+
   const ov=document.createElement('div');
   ov.id='ttsSettingsOL';
   ov.style.cssText='position:fixed;bottom:140px;right:14px;z-index:500;background:var(--s1);border:1px solid var(--bd2);border-radius:14px;padding:16px;width:240px;box-shadow:0 8px 24px rgba(0,0,0,.5);';
@@ -1297,54 +1306,80 @@ function showTTSSettings(){
 
   // Toggle row
   const toggleRow=document.createElement('div');
-  toggleRow.style.cssText='display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;';
+  toggleRow.style.cssText='display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;';
   const toggleLabel=document.createElement('span');
   toggleLabel.style.cssText='font-size:12px;color:var(--tx2);';
   toggleLabel.textContent='Bật giọng đọc';
-  const toggleBtn=document.createElement('div');
-  toggleBtn.style.cssText='width:40px;height:22px;border-radius:11px;background:'+(tts.enabled?'var(--green)':'var(--s3)')+';border:1px solid var(--bd);cursor:pointer;position:relative;transition:background .2s;';
+  const toggleWrap=document.createElement('div');
+  toggleWrap.id='ttsToggleWrap';
+  toggleWrap.style.cssText='width:40px;height:22px;border-radius:11px;background:'+(tts.enabled?'var(--green)':'var(--s3)')+';border:1px solid var(--bd);cursor:pointer;position:relative;transition:background .2s;';
   const dot=document.createElement('div');
+  dot.id='ttsToggleDot';
   dot.style.cssText='position:absolute;top:2px;left:'+(tts.enabled?'19px':'2px')+';width:17px;height:17px;border-radius:50%;background:#fff;transition:left .2s;';
-  toggleBtn.appendChild(dot);
-  toggleBtn.onclick=toggleTTS;
-  toggleRow.appendChild(toggleLabel); toggleRow.appendChild(toggleBtn);
+  toggleWrap.appendChild(dot);
+  toggleWrap.onclick=function(e){
+    e.stopPropagation();
+    const cur=getTTSSettings();
+    const newVal=cur.enabled?'0':'1';
+    saveTTSSetting('kua_tts_on',newVal);
+    if(cur.enabled) stopSpeak();
+    // Update UI in place
+    const nowOn=newVal==='1';
+    toggleWrap.style.background=nowOn?'var(--green)':'var(--s3)';
+    dot.style.left=nowOn?'19px':'2px';
+  };
+  toggleRow.appendChild(toggleLabel); toggleRow.appendChild(toggleWrap);
   ov.appendChild(toggleRow);
 
-  // Rate slider
+  // Slider builder
   function makeSlider(labelText, storageKey, min, max, step, value, idLabel){
-    const wrap=document.createElement('div'); wrap.style.marginBottom='8px';
+    const wrap=document.createElement('div'); wrap.style.marginBottom='10px';
     const hdr=document.createElement('div'); hdr.style.cssText='display:flex;justify-content:space-between;margin-bottom:4px;';
     const lbl=document.createElement('span'); lbl.style.cssText='font-size:12px;color:var(--tx2);'; lbl.textContent=labelText;
-    const val=document.createElement('span'); val.id=idLabel; val.style.cssText='font-size:12px;color:var(--gold);'; val.textContent=parseFloat(value).toFixed(2);
-    hdr.appendChild(lbl); hdr.appendChild(val); wrap.appendChild(hdr);
-    const sl=document.createElement('input'); sl.type='range'; sl.min=min; sl.max=max; sl.step=step; sl.value=value;
-    sl.style.cssText='width:100%;accent-color:var(--gold);';
-    sl.oninput=function(){ saveTTSSetting(storageKey, this.value); document.getElementById(idLabel).textContent=parseFloat(this.value).toFixed(2); };
+    const valEl=document.createElement('span'); valEl.id=idLabel; valEl.style.cssText='font-size:12px;color:var(--gold);'; valEl.textContent=parseFloat(value).toFixed(2);
+    hdr.appendChild(lbl); hdr.appendChild(valEl); wrap.appendChild(hdr);
+    const sl=document.createElement('input'); sl.type='range';
+    sl.min=String(min); sl.max=String(max); sl.step=String(step); sl.value=String(value);
+    sl.style.cssText='width:100%;accent-color:var(--gold);cursor:pointer;';
+    sl.addEventListener('input', function(){
+      saveTTSSetting(storageKey, this.value);
+      var lbEl=document.getElementById(idLabel);
+      if(lbEl) lbEl.textContent=parseFloat(this.value).toFixed(2);
+    });
     wrap.appendChild(sl);
     return wrap;
   }
   ov.appendChild(makeSlider('Tốc độ đọc','kua_tts_rate',0.5,1.5,0.05,tts.rate,'ttsRateLabel'));
   ov.appendChild(makeSlider('Cao độ giọng','kua_tts_pitch',0.3,1.2,0.05,tts.pitch,'ttsPitchLabel'));
 
-  // Buttons
+  // Test button
   const testBtn=document.createElement('button');
-  testBtn.style.cssText='width:100%;background:var(--s2);border:1px solid var(--bd);border-radius:8px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;padding:7px;cursor:pointer;margin-bottom:6px;';
+  testBtn.style.cssText='width:100%;background:var(--s2);border:1px solid var(--bd);border-radius:8px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;padding:8px;cursor:pointer;margin-bottom:6px;';
   testBtn.textContent='▶ Thử giọng đọc';
-  testBtn.onclick=testTTSVoice;
+  testBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    testTTSVoice();
+  });
+  ov.appendChild(testBtn);
+
+  // Reset button
   const resetBtn=document.createElement('button');
-  resetBtn.style.cssText='width:100%;background:transparent;border:1px solid var(--bd);border-radius:8px;color:var(--tx3);font-family:Rajdhani,sans-serif;font-size:11px;padding:5px;cursor:pointer;';
+  resetBtn.style.cssText='width:100%;background:transparent;border:1px solid var(--bd);border-radius:8px;color:var(--tx3);font-family:Rajdhani,sans-serif;font-size:11px;padding:6px;cursor:pointer;';
   resetBtn.textContent='↩ Về mặc định';
-  resetBtn.onclick=resetTTS;
-  ov.appendChild(testBtn); ov.appendChild(resetBtn);
+  resetBtn.addEventListener('click', function(e){
+    e.stopPropagation();
+    resetTTS();
+  });
+  ov.appendChild(resetBtn);
 
   document.body.appendChild(ov);
-  setTimeout(function(){
-    document.addEventListener('click', function closeTTS(e){
-      if(!ov.contains(e.target) && e.target.id!=='ttsSettingsBtn'){
-        ov.remove(); document.removeEventListener('click', closeTTS);
-      }
-    });
-  }, 100);
+}
+
+function closeTTSPanel(){
+  var ov=document.getElementById('ttsSettingsOL');
+  var bd=document.getElementById('ttsSettingsBD');
+  if(ov) ov.remove();
+  if(bd) bd.remove();
 }
 
 function toggleTTS(){
@@ -1352,7 +1387,6 @@ function toggleTTS(){
   const newVal = tts.enabled ? '0' : '1';
   saveTTSSetting('kua_tts_on', newVal);
   if(tts.enabled) stopSpeak();
-  showTTSSettings(); // re-render to update toggle
 }
 
 function testTTSVoice(){
@@ -1363,7 +1397,17 @@ function resetTTS(){
   saveTTSSetting('kua_tts_rate','0.82');
   saveTTSSetting('kua_tts_pitch','0.70');
   saveTTSSetting('kua_tts_on','1');
-  showTTSSettings();
+  // Update sliders in place if panel open
+  var rSlider=document.querySelector('#ttsSettingsOL input[type=range]:first-of-type');
+  var rl=document.getElementById('ttsRateLabel');
+  if(rSlider){rSlider.value='0.82'; if(rl) rl.textContent='0.82';}
+  var pSlider=document.querySelector('#ttsSettingsOL input[type=range]:last-of-type');
+  var pl=document.getElementById('ttsPitchLabel');
+  if(pSlider){pSlider.value='0.70'; if(pl) pl.textContent='0.70';}
+  var tw=document.getElementById('ttsToggleWrap');
+  var td=document.getElementById('ttsToggleDot');
+  if(tw){tw.style.background='var(--green)';}
+  if(td){td.style.left='19px';}
 }
 function stopSpeak(){window.speechSynthesis?.cancel();document.getElementById('spkEl').classList.remove('on');}
 
