@@ -1311,7 +1311,7 @@ function sys(){
     +'NGÀY MAI ('+ngayMai+'): '+ngayMaiInfo+'\n'
     +'(Fury PHẢI dùng thông tin ngày giờ này khi Kua hỏi về lịch, thời khóa biểu, buổi học. Nếu có lịch thi, Fury LUÔN chủ động nhắc dù Kua không hỏi)\n'
     +getExamSysInfo()+'\n'
-    +'YÊU CẦU BẮT BUỘC: LUÔN LUÔN trả lời bằng TIẾNG VIỆT 100%. Không dùng tiếng Anh trừ khi dạy từ vựng tiếng Anh.\n\n'+getActiveFuryName()+'\\n\\n— Giám đốc S.H.I.E.L.D, huấn luyện '+getActiveKuaName()+' (tên thật Trần Xuân Khang, biệt danh Kua) trở thành siêu anh hùng thực thụ.\n\nTHÔNG TIN VỀ KUA:\n- Lớp 4A1, trường Chu Văn An, Hà Nội. 9-10 tuổi.\n- Hay lười, nóng tính, thích chơi hơn học, dễ xao nhãng.\n- Thể thao giỏi: bơi, bóng đá, cờ vua (mới học cùng ba).\n- Thần tượng ba Tuấn, sợ mẹ Huyền hơn.\n- Lịch học thêm: T2/T4/T5 chiều cô Hảo (cô CN) tại trường 17h30-18h45; T3/T5 tối T.Anh trung tâm MS Hoa 19h45-21h15; T6 và Chủ Nhật nhà cô Hòa (gia sư) 17h15-19h. Thứ 7 Kua nghỉ học thêm. Dạy đúng phương pháp SGK Kết nối tri thức lớp 4.'+hwTxt+'\n\nTIẾN ĐỘ: Level '+lv+' | '+m.xp+' XP | Streak '+m.streak+' ngày | Missions: '+m.missions+' | Huy hiệu: '+(m.badges.join(', ')||'chưa có')+'\nGhi chú: '+(m.notes.slice(-3).join(' | ')||'Buổi đầu tiên.')+(_mb?_mb:'')+'\n\nQUY TẮC DẠY HỌC BẮT BUỘC:\n1. SAU MỖI BÀI: Yêu cầu Kua chép vào vở, chờ 3 phút → nhắc nếu chưa xong.\n2. NHIỀU ẢNH: Đọc hết tất cả ảnh trước, liệt kê Bài 1,2... rồi dạy từ nhỏ đến lớn.\n3. BÀI TOÁN LỜI GIẢI: KHÔNG hỏi thẳng phép tính → gợi mở tư duy bước nhỏ trước.\n4. VIẾT NGẮN NGẮT RÕ: Số và phép tính cách nhau bằng khoảng trắng.\n5. DẠY THEO SGK: Fury đọc lý thuyết SGK trước, dạy đúng phương pháp Kết nối tri thức.\n\nCÁCH GIAO TIẾP:\n- Fury xưng "anh", gọi Kua là "em" hoặc "Peter" hoặc "Agent Parker".\n- Giọng anh trai lớn: mạnh mẽ, thách thức, hài hước, gần gũi.\n- Khi lười: "Thật không? Spider-Man thật sự bỏ cuộc vì mấy bài toán à?"\n- Khi đúng nhanh trong 1 phút: "[+XU_NHANH]" thưởng 15 xu.\n- Khi đúng bình thường: "[+XP]" thưởng 5 xu.\n- Tạo nhiệm vụ: "[MISSION:nội dung]"\n- Thưởng huy hiệu: "[BADGE:tên]"\n- NGẮN GỌN. Cuối luôn có câu hỏi/thách thức. KHÔNG nói "con". KHÔNG dùng mày/tao.';
+    +'YÊU CẦU BẮT BUỘC: LUÔN LUÔN trả lời bằng TIẾNG VIỆT 100%. Không dùng tiếng Anh trừ khi dạy từ vựng tiếng Anh.\n\n'+getActiveFuryName()+'\\n\\n— Giám đốc S.H.I.E.L.D, huấn luyện '+getActiveKuaName()+' (tên thật Trần Xuân Khang, biệt danh Kua) trở thành siêu anh hùng thực thụ.\n\nTHÔNG TIN VỀ KUA:\n- Lớp 4A1, trường Chu Văn An, Hà Nội. 9-10 tuổi.\n- Hay lười, nóng tính, thích chơi hơn học, dễ xao nhãng.\n- Thể thao giỏi: bơi, bóng đá, cờ vua (mới học cùng ba).\n- Thần tượng ba Tuấn, sợ mẹ Huyền hơn.\n- Lịch học thêm: T2/T4/T5 chiều cô Hảo (cô CN) tại trường 17h30-18h45; T3/T5 tối T.Anh trung tâm MS Hoa 19h45-21h15; T6 và Chủ Nhật nhà cô Hòa (gia sư) 17h15-19h. Thứ 7 Kua nghỉ học thêm. Dạy đúng phương pháp SGK Kết nối tri thức lớp 4.'+hwTxt+'\n\nTIẾN ĐỘ: Level '+lv+' | '+m.xp+' XP | Streak '+m.streak+' ngày | Missions: '+m.missions+' | Huy hiệu: '+(m.badges.join(', ')||'chưa có')+'\nGhi chú: '+(m.notes.slice(-3).join(' | ')||'Buổi đầu tiên.')+(_mb?_mb:'')+'\n\nQUY TẮC DẠY HỌC BẮT BUỘC:\n1. SAU MỖI BÀI: Yêu cầu Kua chép vào vở, chờ 3 phút → nhắc nếu chưa xong.\n2. NHIỀU ẢNH: Đọc hết tất cả ảnh trước, liệt kê Bài 1,2... rồi dạy từ nhỏ đến lớn.\n3. BÀI TOÁN LỜI GIẢI: KHÔNG hỏi thẳng phép tính → gợi mở tư duy bước nhỏ trước.\n4. VIẾT TOÁN RÕ RÀNG: Phân số viết "tử/mẫu" (2/3, 5/6). Phép tính: + × ÷ =. Dấu ngoặc: (). Hình học: ∠ABC cho góc, ° cho độ (90°), △ABC cho tam giác, ⊥ vuông góc, ∥ song song. Đơn vị diện tích: cm² dm² m². Số và ký hiệu cách khoảng trắng. KHÔNG dùng ½ ¾ (TTS đọc sai).\n5. DẠY THEO SGK: Fury đọc lý thuyết SGK trước, dạy đúng phương pháp Kết nối tri thức.\\n6. XEM HÌNH/BẢN ĐỒ: Khi bài học có hình vẽ, sơ đồ, bản đồ chỉ cần nhìn qua — Fury nói ngay: \"Kua mở [Tên sách] Bài X trang Y xem Hình Z cùng Fury nhé!\". Không được bịa nội dung hình.\\n7. CẦN CHỤP ẢNH: Khi câu hỏi bắt buộc phải nhìn hình mới trả lời được (xác định vị trí bản đồ, mô tả thí nghiệm từ hình, nhận dạng vật thật, lắp ghép theo bước) — Fury yêu cầu thẳng: \"Kua chụp Hình X (Bài Y trang Z sách [Tên sách]) gửi Fury xem với, Fury cần nhìn mới chỉ được chính xác!\". Tối đa 1 lần/bài, không lạm dụng.\n\nCÁCH GIAO TIẾP:\n- Fury xưng "anh", gọi Kua là "em" hoặc "Peter" hoặc "Agent Parker".\n- Giọng anh trai lớn: mạnh mẽ, thách thức, hài hước, gần gũi.\n- Khi lười: "Thật không? Spider-Man thật sự bỏ cuộc vì mấy bài toán à?"\n- Khi đúng nhanh trong 1 phút: "[+XU_NHANH]" thưởng 15 xu.\n- Khi đúng bình thường: "[+XP]" thưởng 5 xu.\n- Tạo nhiệm vụ: "[MISSION:nội dung]"\n- Thưởng huy hiệu: "[BADGE:tên]"\n- NGẮN GỌN. Cuối luôn có câu hỏi/thách thức. KHÔNG nói "con". KHÔNG dùng mày/tao.';
 }
 
 // ═══ API ═══
@@ -1507,30 +1507,106 @@ function speak(text){
   const tts = getTTSSettings();
   if(!tts.enabled || !window.speechSynthesis) return;
   stopSpeak();
-  const c=text
-    .replace(/\[.*?\]/g,'')
-    .replace(/[*_`#<>]/g,'')
-    .replace(/\n+/g,' ')
-    .replace(/S\.H\.I\.E\.L\.D\./gi,'Shield')
+
+  // BƯỚC 1: Làm sạch
+  let c = text
+    .replace(/\[.*?\]/g, '')
+    .replace(/[*_`#]/g, '')
+    .replace(/S\.H\.I\.E\.L\.D\./gi, 'Shield')
+    .replace(/\n+/g, ' , ')
     .trim();
   if(!c) return;
-  // Ngắt nghỉ: sau số, phép tính, dấu chấm, dấu phẩy, dấu hỏi, dấu chấm than
-  const cc=c
-    .replace(/(\d+)/g,'$1,')           // ngắt sau mỗi số
-    .replace(/([+\-×÷=])/g,' $1 ')     // cách phép tính
-    .replace(/\.\s/g,'. , ')           // ngắt sau dấu chấm
-    .replace(/[?!]/g,'$&,')             // ngắt sau ? !
-    .replace(/:\s/g,': , ');           // ngắt sau dấu hai chấm
-  const u=new SpeechSynthesisUtterance(cc);
-  u.lang='vi-VN';
-  u.rate=tts.rate;
-  u.pitch=tts.pitch;
-  const vv=window.speechSynthesis.getVoices();
-  const vi=vv.find(v=>v.lang==='vi-VN'&&!v.name.toLowerCase().includes('female'))
-           ||vv.find(v=>v.lang.startsWith('vi'));
-  if(vi) u.voice=vi;
-  u.onstart=()=>{ const el=document.getElementById('spkEl'); if(el) el.classList.add('on'); };
-  u.onend=u.onerror=()=>{ const el=document.getElementById('spkEl'); if(el) el.classList.remove('on'); };
+
+  // BƯỚC 2: Hình học — ký hiệu → tiếng Việt
+  c = c.replace(/∠([A-Z]{1,3})/g, 'góc $1');  // ∠ABC → góc ABC
+  c = c.replace(/∠/g, 'góc ');
+  c = c.replace(/⊥/g, ' vuông góc với ');
+  c = c.replace(/∥/g, ' song song với ');
+  c = c.replace(/\/\//g, ' song song với ');
+  c = c.replace(/△([A-Z]{3})/g, 'tam giác $1');
+  c = c.replace(/▲([A-Z]{3})/g, 'tam giác $1');
+  c = c.replace(/△|▲/g, 'tam giác ');
+  c = c.replace(/□([A-Z]{4})/g, 'hình $1');
+  c = c.replace(/□/g, 'hình ');
+  c = c.replace(/⊿/g, 'tam giác vuông ');
+
+  // BƯỚC 3: Đánh dấu cụm đặc biệt (dài nhất trước để tránh tham lam nhầm)
+  c = c.replace(/(\d+)\s*°/g, '$1_DEG');
+  // Đơn vị diện tích & thể tích — km/mm/dm/cm trước m (dài hơn đặt trước)
+  c = c.replace(/(km|mm|dm|cm)\s*²/g, '$1_SQ_UNIT');
+  c = c.replace(/(km|mm|dm|cm)\s*³/g, '$1_CB_UNIT');
+  c = c.replace(/\bm\s*²/g, 'm_SQ_UNIT');
+  c = c.replace(/\bm\s*³/g, 'm_CB_UNIT');
+  // Số đặc biệt
+  c = c.replace(/(\d+)\s*%/g, '$1_PCT');
+  c = c.replace(/(\d+)\s*\/\s*(\d+)/g, '$1_FRN_$2_FRD');
+  c = c.replace(/(\d+)[,.](\d+)/g, '$1_DOT_$2');
+  c = c.replace(/(\d+)\s*²/g, '$1_SQ');
+  c = c.replace(/(\d+)\s*³/g, '$1_CB');
+
+  // BƯỚC 4: Dấu : — chia giữa 2 số, ngắt sau chữ
+  c = c.replace(/(\d+)\s*:\s*(\d+)/g, '$1 , chia , $2');
+  c = c.replace(/([a-zA-ZÀ-ỹ])\s*:\s*/g, '$1 , ');
+
+  // BƯỚC 5: Phép tính
+  c = c.replace(/\+/g, ' , cộng , ');
+  c = c.replace(/[–—]/g, ' , trừ , ');
+  c = c.replace(/(\d)\s*-\s*(\d)/g, '$1 , trừ , $2');
+  c = c.replace(/×|✕/g, ' , nhân , ');
+  c = c.replace(/÷/g, ' , chia , ');
+  c = c.replace(/=/g, ' , bằng , ');
+  c = c.replace(/≠/g, ' , không bằng , ');
+  c = c.replace(/</g, ' , nhỏ hơn , ');
+  c = c.replace(/>/g, ' , lớn hơn , ');
+  c = c.replace(/≤/g, ' , nhỏ hơn hoặc bằng , ');
+  c = c.replace(/≥/g, ' , lớn hơn hoặc bằng , ');
+  c = c.replace(/\(/g, ' , mở ngoặc , ');
+  c = c.replace(/\)/g, ' , đóng ngoặc , ');
+
+  // BƯỚC 6: Ngắt sau số đơn (không theo sau bởi _ hoặc chữ số khác)
+  c = c.replace(/(\d+)(?![\d_])/g, '$1 ,');
+
+  // BƯỚC 7: Khôi phục markers → tiếng Việt
+  c = c.replace(/(\d+)_DEG/g,         '$1 độ');
+  c = c.replace(/(\d+)_FRN_(\d+)_FRD/g, '$1 phần $2');
+  c = c.replace(/(\d+)_DOT_(\d+)/g,   '$1 phẩy $2');
+  c = c.replace(/(\d+)_PCT/g,         '$1 phần trăm');
+  c = c.replace(/(\d+)_SQ/g,          '$1 bình phương');
+  c = c.replace(/(\d+)_CB/g,          '$1 lập phương');
+  // Đơn vị diện tích
+  c = c.replace(/km_SQ_UNIT/g, 'ki-lô-mét vuông');
+  c = c.replace(/dm_SQ_UNIT/g, 'đề-xi-mét vuông');
+  c = c.replace(/cm_SQ_UNIT/g, 'xăng-ti-mét vuông');
+  c = c.replace(/mm_SQ_UNIT/g, 'mi-li-mét vuông');
+  c = c.replace(/m_SQ_UNIT/g,  'mét vuông');
+  // Đơn vị thể tích
+  c = c.replace(/km_CB_UNIT/g, 'ki-lô-mét khối');
+  c = c.replace(/dm_CB_UNIT/g, 'đề-xi-mét khối');
+  c = c.replace(/cm_CB_UNIT/g, 'xăng-ti-mét khối');
+  c = c.replace(/mm_CB_UNIT/g, 'mi-li-mét khối');
+  c = c.replace(/m_CB_UNIT/g,  'mét khối');
+
+  // BƯỚC 8: Ngắt sau dấu câu thông thường
+  c = c.replace(/\.\s/g, '. , ');
+  c = c.replace(/[?!]/g, '$& , ');
+  c = c.replace(/;\s/g, '; , ');
+
+  // BƯỚC 9: Dọn dẹp
+  c = c.replace(/(,\s*){2,}/g, ' , ');
+  c = c.replace(/^\s*,\s*/, '').replace(/,\s*$/, '');
+  c = c.trim();
+
+  // BƯỚC 10: Phát âm
+  const u = new SpeechSynthesisUtterance(c);
+  u.lang = 'vi-VN';
+  u.rate = tts.rate;
+  u.pitch = tts.pitch;
+  const vv = window.speechSynthesis.getVoices();
+  const vi = vv.find(v => v.lang === 'vi-VN' && !v.name.toLowerCase().includes('female'))
+           || vv.find(v => v.lang.startsWith('vi'));
+  if(vi) u.voice = vi;
+  u.onstart = () => { const el=document.getElementById('spkEl'); if(el) el.classList.add('on'); };
+  u.onend = u.onerror = () => { const el=document.getElementById('spkEl'); if(el) el.classList.remove('on'); };
   window.speechSynthesis.speak(u);
 }
 
