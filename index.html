@@ -960,13 +960,22 @@ function showXuPop(n){
 // ═══ SÁCH GIÁO KHOA ═══
 // ═══ SÁCH GIÁO KHOA — GITHUB FETCH ═══
 const SACH_URLS = {
-  sgk: 'https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/SGK_Toan_4_Tap2_KetNoi.txt',
-  vbt: 'https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/VBT_Toan_4_Tap2_KetNoi.txt',
-  tv:  'https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/SGK_TiengViet_4_Tap2_KetNoi.txt',
+  sgk:  'https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/SGK_Toan_4_Tap2_KetNoi.txt',
+  vbt:  'https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/VBT_Toan_4_Tap2_KetNoi.txt',
+  tv:   'https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/SGK_TiengViet_4_Tap2_KetNoi.txt',
+  khoa: 'https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/SGK_KhoaHoc_4_KetNoi.txt',
+  cn:   'https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/SGK_CongNghe_4_KetNoi.txt',
+  ls:   'https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/SGK_LichSu_DiaLy_4_KetNoi.txt',
 };
-const SACH_CACHE_KEY = { sgk: 'kua_sgk_cache', vbt: 'kua_vbt_cache', tv: 'kua_sgktv_cache' };
-var SGK_TOAN = localStorage.getItem(SACH_CACHE_KEY.sgk) || '';
-var VBT_TOAN = localStorage.getItem(SACH_CACHE_KEY.vbt) || '';
+const SACH_CACHE_KEY = {
+  sgk: 'kua_sgk_cache', vbt: 'kua_vbt_cache', tv: 'kua_sgktv_cache',
+  khoa: 'kua_khoa_cache', cn: 'kua_cn_cache', ls: 'kua_ls_cache'
+};
+var SGK_TOAN = localStorage.getItem(SACH_CACHE_KEY.sgk)  || '';
+var VBT_TOAN = localStorage.getItem(SACH_CACHE_KEY.vbt)  || '';
+var SGK_KHOA = localStorage.getItem(SACH_CACHE_KEY.khoa) || '';
+var SGK_CN   = localStorage.getItem(SACH_CACHE_KEY.cn)   || '';
+var SGK_LS   = localStorage.getItem(SACH_CACHE_KEY.ls)   || '';
 
 async function fetchSach(key) {
   try {
@@ -975,9 +984,12 @@ async function fetchSach(key) {
     const text = await res.text();
     if (text && text.length > 100) {
       localStorage.setItem(SACH_CACHE_KEY[key], text);
-      if (key === 'sgk') SGK_TOAN = text;
-      else if (key === 'vbt') VBT_TOAN = text;
-      else if (key === 'tv') SGK_TV = text;
+      if      (key === 'sgk')  SGK_TOAN = text;
+      else if (key === 'vbt')  VBT_TOAN = text;
+      else if (key === 'tv')   SGK_TV   = text;
+      else if (key === 'khoa') SGK_KHOA = text;
+      else if (key === 'cn')   SGK_CN   = text;
+      else if (key === 'ls')   SGK_LS   = text;
       console.log('[Sach] ' + key.toUpperCase() + ' loaded: ' + text.length + ' chars');
     }
   } catch(e) {
@@ -986,26 +998,30 @@ async function fetchSach(key) {
 }
 
 async function initSach() {
-  const hasSGK = SGK_TOAN && SGK_TOAN.length > 100;
-  const hasVBT = VBT_TOAN && VBT_TOAN.length > 100;
-  const hasTV  = SGK_TV   && SGK_TV.length   > 100;
-  const allCached = hasSGK && hasVBT && hasTV;
-  if (!allCached) {
+  const cached = {
+    sgk:  SGK_TOAN && SGK_TOAN.length > 100,
+    vbt:  VBT_TOAN && VBT_TOAN.length > 100,
+    tv:   SGK_TV   && SGK_TV.length   > 100,
+    khoa: SGK_KHOA && SGK_KHOA.length > 100,
+    cn:   SGK_CN   && SGK_CN.length   > 100,
+    ls:   SGK_LS   && SGK_LS.length   > 100,
+  };
+  const allCached = Object.values(cached).every(Boolean);
+  const missingKeys = Object.keys(cached).filter(k => !cached[k]);
+
+  if (missingKeys.length > 0) {
     const el = document.createElement('div');
     el.id = 'sachLoadingEl';
     el.style.cssText = 'position:fixed;bottom:120px;left:50%;transform:translateX(-50%);z-index:400;background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:6px 14px;font-family:Rajdhani,sans-serif;font-size:12px;color:var(--tx2);';
-    el.textContent = '📚 Đang tải sách giáo khoa...';
+    el.textContent = '📚 Đang tải sách giáo khoa (' + missingKeys.length + ' cuốn)...';
     document.body.appendChild(el);
-    const toFetch = [];
-    if (!hasSGK) toFetch.push(fetchSach('sgk'));
-    if (!hasVBT) toFetch.push(fetchSach('vbt'));
-    if (!hasTV)  toFetch.push(fetchSach('tv'));
-    await Promise.all(toFetch);
+    await Promise.all(missingKeys.map(k => fetchSach(k)));
     el.remove();
-  } else {
-    // Có đủ cache — fetch mới ngầm, không block
-    Promise.all([fetchSach('sgk'), fetchSach('vbt'), fetchSach('tv')]);
   }
+  // Luôn fetch mới ngầm để cập nhật cache
+  setTimeout(function(){
+    Promise.all(Object.keys(SACH_URLS).map(k => fetchSach(k)));
+  }, 3000);
 }
 var SGK_TV = localStorage.getItem('kua_sgktv_cache') || '';
 
@@ -1291,6 +1307,24 @@ function boot(){
 }
 
 // ═══ SYSTEM PROMPT ═══
+function getSGKContext(){
+  // Lấy tối đa 2000 chars mỗi môn để không overflow token
+  // Ưu tiên SGK đang học, chỉ inject nếu đã load
+  var parts = [];
+  function addSach(label, txt){
+    if(txt && txt.length > 100){
+      parts.push('[SGK ' + label + ']\n' + txt.slice(0,1800).trim() + '...');
+    }
+  }
+  addSach('TOÁN 4',           SGK_TOAN);
+  addSach('TIẾNG VIỆT 4',     typeof SGK_TV !== 'undefined' ? SGK_TV : '');
+  addSach('KHOA HỌC 4',       SGK_KHOA);
+  addSach('CÔNG NGHỆ 4',      SGK_CN);
+  addSach('LỊCH SỬ & ĐỊA LÍ 4', SGK_LS);
+  if(!parts.length) return '';
+  return '\n\n[NỘI DUNG SÁCH GIÁO KHOA — Fury dùng khi Kua hỏi bài]\n' + parts.join('\n\n---\n');
+}
+
 function sys(){
   const m=M(),lv=Math.floor(m.xp/100)+1;
   const hw=HW().filter(h=>new Date(h.ts).toDateString()===new Date().toDateString());
@@ -1311,7 +1345,7 @@ function sys(){
     +'NGÀY MAI ('+ngayMai+'): '+ngayMaiInfo+'\n'
     +'(Fury PHẢI dùng thông tin ngày giờ này khi Kua hỏi về lịch, thời khóa biểu, buổi học. Nếu có lịch thi, Fury LUÔN chủ động nhắc dù Kua không hỏi)\n'
     +getExamSysInfo()+'\n'
-    +'YÊU CẦU BẮT BUỘC: LUÔN LUÔN trả lời bằng TIẾNG VIỆT 100%. Không dùng tiếng Anh trừ khi dạy từ vựng tiếng Anh.\n\n'+getActiveFuryName()+'\\n\\n— Giám đốc S.H.I.E.L.D, huấn luyện '+getActiveKuaName()+' (tên thật Trần Xuân Khang, biệt danh Kua) trở thành siêu anh hùng thực thụ.\n\nTHÔNG TIN VỀ KUA:\n- Lớp 4A1, trường Chu Văn An, Hà Nội. 9-10 tuổi.\n- Hay lười, nóng tính, thích chơi hơn học, dễ xao nhãng.\n- Thể thao giỏi: bơi, bóng đá, cờ vua (mới học cùng ba).\n- Thần tượng ba Tuấn, sợ mẹ Huyền hơn.\n- Lịch học thêm: T2/T4/T5 chiều cô Hảo (cô CN) tại trường 17h30-18h45; T3/T5 tối T.Anh trung tâm MS Hoa 19h45-21h15; T6 và Chủ Nhật nhà cô Hòa (gia sư) 17h15-19h. Thứ 7 Kua nghỉ học thêm. Dạy đúng phương pháp SGK Kết nối tri thức lớp 4.'+hwTxt+'\n\nTIẾN ĐỘ: Level '+lv+' | '+m.xp+' XP | Streak '+m.streak+' ngày | Missions: '+m.missions+' | Huy hiệu: '+(m.badges.join(', ')||'chưa có')+'\nGhi chú: '+(m.notes.slice(-3).join(' | ')||'Buổi đầu tiên.')+(_mb?_mb:'')+'\n\nQUY TẮC DẠY HỌC BẮT BUỘC:\n1. SAU MỖI BÀI: Yêu cầu Kua chép vào vở, chờ 3 phút → nhắc nếu chưa xong.\n2. NHIỀU ẢNH: Đọc hết tất cả ảnh trước, liệt kê Bài 1,2... rồi dạy từ nhỏ đến lớn.\n3. BÀI TOÁN LỜI GIẢI: KHÔNG hỏi thẳng phép tính → gợi mở tư duy bước nhỏ trước.\n4. VIẾT TOÁN RÕ RÀNG: Phân số viết "tử/mẫu" (2/3, 5/6). Phép tính: + × ÷ =. Dấu ngoặc: (). Hình học: ∠ABC cho góc, ° cho độ (90°), △ABC cho tam giác, ⊥ vuông góc, ∥ song song. Đơn vị diện tích: cm² dm² m². Số và ký hiệu cách khoảng trắng. KHÔNG dùng ½ ¾ (TTS đọc sai).\n5. DẠY THEO SGK: Fury đọc lý thuyết SGK trước, dạy đúng phương pháp Kết nối tri thức.\\n6. XEM HÌNH/BẢN ĐỒ: Khi bài học có hình vẽ, sơ đồ, bản đồ chỉ cần nhìn qua — Fury nói ngay: \"Kua mở [Tên sách] Bài X trang Y xem Hình Z cùng Fury nhé!\". Không được bịa nội dung hình.\\n7. CẦN CHỤP ẢNH: Khi câu hỏi bắt buộc phải nhìn hình mới trả lời được (xác định vị trí bản đồ, mô tả thí nghiệm từ hình, nhận dạng vật thật, lắp ghép theo bước) — Fury yêu cầu thẳng: \"Kua chụp Hình X (Bài Y trang Z sách [Tên sách]) gửi Fury xem với, Fury cần nhìn mới chỉ được chính xác!\". Tối đa 1 lần/bài, không lạm dụng.\n\nCÁCH GIAO TIẾP:\n- Fury xưng "anh", gọi Kua là "em" hoặc "Peter" hoặc "Agent Parker".\n- Giọng anh trai lớn: mạnh mẽ, thách thức, hài hước, gần gũi.\n- Khi lười: "Thật không? Spider-Man thật sự bỏ cuộc vì mấy bài toán à?"\n- Khi đúng nhanh trong 1 phút: "[+XU_NHANH]" thưởng 15 xu.\n- Khi đúng bình thường: "[+XP]" thưởng 5 xu.\n- Tạo nhiệm vụ: "[MISSION:nội dung]"\n- Thưởng huy hiệu: "[BADGE:tên]"\n- NGẮN GỌN. Cuối luôn có câu hỏi/thách thức. KHÔNG nói "con". KHÔNG dùng mày/tao.';
+    +'YÊU CẦU BẮT BUỘC: LUÔN LUÔN trả lời bằng TIẾNG VIỆT 100%. Không dùng tiếng Anh trừ khi dạy từ vựng tiếng Anh.\n\n'+getActiveFuryName()+'\\n\\n— Giám đốc S.H.I.E.L.D, huấn luyện '+getActiveKuaName()+' (tên thật Trần Xuân Khang, biệt danh Kua) trở thành siêu anh hùng thực thụ.\n\nTHÔNG TIN VỀ KUA:\n- Lớp 4A1, trường Chu Văn An, Hà Nội. 9-10 tuổi.\n- Hay lười, nóng tính, thích chơi hơn học, dễ xao nhãng.\n- Thể thao giỏi: bơi, bóng đá, cờ vua (mới học cùng ba).\n- Thần tượng ba Tuấn, sợ mẹ Huyền hơn.\n- Lịch học thêm: T2/T4/T5 chiều cô Hảo (cô CN) tại trường 17h30-18h45; T3/T5 tối T.Anh trung tâm MS Hoa 19h45-21h15; T6 và Chủ Nhật nhà cô Hòa (gia sư) 17h15-19h. Thứ 7 Kua nghỉ học thêm. Dạy đúng phương pháp SGK Kết nối tri thức lớp 4.'+hwTxt+'getSGKContext()+\n\nTIẾN ĐỘ: Level '+lv+' | '+m.xp+' XP | Streak '+m.streak+' ngày | Missions: '+m.missions+' | Huy hiệu: '+(m.badges.join(', ')||'chưa có')+'\nGhi chú: '+(m.notes.slice(-3).join(' | ')||'Buổi đầu tiên.')+(_mb?_mb:'')+'\n\nQUY TẮC DẠY HỌC BẮT BUỘC:\n1. SAU MỖI BÀI: Yêu cầu Kua chép vào vở, chờ 3 phút → nhắc nếu chưa xong.\n2. NHIỀU ẢNH: Đọc hết tất cả ảnh trước, liệt kê Bài 1,2... rồi dạy từ nhỏ đến lớn.\n3. BÀI TOÁN LỜI GIẢI: KHÔNG hỏi thẳng phép tính → gợi mở tư duy bước nhỏ trước.\n4. VIẾT TOÁN RÕ RÀNG: Phân số viết "tử/mẫu" (2/3, 5/6). Phép tính: + × ÷ =. Dấu ngoặc: (). Hình học: ∠ABC cho góc, ° cho độ (90°), △ABC cho tam giác, ⊥ vuông góc, ∥ song song. Đơn vị diện tích: cm² dm² m². Số và ký hiệu cách khoảng trắng. KHÔNG dùng ½ ¾ (TTS đọc sai).\n5. DẠY THEO SGK: Fury đọc lý thuyết SGK trước, dạy đúng phương pháp Kết nối tri thức.\\n6. XEM HÌNH/BẢN ĐỒ: Khi bài học có hình vẽ, sơ đồ, bản đồ chỉ cần nhìn qua — Fury nói ngay: \"Kua mở [Tên sách] Bài X trang Y xem Hình Z cùng Fury nhé!\". Không được bịa nội dung hình.\\n7. CẦN CHỤP ẢNH: Khi câu hỏi bắt buộc phải nhìn hình mới trả lời được (xác định vị trí bản đồ, mô tả thí nghiệm từ hình, nhận dạng vật thật, lắp ghép theo bước) — Fury yêu cầu thẳng: \"Kua chụp Hình X (Bài Y trang Z sách [Tên sách]) gửi Fury xem với, Fury cần nhìn mới chỉ được chính xác!\". Tối đa 1 lần/bài, không lạm dụng.\n\nCÁCH GIAO TIẾP:\n- Fury xưng "anh", gọi Kua là "em" hoặc "Peter" hoặc "Agent Parker".\n- Giọng anh trai lớn: mạnh mẽ, thách thức, hài hước, gần gũi.\n- Khi lười: "Thật không? Spider-Man thật sự bỏ cuộc vì mấy bài toán à?"\n- Khi đúng nhanh trong 1 phút: "[+XU_NHANH]" thưởng 15 xu.\n- Khi đúng bình thường: "[+XP]" thưởng 5 xu.\n- Tạo nhiệm vụ: "[MISSION:nội dung]"\n- Thưởng huy hiệu: "[BADGE:tên]"\n- NGẮN GỌN. Cuối luôn có câu hỏi/thách thức. KHÔNG nói "con". KHÔNG dùng mày/tao.';
 }
 
 // ═══ API ═══
@@ -1319,7 +1353,7 @@ async function callGemini(txt,imgs){
   const parts=[];
   if(imgs&&imgs.length)imgs.forEach(i=>parts.push({inlineData:{mimeType:'image/jpeg',data:i}}));
   parts.push({text:txt||'Đây là ảnh bài tập. Hướng dẫn em làm nhé.'});
-  const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+gemKey,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({systemInstruction:{parts:[{text:sys()}]},contents:[{role:'user',parts}],generationConfig:{maxOutputTokens:800,temperature:0.9}})});
+  const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+gemKey,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({systemInstruction:{parts:[{text:sys()}]},contents:[{role:'user',parts}],generationConfig:{maxOutputTokens:1500,temperature:0.9}})});
   if(!r.ok){const e=await r.json();throw new Error(e.error?.message||'Gemini '+r.status);}
   const d=await r.json();return d.candidates[0].content.parts[0].text;
 }
@@ -1328,7 +1362,7 @@ async function callClaude(txt,imgs,m){
   if(imgs&&imgs.length){content=imgs.map(i=>({type:'image',source:{type:'base64',media_type:'image/jpeg',data:i}}));content.push({type:'text',text:txt||'Đây là '+imgs.length+' trang bài tập. Hướng dẫn nhé.'});}
   else content=txt;
   const msgs=[...m.history.slice(0,-1).map(h=>({role:h.role,content:h.content})),{role:'user',content}];
-  const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:800,system:sys(),messages:msgs})});
+  const r=await fetch('https://api.anthropic.com/v1/messages',{method:'POST',headers:{'Content-Type':'application/json','x-api-key':key,'anthropic-version':'2023-06-01','anthropic-dangerous-direct-browser-access':'true'},body:JSON.stringify({model:'claude-sonnet-4-6',max_tokens:1500,system:sys(),messages:msgs})});
   if(!r.ok){const e=await r.json();throw new Error(e.error?.message||'Claude '+r.status);}
   const d=await r.json();return d.content[0].text;
 }
@@ -1374,12 +1408,28 @@ async function doSend(){
   trackQuestion();
   updateQuestProgress('sends');
   try{const r=await callAI(txt,imgs);hideTyp();addAIMsg(r);speak(r);}
-  catch(e){hideTyp();addRaw('ai','⚠️ Lỗi: '+e.message);}
+  catch(e){
+    hideTyp();
+    var msg = e.message || 'Lỗi kết nối';
+    var friendly = msg.includes('429') || msg.includes('quota') ? '⏳ Fury đang bận quá, thử lại sau 1 phút nhé!' :
+                   msg.includes('503') || msg.includes('overload') ? '⏳ Server đang quá tải, Fury sẽ thử lại...' :
+                   msg.includes('network') || msg.includes('fetch') ? '📡 Mất kết nối mạng, kiểm tra wifi rồi thử lại!' :
+                   msg.includes('API key') || msg.includes('401') ? '🔑 Lỗi API key, báo ba/mẹ kiểm tra nhé!' :
+                   '⚠️ Fury gặp lỗi: ' + msg + '. Thử hỏi lại nhé!';
+    addRaw('ai', friendly);
+  }
   busy=false;document.getElementById('sendBtn').disabled=false;
 }
 function qs(t){document.getElementById('txtIn').value=t;doSend();}
 function onKey(e){if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();doSend();}}
 function resize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHeight,80)+'px';}
+
+// iOS Safari TTS resume — fixes speechSynthesis.paused bug after 15s
+setInterval(function(){
+  if(window.speechSynthesis && window.speechSynthesis.speaking && window.speechSynthesis.paused){
+    window.speechSynthesis.resume();
+  }
+}, 5000);
 
 async function startChat(){
   const m=M();
@@ -1480,11 +1530,26 @@ function clearImg(){imgArr=[];const p=document.getElementById('iPrev');p.innerHT
 
 // ═══ VOICE ═══
 function initVoice(){
-  const S=window.SpeechRecognition||window.webkitSpeechRecognition;if(!S)return;
-  SR=new S();SR.lang='vi-VN';SR.continuous=false;SR.interimResults=false;
-  SR.onresult=e=>{document.getElementById('txtIn').value=e.results[0][0].transcript;stopMic();doSend();};
-  SR.onend=()=>stopMic();SR.onerror=()=>stopMic();
-  window.speechSynthesis&&window.speechSynthesis.getVoices();
+  // Speech Recognition (mic)
+  const S=window.SpeechRecognition||window.webkitSpeechRecognition;
+  if(S){
+    SR=new S();SR.lang='vi-VN';SR.continuous=false;SR.interimResults=false;
+    SR.onresult=e=>{document.getElementById('txtIn').value=e.results[0][0].transcript;stopMic();doSend();};
+    SR.onend=()=>stopMic();SR.onerror=()=>stopMic();
+  }
+  // Pre-warm TTS voices — quan trọng cho iOS/Android (voices load async)
+  if(window.speechSynthesis){
+    var warmUp = function(){
+      var vv = window.speechSynthesis.getVoices();
+      // Lưu vào cache để speak() dùng ngay
+      window._cachedVoices = vv && vv.length ? vv : null;
+    };
+    window.speechSynthesis.onvoiceschanged = function(){
+      warmUp();
+      // Giữ listener để tiếp tục update nếu voices thay đổi
+    };
+    warmUp(); // thử ngay nếu đã có sẵn
+  }
 }
 function toggleMic(){
   if(isRec){stopMic();return;}
@@ -1506,19 +1571,18 @@ function saveTTSSetting(key, val){ localStorage.setItem(key, val); }
 function speak(text){
   const tts = getTTSSettings();
   if(!tts.enabled || !window.speechSynthesis) return;
-  stopSpeak();
 
-  // BƯỚC 1: Làm sạch
+  // Làm sạch text
   let c = text
     .replace(/\[.*?\]/g, '')
     .replace(/[*_`#]/g, '')
     .replace(/S\.H\.I\.E\.L\.D\./gi, 'Shield')
-    .replace(/\n+/g, ' , ')
+    .replace(/\n+/g, ' ')
     .trim();
   if(!c) return;
 
-  // BƯỚC 2: Hình học — ký hiệu → tiếng Việt
-  c = c.replace(/∠([A-Z]{1,3})/g, 'góc $1');  // ∠ABC → góc ABC
+  // Hình học
+  c = c.replace(/∠([A-Z]{1,3})/g, 'góc $1');
   c = c.replace(/∠/g, 'góc ');
   c = c.replace(/⊥/g, ' vuông góc với ');
   c = c.replace(/∥/g, ' song song với ');
@@ -1530,84 +1594,116 @@ function speak(text){
   c = c.replace(/□/g, 'hình ');
   c = c.replace(/⊿/g, 'tam giác vuông ');
 
-  // BƯỚC 3: Đánh dấu cụm đặc biệt (dài nhất trước để tránh tham lam nhầm)
+  // Đánh dấu cụm đặc biệt
   c = c.replace(/(\d+)\s*°/g, '$1_DEG');
-  // Đơn vị diện tích & thể tích — km/mm/dm/cm trước m (dài hơn đặt trước)
   c = c.replace(/(km|mm|dm|cm)\s*²/g, '$1_SQ_UNIT');
   c = c.replace(/(km|mm|dm|cm)\s*³/g, '$1_CB_UNIT');
   c = c.replace(/\bm\s*²/g, 'm_SQ_UNIT');
   c = c.replace(/\bm\s*³/g, 'm_CB_UNIT');
-  // Số đặc biệt
   c = c.replace(/(\d+)\s*%/g, '$1_PCT');
   c = c.replace(/(\d+)\s*\/\s*(\d+)/g, '$1_FRN_$2_FRD');
   c = c.replace(/(\d+)[,.](\d+)/g, '$1_DOT_$2');
   c = c.replace(/(\d+)\s*²/g, '$1_SQ');
   c = c.replace(/(\d+)\s*³/g, '$1_CB');
 
-  // BƯỚC 4: Dấu : — chia giữa 2 số, ngắt sau chữ
-  c = c.replace(/(\d+)\s*:\s*(\d+)/g, '$1 , chia , $2');
-  c = c.replace(/([a-zA-ZÀ-ỹ])\s*:\s*/g, '$1 , ');
+  // Phép tính
+  c = c.replace(/(\d+)\s*:\s*(\d+)/g, '$1 chia $2');
+  c = c.replace(/\+/g, ' cộng ');
+  c = c.replace(/[–—]/g, ' trừ ');
+  c = c.replace(/(\d)\s*-\s*(\d)/g, '$1 trừ $2');
+  c = c.replace(/×|✕/g, ' nhân ');
+  c = c.replace(/÷/g, ' chia ');
+  c = c.replace(/=/g, ' bằng ');
+  c = c.replace(/≠/g, ' không bằng ');
+  c = c.replace(/</g, ' nhỏ hơn ');
+  c = c.replace(/>/g, ' lớn hơn ');
+  c = c.replace(/≤/g, ' nhỏ hơn hoặc bằng ');
+  c = c.replace(/≥/g, ' lớn hơn hoặc bằng ');
+  c = c.replace(/\(/g, ' mở ngoặc ');
+  c = c.replace(/\)/g, ' đóng ngoặc ');
 
-  // BƯỚC 5: Phép tính
-  c = c.replace(/\+/g, ' , cộng , ');
-  c = c.replace(/[–—]/g, ' , trừ , ');
-  c = c.replace(/(\d)\s*-\s*(\d)/g, '$1 , trừ , $2');
-  c = c.replace(/×|✕/g, ' , nhân , ');
-  c = c.replace(/÷/g, ' , chia , ');
-  c = c.replace(/=/g, ' , bằng , ');
-  c = c.replace(/≠/g, ' , không bằng , ');
-  c = c.replace(/</g, ' , nhỏ hơn , ');
-  c = c.replace(/>/g, ' , lớn hơn , ');
-  c = c.replace(/≤/g, ' , nhỏ hơn hoặc bằng , ');
-  c = c.replace(/≥/g, ' , lớn hơn hoặc bằng , ');
-  c = c.replace(/\(/g, ' , mở ngoặc , ');
-  c = c.replace(/\)/g, ' , đóng ngoặc , ');
-
-  // BƯỚC 6: Ngắt sau số đơn (không theo sau bởi _ hoặc chữ số khác)
-  c = c.replace(/(\d+)(?![\d_])/g, '$1 ,');
-
-  // BƯỚC 7: Khôi phục markers → tiếng Việt
-  c = c.replace(/(\d+)_DEG/g,         '$1 độ');
+  // Khôi phục markers
+  c = c.replace(/(\d+)_DEG/g, '$1 độ');
   c = c.replace(/(\d+)_FRN_(\d+)_FRD/g, '$1 phần $2');
-  c = c.replace(/(\d+)_DOT_(\d+)/g,   '$1 phẩy $2');
-  c = c.replace(/(\d+)_PCT/g,         '$1 phần trăm');
-  c = c.replace(/(\d+)_SQ/g,          '$1 bình phương');
-  c = c.replace(/(\d+)_CB/g,          '$1 lập phương');
-  // Đơn vị diện tích
+  c = c.replace(/(\d+)_DOT_(\d+)/g, '$1 phẩy $2');
+  c = c.replace(/(\d+)_PCT/g, '$1 phần trăm');
+  c = c.replace(/(\d+)_SQ/g, '$1 bình phương');
+  c = c.replace(/(\d+)_CB/g, '$1 lập phương');
   c = c.replace(/km_SQ_UNIT/g, 'ki-lô-mét vuông');
   c = c.replace(/dm_SQ_UNIT/g, 'đề-xi-mét vuông');
   c = c.replace(/cm_SQ_UNIT/g, 'xăng-ti-mét vuông');
   c = c.replace(/mm_SQ_UNIT/g, 'mi-li-mét vuông');
-  c = c.replace(/m_SQ_UNIT/g,  'mét vuông');
-  // Đơn vị thể tích
+  c = c.replace(/m_SQ_UNIT/g, 'mét vuông');
   c = c.replace(/km_CB_UNIT/g, 'ki-lô-mét khối');
   c = c.replace(/dm_CB_UNIT/g, 'đề-xi-mét khối');
   c = c.replace(/cm_CB_UNIT/g, 'xăng-ti-mét khối');
   c = c.replace(/mm_CB_UNIT/g, 'mi-li-mét khối');
-  c = c.replace(/m_CB_UNIT/g,  'mét khối');
+  c = c.replace(/m_CB_UNIT/g, 'mét khối');
 
-  // BƯỚC 8: Ngắt sau dấu câu thông thường
-  c = c.replace(/\.\s/g, '. , ');
-  c = c.replace(/[?!]/g, '$& , ');
-  c = c.replace(/;\s/g, '; , ');
+  // Dọn khoảng trắng thừa
+  c = c.replace(/\s{2,}/g, ' ').trim();
 
-  // BƯỚC 9: Dọn dẹp
-  c = c.replace(/(,\s*){2,}/g, ' , ');
-  c = c.replace(/^\s*,\s*/, '').replace(/,\s*$/, '');
-  c = c.trim();
+  // ── PHÁT ÂM — robust cho iOS/Android ──
+  function _doSpeak(){
+    try{
+      window.speechSynthesis.cancel(); // iOS cần cancel trước
+    }catch(e){}
 
-  // BƯỚC 10: Phát âm
-  const u = new SpeechSynthesisUtterance(c);
-  u.lang = 'vi-VN';
-  u.rate = tts.rate;
-  u.pitch = tts.pitch;
-  const vv = window.speechSynthesis.getVoices();
-  const vi = vv.find(v => v.lang === 'vi-VN' && !v.name.toLowerCase().includes('female'))
-           || vv.find(v => v.lang.startsWith('vi'));
-  if(vi) u.voice = vi;
-  u.onstart = () => { const el=document.getElementById('spkEl'); if(el) el.classList.add('on'); };
-  u.onend = u.onerror = () => { const el=document.getElementById('spkEl'); if(el) el.classList.remove('on'); };
-  window.speechSynthesis.speak(u);
+    var u = new SpeechSynthesisUtterance(c);
+    u.lang = 'vi-VN';
+    u.rate = tts.rate;
+    u.pitch = tts.pitch;
+    u.volume = 1;
+
+    // Chọn giọng — iOS/Android có thể load async
+    var voices = window.speechSynthesis.getVoices() || [];
+    if(voices.length > 0){
+      var vi = voices.find(function(v){ return v.lang === 'vi-VN'; })
+            || voices.find(function(v){ return v.lang.startsWith('vi'); });
+      // Nếu không có tiếng Việt → dùng giọng mặc định (vẫn đọc được)
+      if(vi) u.voice = vi;
+    }
+
+    u.onstart = function(){ var el=document.getElementById('spkEl'); if(el) el.classList.add('on'); };
+    u.onend   = function(){ var el=document.getElementById('spkEl'); if(el) el.classList.remove('on'); };
+    u.onerror = function(e){
+      var el=document.getElementById('spkEl'); if(el) el.classList.remove('on');
+      // iOS Safari bug: utterance bị interrupt → thử lại 1 lần
+      if(e.error === 'interrupted' || e.error === 'canceled'){
+        setTimeout(function(){
+          try{ window.speechSynthesis.speak(new SpeechSynthesisUtterance(c)); }catch(err){}
+        }, 300);
+      }
+    };
+
+    try{
+      window.speechSynthesis.speak(u);
+    }catch(e){
+      console.warn('[TTS] speak error:', e);
+    }
+  }
+
+  // Voices có thể chưa load trên mobile → đợi nếu cần
+  var vv = window.speechSynthesis.getVoices();
+  if(vv && vv.length > 0){
+    _doSpeak();
+  } else {
+    // Đăng ký onvoiceschanged — chờ tối đa 1s
+    var _done = false;
+    window.speechSynthesis.onvoiceschanged = function(){
+      if(_done) return;
+      _done = true;
+      window.speechSynthesis.onvoiceschanged = null;
+      _doSpeak();
+    };
+    setTimeout(function(){
+      if(!_done){
+        _done = true;
+        window.speechSynthesis.onvoiceschanged = null;
+        _doSpeak(); // thử anyway dù chưa có voice list
+      }
+    }, 1000);
+  }
 }
 
 function showTTSSettings(){
@@ -1630,8 +1726,35 @@ function showTTSSettings(){
   // Title
   const title=document.createElement('div');
   title.style.cssText='font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;color:var(--gold);margin-bottom:12px;';
+  // Check browser support
+  if(!window.speechSynthesis){
+    title.textContent='❌ Trình duyệt không hỗ trợ TTS';
+    title.style.color='var(--red)';
+    ov.appendChild(title);
+    const noSupport=document.createElement('div');
+    noSupport.style.cssText='font-size:11px;color:var(--tx3);margin-top:8px;line-height:1.6;';
+    noSupport.innerHTML='Dùng <b>Chrome</b> hoặc <b>Safari</b> trên điện thoại để nghe giọng đọc.<br>Firefox không hỗ trợ TTS tiếng Việt.';
+    ov.appendChild(noSupport);
+    document.body.appendChild(bd); document.body.appendChild(ov); return;
+  }
   title.textContent='🎤 Cài đặt giọng đọc';
   ov.appendChild(title);
+  // Voice status
+  const vStatus=document.createElement('div');
+  vStatus.style.cssText='font-size:10px;color:var(--tx3);margin-bottom:8px;padding:4px 8px;background:var(--s2);border-radius:6px;';
+  const vv=window.speechSynthesis.getVoices();
+  const viVoice=vv.find(v=>v.lang==='vi-VN')||vv.find(v=>v.lang.startsWith('vi'));
+  if(viVoice){
+    vStatus.innerHTML='✅ Giọng tiếng Việt: <b>'+viVoice.name+'</b>';
+    vStatus.style.color='var(--green)';
+  } else if(vv.length>0){
+    vStatus.innerHTML='⚠️ Không có giọng vi-VN, dùng: <b>'+vv[0].name+'</b>';
+    vStatus.style.color='var(--gold)';
+  } else {
+    vStatus.innerHTML='⏳ Đang tải giọng đọc... Bấm thử giọng sau 2s';
+    vStatus.style.color='var(--tx3)';
+  }
+  ov.appendChild(vStatus);
 
   // Toggle row
   const toggleRow=document.createElement('div');
@@ -1719,7 +1842,11 @@ function toggleTTS(){
 }
 
 function testTTSVoice(){
-  speak('Chào Peter! Tốc độ và giọng đọc đang là như thế này. 1 cộng 2 bằng 3.');
+  const tts = getTTSSettings();
+  if(!window.speechSynthesis){
+    showXuPop('❌ Trình duyệt không hỗ trợ TTS!'); return;
+  }
+  speak('Chào Peter! Đây là giọng đọc của Fury. 2 cộng 3 bằng 5. 1/2 cộng 1/4 bằng 3/4. Góc A B C bằng 90 độ. Xăng-ti-mét vuông.');
 }
 
 function resetTTS(){
@@ -6062,7 +6189,13 @@ window.onload=()=>{
   const unlockAudio=()=>{
     if(window._audioUnlocked)return;
     try{const ctx=new(window.AudioContext||window.webkitAudioContext)();const buf=ctx.createBuffer(1,1,22050);const src=ctx.createBufferSource();src.buffer=buf;src.connect(ctx.destination);src.start(0);ctx.resume().then(()=>{window._audioUnlocked=true;});}catch(e){}
-    if(window.speechSynthesis){const u=new SpeechSynthesisUtterance('');window.speechSynthesis.speak(u);window.speechSynthesis.cancel();}
+    if(window.speechSynthesis){
+      // iOS: cần speak một utterance thật sự để unlock audio session
+      var _u=new SpeechSynthesisUtterance('\u200b'); // zero-width space
+      _u.volume=0.01; _u.rate=2; _u.lang='vi-VN';
+      window.speechSynthesis.speak(_u);
+      setTimeout(function(){ try{window.speechSynthesis.cancel();}catch(e){} },200);
+    }
   };
   document.addEventListener('touchstart',unlockAudio,{once:true});
   document.addEventListener('click',unlockAudio,{once:true});
