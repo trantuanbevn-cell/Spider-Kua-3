@@ -1114,7 +1114,12 @@ function showShop(){
           <button onclick="buyReward('${r.id}',${r.xu},'${r.name}')" ${!ok?'disabled':''} style="background:${ok?'var(--gold)':'var(--s3)'};color:${ok?'#000':'var(--tx3)'};border:none;border-radius:8px;font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;padding:6px 10px;cursor:${ok?'pointer':'not-allowed'};white-space:nowrap;">${r.xu.toLocaleString('vi-VN')} xu</button>
         </div>`;
       }).join('')}
-      <div style="font-size:10px;color:var(--tx3);text-align:center;margin-top:8px;">Cần Mã Xác Nhận</div>
+      <div style="font-size:10px;color:var(--tx3);text-align:center;margin-top:8px;"><div style="margin-top:10px;padding-top:10px;border-top:1px solid var(--bd);">
+        <button onclick="showCustomReward()" style="width:100%;background:var(--s2);border:1.5px dashed var(--gold);border-radius:10px;color:var(--gold);font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;padding:11px;cursor:pointer;">
+          ✏️ Đổi xu tự do — Nhập số bất kỳ
+        </button>
+      </div>
+      Cần Mã Xác Nhận của bố/mẹ</div>
     </div>`;
   document.body.appendChild(el);
 }
@@ -1146,6 +1151,100 @@ function buyReward(id,xu,name){
     document.body.appendChild(pop);
   });
 }
+
+function showCustomReward(){
+  // Ẩn shop nếu đang mở
+  var shopEl=document.querySelector('div[style*="z-index:9999"]');
+  if(shopEl) shopEl.style.display='none';
+
+  // Tạo modal nhập số xu tự do
+  var modal=document.createElement('div');
+  modal.id='customRewardModal';
+  modal.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;';
+
+  var cur=getXu();
+  modal.innerHTML=`
+    <div style="background:var(--s1);border:1px solid var(--gold);border-radius:18px;padding:22px;max-width:340px;width:100%;">
+      <div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:18px;color:var(--gold);margin-bottom:14px;text-align:center;">
+        🎁 ĐỔI XU TỰ DO
+      </div>
+      <div style="background:var(--s3);border-radius:10px;padding:10px;text-align:center;margin-bottom:16px;">
+        <div style="font-size:11px;color:var(--tx2);">Xu hiện có</div>
+        <div style="font-family:Rajdhani,sans-serif;font-size:26px;font-weight:700;color:var(--gold);">${cur.toLocaleString('vi-VN')} 🪙</div>
+      </div>
+      <div style="margin-bottom:10px;">
+        <div style="font-size:11px;color:var(--tx2);margin-bottom:5px;">Số xu muốn đổi</div>
+        <input id="customXuInput" type="number" min="1" max="${cur}" placeholder="Nhập số xu..."
+          style="width:100%;background:var(--s2);border:1px solid var(--bd2);border-radius:9px;color:var(--tx);font-family:Rajdhani,sans-serif;font-size:18px;font-weight:700;padding:10px 12px;outline:none;box-sizing:border-box;text-align:center;">
+      </div>
+      <div style="margin-bottom:16px;">
+        <div style="font-size:11px;color:var(--tx2);margin-bottom:5px;">Đổi lấy gì? (tuỳ ý)</div>
+        <input id="customXuDesc" type="text" placeholder="VD: Xem YouTube 30 phút, Ra ngoài chơi..."
+          style="width:100%;background:var(--s2);border:1px solid var(--bd);border-radius:9px;color:var(--tx);font-size:13px;padding:9px 12px;outline:none;box-sizing:border-box;">
+      </div>
+      <div style="display:flex;gap:8px;">
+        <button onclick="confirmCustomReward()" style="flex:2;background:var(--gold);border:none;border-radius:10px;color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:15px;padding:12px;cursor:pointer;">
+          XÁC NHẬN ĐỔI
+        </button>
+        <button onclick="document.getElementById('customRewardModal').remove();var s=document.querySelector('div[style*=z-index\\\\:9999]');if(s)s.style.display='';" 
+          style="flex:1;background:var(--s3);border:1px solid var(--bd);border-radius:10px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;padding:12px;cursor:pointer;">
+          HUỶ
+        </button>
+      </div>
+      <div style="font-size:10px;color:var(--tx3);text-align:center;margin-top:8px;">Cần mã xác nhận của bố/mẹ</div>
+    </div>`;
+  document.body.appendChild(modal);
+  setTimeout(function(){ var el=document.getElementById('customXuInput'); if(el) el.focus(); }, 100);
+}
+
+function confirmCustomReward(){
+  var amtEl=document.getElementById('customXuInput');
+  var descEl=document.getElementById('customXuDesc');
+  var amt=parseInt(amtEl?amtEl.value:0)||0;
+  var desc=(descEl?descEl.value.trim():'')||'Phần thưởng tự do';
+  var cur=getXu();
+
+  if(amt<=0){ amtEl.style.borderColor='var(--red)'; amtEl.focus(); return; }
+  if(amt>cur){
+    amtEl.style.borderColor='var(--red)';
+    amtEl.value='';
+    amtEl.placeholder='Không đủ xu! Tối đa '+cur;
+    return;
+  }
+
+  var modal=document.getElementById('customRewardModal');
+  if(modal) modal.style.display='none';
+
+  showPinModal(function(){
+    if(modal) modal.remove();
+    var shopEl=document.querySelector('div[style*="z-index:9999"]');
+    if(shopEl) shopEl.remove();
+
+    if(!spendXu(amt)){ showXuPop('Không đủ xu!'); return; }
+    scheduleSync();
+
+    // Thông báo thành công
+    var pop=document.createElement('div');
+    pop.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:10001;display:flex;align-items:center;justify-content:center;flex-direction:column;';
+    var inner=document.createElement('div');
+    inner.style.cssText='text-align:center;padding:24px;max-width:300px;';
+    inner.innerHTML=
+      '<div style="font-size:60px;margin-bottom:14px;">🎉</div>'+
+      '<div style="font-family:Rajdhani,sans-serif;font-size:20px;font-weight:700;color:var(--gold);margin-bottom:8px;">Đổi thành công!</div>'+
+      '<div style="font-size:16px;color:var(--tx);margin-bottom:4px;">'+desc+'</div>'+
+      '<div style="font-family:Rajdhani,sans-serif;font-size:22px;color:var(--red);font-weight:700;margin-bottom:4px;">-'+amt.toLocaleString('vi-VN')+' xu 🪙</div>'+
+      '<div style="font-size:12px;color:var(--tx2);margin-bottom:20px;">Còn lại: '+getXu().toLocaleString('vi-VN')+' xu</div>';
+    var okBtn=document.createElement('button');
+    okBtn.textContent='TUYỆT VỜI! 🕷️';
+    okBtn.style.cssText='background:var(--gold);border:none;border-radius:12px;color:#000;font-family:Rajdhani,sans-serif;font-weight:700;font-size:16px;padding:12px 28px;cursor:pointer;';
+    okBtn.onclick=function(){ pop.remove(); };
+    inner.appendChild(okBtn);
+    pop.appendChild(inner);
+    document.body.appendChild(pop);
+    scheduleSync();
+  });
+}
+
 
 // ═══ CUP ĐIỂM 10 ═══
 function showCupCelebration(xuAmt, label){
@@ -1345,7 +1444,7 @@ function sys(){
     +'NGÀY MAI ('+ngayMai+'): '+ngayMaiInfo+'\n'
     +'(Fury PHẢI dùng thông tin ngày giờ này khi Kua hỏi về lịch, thời khóa biểu, buổi học. Nếu có lịch thi, Fury LUÔN chủ động nhắc dù Kua không hỏi)\n'
     +getExamSysInfo()+'\n'
-    +'YÊU CẦU BẮT BUỘC: LUÔN LUÔN trả lời bằng TIẾNG VIỆT 100%. Không dùng tiếng Anh trừ khi dạy từ vựng tiếng Anh.\n\n'+getActiveFuryName()+'\\n\\n— Giám đốc S.H.I.E.L.D, huấn luyện '+getActiveKuaName()+' (tên thật Trần Xuân Khang, biệt danh Kua) trở thành siêu anh hùng thực thụ.\n\nTHÔNG TIN VỀ KUA:\n- Lớp 4A1, trường Chu Văn An, Hà Nội. 9-10 tuổi.\n- Hay lười, nóng tính, thích chơi hơn học, dễ xao nhãng.\n- Thể thao giỏi: bơi, bóng đá, cờ vua (mới học cùng ba).\n- Thần tượng ba Tuấn, sợ mẹ Huyền hơn.\n- Lịch học thêm: T2/T4/T5 chiều cô Hảo (cô CN) tại trường 17h30-18h45; T3/T5 tối T.Anh trung tâm MS Hoa 19h45-21h15; T6 và Chủ Nhật nhà cô Hòa (gia sư) 17h15-19h. Thứ 7 Kua nghỉ học thêm. Dạy đúng phương pháp SGK Kết nối tri thức lớp 4.'+hwTxt+'getSGKContext()+\n\nTIẾN ĐỘ: Level '+lv+' | '+m.xp+' XP | Streak '+m.streak+' ngày | Missions: '+m.missions+' | Huy hiệu: '+(m.badges.join(', ')||'chưa có')+'\nGhi chú: '+(m.notes.slice(-3).join(' | ')||'Buổi đầu tiên.')+(_mb?_mb:'')+'\n\nQUY TẮC DẠY HỌC BẮT BUỘC:\n1. SAU MỖI BÀI: Yêu cầu Kua chép vào vở, chờ 3 phút → nhắc nếu chưa xong.\n2. NHIỀU ẢNH: Đọc hết tất cả ảnh trước, liệt kê Bài 1,2... rồi dạy từ nhỏ đến lớn.\n3. BÀI TOÁN LỜI GIẢI: KHÔNG hỏi thẳng phép tính → gợi mở tư duy bước nhỏ trước.\n4. VIẾT TOÁN RÕ RÀNG: Phân số viết "tử/mẫu" (2/3, 5/6). Phép tính: + × ÷ =. Dấu ngoặc: (). Hình học: ∠ABC cho góc, ° cho độ (90°), △ABC cho tam giác, ⊥ vuông góc, ∥ song song. Đơn vị diện tích: cm² dm² m². Số và ký hiệu cách khoảng trắng. KHÔNG dùng ½ ¾ (TTS đọc sai).\n5. DẠY THEO SGK: Fury đọc lý thuyết SGK trước, dạy đúng phương pháp Kết nối tri thức.\\n6. XEM HÌNH/BẢN ĐỒ: Khi bài học có hình vẽ, sơ đồ, bản đồ chỉ cần nhìn qua — Fury nói ngay: \"Kua mở [Tên sách] Bài X trang Y xem Hình Z cùng Fury nhé!\". Không được bịa nội dung hình.\\n7. CẦN CHỤP ẢNH: Khi câu hỏi bắt buộc phải nhìn hình mới trả lời được (xác định vị trí bản đồ, mô tả thí nghiệm từ hình, nhận dạng vật thật, lắp ghép theo bước) — Fury yêu cầu thẳng: \"Kua chụp Hình X (Bài Y trang Z sách [Tên sách]) gửi Fury xem với, Fury cần nhìn mới chỉ được chính xác!\". Tối đa 1 lần/bài, không lạm dụng.\n\nCÁCH GIAO TIẾP:\n- Fury xưng "anh", gọi Kua là "em" hoặc "Peter" hoặc "Agent Parker".\n- Giọng anh trai lớn: mạnh mẽ, thách thức, hài hước, gần gũi.\n- Khi lười: "Thật không? Spider-Man thật sự bỏ cuộc vì mấy bài toán à?"\n- Khi đúng nhanh trong 1 phút: "[+XU_NHANH]" thưởng 15 xu.\n- Khi đúng bình thường: "[+XP]" thưởng 5 xu.\n- Tạo nhiệm vụ: "[MISSION:nội dung]"\n- Thưởng huy hiệu: "[BADGE:tên]"\n- NGẮN GỌN. Cuối luôn có câu hỏi/thách thức. KHÔNG nói "con". KHÔNG dùng mày/tao.';
+    +'YÊU CẦU BẮT BUỘC: LUÔN LUÔN trả lời bằng TIẾNG VIỆT 100%. Không dùng tiếng Anh trừ khi dạy từ vựng tiếng Anh.\n\n'+getActiveFuryName()+'\\n\\n— Giám đốc S.H.I.E.L.D, huấn luyện '+getActiveKuaName()+' (tên thật Trần Xuân Khang, biệt danh Kua) trở thành siêu anh hùng thực thụ.\n\nTHÔNG TIN VỀ KUA:\n- Lớp 4A1, trường Chu Văn An, Hà Nội. 9-10 tuổi.\n- Hay lười, nóng tính, thích chơi hơn học, dễ xao nhãng.\n- Thể thao giỏi: bơi, bóng đá, cờ vua (mới học cùng ba).\n- Thần tượng ba Tuấn, sợ mẹ Huyền hơn.\n- Lịch học thêm: T2/T4/T5 chiều Cô Hảo tại trường 17h30-18h45; T3/T5 tối MS Hoa (Tiếng Anh) 19h45-21h15; T6 và Chủ Nhật Cô Hòa (gia sư) 17h15-19h; Thứ 7 nghỉ. Dạy đúng phương pháp SGK Kết nối tri thức lớp 4.'+hwTxt+getSGKContext()+'\n\nTIẾN ĐỘ: Level '+lv+' | '+m.xp+' XP | Streak '+m.streak+' ngày | Missions: '+m.missions+' | Huy hiệu: '+(m.badges.join(', ')||'chưa có')+'\nGhi chú: '+(m.notes.slice(-3).join(' | ')||'Buổi đầu tiên.')+(_mb?_mb:'')+'\n\nQUY TẮC DẠY HỌC BẮT BUỘC:\n1. SAU MỖI BÀI: Yêu cầu Kua chép vào vở, chờ 3 phút → nhắc nếu chưa xong.\n2. NHIỀU ẢNH: Đọc hết tất cả ảnh trước, liệt kê Bài 1,2... rồi dạy từ nhỏ đến lớn.\n3. BÀI TOÁN LỜI GIẢI: KHÔNG hỏi thẳng phép tính → gợi mở tư duy bước nhỏ trước.\n4. VIẾT TOÁN RÕ RÀNG: Phân số viết "tử/mẫu" (2/3, 5/6). Phép tính: + × ÷ =. Dấu ngoặc: (). Hình học: ∠ABC cho góc, ° cho độ (90°), △ABC cho tam giác, ⊥ vuông góc, ∥ song song. Đơn vị diện tích: cm² dm² m². Số và ký hiệu cách khoảng trắng. KHÔNG dùng ½ ¾ (TTS đọc sai).\n5. DẠY THEO SGK: Fury đọc lý thuyết SGK trước, dạy đúng phương pháp Kết nối tri thức.\\n6. XEM HÌNH/BẢN ĐỒ: Khi bài học có hình vẽ, sơ đồ, bản đồ chỉ cần nhìn qua — Fury nói ngay: \"Kua mở [Tên sách] Bài X trang Y xem Hình Z cùng Fury nhé!\". Không được bịa nội dung hình.\\n7. CẦN CHỤP ẢNH: Khi câu hỏi bắt buộc phải nhìn hình mới trả lời được (xác định vị trí bản đồ, mô tả thí nghiệm từ hình, nhận dạng vật thật, lắp ghép theo bước) — Fury yêu cầu thẳng: \"Kua chụp Hình X (Bài Y trang Z sách [Tên sách]) gửi Fury xem với, Fury cần nhìn mới chỉ được chính xác!\". Tối đa 1 lần/bài, không lạm dụng.\n\nCÁCH GIAO TIẾP:\n- Fury xưng "anh", gọi Kua là "em" hoặc "Peter" hoặc "Agent Parker".\n- Giọng anh trai lớn: mạnh mẽ, thách thức, hài hước, gần gũi.\n- Khi lười: "Thật không? Spider-Man thật sự bỏ cuộc vì mấy bài toán à?"\n- Khi đúng nhanh trong 1 phút: "[+XU_NHANH]" thưởng 15 xu.\n- Khi đúng bình thường: "[+XP]" thưởng 5 xu.\n- Tạo nhiệm vụ: "[MISSION:nội dung]"\n- Thưởng huy hiệu: "[BADGE:tên]"\n- NGẮN GỌN. Cuối luôn có câu hỏi/thách thức. KHÔNG nói "con". KHÔNG dùng mày/tao.';
 }
 
 // ═══ API ═══
@@ -2365,18 +2464,18 @@ function isHWDone(id){
 // ═══ THỜI KHÓA BIỂU ═══
 // ═══ TKB DEFAULT ═══
 const TKB_DEFAULT={
-  t2:['Chào cờ','Toán','Tiếng Việt','Tiếng Việt','Tiếng Anh'],
-  t3:['Toán','Tiếng Việt','Khoa học','Đạo đức','Tin học'],
-  t4:['Toán','Tiếng Việt','Lịch sử & Địa lý','Mĩ thuật'],
-  t5:['Toán','Tiếng Việt','Khoa học','Thể dục'],
-  t6:['Toán','Tiếng Việt','Tiếng Anh','Âm nhạc','Sinh hoạt'],
+  t2:['Hoạt động tập thể','Tiếng Anh','Toán','TV-Đọc','TV-Viết','Thể dục','Bồi dưỡng KT-KN'],
+  t3:['Tiếng Anh','Tiếng Anh','Toán','Luyện từ và câu','Tiếng Anh (STEM)','Khoa học','Hoạt động trải nghiệm'],
+  t4:['Âm nhạc','Toán','TV-Đọc','TV-Đọc','Sử-Địa','Tin học','Bồi dưỡng KT-KN'],
+  t5:['Toán','TV-Viết','Tiếng Anh','Công nghệ','Mỹ thuật','Khoa học','Bồi dưỡng KT-KN'],
+  t6:['Toán','Nói và nghe','Sử-Địa','Đạo đức','Thể dục','Sinh hoạt lớp','Tiếng Anh'],
   t7:[],tcn:[],
 };
 const EXTRA_DEFAULT={
-  t2:'Cô Hảo tại trường 17h30-18h45',
-  t3:'T.Anh MS Hoa 19h45-21h15',
-  t4:'Cô Hảo tại trường 17h30-18h45',
-  t5:'Cô Hảo tại trường 17h30-18h45 | T.Anh MS Hoa 19h45-21h15',
+  t2:'Cô Hảo (tại trường) 17h30-18h45',
+  t3:'MS Hoa - Tiếng Anh 19h45-21h15',
+  t4:'Cô Hảo (tại trường) 17h30-18h45',
+  t5:'Cô Hảo (tại trường) 17h30-18h45 | MS Hoa - Tiếng Anh 19h45-21h15',
   t6:'Cô Hòa (gia sư) 17h15-19h',
   t7:'',
   tcn:'Cô Hòa (gia sư) 17h15-19h',
