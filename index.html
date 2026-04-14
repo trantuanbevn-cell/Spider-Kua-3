@@ -39,6 +39,61 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
   box-sizing:border-box;
   min-height:100vh;
 }
+/* Laser scan effect */
+.laser-beam{
+  position:absolute;
+  top:0; left:-100%;
+  width:60%; height:100%;
+  background:linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(232,25,44,0) 30%,
+    rgba(232,25,44,0.07) 48%,
+    rgba(232,25,44,0.18) 50%,
+    rgba(232,25,44,0.07) 52%,
+    rgba(232,25,44,0) 70%,
+    transparent 100%
+  );
+  animation:laserScan 3.2s cubic-bezier(0.4,0,0.6,1) infinite;
+  pointer-events:none;
+  z-index:1;
+}
+.laser-beam::after{
+  content:'';
+  position:absolute;
+  top:0; left:50%; transform:translateX(-50%);
+  width:2px; height:100%;
+  background:linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(232,25,44,0.6) 20%,
+    rgba(255,60,80,1) 50%,
+    rgba(232,25,44,0.6) 80%,
+    transparent 100%
+  );
+  box-shadow:0 0 8px 3px rgba(232,25,44,0.8), 0 0 20px 6px rgba(232,25,44,0.3);
+}
+@keyframes laserScan{
+  0%   { left:-60%; opacity:0; }
+  5%   { opacity:1; }
+  95%  { opacity:1; }
+  100% { left:130%; opacity:0; }
+}
+/* Grid overlay subtle */
+.laser-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(232,25,44,0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(232,25,44,0.04) 1px, transparent 1px);
+  background-size:40px 40px;
+  pointer-events:none;
+  z-index:0;
+  animation:gridFade 4s ease-in-out infinite alternate;
+}
+@keyframes gridFade{
+  0%  { opacity:0.4; }
+  100%{ opacity:1; }
+}
 #splash.hide{animation:splashOut .6s ease forwards;}
 @keyframes splashOut{to{opacity:0;transform:scale(1.05);visibility:hidden;}}
 
@@ -56,7 +111,26 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 .info-center{display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:60px;}
 .wel-txt{font-family:'Rajdhani',sans-serif;font-size:14px;letter-spacing:.6em;color:rgba(255,255,255,.7);text-transform:uppercase;}
 .name-txt{font-family:'Rajdhani',sans-serif;font-size:52px;font-weight:700;letter-spacing:.1em;color:#e8192c;line-height:1;text-shadow:0 0 20px rgba(232,25,44,.5);}
-.shield-txt{font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:600;letter-spacing:.15em;color:#f5c842;min-height:1.5em;}
+.shield-txt{
+  font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:600;
+  letter-spacing:.2em;color:#f5c842;min-height:1.5em;
+  text-shadow:0 0 8px rgba(245,200,66,.8),0 0 20px rgba(245,200,66,.4);
+  animation:shieldGlow 2.2s ease-in-out infinite;
+}
+@keyframes shieldGlow{
+  0%,100%{
+    text-shadow:0 0 6px rgba(245,200,66,.7),0 0 14px rgba(245,200,66,.3);
+    opacity:.85;
+  }
+  50%{
+    text-shadow:0 0 14px rgba(245,200,66,1),0 0 30px rgba(245,200,66,.6),0 0 50px rgba(245,200,66,.3);
+    opacity:1;
+  }
+}
+@keyframes shieldTyped{
+  from{border-right-color:#f5c842;}
+  to{border-right-color:transparent;}
+}
 
 /* Vùng 3: Logo Spider-Man */
 .spider-bottom{display:flex;flex-direction:column;align-items:center;gap:16px;}
@@ -454,6 +528,9 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
 
 <!-- ═══ SPLASH - GEMINI DESIGN ═══ -->
 <div id="splash" onclick="hideSplash()">
+  <!-- Laser scan overlay -->
+  <div class="laser-grid"></div>
+  <div class="laser-beam"></div>
   <!-- Vùng 1: Avengers -->
   <div class="av-top">
     <img src="https://raw.githubusercontent.com/trantuanbevn-cell/Spider-Kua-3/main/the-avengers-seeklogo.png" style="width:110px;height:110px;object-fit:contain;filter:drop-shadow(0 0 20px rgba(192,160,96,.4)) contrast(1.15) saturate(1.2);image-rendering:crisp-edges;" alt="Avengers">
@@ -464,7 +541,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
   <div class="info-center">
     <div class="wel-txt">WELCOME</div>
     <div class="name-txt">SPIDER-KUA</div>
-    <div id="sloganTxt" class="shield-txt"></div>
+    <div id="sloganTxt" class="shield-txt">SHIELD SYSTEMS ONLINE. STANDING BY!</div>
   </div>
 
   <!-- Vùng 3: Logo + Tap -->
@@ -557,6 +634,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
       </svg>
     </button>
     <div class="chip" style="margin-left:auto;color:var(--gold);cursor:pointer;" onclick="copyRoom()">📱 <span id="sRoom">—</span></div>
+
   </div>
 
   <!-- FURY SEARCH POPUP -->
@@ -892,37 +970,84 @@ const SLOGAN_TEXT="Shield Systems Online. Standing by!";
 const SLOGAN_VOICE="Shield systems online. Standing by!";
 
 function animateSlogan(){
-  const el=document.getElementById('sloganTxt');
+  var el=document.getElementById('sloganTxt');
   if(!el)return;
-  el.textContent='';let j=0;
-  const iv=setInterval(()=>{
-    if(j<SLOGAN_TEXT.length){el.textContent+=SLOGAN_TEXT[j];j++;}
-    else{clearInterval(iv);playVoice();}
-  },50);
+  // Tab ẩn: hiện text ngay
+  if(document.hidden){ el.textContent=SLOGAN_TEXT; window._sloganDone=true; _tryPlayVoice(); return; }
+  // Typewriter effect
+  el.textContent='';
+  el.style.borderRight='2px solid #f5c842';
+  el.style.animation='none'; // tắm glow trong lúc gõ
+  var j=0;
+  var iv=setInterval(function(){
+    if(j<SLOGAN_TEXT.length){
+      el.textContent+=SLOGAN_TEXT[j]; j++;
+    } else {
+      clearInterval(iv);
+      window._sloganDone=true;
+      // Cursor nhấp nháy 1s rồi bật lại glow
+      var blink=setInterval(function(){
+        el.style.borderRightColor=el.style.borderRightColor==='transparent'?'#f5c842':'transparent';
+      },400);
+      setTimeout(function(){
+        clearInterval(blink);
+        el.style.borderRight='none';
+        el.style.animation=''; // bật lại shieldGlow
+      },1200);
+      // Đọc giọng
+      _tryPlayVoice();
+    }
+  },38);
+}
+
+function _tryPlayVoice(){
+  if(window._voicePlayed) return;
+  if(window._audioUnlocked){ playVoice(); }
+  // Nếu chưa unlock audio → sẽ thử lại khi user tap (xem hideSplash)
 }
 
 function playVoice(){
   if(!window.speechSynthesis)return;
-  window.speechSynthesis.cancel();
-  const u=new SpeechSynthesisUtterance(SLOGAN_VOICE);
-  u.lang='en-US';u.rate=0.85;u.pitch=0.65;
-  const tryPlay=()=>{
-    const vv=window.speechSynthesis.getVoices();
-    const v=vv.find(v=>v.name==='Google UK English Male')
-      ||vv.find(v=>v.name==='Microsoft David - English (United States)')
-      ||vv.find(v=>v.name==='Google US English')
-      ||vv.find(v=>v.lang.startsWith('en-')&&(v.name.toLowerCase().includes('male')||v.name.toLowerCase().includes('david')||v.name.toLowerCase().includes('mark')||v.name.toLowerCase().includes('james')))
-      ||vv.find(v=>v.lang==='en-US'&&!v.name.toLowerCase().includes('female'))
-      ||vv.find(v=>v.lang.startsWith('en'));
-    if(v)u.voice=v;
-    u.onend=()=>{};
-    window.speechSynthesis.speak(u);
-  };
-  if(window.speechSynthesis.getVoices().length>0)tryPlay();
-  else window.speechSynthesis.onvoiceschanged=()=>{tryPlay();window.speechSynthesis.onvoiceschanged=null;};
+  window._voicePlayed=true;
+  try{ window.speechSynthesis.cancel(); }catch(e){}
+  var u=new SpeechSynthesisUtterance(SLOGAN_VOICE);
+  u.lang='en-US'; u.rate=0.82; u.pitch=0.62; u.volume=1;
+  function _doPlay(){
+    var vv=window.speechSynthesis.getVoices()||[];
+    var v=vv.find(function(v){return v.name==='Google UK English Male';})
+      ||vv.find(function(v){return v.name==='Microsoft David - English (United States)';})
+      ||vv.find(function(v){return v.name==='Google US English';})
+      ||vv.find(function(v){
+          return v.lang.startsWith('en-')&&
+            (v.name.toLowerCase().includes('male')||
+             v.name.toLowerCase().includes('david')||
+             v.name.toLowerCase().includes('mark')||
+             v.name.toLowerCase().includes('james'));
+        })
+      ||vv.find(function(v){return v.lang==='en-US'&&!v.name.toLowerCase().includes('female');})
+      ||vv.find(function(v){return v.lang.startsWith('en');});
+    if(v) u.voice=v;
+    try{ window.speechSynthesis.speak(u); }catch(e){}
+  }
+  var vv=window.speechSynthesis.getVoices();
+  if(vv&&vv.length>0){ _doPlay(); }
+  else{
+    window.speechSynthesis.onvoiceschanged=function(){
+      window.speechSynthesis.onvoiceschanged=null;
+      _doPlay();
+    };
+    // Fallback 800ms — đọc dù chưa có voice list cụ thể
+    setTimeout(function(){ if(!window._voicePlayed){ _doPlay(); } },800);
+  }
 }
 
 function hideSplash(){
+  // Tap = user gesture → unlock audio nếu chưa
+  if(!window._audioUnlocked){ try{ unlockAudio(); }catch(e){} }
+  // Nếu slogan xong mà chưa đọc → đọc ngay khi tap
+  if(!window._voicePlayed){
+    try{ playVoice(); }catch(e){}
+  }
   window.speechSynthesis&&window.speechSynthesis.cancel();
   const sp=document.getElementById('splash');
   if(!sp)return;
@@ -6299,12 +6424,17 @@ window.onload=()=>{
       var _u=new SpeechSynthesisUtterance('\u200b'); // zero-width space
       _u.volume=0.01; _u.rate=2; _u.lang='vi-VN';
       window.speechSynthesis.speak(_u);
-      setTimeout(function(){ try{window.speechSynthesis.cancel();}catch(e){} },200);
+      setTimeout(function(){ 
+        // Chỉ cancel nếu chưa bắt đầu đọc slogan voice thật sự
+        if(!window._voicePlayed){ try{window.speechSynthesis.cancel();}catch(e){} }
+      },200);
     }
   };
   document.addEventListener('touchstart',unlockAudio,{once:true});
   document.addEventListener('click',unlockAudio,{once:true});
-  setTimeout(animateSlogan,800);
+  // Thử unlock ngay lập tức (một số browser cho phép)
+  try{ unlockAudio(); }catch(e){}
+  setTimeout(animateSlogan,200);
   setTimeout(updateExamBanner,500);
   const k=localStorage.getItem('sk3');
   const g=localStorage.getItem('gem3');
