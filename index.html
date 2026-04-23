@@ -669,460 +669,7 @@ body::before{content:'';position:fixed;inset:0;background:radial-gradient(circle
       📱 Đặt thiết bị này là máy Kua (nguồn dữ liệu chính)
     </button>
     <div style="font-size:10px;color:var(--tx3);margin-top:4px">Hiện tại: <b id="deviceTypeLabel"></b></div>
-    <script>document.getElementById("deviceTypeLabel").textContent=localStorage.getItem("isKuaDevice")==="true"?"Máy Kua ✅":"Máy bố/mẹ 👁️";
-
-// ═══════════════════════════════════════════════
-// TKB & LỊCH THI SYSTEM
-// ═══════════════════════════════════════════════
-
-// Default TKB data (Chu Văn An 4A1)
-var TKB_DEFAULT = {
-  t2: ['Chào cờ','Toán','Tiếng Việt','Tiếng Việt','Tiếng Anh'],
-  t3: ['Toán','Tiếng Việt','Khoa học','Đạo đức','Tin học'],
-  t4: ['Toán','Tiếng Việt','Lịch sử & Địa lý','Mĩ thuật','—'],
-  t5: ['Toán','Tiếng Việt','Khoa học','Thể dục','—'],
-  t6: ['Toán','Tiếng Việt','Tiếng Anh','Âm nhạc','Sinh hoạt'],
-  t7: [],
-  tcn: []
-};
-
-var EXTRA_DEFAULT = {
-  t2: 'Cô Hảo tại trường 17h30-18h45',
-  t3: 'T.Anh MS Hoa 19h45-21h15',
-  t4: 'Cô Hảo tại trường 17h30-18h45',
-  t5: 'Cô Hảo tại trường 17h30-18h45 | T.Anh MS Hoa 19h45-21h15',
-  t6: 'Cô Hòa (gia sư) 17h15-19h',
-  t7: '',
-  tcn: 'Cô Hòa (gia sư) 17h15-19h'
-};
-
-var DAYS_LABEL = {
-  t2:'Thứ Hai', t3:'Thứ Ba', t4:'Thứ Tư', t5:'Thứ Năm', t6:'Thứ Sáu', t7:'Thứ Bảy', tcn:'Chủ Nhật'
-};
-var DAYS_ORDER = ['t2','t3','t4','t5','t6','t7','tcn'];
-var DAY_JS_MAP = {0:'tcn',1:'t2',2:'t3',3:'t4',4:'t5',5:'t6',6:'t7'};
-
-// Lưu/load TKB từ localStorage
-function getTKB(){
-  try{
-    var s = localStorage.getItem('kua_tkb');
-    return s ? JSON.parse(s) : JSON.parse(JSON.stringify(TKB_DEFAULT));
-  }catch(e){ return JSON.parse(JSON.stringify(TKB_DEFAULT)); }
-}
-function saveTKB(d){ localStorage.setItem('kua_tkb', JSON.stringify(d)); }
-
-function getEXTRA(){
-  try{
-    var s = localStorage.getItem('kua_extra');
-    return s ? JSON.parse(s) : JSON.parse(JSON.stringify(EXTRA_DEFAULT));
-  }catch(e){ return JSON.parse(JSON.stringify(EXTRA_DEFAULT)); }
-}
-function saveEXTRA(d){ localStorage.setItem('kua_extra', JSON.stringify(d)); }
-
-// Lịch thi: [{id, subject, type:'gk'|'hk', date:'YYYY-MM-DD', note}]
-function getExams(){
-  try{
-    var s = localStorage.getItem('kua_exams');
-    return s ? JSON.parse(s) : [];
-  }catch(e){ return []; }
-}
-function saveExams(d){ localStorage.setItem('kua_exams', JSON.stringify(d)); }
-
-// ═══ TOGGLE TKB POPUP ═══
-var _tkbTab = 'main';
-function toggleTKB(){
-  var p = document.getElementById('tkbPopup');
-  if(p.style.display==='flex'){p.style.display='none';return;}
-  p.style.display='flex';
-  switchTkbTab(_tkbTab);
-}
-
-function switchTkbTab(tab){
-  _tkbTab = tab;
-  ['main','exam','edit'].forEach(function(t){
-    var el = document.getElementById('tabTkb'+t.charAt(0).toUpperCase()+t.slice(1));
-    if(el) el.classList.toggle('active', t===tab);
-  });
-  var c = document.getElementById('tkbContent');
-  if(!c) return;
-  if(tab==='main') renderTKBMain(c);
-  else if(tab==='exam') renderExamView(c);
-  else if(tab==='edit') renderTKBEdit(c);
-}
-
-// ═══ TAB 1: Xem TKB chính ═══
-function renderTKBMain(container){
-  var tkb = getTKB();
-  var extra = getEXTRA();
-  var today = DAY_JS_MAP[new Date().getDay()];
-  var exams = getExams();
-  
-  // Banner lịch thi gần nhất
-  var upcoming = exams.filter(function(e){
-    var d = new Date(e.date+'T00:00:00');
-    return d >= new Date(new Date().toDateString());
-  }).sort(function(a,b){ return new Date(a.date)-new Date(b.date); });
-  
-  var bannerHtml = '';
-  if(upcoming.length > 0){
-    var next = upcoming[0];
-    var days = Math.round((new Date(next.date+'T00:00:00') - new Date(new Date().toDateString()))/(86400000));
-    var urgentClass = days <= 3 ? 'style="animation:pulse 1s infinite;"' : '';
-    bannerHtml = '<div class="exam-banner" onclick="switchTkbTab(\'exam\')">'
-      + '<div class="exam-banner-icon">🎯</div>'
-      + '<div class="exam-banner-text">'
-      + '<div class="exam-banner-title">THI SẮP TỚI: ' + next.subject.toUpperCase() + '</div>'
-      + '<div class="exam-banner-sub">' + (next.type==='gk'?'Giữa kỳ':'Học kỳ') + ' · ' + formatDate(next.date) + (next.note?' · '+next.note:'') + '</div>'
-      + '</div>'
-      + '<div class="exam-banner-days" '+urgentClass+'>' + days + '<br><small style="font-size:10px;font-weight:400;">ngày</small></div>'
-      + '</div>';
-  }
-  
-  var html = bannerHtml;
-  DAYS_ORDER.forEach(function(dk){
-    var subjects = tkb[dk] || [];
-    var ex = extra[dk] || '';
-    var isToday = dk === today;
-    html += '<div class="tkb-day-row" style="' + (isToday?'border:1.5px solid var(--blue2);':'') + '">'
-      + '<div class="tkb-day-label" style="' + (isToday?'color:var(--blue2);':'') + '">'
-      + (isToday?'▶ ':'') + DAYS_LABEL[dk]
-      + (isToday?' <span style="font-size:10px;color:var(--blue2);font-weight:400;">(Hôm nay)</span>':'')
-      + '</div>';
-    
-    if(subjects.length === 0 || (subjects.length===1 && subjects[0]==='—')){
-      html += '<div style="font-size:11px;color:var(--tx3);font-style:italic;">Nghỉ học</div>';
-    } else {
-      html += '<div class="tkb-subjects">';
-      subjects.filter(function(s){return s&&s!=='—';}).forEach(function(s,i){
-        html += '<span class="tkb-subject-chip" style="background:var(--s3);">' + (i+1) + '. ' + s + '</span>';
-      });
-      html += '</div>';
-    }
-    
-    if(ex){
-      html += '<div class="tkb-extra-row">🏫 <span style="color:var(--green);">Học thêm:</span> ' + ex + '</div>';
-    }
-    html += '</div>';
-  });
-  
-  container.innerHTML = html;
-}
-
-// ═══ TAB 2: Lịch thi ═══
-function renderExamView(container){
-  var exams = getExams();
-  var today = new Date(new Date().toDateString());
-  exams.sort(function(a,b){ return new Date(a.date)-new Date(b.date); });
-  
-  var html = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">'
-    + '<div style="font-size:12px;color:var(--tx2);">Quản lý lịch thi của Kua</div>'
-    + '<button onclick="showAddExamForm()" style="background:var(--red);border:none;border-radius:8px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;padding:6px 14px;cursor:pointer;">+ Thêm thi</button>'
-    + '</div>';
-  
-  if(exams.length === 0){
-    html += '<div style="text-align:center;padding:30px;color:var(--tx3);font-size:13px;">'
-      + '<div style="font-size:40px;margin-bottom:8px;">🎯</div>'
-      + '<div>Chưa có lịch thi nào</div>'
-      + '<div style="font-size:11px;margin-top:4px;">Bấm "+ Thêm thi" để cài đặt</div>'
-      + '</div>';
-  } else {
-    exams.forEach(function(e, idx){
-      var examDate = new Date(e.date+'T00:00:00');
-      var days = Math.round((examDate - today) / 86400000);
-      var isPassed = days < 0;
-      var isUrgent = !isPassed && days <= 3;
-      var cdText = isPassed ? 'Đã qua' : (days === 0 ? 'HÔM NAY!' : days + ' ngày');
-      
-      html += '<div class="exam-card' + (isPassed?' passed':'') + (isUrgent?' urgent':'') + '">'
-        + '<div class="exam-card-type ' + (e.type==='gk'?'gk':'') + '">'
-        + (e.type==='gk'?'GIỮA KỲ':'HỌC KỲ') + '</div>'
-        + '<div class="exam-card-subject">' + e.subject + '</div>'
-        + '<div class="exam-card-date">📅 ' + formatDate(e.date) + (e.note?' · '+e.note:'') + '</div>'
-        + '<div class="exam-card-countdown' + (isUrgent?' urgent':'') + '">'
-        + (isPassed ? '<span style="font-size:14px;">✓</span>' : cdText)
-        + '<small>' + (isPassed ? 'Đã thi' : (days===0?'':'ngày')) + '</small>'
-        + '</div>'
-        + '<button onclick="deleteExam(' + idx + ')" style="position:absolute;bottom:8px;right:10px;background:transparent;border:none;color:var(--tx3);font-size:11px;cursor:pointer;padding:2px 6px;">✕ Xoá</button>'
-        + '</div>';
-    });
-  }
-  
-  container.innerHTML = html;
-}
-
-function formatDate(dateStr){
-  var d = new Date(dateStr+'T00:00:00');
-  var thu = ['CN','T2','T3','T4','T5','T6','T7'];
-  return thu[d.getDay()] + ' ' + d.getDate() + '/' + (d.getMonth()+1) + '/' + d.getFullYear();
-}
-
-function showAddExamForm(){
-  var pop = document.createElement('div');
-  pop.id = 'addExamPop';
-  pop.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;';
-  pop.innerHTML = '<div style="background:var(--s1);border:1px solid var(--bd2);border-radius:16px;padding:20px;max-width:360px;width:100%;">'
-    + '<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:16px;color:var(--gold);margin-bottom:14px;">🎯 THÊM LỊCH THI</div>'
-    + '<div style="margin-bottom:10px;">'
-    + '<div style="font-size:11px;color:var(--tx2);margin-bottom:4px;">Môn thi</div>'
-    + '<select id="examSubjectSel" style="width:100%;background:var(--s2);border:1px solid var(--bd2);border-radius:8px;color:var(--tx);font-size:13px;padding:8px;outline:none;box-sizing:border-box;">'
-    + '<option value="">-- Chọn môn --</option>'
-    + '<option>Toán</option><option>Tiếng Việt</option><option>Tiếng Anh</option>'
-    + '<option>Khoa học</option><option>Lịch sử & Địa lý</option>'
-    + '<option>Đạo đức</option><option>Tin học</option><option>Âm nhạc</option><option>Mĩ thuật</option>'
-    + '</select>'
-    + '</div>'
-    + '<div style="margin-bottom:10px;">'
-    + '<div style="font-size:11px;color:var(--tx2);margin-bottom:4px;">Loại thi</div>'
-    + '<div style="display:flex;gap:8px;">'
-    + '<label style="flex:1;display:flex;align-items:center;gap:6px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:8px;cursor:pointer;">'
-    + '<input type="radio" name="examType" value="gk" checked style="accent-color:var(--blue);"> <span style="font-size:12px;">Giữa kỳ</span></label>'
-    + '<label style="flex:1;display:flex;align-items:center;gap:6px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:8px;cursor:pointer;">'
-    + '<input type="radio" name="examType" value="hk" style="accent-color:var(--red);"> <span style="font-size:12px;">Học kỳ</span></label>'
-    + '</div></div>'
-    + '<div style="margin-bottom:10px;">'
-    + '<div style="font-size:11px;color:var(--tx2);margin-bottom:4px;">Ngày thi</div>'
-    + '<input type="date" id="examDateIn" style="width:100%;background:var(--s2);border:1px solid var(--bd2);border-radius:8px;color:var(--tx);font-size:13px;padding:8px;outline:none;box-sizing:border-box;">'
-    + '</div>'
-    + '<div style="margin-bottom:14px;">'
-    + '<div style="font-size:11px;color:var(--tx2);margin-bottom:4px;">Ghi chú (tuỳ chọn)</div>'
-    + '<input type="text" id="examNoteIn" placeholder="VD: Phòng thi 201, 7h30..." style="width:100%;background:var(--s2);border:1px solid var(--bd2);border-radius:8px;color:var(--tx);font-size:12px;padding:8px;outline:none;box-sizing:border-box;">'
-    + '</div>'
-    + '<div style="display:flex;gap:8px;">'
-    + '<button onclick="document.getElementById(\'addExamPop\').remove()" style="flex:1;background:var(--s3);border:1px solid var(--bd);border-radius:10px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;padding:10px;cursor:pointer;">Huỷ</button>'
-    + '<button onclick="saveNewExam()" style="flex:2;background:var(--red);border:none;border-radius:10px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;padding:10px;cursor:pointer;">💾 Lưu lịch thi</button>'
-    + '</div>'
-    + '</div>';
-  document.body.appendChild(pop);
-  // Set default date = today
-  document.getElementById('examDateIn').valueAsDate = new Date();
-}
-
-function saveNewExam(){
-  var subject = document.getElementById('examSubjectSel').value;
-  var type = document.querySelector('input[name="examType"]:checked').value;
-  var date = document.getElementById('examDateIn').value;
-  var note = document.getElementById('examNoteIn').value.trim();
-  
-  if(!subject){ alert('Vui lòng chọn môn thi!'); return; }
-  if(!date){ alert('Vui lòng chọn ngày thi!'); return; }
-  
-  var exams = getExams();
-  exams.push({ id: Date.now(), subject: subject, type: type, date: date, note: note });
-  saveExams(exams);
-  document.getElementById('addExamPop').remove();
-  renderExamView(document.getElementById('tkbContent'));
-}
-
-function deleteExam(idx){
-  if(!confirm('Xoá lịch thi này?')) return;
-  var exams = getExams();
-  exams.splice(idx, 1);
-  saveExams(exams);
-  renderExamView(document.getElementById('tkbContent'));
-}
-
-// ═══ TAB 3: Chỉnh sửa TKB ═══
-function renderTKBEdit(container){
-  var tkb = getTKB();
-  var extra = getEXTRA();
-  
-  var html = '<div style="font-size:11px;color:var(--tx3);margin-bottom:12px;">✏️ Chỉnh sửa TKB và lịch học thêm trực tiếp</div>';
-  
-  DAYS_ORDER.forEach(function(dk){
-    var subjects = tkb[dk] || [];
-    var ex = extra[dk] || '';
-    html += '<div class="tkb-day-row">'
-      + '<div class="tkb-day-label">' + DAYS_LABEL[dk] + '</div>'
-      + '<div class="tkb-subjects" id="chips_' + dk + '">';
-    
-    subjects.forEach(function(s, si){
-      if(!s || s==='—') return;
-      html += '<span class="tkb-subject-chip">' + s
-        + '<span class="del" onclick="removeSubject(\''+dk+'\','+si+')">&times;</span>'
-        + '</span>';
-    });
-    
-    html += '</div>'
-      + '<div style="display:flex;gap:6px;margin-bottom:6px;">'
-      + '<input type="text" id="addSubj_'+dk+'" placeholder="Thêm môn..." onkeydown="if(event.key===\'Enter\')addSubject(\''+dk+'\')" '
-      + 'style="flex:1;background:var(--bg);border:1px solid var(--bd2);border-radius:6px;color:var(--tx);font-size:12px;padding:5px 8px;outline:none;">'
-      + '<button onclick="addSubject(\''+dk+'\')" style="background:var(--blue);border:none;border-radius:6px;color:#fff;font-family:Rajdhani,sans-serif;font-size:11px;padding:5px 10px;cursor:pointer;">+ Thêm</button>'
-      + '</div>'
-      + '<div style="font-size:10px;color:var(--tx3);margin-bottom:4px;">Học thêm:</div>'
-      + '<input class="tkb-extra-edit" id="extra_'+dk+'" value="'+ex.replace(/"/g,'&quot;')+'" placeholder="Lịch học thêm..." '
-      + 'onblur="saveExtraField(\''+dk+'\')" onkeydown="if(event.key===\'Enter\')saveExtraField(\''+dk+'\')">'
-      + '</div>';
-  });
-  
-  html += '<button onclick="resetTKBDefault()" style="width:100%;background:transparent;border:1px dashed var(--bd);border-radius:10px;color:var(--tx3);font-size:11px;padding:8px;cursor:pointer;margin-top:6px;">↩ Khôi phục mặc định</button>';
-  
-  container.innerHTML = html;
-}
-
-function addSubject(dk){
-  var input = document.getElementById('addSubj_'+dk);
-  var val = input.value.trim();
-  if(!val) return;
-  var tkb = getTKB();
-  if(!tkb[dk]) tkb[dk] = [];
-  tkb[dk].push(val);
-  saveTKB(tkb);
-  input.value = '';
-  renderTKBEdit(document.getElementById('tkbContent'));
-}
-
-function removeSubject(dk, si){
-  var tkb = getTKB();
-  if(!tkb[dk]) return;
-  // Map si to non-dash index
-  var realIdx = -1, count = 0;
-  for(var i=0;i<tkb[dk].length;i++){
-    if(tkb[dk][i] && tkb[dk][i]!=='—'){
-      if(count===si){realIdx=i;break;}
-      count++;
-    }
-  }
-  if(realIdx >= 0) tkb[dk].splice(realIdx, 1);
-  saveTKB(tkb);
-  renderTKBEdit(document.getElementById('tkbContent'));
-}
-
-function saveExtraField(dk){
-  var input = document.getElementById('extra_'+dk);
-  if(!input) return;
-  var extra = getEXTRA();
-  extra[dk] = input.value.trim();
-  saveEXTRA(extra);
-}
-
-function resetTKBDefault(){
-  if(!confirm('Khôi phục TKB về mặc định?')) return;
-  saveTKB(JSON.parse(JSON.stringify(TKB_DEFAULT)));
-  saveEXTRA(JSON.parse(JSON.stringify(EXTRA_DEFAULT)));
-  renderTKBEdit(document.getElementById('tkbContent'));
-  alert('✅ Đã khôi phục TKB mặc định!');
-}
-
-// ═══ EXAM COUNTDOWN BANNER trên màn hình chính ═══
-function renderExamBannerInChat(){
-  var exams = getExams();
-  var today = new Date(new Date().toDateString());
-  var upcoming = exams.filter(function(e){
-    var d = new Date(e.date+'T00:00:00');
-    return d >= today;
-  }).sort(function(a,b){ return new Date(a.date)-new Date(b.date); });
-  
-  var banner = document.getElementById('examBannerChat');
-  if(!banner) return;
-  
-  if(upcoming.length === 0){ banner.style.display='none'; return; }
-  
-  var next = upcoming[0];
-  var days = Math.round((new Date(next.date+'T00:00:00') - today) / 86400000);
-  var isUrgent = days <= 3;
-  
-  banner.style.display = 'flex';
-  banner.style.background = isUrgent
-    ? 'linear-gradient(90deg,rgba(232,25,44,.25),rgba(255,100,0,.15))'
-    : 'linear-gradient(90deg,rgba(232,25,44,.12),rgba(255,180,0,.08))';
-  
-  banner.innerHTML = '<span style="font-size:16px;">🎯</span>'
-    + '<span style="flex:1;font-size:11px;color:var(--tx);">'
-    + '<b style="color:var(--gold);">THI ' + (next.type==='gk'?'GIỮA KỲ':'HỌC KỲ') + ':</b> '
-    + next.subject
-    + (upcoming.length>1 ? ' <span style="color:var(--tx3);">+' + (upcoming.length-1) + ' môn</span>' : '')
-    + '</span>'
-    + '<span onclick="toggleTKB();switchTkbTab(\'exam\')" style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:' + (isUrgent?'16':'14') + 'px;color:' + (isUrgent?'var(--red2)':'var(--gold)') + ';cursor:pointer;"'
-    + (isUrgent?' style="animation:pulse 1s infinite;"':'') + '>'
-    + days + ' ngày</span>';
-}
-
-// Override TKB trong sys() - lấy từ localStorage
-var TKB = getTKB();
-var EXTRA = getEXTRA();
-
-// Sync TKB/EXTRA mỗi khi sys() gọi
-function getActiveTKB(){ return getTKB(); }
-function getActiveEXTRA(){ return getEXTRA(); }
-
-function stopSpeak(){if(window.speechSynthesis)window.speechSynthesis.cancel();}
-function speak(text){
-  if(!window.speechSynthesis)return;stopSpeak();
-  const c=text.replace(/\[.*?\]/g,'').replace(/[*_`#<>]/g,'').replace(/\n+/g,' ').replace(/S\.H\.I\.E\.L\.D\./gi,'Shield').trim();if(!c)return;
-  const processed=c
-    .replace(/(\d+)/g,'$1,')
-    .replace(/([+\-×÷=])/g,' $1 ')
-    .replace(/,+/g,',')
-    .replace(/\.\s/g,'... ')
-    .replace(/!\s/g,'!... ');
-  const u=new SpeechSynthesisUtterance(processed);u.lang='vi-VN';u.rate=0.82;u.pitch=0.70;
-  const vv=window.speechSynthesis.getVoices();
-  const vi=vv.find(v=>v.lang==='vi-VN'&&!v.name.toLowerCase().includes('female'))||vv.find(v=>v.lang.startsWith('vi'));
-  if(vi)u.voice=vi;
-  const spkEl=document.getElementById('spkEl');
-  u.onstart=()=>{if(spkEl)spkEl.classList.add('on');};
-  u.onend=u.onerror=()=>{if(spkEl)spkEl.classList.remove('on');};
-  window.speechSynthesis.speak(u);
-}
-
-// ═══ TIMER CHÉP BÀI ═══
-let _chepTimer=null;
-function startChepTimer(minutes){
-  clearTimeout(_chepTimer);
-  const ms=(minutes||3)*60*1000;
-  _chepTimer=setTimeout(function(){
-    qs('[Kua chưa báo chép xong sau '+minutes+' phút. Fury nhắc: Chép xong chưa Peter? Anh đang chờ đây! Chép xong báo anh nhé!]');
-  },ms);
-}
-function stopChepTimer(){clearTimeout(_chepTimer);_chepTimer=null;}
-function parseTimerChep(text){
-  if(text.includes('chép vào vở')||text.includes('chép bài vào')){startChepTimer(3);}
-  return text;
-}
-
-// ═══ TRACKING HỌC TẬP ═══
-function getStats(){return JSON.parse(localStorage.getItem('kua_stats')||JSON.stringify({sessions:[],today:{date:'',responses:[],avgTime:0,correct:0,total:0}}));}
-function saveStats(s){localStorage.setItem('kua_stats',JSON.stringify(s));}
-let _lastQuestion=0;
-function trackQuestion(){_lastQuestion=Date.now();}
-function trackAnswer(isCorrect){
-  if(!_lastQuestion)return;
-  const elapsed=(Date.now()-_lastQuestion)/1000;
-  const s=getStats();
-  const today=new Date().toDateString();
-  if(s.today.date!==today){if(s.today.date)s.sessions.push({...s.today});if(s.sessions.length>30)s.sessions=s.sessions.slice(-30);s.today={date:today,responses:[],avgTime:0,correct:0,total:0};}
-  s.today.responses.push({time:elapsed,correct:isCorrect,ts:Date.now()});
-  s.today.total++;if(isCorrect)s.today.correct++;
-  const times=s.today.responses.map(r=>r.time);
-  s.today.avgTime=Math.round(times.reduce((a,b)=>a+b,0)/times.length);
-  saveStats(s);_lastQuestion=0;
-}
-function showLearningStats(){
-  const pin=prompt('Nhập mật khẩu để xem thống kê:');
-  if(!pin)return;
-  if(pin.trim()!==(localStorage.getItem('parent_pin')||'2790')){alert('❌ Mật khẩu không đúng!');return;}
-  const s=getStats(),today=s.today;
-  const last7=s.sessions.slice(-7);
-  const trend=last7.length>1?(last7[last7.length-1].avgTime<last7[0].avgTime?'⬆️ Nhanh hơn':'⬇️ Chậm hơn'):'—';
-  const pop=document.createElement('div');
-  pop.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
-  pop.innerHTML=`<div style="background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:22px;max-width:380px;width:100%;max-height:85vh;overflow-y:auto;">
-    <div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:18px;color:var(--gold);margin-bottom:14px;">📊 THỐNG KÊ HỌC TẬP</div>
-    <div style="background:var(--s2);border-radius:10px;padding:12px;margin-bottom:10px;">
-      <div style="font-size:11px;color:var(--tx3);font-family:Rajdhani,sans-serif;text-transform:uppercase;margin-bottom:8px;">HÔM NAY</div>
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
-        <div style="text-align:center;"><div style="font-size:24px;font-weight:700;color:var(--blue2);">${today.total||0}</div><div style="font-size:10px;color:var(--tx3);">Câu trả lời</div></div>
-        <div style="text-align:center;"><div style="font-size:24px;font-weight:700;color:var(--green);">${today.total?Math.round((today.correct/today.total)*100):0}%</div><div style="font-size:10px;color:var(--tx3);">Đúng</div></div>
-        <div style="text-align:center;"><div style="font-size:24px;font-weight:700;color:var(--gold);">${today.avgTime||0}s</div><div style="font-size:10px;color:var(--tx3);">Thời gian TB</div></div>
-        <div style="text-align:center;"><div style="font-size:20px;font-weight:700;color:var(--tx);">${trend}</div><div style="font-size:10px;color:var(--tx3);">Xu hướng 7 ngày</div></div>
-      </div>
-    </div>
-    <button onclick="this.closest('div[style*=fixed]').remove()" style="width:100%;background:var(--red);border:none;border-radius:10px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;padding:10px;cursor:pointer;">Đóng</button>
-  </div>`;
-  document.body.appendChild(pop);
-}
-
-</script></div>
+    <script>document.getElementById("deviceTypeLabel").textContent=localStorage.getItem("isKuaDevice")==="true"?"Máy Kua ✅":"Máy bố/mẹ 👁️";</script></div>
   </div>
 </div>
 
@@ -6705,7 +6252,23 @@ async function verifyCup(input){
 // CORE FUNCTIONS (from V3)
 // ═══════════════════════════════════════════════════════════
 
-async function sbFetch(path, opts={}
+async function sbFetch(path, opts={}){
+  const headers={
+    'apikey': SB_KEY,
+    'Authorization': 'Bearer '+SB_KEY,
+    'Content-Type': 'application/json',
+  };
+  if(opts.prefer) headers['Prefer']=opts.prefer;
+  const {prefer,...restOpts}=opts;
+  const res = await fetch(SB_URL+'/rest/v1/'+path, {
+    headers,
+    ...restOpts
+  });
+  if(!res.ok){const e=await res.json();throw new Error(e.message||res.status);}
+  return res.json();
+}
+
+
 
 async function pingSupabase(){
   try { await sbFetch('homework?limit=1'); } catch(e){}
@@ -7466,6 +7029,457 @@ function sys(){
     +'3. BÀI TOÁN LỜI GIẢI: KHÔNG hỏi thẳng phép tính. Gợi mở: "Bài cho biết gì? Bài hỏi gì? Làm phép tính gì?" Mục tiêu: Kua TỰ TƯ DUY.\\n'
     +'4. DẠY THEO SGK: Khi có NỘI DUNG SGK trong context, dạy ĐÚNG phương pháp Kết nối tri thức lớp 4. Không dạy cách khác.'
     +(sgkContext||'');
+}
+
+// ═══════════════════════════════════════════════
+// TKB & LỊCH THI SYSTEM
+// ═══════════════════════════════════════════════
+
+// Default TKB data (Chu Văn An 4A1)
+var TKB_DEFAULT = {
+  t2: ['Chào cờ','Toán','Tiếng Việt','Tiếng Việt','Tiếng Anh'],
+  t3: ['Toán','Tiếng Việt','Khoa học','Đạo đức','Tin học'],
+  t4: ['Toán','Tiếng Việt','Lịch sử & Địa lý','Mĩ thuật','—'],
+  t5: ['Toán','Tiếng Việt','Khoa học','Thể dục','—'],
+  t6: ['Toán','Tiếng Việt','Tiếng Anh','Âm nhạc','Sinh hoạt'],
+  t7: [],
+  tcn: []
+};
+
+var EXTRA_DEFAULT = {
+  t2: 'Cô Hảo tại trường 17h30-18h45',
+  t3: 'T.Anh MS Hoa 19h45-21h15',
+  t4: 'Cô Hảo tại trường 17h30-18h45',
+  t5: 'Cô Hảo tại trường 17h30-18h45 | T.Anh MS Hoa 19h45-21h15',
+  t6: 'Cô Hòa (gia sư) 17h15-19h',
+  t7: '',
+  tcn: 'Cô Hòa (gia sư) 17h15-19h'
+};
+
+var DAYS_LABEL = {
+  t2:'Thứ Hai', t3:'Thứ Ba', t4:'Thứ Tư', t5:'Thứ Năm', t6:'Thứ Sáu', t7:'Thứ Bảy', tcn:'Chủ Nhật'
+};
+var DAYS_ORDER = ['t2','t3','t4','t5','t6','t7','tcn'];
+var DAY_JS_MAP = {0:'tcn',1:'t2',2:'t3',3:'t4',4:'t5',5:'t6',6:'t7'};
+
+// Lưu/load TKB từ localStorage
+function getTKB(){
+  try{
+    var s = localStorage.getItem('kua_tkb');
+    return s ? JSON.parse(s) : JSON.parse(JSON.stringify(TKB_DEFAULT));
+  }catch(e){ return JSON.parse(JSON.stringify(TKB_DEFAULT)); }
+}
+function saveTKB(d){ localStorage.setItem('kua_tkb', JSON.stringify(d)); }
+
+function getEXTRA(){
+  try{
+    var s = localStorage.getItem('kua_extra');
+    return s ? JSON.parse(s) : JSON.parse(JSON.stringify(EXTRA_DEFAULT));
+  }catch(e){ return JSON.parse(JSON.stringify(EXTRA_DEFAULT)); }
+}
+function saveEXTRA(d){ localStorage.setItem('kua_extra', JSON.stringify(d)); }
+
+// Lịch thi: [{id, subject, type:'gk'|'hk', date:'YYYY-MM-DD', note}]
+function getExams(){
+  try{
+    var s = localStorage.getItem('kua_exams');
+    return s ? JSON.parse(s) : [];
+  }catch(e){ return []; }
+}
+function saveExams(d){ localStorage.setItem('kua_exams', JSON.stringify(d)); }
+
+// ═══ TOGGLE TKB POPUP ═══
+var _tkbTab = 'main';
+function toggleTKB(){
+  var p = document.getElementById('tkbPopup');
+  if(p.style.display==='flex'){p.style.display='none';return;}
+  p.style.display='flex';
+  switchTkbTab(_tkbTab);
+}
+
+function switchTkbTab(tab){
+  _tkbTab = tab;
+  ['main','exam','edit'].forEach(function(t){
+    var el = document.getElementById('tabTkb'+t.charAt(0).toUpperCase()+t.slice(1));
+    if(el) el.classList.toggle('active', t===tab);
+  });
+  var c = document.getElementById('tkbContent');
+  if(!c) return;
+  if(tab==='main') renderTKBMain(c);
+  else if(tab==='exam') renderExamView(c);
+  else if(tab==='edit') renderTKBEdit(c);
+}
+
+// ═══ TAB 1: Xem TKB chính ═══
+function renderTKBMain(container){
+  var tkb = getTKB();
+  var extra = getEXTRA();
+  var today = DAY_JS_MAP[new Date().getDay()];
+  var exams = getExams();
+  
+  // Banner lịch thi gần nhất
+  var upcoming = exams.filter(function(e){
+    var d = new Date(e.date+'T00:00:00');
+    return d >= new Date(new Date().toDateString());
+  }).sort(function(a,b){ return new Date(a.date)-new Date(b.date); });
+  
+  var bannerHtml = '';
+  if(upcoming.length > 0){
+    var next = upcoming[0];
+    var days = Math.round((new Date(next.date+'T00:00:00') - new Date(new Date().toDateString()))/(86400000));
+    var urgentClass = days <= 3 ? 'style="animation:pulse 1s infinite;"' : '';
+    bannerHtml = '<div class="exam-banner" onclick="switchTkbTab(\'exam\')">'
+      + '<div class="exam-banner-icon">🎯</div>'
+      + '<div class="exam-banner-text">'
+      + '<div class="exam-banner-title">THI SẮP TỚI: ' + next.subject.toUpperCase() + '</div>'
+      + '<div class="exam-banner-sub">' + (next.type==='gk'?'Giữa kỳ':'Học kỳ') + ' · ' + formatDate(next.date) + (next.note?' · '+next.note:'') + '</div>'
+      + '</div>'
+      + '<div class="exam-banner-days" '+urgentClass+'>' + days + '<br><small style="font-size:10px;font-weight:400;">ngày</small></div>'
+      + '</div>';
+  }
+  
+  var html = bannerHtml;
+  DAYS_ORDER.forEach(function(dk){
+    var subjects = tkb[dk] || [];
+    var ex = extra[dk] || '';
+    var isToday = dk === today;
+    html += '<div class="tkb-day-row" style="' + (isToday?'border:1.5px solid var(--blue2);':'') + '">'
+      + '<div class="tkb-day-label" style="' + (isToday?'color:var(--blue2);':'') + '">'
+      + (isToday?'▶ ':'') + DAYS_LABEL[dk]
+      + (isToday?' <span style="font-size:10px;color:var(--blue2);font-weight:400;">(Hôm nay)</span>':'')
+      + '</div>';
+    
+    if(subjects.length === 0 || (subjects.length===1 && subjects[0]==='—')){
+      html += '<div style="font-size:11px;color:var(--tx3);font-style:italic;">Nghỉ học</div>';
+    } else {
+      html += '<div class="tkb-subjects">';
+      subjects.filter(function(s){return s&&s!=='—';}).forEach(function(s,i){
+        html += '<span class="tkb-subject-chip" style="background:var(--s3);">' + (i+1) + '. ' + s + '</span>';
+      });
+      html += '</div>';
+    }
+    
+    if(ex){
+      html += '<div class="tkb-extra-row">🏫 <span style="color:var(--green);">Học thêm:</span> ' + ex + '</div>';
+    }
+    html += '</div>';
+  });
+  
+  container.innerHTML = html;
+}
+
+// ═══ TAB 2: Lịch thi ═══
+function renderExamView(container){
+  var exams = getExams();
+  var today = new Date(new Date().toDateString());
+  exams.sort(function(a,b){ return new Date(a.date)-new Date(b.date); });
+  
+  var html = '<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;">'
+    + '<div style="font-size:12px;color:var(--tx2);">Quản lý lịch thi của Kua</div>'
+    + '<button onclick="showAddExamForm()" style="background:var(--red);border:none;border-radius:8px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;padding:6px 14px;cursor:pointer;">+ Thêm thi</button>'
+    + '</div>';
+  
+  if(exams.length === 0){
+    html += '<div style="text-align:center;padding:30px;color:var(--tx3);font-size:13px;">'
+      + '<div style="font-size:40px;margin-bottom:8px;">🎯</div>'
+      + '<div>Chưa có lịch thi nào</div>'
+      + '<div style="font-size:11px;margin-top:4px;">Bấm "+ Thêm thi" để cài đặt</div>'
+      + '</div>';
+  } else {
+    exams.forEach(function(e, idx){
+      var examDate = new Date(e.date+'T00:00:00');
+      var days = Math.round((examDate - today) / 86400000);
+      var isPassed = days < 0;
+      var isUrgent = !isPassed && days <= 3;
+      var cdText = isPassed ? 'Đã qua' : (days === 0 ? 'HÔM NAY!' : days + ' ngày');
+      
+      html += '<div class="exam-card' + (isPassed?' passed':'') + (isUrgent?' urgent':'') + '">'
+        + '<div class="exam-card-type ' + (e.type==='gk'?'gk':'') + '">'
+        + (e.type==='gk'?'GIỮA KỲ':'HỌC KỲ') + '</div>'
+        + '<div class="exam-card-subject">' + e.subject + '</div>'
+        + '<div class="exam-card-date">📅 ' + formatDate(e.date) + (e.note?' · '+e.note:'') + '</div>'
+        + '<div class="exam-card-countdown' + (isUrgent?' urgent':'') + '">'
+        + (isPassed ? '<span style="font-size:14px;">✓</span>' : cdText)
+        + '<small>' + (isPassed ? 'Đã thi' : (days===0?'':'ngày')) + '</small>'
+        + '</div>'
+        + '<button onclick="deleteExam(' + idx + ')" style="position:absolute;bottom:8px;right:10px;background:transparent;border:none;color:var(--tx3);font-size:11px;cursor:pointer;padding:2px 6px;">✕ Xoá</button>'
+        + '</div>';
+    });
+  }
+  
+  container.innerHTML = html;
+}
+
+function formatDate(dateStr){
+  var d = new Date(dateStr+'T00:00:00');
+  var thu = ['CN','T2','T3','T4','T5','T6','T7'];
+  return thu[d.getDay()] + ' ' + d.getDate() + '/' + (d.getMonth()+1) + '/' + d.getFullYear();
+}
+
+function showAddExamForm(){
+  var pop = document.createElement('div');
+  pop.id = 'addExamPop';
+  pop.style.cssText = 'position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:10000;display:flex;align-items:center;justify-content:center;padding:20px;';
+  pop.innerHTML = '<div style="background:var(--s1);border:1px solid var(--bd2);border-radius:16px;padding:20px;max-width:360px;width:100%;">'
+    + '<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:16px;color:var(--gold);margin-bottom:14px;">🎯 THÊM LỊCH THI</div>'
+    + '<div style="margin-bottom:10px;">'
+    + '<div style="font-size:11px;color:var(--tx2);margin-bottom:4px;">Môn thi</div>'
+    + '<select id="examSubjectSel" style="width:100%;background:var(--s2);border:1px solid var(--bd2);border-radius:8px;color:var(--tx);font-size:13px;padding:8px;outline:none;box-sizing:border-box;">'
+    + '<option value="">-- Chọn môn --</option>'
+    + '<option>Toán</option><option>Tiếng Việt</option><option>Tiếng Anh</option>'
+    + '<option>Khoa học</option><option>Lịch sử & Địa lý</option>'
+    + '<option>Đạo đức</option><option>Tin học</option><option>Âm nhạc</option><option>Mĩ thuật</option>'
+    + '</select>'
+    + '</div>'
+    + '<div style="margin-bottom:10px;">'
+    + '<div style="font-size:11px;color:var(--tx2);margin-bottom:4px;">Loại thi</div>'
+    + '<div style="display:flex;gap:8px;">'
+    + '<label style="flex:1;display:flex;align-items:center;gap:6px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:8px;cursor:pointer;">'
+    + '<input type="radio" name="examType" value="gk" checked style="accent-color:var(--blue);"> <span style="font-size:12px;">Giữa kỳ</span></label>'
+    + '<label style="flex:1;display:flex;align-items:center;gap:6px;background:var(--s2);border:1px solid var(--bd);border-radius:8px;padding:8px;cursor:pointer;">'
+    + '<input type="radio" name="examType" value="hk" style="accent-color:var(--red);"> <span style="font-size:12px;">Học kỳ</span></label>'
+    + '</div></div>'
+    + '<div style="margin-bottom:10px;">'
+    + '<div style="font-size:11px;color:var(--tx2);margin-bottom:4px;">Ngày thi</div>'
+    + '<input type="date" id="examDateIn" style="width:100%;background:var(--s2);border:1px solid var(--bd2);border-radius:8px;color:var(--tx);font-size:13px;padding:8px;outline:none;box-sizing:border-box;">'
+    + '</div>'
+    + '<div style="margin-bottom:14px;">'
+    + '<div style="font-size:11px;color:var(--tx2);margin-bottom:4px;">Ghi chú (tuỳ chọn)</div>'
+    + '<input type="text" id="examNoteIn" placeholder="VD: Phòng thi 201, 7h30..." style="width:100%;background:var(--s2);border:1px solid var(--bd2);border-radius:8px;color:var(--tx);font-size:12px;padding:8px;outline:none;box-sizing:border-box;">'
+    + '</div>'
+    + '<div style="display:flex;gap:8px;">'
+    + '<button onclick="document.getElementById(\'addExamPop\').remove()" style="flex:1;background:var(--s3);border:1px solid var(--bd);border-radius:10px;color:var(--tx2);font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;padding:10px;cursor:pointer;">Huỷ</button>'
+    + '<button onclick="saveNewExam()" style="flex:2;background:var(--red);border:none;border-radius:10px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;padding:10px;cursor:pointer;">💾 Lưu lịch thi</button>'
+    + '</div>'
+    + '</div>';
+  document.body.appendChild(pop);
+  // Set default date = today
+  document.getElementById('examDateIn').valueAsDate = new Date();
+}
+
+function saveNewExam(){
+  var subject = document.getElementById('examSubjectSel').value;
+  var type = document.querySelector('input[name="examType"]:checked').value;
+  var date = document.getElementById('examDateIn').value;
+  var note = document.getElementById('examNoteIn').value.trim();
+  
+  if(!subject){ alert('Vui lòng chọn môn thi!'); return; }
+  if(!date){ alert('Vui lòng chọn ngày thi!'); return; }
+  
+  var exams = getExams();
+  exams.push({ id: Date.now(), subject: subject, type: type, date: date, note: note });
+  saveExams(exams);
+  document.getElementById('addExamPop').remove();
+  renderExamView(document.getElementById('tkbContent'));
+}
+
+function deleteExam(idx){
+  if(!confirm('Xoá lịch thi này?')) return;
+  var exams = getExams();
+  exams.splice(idx, 1);
+  saveExams(exams);
+  renderExamView(document.getElementById('tkbContent'));
+}
+
+// ═══ TAB 3: Chỉnh sửa TKB ═══
+function renderTKBEdit(container){
+  var tkb = getTKB();
+  var extra = getEXTRA();
+  
+  var html = '<div style="font-size:11px;color:var(--tx3);margin-bottom:12px;">✏️ Chỉnh sửa TKB và lịch học thêm trực tiếp</div>';
+  
+  DAYS_ORDER.forEach(function(dk){
+    var subjects = tkb[dk] || [];
+    var ex = extra[dk] || '';
+    html += '<div class="tkb-day-row">'
+      + '<div class="tkb-day-label">' + DAYS_LABEL[dk] + '</div>'
+      + '<div class="tkb-subjects" id="chips_' + dk + '">';
+    
+    subjects.forEach(function(s, si){
+      if(!s || s==='—') return;
+      html += '<span class="tkb-subject-chip">' + s
+        + '<span class="del" onclick="removeSubject(\''+dk+'\','+si+')">&times;</span>'
+        + '</span>';
+    });
+    
+    html += '</div>'
+      + '<div style="display:flex;gap:6px;margin-bottom:6px;">'
+      + '<input type="text" id="addSubj_'+dk+'" placeholder="Thêm môn..." onkeydown="if(event.key===\'Enter\')addSubject(\''+dk+'\')" '
+      + 'style="flex:1;background:var(--bg);border:1px solid var(--bd2);border-radius:6px;color:var(--tx);font-size:12px;padding:5px 8px;outline:none;">'
+      + '<button onclick="addSubject(\''+dk+'\')" style="background:var(--blue);border:none;border-radius:6px;color:#fff;font-family:Rajdhani,sans-serif;font-size:11px;padding:5px 10px;cursor:pointer;">+ Thêm</button>'
+      + '</div>'
+      + '<div style="font-size:10px;color:var(--tx3);margin-bottom:4px;">Học thêm:</div>'
+      + '<input class="tkb-extra-edit" id="extra_'+dk+'" value="'+ex.replace(/"/g,'&quot;')+'" placeholder="Lịch học thêm..." '
+      + 'onblur="saveExtraField(\''+dk+'\')" onkeydown="if(event.key===\'Enter\')saveExtraField(\''+dk+'\')">'
+      + '</div>';
+  });
+  
+  html += '<button onclick="resetTKBDefault()" style="width:100%;background:transparent;border:1px dashed var(--bd);border-radius:10px;color:var(--tx3);font-size:11px;padding:8px;cursor:pointer;margin-top:6px;">↩ Khôi phục mặc định</button>';
+  
+  container.innerHTML = html;
+}
+
+function addSubject(dk){
+  var input = document.getElementById('addSubj_'+dk);
+  var val = input.value.trim();
+  if(!val) return;
+  var tkb = getTKB();
+  if(!tkb[dk]) tkb[dk] = [];
+  tkb[dk].push(val);
+  saveTKB(tkb);
+  input.value = '';
+  renderTKBEdit(document.getElementById('tkbContent'));
+}
+
+function removeSubject(dk, si){
+  var tkb = getTKB();
+  if(!tkb[dk]) return;
+  // Map si to non-dash index
+  var realIdx = -1, count = 0;
+  for(var i=0;i<tkb[dk].length;i++){
+    if(tkb[dk][i] && tkb[dk][i]!=='—'){
+      if(count===si){realIdx=i;break;}
+      count++;
+    }
+  }
+  if(realIdx >= 0) tkb[dk].splice(realIdx, 1);
+  saveTKB(tkb);
+  renderTKBEdit(document.getElementById('tkbContent'));
+}
+
+function saveExtraField(dk){
+  var input = document.getElementById('extra_'+dk);
+  if(!input) return;
+  var extra = getEXTRA();
+  extra[dk] = input.value.trim();
+  saveEXTRA(extra);
+}
+
+function resetTKBDefault(){
+  if(!confirm('Khôi phục TKB về mặc định?')) return;
+  saveTKB(JSON.parse(JSON.stringify(TKB_DEFAULT)));
+  saveEXTRA(JSON.parse(JSON.stringify(EXTRA_DEFAULT)));
+  renderTKBEdit(document.getElementById('tkbContent'));
+  alert('✅ Đã khôi phục TKB mặc định!');
+}
+
+// ═══ EXAM COUNTDOWN BANNER trên màn hình chính ═══
+function renderExamBannerInChat(){
+  var exams = getExams();
+  var today = new Date(new Date().toDateString());
+  var upcoming = exams.filter(function(e){
+    var d = new Date(e.date+'T00:00:00');
+    return d >= today;
+  }).sort(function(a,b){ return new Date(a.date)-new Date(b.date); });
+  
+  var banner = document.getElementById('examBannerChat');
+  if(!banner) return;
+  
+  if(upcoming.length === 0){ banner.style.display='none'; return; }
+  
+  var next = upcoming[0];
+  var days = Math.round((new Date(next.date+'T00:00:00') - today) / 86400000);
+  var isUrgent = days <= 3;
+  
+  banner.style.display = 'flex';
+  banner.style.background = isUrgent
+    ? 'linear-gradient(90deg,rgba(232,25,44,.25),rgba(255,100,0,.15))'
+    : 'linear-gradient(90deg,rgba(232,25,44,.12),rgba(255,180,0,.08))';
+  
+  banner.innerHTML = '<span style="font-size:16px;">🎯</span>'
+    + '<span style="flex:1;font-size:11px;color:var(--tx);">'
+    + '<b style="color:var(--gold);">THI ' + (next.type==='gk'?'GIỮA KỲ':'HỌC KỲ') + ':</b> '
+    + next.subject
+    + (upcoming.length>1 ? ' <span style="color:var(--tx3);">+' + (upcoming.length-1) + ' môn</span>' : '')
+    + '</span>'
+    + '<span onclick="toggleTKB();switchTkbTab(\'exam\')" style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:' + (isUrgent?'16':'14') + 'px;color:' + (isUrgent?'var(--red2)':'var(--gold)') + ';cursor:pointer;"'
+    + (isUrgent?' style="animation:pulse 1s infinite;"':'') + '>'
+    + days + ' ngày</span>';
+}
+
+// Override TKB trong sys() - lấy từ localStorage
+var TKB = getTKB();
+var EXTRA = getEXTRA();
+
+// Sync TKB/EXTRA mỗi khi sys() gọi
+function getActiveTKB(){ return getTKB(); }
+function getActiveEXTRA(){ return getEXTRA(); }
+
+function stopSpeak(){if(window.speechSynthesis)window.speechSynthesis.cancel();}
+function speak(text){
+  if(!window.speechSynthesis)return;stopSpeak();
+  const c=text.replace(/\[.*?\]/g,'').replace(/[*_`#<>]/g,'').replace(/\n+/g,' ').replace(/S\.H\.I\.E\.L\.D\./gi,'Shield').trim();if(!c)return;
+  const processed=c
+    .replace(/(\d+)/g,'$1,')
+    .replace(/([+\-×÷=])/g,' $1 ')
+    .replace(/,+/g,',')
+    .replace(/\.\s/g,'... ')
+    .replace(/!\s/g,'!... ');
+  const u=new SpeechSynthesisUtterance(processed);u.lang='vi-VN';u.rate=0.82;u.pitch=0.70;
+  const vv=window.speechSynthesis.getVoices();
+  const vi=vv.find(v=>v.lang==='vi-VN'&&!v.name.toLowerCase().includes('female'))||vv.find(v=>v.lang.startsWith('vi'));
+  if(vi)u.voice=vi;
+  const spkEl=document.getElementById('spkEl');
+  u.onstart=()=>{if(spkEl)spkEl.classList.add('on');};
+  u.onend=u.onerror=()=>{if(spkEl)spkEl.classList.remove('on');};
+  window.speechSynthesis.speak(u);
+}
+
+// ═══ TIMER CHÉP BÀI ═══
+let _chepTimer=null;
+function startChepTimer(minutes){
+  clearTimeout(_chepTimer);
+  const ms=(minutes||3)*60*1000;
+  _chepTimer=setTimeout(function(){
+    qs('[Kua chưa báo chép xong sau '+minutes+' phút. Fury nhắc: Chép xong chưa Peter? Anh đang chờ đây! Chép xong báo anh nhé!]');
+  },ms);
+}
+function stopChepTimer(){clearTimeout(_chepTimer);_chepTimer=null;}
+function parseTimerChep(text){
+  if(text.includes('chép vào vở')||text.includes('chép bài vào')){startChepTimer(3);}
+  return text;
+}
+
+// ═══ TRACKING HỌC TẬP ═══
+function getStats(){return JSON.parse(localStorage.getItem('kua_stats')||JSON.stringify({sessions:[],today:{date:'',responses:[],avgTime:0,correct:0,total:0}}));}
+function saveStats(s){localStorage.setItem('kua_stats',JSON.stringify(s));}
+let _lastQuestion=0;
+function trackQuestion(){_lastQuestion=Date.now();}
+function trackAnswer(isCorrect){
+  if(!_lastQuestion)return;
+  const elapsed=(Date.now()-_lastQuestion)/1000;
+  const s=getStats();
+  const today=new Date().toDateString();
+  if(s.today.date!==today){if(s.today.date)s.sessions.push({...s.today});if(s.sessions.length>30)s.sessions=s.sessions.slice(-30);s.today={date:today,responses:[],avgTime:0,correct:0,total:0};}
+  s.today.responses.push({time:elapsed,correct:isCorrect,ts:Date.now()});
+  s.today.total++;if(isCorrect)s.today.correct++;
+  const times=s.today.responses.map(r=>r.time);
+  s.today.avgTime=Math.round(times.reduce((a,b)=>a+b,0)/times.length);
+  saveStats(s);_lastQuestion=0;
+}
+function showLearningStats(){
+  const pin=prompt('Nhập mật khẩu để xem thống kê:');
+  if(!pin)return;
+  if(pin.trim()!==(localStorage.getItem('parent_pin')||'2790')){alert('❌ Mật khẩu không đúng!');return;}
+  const s=getStats(),today=s.today;
+  const last7=s.sessions.slice(-7);
+  const trend=last7.length>1?(last7[last7.length-1].avgTime<last7[0].avgTime?'⬆️ Nhanh hơn':'⬇️ Chậm hơn'):'—';
+  const pop=document.createElement('div');
+  pop.style.cssText='position:fixed;inset:0;background:rgba(0,0,0,.88);z-index:9999;display:flex;align-items:center;justify-content:center;padding:20px;';
+  pop.innerHTML=`<div style="background:var(--s1);border:1px solid var(--bd2);border-radius:18px;padding:22px;max-width:380px;width:100%;max-height:85vh;overflow-y:auto;">
+    <div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:18px;color:var(--gold);margin-bottom:14px;">📊 THỐNG KÊ HỌC TẬP</div>
+    <div style="background:var(--s2);border-radius:10px;padding:12px;margin-bottom:10px;">
+      <div style="font-size:11px;color:var(--tx3);font-family:Rajdhani,sans-serif;text-transform:uppercase;margin-bottom:8px;">HÔM NAY</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;">
+        <div style="text-align:center;"><div style="font-size:24px;font-weight:700;color:var(--blue2);">${today.total||0}</div><div style="font-size:10px;color:var(--tx3);">Câu trả lời</div></div>
+        <div style="text-align:center;"><div style="font-size:24px;font-weight:700;color:var(--green);">${today.total?Math.round((today.correct/today.total)*100):0}%</div><div style="font-size:10px;color:var(--tx3);">Đúng</div></div>
+        <div style="text-align:center;"><div style="font-size:24px;font-weight:700;color:var(--gold);">${today.avgTime||0}s</div><div style="font-size:10px;color:var(--tx3);">Thời gian TB</div></div>
+        <div style="text-align:center;"><div style="font-size:20px;font-weight:700;color:var(--tx);">${trend}</div><div style="font-size:10px;color:var(--tx3);">Xu hướng 7 ngày</div></div>
+      </div>
+    </div>
+    <button onclick="this.closest('div[style*=fixed]').remove()" style="width:100%;background:var(--red);border:none;border-radius:10px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;padding:10px;cursor:pointer;">Đóng</button>
+  </div>`;
+  document.body.appendChild(pop);
 }
 </script></div>
   </div>
