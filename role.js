@@ -103,7 +103,9 @@ function adminOpen(){
     +row('🧒','Mã đăng nhập của Kua: '+(kuaCode?'đã đặt':'chưa đặt'),'Mã để vào chế độ học sinh (không bắt buộc)','adminKuaCode()')
     +row('⏱️','Thời lượng buổi học: '+(localStorage.getItem('study_minutes_target')||'90')+' phút (trần)','Bắt đầu 20 phút, mỗi tuần tự tăng 5 phút tới mức trần này','adminStudyTime()')
     +row('🔐','Đổi PIN bố mẹ','PIN bảo vệ khu quản lý','adminChangePin()')
-    +row('🔄','Chuyển máy này thành máy Kua','Dùng khi cài cho máy của con','roleSet(\'kua\');closePractice();alert(\'✅ Máy này giờ là máy Kua. Bố mẹ vào lại bằng cách chạm 5 lần vào logo 🛡️ trên đầu màn hình.\');');
+    +(roleGet()==='parent'
+      ? row('🔄','Chuyển máy này thành máy KUA','Dùng khi cài cho máy của con','roleSet(\'kua\');closePractice();alert(\'✅ Máy này giờ là máy Kua. Bố mẹ vào lại: chạm 5 lần vào logo 🛡️.\');')
+      : row('🔄','Chuyển máy này thành máy BỐ MẸ','Máy này đang là máy Kua — đổi hẳn sang chế độ quản lý','roleSet(\'parent\');adminOpen();'));
 }
 
 function adminProfile(){
