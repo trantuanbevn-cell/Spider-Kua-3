@@ -1,0 +1,98 @@
+{
+  "mon": "toan",
+  "tap": 1,
+  "chuDe": "Ôn tập và bổ sung",
+  "cdSo": 1,
+  "bai": [
+    {
+      "so": 1,
+      "ten": "Ôn tập các số đến 100 000",
+      "lyThuyet": "Các số tự nhiên từ 0 đến 100.000 được viết bằng cách nhóm các chữ số thành hàng và lớp: lớp đơn vị (hàng trăm, hàng chục, hàng đơn vị), lớp nghìn (hàng trăm nghìn, hàng chục nghìn, hàng nghìn). Khi đọc số, ta đọc từ trái sang phải, tách theo lớp nghìn và lớp đơn vị. Muốn so sánh hai số, trước hết so sánh số chữ số, nếu bằng nhau thì so sánh từng hàng từ trái sang phải.",
+      "cauHoi": [
+        {"type":"mcq","q":"Số 45.372 được đọc là gì?","options":["Bốn mươi lăm nghìn ba trăm bảy mươi hai","Bốn nghìn năm trăm ba mươi bảy","Bốn mươi năm nghìn ba trăm hai mươi bảy","Năm mươi bốn nghìn ba trăm bảy mươi hai"],"a":0,"explain":"45.372 gồm 45 nghìn và 372 đơn vị nên đọc là bốn mươi lăm nghìn ba trăm bảy mươi hai."},
+        {"type":"mcq","q":"Số nào có chữ số hàng chục nghìn là 7?","options":["17.230","70.234","37.802","27.914"],"a":1,"explain":"70.234 có chữ số hàng chục nghìn là 7. Còn 17.230 có hàng chục nghìn là 1, 37.802 có hàng chục nghìn là 3, 27.914 có hàng chục nghìn là 2."},
+        {"type":"mcq","q":"Trong các số 54.678; 54.687; 54.768; 54.867, số lớn nhất là số nào?","options":["54.678","54.687","54.768","54.867"],"a":3,"explain":"Cả 4 số đều có hàng chục nghìn là 5, hàng nghìn là 4, hàng trăm khác nhau: 6, 6, 7, 8. Số có hàng trăm lớn nhất là 54.867."},
+        {"type":"mcq","q":"Số liền sau của 99.999 là số nào?","options":["99.998","100.000","90.000","100.001"],"a":1,"explain":"Số liền sau bằng số đã cho cộng thêm 1: 99.999 + 1 = 100.000."},
+        {"type":"mcq","q":"Số 68.040 gồm mấy chục nghìn, mấy nghìn, mấy chục và mấy đơn vị?","options":["6 chục nghìn, 8 nghìn, 4 chục, 0 đơn vị","6 chục nghìn, 8 nghìn, 0 chục, 4 đơn vị","8 chục nghìn, 6 nghìn, 4 chục, 0 đơn vị","6 chục nghìn, 8 trăm, 4 chục, 0 đơn vị"],"a":0,"explain":"68.040 = 60.000 + 8.000 + 0 + 40 + 0, tức là 6 chục nghìn, 8 nghìn, 0 trăm, 4 chục, 0 đơn vị."},
+        {"type":"fill","q":"Số gồm 5 chục nghìn, 2 nghìn, 3 trăm, 0 chục và 6 đơn vị viết là ___.","answer":"52.306","accept":["52.306","52306","52,306"]},
+        {"type":"solve","de":"Một cửa hàng đồ chơi lego có 24.500 mảnh ghép màu đỏ và nhiều hơn số đó 3.200 mảnh ghép màu xanh. Hỏi cửa hàng có bao nhiêu mảnh ghép màu xanh?","hints":["Em thử đọc lại đề xem bài cho biết gì và bài hỏi gì nhé?","Đề bài nói số mảnh ghép xanh nhiều hơn số mảnh ghép đỏ, vậy mình cần làm phép tính gì để tìm số lớn hơn?","Mình sẽ lấy số mảnh ghép đỏ (24.500) cộng thêm phần nhiều hơn (3.200), em thử cộng xem được bao nhiêu nhé."],"loiGiai":"Số mảnh ghép lego màu xanh cửa hàng có là:\n24.500 + 3.200 = 27.700 (mảnh ghép)\nĐáp số: 27.700 mảnh ghép","dapSo":"27.700 mảnh ghép"},
+        {"type":"solve","de":"Một trận đấu bóng đá có 68.250 khán giả đến sân. Vòng đấu tiếp theo số khán giả giảm đi 5.400 người so với vòng trước. Hỏi vòng đấu tiếp theo có bao nhiêu khán giả, và số đó là số chẵn hay số lẻ?","hints":["Em đọc kỹ đề xem số khán giả vòng sau tăng hay giảm so với vòng trước nhé?","Muốn tìm số khán giả vòng sau, mình lấy số ban đầu trừ đi phần giảm, đúng không nào?","Sau khi trừ 68.250 - 5.400, em nhìn chữ số tận cùng của kết quả để biết đó là số chẵn hay số lẻ nhé."],"loiGiai":"Số khán giả vòng đấu tiếp theo là:\n68.250 - 5.400 = 62.850 (người)\nSố 62.850 có chữ số tận cùng là 0 nên đây là số chẵn.\nĐáp số: 62.850 người, là số chẵn","dapSo":"62.850 người (số chẵn)"}
+      ]
+    },
+    {
+      "so": 2,
+      "ten": "Ôn tập các phép tính trong phạm vi 100 000",
+      "lyThuyet": "Khi cộng, trừ các số trong phạm vi 100.000, ta đặt tính sao cho các hàng thẳng cột rồi cộng (hoặc trừ) lần lượt từ phải sang trái. Khi nhân với số có một chữ số, ta nhân lần lượt từ hàng đơn vị. Khi chia, ta thực hiện chia lần lượt từ hàng cao nhất của số bị chia. Có thể thử lại phép trừ bằng phép cộng, thử lại phép chia bằng phép nhân.",
+      "cauHoi": [
+        {"type":"mcq","q":"12.345 + 23.451 = ?","options":["35.796","35.786","36.796","34.796"],"a":0,"explain":"12.345 + 23.451 = 35.796 (cộng thẳng hàng: 5+1=6, 4+5=9, 3+4=7, 2+3=5, 1+2=3)."},
+        {"type":"mcq","q":"56.789 - 23.456 = ?","options":["33.333","33.323","34.333","33.343"],"a":0,"explain":"56.789 - 23.456 = 33.333."},
+        {"type":"mcq","q":"1.234 x 3 = ?","options":["3.602","3.702","3.612","4.702"],"a":1,"explain":"1.234 x 3 = 3.702 (4x3=12 viết 2 nhớ 1; 3x3=9 thêm 1 = 10 viết 0 nhớ 1; 2x3=6 thêm 1 = 7; 1x3=3)."},
+        {"type":"mcq","q":"8.436 : 4 = ?","options":["2.109","2.019","2.190","2.099"],"a":0,"explain":"8.436 : 4 = 2.109 vì 2.109 x 4 = 8.436."},
+        {"type":"mcq","q":"Tính giá trị biểu thức: 15.000 + 8.500 x 2","options":["47.000","32.000","23.500","46.000"],"a":0,"explain":"Theo thứ tự thực hiện phép tính, nhân trước: 8.500 x 2 = 17.000, sau đó cộng: 15.000 + 17.000 = 32.000. Vậy đáp án đúng là 32.000."},
+        {"type":"fill","q":"Điền số thích hợp vào chỗ trống: 9.999 + 1 = ___","answer":"10.000","accept":["10.000","10000","10,000"]},
+        {"type":"solve","de":"Một câu lạc bộ cờ vua có 3.240 học viên nam và 2.150 học viên nữ. Mỗi tháng câu lạc bộ tổ chức đều cho mỗi học viên 2 buổi tập. Hỏi tổng số học viên của câu lạc bộ là bao nhiêu?","hints":["Em thử đọc lại đề xem cần tìm gì trước đã nhé, phần buổi tập có cần dùng ngay không?","Để tìm tổng số học viên, mình cộng số nam và số nữ lại, đúng không nào?","Em lấy 3.240 cộng với 2.150 xem kết quả là bao nhiêu nhé, phần buổi tập không cần dùng để tính tổng số học viên đâu."],"loiGiai":"Tổng số học viên của câu lạc bộ cờ vua là:\n3.240 + 2.150 = 5.390 (học viên)\nĐáp số: 5.390 học viên","dapSo":"5.390 học viên"},
+        {"type":"solve","de":"Một bể bơi mỗi ngày đón 1.250 lượt người đến bơi. Hỏi trong 6 ngày bể bơi đón bao nhiêu lượt người, biết rằng vào ngày thứ 7 bể bơi phải đóng cửa để sửa chữa nên không tính?","hints":["Em đọc kỹ xem đề hỏi số lượt người trong bao nhiêu ngày nhé, chú ý ngày thứ 7 không tính đâu.","Vì mỗi ngày có số lượt người bằng nhau, mình dùng phép tính gì để tính nhanh cho 6 ngày nhỉ?","Em thử lấy 1.250 nhân với 6 xem được bao nhiêu nhé."],"loiGiai":"Trong 6 ngày, bể bơi đón số lượt người là:\n1.250 x 6 = 7.500 (lượt người)\nĐáp số: 7.500 lượt người","dapSo":"7.500 lượt người"}
+      ]
+    },
+    {
+      "so": 3,
+      "ten": "Số chẵn, số lẻ",
+      "lyThuyet": "Số chẵn là số có chữ số tận cùng là 0, 2, 4, 6, 8. Số lẻ là số có chữ số tận cùng là 1, 3, 5, 7, 9. Hai số chẵn liên tiếp hoặc hai số lẻ liên tiếp hơn kém nhau 2 đơn vị. Tổng của hai số chẵn là số chẵn, tổng của hai số lẻ cũng là số chẵn, tổng của một số chẵn và một số lẻ là số lẻ.",
+      "cauHoi": [
+        {"type":"mcq","q":"Số nào dưới đây là số chẵn?","options":["4.573","8.091","6.420","3.335"],"a":2,"explain":"6.420 có chữ số tận cùng là 0 nên là số chẵn; các số còn lại có tận cùng là 3, 1, 5 nên là số lẻ."},
+        {"type":"mcq","q":"Số nào dưới đây là số lẻ?","options":["12.348","25.671","9.000","40.006"],"a":1,"explain":"25.671 có chữ số tận cùng là 1 nên là số lẻ."},
+        {"type":"mcq","q":"Số chẵn liền sau của 5.678 là số nào?","options":["5.679","5.680","5.676","5.688"],"a":1,"explain":"Số chẵn liền sau phải hơn 5.678 và là số chẵn gần nhất, đó là 5.680 (5.678 + 2)."},
+        {"type":"mcq","q":"Tổng của hai số lẻ 15 và 27 là số chẵn hay số lẻ?","options":["Số chẵn","Số lẻ","Không xác định được","Vừa chẵn vừa lẻ"],"a":0,"explain":"15 + 27 = 42, có chữ số tận cùng là 2 nên là số chẵn. Tổng hai số lẻ luôn là số chẵn."},
+        {"type":"mcq","q":"Trong dãy số 21, 23, 25, 27, ..., số tiếp theo của 27 là số nào và dãy này gồm toàn số gì?","options":["28, số chẵn","29, số lẻ","28, số lẻ","30, số chẵn"],"a":1,"explain":"Dãy 21, 23, 25, 27 là các số lẻ liên tiếp hơn kém nhau 2 đơn vị, số tiếp theo là 27 + 2 = 29, và đây vẫn là số lẻ."},
+        {"type":"fill","q":"Số chẵn liền trước của 8.001 là ___.","answer":"8.000","accept":["8.000","8000","8,000"]},
+        {"type":"solve","de":"Minh có một hộp gồm 45 quân cờ. Minh muốn chia đều số quân cờ đó vào 2 hộp nhỏ bằng nhau. Hỏi 45 là số chẵn hay số lẻ, và Minh có thể chia đều số quân cờ vào 2 hộp mà không dư quân nào không?","hints":["Em thử nhìn chữ số tận cùng của 45 xem đó là số chẵn hay số lẻ nhé?","Số chia đều được cho 2 phần bằng nhau, không dư, thường là số chẵn hay số lẻ nhỉ?","Em thử lấy 45 chia cho 2 xem có chia hết không, hay còn dư nhé."],"loiGiai":"Số 45 có chữ số tận cùng là 5 nên 45 là số lẻ.\nTa có 45 : 2 = 22 (dư 1), vậy không thể chia đều 45 quân cờ vào 2 hộp mà không dư.\nĐáp số: 45 là số lẻ, không chia đều được (còn dư 1 quân cờ)","dapSo":"45 là số lẻ, chia 2 hộp còn dư 1 quân cờ"},
+        {"type":"solve","de":"Một bạn nhỏ ghi lại số bàn thắng ghi được qua 4 trận đấu bóng đá là 2, 4, 6, 8 bàn thắng. Hỏi tổng số bàn thắng của 4 trận là bao nhiêu, và tổng đó là số chẵn hay số lẻ?","hints":["Em thử cộng lần lượt các số bàn thắng của 4 trận lại xem nhé?","Cộng nhiều số chẵn với nhau thì kết quả thường là số gì nhỉ?","Sau khi có tổng, em nhìn chữ số tận cùng để biết đó là số chẵn hay số lẻ nhé."],"loiGiai":"Tổng số bàn thắng của 4 trận là:\n2 + 4 + 6 + 8 = 20 (bàn thắng)\nSố 20 có chữ số tận cùng là 0 nên là số chẵn.\nĐáp số: 20 bàn thắng, là số chẵn","dapSo":"20 bàn thắng (số chẵn)"}
+      ]
+    },
+    {
+      "so": 4,
+      "ten": "Biểu thức chứa chữ",
+      "lyThuyet": "Biểu thức chứa chữ là biểu thức có một hoặc nhiều chữ (thường là a, b, c...) thay cho số chưa biết. Khi thay chữ bằng một số cụ thể, ta tính được giá trị của biểu thức đó ứng với giá trị của chữ. Ví dụ biểu thức a + 25, nếu a = 10 thì giá trị biểu thức là 10 + 25 = 35.",
+      "cauHoi": [
+        {"type":"mcq","q":"Tính giá trị của biểu thức a + 15 khi a = 20.","options":["35","30","25","5"],"a":0,"explain":"Thay a = 20 vào biểu thức: 20 + 15 = 35."},
+        {"type":"mcq","q":"Tính giá trị của biểu thức 30 - b khi b = 12.","options":["18","42","20","22"],"a":0,"explain":"Thay b = 12: 30 - 12 = 18."},
+        {"type":"mcq","q":"Tính giá trị của biểu thức m x 4 khi m = 8.","options":["12","32","24","36"],"a":1,"explain":"Thay m = 8: 8 x 4 = 32."},
+        {"type":"mcq","q":"Tính giá trị của biểu thức x : 5 + 7 khi x = 25.","options":["12","10","32","5"],"a":0,"explain":"Thay x = 25: 25 : 5 = 5, sau đó 5 + 7 = 12."},
+        {"type":"mcq","q":"Biểu thức a x 3 + b khi a = 6 và b = 9 có giá trị là bao nhiêu?","options":["27","18","24","45"],"a":0,"explain":"Thay a = 6, b = 9: 6 x 3 = 18, sau đó 18 + 9 = 27."},
+        {"type":"fill","q":"Giá trị của biểu thức 100 - n khi n = 45 là ___.","answer":"55","accept":["55"]},
+        {"type":"solve","de":"Nam để dành được a nghìn đồng từ tiền lì xì, sau đó bố cho thêm 20.000 đồng. Hãy viết biểu thức chứa chữ biểu thị số tiền Nam có tất cả, rồi tính giá trị biểu thức đó khi a = 35.000 đồng.","hints":["Em thử đọc lại đề xem Nam có tiền lì xì rồi được cho thêm, vậy tổng số tiền tính bằng phép gì nhỉ?","Số tiền lì xì là a, số tiền được cho thêm là 20.000 đồng, biểu thức sẽ là a cộng với 20.000, đúng không nào?","Bây giờ em thay a = 35.000 vào biểu thức a + 20.000 và tính xem kết quả là bao nhiêu nhé."],"loiGiai":"Biểu thức chứa chữ biểu thị số tiền Nam có tất cả là: a + 20.000\nKhi a = 35.000 đồng, giá trị biểu thức là:\n35.000 + 20.000 = 55.000 (đồng)\nĐáp số: 55.000 đồng","dapSo":"55.000 đồng"},
+        {"type":"solve","de":"Một cửa hàng có b quyển sách, sau khi bán đi 18 quyển thì cửa hàng nhập thêm về gấp đôi số sách đã bán. Hãy tính số sách cửa hàng có sau cùng khi b = 120 quyển.","hints":["Em đọc kỹ đề xem có mấy việc xảy ra: bán đi rồi lại nhập thêm, đúng không nào?","Trước tiên mình tính số sách còn lại sau khi bán (b trừ đi 18), rồi tính số sách nhập thêm (gấp đôi số đã bán), sau đó cộng lại nhé.","Em thử tính: b - 18 = 120 - 18, rồi số nhập thêm là 18 x 2, sau đó cộng hai kết quả lại xem được bao nhiêu."],"loiGiai":"Số sách còn lại sau khi bán là:\n120 - 18 = 102 (quyển)\nSố sách nhập thêm là:\n18 x 2 = 36 (quyển)\nSố sách cửa hàng có sau cùng là:\n102 + 36 = 138 (quyển)\nĐáp số: 138 quyển sách","dapSo":"138 quyển sách"}
+      ]
+    },
+    {
+      "so": 5,
+      "ten": "Giải bài toán có ba bước tính",
+      "lyThuyet": "Bài toán có ba bước tính thường yêu cầu thực hiện lần lượt ba phép tính (cộng, trừ, nhân hoặc chia) để đi từ dữ kiện bài cho đến đáp số cuối cùng. Em cần đọc kỹ đề, xác định các bước tính trung gian trước khi tìm ra kết quả cuối, và luôn ghi rõ lời giải cho từng bước.",
+      "cauHoi": [
+        {"type":"mcq","q":"Để giải một bài toán có ba bước tính, em cần làm gì đầu tiên?","options":["Ghi ngay đáp số","Đọc kỹ đề bài để biết dữ kiện đã cho và câu hỏi","Thực hiện phép nhân trước tiên","Vẽ hình minh họa"],"a":1,"explain":"Trước khi giải, cần đọc kỹ đề để hiểu bài cho biết gì và hỏi gì, từ đó xác định các bước tính cần thực hiện."},
+        {"type":"mcq","q":"An có 25.000 đồng, được mẹ cho thêm 15.000 đồng, sau đó mua một quyển truyện hết 12.000 đồng. Hỏi An còn lại bao nhiêu tiền?","options":["28.000 đồng","40.000 đồng","25.000 đồng","30.000 đồng"],"a":0,"explain":"Bước 1: 25.000 + 15.000 = 40.000 đồng. Bước 2: 40.000 - 12.000 = 28.000 đồng."},
+        {"type":"mcq","q":"Một lớp học có 3 tổ, mỗi tổ có 8 bạn. Cô giáo phát cho mỗi bạn 2 quyển vở. Hỏi cô giáo đã phát tất cả bao nhiêu quyển vở?","options":["48 quyển","24 quyển","16 quyển","32 quyển"],"a":0,"explain":"Bước 1: Số bạn cả lớp là 3 x 8 = 24 bạn. Bước 2: Số vở phát ra là 24 x 2 = 48 quyển."},
+        {"type":"mcq","q":"Bình có 60 viên bi, cho bạn 15 viên, sau đó chia đều số bi còn lại vào 3 hộp. Hỏi mỗi hộp có bao nhiêu viên bi?","options":["15 viên","20 viên","25 viên","45 viên"],"a":0,"explain":"Bước 1: 60 - 15 = 45 viên bi còn lại. Bước 2: 45 : 3 = 15 viên bi mỗi hộp."},
+        {"type":"mcq","q":"Một đội bóng đá có 24 cầu thủ. Huấn luyện viên chọn ra 10 cầu thủ đá chính, số còn lại chia đều thành 2 nhóm dự bị để tập luyện. Hỏi mỗi nhóm dự bị có bao nhiêu cầu thủ?","options":["7 cầu thủ","6 cầu thủ","14 cầu thủ","10 cầu thủ"],"a":0,"explain":"Bước 1: Số cầu thủ dự bị là 24 - 10 = 14 cầu thủ. Bước 2: 14 : 2 = 7 cầu thủ mỗi nhóm."},
+        {"type":"fill","q":"Một cửa hàng có 500 quyển sách, đã bán 180 quyển, sau đó nhập thêm 120 quyển. Hỏi cửa hàng còn lại bao nhiêu quyển sách? Điền đáp số: ___ quyển.","answer":"440","accept":["440","440 quyển"]},
+        {"type":"solve","de":"Khoa mua 3 hộp lego, mỗi hộp có 250 mảnh ghép. Sau khi xếp xong một mô hình, Khoa còn thừa lại 90 mảnh ghép. Hỏi Khoa đã dùng bao nhiêu mảnh ghép để xếp mô hình đó?","hints":["Em thử đọc lại đề xem tổng số mảnh ghép Khoa có là bao nhiêu trước đã nhé?","Bước đầu tiên mình cần tính tổng số mảnh ghép của 3 hộp, dùng phép nhân đúng không nào?","Sau khi có tổng số mảnh ghép, em lấy tổng đó trừ đi số mảnh ghép còn thừa (90) để tìm số mảnh ghép đã dùng nhé."],"loiGiai":"Tổng số mảnh ghép Khoa có là:\n250 x 3 = 750 (mảnh ghép)\nSố mảnh ghép Khoa đã dùng để xếp mô hình là:\n750 - 90 = 660 (mảnh ghép)\nĐáp số: 660 mảnh ghép","dapSo":"660 mảnh ghép"},
+        {"type":"solve","de":"Một câu lạc bộ bơi lội có 96 học viên, chia đều vào 4 lớp học. Sau đó có thêm 8 học viên mới xin vào học ở một lớp bất kỳ. Hỏi lớp đó có bao nhiêu học viên sau khi nhận thêm học viên mới?","hints":["Em đọc kỹ đề xem 96 học viên được chia đều vào mấy lớp nhé?","Bước đầu, mình tính xem mỗi lớp lúc đầu có bao nhiêu học viên bằng phép chia, đúng không?","Sau khi biết mỗi lớp có bao nhiêu học viên, em cộng thêm 8 học viên mới vào lớp đó xem được bao nhiêu nhé."],"loiGiai":"Số học viên mỗi lớp lúc đầu là:\n96 : 4 = 24 (học viên)\nSố học viên của lớp đó sau khi nhận thêm là:\n24 + 8 = 32 (học viên)\nĐáp số: 32 học viên","dapSo":"32 học viên"}
+      ]
+    },
+    {
+      "so": 6,
+      "ten": "Luyện tập chung",
+      "lyThuyet": "Bài luyện tập chung giúp em ôn lại các kiến thức đã học: đọc viết và so sánh số đến 100.000, thực hiện bốn phép tính cộng trừ nhân chia, nhận biết số chẵn số lẻ, tính giá trị biểu thức chứa chữ, và giải các bài toán có nhiều bước tính. Em hãy đọc kỹ đề bài trước khi làm nhé.",
+      "cauHoi": [
+        {"type":"mcq","q":"Số 90.807 gồm mấy chữ số và chữ số hàng trăm là chữ số nào?","options":["5 chữ số, chữ số hàng trăm là 8","5 chữ số, chữ số hàng trăm là 0","6 chữ số, chữ số hàng trăm là 8","5 chữ số, chữ số hàng trăm là 7"],"a":0,"explain":"90.807 có 5 chữ số: 9, 0, 8, 0, 7. Chữ số hàng trăm (vị trí thứ ba từ trái, tính theo hàng: chục nghìn - nghìn - trăm) là 8."},
+        {"type":"mcq","q":"25.634 + 14.278 = ?","options":["39.912","39.812","40.912","39.902"],"a":0,"explain":"25.634 + 14.278 = 39.912."},
+        {"type":"mcq","q":"90.000 - 36.450 = ?","options":["53.550","54.550","53.450","63.550"],"a":0,"explain":"90.000 - 36.450 = 53.550."},
+        {"type":"mcq","q":"Giá trị của biểu thức a x 2 + 30 khi a = 45 là bao nhiêu?","options":["120","90","75","150"],"a":0,"explain":"Thay a = 45: 45 x 2 = 90, sau đó 90 + 30 = 120."},
+        {"type":"mcq","q":"Hùng có 3 túi kẹo, mỗi túi 24 viên, Hùng cho em gái 20 viên. Hỏi Hùng còn lại bao nhiêu viên kẹo, và số đó là số chẵn hay số lẻ?","options":["52 viên, số chẵn","72 viên, số chẵn","52 viên, số lẻ","32 viên, số chẵn"],"a":0,"explain":"Bước 1: Tổng số kẹo là 24 x 3 = 72 viên. Bước 2: 72 - 20 = 52 viên. Số 52 có tận cùng là 2 nên là số chẵn."},
+        {"type":"fill","q":"Số liền trước của số chẵn nhỏ nhất có 5 chữ số là ___.","answer":"9.999","accept":["9.999","9999","9,999"]},
+        {"type":"solve","de":"An đọc sách trong 3 ngày, ngày thứ nhất đọc 45 trang, ngày thứ hai đọc nhiều hơn ngày thứ nhất 10 trang, ngày thứ ba đọc bằng tổng số trang của hai ngày đầu. Hỏi An đọc tất cả bao nhiêu trang sách trong 3 ngày?","hints":["Em thử đọc lại đề và tính xem ngày thứ hai An đọc được bao nhiêu trang trước đã nhé?","Sau khi biết số trang ngày 1 và ngày 2, mình cộng lại để biết ngày thứ ba An đọc bao nhiêu trang, đúng không nào?","Cuối cùng em cộng số trang của cả 3 ngày lại với nhau xem tổng là bao nhiêu nhé."],"loiGiai":"Số trang An đọc ngày thứ hai là:\n45 + 10 = 55 (trang)\nSố trang An đọc ngày thứ ba là:\n45 + 55 = 100 (trang)\nTổng số trang An đọc trong 3 ngày là:\n45 + 55 + 100 = 200 (trang)\nĐáp số: 200 trang sách","dapSo":"200 trang sách"},
+        {"type":"solve","de":"Một siêu thị nhập về 480 quả bóng đá, đóng đều vào các thùng, mỗi thùng 8 quả. Sau đó siêu thị bán đi 45 thùng. Hỏi siêu thị còn lại bao nhiêu quả bóng đá?","hints":["Em thử tính xem 480 quả bóng đá đóng được bao nhiêu thùng trước đã nhé, dùng phép chia nhé?","Sau khi biết tổng số thùng, mình lấy tổng số thùng trừ đi số thùng đã bán để biết còn lại bao nhiêu thùng, đúng không?","Cuối cùng em lấy số thùng còn lại nhân với 8 (số quả mỗi thùng) để tìm số quả bóng còn lại nhé."],"loiGiai":"Tổng số thùng bóng đá là:\n480 : 8 = 60 (thùng)\nSố thùng còn lại sau khi bán là:\n60 - 45 = 15 (thùng)\nSố quả bóng đá còn lại là:\n15 x 8 = 120 (quả)\nĐáp số: 120 quả bóng đá","dapSo":"120 quả bóng đá"}
+      ]
+    }
+  ]
+}

@@ -1,0 +1,358 @@
+{
+  "mon": "toan",
+  "tap": 1,
+  "chuDe": "Một số đơn vị đo đại lượng",
+  "cdSo": 4,
+  "bai": [
+    {
+      "so": 17,
+      "ten": "Yến, tạ, tấn",
+      "lyThuyet": "Yến, tạ, tấn là các đơn vị đo khối lượng lớn hơn ki-lô-gam, dùng để cân những vật nặng như thóc, gạo, xe hàng. Ta có: 1 yến = 10 kg; 1 tạ = 10 yến = 100 kg; 1 tấn = 10 tạ = 100 yến = 1.000 kg. Khi đổi từ đơn vị lớn sang đơn vị bé, em nhân với số lần đơn vị đó lớn hơn; khi đổi ngược lại thì chia.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "1 yến bằng bao nhiêu ki-lô-gam?",
+          "options": ["1 kg", "10 kg", "100 kg", "1.000 kg"],
+          "a": 1,
+          "explain": "Theo định nghĩa, 1 yến = 10 kg."
+        },
+        {
+          "type": "mcq",
+          "q": "1 tạ bằng bao nhiêu ki-lô-gam?",
+          "options": ["10 kg", "100 kg", "1.000 kg", "10.000 kg"],
+          "a": 1,
+          "explain": "1 tạ = 10 yến = 10 x 10 kg = 100 kg."
+        },
+        {
+          "type": "mcq",
+          "q": "5 tạ bằng bao nhiêu yến?",
+          "options": ["5 yến", "50 yến", "500 yến", "5.000 yến"],
+          "a": 1,
+          "explain": "1 tạ = 10 yến nên 5 tạ = 5 x 10 = 50 yến."
+        },
+        {
+          "type": "mcq",
+          "q": "Một xe tải chở 3 tấn gạo. Hỏi xe đó chở bao nhiêu tạ gạo?",
+          "options": ["3 tạ", "30 tạ", "300 tạ", "3.000 tạ"],
+          "a": 1,
+          "explain": "1 tấn = 10 tạ nên 3 tấn = 3 x 10 = 30 tạ."
+        },
+        {
+          "type": "mcq",
+          "q": "Điền số thích hợp: 2 tấn 5 tạ = ... kg.",
+          "options": ["250 kg", "2.005 kg", "2.500 kg", "2.050 kg"],
+          "a": 2,
+          "explain": "2 tấn = 2.000 kg, 5 tạ = 500 kg. Tổng: 2.000 + 500 = 2.500 kg."
+        },
+        {
+          "type": "fill",
+          "q": "Điền số thích hợp vào chỗ trống: 7 yến = ... kg.",
+          "answer": "70",
+          "accept": ["70", "70 kg"]
+        },
+        {
+          "type": "solve",
+          "de": "Đội bóng của Nam mua một bao thức ăn thể thao nặng 2 yến 3 kg để bồi dưỡng cho cả đội sau buổi tập. Hỏi bao thức ăn đó nặng bao nhiêu ki-lô-gam?",
+          "hints": [
+            "Em nhớ lại xem 1 yến bằng bao nhiêu ki-lô-gam nhé.",
+            "Bao thức ăn gồm 2 yến và thêm 3 kg nữa, em đổi 2 yến ra kg trước.",
+            "2 yến = 20 kg, sau đó cộng thêm 3 kg lẻ là ra khối lượng cả bao."
+          ],
+          "loiGiai": "Đổi: 2 yến = 20 kg\nKhối lượng bao thức ăn là:\n20 + 3 = 23 (kg)\nĐáp số: 23 kg",
+          "dapSo": "23 kg"
+        },
+        {
+          "type": "solve",
+          "de": "Một cửa hàng buổi sáng bán được 4 tạ gạo, buổi chiều bán được nhiều hơn buổi sáng 15 yến gạo. Hỏi buổi chiều cửa hàng bán được bao nhiêu ki-lô-gam gạo?",
+          "hints": [
+            "Đề bài cho hai đơn vị khác nhau (tạ và yến) nên em cần đổi về cùng một đơn vị trước khi tính.",
+            "Em đổi 4 tạ ra yến, rồi lấy số yến buổi sáng cộng thêm 15 yến để tìm số yến buổi chiều.",
+            "Sau khi có số yến buổi chiều, em đổi kết quả đó ra ki-lô-gam là xong."
+          ],
+          "loiGiai": "Đổi: 4 tạ = 40 yến\nSố yến gạo buổi chiều bán được là:\n40 + 15 = 55 (yến)\nĐổi: 55 yến = 550 kg\nĐáp số: 550 kg",
+          "dapSo": "550 kg"
+        }
+      ]
+    },
+    {
+      "so": 18,
+      "ten": "Đề-xi-mét vuông, mét vuông, mi-li-mét vuông",
+      "lyThuyet": "Mét vuông (m²), đề-xi-mét vuông (dm²) và mi-li-mét vuông (mm²) là các đơn vị đo diện tích. Ta có: 1 m² = 100 dm²; 1 dm² = 100 cm²; 1 cm² = 100 mm². Muốn đổi đơn vị lớn sang đơn vị bé liền kề, ta nhân số đó với 100; muốn đổi ngược lại ta chia cho 100.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "1 mét vuông bằng bao nhiêu đề-xi-mét vuông?",
+          "options": ["10 dm²", "100 dm²", "1.000 dm²", "10.000 dm²"],
+          "a": 1,
+          "explain": "1 m² = 100 dm²."
+        },
+        {
+          "type": "mcq",
+          "q": "1 dm² bằng bao nhiêu cm²?",
+          "options": ["10 cm²", "100 cm²", "1.000 cm²", "10.000 cm²"],
+          "a": 1,
+          "explain": "1 dm² = 100 cm²."
+        },
+        {
+          "type": "mcq",
+          "q": "Một tấm bìa hình vuông có diện tích 300 dm². Diện tích đó bằng bao nhiêu mét vuông?",
+          "options": ["0,3 m²", "3 m²", "30 m²", "300 m²"],
+          "a": 1,
+          "explain": "1 m² = 100 dm² nên 300 dm² = 300 : 100 = 3 m²."
+        },
+        {
+          "type": "mcq",
+          "q": "Sân chơi bóng bàn của lớp có diện tích 5 m² 40 dm². Diện tích đó bằng bao nhiêu đề-xi-mét vuông?",
+          "options": ["54 dm²", "540 dm²", "504 dm²", "5.040 dm²"],
+          "a": 1,
+          "explain": "5 m² = 500 dm², cộng thêm 40 dm² lẻ: 500 + 40 = 540 dm²."
+        },
+        {
+          "type": "mcq",
+          "q": "1 cm² bằng bao nhiêu mi-li-mét vuông?",
+          "options": ["10 mm²", "100 mm²", "1.000 mm²", "10.000 mm²"],
+          "a": 1,
+          "explain": "1 cm² = 100 mm² theo bảng đơn vị đo diện tích."
+        },
+        {
+          "type": "fill",
+          "q": "Điền số thích hợp vào chỗ trống: 8 m² = ... dm².",
+          "answer": "800",
+          "accept": ["800", "800 dm²"]
+        },
+        {
+          "type": "solve",
+          "de": "Một tấm thảm tập võ hình chữ nhật có chiều dài 6 dm, chiều rộng 4 dm. Tính diện tích tấm thảm đó theo đề-xi-mét vuông.",
+          "hints": [
+            "Muốn tính diện tích hình chữ nhật, em lấy chiều dài nhân với chiều rộng.",
+            "Ở đây chiều dài và chiều rộng đều đã cùng đơn vị là dm rồi, em cứ nhân trực tiếp.",
+            "6 nhân 4 bằng bao nhiêu, và kết quả sẽ mang đơn vị dm²."
+          ],
+          "loiGiai": "Diện tích tấm thảm tập võ là:\n6 x 4 = 24 (dm²)\nĐáp số: 24 dm²",
+          "dapSo": "24 dm²"
+        },
+        {
+          "type": "solve",
+          "de": "Bác An lát một mảnh sân hình vuông cạnh 3 m bằng gạch hình vuông cạnh 1 dm. Hỏi mảnh sân đó có diện tích bao nhiêu đề-xi-mét vuông?",
+          "hints": [
+            "Trước tiên em tính diện tích mảnh sân theo đơn vị mét vuông bằng cách lấy cạnh nhân cạnh.",
+            "Sau khi có diện tích theo m², em nhớ lại 1 m² bằng bao nhiêu dm² để đổi đơn vị.",
+            "Lấy diện tích tính được (theo m²) nhân với 100 sẽ ra kết quả theo dm²."
+          ],
+          "loiGiai": "Diện tích mảnh sân hình vuông là:\n3 x 3 = 9 (m²)\nĐổi: 9 m² = 900 dm²\nĐáp số: 900 dm²",
+          "dapSo": "900 dm²"
+        }
+      ]
+    },
+    {
+      "so": 19,
+      "ten": "Giây, thế kỉ",
+      "lyThuyet": "Giây là đơn vị đo thời gian bé hơn phút: 1 phút = 60 giây. Thế kỉ là đơn vị đo thời gian lớn hơn năm: 1 thế kỉ = 100 năm. Để xác định một năm thuộc thế kỉ nào, em lấy các năm đó chia nhóm 100 năm liên tiếp, ví dụ năm 1975 thuộc thế kỉ XX (từ năm 1901 đến năm 2000).",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "1 phút bằng bao nhiêu giây?",
+          "options": ["10 giây", "60 giây", "100 giây", "600 giây"],
+          "a": 1,
+          "explain": "1 phút = 60 giây."
+        },
+        {
+          "type": "mcq",
+          "q": "1 thế kỉ bằng bao nhiêu năm?",
+          "options": ["10 năm", "50 năm", "100 năm", "1.000 năm"],
+          "a": 2,
+          "explain": "1 thế kỉ = 100 năm."
+        },
+        {
+          "type": "mcq",
+          "q": "2 phút bằng bao nhiêu giây?",
+          "options": ["100 giây", "120 giây", "200 giây", "160 giây"],
+          "a": 1,
+          "explain": "2 phút = 2 x 60 = 120 giây."
+        },
+        {
+          "type": "mcq",
+          "q": "Năm 2026 thuộc thế kỉ nào?",
+          "options": ["Thế kỉ XX", "Thế kỉ XXI", "Thế kỉ XXII", "Thế kỉ XIX"],
+          "a": 1,
+          "explain": "Thế kỉ XXI tính từ năm 2001 đến năm 2100, nên năm 2026 thuộc thế kỉ XXI."
+        },
+        {
+          "type": "mcq",
+          "q": "Một ván cờ vua của Khoa kéo dài 3 phút 15 giây. Thời gian đó bằng bao nhiêu giây?",
+          "options": ["195 giây", "180 giây", "215 giây", "315 giây"],
+          "a": 0,
+          "explain": "3 phút = 180 giây, cộng thêm 15 giây: 180 + 15 = 195 giây."
+        },
+        {
+          "type": "fill",
+          "q": "Điền số thích hợp vào chỗ trống: 5 phút = ... giây.",
+          "answer": "300",
+          "accept": ["300", "300 giây"]
+        },
+        {
+          "type": "solve",
+          "de": "Minh bơi một vòng bể hết 1 phút 20 giây, còn Bình bơi hết 90 giây. Hỏi ai bơi nhanh hơn và nhanh hơn bao nhiêu giây?",
+          "hints": [
+            "Muốn so sánh, em cần đưa thời gian của cả hai bạn về cùng một đơn vị là giây.",
+            "Em đổi 1 phút 20 giây của Minh sang giây rồi so sánh với 90 giây của Bình.",
+            "Ai có số giây nhỏ hơn thì bơi nhanh hơn; lấy số lớn trừ số bé để tìm phần chênh lệch."
+          ],
+          "loiGiai": "Đổi: 1 phút 20 giây = 60 + 20 = 80 (giây)\nSo sánh: 80 giây < 90 giây nên Minh bơi nhanh hơn Bình.\nThời gian Minh nhanh hơn Bình là:\n90 - 80 = 10 (giây)\nĐáp số: Minh nhanh hơn 10 giây",
+          "dapSo": "Minh nhanh hơn 10 giây"
+        },
+        {
+          "type": "solve",
+          "de": "Một câu lạc bộ cờ vua được thành lập vào năm 1985. Đến năm 2026, câu lạc bộ đó đã hoạt động được bao nhiêu năm, và năm thành lập thuộc thế kỉ nào?",
+          "hints": [
+            "Muốn tìm số năm đã hoạt động, em lấy năm hiện tại trừ đi năm thành lập.",
+            "Để tìm thế kỉ, em xem năm 1985 nằm trong khoảng 100 năm nào (từ 1901 đến 2000 là thế kỉ XX).",
+            "Ghép hai kết quả: số năm hoạt động và thế kỉ của năm thành lập lại thành câu trả lời đầy đủ."
+          ],
+          "loiGiai": "Số năm câu lạc bộ đã hoạt động là:\n2026 - 1985 = 41 (năm)\nNăm 1985 nằm trong khoảng từ năm 1901 đến năm 2000 nên thuộc thế kỉ XX.\nĐáp số: 41 năm; năm thành lập thuộc thế kỉ XX",
+          "dapSo": "41 năm; thế kỉ XX"
+        }
+      ]
+    },
+    {
+      "so": 20,
+      "ten": "Thực hành và trải nghiệm sử dụng một số đơn vị đo đại lượng",
+      "lyThuyet": "Bài học này giúp em vận dụng các đơn vị đo khối lượng (yến, tạ, tấn), đo diện tích (dm², m², mm²) và đo thời gian (giây, thế kỉ) vào các tình huống thực tế như cân hàng hóa, tính diện tích sân bãi, đo thời gian luyện tập thể thao. Khi giải toán, em cần đổi các đại lượng về cùng một đơn vị trước khi cộng, trừ hay so sánh.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Một bao xi măng nặng 5 yến. Hai bao như vậy nặng bao nhiêu ki-lô-gam?",
+          "options": ["50 kg", "100 kg", "500 kg", "10 kg"],
+          "a": 1,
+          "explain": "1 bao = 5 yến = 50 kg. Hai bao: 50 x 2 = 100 kg."
+        },
+        {
+          "type": "mcq",
+          "q": "Sân bóng mini có diện tích 800 m². Diện tích đó bằng bao nhiêu héc-ta khi biết 1 ha = 10.000 m²? (chọn phân số gần đúng: 800 m² = 0,08 ha)",
+          "options": ["0,08 ha", "0,8 ha", "8 ha", "80 ha"],
+          "a": 0,
+          "explain": "800 : 10.000 = 0,08 ha."
+        },
+        {
+          "type": "mcq",
+          "q": "Hùng tập bóng đá 45 phút mỗi buổi. Một tuần Hùng tập 3 buổi. Hỏi Hùng tập tổng cộng bao nhiêu phút trong tuần đó?",
+          "options": ["90 phút", "135 phút", "145 phút", "150 phút"],
+          "a": 1,
+          "explain": "45 x 3 = 135 phút."
+        },
+        {
+          "type": "mcq",
+          "q": "Một xe chở hàng có tổng khối lượng hàng là 2 tấn 4 tạ. Đổi ra tạ, khối lượng đó là bao nhiêu?",
+          "options": ["24 tạ", "204 tạ", "240 tạ", "42 tạ"],
+          "a": 0,
+          "explain": "2 tấn = 20 tạ, cộng thêm 4 tạ: 20 + 4 = 24 tạ."
+        },
+        {
+          "type": "mcq",
+          "q": "Một tấm bảng tập viết hình chữ nhật có diện tích 4.500 mm² đổi ra cm² (biết 1 cm² = 100 mm²) là bao nhiêu?",
+          "options": ["4,5 cm²", "45 cm²", "450 cm²", "4.500 cm²"],
+          "a": 1,
+          "explain": "4.500 : 100 = 45 cm²."
+        },
+        {
+          "type": "fill",
+          "q": "Điền số thích hợp vào chỗ trống: 3 tạ 2 yến = ... kg.",
+          "answer": "320",
+          "accept": ["320", "320 kg"]
+        },
+        {
+          "type": "solve",
+          "de": "Một đội bóng đá thiếu niên gồm các cầu thủ có cân nặng trung bình 3 yến mỗi bạn. Đội có 8 cầu thủ. Hỏi tổng cân nặng của cả đội là bao nhiêu ki-lô-gam?",
+          "hints": [
+            "Em cần đổi cân nặng của mỗi bạn từ yến sang ki-lô-gam trước.",
+            "Sau khi biết mỗi bạn nặng bao nhiêu kg, em nhân với số cầu thủ trong đội.",
+            "3 yến = 30 kg, lấy 30 nhân với 8 để ra tổng cân nặng cả đội."
+          ],
+          "loiGiai": "Đổi: 3 yến = 30 kg\nTổng cân nặng của cả đội là:\n30 x 8 = 240 (kg)\nĐáp số: 240 kg",
+          "dapSo": "240 kg"
+        },
+        {
+          "type": "solve",
+          "de": "Sân tập bóng đá của Nam hình chữ nhật có chiều dài 9 m, chiều rộng 5 m. Nam đi bộ khởi động quanh sân hết 6 phút. Hỏi diện tích sân là bao nhiêu mét vuông, và nếu Nam khởi động thêm 2 vòng nữa với thời gian mỗi vòng như cũ thì tổng thời gian khởi động là bao nhiêu phút?",
+          "hints": [
+            "Việc đầu tiên là tính diện tích sân bằng cách lấy chiều dài nhân chiều rộng.",
+            "Sau đó, em tính tổng số vòng Nam đi bộ (vòng đầu cộng thêm 2 vòng nữa) rồi nhân với thời gian mỗi vòng.",
+            "Tổng thời gian bằng thời gian một vòng (6 phút) nhân với tổng số vòng (1 + 2 = 3 vòng)."
+          ],
+          "loiGiai": "Diện tích sân bóng đá là:\n9 x 5 = 45 (m²)\nTổng số vòng Nam khởi động là:\n1 + 2 = 3 (vòng)\nTổng thời gian khởi động là:\n6 x 3 = 18 (phút)\nĐáp số: Diện tích 45 m²; thời gian 18 phút",
+          "dapSo": "Diện tích 45 m²; thời gian 18 phút"
+        }
+      ]
+    },
+    {
+      "so": 21,
+      "ten": "Luyện tập chung",
+      "lyThuyet": "Bài luyện tập chung giúp em ôn lại các đơn vị đo khối lượng (yến, tạ, tấn), đo diện tích (dm², m², mm²) và đo thời gian (giây, thế kỉ) đã học trong chủ đề. Em cần nhớ chính xác các mối quan hệ giữa các đơn vị để đổi đúng và giải các bài toán có lời văn liên quan đến thực tế cuộc sống.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "4 tấn bằng bao nhiêu tạ?",
+          "options": ["4 tạ", "40 tạ", "400 tạ", "4.000 tạ"],
+          "a": 1,
+          "explain": "1 tấn = 10 tạ nên 4 tấn = 4 x 10 = 40 tạ."
+        },
+        {
+          "type": "mcq",
+          "q": "2 m² 15 dm² bằng bao nhiêu đề-xi-mét vuông?",
+          "options": ["17 dm²", "215 dm²", "2.015 dm²", "150 dm²"],
+          "a": 1,
+          "explain": "2 m² = 200 dm², cộng thêm 15 dm²: 200 + 15 = 215 dm²."
+        },
+        {
+          "type": "mcq",
+          "q": "1 thế kỉ rưỡi (150 năm) tính từ năm 1900 sẽ là năm nào?",
+          "options": ["Năm 2000", "Năm 2050", "Năm 2100", "Năm 1950"],
+          "a": 1,
+          "explain": "1900 + 150 = 2050."
+        },
+        {
+          "type": "mcq",
+          "q": "Một kho hàng chứa 3 tấn 7 yến gạo. Đổi ra ki-lô-gam, kho đó chứa bao nhiêu kg gạo?",
+          "options": ["370 kg", "3.007 kg", "3.070 kg", "3.700 kg"],
+          "a": 2,
+          "explain": "3 tấn = 3.000 kg, 7 yến = 70 kg. Tổng: 3.000 + 70 = 3.070 kg."
+        },
+        {
+          "type": "mcq",
+          "q": "Bình chạy quãng đường quanh sân trường hết 2 phút 45 giây, An chạy hết 155 giây. So sánh đúng là:",
+          "options": ["Bình chạy nhanh hơn An", "An chạy nhanh hơn Bình", "Hai bạn chạy bằng nhau", "Không thể so sánh"],
+          "a": 1,
+          "explain": "2 phút 45 giây = 165 giây. So sánh 165 giây và 155 giây, An (155 giây) nhanh hơn Bình."
+        },
+        {
+          "type": "fill",
+          "q": "Điền số thích hợp vào chỗ trống: 6 dm² = ... cm².",
+          "answer": "600",
+          "accept": ["600", "600 cm²"]
+        },
+        {
+          "type": "solve",
+          "de": "Một xe tải chở 2 tấn rau đợt một, đợt hai chở nhiều hơn đợt một 5 tạ. Hỏi cả hai đợt xe tải đó chở tất cả bao nhiêu ki-lô-gam rau?",
+          "hints": [
+                "Em cần đổi tất cả các số liệu về cùng một đơn vị, chẳng hạn tạ hoặc kg, trước khi tính.",
+            "Tìm số rau đợt hai bằng cách lấy số rau đợt một cộng thêm phần chênh lệch.",
+            "Sau khi có khối lượng từng đợt, em cộng hai đợt lại rồi đổi kết quả cuối cùng ra ki-lô-gam."
+          ],
+          "loiGiai": "Đổi: 2 tấn = 20 tạ\nKhối lượng rau đợt hai là:\n20 + 5 = 25 (tạ)\nTổng khối lượng rau hai đợt là:\n20 + 25 = 45 (tạ)\nĐổi: 45 tạ = 4.500 kg\nĐáp số: 4.500 kg",
+          "dapSo": "4.500 kg"
+        },
+        {
+          "type": "solve",
+          "de": "Một mảnh vườn hình chữ nhật có chiều dài 12 m, chiều rộng 7 m được dùng để trồng rau cho câu lạc bộ thể thao. Các bạn mất 2 phút 30 giây để tưới xong mỗi mét vuông rau. Nếu tưới toàn bộ mảnh vườn 1 mét vuông một lần lượt cho đến hết, cần đổi thời gian tưới mỗi mét vuông ra giây. Hỏi diện tích mảnh vườn là bao nhiêu mét vuông, và thời gian tưới mỗi mét vuông là bao nhiêu giây?",
+          "hints": [
+            "Trước hết, em tính diện tích mảnh vườn bằng cách lấy chiều dài nhân chiều rộng.",
+            "Sau đó, em đổi thời gian 2 phút 30 giây sang đơn vị giây bằng cách đổi phút ra giây rồi cộng phần giây lẻ.",
+            "2 phút = 120 giây, cộng thêm 30 giây nữa sẽ ra thời gian tưới mỗi mét vuông theo giây."
+          ],
+          "loiGiai": "Diện tích mảnh vườn là:\n12 x 7 = 84 (m²)\nĐổi thời gian: 2 phút 30 giây = 120 + 30 = 150 (giây)\nĐáp số: Diện tích 84 m²; thời gian tưới mỗi mét vuông là 150 giây",
+          "dapSo": "Diện tích 84 m²; thời gian 150 giây"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "mon": "ta",
+  "level": "starters",
+  "chuDe": "Starters phần 2",
+  "cdSo": 2,
+  "bai": [
+    {
+      "so": 6,
+      "ten": "Unit 6: Clothes",
+      "lyThuyet": "Chào em, anh Fury đây! Hôm nay chúng ta học từ vựng về quần áo nhé: shirt (áo sơ mi), dress (váy), shoes (giày), hat (mũ), socks (tất), jacket (áo khoác), trousers (quần dài), skirt (váy ngắn). Em sẽ học cách nói 'I am wearing...' (Tôi đang mặc...) và 'She has got a...' (Cô ấy có một...) đó. Cùng anh Fury luyện tập nào, cố lên em nhé!",
+      "cauHoi": [
+        {"type":"listen","audioText":"He is wearing a blue shirt.","q":"Cậu bé đang mặc gì?","options":["Áo sơ mi xanh","Váy đỏ","Mũ vàng","Giày đen"],"a":0,"explain":"Câu 'He is wearing a blue shirt' nghĩa là 'Cậu ấy đang mặc áo sơ mi xanh'. Đáp án đúng là A vì 'shirt' là áo sơ mi và 'blue' là màu xanh."},
+        {"type":"listen","audioText":"She has got a red dress.","q":"Cô bé có gì?","options":["Một cái mũ đỏ","Một cái váy đỏ","Một đôi giày đỏ","Một cái quần đỏ"],"a":1,"explain":"'She has got a red dress' nghĩa là 'Cô ấy có một cái váy đỏ'. 'Dress' là váy, nên đáp án đúng là B."},
+        {"type":"listen","audioText":"Put on your shoes, please.","q":"Người nói yêu cầu điều gì?","options":["Cởi mũ ra","Mang giày vào","Mặc áo khoác","Cởi tất ra"],"a":1,"explain":"'Put on your shoes, please' nghĩa là 'Làm ơn mang giày vào'. 'Put on' là mặc/mang vào, 'shoes' là giày, nên đáp án đúng là B."},
+        {"type":"speak","prompt":"Hãy nói: Tôi đang mặc một cái áo khoác màu vàng","target":"I am wearing a yellow jacket","accept":["i am wearing a yellow jacket","im wearing a yellow jacket","i'm wearing a yellow jacket"]},
+        {"type":"speak","prompt":"Hãy nói: Cô ấy có một chiếc mũ mới","target":"She has got a new hat","accept":["she has got a new hat","she has a new hat","shes got a new hat"]},
+        {"type":"speak","prompt":"Hãy nói: Đôi tất này màu xanh lá","target":"These socks are green","accept":["these socks are green","the socks are green"]},
+        {"type":"read","vanBan":"Tom likes his new clothes. He has got a black jacket and blue trousers. His shoes are white. He wears a cap when he plays outside.","q":"Áo khoác của Tom màu gì?","options":["Trắng","Xanh dương","Đen","Vàng"],"a":2,"explain":"Đoạn văn viết 'He has got a black jacket' nghĩa là 'Cậu ấy có một chiếc áo khoác màu đen'. Đáp án đúng là C."},
+        {"type":"read","vanBan":"Tom likes his new clothes. He has got a black jacket and blue trousers. His shoes are white. He wears a cap when he plays outside.","q":"Tom đội gì khi chơi ngoài trời?","options":["Mũ lưỡi trai","Khăn quàng","Găng tay","Kính râm"],"a":0,"explain":"Câu 'He wears a cap when he plays outside' nghĩa là 'Cậu ấy đội mũ lưỡi trai khi chơi ngoài trời'. 'Cap' là mũ lưỡi trai, đáp án đúng là A."},
+        {"type":"mcq","q":"Chọn từ đúng: 'This is my ___. I wear it on my feet.' (Đây là ___ của tôi. Tôi mang nó ở chân.)","options":["hat","shoes","shirt","dress"],"a":1,"explain":"'Shoes' là giày, mang ở chân, nên đáp án đúng là B. Câu này nghĩa là 'Đây là đôi giày của tôi. Tôi mang nó ở chân.'"},
+        {"type":"mcq","q":"Chọn câu đúng ngữ pháp: 'She ___ a beautiful skirt.'","options":["have got","has got","is got","has get"],"a":1,"explain":"Với chủ ngữ 'She' (số ít), ta dùng 'has got'. Đáp án đúng là B, câu nghĩa là 'Cô ấy có một chiếc váy đẹp.'"},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: cái mũ","answer":"hat","accept":["hat"]},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: đôi giày","answer":"shoes","accept":["shoes","shoe"]},
+        {"type":"spell","q":"Điền từ vào chỗ trống: 'He ___ (wear) a green jacket today.'","answer":"wears","accept":["wears"]}
+      ]
+    },
+    {
+      "so": 7,
+      "ten": "Unit 7: Toys & Playtime",
+      "lyThuyet": "Chào em, anh Fury đây! Unit này mình học từ vựng về đồ chơi nhé: ball (quả bóng), doll (búp bê), kite (diều), robot (rô-bốt), teddy bear (gấu bông), car (xe hơi đồ chơi), puzzle (trò chơi ghép hình), train (tàu hỏa). Em sẽ luyện câu 'I have got a...' và 'Can I play with...?' (Tôi có thể chơi với... không?) nhé. Anh Fury tin em làm được, cùng bắt đầu thôi!",
+      "cauHoi": [
+        {"type":"listen","audioText":"I have got a new robot.","q":"Người nói có món đồ chơi gì mới?","options":["Búp bê","Rô-bốt","Diều","Xe hơi"],"a":1,"explain":"'I have got a new robot' nghĩa là 'Tôi có một con rô-bốt mới'. Đáp án đúng là B."},
+        {"type":"listen","audioText":"Can I play with your kite?","q":"Người nói muốn chơi gì?","options":["Diều","Bóng","Xe hơi","Tàu hỏa"],"a":0,"explain":"'Can I play with your kite?' nghĩa là 'Tôi có thể chơi với con diều của bạn không?'. 'Kite' là diều, đáp án đúng là A."},
+        {"type":"listen","audioText":"The ball is under the table.","q":"Quả bóng đang ở đâu?","options":["Trên bàn","Dưới gầm bàn","Trong hộp","Trên ghế"],"a":1,"explain":"'The ball is under the table' nghĩa là 'Quả bóng ở dưới gầm bàn'. 'Under' là ở dưới, đáp án đúng là B."},
+        {"type":"speak","prompt":"Hãy nói: Tôi có một con gấu bông","target":"I have got a teddy bear","accept":["i have got a teddy bear","i have a teddy bear","ive got a teddy bear"]},
+        {"type":"speak","prompt":"Hãy nói: Đây là trò chơi ghép hình của tôi","target":"This is my puzzle","accept":["this is my puzzle"]},
+        {"type":"speak","prompt":"Hãy nói: Tàu hỏa ở trên sàn nhà","target":"The train is on the floor","accept":["the train is on the floor"]},
+        {"type":"read","vanBan":"Ben has got many toys. He likes his red car and his teddy bear. His favourite toy is a big kite. He plays with it in the park.","q":"Đồ chơi yêu thích nhất của Ben là gì?","options":["Xe hơi đỏ","Gấu bông","Diều to","Búp bê"],"a":2,"explain":"Câu 'His favourite toy is a big kite' nghĩa là 'Đồ chơi yêu thích của cậu ấy là con diều to'. Đáp án đúng là C."},
+        {"type":"read","vanBan":"Ben has got many toys. He likes his red car and his teddy bear. His favourite toy is a big kite. He plays with it in the park.","q":"Ben chơi diều ở đâu?","options":["Ở nhà","Ở trường","Trong công viên","Trong phòng ngủ"],"a":2,"explain":"'He plays with it in the park' nghĩa là 'Cậu ấy chơi diều trong công viên'. Đáp án đúng là C."},
+        {"type":"mcq","q":"Chọn từ đúng: 'Look! There ___ a doll on the bed.' (Nhìn kìa! Có một con búp bê trên giường.)","options":["are","is","have","has"],"a":1,"explain":"Với danh từ số ít 'a doll', ta dùng 'There is'. Đáp án đúng là B."},
+        {"type":"mcq","q":"Chọn từ đúng: 'These are my toy ___. They are very fast.' (Đây là những chiếc xe hơi đồ chơi của tôi. Chúng rất nhanh.)","options":["car","cars","carring","cared"],"a":1,"explain":"Vì có 'These are' (số nhiều) nên danh từ phải là số nhiều 'cars'. Đáp án đúng là B."},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: quả bóng","answer":"ball","accept":["ball"]},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: con diều","answer":"kite","accept":["kite"]},
+        {"type":"spell","q":"Điền từ vào chỗ trống: 'They ___ (play) with the puzzle every day.'","answer":"play","accept":["play"]}
+      ]
+    },
+    {
+      "so": 8,
+      "ten": "Unit 8: My Home",
+      "lyThuyet": "Chào em, anh Fury đây! Hôm nay mình khám phá ngôi nhà nhé, học từ vựng: bedroom (phòng ngủ), kitchen (nhà bếp), bathroom (phòng tắm), living room (phòng khách), table (cái bàn), chair (cái ghế), bed (giường), sofa (ghế sofa). Mẫu câu quan trọng là 'There is/are...' (Có...) và 'This is my...' (Đây là... của tôi). Anh Fury cùng em chinh phục unit này nhé, cố lên!",
+      "cauHoi": [
+        {"type":"listen","audioText":"There is a bed in my bedroom.","q":"Trong phòng ngủ có gì?","options":["Cái bàn","Cái giường","Ghế sofa","Cái ghế"],"a":1,"explain":"'There is a bed in my bedroom' nghĩa là 'Có một cái giường trong phòng ngủ của tôi'. Đáp án đúng là B."},
+        {"type":"listen","audioText":"The kitchen is next to the living room.","q":"Nhà bếp nằm ở đâu?","options":["Cạnh phòng khách","Trong phòng tắm","Trên phòng ngủ","Sau nhà"],"a":0,"explain":"'The kitchen is next to the living room' nghĩa là 'Nhà bếp nằm cạnh phòng khách'. 'Next to' là cạnh bên, đáp án đúng là A."},
+        {"type":"listen","audioText":"There are two chairs in the kitchen.","q":"Có bao nhiêu cái ghế trong bếp?","options":["Một","Hai","Ba","Bốn"],"a":1,"explain":"'There are two chairs' nghĩa là 'Có hai cái ghế'. Đáp án đúng là B."},
+        {"type":"speak","prompt":"Hãy nói: Đây là phòng khách của tôi","target":"This is my living room","accept":["this is my living room"]},
+        {"type":"speak","prompt":"Hãy nói: Có một cái bàn trong nhà bếp","target":"There is a table in the kitchen","accept":["there is a table in the kitchen"]},
+        {"type":"speak","prompt":"Hãy nói: Ghế sofa ở trong phòng khách","target":"The sofa is in the living room","accept":["the sofa is in the living room"]},
+        {"type":"read","vanBan":"This is my house. There are three bedrooms and one bathroom. My favourite room is the living room because there is a big sofa there.","q":"Ngôi nhà có bao nhiêu phòng ngủ?","options":["Một","Hai","Ba","Bốn"],"a":2,"explain":"'There are three bedrooms' nghĩa là 'Có ba phòng ngủ'. Đáp án đúng là C."},
+        {"type":"read","vanBan":"This is my house. There are three bedrooms and one bathroom. My favourite room is the living room because there is a big sofa there.","q":"Vì sao phòng khách là phòng yêu thích?","options":["Vì có ti vi to","Vì có ghế sofa to","Vì có nhiều cửa sổ","Vì rất sạch sẽ"],"a":1,"explain":"'Because there is a big sofa there' nghĩa là 'Vì có một cái ghế sofa to ở đó'. Đáp án đúng là B."},
+        {"type":"mcq","q":"Chọn từ đúng: '___ is a lamp on the table.' (Có một cái đèn trên bàn.)","options":["There","This","These","That"],"a":0,"explain":"Cấu trúc 'There is/are' dùng để nói 'có'. Đáp án đúng là A vì đi với 'is' cho danh từ số ít."},
+        {"type":"mcq","q":"Chọn từ đúng: 'My bed is ___ the window.' (Giường của tôi ở cạnh cửa sổ.)","options":["next to","in front","under the","on top"],"a":0,"explain":"'Next to' nghĩa là 'cạnh bên'. Đáp án đúng là A vì phù hợp ngữ nghĩa và ngữ pháp câu."},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: phòng ngủ","answer":"bedroom","accept":["bedroom"]},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: nhà bếp","answer":"kitchen","accept":["kitchen"]},
+        {"type":"spell","q":"Điền từ vào chỗ trống: 'There ___ (be) two sofas in the living room.'","answer":"are","accept":["are"]}
+      ]
+    },
+    {
+      "so": 9,
+      "ten": "Unit 9: School & Classroom",
+      "lyThuyet": "Chào em, anh Fury đây! Unit 9 mình học về trường học và lớp học nhé: book (quyển sách), pencil (bút chì), ruler (thước kẻ), bag (cặp sách), desk (bàn học), teacher (thầy/cô giáo), classroom (phòng học), board (bảng). Em sẽ luyện câu 'I have got a...' và 'Where is my...?' (... của tôi ở đâu?). Anh Fury chắc chắn em sẽ học rất giỏi, cùng cố gắng nhé!",
+      "cauHoi": [
+        {"type":"listen","audioText":"My pencil is in my bag.","q":"Bút chì đang ở đâu?","options":["Trên bàn học","Trong cặp sách","Trên bảng","Dưới ghế"],"a":1,"explain":"'My pencil is in my bag' nghĩa là 'Bút chì của tôi ở trong cặp sách'. Đáp án đúng là B."},
+        {"type":"listen","audioText":"The teacher is writing on the board.","q":"Cô giáo đang làm gì?","options":["Đọc sách","Viết trên bảng","Ngồi ở bàn","Cầm thước kẻ"],"a":1,"explain":"'The teacher is writing on the board' nghĩa là 'Cô giáo đang viết trên bảng'. Đáp án đúng là B."},
+        {"type":"listen","audioText":"Where is my ruler? It is on the desk.","q":"Cái thước kẻ đang ở đâu?","options":["Trong cặp sách","Trên bàn học","Dưới ghế","Trên bảng"],"a":1,"explain":"'It is on the desk' nghĩa là 'Nó ở trên bàn học'. Đáp án đúng là B."},
+        {"type":"speak","prompt":"Hãy nói: Tôi có một quyển sách mới","target":"I have got a new book","accept":["i have got a new book","i have a new book","ive got a new book"]},
+        {"type":"speak","prompt":"Hãy nói: Cặp sách của tôi ở đâu?","target":"Where is my bag","accept":["where is my bag","wheres my bag"]},
+        {"type":"speak","prompt":"Hãy nói: Đây là phòng học của chúng tôi","target":"This is our classroom","accept":["this is our classroom"]},
+        {"type":"read","vanBan":"Our classroom is big. There are twenty desks and one board. I sit next to my friend. We have got books and pencils on our desks.","q":"Có bao nhiêu cái bàn học trong lớp?","options":["Mười","Mười lăm","Hai mươi","Hai lăm"],"a":2,"explain":"'There are twenty desks' nghĩa là 'Có hai mươi cái bàn học'. Đáp án đúng là C."},
+        {"type":"read","vanBan":"Our classroom is big. There are twenty desks and one board. I sit next to my friend. We have got books and pencils on our desks.","q":"Trên bàn học có gì?","options":["Sách và bút chì","Thước kẻ và cặp","Bảng và ghế","Đèn và đồng hồ"],"a":0,"explain":"'We have got books and pencils on our desks' nghĩa là 'Chúng tôi có sách và bút chì trên bàn học'. Đáp án đúng là A."},
+        {"type":"mcq","q":"Chọn từ đúng: 'I write with my ___.' (Tôi viết bằng bút chì của tôi.)","options":["ruler","pencil","bag","board"],"a":1,"explain":"'Pencil' là bút chì, dùng để viết. Đáp án đúng là B."},
+        {"type":"mcq","q":"Chọn câu đúng: 'She ___ got two pencils in her bag.'","options":["have","has","is","are"],"a":1,"explain":"Chủ ngữ 'She' số ít đi với 'has got'. Đáp án đúng là B, câu nghĩa là 'Cô ấy có hai cây bút chì trong cặp.'"},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: quyển sách","answer":"book","accept":["book"]},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: cái thước kẻ","answer":"ruler","accept":["ruler"]},
+        {"type":"spell","q":"Điền từ vào chỗ trống: 'The teacher ___ (teach) us English every day.'","answer":"teaches","accept":["teaches"]}
+      ]
+    },
+    {
+      "so": 10,
+      "ten": "Unit 10: Sports & Free time",
+      "lyThuyet": "Chào em, anh Fury đây! Unit cuối cùng của phần này mình học về thể thao và giờ chơi nhé: football (bóng đá), swim (bơi), run (chạy), jump (nhảy), ride a bike (đi xe đạp), basketball (bóng rổ), play (chơi), dance (nhảy múa). Em sẽ luyện câu 'I can...' (Tôi có thể...) và 'I like playing...' (Tôi thích chơi...). Anh Fury rất tự hào vì em đã học đến unit 10 rồi, cùng hoàn thành thật tốt nhé!",
+      "cauHoi": [
+        {"type":"listen","audioText":"I can swim very fast.","q":"Người nói có thể làm gì?","options":["Chạy nhanh","Bơi rất nhanh","Nhảy cao","Đi xe đạp"],"a":1,"explain":"'I can swim very fast' nghĩa là 'Tôi có thể bơi rất nhanh'. Đáp án đúng là B."},
+        {"type":"listen","audioText":"He likes playing football with his friends.","q":"Cậu bé thích chơi môn thể thao gì?","options":["Bóng rổ","Bóng đá","Bơi lội","Chạy bộ"],"a":1,"explain":"'He likes playing football' nghĩa là 'Cậu ấy thích chơi bóng đá'. Đáp án đúng là B."},
+        {"type":"listen","audioText":"She can ride a bike in the park.","q":"Cô bé có thể làm gì trong công viên?","options":["Bơi lội","Nhảy múa","Đi xe đạp","Chơi bóng rổ"],"a":2,"explain":"'She can ride a bike in the park' nghĩa là 'Cô ấy có thể đi xe đạp trong công viên'. Đáp án đúng là C."},
+        {"type":"speak","prompt":"Hãy nói: Tôi có thể chạy rất nhanh","target":"I can run very fast","accept":["i can run very fast","i can run fast"]},
+        {"type":"speak","prompt":"Hãy nói: Tôi thích chơi bóng rổ","target":"I like playing basketball","accept":["i like playing basketball","i like basketball"]},
+        {"type":"speak","prompt":"Hãy nói: Cô ấy có thể nhảy rất cao","target":"She can jump very high","accept":["she can jump very high","she can jump high"]},
+        {"type":"read","vanBan":"Jack loves sports. He can swim and he can play football well. On weekends, he rides his bike in the park with his sister.","q":"Jack có thể chơi môn thể thao nào tốt?","options":["Bóng rổ","Bóng đá","Bơi thuyền","Cầu lông"],"a":1,"explain":"'He can play football well' nghĩa là 'Cậu ấy có thể chơi bóng đá giỏi'. Đáp án đúng là B."},
+        {"type":"read","vanBan":"Jack loves sports. He can swim and he can play football well. On weekends, he rides his bike in the park with his sister.","q":"Jack đi xe đạp với ai vào cuối tuần?","options":["Bạn thân","Em gái/chị gái","Bố","Thầy giáo"],"a":1,"explain":"'He rides his bike in the park with his sister' nghĩa là 'Cậu ấy đi xe đạp trong công viên cùng chị/em gái'. Đáp án đúng là B."},
+        {"type":"mcq","q":"Chọn từ đúng: 'I ___ swim, but I can't play basketball.' (Tôi có thể bơi, nhưng tôi không thể chơi bóng rổ.)","options":["can","cans","canning","am can"],"a":0,"explain":"'Can' dùng cho mọi chủ ngữ để diễn tả khả năng. Đáp án đúng là A."},
+        {"type":"mcq","q":"Chọn từ đúng: 'They like ___ football after school.' (Họ thích chơi bóng đá sau giờ học.)","options":["play","plays","playing","played"],"a":2,"explain":"Sau 'like' ta thường dùng V-ing, nên đáp án đúng là C, 'playing'."},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: bơi","answer":"swim","accept":["swim"]},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: bóng rổ","answer":"basketball","accept":["basketball"]},
+        {"type":"spell","q":"Điền từ vào chỗ trống: 'He ___ (run) very fast every morning.'","answer":"runs","accept":["runs"]}
+      ]
+    }
+  ]
+}

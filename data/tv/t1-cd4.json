@@ -1,0 +1,393 @@
+{
+  "mon": "tv",
+  "tap": 1,
+  "chuDe": "Chắp cánh ước mơ",
+  "cdSo": 4,
+  "bai": [
+    {
+      "so": 1,
+      "ten": "Tuần 14: Ước mơ bay giữa bầu trời",
+      "lyThuyet": "Tuần này em đọc câu chuyện về những ước mơ nghề nghiệp của tuổi thơ và học cách nuôi dưỡng hoài bão của mình. Về Luyện từ và câu, em học dấu gạch ngang dùng để đánh dấu các ý liệt kê, đánh dấu lời nói trực tiếp của nhân vật, và nối các từ ngữ trong một liên danh.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Nam có một chiếc hộp gỗ nhỏ, bên trong cất giữ hàng chục mô hình máy bay giấy. Mỗi tối, cậu lại ngồi bên cửa sổ, ngắm bầu trời đầy sao và tưởng tượng mình đang lái một chiếc máy bay thật, bay qua những đám mây trắng xốp. Bố Nam là phi công, mỗi lần về nhà, ông thường kể cho cậu nghe về những chuyến bay xa. Nghe xong, Nam càng quyết tâm học thật giỏi để sau này được ngồi trong buồng lái, chở theo bao ước mơ của mình lên cao.",
+          "q": "Nam cất giữ điều gì trong chiếc hộp gỗ nhỏ?",
+          "options": [
+            "Những viên bi màu",
+            "Mô hình máy bay giấy",
+            "Những lá thư cũ",
+            "Đồ chơi rô-bốt"
+          ],
+          "a": 1,
+          "explain": "Bài đọc cho biết Nam cất giữ hàng chục mô hình máy bay giấy trong chiếc hộp gỗ nhỏ."
+        },
+        {
+          "type": "read",
+          "vanBan": "Nam có một chiếc hộp gỗ nhỏ, bên trong cất giữ hàng chục mô hình máy bay giấy. Mỗi tối, cậu lại ngồi bên cửa sổ, ngắm bầu trời đầy sao và tưởng tượng mình đang lái một chiếc máy bay thật, bay qua những đám mây trắng xốp. Bố Nam là phi công, mỗi lần về nhà, ông thường kể cho cậu nghe về những chuyến bay xa. Nghe xong, Nam càng quyết tâm học thật giỏi để sau này được ngồi trong buồng lái, chở theo bao ước mơ của mình lên cao.",
+          "q": "Vì sao Nam quyết tâm học thật giỏi?",
+          "options": [
+            "Vì mẹ bắt Nam phải học giỏi",
+            "Vì Nam muốn được cô giáo khen",
+            "Vì Nam muốn sau này được làm phi công như bố",
+            "Vì Nam sợ bị điểm kém"
+          ],
+          "a": 2,
+          "explain": "Sau khi nghe bố kể chuyện, Nam càng quyết tâm học giỏi để sau này được ngồi trong buồng lái máy bay."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu: \"Ước mơ của em có ba điều: được đi khắp thế giới, được giúp đỡ người nghèo, được trở thành bác sĩ giỏi.\", dấu gạch ngang (nếu tách thành các dòng liệt kê) dùng để làm gì?",
+          "options": [
+            "Đánh dấu các ý liệt kê",
+            "Đánh dấu lời nói trực tiếp của nhân vật",
+            "Nối các từ ngữ trong một liên danh",
+            "Thay cho dấu chấm câu"
+          ],
+          "a": 0,
+          "explain": "Khi các ý được trình bày thành từng dòng riêng, dấu gạch ngang đặt đầu dòng dùng để đánh dấu các ý liệt kê."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu nào dưới đây dùng dấu gạch ngang để đánh dấu lời nói trực tiếp của nhân vật?",
+          "options": [
+            "Chuyến tàu Hà Nội - Lào Cai khởi hành lúc bảy giờ sáng.",
+            "Bố hỏi: - Con có muốn làm phi công không?",
+            "Bài học hôm nay có ba phần: mở đầu, nội dung, kết luận.",
+            "Cuộc thi diễn ra từ ngày 1 - 5 tháng 6."
+          ],
+          "a": 1,
+          "explain": "Dấu gạch ngang đặt trước lời nói của bố (\"- Con có muốn làm phi công không?\") dùng để đánh dấu lời nói trực tiếp của nhân vật."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu nào dưới đây dùng dấu gạch ngang để nối các từ ngữ trong một liên danh?",
+          "options": [
+            "Em có ba ước mơ: bác sĩ, kĩ sư, giáo viên.",
+            "- Em muốn trở thành phi công! - Nam reo lên.",
+            "Tuyến đường sắt Hà Nội - Hải Phòng rất nhộn nhịp vào mùa hè.",
+            "Con hãy cố gắng học tập thật tốt nhé."
+          ],
+          "a": 2,
+          "explain": "Dấu gạch ngang trong \"Hà Nội - Hải Phòng\" dùng để nối hai địa danh, tạo thành một liên danh."
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống l hoặc n: Bầu trời đêm ___ấp lánh muôn ngàn vì sao.",
+          "answer": "lấp",
+          "accept": [
+            "lấp"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống ch hoặc tr: Nam mơ ước được ___ở thành phi công giỏi.",
+          "answer": "trở",
+          "accept": [
+            "trở"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Viết 2-3 câu kể về ước mơ nghề nghiệp của em khi lớn lên, trong đó có dùng dấu gạch ngang để đánh dấu lời nói của một nhân vật hoặc liệt kê ý.",
+          "hints": [
+            "Em cứ nghĩ xem, lớn lên em thích làm nghề gì nhất nào: phi công, bác sĩ, hay cầu thủ bóng đá?",
+            "Em thử kể lí do vì sao em thích nghề đó, rồi thêm một câu nói của bố mẹ hoặc của chính em, nhớ đặt dấu gạch ngang trước lời nói đó nhé.",
+            "Câu mẫu gần giống thế này: Em ước mơ trở thành bác sĩ để chữa bệnh cho mọi người. Mẹ thường hỏi em: - Con có chắc muốn làm bác sĩ không? Em luôn trả lời thật to: - Con chắc chắn ạ!"
+          ],
+          "loiGiai": "Em ước mơ trở thành phi công để được bay khắp bầu trời. Bố thường hỏi em: - Con có sợ bay cao không? Em đáp ngay: - Con không sợ đâu, con còn thấy rất thích ạ!",
+          "dapSo": "tự chấm"
+        }
+      ]
+    },
+    {
+      "so": 2,
+      "ten": "Tuần 15: Hành trình chinh phục thử thách",
+      "lyThuyet": "Tuần này em đọc về những bạn nhỏ dám vượt qua khó khăn để chinh phục ước mơ khám phá thế giới. Về Luyện từ và câu, em luyện tập thêm về dấu gạch ngang qua nhiều bài tập nhận biết và sử dụng đúng công dụng của dấu câu này.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Minh rất thích leo núi. Mùa hè năm nay, cậu cùng bố tham gia một chuyến leo núi ngắn ở gần nhà. Đường đi dốc và nhiều đá trơn, có lúc Minh mệt đến mức muốn bỏ cuộc. Nhưng khi nhớ tới lời thầy giáo từng nói, cậu lại có thêm sức mạnh. Cuối cùng, Minh cũng lên tới đỉnh núi, nhìn xuống thung lũng xanh mướt phía dưới. Cậu tự nhủ, muốn chinh phục ước mơ lớn thì phải học cách vượt qua từng thử thách nhỏ trước đã.",
+          "q": "Minh cảm thấy thế nào khi leo núi giữa đường?",
+          "options": [
+            "Rất vui vẻ, không mệt chút nào",
+            "Mệt đến mức muốn bỏ cuộc",
+            "Sợ hãi và khóc",
+            "Buồn ngủ và muốn về nhà"
+          ],
+          "a": 1,
+          "explain": "Bài đọc cho biết có lúc Minh mệt đến mức muốn bỏ cuộc vì đường dốc và nhiều đá trơn."
+        },
+        {
+          "type": "read",
+          "vanBan": "Minh rất thích leo núi. Mùa hè năm nay, cậu cùng bố tham gia một chuyến leo núi ngắn ở gần nhà. Đường đi dốc và nhiều đá trơn, có lúc Minh mệt đến mức muốn bỏ cuộc. Nhưng khi nhớ tới lời thầy giáo từng nói, cậu lại có thêm sức mạnh. Cuối cùng, Minh cũng lên tới đỉnh núi, nhìn xuống thung lũng xanh mướt phía dưới. Cậu tự nhủ, muốn chinh phục ước mơ lớn thì phải học cách vượt qua từng thử thách nhỏ trước đã.",
+          "q": "Minh rút ra bài học gì sau chuyến leo núi?",
+          "options": [
+            "Leo núi là một việc rất nguy hiểm, không nên làm",
+            "Muốn chinh phục ước mơ lớn phải vượt qua từng thử thách nhỏ",
+            "Chỉ nên leo núi cùng thầy giáo",
+            "Leo núi chỉ dành cho người lớn"
+          ],
+          "a": 1,
+          "explain": "Câu cuối bài đọc nêu rõ bài học: muốn chinh phục ước mơ lớn thì phải vượt qua từng thử thách nhỏ trước."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu: \"Bạn Hùng nói: - Tớ nhất định sẽ leo tới đỉnh núi này!\" có dấu gạch ngang dùng để làm gì?",
+          "options": [
+            "Đánh dấu các ý liệt kê",
+            "Đánh dấu lời nói trực tiếp của nhân vật",
+            "Nối các từ ngữ trong liên danh",
+            "Đánh dấu tên riêng"
+          ],
+          "a": 1,
+          "explain": "Dấu gạch ngang trước lời nói của Hùng dùng để đánh dấu lời nói trực tiếp của nhân vật."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu: \"Chặng đường leo núi Sa Pa - Fansipan khiến ai cũng phải nể phục ý chí của các bạn nhỏ.\" có dấu gạch ngang dùng để làm gì?",
+          "options": [
+            "Đánh dấu lời nói trực tiếp",
+            "Đánh dấu ý liệt kê",
+            "Nối các từ ngữ trong liên danh (địa danh)",
+            "Không có tác dụng gì đặc biệt"
+          ],
+          "a": 2,
+          "explain": "Dấu gạch ngang nối hai địa danh \"Sa Pa - Fansipan\" tạo thành một liên danh chỉ chặng đường."
+        },
+        {
+          "type": "mcq",
+          "q": "Chọn câu đặt dấu gạch ngang đúng chỗ để liệt kê những đồ cần mang khi đi leo núi.",
+          "options": [
+            "Khi đi leo núi, em cần mang: - Nước uống. - Mũ. - Giày thể thao.",
+            "Khi đi leo núi em cần mang nước uống mũ giày thể thao.",
+            "Khi đi leo núi, em cần mang \"nước uống\", \"mũ\", \"giày thể thao\".",
+            "Khi đi leo núi Sa Pa - Fansipan cần mang nước uống."
+          ],
+          "a": 0,
+          "explain": "Mỗi ý liệt kê được tách thành một dòng, đặt dấu gạch ngang ở đầu dòng để đánh dấu các ý liệt kê."
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống s hoặc x: Minh cảm thấy rất tự hào khi đứng trên đỉnh núi, nhìn ___uống thung lũng xanh.",
+          "answer": "xuống",
+          "accept": [
+            "xuống"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống d, gi hoặc r: Cả nhóm cùng nhau vượt qua con đường ___ốc để lên tới đỉnh núi.",
+          "answer": "dốc",
+          "accept": [
+            "dốc"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Viết 2-3 câu kể về một lần em cố gắng vượt qua khó khăn để đạt được điều mình mong muốn, có sử dụng dấu gạch ngang.",
+          "hints": [
+            "Em thử nhớ lại xem, có lần nào em gặp khó khăn mà vẫn cố gắng vượt qua không, ví dụ như tập xe đạp, thi đấu thể thao, hay học bài khó?",
+            "Em kể xem lúc đó em cảm thấy thế nào, và ai đã động viên em, nhớ dùng dấu gạch ngang khi viết lời động viên đó nhé.",
+            "Câu mẫu gần giống thế này: Lúc mới tập bơi, em rất sợ nước và suýt bỏ cuộc. Bố động viên em: - Con cố thêm chút nữa là bơi được rồi! Nhờ vậy, em đã tự tin bơi được cả bể."
+          ],
+          "loiGiai": "Lúc mới tập chạy bền, em rất mệt và muốn dừng lại giữa chừng. Thầy giáo nói: - Em chỉ cần cố thêm một vòng nữa thôi! Nhờ câu nói đó, em đã hoàn thành cả chặng đường.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    },
+    {
+      "so": 3,
+      "ten": "Tuần 16: Câu chuyện được kể lại",
+      "lyThuyet": "Tuần này em đọc những câu chuyện được kể lại từ lời của người khác, gắn với ước mơ và nghị lực vươn lên. Về Luyện từ và câu, em học dấu ngoặc kép dùng để đánh dấu lời trích dẫn trực tiếp và đánh dấu từ ngữ được hiểu theo nghĩa đặc biệt.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Bà nội thường kể cho An nghe về ông nội ngày xưa. Ông là một người thợ mộc nghèo nhưng rất ham đọc sách. Mỗi tối, ông thắp đèn dầu ngồi học chữ dưới hiên nhà, mặc cho hàng xóm bảo \"học làm gì cho khổ\". Nhờ kiên trì, sau này ông trở thành thầy giáo dạy chữ cho cả làng. Nghe xong câu chuyện, An thấy khâm phục ông vô cùng và tự nhủ sẽ cố gắng học tập chăm chỉ như ông đã từng làm.",
+          "q": "Ông nội của An trước đây làm nghề gì?",
+          "options": [
+            "Bác sĩ",
+            "Thợ mộc",
+            "Nông dân",
+            "Thầy giáo ngay từ đầu"
+          ],
+          "a": 1,
+          "explain": "Bài đọc cho biết ông nội của An là một người thợ mộc nghèo nhưng rất ham đọc sách."
+        },
+        {
+          "type": "read",
+          "vanBan": "Bà nội thường kể cho An nghe về ông nội ngày xưa. Ông là một người thợ mộc nghèo nhưng rất ham đọc sách. Mỗi tối, ông thắp đèn dầu ngồi học chữ dưới hiên nhà, mặc cho hàng xóm bảo \"học làm gì cho khổ\". Nhờ kiên trì, sau này ông trở thành thầy giáo dạy chữ cho cả làng. Nghe xong câu chuyện, An thấy khâm phục ông vô cùng và tự nhủ sẽ cố gắng học tập chăm chỉ như ông đã từng làm.",
+          "q": "Nhờ đâu mà ông nội của An trở thành thầy giáo?",
+          "options": [
+            "Nhờ may mắn",
+            "Nhờ sự kiên trì học chữ mỗi tối",
+            "Nhờ được người khác giúp đỡ hoàn toàn",
+            "Nhờ bỏ nghề thợ mộc từ sớm"
+          ],
+          "a": 1,
+          "explain": "Nhờ kiên trì học chữ mỗi tối dù bị hàng xóm cười chê, ông nội của An sau này đã trở thành thầy giáo."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu: Bà kể rằng ông thường nói: \"Có công mài sắt, có ngày nên kim.\", dấu ngoặc kép dùng để làm gì?",
+          "options": [
+            "Đánh dấu lời trích dẫn trực tiếp",
+            "Đánh dấu từ ngữ mang ý nghĩa đặc biệt",
+            "Đánh dấu tên riêng của một địa danh",
+            "Đánh dấu phần liệt kê"
+          ],
+          "a": 0,
+          "explain": "Dấu ngoặc kép bao quanh câu nói của ông dùng để đánh dấu lời trích dẫn trực tiếp."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu: \"Bình được cả lớp gọi vui là \"nhà khoa học tí hon\" vì rất thích làm thí nghiệm.\", dấu ngoặc kép ở cụm từ \"nhà khoa học tí hon\" dùng để làm gì?",
+          "options": [
+            "Đánh dấu lời trích dẫn trực tiếp của nhân vật",
+            "Đánh dấu từ ngữ được dùng với ý nghĩa đặc biệt",
+            "Nối các từ ngữ trong liên danh",
+            "Đánh dấu ý liệt kê"
+          ],
+          "a": 1,
+          "explain": "Cụm từ \"nhà khoa học tí hon\" được đặt trong dấu ngoặc kép vì đây là cách gọi vui, mang ý nghĩa đặc biệt, không phải nghĩa đen."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu nào dưới đây dùng dấu ngoặc kép đúng cách để trích dẫn lời nói của thầy giáo?",
+          "options": [
+            "Thầy giáo dạy: - Các em hãy cố gắng học tập.",
+            "Thầy giáo thường nhắc chúng em: \"Có chí thì nên.\"",
+            "Thầy giáo dạy môn Toán - Tiếng Việt cho lớp em.",
+            "Thầy giáo là - người luôn tận tâm với học sinh."
+          ],
+          "a": 1,
+          "explain": "Câu này dùng dấu ngoặc kép để trích dẫn nguyên văn lời nói của thầy giáo: \"Có chí thì nên.\""
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống ch hoặc tr: Ông nội An rất ___ăm chỉ học chữ mỗi tối dưới ánh đèn dầu.",
+          "answer": "chăm",
+          "accept": [
+            "chăm"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống l hoặc n: An cảm thấy rất tự hào và ___ể phục tấm gương của ông nội.",
+          "answer": "nể",
+          "accept": [
+            "nể"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Viết 2-3 câu kể lại một câu chuyện em từng nghe kể về nghị lực vượt khó của một người thân, có dùng dấu ngoặc kép để trích dẫn một câu nói.",
+          "hints": [
+            "Em thử nhớ xem ông, bà, bố hoặc mẹ đã từng kể cho em nghe câu chuyện nào về việc cố gắng vượt khó chưa nào?",
+            "Em kể ngắn gọn hoàn cảnh khó khăn đó, rồi trích lại đúng nguyên văn một câu nói đáng nhớ, nhớ đặt câu nói đó trong dấu ngoặc kép nhé.",
+            "Câu mẫu gần giống thế này: Mẹ kể rằng ngày xưa nhà mình rất nghèo nhưng bà ngoại luôn dặn: \"Dù khó khăn đến đâu cũng phải cố học lấy cái chữ.\" Nhờ vậy, mẹ đã cố gắng học để có công việc tốt như bây giờ."
+          ],
+          "loiGiai": "Bố kể rằng ngày xưa nhà nội rất khó khăn nhưng ông vẫn luôn dặn các con: \"Có chí thì nên, đừng bao giờ bỏ cuộc.\" Nhờ lời dặn đó, bố đã cố gắng học tập và có được công việc như hôm nay.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    },
+    {
+      "so": 4,
+      "ten": "Tuần 17: Ước mơ nở hoa từ nghị lực",
+      "lyThuyet": "Tuần này em đọc những câu chuyện tổng kết về hành trình nuôi dưỡng ước mơ và nỗ lực vươn lên của các bạn nhỏ. Về Luyện từ và câu, em ôn tập tổng hợp về ba loại từ đã học: danh từ, động từ, tính từ, để dùng từ ngữ chính xác hơn khi nói và viết.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Từ nhỏ, Bình đã bị tật ở chân nên đi lại khó khăn hơn các bạn. Nhưng cậu không vì thế mà bỏ cuộc, ngược lại còn quyết tâm luyện tập mỗi ngày để có thể tự đi học một mình. Bình còn nuôi ước mơ trở thành huấn luyện viên thể thao, giúp đỡ những bạn nhỏ có hoàn cảnh giống mình. Cuối năm học, Bình được nhà trường khen thưởng vì tinh thần vượt khó và kết quả học tập đáng khâm phục. Ai cũng tin rằng ước mơ của Bình rồi sẽ trở thành hiện thực.",
+          "q": "Bình gặp khó khăn gì từ nhỏ?",
+          "options": [
+            "Bị tật ở chân, đi lại khó khăn",
+            "Bị ốm nặng thường xuyên",
+            "Nhà rất nghèo, không có sách vở",
+            "Không có bạn bè để chơi cùng"
+          ],
+          "a": 0,
+          "explain": "Bài đọc cho biết Bình bị tật ở chân từ nhỏ nên đi lại khó khăn hơn các bạn."
+        },
+        {
+          "type": "read",
+          "vanBan": "Từ nhỏ, Bình đã bị tật ở chân nên đi lại khó khăn hơn các bạn. Nhưng cậu không vì thế mà bỏ cuộc, ngược lại còn quyết tâm luyện tập mỗi ngày để có thể tự đi học một mình. Bình còn nuôi ước mơ trở thành huấn luyện viên thể thao, giúp đỡ những bạn nhỏ có hoàn cảnh giống mình. Cuối năm học, Bình được nhà trường khen thưởng vì tinh thần vượt khó và kết quả học tập đáng khâm phục. Ai cũng tin rằng ước mơ của Bình rồi sẽ trở thành hiện thực.",
+          "q": "Ước mơ của Bình là gì?",
+          "options": [
+            "Trở thành bác sĩ chữa bệnh cho mọi người",
+            "Trở thành huấn luyện viên thể thao để giúp đỡ các bạn cùng hoàn cảnh",
+            "Trở thành ca sĩ nổi tiếng",
+            "Trở thành phi công lái máy bay"
+          ],
+          "a": 1,
+          "explain": "Bài đọc nêu rõ Bình nuôi ước mơ trở thành huấn luyện viên thể thao để giúp đỡ những bạn nhỏ có hoàn cảnh giống mình."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu: \"Bình luyện tập mỗi ngày để tự đi học một mình.\", từ nào là động từ?",
+          "options": [
+            "Bình",
+            "luyện tập",
+            "mỗi ngày",
+            "một mình"
+          ],
+          "a": 1,
+          "explain": "\"Luyện tập\" là động từ, chỉ hoạt động Bình thực hiện hằng ngày."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu: \"Tinh thần vượt khó của Bình thật đáng khâm phục.\", từ nào là tính từ?",
+          "options": [
+            "Tinh thần",
+            "vượt khó",
+            "đáng khâm phục",
+            "Bình"
+          ],
+          "a": 2,
+          "explain": "\"Đáng khâm phục\" là tính từ, dùng để miêu tả đặc điểm, tính chất của tinh thần vượt khó."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu: \"Ước mơ của em là trở thành một huấn luyện viên giỏi.\", từ nào là danh từ?",
+          "options": [
+            "Ước mơ",
+            "trở thành",
+            "giỏi",
+            "là"
+          ],
+          "a": 0,
+          "explain": "\"Ước mơ\" là danh từ, chỉ sự việc, khái niệm mà câu văn nói tới."
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống r, d hoặc gi: Bình luôn cố gắng ___èn luyện thân thể mỗi ngày.",
+          "answer": "rèn",
+          "accept": [
+            "rèn"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống ch hoặc tr: Cả lớp đều cảm phục tinh thần vượt khó và sự cố gắng không ngừng của Bình trong học tập và ___èn luyện.",
+          "answer": "rèn",
+          "accept": [
+            "rèn",
+            "rèn luyện"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Viết 2-3 câu tổng kết về ước mơ của em và những gì em sẽ cố gắng làm để thực hiện ước mơ đó, có sử dụng ít nhất một danh từ, một động từ và một tính từ.",
+          "hints": [
+            "Em nhắc lại xem ước mơ lớn nhất của em là gì, đó chính là một danh từ đấy.",
+            "Em kể xem em sẽ làm những việc gì (động từ) để đạt được ước mơ đó, ví dụ như học tập, luyện tập, rèn luyện.",
+            "Câu mẫu gần giống thế này: Ước mơ của em là trở thành một cầu thủ bóng đá giỏi. Mỗi ngày, em đều chăm chỉ luyện tập để đôi chân thêm dẻo dai và khỏe mạnh. Em tin rằng nếu kiên trì, ước mơ của em nhất định sẽ thành hiện thực."
+          ],
+          "loiGiai": "Ước mơ của em là trở thành một nhà khoa học tài giỏi. Mỗi ngày, em đều chăm chỉ học tập và làm thí nghiệm nhỏ ở nhà. Em tin rằng chỉ cần kiên trì cố gắng, ước mơ của em rồi sẽ trở thành hiện thực.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    }
+  ]
+}

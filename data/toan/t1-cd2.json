@@ -1,0 +1,53 @@
+{
+  "mon": "toan",
+  "tap": 1,
+  "chuDe": "Góc và đơn vị đo góc",
+  "cdSo": 2,
+  "bai": [
+    {
+      "so": 7,
+      "ten": "Đo góc, đơn vị đo góc",
+      "lyThuyet": "Đơn vị đo góc là độ, kí hiệu là °. Để đo góc, em dùng thước đo góc (hoặc ê ke để kiểm tra góc vuông): đặt tâm thước trùng với đỉnh góc, một cạnh góc trùng với vạch 0 của thước, rồi đọc số đo ở cạnh còn lại. Góc vuông có số đo là 90°.",
+      "cauHoi": [
+        {"type":"mcq","q":"Đơn vị đo góc là gì?","options":["Xăng-ti-mét (cm)","Độ (°)","Ki-lô-gam (kg)","Lít (l)"],"a":1,"explain":"Đơn vị đo góc là độ, kí hiệu là °."},
+        {"type":"mcq","q":"Dụng cụ nào dùng để đo số đo của một góc?","options":["Thước kẻ thẳng","Thước đo góc","Cân đồng hồ","Ca đong nước"],"a":1,"explain":"Thước đo góc là dụng cụ chuyên dùng để đo số đo góc theo đơn vị độ."},
+        {"type":"mcq","q":"Khi đặt thước đo góc để đo một góc, em cần đặt tâm thước ở đâu?","options":["Ở giữa một cạnh góc","Trùng với đỉnh của góc","Ở ngoài góc","Không cần đặt tâm thước"],"a":1,"explain":"Muốn đo góc chính xác, tâm của thước đo góc phải đặt trùng với đỉnh của góc, một cạnh trùng vạch 0."},
+        {"type":"mcq","q":"Góc vuông có số đo là bao nhiêu độ?","options":["45°","60°","90°","180°"],"a":2,"explain":"Góc vuông luôn có số đo đúng bằng 90°."},
+        {"type":"mcq","q":"Bạn Bình dùng thước đo góc và đọc được một góc có số đo 65°. Góc đó lớn hơn hay nhỏ hơn góc vuông?","options":["Lớn hơn góc vuông","Nhỏ hơn góc vuông","Bằng góc vuông","Không so sánh được"],"a":1,"explain":"Góc vuông có số đo 90°. Vì 65° < 90° nên góc này nhỏ hơn góc vuông."},
+        {"type":"fill","q":"Góc có số đo bằng 90° được gọi là góc ___.","answer":"vuông","accept":["vuông","góc vuông"]},
+        {"type":"solve","de":"Nam dùng thước đo góc để đo góc tạo bởi hai cạnh của một chiếc ê ke hình tam giác và đọc được số đo là 90°. Bạn Hùng đo một góc khác trên bàn cờ vua và đọc được số đo là 40°. Hỏi góc nào lớn hơn và lớn hơn bao nhiêu độ?","hints":["Em thử đọc lại đề xem hai góc được đo có số đo là bao nhiêu độ nhé?","Muốn biết góc nào lớn hơn, mình so sánh hai số đo 90° và 40°, đúng không nào?","Để tìm hơn kém bao nhiêu độ, em lấy số đo lớn trừ đi số đo nhỏ: 90° - 40°, thử tính xem nhé."],"loiGiai":"So sánh hai số đo góc: 90° > 40° nên góc của Nam đo được (90°) lớn hơn góc của Hùng đo được (40°).\nGóc của Nam lớn hơn góc của Hùng số độ là:\n90 - 40 = 50 (độ)\nĐáp số: góc của Nam lớn hơn, lớn hơn 50°","dapSo":"Góc của Nam lớn hơn 50°"},
+        {"type":"solve","de":"Một chiếc quạt giấy xếp mở ra tạo thành một góc. Khoa đo được góc đó có số đo là 120°. Nếu Khoa gấp bớt quạt lại làm góc đó giảm đi 35°, thì góc còn lại là bao nhiêu độ, và đó là góc gì (biết góc từ 90° đến dưới 180° gọi là góc tù)?","hints":["Em thử đọc lại đề xem góc ban đầu là bao nhiêu độ và giảm đi bao nhiêu độ nhé?","Muốn tìm góc còn lại, mình lấy số đo ban đầu trừ đi phần giảm, đúng không nào?","Sau khi tính được số đo góc còn lại, em so sánh với 90° và 180° để biết đó là góc gì nhé."],"loiGiai":"Số đo góc còn lại sau khi gấp bớt là:\n120 - 35 = 85 (độ)\nVì 85° nhỏ hơn 90° nên đây là góc nhọn (không phải góc tù).\nĐáp số: 85°, là góc nhọn","dapSo":"85°, là góc nhọn"}
+      ]
+    },
+    {
+      "so": 8,
+      "ten": "Góc nhọn, góc tù, góc bẹt",
+      "lyThuyet": "Góc nhọn là góc có số đo lớn hơn 0° và nhỏ hơn 90°. Góc vuông có số đo bằng 90°. Góc tù là góc có số đo lớn hơn 90° và nhỏ hơn 180°. Góc bẹt là góc có số đo bằng 180° (hai cạnh của góc bẹt là hai tia đối nhau, tạo thành một đường thẳng).",
+      "cauHoi": [
+        {"type":"mcq","q":"Góc có số đo 35° là góc gì?","options":["Góc nhọn","Góc vuông","Góc tù","Góc bẹt"],"a":0,"explain":"Vì 35° nhỏ hơn 90° nên đây là góc nhọn."},
+        {"type":"mcq","q":"Góc có số đo 150° là góc gì?","options":["Góc nhọn","Góc vuông","Góc tù","Góc bẹt"],"a":2,"explain":"Vì 150° lớn hơn 90° và nhỏ hơn 180° nên đây là góc tù."},
+        {"type":"mcq","q":"Góc có số đo 180° là góc gì?","options":["Góc nhọn","Góc vuông","Góc tù","Góc bẹt"],"a":3,"explain":"Góc có số đo đúng bằng 180° được gọi là góc bẹt, hai cạnh của nó nằm trên một đường thẳng."},
+        {"type":"mcq","q":"Trong các góc có số đo 85°, 91°, 100°, 179°, có bao nhiêu góc tù?","options":["1 góc","2 góc","3 góc","4 góc"],"a":2,"explain":"Góc tù có số đo lớn hơn 90° và nhỏ hơn 180°. Trong các số đo trên, 91°, 100°, 179° đều thỏa mãn (85° là góc nhọn vì nhỏ hơn 90°), vậy có 3 góc tù."},
+        {"type":"mcq","q":"Một cánh cửa mở tạo thành góc 95° so với tường. Nếu mở thêm để góc đó tăng thêm 85° nữa thì góc mới sẽ là góc gì?","options":["Góc nhọn","Góc vuông","Góc tù","Góc bẹt"],"a":3,"explain":"Góc mới có số đo là 95° + 85° = 180°, đây chính là góc bẹt."},
+        {"type":"fill","q":"Góc có số đo lớn hơn 90° và nhỏ hơn 180° được gọi là góc ___.","answer":"tù","accept":["tù","góc tù"]},
+        {"type":"solve","de":"An dùng thước đo góc đo được góc mở của một cuốn sách khi đặt trên bàn là 130°. Hỏi đó là góc nhọn, góc vuông, góc tù hay góc bẹt? Nếu An gấp bớt cuốn sách lại để góc giảm thêm 50° nữa, góc mới là góc gì?","hints":["Em thử so sánh 130° với 90° và 180° xem góc ban đầu là góc gì nhé?","Để tìm góc sau khi gấp bớt, mình lấy 130° trừ đi 50°, thử tính xem được bao nhiêu độ nhé.","Sau khi có số đo góc mới, em so sánh với 90° và 180° để gọi tên góc đó nhé."],"loiGiai":"Vì 130° lớn hơn 90° và nhỏ hơn 180° nên góc ban đầu là góc tù.\nSố đo góc sau khi gấp bớt là:\n130 - 50 = 80 (độ)\nVì 80° nhỏ hơn 90° nên góc mới là góc nhọn.\nĐáp số: góc ban đầu là góc tù; góc sau khi gấp bớt là góc nhọn (80°)","dapSo":"Góc ban đầu là góc tù; góc mới 80° là góc nhọn"},
+        {"type":"solve","de":"Một chiếc đồng hồ lúc 3 giờ đúng có kim giờ và kim phút tạo thành một góc vuông (90°). Nếu kim phút quay thêm làm góc đó tăng thêm 65° thì góc mới là bao nhiêu độ và là góc gì?","hints":["Em thử nhớ lại lúc 3 giờ đúng thì góc giữa hai kim đồng hồ là bao nhiêu độ nhé?","Muốn tìm góc mới, mình lấy số đo góc ban đầu cộng thêm phần tăng, đúng không nào?","Sau khi tính được góc mới, em so sánh với 90° và 180° để biết đó là góc gì nhé."],"loiGiai":"Số đo góc mới là:\n90 + 65 = 155 (độ)\nVì 155° lớn hơn 90° và nhỏ hơn 180° nên đây là góc tù.\nĐáp số: 155°, là góc tù","dapSo":"155°, là góc tù"}
+      ]
+    },
+    {
+      "so": 9,
+      "ten": "Luyện tập chung",
+      "lyThuyet": "Ôn lại các kiến thức về góc: đơn vị đo góc là độ (°), dùng thước đo góc để xác định số đo góc. Góc nhọn nhỏ hơn 90°, góc vuông bằng 90°, góc tù lớn hơn 90° và nhỏ hơn 180°, góc bẹt bằng 180°. Em hãy quan sát kĩ số đo để gọi đúng tên từng loại góc nhé.",
+      "cauHoi": [
+        {"type":"mcq","q":"Góc có số đo 90° được gọi là góc gì?","options":["Góc nhọn","Góc vuông","Góc tù","Góc bẹt"],"a":1,"explain":"Góc có số đo đúng bằng 90° gọi là góc vuông."},
+        {"type":"mcq","q":"Trong 4 góc có số đo 30°, 90°, 120°, 180°, góc nào là góc nhọn?","options":["30°","90°","120°","180°"],"a":0,"explain":"Góc nhọn có số đo nhỏ hơn 90°. Chỉ có 30° thỏa mãn điều kiện này."},
+        {"type":"mcq","q":"Muốn đo số đo của một góc, em cần dùng dụng cụ nào và đơn vị đo là gì?","options":["Thước thẳng, đơn vị xăng-ti-mét","Thước đo góc, đơn vị độ","Cân, đơn vị ki-lô-gam","Đồng hồ, đơn vị giờ"],"a":1,"explain":"Em dùng thước đo góc để đo, và đơn vị đo góc là độ (°)."},
+        {"type":"mcq","q":"Một góc có số đo 90° được tăng thêm 45° nữa. Góc mới là góc gì?","options":["Góc nhọn","Góc vuông","Góc tù","Góc bẹt"],"a":2,"explain":"Góc mới có số đo là 90° + 45° = 135°. Vì 135° lớn hơn 90° và nhỏ hơn 180° nên đây là góc tù."},
+        {"type":"mcq","q":"Một góc bẹt (180°) được chia làm 2 góc bằng nhau bởi một tia ở giữa. Mỗi góc nhỏ đó có số đo bao nhiêu độ và là góc gì?","options":["90°, góc vuông","60°, góc nhọn","120°, góc tù","45°, góc nhọn"],"a":0,"explain":"Chia đôi góc bẹt: 180° : 2 = 90°. Mỗi góc nhỏ có số đo 90°, đây là góc vuông."},
+        {"type":"fill","q":"Góc có số đo bằng 180° được gọi là góc ___.","answer":"bẹt","accept":["bẹt","góc bẹt"]},
+        {"type":"solve","de":"Minh xếp hai thanh gỗ lego tạo thành một góc. Minh đo được góc đó là 55°. Bình xếp một góc khác lớn hơn góc của Minh 40°. Hỏi góc của Bình có số đo bao nhiêu độ, và đó là góc nhọn, vuông hay tù?","hints":["Em thử đọc lại đề xem góc của Minh là bao nhiêu độ và góc của Bình lớn hơn bao nhiêu độ nhé?","Muốn tìm số đo góc của Bình, mình lấy số đo góc của Minh cộng thêm phần lớn hơn, đúng không nào?","Sau khi tính được số đo góc của Bình, em so sánh với 90° và 180° để gọi tên góc đó nhé."],"loiGiai":"Số đo góc của Bình là:\n55 + 40 = 95 (độ)\nVì 95° lớn hơn 90° và nhỏ hơn 180° nên góc của Bình là góc tù.\nĐáp số: 95°, là góc tù","dapSo":"95°, là góc tù"},
+        {"type":"solve","de":"Trong một trận đấu bóng đá, đường chạy của quả bóng tạo với vạch biên một góc 42°, còn cú sút của Khoa tạo với vạch biên một góc gấp đôi góc đó. Hỏi góc do cú sút của Khoa tạo ra là bao nhiêu độ, và đó là góc nhọn, vuông, tù hay bẹt?","hints":["Em thử đọc lại đề xem góc đường chạy quả bóng là bao nhiêu độ nhé?","Góc cú sút của Khoa gấp đôi góc đó, vậy mình dùng phép tính gì để tìm ra số đo của nó?","Sau khi tính được số đo góc của Khoa (42° x 2), em so sánh với 90° và 180° để gọi tên góc đó nhé."],"loiGiai":"Số đo góc do cú sút của Khoa tạo ra là:\n42 x 2 = 84 (độ)\nVì 84° nhỏ hơn 90° nên đây là góc nhọn.\nĐáp số: 84°, là góc nhọn","dapSo":"84°, là góc nhọn"}
+      ]
+    }
+  ]
+}

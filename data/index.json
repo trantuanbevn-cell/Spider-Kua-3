@@ -1,0 +1,225 @@
+{
+ "toan": {
+  "ten": "Toán",
+  "icon": "🔢",
+  "nhom": [
+   {
+    "ten": "Tập 1 · Học kỳ I",
+    "files": [
+     {
+      "f": "data/toan/t1-cd1.json",
+      "chuDe": "Ôn tập và bổ sung",
+      "cdSo": 1,
+      "soBai": 6,
+      "soCau": 48
+     },
+     {
+      "f": "data/toan/t1-cd2.json",
+      "chuDe": "Góc và đơn vị đo góc",
+      "cdSo": 2,
+      "soBai": 3,
+      "soCau": 24
+     },
+     {
+      "f": "data/toan/t1-cd3.json",
+      "chuDe": "Số có nhiều chữ số",
+      "cdSo": 3,
+      "soBai": 7,
+      "soCau": 56
+     },
+     {
+      "f": "data/toan/t1-cd4.json",
+      "chuDe": "Một số đơn vị đo đại lượng",
+      "cdSo": 4,
+      "soBai": 5,
+      "soCau": 40
+     },
+     {
+      "f": "data/toan/t1-cd5.json",
+      "chuDe": "Phép cộng và phép trừ",
+      "cdSo": 5,
+      "soBai": 5,
+      "soCau": 40
+     },
+     {
+      "f": "data/toan/t1-cd6.json",
+      "chuDe": "Đường thẳng vuông góc. Đường thẳng song song",
+      "cdSo": 6,
+      "soBai": 6,
+      "soCau": 48
+     },
+     {
+      "f": "data/toan/t1-cd7.json",
+      "chuDe": "Ôn tập học kì 1",
+      "cdSo": 7,
+      "soBai": 5,
+      "soCau": 40
+     }
+    ]
+   },
+   {
+    "ten": "Tập 2 · Học kỳ II",
+    "files": [
+     {
+      "f": "data/toan/t2-cd7.json",
+      "chuDe": "Phép nhân và phép chia",
+      "cdSo": 7,
+      "soBai": 11,
+      "soCau": 88
+     },
+     {
+      "f": "data/toan/t2-cd8.json",
+      "chuDe": "Làm quen với yếu tố thống kê, xác suất",
+      "cdSo": 8,
+      "soBai": 4,
+      "soCau": 32
+     },
+     {
+      "f": "data/toan/t2-cd9.json",
+      "chuDe": "Phân số",
+      "cdSo": 9,
+      "soBai": 7,
+      "soCau": 56
+     },
+     {
+      "f": "data/toan/t2-cd10.json",
+      "chuDe": "Phép cộng, phép trừ phân số",
+      "cdSo": 10,
+      "soBai": 3,
+      "soCau": 24
+     },
+     {
+      "f": "data/toan/t2-cd11.json",
+      "chuDe": "Phép nhân, phép chia phân số",
+      "cdSo": 11,
+      "soBai": 4,
+      "soCau": 32
+     },
+     {
+      "f": "data/toan/t2-cd12.json",
+      "chuDe": "Ôn tập cuối năm",
+      "cdSo": 12,
+      "soBai": 7,
+      "soCau": 56
+     }
+    ]
+   }
+  ]
+ },
+ "tv": {
+  "ten": "Tiếng Việt",
+  "icon": "📖",
+  "nhom": [
+   {
+    "ten": "Tập 1 · Học kỳ I",
+    "files": [
+     {
+      "f": "data/tv/t1-cd1.json",
+      "chuDe": "Mỗi người một vẻ",
+      "cdSo": 1,
+      "soBai": 4,
+      "soCau": 32
+     },
+     {
+      "f": "data/tv/t1-cd2.json",
+      "chuDe": "Trải nghiệm và khám phá",
+      "cdSo": 2,
+      "soBai": 4,
+      "soCau": 32
+     },
+     {
+      "f": "data/tv/t1-cd3.json",
+      "chuDe": "Niềm vui sáng tạo",
+      "cdSo": 3,
+      "soBai": 4,
+      "soCau": 32
+     },
+     {
+      "f": "data/tv/t1-cd4.json",
+      "chuDe": "Chắp cánh ước mơ",
+      "cdSo": 4,
+      "soBai": 4,
+      "soCau": 32
+     }
+    ]
+   },
+   {
+    "ten": "Tập 2 · Học kỳ II",
+    "files": [
+     {
+      "f": "data/tv/t2-cd5.json",
+      "chuDe": "Sống để yêu thương",
+      "cdSo": 5,
+      "soBai": 4,
+      "soCau": 32
+     },
+     {
+      "f": "data/tv/t2-cd6.json",
+      "chuDe": "Uống nước nhớ nguồn",
+      "cdSo": 6,
+      "soBai": 4,
+      "soCau": 32
+     },
+     {
+      "f": "data/tv/t2-cd7.json",
+      "chuDe": "Thế giới trong mắt em",
+      "cdSo": 7,
+      "soBai": 4,
+      "soCau": 32
+     },
+     {
+      "f": "data/tv/t2-cd8.json",
+      "chuDe": "Vì một thế giới bình yên",
+      "cdSo": 8,
+      "soBai": 4,
+      "soCau": 32
+     }
+    ]
+   }
+  ]
+ },
+ "ta": {
+  "ten": "Tiếng Anh",
+  "icon": "🌏",
+  "nhom": [
+   {
+    "ten": "Starters · Cơ bản",
+    "files": [
+     {
+      "f": "data/ta/starters-1.json",
+      "chuDe": "Starters phần 1",
+      "cdSo": 1,
+      "soBai": 5,
+      "soCau": 65
+     },
+     {
+      "f": "data/ta/starters-2.json",
+      "chuDe": "Starters phần 2",
+      "cdSo": 2,
+      "soBai": 5,
+      "soCau": 65
+     }
+    ]
+   },
+   {
+    "ten": "Movers · Nâng cao",
+    "files": [
+     {
+      "f": "data/ta/movers-1.json",
+      "chuDe": "Movers phần 1",
+      "cdSo": 1,
+      "soBai": 5,
+      "soCau": 65
+     },
+     {
+      "f": "data/ta/movers-2.json",
+      "chuDe": "Movers phần 2",
+      "cdSo": 2,
+      "soBai": 5,
+      "soCau": 65
+     }
+    ]
+   }
+  ]
+ }
+}

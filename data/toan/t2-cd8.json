@@ -1,0 +1,288 @@
+{
+  "mon": "toan",
+  "tap": 2,
+  "chuDe": "Làm quen với yếu tố thống kê, xác suất",
+  "cdSo": 8,
+  "bai": [
+    {
+      "so": 49,
+      "ten": "Dãy số liệu thống kê",
+      "lyThuyet": "Một dãy số liệu thống kê là các số được ghi lại theo một thứ tự nhất định, ví dụ theo ngày, theo tên người. Nhìn vào dãy số liệu, em có thể tìm được số lớn nhất, số nhỏ nhất, đếm được có bao nhiêu số hạng, hoặc sắp xếp các số theo thứ tự tăng dần hay giảm dần. Em cũng có thể tính trung bình cộng của cả dãy số bằng cách lấy tổng các số chia cho số lượng số hạng.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Số bàn thắng của 4 bạn trong giải bóng đá lớp là: Nam 7 bàn, Minh 6 bàn, An 2 bàn, Bình 4 bàn. Hỏi bạn nào ghi được 4 bàn thắng?",
+          "options": ["Nam", "Minh", "An", "Bình"],
+          "a": 3,
+          "explain": "Theo dãy số liệu, Bình ghi được 4 bàn thắng."
+        },
+        {
+          "type": "mcq",
+          "q": "Vẫn dãy số bàn thắng: Nam 7, Minh 6, An 2, Bình 4. Bạn nào ghi được nhiều bàn thắng nhất?",
+          "options": ["Nam", "Minh", "An", "Bình"],
+          "a": 0,
+          "explain": "So sánh 7, 6, 2, 4 thì 7 là số lớn nhất, đó là số bàn thắng của Nam."
+        },
+        {
+          "type": "mcq",
+          "q": "Số sách 5 bạn đã đọc là: 1, 13, 8, 4, 5 quyển. Sắp xếp các số này theo thứ tự từ bé đến lớn, số đứng ở vị trí thứ ba là số nào?",
+          "options": ["1", "4", "5", "8"],
+          "a": 2,
+          "explain": "Sắp xếp từ bé đến lớn: 1, 4, 5, 8, 13. Số đứng thứ ba là 5."
+        },
+        {
+          "type": "mcq",
+          "q": "Dãy số chỉ số lượng chữ cái trong tên của các bạn là: 4, 3, 2, 3, 4, 5, 3, 5. Dãy số liệu này có bao nhiêu số hạng?",
+          "options": ["6", "7", "8", "9"],
+          "a": 2,
+          "explain": "Đếm các số trong dãy 4, 3, 2, 3, 4, 5, 3, 5 ta được 8 số hạng."
+        },
+        {
+          "type": "mcq",
+          "q": "Số dâu tây bạn Minh hái được trong 8 ngày liên tiếp là: 2, 3, 4, 5, 7, 8, 10, 13 kg. Dãy số liệu này đang được sắp xếp theo thứ tự nào?",
+          "options": ["Tăng dần", "Giảm dần", "Không theo thứ tự", "Bằng nhau hết"],
+          "a": 0,
+          "explain": "Các số 2, 3, 4, 5, 7, 8, 10, 13 mỗi số sau đều lớn hơn số trước, nên dãy số liệu tăng dần."
+        },
+        {
+          "type": "fill",
+          "q": "Dãy số chỉ số lượng chữ cái trong tên các bạn: 4, 3, 2, 3, 4, 5, 3, 5. Số nhỏ nhất trong dãy số liệu này là ___.",
+          "answer": "2",
+          "accept": ["2", "số 2"]
+        },
+        {
+          "type": "solve",
+          "de": "Thời gian cả nhà bạn An tập thể dục trong 5 ngày là: 20 phút, 40 phút, 10 phút, 50 phút, 30 phút. Hỏi trung bình mỗi ngày cả nhà bạn An tập thể dục bao nhiêu phút?",
+          "hints": [
+            "Anh Fury hỏi em nhé: muốn tính trung bình cộng, đầu tiên mình cần biết tổng của tất cả các số đã, đúng không nào?",
+            "Em cộng cả 5 số 20, 40, 10, 50, 30 lại xem tổng là bao nhiêu nhé.",
+            "Có tổng rồi, giờ em lấy tổng đó chia cho 5 ngày là ra kết quả thôi."
+          ],
+          "loiGiai": "Tổng số phút tập thể dục trong 5 ngày là:\n20 + 40 + 10 + 50 + 30 = 150 (phút)\nTrung bình mỗi ngày cả nhà bạn An tập thể dục số phút là:\n150 : 5 = 30 (phút)",
+          "dapSo": "30 phút"
+        },
+        {
+          "type": "solve",
+          "de": "Bạn Bình hái dâu tây trong 8 ngày, số ki-lô-gam mỗi ngày lần lượt là: 2, 3, 4, 5, 7, 8, 10, 13. Hỏi cả 8 ngày bạn Bình hái được tất cả bao nhiêu ki-lô-gam dâu tây?",
+          "hints": [
+            "Anh Fury thấy đề cho một dãy 8 số liệu theo từng ngày, em thử đọc lại xem có đúng 8 số không nhé.",
+            "Muốn biết tổng cả 8 ngày, mình phải làm phép tính gì với 8 số đó, cộng hay trừ nào?",
+            "Em cộng lần lượt: 2 + 3 + 4 + 5 + 7 + 8 + 10 + 13, cộng cẩn thận từng cặp cho dễ nhé."
+          ],
+          "loiGiai": "Số ki-lô-gam dâu tây bạn Bình hái được trong cả 8 ngày là:\n2 + 3 + 4 + 5 + 7 + 8 + 10 + 13 = 52 (kg)",
+          "dapSo": "52 kg dâu tây"
+        }
+      ]
+    },
+    {
+      "so": 50,
+      "ten": "Biểu đồ cột",
+      "lyThuyet": "Biểu đồ cột dùng để trình bày số liệu bằng các cột thẳng đứng, mỗi cột có một độ cao khác nhau. Trục ngang thường ghi tên các đối tượng (như tên môn thể thao, tên ngày trong tuần), còn số ghi ở đỉnh mỗi cột cho biết số lượng của đối tượng đó. Cột càng cao thì số liệu càng lớn, cột càng thấp thì số liệu càng nhỏ.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Biểu đồ cột cho biết số bạn thích các môn thể thao: bóng đá 5 bạn, bóng rổ 3 bạn, bơi lội 2 bạn, cầu lông 4 bạn. Cột nào trong biểu đồ cao nhất?",
+          "options": ["Bóng đá", "Bóng rổ", "Bơi lội", "Cầu lông"],
+          "a": 0,
+          "explain": "Bóng đá có 5 bạn thích, là số lớn nhất trong các số 5, 3, 2, 4 nên cột bóng đá cao nhất."
+        },
+        {
+          "type": "mcq",
+          "q": "Vẫn biểu đồ trên: bóng đá 5 bạn, bóng rổ 3 bạn, bơi lội 2 bạn, cầu lông 4 bạn. Môn thể thao nào có cột thấp nhất?",
+          "options": ["Bóng đá", "Bóng rổ", "Bơi lội", "Cầu lông"],
+          "a": 2,
+          "explain": "Bơi lội chỉ có 2 bạn thích, là số nhỏ nhất nên cột bơi lội thấp nhất."
+        },
+        {
+          "type": "mcq",
+          "q": "Biểu đồ cột cho biết số người đến khám răng mỗi ngày trong tuần: thứ Hai 8 người, thứ Ba 6 người, thứ Tư 10 người, thứ Năm 5 người, thứ Sáu 7 người. Ngày nào có nhiều người khám răng nhất?",
+          "options": ["Thứ Hai", "Thứ Ba", "Thứ Tư", "Thứ Năm"],
+          "a": 2,
+          "explain": "So sánh 8, 6, 10, 5, 7 thì 10 là lớn nhất, ứng với thứ Tư."
+        },
+        {
+          "type": "mcq",
+          "q": "Vẫn biểu đồ khám răng: thứ Hai 8 người, thứ Ba 6 người, thứ Tư 10 người, thứ Năm 5 người, thứ Sáu 7 người. Ngày nào có ít người khám răng nhất?",
+          "options": ["Thứ Ba", "Thứ Tư", "Thứ Năm", "Thứ Sáu"],
+          "a": 2,
+          "explain": "Số nhỏ nhất trong 8, 6, 10, 5, 7 là 5, ứng với thứ Năm."
+        },
+        {
+          "type": "mcq",
+          "q": "Biểu đồ cột cho biết số lượng thú nhồi bông của bạn An: gấu 6 con, thỏ 4 con, chó 3 con, mèo 5 con. Bạn An có tất cả bao nhiêu con thú nhồi bông?",
+          "options": ["16 con", "17 con", "18 con", "19 con"],
+          "a": 2,
+          "explain": "Tổng số thú nhồi bông là 6 + 4 + 3 + 5 = 18 con."
+        },
+        {
+          "type": "fill",
+          "q": "Biểu đồ cột cho biết số người khám răng: thứ Hai 8 người, thứ Ba 6 người, thứ Tư 10 người, thứ Năm 5 người, thứ Sáu 7 người. Trong tuần đó có tất cả ___ người đến khám răng (từ thứ Hai đến thứ Sáu).",
+          "answer": "36",
+          "accept": ["36", "36 người"]
+        },
+        {
+          "type": "solve",
+          "de": "Biểu đồ cột cho biết số bạn thích các môn thể thao trong lớp: bóng đá 5 bạn, bóng rổ 3 bạn, bơi lội 2 bạn, cầu lông 4 bạn. Hỏi số bạn thích bóng đá nhiều hơn số bạn thích bơi lội bao nhiêu bạn?",
+          "hints": [
+            "Anh Fury hỏi em: đề bài cho số bạn thích bóng đá là bao nhiêu và số bạn thích bơi lội là bao nhiêu nào?",
+            "Muốn biết \"nhiều hơn bao nhiêu\", mình dùng phép tính cộng hay phép tính trừ nhỉ?",
+            "Em lấy số bạn thích bóng đá trừ đi số bạn thích bơi lội là ra ngay thôi."
+          ],
+          "loiGiai": "Số bạn thích bóng đá là 5 bạn, số bạn thích bơi lội là 2 bạn.\nSố bạn thích bóng đá nhiều hơn số bạn thích bơi lội là:\n5 - 2 = 3 (bạn)",
+          "dapSo": "3 bạn"
+        },
+        {
+          "type": "solve",
+          "de": "Biểu đồ cột cho biết số lượng thú nhồi bông của bạn An: gấu 6 con, thỏ 4 con, chó 3 con, mèo 5 con. Hỏi trung bình mỗi loại thú nhồi bông bạn An có bao nhiêu con?",
+          "hints": [
+            "Anh Fury nhắc em: biểu đồ này có tất cả bao nhiêu loại thú nhồi bông nào?",
+            "Trước tiên em cộng số lượng cả 4 loại lại để tìm tổng đã.",
+            "Sau đó lấy tổng vừa tìm được chia cho số loại (4 loại) là ra trung bình mỗi loại."
+          ],
+          "loiGiai": "Tổng số thú nhồi bông là:\n6 + 4 + 3 + 5 = 18 (con)\nTrung bình mỗi loại thú nhồi bông bạn An có số con là:\n18 : 4 = 4,5 (con)",
+          "dapSo": "4,5 con mỗi loại"
+        }
+      ]
+    },
+    {
+      "so": 51,
+      "ten": "Số lần xuất hiện của một sự kiện",
+      "lyThuyet": "Khi làm một việc nhiều lần, chẳng hạn tung đồng xu, gieo xúc xắc hay quay vòng quay, mỗi kết quả có thể xuất hiện một số lần nhất định. Đếm xem một kết quả (sự kiện) xuất hiện bao nhiêu lần trong tất cả các lần thử, ta được số lần xuất hiện của sự kiện đó. Cộng số lần xuất hiện của tất cả các kết quả lại sẽ bằng tổng số lần thực hiện.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Bạn Nam tung một đồng xu 10 lần, thấy mặt sấp xuất hiện 6 lần, mặt ngửa xuất hiện 4 lần. Sự kiện \"đồng xu ra mặt sấp\" xảy ra bao nhiêu lần?",
+          "options": ["4 lần", "6 lần", "10 lần", "2 lần"],
+          "a": 1,
+          "explain": "Đề bài cho biết mặt sấp xuất hiện 6 lần."
+        },
+        {
+          "type": "mcq",
+          "q": "Bạn Minh gieo xúc xắc 6 mặt nhiều lần và ghi lại: mặt 1 chấm ra 3 lần, mặt 2 chấm ra 2 lần, mặt 3 chấm ra 4 lần, mặt 4 chấm ra 1 lần, mặt 5 chấm ra 3 lần, mặt 6 chấm ra 5 lần. Bạn Minh đã gieo xúc xắc tất cả bao nhiêu lần?",
+          "options": ["16 lần", "17 lần", "18 lần", "19 lần"],
+          "a": 2,
+          "explain": "Tổng số lần gieo là 3 + 2 + 4 + 1 + 3 + 5 = 18 lần."
+        },
+        {
+          "type": "mcq",
+          "q": "Vẫn kết quả gieo xúc xắc của bạn Minh: mặt 1 ra 3 lần, mặt 2 ra 2 lần, mặt 3 ra 4 lần, mặt 4 ra 1 lần, mặt 5 ra 3 lần, mặt 6 ra 5 lần. Sự kiện \"xúc xắc ra mặt 6 chấm\" xảy ra bao nhiêu lần?",
+          "options": ["3 lần", "4 lần", "5 lần", "1 lần"],
+          "a": 2,
+          "explain": "Theo bảng số liệu, mặt 6 chấm xuất hiện 5 lần."
+        },
+        {
+          "type": "mcq",
+          "q": "Bạn An lấy bóng từ một hộp kín 15 lần, kết quả: bóng xanh xuất hiện 10 lần, bóng đỏ xuất hiện 5 lần. Sự kiện \"lấy được bóng xanh\" xảy ra bao nhiêu lần?",
+          "options": ["5 lần", "10 lần", "15 lần", "20 lần"],
+          "a": 1,
+          "explain": "Theo đề bài, bóng xanh xuất hiện 10 lần trong 15 lần lấy bóng."
+        },
+        {
+          "type": "mcq",
+          "q": "Bạn Bình quay một vòng quay 3 màu (xanh, đỏ, vàng) 20 lần, kết quả: màu xanh ra 8 lần, màu đỏ ra 7 lần, màu vàng ra 5 lần. Sự kiện \"vòng quay không ra màu vàng\" xảy ra bao nhiêu lần?",
+          "options": ["5 lần", "8 lần", "15 lần", "20 lần"],
+          "a": 2,
+          "explain": "Không ra màu vàng nghĩa là ra màu xanh hoặc màu đỏ: 8 + 7 = 15 lần."
+        },
+        {
+          "type": "fill",
+          "q": "Bạn Minh gieo xúc xắc: mặt 1 chấm ra 3 lần, mặt 2 chấm ra 2 lần, mặt 3 chấm ra 4 lần, mặt 4 chấm ra 1 lần, mặt 5 chấm ra 3 lần, mặt 6 chấm ra 5 lần. Sự kiện \"xúc xắc ra mặt có số chấm lẻ\" (mặt 1, 3, 5 chấm) xảy ra ___ lần.",
+          "answer": "10",
+          "accept": ["10", "10 lần"]
+        },
+        {
+          "type": "solve",
+          "de": "Một cửa hàng bán kẹo trong ngày ghi lại số kẹo bán được theo 4 loại: kẹo dâu 12 cái, kẹo cam 8 cái, kẹo chanh 10 cái, kẹo táo 5 cái. Hỏi cửa hàng đã bán được tất cả bao nhiêu cái kẹo trong ngày?",
+          "hints": [
+            "Anh Fury hỏi em: đề bài có mấy loại kẹo và số lượng mỗi loại là bao nhiêu nào?",
+            "Muốn tìm tổng số kẹo bán được, mình cộng số lượng của cả 4 loại lại với nhau.",
+            "Em cộng lần lượt 12 + 8 + 10 + 5, cộng cẩn thận nhé."
+          ],
+          "loiGiai": "Tổng số kẹo cửa hàng bán được trong ngày là:\n12 + 8 + 10 + 5 = 35 (cái)",
+          "dapSo": "35 cái kẹo"
+        },
+        {
+          "type": "solve",
+          "de": "Vẫn cửa hàng bán kẹo với số liệu: kẹo dâu 12 cái, kẹo cam 8 cái, kẹo chanh 10 cái, kẹo táo 5 cái. Hỏi loại kẹo bán chạy nhất bán được nhiều hơn loại kẹo bán ít nhất bao nhiêu cái?",
+          "hints": [
+            "Anh Fury gợi ý em: trong 4 số 12, 8, 10, 5 thì số nào lớn nhất và số nào nhỏ nhất nào?",
+            "Loại kẹo bán chạy nhất ứng với số lớn nhất, loại bán ít nhất ứng với số nhỏ nhất đó em.",
+            "Em lấy số lớn nhất trừ đi số nhỏ nhất là ra kết quả."
+          ],
+          "loiGiai": "Trong 4 số liệu 12, 8, 10, 5 thì kẹo dâu bán được nhiều nhất (12 cái), kẹo táo bán được ít nhất (5 cái).\nLoại kẹo bán chạy nhất nhiều hơn loại bán ít nhất số cái là:\n12 - 5 = 7 (cái)",
+          "dapSo": "7 cái"
+        }
+      ]
+    },
+    {
+      "so": 52,
+      "ten": "Luyện tập chung",
+      "lyThuyet": "Bài luyện tập chung giúp em ôn lại ba kiến thức đã học: đọc và xử lí dãy số liệu thống kê, đọc biểu đồ cột để so sánh số lượng, và đếm số lần xuất hiện của một sự kiện khi làm thử nhiều lần. Em cần đọc kĩ đề bài, xác định đúng các số liệu rồi mới thực hiện phép tính cộng, trừ hoặc tính trung bình cộng.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Biểu đồ cột cho biết số học sinh tham gia các câu lạc bộ ngoại khóa: âm nhạc 8 bạn, mĩ thuật 6 bạn, võ thuật 5 bạn, cờ vua 9 bạn. Câu lạc bộ nào có nhiều học sinh tham gia nhất?",
+          "options": ["Âm nhạc", "Mĩ thuật", "Võ thuật", "Cờ vua"],
+          "a": 3,
+          "explain": "So sánh 8, 6, 5, 9 thì 9 là số lớn nhất, ứng với câu lạc bộ cờ vua."
+        },
+        {
+          "type": "mcq",
+          "q": "Dãy số liệu nhiệt độ đo được trong 7 ngày là: 30°C, 32°C, 33°C, 31°C, 29°C, 34°C, 35°C. Ngày nào có nhiệt độ cao nhất?",
+          "options": ["Ngày có 30°C", "Ngày có 33°C", "Ngày có 35°C", "Ngày có 29°C"],
+          "a": 2,
+          "explain": "Số lớn nhất trong dãy 30, 32, 33, 31, 29, 34, 35 là 35, đây là nhiệt độ cao nhất."
+        },
+        {
+          "type": "mcq",
+          "q": "Vẫn dãy nhiệt độ 7 ngày: 30, 32, 33, 31, 29, 34, 35 (°C). Nhiệt độ trung bình của 7 ngày đó là bao nhiêu?",
+          "options": ["30°C", "31°C", "32°C", "33°C"],
+          "a": 2,
+          "explain": "Tổng nhiệt độ là 30+32+33+31+29+34+35 = 224. Trung bình là 224 : 7 = 32°C."
+        },
+        {
+          "type": "mcq",
+          "q": "Bạn An tung đồng xu 10 lần, kết quả ghi lại: mặt sấp ra 4 lần, mặt ngửa ra 6 lần. Sự kiện nào xảy ra nhiều lần hơn?",
+          "options": ["Mặt sấp", "Mặt ngửa", "Hai mặt bằng nhau", "Không xác định được"],
+          "a": 1,
+          "explain": "So sánh 4 lần và 6 lần thì mặt ngửa xuất hiện nhiều hơn."
+        },
+        {
+          "type": "mcq",
+          "q": "Biểu đồ cột cho biết số học sinh tham gia câu lạc bộ: âm nhạc 8 bạn, mĩ thuật 6 bạn, võ thuật 5 bạn, cờ vua 9 bạn. Tổng số học sinh tham gia cả 4 câu lạc bộ là bao nhiêu?",
+          "options": ["26 bạn", "27 bạn", "28 bạn", "29 bạn"],
+          "a": 2,
+          "explain": "Tổng số học sinh là 8 + 6 + 5 + 9 = 28 bạn."
+        },
+        {
+          "type": "fill",
+          "q": "Dãy nhiệt độ 7 ngày: 30, 32, 33, 31, 29, 34, 35 (°C). Nhiệt độ thấp nhất trong 7 ngày là ___ °C.",
+          "answer": "29",
+          "accept": ["29", "29 độ C", "29°C"]
+        },
+        {
+          "type": "solve",
+          "de": "Biểu đồ cột cho biết số học sinh tham gia các câu lạc bộ ngoại khóa: âm nhạc 8 bạn, mĩ thuật 6 bạn, võ thuật 5 bạn, cờ vua 9 bạn. Hỏi câu lạc bộ cờ vua có nhiều hơn câu lạc bộ võ thuật bao nhiêu bạn?",
+          "hints": [
+            "Anh Fury hỏi em: số bạn tham gia câu lạc bộ cờ vua và câu lạc bộ võ thuật lần lượt là bao nhiêu nào?",
+            "Muốn biết \"nhiều hơn bao nhiêu bạn\", mình cần thực hiện phép cộng hay phép trừ nhỉ?",
+            "Em lấy số bạn cờ vua trừ đi số bạn võ thuật là ra ngay đáp số."
+          ],
+          "loiGiai": "Số bạn tham gia câu lạc bộ cờ vua là 9 bạn, số bạn tham gia câu lạc bộ võ thuật là 5 bạn.\nCâu lạc bộ cờ vua có nhiều hơn câu lạc bộ võ thuật số bạn là:\n9 - 5 = 4 (bạn)",
+          "dapSo": "4 bạn"
+        },
+        {
+          "type": "solve",
+          "de": "Dãy số liệu ghi nhiệt độ trong 7 ngày liên tiếp là: 30°C, 32°C, 33°C, 31°C, 29°C, 34°C, 35°C. Hỏi nhiệt độ trung bình của 7 ngày đó là bao nhiêu độ C?",
+          "hints": [
+            "Anh Fury nhắc em: muốn tính trung bình cộng của một dãy số, đầu tiên mình cần tìm tổng của tất cả các số trong dãy đã.",
+            "Em cộng cẩn thận cả 7 số: 30, 32, 33, 31, 29, 34, 35 lại với nhau xem tổng là bao nhiêu.",
+            "Có tổng rồi, em lấy tổng đó chia cho 7 ngày là ra nhiệt độ trung bình."
+          ],
+          "loiGiai": "Tổng nhiệt độ của 7 ngày là:\n30 + 32 + 33 + 31 + 29 + 34 + 35 = 224 (°C)\nNhiệt độ trung bình của 7 ngày đó là:\n224 : 7 = 32 (°C)",
+          "dapSo": "32°C"
+        }
+      ]
+    }
+  ]
+}

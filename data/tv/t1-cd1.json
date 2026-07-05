@@ -1,0 +1,276 @@
+{
+  "mon": "tv",
+  "tap": 1,
+  "chuDe": "Mỗi người một vẻ",
+  "cdSo": 1,
+  "bai": [
+    {
+      "so": 1,
+      "ten": "Tuần 1: Điều đặc biệt trong mỗi người",
+      "lyThuyet": "Tuần này em đọc câu chuyện về những người bạn có sở thích và tài năng khác nhau, ai cũng đáng quý theo cách riêng của mình. Về Luyện từ và câu, em học về Danh từ - đó là những từ dùng để gọi tên người, con vật, cây cối, đồ vật, hiện tượng hoặc khái niệm, ví dụ: học sinh, con mèo, cái bàn, cơn mưa.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Lớp 4A có bốn bạn rất khác nhau. Nam vẽ tranh đẹp như hoạ sĩ thật thụ. Minh chạy nhanh nhất trường, năm nào cũng đoạt giải điền kinh. Bình thì hát hay, giọng trong vắt như chim hót. Còn An chẳng giỏi vẽ, chẳng giỏi chạy, chẳng giỏi hát, nhưng An lại rất giỏi kể chuyện cười, khiến cả lớp cười nghiêng ngả mỗi giờ ra chơi. Cô giáo bảo: \"Mỗi bạn một vẻ, ai cũng có điều đáng khen riêng.\"",
+          "q": "Bạn An có tài gì đặc biệt?",
+          "options": ["Vẽ tranh đẹp", "Chạy nhanh nhất trường", "Kể chuyện cười giỏi", "Hát hay"],
+          "a": 2,
+          "explain": "Đoạn văn nói An giỏi kể chuyện cười, khiến cả lớp cười nghiêng ngả."
+        },
+        {
+          "type": "read",
+          "vanBan": "Lớp 4A có bốn bạn rất khác nhau. Nam vẽ tranh đẹp như hoạ sĩ thật thụ. Minh chạy nhanh nhất trường, năm nào cũng đoạt giải điền kinh. Bình thì hát hay, giọng trong vắt như chim hót. Còn An chẳng giỏi vẽ, chẳng giỏi chạy, chẳng giỏi hát, nhưng An lại rất giỏi kể chuyện cười, khiến cả lớp cười nghiêng ngả mỗi giờ ra chơi. Cô giáo bảo: \"Mỗi bạn một vẻ, ai cũng có điều đáng khen riêng.\"",
+          "q": "Câu nói của cô giáo ở cuối đoạn văn muốn nhắn nhủ điều gì?",
+          "options": ["Chỉ có một bạn giỏi nhất lớp", "Mỗi người đều có điểm đáng khen riêng của mình", "Các bạn nên thi đua với nhau", "Nam là người giỏi nhất"],
+          "a": 1,
+          "explain": "Cô giáo muốn nói mỗi bạn một vẻ, ai cũng có điều đáng khen riêng, tức là ai cũng đáng quý theo cách của mình."
+        },
+        {
+          "type": "mcq",
+          "q": "Từ nào dưới đây là danh từ?",
+          "options": ["chạy", "đẹp", "học sinh", "nhanh"],
+          "a": 2,
+          "explain": "\"Học sinh\" là từ gọi tên người, đó là danh từ. \"Chạy\" là động từ, \"đẹp\", \"nhanh\" là tính từ."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu nào dưới đây có chứa danh từ chỉ đồ vật?",
+          "options": ["Nam đang vẽ một bức tranh.", "Minh chạy rất nhanh.", "Bình hát rất hay.", "An kể chuyện rất vui."],
+          "a": 0,
+          "explain": "\"Bức tranh\" là danh từ chỉ đồ vật trong câu \"Nam đang vẽ một bức tranh.\""
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu \"Cơn mưa rào đổ xuống sân trường\", đâu là danh từ chỉ hiện tượng tự nhiên?",
+          "options": ["đổ xuống", "cơn mưa", "sân trường", "rào"],
+          "a": 1,
+          "explain": "\"Cơn mưa\" là danh từ chỉ hiện tượng tự nhiên."
+        },
+        {
+          "type": "fill",
+          "q": "Điền l hoặc n vào chỗ trống: Bạn Nam rất ___ăng động và thích giúp đỡ bạn bè.",
+          "answer": "năng",
+          "accept": ["năng", "n"]
+        },
+        {
+          "type": "fill",
+          "q": "Điền ch hoặc tr vào chỗ trống: Minh luôn cố gắng luyện tập ___ăm chỉ mỗi ngày để chạy nhanh hơn.",
+          "answer": "chăm",
+          "accept": ["chăm", "ch"]
+        },
+        {
+          "type": "solve",
+          "de": "Viết 2-3 câu giới thiệu một người bạn của em và điểm đặc biệt của bạn ấy, có dùng ít nhất 1 danh từ riêng (tên bạn).",
+          "hints": [
+            "Em thử nghĩ xem trong lớp mình, bạn nào có điều gì đó thật đặc biệt, khác với các bạn khác nhé.",
+            "Em có thể viết: tên bạn ấy là gì, bạn ấy giỏi hoặc thích làm việc gì, và em cảm thấy thế nào về điều đó.",
+            "Ví dụ gần giống câu mẫu: Bạn ấy tên là..., bạn ấy rất giỏi..., em rất thích chơi cùng bạn ấy vì..."
+          ],
+          "loiGiai": "Bạn thân nhất của em tên là Hùng. Hùng có tài xếp hình rất nhanh, chỉ vài phút là xếp xong khối rubik. Em rất khâm phục sự kiên nhẫn của bạn ấy.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    },
+    {
+      "so": 2,
+      "ten": "Tuần 2: Hai anh em không giống nhau",
+      "lyThuyet": "Tuần này em đọc câu chuyện về hai anh em tuy giống nhau về ngoại hình nhưng lại rất khác nhau về tính cách và sở thích. Về Luyện từ và câu, em học phân biệt danh từ chung (tên gọi chung của sự vật, không viết hoa, ví dụ: bàn, sông, thành phố) và danh từ riêng (tên riêng của người, địa danh cụ thể, luôn viết hoa, ví dụ: Nam, Hà Nội, sông Hồng).",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Nam và Bình là anh em sinh đôi, khuôn mặt giống nhau như đúc, ai nhìn cũng nhầm. Nhưng tính cách hai anh em lại trái ngược nhau hoàn toàn. Nam thích ở nhà đọc sách, còn Bình thích chạy nhảy ngoài sân. Nam nói chuyện nhỏ nhẹ, Bình thì lúc nào cũng cười to. Có lần cô giáo gọi nhầm tên, cả hai anh em cùng bật cười vì sự nhầm lẫn đáng yêu ấy.",
+          "q": "Nam và Bình là gì của nhau?",
+          "options": ["Bạn cùng lớp", "Anh em sinh đôi", "Anh em họ", "Hàng xóm"],
+          "a": 1,
+          "explain": "Đoạn văn cho biết Nam và Bình là anh em sinh đôi."
+        },
+        {
+          "type": "read",
+          "vanBan": "Nam và Bình là anh em sinh đôi, khuôn mặt giống nhau như đúc, ai nhìn cũng nhầm. Nhưng tính cách hai anh em lại trái ngược nhau hoàn toàn. Nam thích ở nhà đọc sách, còn Bình thích chạy nhảy ngoài sân. Nam nói chuyện nhỏ nhẹ, Bình thì lúc nào cũng cười to. Có lần cô giáo gọi nhầm tên, cả hai anh em cùng bật cười vì sự nhầm lẫn đáng yêu ấy.",
+          "q": "Điều gì ở hai anh em lại trái ngược nhau?",
+          "options": ["Khuôn mặt", "Chiều cao", "Tính cách và sở thích", "Tên gọi"],
+          "a": 2,
+          "explain": "Mặc dù khuôn mặt giống nhau nhưng tính cách và sở thích của hai anh em lại trái ngược nhau."
+        },
+        {
+          "type": "mcq",
+          "q": "Từ nào dưới đây là danh từ riêng?",
+          "options": ["học sinh", "Hà Nội", "thành phố", "con sông"],
+          "a": 1,
+          "explain": "\"Hà Nội\" là tên riêng của một địa danh, được viết hoa nên là danh từ riêng."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu \"Bạn Nam sống ở Hải Phòng\", đâu là danh từ chung?",
+          "options": ["Nam", "Hải Phòng", "bạn", "sống"],
+          "a": 2,
+          "explain": "\"Bạn\" là danh từ chung, chỉ chung một người, không viết hoa. Còn \"Nam\", \"Hải Phòng\" là danh từ riêng."
+        },
+        {
+          "type": "mcq",
+          "q": "Nhóm từ nào dưới đây đều là danh từ chung?",
+          "options": ["Minh, An, Bình", "sông, núi, trường học", "Hà Nội, Huế, Đà Nẵng", "Việt Nam, Lào, Thái Lan"],
+          "a": 1,
+          "explain": "\"Sông, núi, trường học\" là những danh từ chung, gọi tên chung của sự vật, không viết hoa."
+        },
+        {
+          "type": "fill",
+          "q": "Điền s hoặc x vào chỗ trống: Hai anh em ___inh đôi ấy học chung một lớp.",
+          "answer": "sinh",
+          "accept": ["sinh", "s"]
+        },
+        {
+          "type": "fill",
+          "q": "Điền d, gi hoặc r vào chỗ trống: Bình rất thích chạy nhảy, đùa ___ỡn cùng bạn bè ngoài sân trường.",
+          "answer": "giỡn",
+          "accept": ["giỡn", "gi"]
+        },
+        {
+          "type": "solve",
+          "de": "Viết 2-3 câu kể về một người thân trong gia đình em, nêu rõ tên riêng của người đó và một đặc điểm riêng của họ.",
+          "hints": [
+            "Em nghĩ xem trong nhà mình, ai là người em muốn kể: bố, mẹ, anh, chị hay em của em?",
+            "Nhớ nhắc tên riêng của người đó (viết hoa chữ cái đầu) và nói xem người ấy có điểm gì đặc biệt, khác với mọi người.",
+            "Ví dụ gần giống câu mẫu: Em trai em tên là..., bạn ấy rất thích..., cả nhà ai cũng yêu quý bạn ấy vì..."
+          ],
+          "loiGiai": "Em trai em tên là An. An mới năm tuổi nhưng đã thuộc rất nhiều bài hát thiếu nhi. Cả nhà ai cũng thích nghe An hát mỗi tối.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    },
+    {
+      "so": 3,
+      "ten": "Tuần 3: Những người bạn nhỏ trong khu vườn",
+      "lyThuyet": "Tuần này em đọc câu chuyện về những loài vật nhỏ bé trong khu vườn, mỗi loài có một đặc điểm và tài năng riêng biệt. Về Luyện từ và câu, em luyện tập phân biệt danh từ chung và danh từ riêng, đồng thời ôn lại quy tắc viết hoa danh từ riêng: viết hoa chữ cái đầu của mỗi tiếng trong tên người, tên địa danh.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Trong khu vườn nhỏ sau nhà Hùng, có một chú tắc kè sống trên cây xoài và một chú thằn lằn xanh sống dưới gốc cây ổi. Tắc kè kêu to vào mỗi buổi tối, tiếng kêu vang khắp vườn. Thằn lằn xanh thì lặng lẽ hơn, chỉ thích bò nhanh trên tường để bắt muỗi. Hùng nhận ra dù cùng là loài bò sát, hai bạn nhỏ ấy vẫn có nét riêng không ai giống ai.",
+          "q": "Chú tắc kè sống ở đâu trong khu vườn?",
+          "options": ["Trên cây xoài", "Dưới gốc cây ổi", "Trong bụi cỏ", "Trên mái nhà"],
+          "a": 0,
+          "explain": "Đoạn văn cho biết tắc kè sống trên cây xoài."
+        },
+        {
+          "type": "read",
+          "vanBan": "Trong khu vườn nhỏ sau nhà Hùng, có một chú tắc kè sống trên cây xoài và một chú thằn lằn xanh sống dưới gốc cây ổi. Tắc kè kêu to vào mỗi buổi tối, tiếng kêu vang khắp vườn. Thằn lằn xanh thì lặng lẽ hơn, chỉ thích bò nhanh trên tường để bắt muỗi. Hùng nhận ra dù cùng là loài bò sát, hai bạn nhỏ ấy vẫn có nét riêng không ai giống ai.",
+          "q": "Điểm khác nhau giữa tắc kè và thằn lằn xanh trong đoạn văn là gì?",
+          "options": ["Màu sắc cơ thể", "Tắc kè kêu to, thằn lằn xanh lặng lẽ", "Nơi sinh sống giống hệt nhau", "Cả hai đều biết bay"],
+          "a": 1,
+          "explain": "Tắc kè kêu to mỗi tối, còn thằn lằn xanh lặng lẽ hơn, chỉ thích bò bắt muỗi."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu nào dưới đây viết hoa danh từ riêng đúng quy tắc?",
+          "options": ["bạn hùng ở thành phố hải phòng", "Bạn Hùng ở thành phố Hải Phòng", "Bạn hùng ở Thành Phố hải phòng", "bạn Hùng ở thành phố hải Phòng"],
+          "a": 1,
+          "explain": "Danh từ riêng \"Hùng\" và \"Hải Phòng\" phải viết hoa chữ cái đầu của mỗi tiếng, còn \"bạn\", \"thành phố\" là danh từ chung nên không viết hoa."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong các tên sau, tên nào KHÔNG phải là danh từ riêng?",
+          "options": ["Việt Nam", "con vật", "Sông Hồng", "Bình"],
+          "a": 1,
+          "explain": "\"Con vật\" là danh từ chung, chỉ chung một loại sự vật, không viết hoa."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu \"Chú tắc kè và bạn thằn lằn xanh đều sống trong khu vườn nhà Hùng\" có mấy danh từ riêng?",
+          "options": ["Không có", "Một", "Hai", "Ba"],
+          "a": 1,
+          "explain": "Chỉ có \"Hùng\" là danh từ riêng trong câu này, các từ còn lại như tắc kè, thằn lằn xanh, khu vườn là danh từ chung."
+        },
+        {
+          "type": "fill",
+          "q": "Điền ch hoặc tr vào chỗ trống: Chú tắc kè thường ___èo lên cây cao để tìm nơi trú ẩn.",
+          "answer": "trèo",
+          "accept": ["trèo", "tr"]
+        },
+        {
+          "type": "fill",
+          "q": "Điền l hoặc n vào chỗ trống: Thằn lằn xanh bò rất ___anh trên bức tường để bắt muỗi.",
+          "answer": "nhanh",
+          "accept": ["nhanh", "n"]
+        },
+        {
+          "type": "solve",
+          "de": "Viết 2-3 câu tả một con vật nhỏ mà em từng quan sát (ví dụ: con kiến, chú chim, con mèo), nêu rõ một đặc điểm riêng khiến em nhớ mãi.",
+          "hints": [
+            "Em thử nhớ lại xem mình từng nhìn thấy con vật nhỏ nào thú vị, có điều gì đặc biệt không?",
+            "Em có thể tả hình dáng, màu sắc hoặc hành động của con vật ấy, và nói xem vì sao em thấy nó đặc biệt.",
+            "Ví dụ gần giống câu mẫu: Con vật ấy là..., nó có đặc điểm là..., em thấy nó rất..."
+          ],
+          "loiGiai": "Nhà em có nuôi một chú mèo tên là Mun. Mun có bộ lông đen tuyền và đôi mắt xanh biếc rất đẹp. Mỗi khi em học bài, Mun thường nằm cạnh bên như đang canh giữ cho em.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    },
+    {
+      "so": 4,
+      "ten": "Tuần 4: Bức tranh của những điều khác biệt",
+      "lyThuyet": "Tuần này em đọc câu chuyện về những bức tranh và những chuyến đò, qua đó thấy được vẻ đẹp riêng của mỗi con người, mỗi cảnh vật. Về Luyện từ và câu, em luyện tập tổng hợp về danh từ: nhận biết danh từ chỉ người, chỉ vật, chỉ hiện tượng, chỉ khái niệm, đồng thời mở rộng thêm vốn từ về chủ điểm mỗi người một vẻ.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Trong giờ học vẽ, cô giáo yêu cầu cả lớp vẽ chân dung bạn ngồi cạnh mình. Nam vẽ bạn Minh với nụ cười tươi và mái tóc bù xù. Minh vẽ bạn Nam với đôi mắt sáng và chiếc kính cận. Mỗi bức tranh tuy nét vẽ còn vụng về nhưng đều chứa đựng tình cảm chân thành. Cô giáo treo tất cả tranh lên tường lớp học, ai đi ngang cũng phải mỉm cười vì sự đáng yêu, ngộ nghĩnh của từng bức chân dung.",
+          "q": "Trong giờ học vẽ, các bạn được yêu cầu vẽ gì?",
+          "options": ["Vẽ phong cảnh", "Vẽ chân dung bạn ngồi cạnh mình", "Vẽ con vật yêu thích", "Vẽ ngôi trường"],
+          "a": 1,
+          "explain": "Đoạn văn cho biết cô giáo yêu cầu cả lớp vẽ chân dung bạn ngồi cạnh mình."
+        },
+        {
+          "type": "read",
+          "vanBan": "Trong giờ học vẽ, cô giáo yêu cầu cả lớp vẽ chân dung bạn ngồi cạnh mình. Nam vẽ bạn Minh với nụ cười tươi và mái tóc bù xù. Minh vẽ bạn Nam với đôi mắt sáng và chiếc kính cận. Mỗi bức tranh tuy nét vẽ còn vụng về nhưng đều chứa đựng tình cảm chân thành. Cô giáo treo tất cả tranh lên tường lớp học, ai đi ngang cũng phải mỉm cười vì sự đáng yêu, ngộ nghĩnh của từng bức chân dung.",
+          "q": "Vì sao mọi người đi ngang tường lớp học đều mỉm cười?",
+          "options": ["Vì tranh vẽ rất đắt tiền", "Vì các bức chân dung đáng yêu, ngộ nghĩnh", "Vì tranh được treo cao", "Vì cô giáo yêu cầu phải cười"],
+          "a": 1,
+          "explain": "Mọi người mỉm cười vì sự đáng yêu, ngộ nghĩnh của từng bức chân dung."
+        },
+        {
+          "type": "mcq",
+          "q": "Từ nào dưới đây là danh từ chỉ khái niệm?",
+          "options": ["tình bạn", "cái bàn", "con mèo", "bông hoa"],
+          "a": 0,
+          "explain": "\"Tình bạn\" là danh từ chỉ khái niệm, không sờ thấy được, khác với các danh từ chỉ vật cụ thể còn lại."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu \"Niềm vui của Nam khi vẽ xong bức tranh thật lớn\", danh từ chỉ khái niệm là từ nào?",
+          "options": ["Nam", "bức tranh", "niềm vui", "vẽ"],
+          "a": 2,
+          "explain": "\"Niềm vui\" là danh từ chỉ khái niệm, chỉ trạng thái cảm xúc, không nhìn thấy hay sờ thấy được."
+        },
+        {
+          "type": "mcq",
+          "q": "Nhóm từ nào dưới đây gồm các danh từ chỉ người?",
+          "options": ["học sinh, giáo viên, bạn bè", "bàn ghế, sách vở, bảng đen", "niềm vui, tình bạn, sự tự tin", "con sông, ngọn núi, cánh đồng"],
+          "a": 0,
+          "explain": "\"Học sinh, giáo viên, bạn bè\" đều là danh từ chỉ người."
+        },
+        {
+          "type": "fill",
+          "q": "Điền d, gi hoặc r vào chỗ trống: Bức tranh của Nam vẽ rất ___ản dị nhưng đầy tình cảm.",
+          "answer": "giản",
+          "accept": ["giản", "gi"]
+        },
+        {
+          "type": "fill",
+          "q": "Điền ch hoặc tr vào chỗ trống: Chiếc đò ___ở khách qua sông mỗi buổi sáng sớm.",
+          "answer": "chở",
+          "accept": ["chở", "ch"]
+        },
+        {
+          "type": "solve",
+          "de": "Viết 2-3 câu nêu cảm nghĩ của em về việc mỗi người đều có một vẻ riêng, dùng ít nhất một danh từ chỉ khái niệm (như: sự tự tin, niềm vui, tình bạn).",
+          "hints": [
+            "Em nghĩ xem vì sao mỗi người có một vẻ riêng lại đáng quý, đừng cố giống người khác nhé.",
+            "Em có thể viết về bản thân em hoặc bạn bè em, có điểm gì riêng mà em thấy tự hào.",
+            "Ví dụ gần giống câu mẫu: Em nghĩ rằng mỗi người đều có..., riêng em thì..., em cảm thấy tự hào vì..."
+          ],
+          "loiGiai": "Em nghĩ rằng mỗi người đều có một vẻ riêng, không ai giống ai hoàn toàn. Riêng em thì không giỏi vẽ nhưng lại rất thích kể chuyện cho các bạn nghe. Em cảm thấy tự tin vì mình cũng có điều đặc biệt của riêng mình.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,276 @@
+{
+  "mon": "tv",
+  "tap": 2,
+  "chuDe": "Vì một thế giới bình yên",
+  "cdSo": 8,
+  "bai": [
+    {
+      "so": 1,
+      "ten": "Tuần 32: Cánh chim trên đảo Trần",
+      "lyThuyet": "Tuần này em đọc về cuộc sống bình yên trên đảo và thế giới động vật phong phú. Em sẽ luyện tập xác định trạng ngữ, chủ ngữ, vị ngữ trong câu.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Trên đảo Sơn Ca, mỗi sáng sớm, Nam và ông nội thường ra bãi đá ngắm đàn hải âu bay lượn. Ông bảo tiếng chim hót líu lo chính là tín hiệu báo một ngày biển lặng, yên bình. Có lần, Nam thấy một chú chim non bị thương ở cánh, em liền mang về chăm sóc, cho ăn từng chút cá nhỏ. Vài hôm sau, chim non khỏe lại và bay đi cùng đàn. Nam thấy lòng vui lạ, vì em hiểu rằng bảo vệ từng loài chim cũng là góp phần giữ gìn sự sống cho hòn đảo thân yêu.",
+          "q": "Vì sao Nam mang chú chim non về chăm sóc?",
+          "options": ["Vì chim non hót hay", "Vì chim non bị thương ở cánh", "Vì ông nội bảo Nam làm vậy", "Vì Nam muốn nuôi làm cảnh"],
+          "a": 1,
+          "explain": "Trong bài, chú chim non bị thương ở cánh nên Nam mang về chăm sóc."
+        },
+        {
+          "type": "read",
+          "vanBan": "Đảo Trần mùa này đón nhiều đàn chim di trú ghé qua trú ngụ. Các chú bộ đội trên đảo cùng người dân dựng những mái che nhỏ để chim làm tổ, tránh gió bão. Minh, con trai bác trưởng trạm hải đăng, kể rằng mỗi khi nghe tiếng chim gọi nhau ríu rít, ai nấy đều yên tâm vì đó là dấu hiệu thời tiết thuận lợi. Minh còn giúp các chú bộ đội ghi chép số lượng chim mỗi tuần để theo dõi, bảo vệ chúng tốt hơn.",
+          "q": "Mọi người trên đảo Trần đã làm gì để giúp đỡ đàn chim di trú?",
+          "options": ["Bắt chim về nuôi trong nhà", "Dựng mái che nhỏ cho chim làm tổ", "Xua đuổi chim đi nơi khác", "Không quan tâm đến đàn chim"],
+          "a": 1,
+          "explain": "Các chú bộ đội cùng người dân dựng mái che nhỏ để chim làm tổ, tránh gió bão."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu \"Trên mặt biển, những cánh buồm trắng đang trôi lững lờ.\", bộ phận nào là trạng ngữ?",
+          "options": ["Trên mặt biển", "những cánh buồm trắng", "đang trôi lững lờ", "cánh buồm trắng"],
+          "a": 0,
+          "explain": "\"Trên mặt biển\" là trạng ngữ chỉ nơi chốn, đứng đầu câu, ngăn cách bằng dấu phẩy."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu \"Buổi sáng, đàn hải âu bay rợp cả một góc trời.\", chủ ngữ là bộ phận nào?",
+          "options": ["Buổi sáng", "đàn hải âu", "bay rợp cả một góc trời", "một góc trời"],
+          "a": 1,
+          "explain": "\"đàn hải âu\" là chủ ngữ, trả lời cho câu hỏi \"con gì?\"."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu nào dưới đây có đủ trạng ngữ, chủ ngữ và vị ngữ?",
+          "options": ["Những chú chim hải âu.", "Trên đảo xa, các chiến sĩ canh gác suốt đêm.", "Canh gác suốt đêm.", "Đảo xa và biển cả."],
+          "a": 1,
+          "explain": "Câu \"Trên đảo xa, các chiến sĩ canh gác suốt đêm.\" có trạng ngữ (Trên đảo xa), chủ ngữ (các chiến sĩ) và vị ngữ (canh gác suốt đêm)."
+        },
+        {
+          "type": "fill",
+          "q": "Đàn chim bay ___ trên bầu trời xanh biếc. (điền l hoặc n)",
+          "answer": "lượn",
+          "accept": ["lượn"]
+        },
+        {
+          "type": "fill",
+          "q": "Các chiến sĩ luôn ___ giữ cho đảo được yên bình. (điền ch hoặc tr)",
+          "answer": "canh",
+          "accept": ["canh"]
+        },
+        {
+          "type": "solve",
+          "de": "Em hãy viết 2-3 câu kể về một loài vật sống ở biển hoặc trên đảo mà em biết, trong đó có ít nhất một câu dùng trạng ngữ chỉ nơi chốn hoặc thời gian.",
+          "hints": [
+            "Em hãy chọn một con vật quen thuộc như cá heo, hải âu, rùa biển nhé.",
+            "Nhớ thêm trạng ngữ ở đầu câu, ví dụ: Vào buổi sáng, hoặc Trên bãi cát...",
+            "Sau trạng ngữ, đừng quên dấu phẩy rồi mới đến chủ ngữ và vị ngữ nha em!"
+          ],
+          "loiGiai": "Trên bãi cát vàng, những chú rùa biển đang chậm rãi bò về phía đại dương. Vào ban đêm, rùa mẹ thường lên bờ đẻ trứng. Em rất thích ngắm nhìn loài vật hiền lành và đáng yêu này.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    },
+    {
+      "so": 2,
+      "ten": "Tuần 33: Câu chuyện của những dòng sông",
+      "lyThuyet": "Tuần này em đọc về hành trình của những dòng sông và những vùng đất xa xôi kỳ thú. Em sẽ luyện tập điền trạng ngữ chỉ nguyên nhân hoặc mục đích vào câu.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Dòng sông quê An bắt nguồn từ những dãy núi cao xa xôi, len lỏi qua bao thác ghềnh rồi êm đềm chảy về đồng bằng. Mỗi mùa nước lên, phù sa đỏ au bồi đắp cho ruộng đồng thêm màu mỡ. An thích nhất là những chiều hè, cùng lũ bạn ra bờ sông thả diều, ngắm nhìn những chiếc thuyền chở lúa xuôi dòng. Bà An bảo, dòng sông không chỉ nuôi sống dân làng mà còn lưu giữ biết bao kỷ niệm tuổi thơ của mỗi người.",
+          "q": "Dòng sông quê An bắt nguồn từ đâu?",
+          "options": ["Từ những dãy núi cao", "Từ đồng bằng", "Từ biển cả", "Từ ao làng"],
+          "a": 0,
+          "explain": "Bài đọc cho biết dòng sông bắt nguồn từ những dãy núi cao xa xôi."
+        },
+        {
+          "type": "read",
+          "vanBan": "Bình theo bố đi công tác đến một bản làng vùng cao xa xôi. Ở đó, Bình được xem lễ hội té nước cầu mùa màng bội thu, được nếm thử món xôi ngũ sắc thơm dẻo do bà con dân tộc tự tay làm. Cảnh núi rừng hùng vĩ, mây trắng bồng bềnh khiến Bình ngỡ như lạc vào một thế giới cổ tích. Chuyến đi giúp Bình hiểu thêm về phong tục tập quán độc đáo của mỗi vùng miền trên đất nước mình.",
+          "q": "Bình đã được trải nghiệm điều gì ở bản làng vùng cao?",
+          "options": ["Xem phim hoạt hình", "Xem lễ hội té nước và nếm xôi ngũ sắc", "Đi tắm biển", "Chơi công viên nước"],
+          "a": 1,
+          "explain": "Bình được xem lễ hội té nước cầu mùa màng bội thu và nếm thử món xôi ngũ sắc."
+        },
+        {
+          "type": "mcq",
+          "q": "Chọn trạng ngữ chỉ nguyên nhân thích hợp điền vào chỗ trống: \"___, con đường trong làng bị ngập nước.\"",
+          "options": ["Vì mưa lớn kéo dài", "Để đường sá sạch đẹp", "Trên con đường làng", "Vào buổi sáng"],
+          "a": 0,
+          "explain": "\"Vì mưa lớn kéo dài\" là trạng ngữ chỉ nguyên nhân, giải thích lí do con đường bị ngập nước."
+        },
+        {
+          "type": "mcq",
+          "q": "Chọn trạng ngữ chỉ mục đích thích hợp điền vào chỗ trống: \"___, các bạn nhỏ cùng nhau dọn rác trên bờ sông.\"",
+          "options": ["Vì trời nắng to", "Để dòng sông thêm sạch đẹp", "Trên bờ sông", "Hôm qua"],
+          "a": 1,
+          "explain": "\"Để dòng sông thêm sạch đẹp\" là trạng ngữ chỉ mục đích, nêu rõ mục đích của hành động dọn rác."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu nào dưới đây có trạng ngữ chỉ nguyên nhân?",
+          "options": ["Để chuyến đi thêm thú vị, cả nhóm chuẩn bị rất kỹ.", "Vì yêu quý dòng sông quê hương, An luôn giữ gìn nó sạch đẹp.", "Trên dòng sông, những chiếc thuyền nhẹ trôi.", "Vào mùa lũ, nước sông dâng cao."],
+          "a": 1,
+          "explain": "\"Vì yêu quý dòng sông quê hương\" nêu nguyên nhân của việc An giữ gìn dòng sông sạch đẹp."
+        },
+        {
+          "type": "fill",
+          "q": "Dòng ___ chảy hiền hòa qua những cánh đồng lúa chín. (điền s hoặc x)",
+          "answer": "sông",
+          "accept": ["sông"]
+        },
+        {
+          "type": "fill",
+          "q": "Phù sa bồi đắp cho ruộng đồng thêm ___ mỡ. (điền d, gi hoặc r)",
+          "answer": "mầu",
+          "accept": ["mầu", "màu"]
+        },
+        {
+          "type": "solve",
+          "de": "Em hãy viết 2-3 câu kể về một chuyến đi khám phá vùng đất mới mà em từng biết hoặc tưởng tượng, trong đó có sử dụng một trạng ngữ chỉ nguyên nhân hoặc mục đích.",
+          "hints": [
+            "Em nghĩ về một nơi đặc biệt như núi rừng, hải đảo hay một bản làng xa xôi nhé.",
+            "Nhớ thêm trạng ngữ trả lời câu hỏi \"Vì sao?\" hoặc \"Để làm gì?\" ở đầu câu.",
+            "Đừng quên dấu phẩy sau trạng ngữ trước khi viết tiếp phần còn lại của câu nha em!"
+          ],
+          "loiGiai": "Để khám phá vẻ đẹp của núi rừng, gia đình em đã đi thăm bản làng vùng cao vào dịp hè. Vì thích thú với phong cảnh nơi đây, em xin bố mẹ ở lại thêm một ngày. Chuyến đi đã cho em thật nhiều kỷ niệm đẹp.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    },
+    {
+      "so": 3,
+      "ten": "Tuần 34: Trái Đất xanh",
+      "lyThuyet": "Tuần này em đọc về kho báu của đại dương và bài thơ kêu gọi giữ gìn màu xanh Trái Đất. Em sẽ ôn tập về câu kể, câu hỏi, câu khiến, câu cảm kết hợp với chủ ngữ, vị ngữ, trạng ngữ.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Trong giờ học về đại dương, thầy giáo kể cho cả lớp nghe về những kho báu ẩn giấu dưới lòng biển sâu: khoáng sản quý giá, nguồn năng lượng dồi dào từ sóng và gió biển. Minh giơ tay hỏi: \"Thưa thầy, làm sao con người khai thác đại dương mà không làm hại sinh vật biển ạ?\" Thầy mỉm cười giải thích rằng khoa học hiện đại đang giúp con người khám phá đại dương một cách bền vững, vừa lấy được tài nguyên vừa bảo vệ môi trường biển.",
+          "q": "Minh đã hỏi thầy giáo điều gì?",
+          "options": ["Đại dương rộng bao nhiêu", "Làm sao khai thác đại dương mà không làm hại sinh vật biển", "Vì sao biển có sóng", "Cá voi sống ở đâu"],
+          "a": 1,
+          "explain": "Minh hỏi thầy giáo làm sao con người khai thác đại dương mà không làm hại sinh vật biển."
+        },
+        {
+          "type": "read",
+          "vanBan": "Nam rất thích bài thơ cô giáo dạy về Trái Đất xanh. Bài thơ kêu gọi mọi người trồng thêm cây xanh, bảo vệ rừng và không xả rác bừa bãi. Về nhà, Nam liền rủ em gái cùng trồng một chậu cây nhỏ trước sân. \"Chúng mình hãy chăm sóc cây thật tốt để Trái Đất luôn xanh tươi nhé!\", Nam nói với em gái. Từ đó, ngày nào hai anh em cũng tưới nước cho cây đều đặn.",
+          "q": "Sau khi học bài thơ, Nam đã làm gì?",
+          "options": ["Vứt rác ra sân trường", "Rủ em gái cùng trồng một chậu cây nhỏ", "Chặt cây trong vườn", "Không quan tâm đến cây cối"],
+          "a": 1,
+          "explain": "Nam rủ em gái cùng trồng một chậu cây nhỏ trước sân để góp phần giữ Trái Đất xanh tươi."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu \"Chúng mình hãy chăm sóc cây thật tốt để Trái Đất luôn xanh tươi nhé!\" thuộc kiểu câu nào?",
+          "options": ["Câu kể", "Câu hỏi", "Câu khiến", "Câu cảm"],
+          "a": 2,
+          "explain": "Câu có từ \"hãy\" và \"nhé\" dùng để đề nghị, yêu cầu nên là câu khiến."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu \"Ôi, đại dương đẹp và kỳ vĩ biết bao!\" thuộc kiểu câu nào?",
+          "options": ["Câu kể", "Câu cảm", "Câu hỏi", "Câu khiến"],
+          "a": 1,
+          "explain": "Câu có từ cảm thán \"Ôi\" và \"biết bao\" bộc lộ cảm xúc nên là câu cảm."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu \"Để bảo vệ rừng, mọi người cùng nhau trồng thêm cây xanh.\", đâu là vị ngữ?",
+          "options": ["Để bảo vệ rừng", "mọi người", "cùng nhau trồng thêm cây xanh", "cây xanh"],
+          "a": 2,
+          "explain": "\"cùng nhau trồng thêm cây xanh\" là vị ngữ, nêu hoạt động của chủ ngữ \"mọi người\"."
+        },
+        {
+          "type": "fill",
+          "q": "Đại dương ẩn ___ nhiều kho báu quý giá. (điền ch hoặc tr)",
+          "answer": "chứa",
+          "accept": ["chứa"]
+        },
+        {
+          "type": "fill",
+          "q": "Mọi người cùng nhau trồng cây để Trái Đất thêm ___ tươi. (điền x hoặc s)",
+          "answer": "xanh",
+          "accept": ["xanh"]
+        },
+        {
+          "type": "solve",
+          "de": "Em hãy viết 2-3 câu nêu cảm nghĩ của em về việc bảo vệ môi trường, trong đó có sử dụng ít nhất một câu cảm hoặc một câu khiến.",
+          "hints": [
+            "Em nghĩ về những việc nhỏ mình có thể làm như trồng cây, không xả rác nhé.",
+            "Câu cảm thường có từ như \"Ôi\", \"biết bao\", \"quá\"; câu khiến thường có từ \"hãy\", \"đừng\", \"nhé\".",
+            "Em nhớ đặt đúng dấu câu: câu cảm và câu khiến thường kết thúc bằng dấu chấm than đó!"
+          ],
+          "loiGiai": "Ôi, Trái Đất của chúng ta thật đẹp biết bao! Em mong mọi người hãy cùng nhau trồng thêm nhiều cây xanh và không xả rác bừa bãi. Có như vậy, môi trường sống của chúng ta mới luôn trong lành.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    },
+    {
+      "so": 4,
+      "ten": "Tuần 35: Ôn tập cuối học kì II",
+      "lyThuyet": "Tuần này em ôn tập tổng hợp các bài đọc đã học, ôn về câu kể, câu hỏi, câu khiến, câu cảm cùng chủ ngữ, vị ngữ, trạng ngữ. Em cũng luyện viết đoạn văn nêu cảm xúc và bài văn miêu tả con vật.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Sau vườn nhà Bình có một cây chuối đã trồng từ lâu. Thân chuối thẳng đứng, khoác lên mình lớp áo màu xanh nhạt nhiều lớp bẹ xếp chồng lên nhau. Những tàu lá chuối to bản, xanh mướt, khẽ đung đưa mỗi khi có gió thổi qua. Đến mùa, cây trổ buồng, từng nải chuối non xanh mọc san sát, lớn dần theo ngày tháng. Bình thích nhất là được cùng bà ra vườn ngắm buồng chuối chín vàng, thơm lừng cả một góc sân.",
+          "q": "Bình thích nhất điều gì khi nói về cây chuối trong vườn?",
+          "options": ["Được cùng bà ngắm buồng chuối chín vàng", "Được chặt cây chuối", "Được bán chuối ngoài chợ", "Được vẽ tranh cây chuối"],
+          "a": 0,
+          "explain": "Bình thích nhất là được cùng bà ra vườn ngắm buồng chuối chín vàng, thơm lừng cả một góc sân."
+        },
+        {
+          "type": "read",
+          "vanBan": "Suốt bốn chủ điểm đã học trong năm, Minh nhớ mãi những câu chuyện về thiên nhiên tươi đẹp, về loài vật đáng yêu và về những miền đất xa xôi kỳ thú. Minh nhận ra rằng, dù là cánh chim trên đảo xa, dòng sông hiền hòa hay đại dương bao la, tất cả đều nhắc nhở con người phải biết yêu thương và bảo vệ thiên nhiên. Minh tự hứa sẽ cùng bạn bè góp một phần nhỏ bé để giữ gìn một thế giới xanh, sạch và bình yên.",
+          "q": "Minh đã tự hứa điều gì sau khi học xong các chủ điểm?",
+          "options": ["Sẽ không học Tiếng Việt nữa", "Sẽ cùng bạn bè góp phần giữ gìn một thế giới xanh, sạch, bình yên", "Sẽ đi du lịch khắp nơi", "Sẽ trở thành nhà khoa học"],
+          "a": 1,
+          "explain": "Minh tự hứa sẽ cùng bạn bè góp một phần nhỏ bé để giữ gìn một thế giới xanh, sạch và bình yên."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu \"Bạn có thích khám phá đại dương không?\" thuộc kiểu câu nào?",
+          "options": ["Câu kể", "Câu hỏi", "Câu khiến", "Câu cảm"],
+          "a": 1,
+          "explain": "Câu dùng để hỏi, có từ nghi vấn \"có...không\" và kết thúc bằng dấu chấm hỏi nên là câu hỏi."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu \"Mùa hè năm ngoái, cả lớp em đi tham quan vườn quốc gia.\", trạng ngữ trong câu chỉ điều gì?",
+          "options": ["Chỉ nơi chốn", "Chỉ thời gian", "Chỉ nguyên nhân", "Chỉ mục đích"],
+          "a": 1,
+          "explain": "\"Mùa hè năm ngoái\" là trạng ngữ chỉ thời gian, cho biết thời điểm diễn ra sự việc."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu nào dưới đây là câu kể có đủ chủ ngữ và vị ngữ?",
+          "options": ["Chao ôi, cảnh biển đẹp quá!", "Bạn hãy giữ gìn môi trường sạch đẹp nhé.", "Những chú cá heo bơi lội tung tăng trong làn nước trong xanh.", "Vì sao biển lại xanh như vậy?"],
+          "a": 2,
+          "explain": "Câu \"Những chú cá heo bơi lội tung tăng trong làn nước trong xanh.\" là câu kể, có chủ ngữ \"Những chú cá heo\" và vị ngữ \"bơi lội tung tăng trong làn nước trong xanh\"."
+        },
+        {
+          "type": "fill",
+          "q": "Em rất yêu quý thiên nhiên nên luôn ___ ý bảo vệ cây xanh. (điền ch hoặc tr)",
+          "answer": "chú",
+          "accept": ["chú"]
+        },
+        {
+          "type": "fill",
+          "q": "Cả lớp cùng nhau ___ dọn vệ sinh sân trường mỗi tuần. (điền d, gi hoặc r)",
+          "answer": "ra",
+          "accept": ["ra"]
+        },
+        {
+          "type": "solve",
+          "de": "Em hãy viết một đoạn văn ngắn (3-4 câu) miêu tả một con vật em yêu thích, trong đó có sử dụng ít nhất một trạng ngữ và một câu cảm hoặc câu khiến.",
+          "hints": [
+            "Em chọn một con vật quen thuộc như chú mèo, chú chó hay con chim nhỏ nhé.",
+            "Em tả hình dáng, hoạt động của con vật, nhớ thêm trạng ngữ chỉ thời gian hoặc nơi chốn ở đầu câu.",
+            "Đừng quên thêm một câu cảm thán hoặc câu khiến để đoạn văn thêm sinh động nha em!"
+          ],
+          "loiGiai": "Mỗi buổi sáng, chú mèo nhà em thường nằm cuộn tròn sưởi nắng trước hiên nhà. Bộ lông của chú mềm mượt, đôi mắt tròn xoe long lanh như hai hòn bi ve. Ôi, chú mèo đáng yêu làm sao! Em mong mọi người hãy luôn yêu thương và chăm sóc những con vật nhỏ bé xung quanh mình.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    }
+  ]
+}

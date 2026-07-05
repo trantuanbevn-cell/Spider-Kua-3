@@ -1,0 +1,336 @@
+{
+  "mon": "tv",
+  "tap": 2,
+  "chuDe": "Sống để yêu thương",
+  "cdSo": 5,
+  "bai": [
+    {
+      "so": 1,
+      "ten": "Tuần 19: Hải Thượng Lãn Ông",
+      "lyThuyet": "Tuần này em học khái niệm CÂU: câu là một tập hợp từ diễn đạt một ý trọn vẹn, chữ cái đầu câu viết hoa, cuối câu có dấu chấm, dấu chấm hỏi hoặc dấu chấm than. Em cũng đọc hai câu chuyện cảm động về lòng yêu thương con người qua các bài Hải Thượng Lãn Ông và Vệt phấn trên mặt bàn.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Ở xóm núi có một ông lang tên là Tư, nổi tiếng mát tay chữa bệnh. Nhà ai nghèo khó, ông không lấy tiền công, có khi còn cho thêm gạo, thêm thuốc. Một đêm mưa gió, có người gõ cửa xin ông đến cứu đứa con nhỏ đang lên cơn sốt cao. Ông Tư xách túi thuốc, đội mưa đi ngay không một lời than vãn. Sáng hôm sau, đứa bé hạ sốt, cả nhà mừng rỡ cảm ơn. Ông Tư chỉ cười hiền và nói: \"Cứu người là việc phải làm, ơn nghĩa gì đâu.\"",
+          "q": "Vì sao ông Tư được người dân xóm núi quý mến?",
+          "options": ["Vì ông giàu có nhất xóm", "Vì ông chữa bệnh giỏi và thương người nghèo, không màng tiền công", "Vì ông có nhà to đẹp", "Vì ông hay kể chuyện vui"],
+          "a": 1,
+          "explain": "Ông Tư chữa bệnh mát tay, không lấy tiền công nhà nghèo, còn giúp đỡ thêm nên được dân xóm núi quý mến."
+        },
+        {
+          "type": "read",
+          "vanBan": "Nam có một người bạn tên Bình bị liệt hai chân từ nhỏ, phải ngồi xe lăn đến lớp. Mỗi sáng, Nam đều ghé nhà đẩy xe giúp Bình tới trường, dù nhà Nam ở hướng ngược lại. Có bạn hỏi sao Nam chịu đi xa vậy, Nam chỉ cười: \"Bình là bạn tớ, giúp bạn thì có gì phải ngại.\" Nhờ có Nam, Bình không bao giờ đến lớp muộn, và nụ cười của Bình mỗi sáng khiến Nam thấy vui lây.",
+          "q": "Việc làm của Nam thể hiện điều gì?",
+          "options": ["Nam thích đi học sớm", "Tình bạn chân thành và sự sẻ chia, giúp đỡ bạn bè", "Nam muốn được khen thưởng", "Nam không thích đi đường gần"],
+          "a": 1,
+          "explain": "Nam sẵn sàng đi xa hơn để giúp bạn Bình đến trường, thể hiện tình bạn chân thành, biết sẻ chia và giúp đỡ người khác."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu là gì?",
+          "options": [
+            "Là một chữ cái bất kì trong bảng chữ cái",
+            "Là một tập hợp từ diễn đạt một ý trọn vẹn, đầu câu viết hoa, cuối câu có dấu kết thúc",
+            "Là một đoạn văn gồm nhiều câu",
+            "Là dấu chấm đặt cuối mỗi đoạn văn"
+          ],
+          "a": 1,
+          "explain": "Câu là tập hợp từ diễn đạt một ý trọn vẹn, chữ cái đầu câu viết hoa và cuối câu có dấu kết thúc (dấu chấm, dấu chấm hỏi, dấu chấm than)."
+        },
+        {
+          "type": "mcq",
+          "q": "Dòng nào dưới đây là một câu hoàn chỉnh?",
+          "options": [
+            "những bông hoa trong vườn",
+            "Bà em đang tưới rau ngoài vườn.",
+            "con mèo nhỏ và cuộn len",
+            "trên bầu trời xanh"
+          ],
+          "a": 1,
+          "explain": "\"Bà em đang tưới rau ngoài vườn.\" diễn đạt một ý trọn vẹn, có chữ đầu viết hoa và dấu chấm kết thúc nên là một câu hoàn chỉnh."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu nào sau đây kết thúc bằng dấu câu đúng để thể hiện lời hỏi?",
+          "options": [
+            "Em có thích đọc truyện không.",
+            "Em có thích đọc truyện không!",
+            "Em có thích đọc truyện không?",
+            "Em có thích đọc truyện không,"
+          ],
+          "a": 2,
+          "explain": "Câu hỏi phải kết thúc bằng dấu chấm hỏi (?), vì vậy \"Em có thích đọc truyện không?\" là đúng."
+        },
+        {
+          "type": "fill",
+          "q": "Bà em thường ___ lòng thương những người nghèo khó. (điền l hoặc n)",
+          "answer": "nặng",
+          "accept": ["nặng lòng", "nặng"]
+        },
+        {
+          "type": "fill",
+          "q": "Ông lang già đi khắp ___ để chữa bệnh cho dân nghèo. (điền ch hoặc tr)",
+          "answer": "trong làng",
+          "accept": ["trong làng", "chốn quê"]
+        },
+        {
+          "type": "solve",
+          "de": "Em hãy viết 2-3 câu kể về một việc tốt em từng làm để giúp đỡ người khác. Chú ý mỗi câu phải diễn đạt ý trọn vẹn, đầu câu viết hoa, cuối câu có dấu kết thúc.",
+          "hints": [
+            "Anh gợi ý nè: em nhớ lại xem mình từng giúp ai đó chưa, ví dụ giúp bạn nhặt đồ rơi hay dắt cụ già qua đường nhé.",
+            "Mỗi câu em viết phải nói trọn một ý, đừng viết nửa chừng rồi bỏ dở nha.",
+            "Nhớ viết hoa chữ đầu câu và đặt dấu chấm ở cuối mỗi câu cho đúng nhé, Fury tin em làm được!"
+          ],
+          "loiGiai": "Hôm qua em thấy một cụ già đánh rơi túi cam ở cổng chợ. Em vội chạy tới nhặt giúp cụ và xách hộ tới tận nhà. Cụ cảm ơn em rối rít, em thấy trong lòng rất vui.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    },
+    {
+      "so": 2,
+      "ten": "Tuần 20: Ông Bụt đã đến",
+      "lyThuyet": "Tuần này em học về Hai thành phần chính của câu: Chủ ngữ (nêu người, vật được nói đến) và Vị ngữ (nêu hoạt động, trạng thái, đặc điểm của chủ ngữ). Em cũng đọc bài Ông Bụt đã đến và bài thơ Quả ngọt cuối mùa nói về tình yêu thương của người lớn dành cho trẻ nhỏ và của người bà dành cho cháu.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Nhà bác Tâm trồng một vườn cúc vàng rất đẹp trước sân. Một hôm, bé Lan mải chơi đá bóng, lỡ chân đá quả bóng bay thẳng vào luống cúc, làm gãy mấy cành hoa. Lan sợ hãi định bỏ chạy nhưng rồi lại quay vào xin lỗi bác Tâm. Không ngờ bác Tâm chỉ cười hiền: \"Không sao đâu cháu, hoa gãy rồi lại trồng cây khác, quan trọng là cháu biết nhận lỗi.\" Bác còn lấy cho Lan một chậu hoa nhỏ mang về nhà trồng. Lan thấy lòng nhẹ nhõm và rất biết ơn bác.",
+          "q": "Vì sao bé Lan cảm thấy nhẹ nhõm và biết ơn bác Tâm?",
+          "options": [
+            "Vì bác Tâm cho Lan tiền",
+            "Vì bác Tâm không trách mắng mà còn độ lượng tặng hoa cho Lan",
+            "Vì bác Tâm giúp Lan đá bóng giỏi hơn",
+            "Vì bác Tâm mời Lan ăn cơm"
+          ],
+          "a": 1,
+          "explain": "Bác Tâm không trách mắng khi Lan làm gãy hoa mà còn nhẹ nhàng tha thứ và tặng chậu hoa nhỏ, khiến Lan cảm động và biết ơn."
+        },
+        {
+          "type": "read",
+          "vanBan": "Cuối vườn nhà bà ngoại có một cây khế ngọt đã hơn hai mươi năm tuổi. Mỗi mùa khế chín, bà đều để dành những chùm quả to nhất, ngọt nhất, đợi đến cuối tuần cháu về chơi mới hái xuống. Bà bảo: \"Bà già rồi, ăn được bao nhiêu, để dành phần các cháu cho vui.\" Nam nghe bà nói vậy, thấy sống mũi cay cay, chỉ muốn ôm bà thật chặt.",
+          "q": "Câu nói của bà ngoại thể hiện điều gì?",
+          "options": [
+            "Bà không thích ăn khế",
+            "Tình yêu thương, sự hi sinh của bà dành cho cháu",
+            "Bà muốn bán khế lấy tiền",
+            "Bà sợ cháu buồn"
+          ],
+          "a": 1,
+          "explain": "Bà để dành những quả khế ngon nhất cho cháu dù bản thân có thể ăn, thể hiện tình yêu thương và sự hi sinh thầm lặng của bà dành cho cháu."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu thường gồm hai thành phần chính nào?",
+          "options": [
+            "Trạng ngữ và bổ ngữ",
+            "Chủ ngữ và vị ngữ",
+            "Danh từ và tính từ",
+            "Dấu câu và chữ hoa"
+          ],
+          "a": 1,
+          "explain": "Hai thành phần chính của câu là Chủ ngữ (nêu người, vật được nói đến) và Vị ngữ (nêu hoạt động, trạng thái, đặc điểm của chủ ngữ)."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu \"Mẹ của Mai lo lắng.\", đâu là chủ ngữ?",
+          "options": ["lo lắng", "của Mai", "Mẹ của Mai", "Mai lo lắng"],
+          "a": 2,
+          "explain": "\"Mẹ của Mai\" là bộ phận nêu người được nói đến trong câu, đó chính là chủ ngữ; \"lo lắng\" là vị ngữ."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu \"Bà em rất hiền hậu.\", vị ngữ là bộ phận nào?",
+          "options": ["Bà em", "rất hiền hậu", "em rất", "Bà"],
+          "a": 1,
+          "explain": "\"rất hiền hậu\" là bộ phận nêu đặc điểm của chủ ngữ \"Bà em\", nên đó là vị ngữ của câu."
+        },
+        {
+          "type": "fill",
+          "q": "Bà ngoại ___ dành những trái ngọt nhất cho cháu. (điền d, gi hoặc r)",
+          "answer": "dành",
+          "accept": ["dành"]
+        },
+        {
+          "type": "fill",
+          "q": "Khu vườn ___ đầy hoa cúc vàng rực rỡ. (điền s hoặc x)",
+          "answer": "sum suê",
+          "accept": ["sum suê", "xanh"]
+        },
+        {
+          "type": "solve",
+          "de": "Em hãy viết 2-3 câu về một người thân trong gia đình, mỗi câu đều có đủ hai thành phần Chủ ngữ và Vị ngữ. Gạch chân hoặc nêu rõ đâu là chủ ngữ, đâu là vị ngữ trong lời giải.",
+          "hints": [
+            "Anh gợi ý em nghĩ về ông, bà, bố hoặc mẹ - người mà em yêu quý nhất nhé.",
+            "Mỗi câu cần có phần nêu 'ai, cái gì' (chủ ngữ) và phần nêu 'làm gì, thế nào' (vị ngữ) đó em.",
+            "Viết xong em thử tự hỏi: câu này nói về ai, và người đó đang làm gì hoặc như thế nào, để kiểm tra lại nhé!"
+          ],
+          "loiGiai": "Ông em (chủ ngữ) / rất hiền từ và thương cháu (vị ngữ). Mỗi buổi chiều, ông (chủ ngữ) / thường kể chuyện cổ tích cho em nghe (vị ngữ). Em (chủ ngữ) / rất yêu quý ông (vị ngữ).",
+          "dapSo": "tự chấm"
+        }
+      ]
+    },
+    {
+      "so": 3,
+      "ten": "Tuần 21: Tờ báo tường của tôi",
+      "lyThuyet": "Tuần này em luyện tập xác định Chủ ngữ của câu - bộ phận nêu người, vật, sự việc được nói đến trong câu, thường trả lời cho câu hỏi Ai? Con gì? Cái gì?. Em cũng đọc bài Tờ báo tường của tôi và bài thơ Tiếng ru của nhà thơ Tố Hữu nói về tình yêu thương, sự gắn bó giữa con người với cộng đồng.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Sắp đến ngày 20 tháng 11, lớp của Minh được giao làm một tờ báo tường để chào mừng thầy cô giáo. Cả lớp chia nhau mỗi người một việc: bạn viết bài, bạn vẽ tranh, bạn cắt dán trang trí. Minh được giao vẽ khung viền cho tờ báo. Dù vẽ chưa đẹp lắm, Minh vẫn cố gắng hết sức, tô đi tô lại nhiều lần. Khi tờ báo hoàn thành, cả lớp ai cũng vui mừng, còn cô giáo thì khen cả lớp đã đoàn kết, cùng nhau làm nên một sản phẩm ý nghĩa.",
+          "q": "Điều gì khiến cô giáo khen ngợi cả lớp của Minh?",
+          "options": [
+            "Vì tờ báo tường được in màu đẹp",
+            "Vì cả lớp đoàn kết, cùng nhau cố gắng hoàn thành tờ báo tường",
+            "Vì lớp Minh nộp bài sớm nhất trường",
+            "Vì Minh vẽ tranh rất đẹp"
+          ],
+          "a": 1,
+          "explain": "Cô giáo khen cả lớp vì tinh thần đoàn kết, mỗi bạn một việc, cùng cố gắng để hoàn thành tờ báo tường ý nghĩa."
+        },
+        {
+          "type": "read",
+          "vanBan": "Trong tổ chim sẻ nhỏ trên cành xoan, chim mẹ ngày ngày bay đi tìm mồi cho đàn con. Có hôm trời mưa to, chim mẹ vẫn cố bay ra ngoài kiếm ăn để đàn con không bị đói. Đàn chim non đứng trong tổ, ngóng mẹ về, khi thấy bóng mẹ liền ríu rít vui mừng. Nhìn cảnh ấy, An chợt nhớ đến mẹ mình - người cũng luôn vất vả lo cho An từng bữa ăn, giấc ngủ.",
+          "q": "Vì sao An lại nhớ đến mẹ mình khi nhìn đàn chim sẻ?",
+          "options": [
+            "Vì An thích nuôi chim sẻ",
+            "Vì hình ảnh chim mẹ vất vả nuôi con khiến An liên tưởng đến sự vất vả, yêu thương của mẹ mình",
+            "Vì An sợ trời mưa",
+            "Vì An muốn viết bài văn tả chim"
+          ],
+          "a": 1,
+          "explain": "Cảnh chim mẹ vất vả kiếm mồi nuôi con dưới trời mưa gợi cho An nhớ đến sự vất vả và tình yêu thương của mẹ dành cho mình."
+        },
+        {
+          "type": "mcq",
+          "q": "Chủ ngữ của câu thường trả lời cho câu hỏi nào?",
+          "options": [
+            "Làm gì? Như thế nào?",
+            "Ai? Con gì? Cái gì?",
+            "Ở đâu? Khi nào?",
+            "Vì sao? Để làm gì?"
+          ],
+          "a": 1,
+          "explain": "Chủ ngữ nêu người, vật, sự việc được nói đến trong câu nên thường trả lời cho câu hỏi Ai? Con gì? Cái gì?"
+        },
+        {
+          "type": "mcq",
+          "q": "Xác định chủ ngữ trong câu: \"Những bông hoa hồng đang tỏa hương thơm ngát.\"",
+          "options": ["đang tỏa hương thơm ngát", "Những bông hoa hồng", "hương thơm ngát", "hoa hồng đang"],
+          "a": 1,
+          "explain": "\"Những bông hoa hồng\" là bộ phận nêu sự vật được nói đến, trả lời câu hỏi Cái gì?, nên đó là chủ ngữ của câu."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu \"Cả lớp em hăng say làm báo tường.\", chủ ngữ là gì?",
+          "options": ["hăng say làm báo tường", "Cả lớp em", "làm báo tường", "em hăng say"],
+          "a": 1,
+          "explain": "\"Cả lớp em\" là bộ phận nêu người được nói đến, trả lời câu hỏi Ai?, nên đó là chủ ngữ của câu."
+        },
+        {
+          "type": "fill",
+          "q": "Con ong chăm chỉ bay đi tìm mật ___ hoa. (điền ch hoặc tr)",
+          "answer": "trên",
+          "accept": ["trên", "trong"]
+        },
+        {
+          "type": "fill",
+          "q": "Cả lớp cùng nhau ___ sức làm tờ báo tường thật đẹp. (điền r, d hoặc gi)",
+          "answer": "ra",
+          "accept": ["ra sức", "gắng"]
+        },
+        {
+          "type": "solve",
+          "de": "Em hãy viết 2-3 câu tả về lớp học hoặc bạn bè của em, sau đó chỉ rõ chủ ngữ trong mỗi câu.",
+          "hints": [
+            "Anh gợi ý em nghĩ về lớp học, cô giáo hoặc các bạn thân của em để viết cho dễ nhé.",
+            "Em nhớ đặt câu hỏi Ai? hoặc Cái gì? cho từng câu để tìm ra chủ ngữ chính xác nha.",
+            "Viết xong nhớ đọc lại xem câu đã đủ ý và đúng chính tả chưa, Fury luôn tin tưởng em!"
+          ],
+          "loiGiai": "Lớp em (chủ ngữ) luôn đoàn kết và giúp đỡ nhau trong học tập. Bạn Hà (chủ ngữ) hát rất hay và thường biểu diễn văn nghệ. Cô giáo em (chủ ngữ) luôn tận tình chỉ bảo chúng em.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    },
+    {
+      "so": 4,
+      "ten": "Tuần 22: Con muốn làm một cái cây",
+      "lyThuyet": "Tuần này em luyện tập xác định Vị ngữ của câu - bộ phận nêu hoạt động, trạng thái hoặc đặc điểm của sự vật nêu ở chủ ngữ, thường trả lời cho câu hỏi Làm gì? Thế nào? Là gì?. Em cũng đọc bài Con muốn làm một cái cây và bài Trên khóm tre đầu ngõ nói về tình cảm gắn bó với gia đình, thiên nhiên.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Trước sân nhà, ông nội trồng một cây ổi từ ngày bố còn nhỏ. Bây giờ cây ổi đã to, tán lá xòe rộng che mát cả góc sân. Bé Bum rất thích ngồi dưới gốc ổi nghe ông kể chuyện ngày xưa. Một hôm, Bum hỏi ông: \"Ông ơi, sau này cây ổi có già đi không?\". Ông cười bảo: \"Cây già thì lại có cây non thay thế, giống như ông sẽ già đi và con sẽ lớn lên vậy.\" Bum nghe xong, thầm ước mình sẽ lớn thật nhanh để có thể che chở, chăm sóc cho ông như cây ổi vẫn che mát cho cả nhà.",
+          "q": "Vì sao bé Bum ước mình lớn thật nhanh?",
+          "options": [
+            "Vì Bum muốn được đi học",
+            "Vì Bum muốn lớn lên để che chở, chăm sóc cho ông như cây ổi che mát cho cả nhà",
+            "Vì Bum muốn trồng nhiều cây ổi hơn",
+            "Vì Bum muốn được ông cho quà"
+          ],
+          "a": 1,
+          "explain": "Câu chuyện ông kể về cây già - cây non thay thế khiến Bum liên tưởng và ước mình lớn nhanh để chăm sóc, che chở cho ông."
+        },
+        {
+          "type": "read",
+          "vanBan": "Ở đầu ngõ nhà Minh có một khóm tre xanh rì rào mỗi khi có gió thổi qua. Trong khóm tre ấy là mái nhà chung của biết bao loài chim: chim sẻ làm tổ ở tầng thấp, chim sáo chọn cành cao hơn, còn đôi chim cu gáy thì thích những cành tre nghiêng nghiêng gần bờ ao. Mỗi sáng, Minh thức dậy đã nghe tiếng chim ríu rít gọi nhau, rộn rã cả một góc vườn. Minh thầm nghĩ, khóm tre nhỏ bé ấy lại chở che biết bao mái ấm cho các loài chim.",
+          "q": "Khóm tre đầu ngõ có ý nghĩa gì đối với các loài chim?",
+          "options": [
+            "Là nơi các loài chim đi qua rồi bay tiếp",
+            "Là mái nhà chung, nơi trú ngụ và làm tổ của nhiều loài chim",
+            "Là nơi chim tìm thức ăn duy nhất",
+            "Là nơi chim sợ hãi không dám đến gần"
+          ],
+          "a": 1,
+          "explain": "Khóm tre là nơi trú ngụ, làm tổ của nhiều loài chim khác nhau như chim sẻ, chim sáo, chim cu gáy, trở thành mái nhà chung của chúng."
+        },
+        {
+          "type": "mcq",
+          "q": "Vị ngữ của câu thường trả lời cho câu hỏi nào?",
+          "options": [
+            "Ai? Con gì? Cái gì?",
+            "Làm gì? Thế nào? Là gì?",
+            "Ở đâu? Bao giờ?",
+            "Bằng gì? Với ai?"
+          ],
+          "a": 1,
+          "explain": "Vị ngữ nêu hoạt động, trạng thái hoặc đặc điểm của chủ ngữ nên thường trả lời cho câu hỏi Làm gì? Thế nào? Là gì?"
+        },
+        {
+          "type": "mcq",
+          "q": "Xác định vị ngữ trong câu: \"Sóng biển vỗ rì rào vào mạn thuyền.\"",
+          "options": ["Sóng biển", "vỗ rì rào vào mạn thuyền", "vào mạn thuyền", "rì rào"],
+          "a": 1,
+          "explain": "\"vỗ rì rào vào mạn thuyền\" nêu hoạt động của \"Sóng biển\", trả lời câu hỏi Làm gì?, nên đó là vị ngữ của câu."
+        },
+        {
+          "type": "mcq",
+          "q": "Xác định vị ngữ trong câu: \"Mẹ em là giáo viên dạy Toán.\"",
+          "options": ["Mẹ em", "là giáo viên dạy Toán", "dạy Toán", "giáo viên"],
+          "a": 1,
+          "explain": "\"là giáo viên dạy Toán\" giới thiệu về \"Mẹ em\", trả lời câu hỏi Là gì?, nên đó là vị ngữ của câu."
+        },
+        {
+          "type": "fill",
+          "q": "Khóm tre đầu ___ rì rào trong gió. (điền ng hoặc ngh)",
+          "answer": "ngõ",
+          "accept": ["ngõ"]
+        },
+        {
+          "type": "fill",
+          "q": "Ông em trồng một cây ổi ___ trước sân nhà. (điền x hoặc s)",
+          "answer": "xanh tốt",
+          "accept": ["xanh tốt", "xum xuê"]
+        },
+        {
+          "type": "solve",
+          "de": "Em hãy viết 2-3 câu tả một loài cây hoặc loài vật em yêu thích, trong đó có ít nhất một câu vị ngữ là cụm động từ và một câu vị ngữ có dùng từ \"là\". Chỉ rõ vị ngữ trong lời giải.",
+          "hints": [
+            "Anh gợi ý em chọn một loài cây hoặc con vật quen thuộc như cây ổi, cây phượng, hay chú mèo nhà em nhé.",
+            "Câu có vị ngữ là cụm động từ thì tả hành động, ví dụ 'đang đung đưa trong gió'; câu dùng từ 'là' thì dùng để giới thiệu, ví dụ 'là loài cây em thích nhất'.",
+            "Viết xong em đọc lại, thử gạch chân phần vị ngữ để kiểm tra cho chắc chắn nhé, Fury cổ vũ em đó!"
+          ],
+          "loiGiai": "Cây ổi trong vườn (chủ ngữ) đang đung đưa những tán lá xanh trong gió (vị ngữ - cụm động từ). Cây ổi (chủ ngữ) là loài cây em yêu thích nhất (vị ngữ có từ 'là'). Mỗi mùa quả chín, cây ổi (chủ ngữ) tỏa hương thơm ngát khắp sân nhà (vị ngữ).",
+          "dapSo": "tự chấm"
+        }
+      ]
+    }
+  ]
+}

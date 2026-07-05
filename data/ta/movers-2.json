@@ -1,0 +1,109 @@
+{
+  "mon": "ta",
+  "level": "movers",
+  "chuDe": "Movers phần 2",
+  "cdSo": 2,
+  "bai": [
+    {
+      "so": 6,
+      "ten": "Unit 6: Nature & Wild Animals",
+      "lyThuyet": "Chào em, anh Fury đây! Hôm nay tụi mình sẽ khám phá thế giới động vật hoang dã và học cách so sánh chúng nhé: bigger (to hơn), faster (nhanh hơn), stronger (khỏe hơn), smaller (nhỏ hơn), taller (cao hơn). Từ vựng quan trọng: elephant (con voi), lion (sư tử), tiger (hổ), forest (rừng), mountain (núi), river (sông), jungle (rừng rậm), wild (hoang dã). Em nhớ mẫu câu 'A is bigger than B' (A to hơn B) nha, cùng anh luyện tập thôi!",
+      "cauHoi": [
+        {"type":"listen","audioText":"The elephant is bigger than the lion.","q":"Con vật nào được nhắc đến là to hơn?","options":["Con voi","Con sư tử","Con hổ","Con khỉ"],"a":0,"explain":"Câu nghĩa là 'Con voi to hơn con sư tử.' Elephant (con voi) đứng trước 'is bigger than' nên nó là con to hơn đó em!"},
+        {"type":"listen","audioText":"The cheetah runs faster than the horse.","q":"Con báo gêpa chạy như thế nào so với con ngựa?","options":["Chậm hơn","Nhanh hơn","Bằng nhau","Không chạy được"],"a":1,"explain":"'The cheetah runs faster than the horse' nghĩa là 'Báo gêpa chạy nhanh hơn ngựa.' Từ 'faster than' là so sánh hơn của 'fast' đó em."},
+        {"type":"listen","audioText":"There are many tall trees in the forest.","q":"Trong rừng có gì?","options":["Nhiều cây cao","Nhiều con sông","Nhiều ngọn núi","Nhiều ngôi nhà"],"a":0,"explain":"Câu nghĩa là 'Có rất nhiều cây cao trong rừng.' Cấu trúc 'There are' dùng để nói có nhiều vật gì đó, em nhớ áp dụng nha!"},
+        {"type":"speak","prompt":"Hãy nói: Con sư tử mạnh hơn con mèo.","target":"The lion is stronger than the cat","accept":["the lion is stronger than the cat","lion is stronger than the cat"]},
+        {"type":"speak","prompt":"Hãy nói: Có một con sông ở gần núi.","target":"There is a river near the mountain","accept":["there is a river near the mountain","there's a river near the mountain"]},
+        {"type":"speak","prompt":"Hãy nói: Con khỉ nhanh hơn con rùa.","target":"The monkey is faster than the turtle","accept":["the monkey is faster than the turtle","monkey is faster than the turtle"]},
+        {"type":"read","vanBan":"Tom and his family went to the jungle last summer. They saw a big elephant and a fast monkey. The elephant was bigger than the monkey, but the monkey was faster. Tom said, 'The jungle is amazing!'","q":"Ai nhanh hơn trong đoạn văn?","options":["Con voi","Con khỉ","Tom","Gia đình Tom"],"a":1,"explain":"Đoạn văn viết 'the monkey was faster' nghĩa là con khỉ nhanh hơn. Còn con voi thì to hơn (bigger) chứ không nhanh hơn nha em."},
+        {"type":"read","vanBan":"The mountain near our village is very tall. There is a small river at the bottom of the mountain. Wild animals like deer and rabbits live there. It is a beautiful and quiet place.","q":"Con vật nào được nhắc đến sống ở đó?","options":["Voi và sư tử","Hươu và thỏ","Hổ và báo","Khỉ và rùa"],"a":1,"explain":"Đoạn văn nói 'deer and rabbits live there' nghĩa là hươu và thỏ sống ở đó. Em đọc kỹ từ vựng con vật sẽ tìm ra đáp án đúng!"},
+        {"type":"mcq","q":"Chọn từ đúng: The tiger is _____ than the small cat. (so sánh 'strong')","options":["strong","stronger","strongest","more strong"],"a":1,"explain":"Với tính từ ngắn như 'strong', ta thêm '-er' để so sánh hơn: stronger. Vậy đáp án đúng là 'stronger' em nhé."},
+        {"type":"mcq","q":"Chọn câu đúng để nói 'Có nhiều cây trong rừng':","options":["There is many trees in the forest","There are many trees in the forest","There be many trees in the forest","There are many tree in the forest"],"a":1,"explain":"Với danh từ số nhiều 'trees', ta dùng 'There are'. Đáp án đúng là 'There are many trees in the forest'."},
+        {"type":"spell","q":"Điền dạng so sánh hơn của 'big': The whale is ___ than the shark.","answer":"bigger","accept":["bigger"]},
+        {"type":"spell","q":"Điền từ: A place with lots of trees is called a f___t.","answer":"forest","accept":["forest"]},
+        {"type":"spell","q":"Điền dạng so sánh hơn của 'fast': The rabbit is ___ than the turtle.","answer":"faster","accept":["faster"]}
+      ]
+    },
+    {
+      "so": 7,
+      "ten": "Unit 7: Holidays & Travel",
+      "lyThuyet": "Chào em trai của anh Fury! Unit này mình học về kỳ nghỉ và du lịch nhé. Từ vựng cần nhớ: airport (sân bay), suitcase (vali), beach (bãi biển), hotel (khách sạn), ticket (vé), passport (hộ chiếu), holiday (kỳ nghỉ), abroad (nước ngoài). Ngữ pháp hôm nay là 'going to' để nói về kế hoạch tương lai (I am going to go...) và quá khứ đơn để kể lại chuyến đi đã qua (We went, We stayed, We visited). Cùng anh luyện tập thật vui nha!",
+      "cauHoi": [
+        {"type":"listen","audioText":"We are going to travel to the beach next weekend.","q":"Gia đình sẽ đi đâu vào cuối tuần tới?","options":["Đến núi","Đến bãi biển","Đến sân bay","Đến khách sạn"],"a":1,"explain":"'We are going to travel to the beach' nghĩa là 'Chúng tôi sẽ đi du lịch đến bãi biển.' Cấu trúc 'going to' dùng để nói về kế hoạch tương lai đó em."},
+        {"type":"listen","audioText":"Last year, my family went to Da Lat by car.","q":"Năm ngoái gia đình đi Đà Lạt bằng phương tiện gì?","options":["Máy bay","Xe buýt","Ô tô","Tàu hỏa"],"a":2,"explain":"Câu nghĩa là 'Năm ngoái, gia đình tôi đã đi Đà Lạt bằng ô tô.' 'Went' là quá khứ của 'go', và 'by car' nghĩa là bằng ô tô."},
+        {"type":"listen","audioText":"Don't forget your passport before you fly abroad.","q":"Cần nhớ mang theo gì trước khi bay ra nước ngoài?","options":["Vali","Hộ chiếu","Vé xe buýt","Bản đồ"],"a":1,"explain":"'Don't forget your passport' nghĩa là 'Đừng quên hộ chiếu của em.' Passport là giấy tờ quan trọng khi đi nước ngoài đó em."},
+        {"type":"speak","prompt":"Hãy nói: Chúng tôi sẽ đi đến sân bay vào ngày mai.","target":"We are going to the airport tomorrow","accept":["we are going to the airport tomorrow","we're going to the airport tomorrow"]},
+        {"type":"speak","prompt":"Hãy nói: Tôi đã ở khách sạn vào tuần trước.","target":"I stayed at a hotel last week","accept":["i stayed at a hotel last week","i stayed in a hotel last week"]},
+        {"type":"speak","prompt":"Hãy nói: Hãy mang theo vali của em.","target":"Please bring your suitcase","accept":["please bring your suitcase","bring your suitcase"]},
+        {"type":"read","vanBan":"Last summer, Minh and his family went on holiday to Nha Trang. They stayed in a big hotel near the beach. Every morning, they swam in the sea and played volleyball. Minh bought a ticket for a boat trip and saw many colourful fish.","q":"Minh đã mua vé cho hoạt động gì?","options":["Chuyến đi thuyền","Vé xem phim","Vé máy bay","Vé xe buýt"],"a":0,"explain":"Đoạn văn viết 'Minh bought a ticket for a boat trip' nghĩa là Minh đã mua vé cho một chuyến đi thuyền. Em nhớ tìm từ khóa 'ticket' và 'boat trip' nha."},
+        {"type":"read","vanBan":"Next month, our class is going to visit Hanoi. We are going to see the Old Quarter and try Vietnamese street food. The teacher said we must bring our passport photos for the school trip form.","q":"Lớp học sẽ đi thăm nơi nào?","options":["Nha Trang","Đà Lạt","Hà Nội","Sài Gòn"],"a":2,"explain":"Đoạn văn viết 'our class is going to visit Hanoi' nghĩa là lớp học sẽ đi thăm Hà Nội. 'Going to visit' là cấu trúc nói về kế hoạch tương lai."},
+        {"type":"mcq","q":"Chọn từ đúng: Next Sunday, I _____ visit my grandmother in the countryside.","options":["am going to","went","goes","was"],"a":0,"explain":"Vì có 'Next Sunday' (tương lai), ta dùng 'am going to' để nói về kế hoạch. Đáp án đúng là 'am going to'."},
+        {"type":"mcq","q":"Chọn từ đúng: Last year, we _____ to Phu Quoc island for our holiday.","options":["go","goes","went","are going"],"a":2,"explain":"Vì có 'Last year' (quá khứ), ta dùng quá khứ đơn của 'go' là 'went'. Đáp án đúng là 'went'."},
+        {"type":"spell","q":"Điền dạng quá khứ của 'go': We ___ to the beach last Sunday.","answer":"went","accept":["went"]},
+        {"type":"spell","q":"Điền từ: You need this to fly to another country: p___t.","answer":"passport","accept":["passport"]},
+        {"type":"spell","q":"Điền dạng quá khứ của 'stay': They ___ in a hotel for three nights.","answer":"stayed","accept":["stayed"]}
+      ]
+    },
+    {
+      "so": 8,
+      "ten": "Unit 8: Jobs & Occupations",
+      "lyThuyet": "Chào em, anh Fury quay lại rồi đây! Unit 8 mình học về các nghề nghiệp nhé: doctor (bác sĩ), teacher (giáo viên), firefighter (lính cứu hỏa), pilot (phi công), farmer (nông dân), scientist (nhà khoa học), chef (đầu bếp), police officer (cảnh sát). Mẫu câu hôm nay: 'I want to be a...' (Tôi muốn trở thành...) và 'can + verb' để nói về khả năng, ví dụ 'A doctor can help sick people' (Bác sĩ có thể giúp người bệnh). Học xong em sẽ biết ước mơ của mình bằng tiếng Anh đó!",
+      "cauHoi": [
+        {"type":"listen","audioText":"My brother wants to be a pilot when he grows up.","q":"Anh trai muốn trở thành nghề gì khi lớn lên?",
+         "options":["Bác sĩ","Phi công","Đầu bếp","Nông dân"],"a":1,"explain":"'My brother wants to be a pilot' nghĩa là 'Anh trai tôi muốn trở thành phi công.' 'Want to be' dùng để nói về ước mơ nghề nghiệp đó em."},
+        {"type":"listen","audioText":"A firefighter can put out big fires bravely.","q":"Lính cứu hỏa có thể làm gì?","options":["Nấu ăn ngon","Dập tắt đám cháy dũng cảm","Lái máy bay","Chữa bệnh cho người"],"a":1,"explain":"Câu nghĩa là 'Lính cứu hỏa có thể dập tắt những đám cháy lớn một cách dũng cảm.' 'Can put out fires' nghĩa là có khả năng dập lửa."},
+        {"type":"listen","audioText":"Doctors should always wash their hands before helping patients.","q":"Bác sĩ nên làm gì trước khi giúp bệnh nhân?","options":["Ăn cơm","Rửa tay","Mặc áo đẹp","Nghe nhạc"],"a":1,"explain":"'Doctors should always wash their hands' nghĩa là 'Bác sĩ nên luôn rửa tay.' 'Should' dùng để đưa ra lời khuyên nên làm gì đó em."},
+        {"type":"speak","prompt":"Hãy nói: Tôi muốn trở thành một nhà khoa học.","target":"I want to be a scientist","accept":["i want to be a scientist"]},
+        {"type":"speak","prompt":"Hãy nói: Đầu bếp có thể nấu những món ăn ngon.","target":"A chef can cook delicious food","accept":["a chef can cook delicious food","chef can cook delicious food"]},
+        {"type":"speak","prompt":"Hãy nói: Cảnh sát nên giúp đỡ mọi người.","target":"A police officer should help people","accept":["a police officer should help people","police officer should help people"]},
+        {"type":"read","vanBan":"Long loves animals very much. He wants to be a scientist and study wild animals in the future. He thinks scientists can learn many interesting things about nature. Every weekend, he reads books about lions, elephants, and birds.","q":"Long muốn trở thành nghề gì trong tương lai?","options":["Bác sĩ","Nhà khoa học","Phi công","Nông dân"],"a":1,"explain":"Đoạn văn viết 'He wants to be a scientist' nghĩa là Long muốn trở thành nhà khoa học. Em thấy từ 'scientist' xuất hiện hai lần trong bài đó."},
+        {"type":"read","vanBan":"My mother is a teacher. She works at a primary school and teaches English. She can explain difficult lessons in a fun way. Every student in her class loves her because she is kind and patient.","q":"Mẹ của bạn nhỏ dạy môn gì?","options":["Toán","Tiếng Anh","Khoa học","Âm nhạc"],"a":1,"explain":"Đoạn văn viết 'she teaches English' nghĩa là mẹ bạn ấy dạy tiếng Anh. 'Teaches' là động từ dạy học đó em."},
+        {"type":"mcq","q":"Chọn từ đúng: When I grow up, I _____ be a doctor to help sick people.","options":["want to","wants to","wanted","am want"],"a":0,"explain":"Với chủ ngữ 'I', ta dùng 'want to be' (không thêm s). Đáp án đúng là 'want to'."},
+        {"type":"mcq","q":"Chọn từ đúng: A pilot _____ fly a big airplane safely.","options":["can","cans","canning","could to"],"a":0,"explain":"'Can' là động từ khiếm khuyết, không chia theo chủ ngữ và không thêm s. Đáp án đúng là 'can'."},
+        {"type":"spell","q":"Điền từ: A person who fights fires is called a f___r.","answer":"firefighter","accept":["firefighter"]},
+        {"type":"spell","q":"Điền từ: A person who cooks food in a restaurant is a c___f.","answer":"chef","accept":["chef"]},
+        {"type":"spell","q":"Điền từ: A person who flies airplanes is called a p___t.","answer":"pilot","accept":["pilot"]}
+      ]
+    },
+    {
+      "so": 9,
+      "ten": "Unit 9: My Last Weekend",
+      "lyThuyet": "Chào em, anh Fury đây! Hôm nay tụi mình cùng kể chuyện về cuối tuần đã qua bằng quá khứ đơn nhé. Từ vựng cần nhớ: played (đã chơi), watched (đã xem), visited (đã thăm), cooked (đã nấu), cleaned (đã dọn dẹp), had (đã có/ăn), went (đã đi), saw (đã nhìn thấy). Em nhớ động từ có quy tắc thêm '-ed' như 'played, watched, cleaned', còn động từ bất quy tắc thì đặc biệt như 'go-went, have-had, see-saw'. Giờ mình cùng luyện kể chuyện cuối tuần thật hay nha!",
+      "cauHoi": [
+        {"type":"listen","audioText":"On Saturday morning, I played football with my friends.","q":"Bạn nhỏ đã làm gì vào sáng thứ Bảy?","options":["Xem phim","Chơi bóng đá với bạn","Đi bơi","Nấu ăn"],"a":1,"explain":"Câu nghĩa là 'Vào sáng thứ Bảy, tôi đã chơi bóng đá với các bạn.' 'Played' là quá khứ của 'play', thêm '-ed' theo quy tắc."},
+        {"type":"listen","audioText":"In the afternoon, we watched a funny movie at home.","q":"Buổi chiều mọi người đã làm gì?","options":["Xem một bộ phim hài ở nhà","Đi công viên","Học bài","Đi chợ"],"a":0,"explain":"'We watched a funny movie at home' nghĩa là 'Chúng tôi đã xem một bộ phim hài ở nhà.' 'Watched' là quá khứ của 'watch'."},
+        {"type":"listen","audioText":"My mother cooked a delicious dinner and we had noodles.","q":"Bữa tối gia đình đã ăn món gì?","options":["Cơm","Mì","Bánh mì","Phở"],"a":1,"explain":"Câu nghĩa là 'Mẹ tôi đã nấu một bữa tối ngon và chúng tôi đã ăn mì.' 'Had noodles' nghĩa là đã ăn mì đó em."},
+        {"type":"speak","prompt":"Hãy nói: Tôi đã thăm bà của tôi vào Chủ nhật.","target":"I visited my grandmother on Sunday","accept":["i visited my grandmother on sunday"]},
+        {"type":"speak","prompt":"Hãy nói: Chúng tôi đã dọn dẹp phòng của mình.","target":"We cleaned our room","accept":["we cleaned our room"]},
+        {"type":"speak","prompt":"Hãy nói: Tôi đã nhìn thấy một con chim đẹp trong công viên.","target":"I saw a beautiful bird in the park","accept":["i saw a beautiful bird in the park"]},
+        {"type":"read","vanBan":"Last weekend was great. On Saturday, Nam played badminton with his father in the park. On Sunday, he visited his grandparents and helped them clean the garden. In the evening, the whole family had a big dinner together.","q":"Nam đã chơi môn thể thao gì vào thứ Bảy?","options":["Bóng đá","Cầu lông","Bóng rổ","Bơi lội"],"a":1,"explain":"Đoạn văn viết 'Nam played badminton with his father' nghĩa là Nam đã chơi cầu lông với bố. Em nhớ 'badminton' là cầu lông nha."},
+        {"type":"read","vanBan":"Yesterday, Lan and her sister went to the zoo. They saw lions, tigers, and monkeys. Lan took many photos of the animals. After that, they had ice cream and went home happily.","q":"Chị em Lan đã đi đâu?","options":["Công viên","Sở thú","Bãi biển","Trường học"],"a":1,"explain":"Đoạn văn viết 'Lan and her sister went to the zoo' nghĩa là chị em Lan đã đi sở thú. 'Zoo' nghĩa là sở thú đó em."},
+        {"type":"mcq","q":"Chọn dạng đúng: Yesterday, my brother _____ (watch) TV all afternoon.","options":["watch","watches","watched","watching"],"a":2,"explain":"Vì có 'Yesterday' (quá khứ) và động từ 'watch' có quy tắc, ta thêm '-ed': watched. Đáp án đúng là 'watched'."},
+        {"type":"mcq","q":"Chọn dạng đúng: Last night, we _____ (have) a wonderful dinner at a restaurant.","options":["have","has","had","having"],"a":2,"explain":"'Have' là động từ bất quy tắc, quá khứ là 'had'. Vì có 'Last night' nên ta dùng 'had'. Đáp án đúng là 'had'."},
+        {"type":"spell","q":"Điền dạng quá khứ của 'go': Last Sunday, I ___ to the countryside with my family.","answer":"went","accept":["went"]},
+        {"type":"spell","q":"Điền dạng quá khứ của 'see': We ___ a beautiful rainbow after the rain.","answer":"saw","accept":["saw"]},
+        {"type":"spell","q":"Điền dạng quá khứ của 'play': He ___ chess with his grandfather yesterday.","answer":"played","accept":["played"]}
+      ]
+    },
+    {
+      "so": 10,
+      "ten": "Unit 10: Sports Day & Competitions",
+      "lyThuyet": "Chào em, hôm nay là bài học cuối cùng của phần này, anh Fury rất tự hào về em! Chủ đề hôm nay là Ngày hội thể thao và các cuộc thi. Từ vựng cần nhớ: race (cuộc đua), win (thắng), lose (thua), fastest (nhanh nhất), strongest (khỏe nhất), best (giỏi nhất), competition (cuộc thi), medal (huy chương). Ngữ pháp: so sánh nhất dùng 'the fastest, the best, the strongest', kết hợp cùng quá khứ đơn để kể lại ai đã thắng cuộc đua như thế nào. Cùng anh hoàn thành thật xuất sắc nha, em làm được mà!",
+      "cauHoi": [
+        {"type":"listen","audioText":"Peter was the fastest runner in the race yesterday.","q":"Ai là người chạy nhanh nhất trong cuộc đua hôm qua?","options":["Peter","Giáo viên","Bố của Peter","Không ai cả"],"a":0,"explain":"Câu nghĩa là 'Peter là người chạy nhanh nhất trong cuộc đua hôm qua.' 'The fastest' là so sánh nhất của 'fast' đó em."},
+        {"type":"listen","audioText":"Our team won the competition and got a gold medal.","q":"Đội của chúng ta đã đạt được gì?","options":["Huy chương vàng","Huy chương bạc","Không có gì","Một cuốn sách"],"a":0,"explain":"'Our team won the competition and got a gold medal' nghĩa là 'Đội của chúng ta đã thắng cuộc thi và nhận được huy chương vàng.'"},
+        {"type":"listen","audioText":"Lucy jumped higher than everyone else in her class.","q":"Lucy đã nhảy như thế nào so với các bạn trong lớp?","options":["Thấp hơn","Cao hơn tất cả","Bằng các bạn","Không nhảy được"],"a":1,"explain":"Câu nghĩa là 'Lucy đã nhảy cao hơn tất cả mọi người trong lớp.' 'Higher than everyone else' nghĩa là cao hơn tất cả."},
+        {"type":"speak","prompt":"Hãy nói: Anh ấy là người mạnh nhất trong đội.","target":"He is the strongest in the team","accept":["he is the strongest in the team","he's the strongest in the team"]},
+        {"type":"speak","prompt":"Hãy nói: Chúng tôi đã thắng cuộc đua vào tuần trước.","target":"We won the race last week","accept":["we won the race last week"]},
+        {"type":"speak","prompt":"Hãy nói: Cô ấy là học sinh giỏi nhất trong lớp học.","target":"She is the best student in the class","accept":["she is the best student in the class","she's the best student in the class"]},
+        {"type":"read","vanBan":"Last Friday, our school had a Sports Day. Many students joined the running race. Huy ran the fastest and won a gold medal. His friend Nam was the strongest in the tug-of-war game. Everyone had a fun and exciting day.","q":"Huy đã đạt được thành tích gì?","options":["Chạy nhanh nhất và thắng huy chương vàng","Mạnh nhất trong trò kéo co","Nhảy cao nhất","Bơi giỏi nhất"],"a":0,"explain":"Đoạn văn viết 'Huy ran the fastest and won a gold medal' nghĩa là Huy chạy nhanh nhất và thắng huy chương vàng. Còn Nam mới là người mạnh nhất trong kéo co."},
+        {"type":"read","vanBan":"There was a swimming competition at our pool last weekend. Ten children joined the race. Mai swam faster than the others and became the best swimmer of the day. She was very happy and proud of her medal.","q":"Ai đã bơi nhanh nhất trong cuộc thi?","options":["Mười bạn nhỏ","Mai","Giáo viên","Không ai cả"],"a":1,"explain":"Đoạn văn viết 'Mai swam faster than the others and became the best swimmer' nghĩa là Mai đã bơi nhanh hơn những người khác và trở thành người bơi giỏi nhất."},
+        {"type":"mcq","q":"Chọn từ đúng: Of all the runners, Tom is _____ boy in the race.","options":["fast","faster","the fastest","more fast"],"a":2,"explain":"Vì so sánh với cả nhóm 'of all the runners', ta dùng so sánh nhất 'the fastest'. Đáp án đúng là 'the fastest'."},
+        {"type":"mcq","q":"Chọn dạng đúng: Yesterday, our team _____ (win) first prize in the competition.","options":["win","wins","won","winning"],"a":2,"explain":"'Win' là động từ bất quy tắc, quá khứ là 'won'. Vì có 'Yesterday' nên ta dùng 'won'. Đáp án đúng là 'won'."},
+        {"type":"spell","q":"Điền dạng so sánh nhất của 'strong': He is ___ boy in the whole school.","answer":"the strongest","accept":["the strongest","strongest"]},
+        {"type":"spell","q":"Điền dạng quá khứ của 'win': She ___ the first prize last year.","answer":"won","accept":["won"]},
+        {"type":"spell","q":"Điền từ: A shiny prize you get for winning is called a m___l.","answer":"medal","accept":["medal"]}
+      ]
+    }
+  ]
+}

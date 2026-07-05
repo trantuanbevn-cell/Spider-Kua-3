@@ -1,0 +1,538 @@
+{
+  "mon": "toan",
+  "tap": 1,
+  "chuDe": "Số có nhiều chữ số",
+  "cdSo": 3,
+  "bai": [
+    {
+      "so": 10,
+      "ten": "Số có sáu chữ số. Số 1 000 000",
+      "lyThuyet": "Số có sáu chữ số gồm các hàng: đơn vị, chục, trăm, nghìn, chục nghìn, trăm nghìn. Ví dụ số 235.406 đọc là hai trăm ba mươi lăm nghìn bốn trăm linh sáu. Số bé nhất có sáu chữ số là 100.000, số lớn nhất có sáu chữ số là 999.999. Nếu ta lấy 999.999 cộng thêm 1, ta được 1.000.000 (một triệu) - đây là số có bảy chữ số, gồm chữ số 1 và sáu chữ số 0 đứng sau.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Số 235.406 có bao nhiêu chữ số?",
+          "options": ["4 chữ số", "5 chữ số", "6 chữ số", "7 chữ số"],
+          "a": 2,
+          "explain": "Số 235.406 gồm các chữ số 2, 3, 5, 4, 0, 6 - đếm được 6 chữ số."
+        },
+        {
+          "type": "mcq",
+          "q": "Số 1.000.000 đọc là gì?",
+          "options": ["Một trăm nghìn", "Một triệu", "Mười triệu", "Một nghìn"],
+          "a": 1,
+          "explain": "Số 1.000.000 gồm chữ số 1 và sáu chữ số 0, đọc là một triệu."
+        },
+        {
+          "type": "mcq",
+          "q": "Số lớn nhất có sáu chữ số là số nào?",
+          "options": ["999.999", "100.000", "999.990", "900.000"],
+          "a": 0,
+          "explain": "Số có sáu chữ số lớn nhất là khi tất cả các hàng đều là chữ số 9, tức 999.999."
+        },
+        {
+          "type": "mcq",
+          "q": "Số bé nhất có sáu chữ số là số nào?",
+          "options": ["10.000", "99.999", "100.000", "1.000.000"],
+          "a": 2,
+          "explain": "Số có sáu chữ số bé nhất bắt đầu bằng chữ số 1 ở hàng trăm nghìn, các hàng còn lại là 0, tức 100.000."
+        },
+        {
+          "type": "mcq",
+          "q": "Lấy số 999.999 cộng thêm 1 đơn vị thì được số nào?",
+          "options": ["1.000.000", "999.998", "1.000.001", "100.000"],
+          "a": 0,
+          "explain": "999.999 + 1 = 1.000.000 (một triệu), vì tất cả các hàng đều tràn lên 1 hàng mới."
+        },
+        {
+          "type": "fill",
+          "q": "Số gồm 4 trăm nghìn, 5 chục nghìn, 2 nghìn, 0 trăm, 3 chục, 1 đơn vị được viết là ___",
+          "answer": "452.031",
+          "accept": ["452.031", "452031", "452,031"]
+        },
+        {
+          "type": "solve",
+          "de": "Câu lạc bộ bóng đá của Nam có một quyển sổ ghi số lượt cổ động viên đến sân trong mùa giải. Số lượt cổ động viên là số có sáu chữ số, gồm 3 trăm nghìn, 4 chục nghìn, 6 nghìn, 5 trăm, 7 chục và 2 đơn vị. Hỏi số lượt cổ động viên đó là bao nhiêu?",
+          "hints": [
+            "Em thử nhớ lại thứ tự các hàng trong số có sáu chữ số nhé: trăm nghìn, chục nghìn, nghìn, trăm, chục, đơn vị.",
+            "Mỗi hàng đề bài cho một chữ số, em cứ viết lần lượt các chữ số đó theo đúng thứ tự hàng là ra số cần tìm.",
+            "Trăm nghìn là 3, chục nghìn là 4, nghìn là 6, trăm là 5, chục là 7, đơn vị là 2 - em ghép chúng lại theo đúng thứ tự sẽ ra đáp số."
+          ],
+          "loiGiai": "Bài giải:\nSố lượt cổ động viên gồm các hàng: trăm nghìn là 3, chục nghìn là 4, hàng nghìn là 6, hàng trăm là 5, hàng chục là 7, hàng đơn vị là 2.\nGhép các chữ số theo đúng thứ tự hàng, ta được số: 346.572.\nĐáp số: 346.572 lượt cổ động viên",
+          "dapSo": "346.572 lượt cổ động viên"
+        },
+        {
+          "type": "solve",
+          "de": "Minh đang sưu tầm thẻ bài siêu anh hùng. Bạn ấy đã có 999.997 điểm thưởng trong app game. Mỗi lần hoàn thành một nhiệm vụ, Minh được cộng thêm 1 điểm. Hỏi Minh cần hoàn thành bao nhiêu nhiệm vụ nữa để đạt đúng 1.000.000 điểm thưởng?",
+          "hints": [
+            "Em hãy tính xem 1.000.000 hơn 999.997 bao nhiêu điểm đã nhé.",
+            "Mỗi nhiệm vụ chỉ được cộng 1 điểm thôi, nên số nhiệm vụ cần làm chính là hiệu hai số đó.",
+            "Em lấy 1.000.000 trừ đi 999.997, kết quả chính là số nhiệm vụ Minh cần hoàn thành."
+          ],
+          "loiGiai": "Bài giải:\nSố điểm còn thiếu để đạt 1.000.000 điểm là:\n1.000.000 - 999.997 = 3 (điểm)\nVì mỗi nhiệm vụ chỉ được cộng thêm 1 điểm nên số nhiệm vụ Minh cần hoàn thành thêm là 3 nhiệm vụ.\nĐáp số: 3 nhiệm vụ",
+          "dapSo": "3 nhiệm vụ"
+        }
+      ]
+    },
+    {
+      "so": 11,
+      "ten": "Hàng và lớp",
+      "lyThuyet": "Các hàng được sắp xếp thành từng lớp: lớp đơn vị gồm hàng trăm, hàng chục, hàng đơn vị; lớp nghìn gồm hàng trăm nghìn, hàng chục nghìn, hàng nghìn. Mỗi lớp có 3 hàng. Khi viết số, ta thường để một khoảng cách nhỏ (dấu chấm) giữa các lớp cho dễ đọc, ví dụ present present chấm ngăn cách ở số 425.816.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Lớp đơn vị gồm những hàng nào?",
+          "options": [
+            "Hàng trăm, hàng chục, hàng đơn vị",
+            "Hàng nghìn, hàng chục nghìn, hàng trăm nghìn",
+            "Hàng triệu, hàng chục triệu, hàng trăm triệu",
+            "Hàng chục, hàng trăm, hàng nghìn"
+          ],
+          "a": 0,
+          "explain": "Lớp đơn vị gồm 3 hàng: hàng trăm, hàng chục, hàng đơn vị (tính từ trái sang phải trong lớp)."
+        },
+        {
+          "type": "mcq",
+          "q": "Lớp nghìn gồm những hàng nào?",
+          "options": [
+            "Hàng trăm, hàng chục, hàng đơn vị",
+            "Hàng trăm nghìn, hàng chục nghìn, hàng nghìn",
+            "Hàng trăm triệu, hàng chục triệu, hàng triệu",
+            "Hàng nghìn, hàng triệu, hàng tỉ"
+          ],
+          "a": 1,
+          "explain": "Lớp nghìn gồm 3 hàng: hàng trăm nghìn, hàng chục nghìn, hàng nghìn."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong số 425.816, chữ số 4 thuộc hàng nào, lớp nào?",
+          "options": [
+            "Hàng trăm, lớp đơn vị",
+            "Hàng trăm nghìn, lớp nghìn",
+            "Hàng chục nghìn, lớp nghìn",
+            "Hàng trăm triệu, lớp triệu"
+          ],
+          "a": 1,
+          "explain": "Số 425.816: chữ số 4 đứng ở vị trí đầu tiên bên trái, thuộc hàng trăm nghìn, lớp nghìn."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong số 425.816, chữ số 8 thuộc hàng nào?",
+          "options": ["Hàng trăm nghìn", "Hàng chục nghìn", "Hàng nghìn", "Hàng trăm"],
+          "a": 3,
+          "explain": "Số 425.816: các hàng từ trái qua là 4 (trăm nghìn), 2 (chục nghìn), 5 (nghìn), 8 (trăm), 1 (chục), 6 (đơn vị). Vậy chữ số 8 thuộc hàng trăm."
+        },
+        {
+          "type": "mcq",
+          "q": "Số 703.208 gồm mấy trăm nghìn, mấy chục nghìn, mấy nghìn, mấy trăm, mấy chục và mấy đơn vị?",
+          "options": [
+            "7 trăm nghìn, 0 chục nghìn, 3 nghìn, 2 trăm, 0 chục, 8 đơn vị",
+            "7 trăm nghìn, 3 chục nghìn, 0 nghìn, 2 trăm, 0 chục, 8 đơn vị",
+            "0 trăm nghìn, 7 chục nghìn, 3 nghìn, 2 trăm, 0 chục, 8 đơn vị",
+            "7 trăm nghìn, 0 chục nghìn, 3 nghìn, 0 trăm, 2 chục, 8 đơn vị"
+          ],
+          "a": 0,
+          "explain": "Số 703.208 có các hàng lần lượt là: 7 (trăm nghìn), 0 (chục nghìn), 3 (nghìn), 2 (trăm), 0 (chục), 8 (đơn vị)."
+        },
+        {
+          "type": "fill",
+          "q": "Trong số 946.582, chữ số 6 thuộc hàng ___",
+          "answer": "nghìn",
+          "accept": ["nghìn", "hàng nghìn"]
+        },
+        {
+          "type": "solve",
+          "de": "An đang tập viết số theo hàng và lớp. Bạn ấy viết một số có sáu chữ số như sau: chữ số hàng trăm nghìn là 5, chữ số hàng chục nghìn là 8, chữ số hàng nghìn là 0, chữ số hàng trăm là 3, chữ số hàng chục là 9, chữ số hàng đơn vị là 4. Em hãy giúp An viết số đó và cho biết số đó thuộc lớp nào nhiều nhất (lớp nghìn hay lớp đơn vị đứng đầu)?",
+          "hints": [
+            "Em nhớ lại thứ tự các hàng: trăm nghìn - chục nghìn - nghìn - trăm - chục - đơn vị nhé.",
+            "Em ghép các chữ số theo đúng thứ tự hàng đề bài cho để tạo thành số hoàn chỉnh.",
+            "Ba hàng đầu (trăm nghìn, chục nghìn, nghìn) thuộc lớp nghìn, ba hàng sau (trăm, chục, đơn vị) thuộc lớp đơn vị."
+          ],
+          "loiGiai": "Bài giải:\nGhép các chữ số theo đúng thứ tự hàng: trăm nghìn 5, chục nghìn 8, nghìn 0, trăm 3, chục 9, đơn vị 4.\nSố đó là: 580.394\nSố này gồm lớp nghìn (580) đứng trước và lớp đơn vị (394) đứng sau.\nĐáp số: 580.394",
+          "dapSo": "580.394"
+        },
+        {
+          "type": "solve",
+          "de": "Bình có một số ghi số lượng viên gạch lego bạn ấy sưu tầm được là 267.451 viên. Hỏi tổng các chữ số thuộc lớp nghìn của số này là bao nhiêu?",
+          "hints": [
+            "Em hãy xác định 3 chữ số nào thuộc lớp nghìn trong số 267.451 đã nhé (đó là 3 chữ số đầu tiên tính từ trái).",
+            "Lớp nghìn gồm hàng trăm nghìn, chục nghìn và nghìn - em tìm đúng 3 chữ số đó.",
+            "Ba chữ số thuộc lớp nghìn của 267.451 là 2, 6, 7. Em chỉ cần cộng ba số này lại."
+          ],
+          "loiGiai": "Bài giải:\nSố 267.451 có lớp nghìn gồm 3 chữ số: 2 (trăm nghìn), 6 (chục nghìn), 7 (nghìn).\nTổng các chữ số thuộc lớp nghìn là:\n2 + 6 + 7 = 15\nĐáp số: 15",
+          "dapSo": "15"
+        }
+      ]
+    },
+    {
+      "so": 12,
+      "ten": "Các số trong phạm vi lớp triệu",
+      "lyThuyet": "Lớp triệu gồm 3 hàng: hàng triệu, hàng chục triệu, hàng trăm triệu. Một số có nhiều chữ số có thể có tới 3 lớp: lớp triệu, lớp nghìn, lớp đơn vị, mỗi lớp cách nhau bằng dấu chấm. Ví dụ số 32.451.607 đọc là ba mươi hai triệu bốn trăm năm mươi mốt nghìn sáu trăm linh bảy. Mười trăm nghìn thì bằng một triệu (1.000.000).",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Lớp triệu gồm những hàng nào?",
+          "options": [
+            "Hàng trăm, hàng chục, hàng đơn vị",
+            "Hàng trăm nghìn, hàng chục nghìn, hàng nghìn",
+            "Hàng triệu, hàng chục triệu, hàng trăm triệu",
+            "Hàng tỉ, hàng chục tỉ, hàng trăm tỉ"
+          ],
+          "a": 2,
+          "explain": "Lớp triệu gồm 3 hàng: hàng triệu, hàng chục triệu, hàng trăm triệu."
+        },
+        {
+          "type": "mcq",
+          "q": "Số 5.000.000 đọc là gì?",
+          "options": ["Năm trăm nghìn", "Năm triệu", "Năm mươi triệu", "Năm trăm triệu"],
+          "a": 1,
+          "explain": "Số 5.000.000 gồm chữ số 5 ở hàng triệu, các hàng còn lại là 0, đọc là năm triệu."
+        },
+        {
+          "type": "mcq",
+          "q": "Số 32.451.607 đọc là gì?",
+          "options": [
+            "Ba mươi hai triệu bốn trăm năm mươi mốt nghìn sáu trăm linh bảy",
+            "Ba trăm hai mươi tư triệu năm mươi mốt nghìn sáu trăm bảy mươi",
+            "Ba mươi hai triệu bốn trăm năm mươi nghìn sáu trăm linh bảy",
+            "Ba mươi hai triệu năm trăm bốn mươi mốt nghìn sáu trăm linh bảy"
+          ],
+          "a": 0,
+          "explain": "Số 32.451.607 tách lớp: 32 (triệu) - 451 (nghìn) - 607 (đơn vị), đọc là ba mươi hai triệu bốn trăm năm mươi mốt nghìn sáu trăm linh bảy."
+        },
+        {
+          "type": "mcq",
+          "q": "Số 8.000.000 gồm mấy trăm nghìn?",
+          "options": ["8 trăm nghìn", "80 trăm nghìn", "800 trăm nghìn", "8.000 trăm nghìn"],
+          "a": 1,
+          "explain": "Vì 1.000.000 = 10 trăm nghìn, nên 8.000.000 = 8 x 10 = 80 trăm nghìn."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong số 145.203.678, chữ số 4 thuộc hàng nào?",
+          "options": ["Hàng triệu", "Hàng chục triệu", "Hàng trăm triệu", "Hàng trăm nghìn"],
+          "a": 1,
+          "explain": "Số 145.203.678: hàng trăm triệu là 1, hàng chục triệu là 4, hàng triệu là 5. Vậy chữ số 4 thuộc hàng chục triệu."
+        },
+        {
+          "type": "fill",
+          "q": "Số hai mươi triệu ba trăm nghìn được viết là ___",
+          "answer": "20.300.000",
+          "accept": ["20.300.000", "20300000", "20,300,000"]
+        },
+        {
+          "type": "solve",
+          "de": "Theo một tài liệu, dân số của một tỉnh là số có tám chữ số: 2 triệu, 4 trăm nghìn, 5 chục nghìn, 0 nghìn, 3 trăm, 0 chục, 6 đơn vị. Em hãy viết số dân của tỉnh đó.",
+          "hints": [
+            "Số có tám chữ số sẽ gồm 2 chữ số thuộc lớp triệu, rồi tới 3 chữ số lớp nghìn, rồi 3 chữ số lớp đơn vị.",
+            "Em xác định từng hàng: hàng chục triệu, hàng triệu, hàng trăm nghìn, hàng chục nghìn, hàng nghìn, hàng trăm, hàng chục, hàng đơn vị.",
+            "Đề bài cho 2 triệu (hàng triệu là 2, không có chục triệu nên là 0), rồi 4 trăm nghìn, 5 chục nghìn, 0 nghìn, 3 trăm, 0 chục, 6 đơn vị - em ghép lần lượt lại."
+          ],
+          "loiGiai": "Bài giải:\nSố dân gồm: hàng chục triệu là 0, hàng triệu là 2, hàng trăm nghìn là 4, hàng chục nghìn là 5, hàng nghìn là 0, hàng trăm là 3, hàng chục là 0, hàng đơn vị là 6.\nGhép lại ta được số: 2.450.306\nĐáp số: 2.450.306 người",
+          "dapSo": "2.450.306 người"
+        },
+        {
+          "type": "solve",
+          "de": "Khoa đang tìm hiểu về khoảng cách các vì sao cho môn khoa học. Bạn ấy đọc được rằng một hành tinh cách Trái Đất khoảng 15.000.000 km. Nếu khoảng cách này tăng thêm 3.000.000 km nữa (do tính toán mới chính xác hơn), thì khoảng cách mới là bao nhiêu ki-lô-mét? Hãy đọc số đó.",
+          "hints": [
+            "Em thử tính xem 15.000.000 cộng thêm 3.000.000 bằng bao nhiêu đã nhé, giống như cộng 15 với 3 vậy, chỉ thêm sáu số 0 thôi.",
+            "Sau khi cộng xong, em tách số đó thành các lớp: lớp triệu và lớp nghìn, lớp đơn vị để đọc cho đúng.",
+            "15 triệu + 3 triệu = 18 triệu, vậy khoảng cách mới là 18.000.000 km, đọc là mười tám triệu."
+          ],
+          "loiGiai": "Bài giải:\nKhoảng cách mới là:\n15.000.000 + 3.000.000 = 18.000.000 (km)\nSố 18.000.000 đọc là: mười tám triệu.\nĐáp số: 18.000.000 km (mười tám triệu ki-lô-mét)",
+          "dapSo": "18.000.000 km"
+        }
+      ]
+    },
+    {
+      "so": 13,
+      "ten": "Làm tròn số đến hàng trăm nghìn",
+      "lyThuyet": "Muốn làm tròn một số đến hàng trăm nghìn, ta nhìn vào chữ số hàng chục nghìn: nếu chữ số đó là 0, 1, 2, 3, 4 thì ta làm tròn xuống (giữ nguyên chữ số hàng trăm nghìn, các chữ số sau hàng trăm nghìn đều đổi thành 0); nếu chữ số đó là 5, 6, 7, 8, 9 thì ta làm tròn lên (chữ số hàng trăm nghìn tăng thêm 1 đơn vị, các chữ số sau đều đổi thành 0).",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Số 342.500 làm tròn đến hàng trăm nghìn được số nào?",
+          "options": ["300.000", "400.000", "340.000", "350.000"],
+          "a": 0,
+          "explain": "Chữ số hàng chục nghìn của 342.500 là 4 (thuộc nhóm 0,1,2,3,4) nên làm tròn xuống: 300.000."
+        },
+        {
+          "type": "mcq",
+          "q": "Số 675.900 làm tròn đến hàng trăm nghìn được số nào?",
+          "options": ["600.000", "670.000", "700.000", "680.000"],
+          "a": 2,
+          "explain": "Chữ số hàng chục nghìn của 675.900 là 7 (thuộc nhóm 5,6,7,8,9) nên làm tròn lên: 700.000."
+        },
+        {
+          "type": "mcq",
+          "q": "Số 219.300 làm tròn đến hàng trăm nghìn được số nào?",
+          "options": ["100.000", "200.000", "300.000", "220.000"],
+          "a": 1,
+          "explain": "Chữ số hàng chục nghìn của 219.300 là 1 (thuộc nhóm 0,1,2,3,4) nên làm tròn xuống, giữ nguyên hàng trăm nghìn: 200.000."
+        },
+        {
+          "type": "mcq",
+          "q": "Số 850.000 làm tròn đến hàng trăm nghìn được số nào?",
+          "options": ["800.000", "850.000", "900.000", "1.000.000"],
+          "a": 2,
+          "explain": "Chữ số hàng chục nghìn của 850.000 là 5 (thuộc nhóm 5,6,7,8,9) nên làm tròn lên: hàng trăm nghìn từ 8 tăng lên 9, được 900.000."
+        },
+        {
+          "type": "mcq",
+          "q": "Số nào sau đây khi làm tròn đến hàng trăm nghìn cho kết quả là 1.000.000?",
+          "options": ["940.000", "952.000", "925.000", "899.000"],
+          "a": 1,
+          "explain": "952.000 có chữ số hàng chục nghìn là 5 (thuộc nhóm 5-9) nên làm tròn lên: hàng trăm nghìn từ 9 tăng thêm 1 thành 10, tức được 1.000.000. Các số còn lại có chữ số hàng chục nghìn nhỏ hơn 5 nên làm tròn xuống 900.000 hoặc thấp hơn."
+        },
+        {
+          "type": "fill",
+          "q": "Số 468.200 làm tròn đến hàng trăm nghìn được số ___",
+          "answer": "500.000",
+          "accept": ["500.000", "500000", "500,000"]
+        },
+        {
+          "type": "solve",
+          "de": "Một trận đấu bóng đá lớn có 273.600 khán giả theo dõi qua ti vi (theo thống kê). Em hãy làm tròn số khán giả này đến hàng trăm nghìn.",
+          "hints": [
+            "Em xác định chữ số ở hàng chục nghìn của số 273.600 trước đã.",
+            "Chữ số hàng chục nghìn của 273.600 là 7, mà 7 thuộc nhóm 5,6,7,8,9 nên ta sẽ làm tròn lên.",
+            "Khi làm tròn lên, hàng trăm nghìn từ 2 sẽ tăng thêm 1 thành 3, các chữ số sau đều là 0."
+          ],
+          "loiGiai": "Bài giải:\nSố 273.600 có chữ số hàng chục nghìn là 7 (thuộc nhóm 5,6,7,8,9) nên ta làm tròn lên.\nHàng trăm nghìn tăng thêm 1: từ 2 thành 3, các chữ số sau đổi thành 0.\nVậy 273.600 làm tròn đến hàng trăm nghìn được: 300.000\nĐáp số: 300.000 khán giả",
+          "dapSo": "300.000 khán giả"
+        },
+        {
+          "type": "solve",
+          "de": "Hùng đang tiết kiệm tiền để mua một bộ lego siêu anh hùng. Sau nhiều tháng, số tiền tiết kiệm của Hùng và anh trai cộng lại là 349.000 đồng, còn số tiền của bố cho thêm là 128.500 đồng. Em hãy tính tổng số tiền Hùng có, sau đó làm tròn tổng đó đến hàng trăm nghìn.",
+          "hints": [
+            "Đầu tiên em cộng hai số tiền lại với nhau: 349.000 và 128.500.",
+            "Sau khi có tổng, em nhìn vào chữ số hàng chục nghìn của tổng đó để biết làm tròn lên hay xuống.",
+            "349.000 + 128.500 = 477.500, chữ số hàng chục nghìn là 7 nên sẽ làm tròn lên."
+          ],
+          "loiGiai": "Bài giải:\nTổng số tiền Hùng có là:\n349.000 + 128.500 = 477.500 (đồng)\nSố 477.500 có chữ số hàng chục nghìn là 7 (thuộc nhóm 5,6,7,8,9) nên làm tròn lên.\nHàng trăm nghìn tăng thêm 1: từ 4 thành 5, các chữ số sau đổi thành 0.\nVậy 477.500 làm tròn đến hàng trăm nghìn được: 500.000\nĐáp số: Tổng tiền là 477.500 đồng, làm tròn là 500.000 đồng",
+          "dapSo": "477.500 đồng, làm tròn: 500.000 đồng"
+        }
+      ]
+    },
+    {
+      "so": 14,
+      "ten": "So sánh các số có nhiều chữ số",
+      "lyThuyet": "Muốn so sánh hai số có nhiều chữ số, trước tiên ta so sánh số lượng chữ số: số nào có nhiều chữ số hơn thì số đó lớn hơn. Nếu hai số có cùng số chữ số, ta so sánh từng cặp chữ số ở cùng một hàng, bắt đầu từ hàng cao nhất (bên trái) sang hàng thấp nhất (bên phải); hàng nào có chữ số lớn hơn thì số đó lớn hơn.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "So sánh 45.678 và 9.999, số nào lớn hơn?",
+          "options": ["45.678 lớn hơn", "9.999 lớn hơn", "Hai số bằng nhau", "Không so sánh được"],
+          "a": 0,
+          "explain": "45.678 có 5 chữ số, 9.999 có 4 chữ số. Số có nhiều chữ số hơn thì lớn hơn, nên 45.678 lớn hơn."
+        },
+        {
+          "type": "mcq",
+          "q": "So sánh 123.456 và 123.465, số nào lớn hơn?",
+          "options": ["123.456 lớn hơn", "123.465 lớn hơn", "Hai số bằng nhau", "Không xác định được"],
+          "a": 1,
+          "explain": "Hai số đều có 6 chữ số, giống nhau ở 4 hàng đầu (1,2,3,4). Đến hàng chục: 123.456 có chữ số 5, còn 123.465 có chữ số 6. Vì 6 > 5 nên 123.465 lớn hơn."
+        },
+        {
+          "type": "mcq",
+          "q": "Sắp xếp các số 87.230, 87.203, 87.302 theo thứ tự từ bé đến lớn.",
+          "options": [
+            "87.203, 87.230, 87.302",
+            "87.230, 87.203, 87.302",
+            "87.302, 87.230, 87.203",
+            "87.203, 87.302, 87.230"
+          ],
+          "a": 0,
+          "explain": "Ba số đều có 5 chữ số đầu giống nhau (8,7). So hàng trăm: 87.203 có 2, 87.230 có 2, 87.302 có 3. Vậy 87.302 lớn nhất. So tiếp 87.203 và 87.230 ở hàng chục: 0 và 3, nên 87.203 < 87.230. Thứ tự: 87.203, 87.230, 87.302."
+        },
+        {
+          "type": "mcq",
+          "q": "Số nào lớn nhất trong các số: 3.456.789, 999.999, 3.465.000?",
+          "options": ["3.456.789", "999.999", "3.465.000", "Ba số bằng nhau"],
+          "a": 2,
+          "explain": "999.999 có 6 chữ số, còn 2 số kia có 7 chữ số nên lớn hơn 999.999. So 3.456.789 và 3.465.000: giống nhau ở hàng triệu, chục nghìn - hàng trăm nghìn: cả hai đều có 4, hàng chục nghìn: 3.456.789 có 5, còn 3.465.000 có 6. Vì 6>5 nên 3.465.000 lớn hơn."
+        },
+        {
+          "type": "mcq",
+          "q": "Tìm số lớn nhất có thể lập được từ các chữ số 4, 0, 7, 2, 9, 1 (mỗi chữ số dùng đúng một lần).",
+          "options": ["974.210", "970.421", "941.720", "907.421"],
+          "a": 0,
+          "explain": "Để số lớn nhất, ta xếp các chữ số theo thứ tự giảm dần từ hàng cao đến hàng thấp: 9,7,4,2,1,0, tạo thành số 974.210."
+        },
+        {
+          "type": "fill",
+          "q": "Điền dấu >, < hoặc = vào chỗ trống: 528.106 ___ 528.160",
+          "answer": "<",
+          "accept": ["<", "nhỏ hơn", "be hon", "bé hơn"]
+        },
+        {
+          "type": "solve",
+          "de": "Ba bạn Nam, Minh, Bình cùng chơi game xếp hình và ghi lại số điểm đạt được: Nam được 456.789 điểm, Minh được 465.789 điểm, Bình được 456.798 điểm. Em hãy sắp xếp số điểm của ba bạn theo thứ tự từ lớn đến bé và cho biết ai đạt điểm cao nhất.",
+          "hints": [
+            "Cả ba số điểm đều có 6 chữ số, em thử so sánh từng chữ số từ trái sang phải nhé.",
+            "Em so sánh chữ số ở hàng chục nghìn của ba số trước: 456.789 có 5, 465.789 có 6, 456.798 có 5. Số nào có chữ số hàng chục nghìn lớn nhất thì số đó lớn nhất.",
+            "465.789 có chữ số hàng chục nghìn là 6, lớn hơn hẳn hai số kia (đều là 5). Sau đó em so tiếp 456.789 và 456.798 ở các hàng còn lại để biết ai xếp nhì, ai xếp ba."
+          ],
+          "loiGiai": "Bài giải:\nSo sánh ba số: 456.789 (Nam), 465.789 (Minh), 456.798 (Bình), đều có 6 chữ số.\nHàng chục nghìn: 456.789 có 5, 465.789 có 6, 456.798 có 5. Vì 6 > 5 nên 465.789 lớn nhất.\nSo sánh tiếp 456.789 và 456.798: giống nhau đến hàng chục, chữ số hàng đơn vị 456.789 có 9, 456.798 có 8. Vì 9>8 nên 456.789 > 456.798.\nVậy thứ tự từ lớn đến bé là: 465.789 > 456.789 > 456.798, tức Minh > Nam > Bình.\nĐáp số: Minh cao nhất, thứ tự: Minh, Nam, Bình",
+          "dapSo": "Minh (465.789) > Nam (456.789) > Bình (456.798)"
+        },
+        {
+          "type": "solve",
+          "de": "Hùng có một số tiền tiết kiệm là số có sáu chữ số. Biết chữ số hàng trăm nghìn là 6, hàng chục nghìn là 2, hàng nghìn là 8, hàng trăm là 5, hàng chục là 0, hàng đơn vị là 3. Sau đó Bình đổi chỗ chữ số hàng chục nghìn và hàng nghìn cho nhau. Hỏi số tiền sau khi đổi chỗ là bao nhiêu, và số đó lớn hơn hay bé hơn số ban đầu?",
+          "hints": [
+            "Trước tiên em ghép các chữ số theo đúng thứ tự hàng để tìm ra số tiền ban đầu của Hùng đã nhé.",
+            "Số ban đầu là 628.503. Bây giờ em chỉ cần đổi chỗ hai chữ số ở hàng chục nghìn (2) và hàng nghìn (8) cho nhau, các chữ số khác giữ nguyên.",
+            "Sau khi đổi, hàng chục nghìn sẽ là 8, hàng nghìn sẽ là 2, số mới là 682.503. Em so sánh 682.503 với 628.503 để biết số nào lớn hơn."
+          ],
+          "loiGiai": "Bài giải:\nSố tiền ban đầu của Hùng, ghép theo đúng thứ tự các hàng (trăm nghìn 6, chục nghìn 2, nghìn 8, trăm 5, chục 0, đơn vị 3), là:\n628.503\nSau khi đổi chỗ chữ số hàng chục nghìn và hàng nghìn cho nhau, số mới là:\n682.503\nSo sánh: 682.503 và 628.503 đều có 6 chữ số, giống nhau ở hàng trăm nghìn (6), đến hàng chục nghìn: 682.503 có 8, còn 628.503 có 2. Vì 8 > 2 nên 682.503 > 628.503.\nVậy số tiền sau khi đổi chỗ là 682.503 đồng, lớn hơn số ban đầu.\nĐáp số: 682.503 đồng, lớn hơn số ban đầu",
+          "dapSo": "682.503 đồng (lớn hơn số ban đầu 628.503 đồng)"
+        }
+      ]
+    },
+    {
+      "so": 15,
+      "ten": "Làm quen với dãy số tự nhiên",
+      "lyThuyet": "Các số 0, 1, 2, 3, 4, 5,... gọi là các số tự nhiên. Dãy số tự nhiên là dãy các số tự nhiên viết theo thứ tự từ bé đến lớn: 0, 1, 2, 3, 4, 5,... Dãy số tự nhiên bắt đầu từ số 0 và không có số tự nhiên lớn nhất (cứ thêm 1 vào một số tự nhiên bất kì lại được một số tự nhiên khác lớn hơn). Hai số tự nhiên liên tiếp hơn kém nhau 1 đơn vị.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Số tự nhiên bé nhất là số nào?",
+          "options": ["0", "1", "-1", "Không có số bé nhất"],
+          "a": 0,
+          "explain": "Dãy số tự nhiên bắt đầu từ số 0, nên 0 là số tự nhiên bé nhất."
+        },
+        {
+          "type": "mcq",
+          "q": "Số liền sau của số 999.999 là số nào?",
+          "options": ["999.998", "1.000.000", "1.000.001", "1.999.999"],
+          "a": 1,
+          "explain": "Số liền sau bằng số đó cộng thêm 1: 999.999 + 1 = 1.000.000."
+        },
+        {
+          "type": "mcq",
+          "q": "Hai số tự nhiên liên tiếp thì hơn kém nhau bao nhiêu đơn vị?",
+          "options": ["1 đơn vị", "2 đơn vị", "10 đơn vị", "Không cố định"],
+          "a": 0,
+          "explain": "Hai số tự nhiên liên tiếp luôn hơn kém nhau đúng 1 đơn vị."
+        },
+        {
+          "type": "mcq",
+          "q": "Số liền trước của số 500.000 là số nào?",
+          "options": ["500.001", "499.999", "490.000", "499.990"],
+          "a": 1,
+          "explain": "Số liền trước bằng số đó trừ đi 1: 500.000 - 1 = 499.999."
+        },
+        {
+          "type": "mcq",
+          "q": "Nhận xét nào sau đây đúng về dãy số tự nhiên?",
+          "options": [
+            "Có số tự nhiên lớn nhất",
+            "Không có số tự nhiên lớn nhất",
+            "Dãy số tự nhiên bắt đầu từ số 1",
+            "Hai số tự nhiên liên tiếp hơn kém nhau 2 đơn vị"
+          ],
+          "a": 1,
+          "explain": "Vì cứ thêm 1 vào bất kì số tự nhiên nào cũng được một số lớn hơn, nên không có số tự nhiên lớn nhất."
+        },
+        {
+          "type": "fill",
+          "q": "Số liền sau của 100.999 là ___",
+          "answer": "101.000",
+          "accept": ["101.000", "101000", "101,000"]
+        },
+        {
+          "type": "solve",
+          "de": "Trong giải cờ vua thiếu nhi, các trận đấu được đánh số thứ tự liên tiếp bắt đầu từ 1. Trận đấu An theo dõi có số thứ tự liền ngay sau trận số 249.999. Hỏi trận đấu An theo dõi có số thứ tự là bao nhiêu?",
+          "hints": [
+            "Số thứ tự các trận đấu là các số tự nhiên liên tiếp, hơn kém nhau 1 đơn vị.",
+            "Em cần tìm số liền sau của 249.999, tức là lấy số đó cộng thêm 1.",
+            "249.999 + 1 = ?. Em để ý các chữ số 9 sẽ đổi thành 0 và có một hàng mới tăng lên 1."
+          ],
+          "loiGiai": "Bài giải:\nSố thứ tự trận đấu An theo dõi là số liền sau của 249.999, tức là:\n249.999 + 1 = 250.000\nĐáp số: 250.000",
+          "dapSo": "Trận số 250.000"
+        },
+        {
+          "type": "solve",
+          "de": "Bình đang đọc một bộ truyện tranh và đánh số các trang theo số tự nhiên liên tiếp: 1, 2, 3, 4,... Bình đang đọc ở trang có số liền trước là 128.500 và số liền sau là số cần tìm. Biết bạn ấy đọc 3 trang liên tiếp bắt đầu từ trang liền sau số 128.500. Hỏi 3 trang đó có số thứ tự là những số nào, và tổng 3 số trang đó là bao nhiêu?",
+          "hints": [
+            "Trước tiên em tìm số liền sau của 128.500 đã, đó chính là trang đầu tiên Bình đọc.",
+            "Sau khi có trang đầu tiên, hai trang tiếp theo là hai số tự nhiên liên tiếp ngay sau đó (mỗi số hơn kém nhau 1 đơn vị).",
+            "Trang đầu là 128.501, trang thứ hai là 128.502, trang thứ ba là 128.503. Em chỉ cần cộng ba số này lại để ra tổng."
+          ],
+          "loiGiai": "Bài giải:\nSố liền sau của 128.500 là: 128.500 + 1 = 128.501 (trang thứ nhất)\nTrang thứ hai là: 128.501 + 1 = 128.502\nTrang thứ ba là: 128.502 + 1 = 128.503\nTổng ba số trang là:\n128.501 + 128.502 + 128.503 = 385.506\nĐáp số: Ba trang là 128.501, 128.502, 128.503; tổng là 385.506",
+          "dapSo": "385.506"
+        }
+      ]
+    },
+    {
+      "so": 16,
+      "ten": "Luyện tập chung",
+      "lyThuyet": "Ôn lại: số có sáu chữ số và số 1.000.000; hàng và lớp (lớp đơn vị, lớp nghìn, lớp triệu); đọc viết số trong phạm vi lớp triệu; làm tròn số đến hàng trăm nghìn; so sánh các số có nhiều chữ số (so số chữ số trước, rồi so từng hàng từ trái sang phải); dãy số tự nhiên và hai số tự nhiên liên tiếp hơn kém nhau 1 đơn vị.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Số 4.208.135 thuộc hàng và lớp nào ở chữ số hàng cao nhất?",
+          "options": ["Hàng triệu, lớp triệu", "Hàng chục triệu, lớp triệu", "Hàng trăm nghìn, lớp nghìn", "Hàng trăm triệu, lớp triệu"],
+          "a": 0,
+          "explain": "Số 4.208.135 có 7 chữ số, chữ số cao nhất (4) đứng ở hàng triệu, thuộc lớp triệu."
+        },
+        {
+          "type": "mcq",
+          "q": "Làm tròn số 561.400 đến hàng trăm nghìn được số nào?",
+          "options": ["500.000", "560.000", "600.000", "561.000"],
+          "a": 2,
+          "explain": "Số 561.400 có chữ số hàng chục nghìn là 6, thuộc nhóm 5,6,7,8,9 nên làm tròn lên: hàng trăm nghìn từ 5 tăng thêm 1 thành 6, được 600.000."
+        },
+        {
+          "type": "mcq",
+          "q": "So sánh 2.345.000 và 999.999, số nào lớn hơn?",
+          "options": ["999.999 lớn hơn", "2.345.000 lớn hơn", "Hai số bằng nhau", "Không so sánh được"],
+          "a": 1,
+          "explain": "2.345.000 có 7 chữ số, 999.999 có 6 chữ số. Số có nhiều chữ số hơn thì lớn hơn, nên 2.345.000 lớn hơn."
+        },
+        {
+          "type": "mcq",
+          "q": "Số liền sau của số 3.999.999 là số nào?",
+          "options": ["3.999.998", "4.000.000", "4.000.001", "3.000.000"],
+          "a": 1,
+          "explain": "Số liền sau bằng số đó cộng thêm 1: 3.999.999 + 1 = 4.000.000."
+        },
+        {
+          "type": "mcq",
+          "q": "Một số có bảy chữ số, biết hàng triệu là 3, hàng trăm nghìn là 8, hàng chục nghìn là 5, hàng nghìn là 0, hàng trăm là 2, hàng chục là 9, hàng đơn vị là 1. Số đó là số nào?",
+          "options": ["3.850.291", "3.850.921", "3.805.291", "3.580.291"],
+          "a": 0,
+          "explain": "Số có 7 chữ số gồm các hàng: triệu(3), trăm nghìn(8), chục nghìn(5), nghìn(0), trăm(2), chục(9), đơn vị(1). Ghép lại: 3.850.291."
+        },
+        {
+          "type": "fill",
+          "q": "Điền dấu >, < hoặc = vào chỗ trống: 1.999.999 ___ 2.000.000",
+          "answer": "<",
+          "accept": ["<", "nhỏ hơn", "be hon", "bé hơn"]
+        },
+        {
+          "type": "solve",
+          "de": "Đội bơi lội của Nam ghi lại tổng số mét bơi được của cả đội trong năm là 385.700 mét. Ban huấn luyện muốn làm tròn số này đến hàng trăm nghìn để báo cáo cho gọn. Em hãy giúp ban huấn luyện làm tròn số đó, sau đó cho biết số làm tròn hơn hay kém số ban đầu bao nhiêu mét.",
+          "hints": [
+            "Em xác định chữ số hàng chục nghìn của số 385.700 trước để biết làm tròn lên hay xuống.",
+            "Chữ số hàng chục nghìn là 8, thuộc nhóm 5,6,7,8,9 nên làm tròn lên: hàng trăm nghìn từ 3 tăng lên 4.",
+            "Số làm tròn là 400.000. Em lấy 400.000 trừ đi 385.700 để biết chênh lệch."
+          ],
+          "loiGiai": "Bài giải:\nSố 385.700 có chữ số hàng chục nghìn là 8 (thuộc nhóm 5,6,7,8,9) nên làm tròn lên.\nHàng trăm nghìn tăng thêm 1: từ 3 thành 4, các chữ số sau đổi thành 0.\nVậy 385.700 làm tròn đến hàng trăm nghìn được: 400.000\nSố làm tròn hơn số ban đầu là:\n400.000 - 385.700 = 14.300 (mét)\nĐáp số: Số làm tròn là 400.000 mét, hơn số ban đầu 14.300 mét",
+          "dapSo": "400.000 mét (hơn số ban đầu 14.300 mét)"
+        },
+        {
+          "type": "solve",
+          "de": "Ba bạn Nam, Khoa, An cùng ghi lại số trang sách đã đọc được trong một năm: Nam đọc được 8.245 trang, Khoa đọc được 82.450 trang, An đọc được 8.425 trang. Em hãy so sánh số trang của ba bạn và cho biết ai đọc nhiều nhất, ai đọc ít nhất.",
+          "hints": [
+            "Em đếm số chữ số của ba số này trước: 8.245 có mấy chữ số, 82.450 có mấy chữ số, 8.425 có mấy chữ số?",
+            "82.450 có 5 chữ số, còn hai số kia chỉ có 4 chữ số, nên 82.450 chắc chắn lớn nhất rồi.",
+            "Với 8.245 và 8.425 (đều 4 chữ số), em so sánh từ trái sang phải: hàng nghìn giống nhau (8), đến hàng trăm: 2 và 4, số nào có hàng trăm lớn hơn thì số đó lớn hơn."
+          ],
+          "loiGiai": "Bài giải:\nSo sánh số chữ số: 82.450 có 5 chữ số, còn 8.245 và 8.425 đều có 4 chữ số.\nVậy Khoa đọc nhiều nhất với 82.450 trang.\nSo sánh 8.245 và 8.425: hàng nghìn đều là 8, hàng trăm: 8.245 có 2, 8.425 có 4. Vì 4 > 2 nên 8.425 > 8.245.\nVậy An đọc nhiều hơn Nam.\nThứ tự từ nhiều đến ít: Khoa (82.450) > An (8.425) > Nam (8.245).\nĐáp số: Khoa đọc nhiều nhất, Nam đọc ít nhất",
+          "dapSo": "Khoa nhiều nhất (82.450 trang), Nam ít nhất (8.245 trang)"
+        }
+      ]
+    }
+  ]
+}

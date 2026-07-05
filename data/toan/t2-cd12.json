@@ -1,0 +1,518 @@
+{
+  "mon": "toan",
+  "tap": 2,
+  "chuDe": "Ôn tập cuối năm",
+  "cdSo": 12,
+  "bai": [
+    {
+      "so": 67,
+      "ten": "Ôn tập số tự nhiên",
+      "lyThuyet": "Số tự nhiên gồm 0, 1, 2, 3, ... Số tự nhiên bé nhất là 0, không có số tự nhiên lớn nhất vì bao giờ cũng có thể thêm 1 để được số lớn hơn. Mỗi chữ số trong một số có giá trị khác nhau tùy vào vị trí (hàng) của nó: hàng đơn vị, chục, trăm, nghìn, chục nghìn, trăm nghìn... Khi làm tròn số đến một hàng nào đó, em nhìn chữ số ở hàng liền sau: nếu chữ số đó từ 5 trở lên thì làm tròn lên, nếu bé hơn 5 thì làm tròn xuống (giữ nguyên).",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Một trường học có số học sinh gồm 4 trăm nghìn, 5 chục nghìn, 3 nghìn, 2 trăm, 7 chục và 8 đơn vị (đây là số liệu ví dụ). Số đó viết là:",
+          "options": ["453.278", "435.278", "453.728", "435.728"],
+          "a": 0,
+          "explain": "4 trăm nghìn = 400.000; 5 chục nghìn = 50.000; 3 nghìn = 3.000; 2 trăm = 200; 7 chục = 70; 8 đơn vị = 8. Cộng lại: 400.000 + 50.000 + 3.000 + 200 + 70 + 8 = 453.278."
+        },
+        {
+          "type": "mcq",
+          "q": "Cho dãy số tự nhiên liên tiếp (hơn kém nhau 1 đơn vị): 999.998, 999.999, ..., 1.000.001. Số còn thiếu là:",
+          "options": ["1.000.000", "999.000", "1.000.100", "900.000"],
+          "a": 0,
+          "explain": "Dãy số tự nhiên liên tiếp hơn kém nhau 1 đơn vị: sau 999.999 là 999.999 + 1 = 1.000.000."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong số 705.243, chữ số 7 có giá trị là bao nhiêu?",
+          "options": ["700.000", "70.000", "7.000", "7"],
+          "a": 0,
+          "explain": "Chữ số 7 đứng ở hàng trăm nghìn nên có giá trị là 7 x 100.000 = 700.000."
+        },
+        {
+          "type": "mcq",
+          "q": "Làm tròn số 428.650 đến hàng nghìn, ta được:",
+          "options": ["429.000", "428.000", "430.000", "428.600"],
+          "a": 0,
+          "explain": "Muốn làm tròn 428.650 đến hàng nghìn, em nhìn chữ số hàng trăm là 6 (từ 5 trở lên) nên làm tròn lên: 428.650 làm tròn thành 429.000."
+        },
+        {
+          "type": "mcq",
+          "q": "Sắp xếp các số 305.421, 305.412, 305.214, 305.241 theo thứ tự từ bé đến lớn:",
+          "options": [
+            "305.214, 305.241, 305.412, 305.421",
+            "305.421, 305.412, 305.241, 305.214",
+            "305.214, 305.412, 305.241, 305.421",
+            "305.412, 305.421, 305.214, 305.241"
+          ],
+          "a": 0,
+          "explain": "So sánh từng số: 305.214 < 305.241 < 305.412 < 305.421. Vậy thứ tự từ bé đến lớn là: 305.214, 305.241, 305.412, 305.421."
+        },
+        {
+          "type": "fill",
+          "q": "Làm tròn số 573.200 đến hàng chục nghìn, ta được ___",
+          "answer": "570.000",
+          "accept": ["570000", "570.000"]
+        },
+        {
+          "type": "solve",
+          "de": "Từ bốn chữ số 0, 3, 5, 8 (mỗi chữ số dùng một lần), em hãy lập số có 4 chữ số khác nhau lớn nhất và số có 4 chữ số khác nhau bé nhất có thể lập được. Biết chữ số đầu tiên (hàng nghìn) không được là 0.",
+          "hints": [
+            "Anh Fury hỏi em: muốn số có 4 chữ số lớn nhất, em nên xếp chữ số lớn nhất ở hàng nào?",
+            "Đúng rồi, xếp chữ số lớn nhất ở hàng nghìn, rồi các chữ số còn lại giảm dần. Còn muốn số bé nhất thì sao, chữ số hàng nghìn có được là 0 không?",
+            "Chữ số hàng nghìn không được là 0, vậy với số bé nhất em phải chọn chữ số bé nhất khác 0 đặt ở hàng nghìn, rồi xếp 0 và các chữ số còn lại tăng dần phía sau."
+          ],
+          "loiGiai": "Sắp xếp 4 chữ số 0, 3, 5, 8 theo thứ tự giảm dần: 8, 5, 3, 0 ta được số lớn nhất là 8.530.\nVì chữ số hàng nghìn không được là 0, nên số bé nhất phải có chữ số hàng nghìn là 3 (chữ số bé nhất khác 0), sau đó xếp các chữ số còn lại (0, 5, 8) tăng dần: 3.058.",
+          "dapSo": "Số lớn nhất: 8.530; Số bé nhất: 3.058"
+        },
+        {
+          "type": "solve",
+          "de": "Một xã có khoảng 45.678 người (số liệu ví dụ minh họa). Em hãy viết số 45.678 thành tổng theo các hàng của nó, sau đó cho biết chữ số 5 trong số này thuộc hàng nào và có giá trị bao nhiêu.",
+          "hints": [
+            "Anh Fury hỏi em: số 45.678 có mấy chữ số, và mỗi chữ số ứng với hàng nào (chục nghìn, nghìn, trăm, chục, đơn vị)?",
+            "Em hãy viết lần lượt: 4 chục nghìn, 5 nghìn, 6 trăm, 7 chục, 8 đơn vị, rồi đổi mỗi phần ra số rồi cộng lại.",
+            "Chữ số 5 đứng ở vị trí thứ hai từ trái sang, đó là hàng nghìn. Giá trị của nó bằng 5 nhân với giá trị của hàng nghìn."
+          ],
+          "loiGiai": "Số 45.678 viết thành tổng theo các hàng là:\n45.678 = 40.000 + 5.000 + 600 + 70 + 8\nChữ số 5 trong số 45.678 thuộc hàng nghìn, có giá trị là 5.000.",
+          "dapSo": "45.678 = 40.000 + 5.000 + 600 + 70 + 8; chữ số 5 thuộc hàng nghìn, giá trị 5.000"
+        }
+      ]
+    },
+    {
+      "so": 68,
+      "ten": "Ôn tập phép tính với số tự nhiên",
+      "lyThuyet": "Khi đặt tính cộng, trừ, nhân, chia, em cần viết các chữ số thẳng cột với nhau. Khi tính giá trị của biểu thức có nhiều phép tính, em thực hiện nhân chia trước, cộng trừ sau; nếu có dấu ngoặc thì tính trong ngoặc trước. Muốn tính thuận tiện, em có thể dùng tính chất giao hoán, kết hợp của phép cộng và phép nhân, hoặc tính chất phân phối của phép nhân đối với phép cộng.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Đặt tính rồi tính: 245.876 + 138.459 = ?",
+          "options": ["384.335", "383.335", "384.235", "374.335"],
+          "a": 0,
+          "explain": "Đặt tính thẳng cột rồi cộng từ phải sang trái: 245.876 + 138.459 = 384.335."
+        },
+        {
+          "type": "mcq",
+          "q": "Đặt tính rồi tính: 500.000 - 236.458 = ?",
+          "options": ["263.542", "264.542", "263.452", "273.542"],
+          "a": 0,
+          "explain": "Đặt tính thẳng cột rồi trừ từ phải sang trái, có nhớ khi cần: 500.000 - 236.458 = 263.542."
+        },
+        {
+          "type": "mcq",
+          "q": "Tính giá trị biểu thức: 120 + 30 x 4 = ?",
+          "options": ["240", "600", "150", "480"],
+          "a": 0,
+          "explain": "Thực hiện phép nhân trước: 30 x 4 = 120. Sau đó cộng: 120 + 120 = 240."
+        },
+        {
+          "type": "mcq",
+          "q": "Tính bằng cách thuận tiện: 25 x 37 x 4 = ?",
+          "options": ["3.700", "3.600", "2.700", "9.325"],
+          "a": 0,
+          "explain": "Áp dụng tính chất giao hoán và kết hợp: 25 x 37 x 4 = (25 x 4) x 37 = 100 x 37 = 3.700."
+        },
+        {
+          "type": "mcq",
+          "q": "Một đội bóng đá đi ba ngày tập huấn, mỗi ngày di chuyển lần lượt 120 km, 150 km và 180 km. Hỏi trung bình mỗi ngày đội đi được bao nhiêu ki-lô-mét?",
+          "options": ["150 km", "450 km", "160 km", "140 km"],
+          "a": 0,
+          "explain": "Tổng số km ba ngày: 120 + 150 + 180 = 450 (km). Trung bình mỗi ngày: 450 : 3 = 150 (km)."
+        },
+        {
+          "type": "fill",
+          "q": "Điền số thích hợp vào chỗ trống: 8.646 : 6 = ___",
+          "answer": "1441",
+          "accept": ["1441", "1.441"]
+        },
+        {
+          "type": "solve",
+          "de": "Tổng số huy chương của đội cờ vua và đội bơi là 850 huy chương. Đội cờ vua nhiều hơn đội bơi 120 huy chương. Hỏi mỗi đội có bao nhiêu huy chương?",
+          "hints": [
+            "Anh Fury hỏi em: đây là dạng toán tìm hai số biết tổng và hiệu, em còn nhớ công thức tính số lớn không?",
+            "Đúng rồi, số lớn = (tổng + hiệu) : 2. Em hãy tính (850 + 120) : 2 xem đội cờ vua có bao nhiêu huy chương.",
+            "Sau khi tìm được số lớn (đội cờ vua), em lấy tổng trừ đi số đó để tìm số bé (đội bơi), hoặc dùng công thức số bé = (tổng - hiệu) : 2."
+          ],
+          "loiGiai": "Số huy chương của đội cờ vua là:\n(850 + 120) : 2 = 485 (huy chương)\nSố huy chương của đội bơi là:\n850 - 485 = 365 (huy chương)",
+          "dapSo": "Đội cờ vua: 485 huy chương; Đội bơi: 365 huy chương"
+        },
+        {
+          "type": "solve",
+          "de": "Xe của đội siêu anh hùng đi quãng đường 180 km và tiêu thụ hết 12 lít xăng. Biết giá xăng là 22.000 đồng một lít. Hỏi đội siêu anh hùng phải trả bao nhiêu tiền xăng?",
+          "hints": [
+            "Anh Fury hỏi em: muốn biết số tiền phải trả, em cần biết số lít xăng đã dùng và giá tiền của một lít, rồi làm phép tính gì?",
+            "Đúng rồi, đó là phép nhân: số lít xăng nhân với giá tiền một lít. Em hãy nhân 12 với 22.000 xem kết quả là bao nhiêu.",
+            "Em tính 12 x 22.000, có thể tách 22.000 = 22 x 1.000 để nhân cho dễ: 12 x 22 = 264, rồi thêm ba số 0."
+          ],
+          "loiGiai": "Số tiền xăng đội siêu anh hùng phải trả là:\n12 x 22.000 = 264.000 (đồng)",
+          "dapSo": "264.000 đồng"
+        }
+      ]
+    },
+    {
+      "so": 69,
+      "ten": "Ôn tập phân số",
+      "lyThuyet": "Phân số gồm tử số và mẫu số, viết dạng a/b (b khác 0). Hai phân số bằng nhau nếu khi rút gọn (hoặc quy đồng) chúng có cùng giá trị. Muốn so sánh hai phân số cùng mẫu số, em so sánh tử số; muốn so sánh hai phân số khác mẫu số, em quy đồng mẫu số rồi so sánh tử số. Phân số có tử số bé hơn mẫu số thì bé hơn 1; phân số có tử số lớn hơn mẫu số thì lớn hơn 1.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Phân số nào bằng phân số 2/3?",
+          "options": ["6/9", "4/9", "3/6", "2/9"],
+          "a": 0,
+          "explain": "Nhân cả tử số và mẫu số của 2/3 với 3, ta được 6/9. Vậy 2/3 = 6/9."
+        },
+        {
+          "type": "mcq",
+          "q": "Rút gọn phân số 18/24 về phân số tối giản, ta được:",
+          "options": ["3/4", "9/12", "2/3", "6/8"],
+          "a": 0,
+          "explain": "Cùng chia tử số và mẫu số cho 6: 18 : 6 = 3, 24 : 6 = 4. Vậy 18/24 rút gọn thành 3/4 (phân số tối giản)."
+        },
+        {
+          "type": "mcq",
+          "q": "Quy đồng mẫu số hai phân số 3/4 và 5/6 (mẫu số chung là 12), ta được:",
+          "options": ["9/12 và 10/12", "3/12 và 5/12", "9/12 và 5/12", "12/12 và 15/12"],
+          "a": 0,
+          "explain": "3/4 = (3x3)/(4x3) = 9/12. 5/6 = (5x2)/(6x2) = 10/12."
+        },
+        {
+          "type": "mcq",
+          "q": "So sánh hai phân số 5/6 và 7/8, phân số nào lớn hơn?",
+          "options": ["7/8", "5/6", "Hai phân số bằng nhau", "Không so sánh được"],
+          "a": 0,
+          "explain": "Quy đồng mẫu số chung 24: 5/6 = 20/24, 7/8 = 21/24. Vì 21/24 > 20/24 nên 7/8 > 5/6."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong hai phân số 9/8 và 1, phân số nào lớn hơn?",
+          "options": ["9/8", "1", "Hai phân số bằng nhau", "Không xác định được"],
+          "a": 0,
+          "explain": "Phân số 9/8 có tử số (9) lớn hơn mẫu số (8) nên 9/8 lớn hơn 1."
+        },
+        {
+          "type": "fill",
+          "q": "Sắp xếp các phân số 2/5, 3/5, 1/5 theo thứ tự từ bé đến lớn: ___",
+          "answer": "1/5, 2/5, 3/5",
+          "accept": ["1/5,2/5,3/5", "1/5 2/5 3/5"]
+        },
+        {
+          "type": "solve",
+          "de": "Trong một cuộc thi chạy, Nam chạy hết 1/4 giờ, Minh chạy hết 1/3 giờ trên cùng một quãng đường. Hỏi bạn nào chạy nhanh hơn?",
+          "hints": [
+            "Anh Fury hỏi em: ai chạy cùng quãng đường mà mất ít thời gian hơn thì bạn đó chạy nhanh hơn hay chậm hơn?",
+            "Đúng vậy, thời gian ít hơn nghĩa là chạy nhanh hơn! Vậy em cần so sánh hai phân số 1/4 và 1/3 xem phân số nào bé hơn.",
+            "Em quy đồng mẫu số chung là 12: 1/4 = 3/12, 1/3 = 4/12. So sánh 3/12 và 4/12 xem phân số nào bé hơn."
+          ],
+          "loiGiai": "Quy đồng mẫu số: 1/4 = 3/12 và 1/3 = 4/12.\nVì 3/12 < 4/12 nên 1/4 < 1/3.\nNam chạy hết ít thời gian hơn Minh, vậy Nam chạy nhanh hơn.",
+          "dapSo": "Nam chạy nhanh hơn"
+        },
+        {
+          "type": "solve",
+          "de": "Hai vòi nước cùng chảy vào bể trong một khoảng thời gian như nhau. Vòi thứ nhất chảy được 2/5 bể, vòi thứ hai chảy được 3/7 bể. Hỏi vòi nào chảy nhanh hơn?",
+          "hints": [
+            "Anh Fury hỏi em: trong cùng một khoảng thời gian, vòi nào chảy được nhiều nước hơn (được phần bể lớn hơn) thì vòi đó chảy nhanh hơn hay chậm hơn?",
+            "Đúng rồi, vòi chảy được phần bể lớn hơn là vòi nhanh hơn! Em cần so sánh hai phân số 2/5 và 3/7.",
+            "Em quy đồng mẫu số chung là 35: 2/5 = 14/35, 3/7 = 15/35. So sánh 14/35 và 15/35 xem phân số nào lớn hơn."
+          ],
+          "loiGiai": "Quy đồng mẫu số: 2/5 = 14/35 và 3/7 = 15/35.\nVì 15/35 > 14/35 nên 3/7 > 2/5.\nVòi thứ hai chảy được phần bể lớn hơn, vậy vòi thứ hai chảy nhanh hơn.",
+          "dapSo": "Vòi thứ hai chảy nhanh hơn"
+        }
+      ]
+    },
+    {
+      "so": 70,
+      "ten": "Ôn tập phép tính với phân số",
+      "lyThuyet": "Muốn cộng (hoặc trừ) hai phân số khác mẫu số, em quy đồng mẫu số rồi cộng (hoặc trừ) hai tử số, giữ nguyên mẫu số chung. Muốn nhân hai phân số, em nhân tử số với tử số, mẫu số với mẫu số. Muốn chia một phân số cho một phân số, em nhân phân số thứ nhất với phân số thứ hai đảo ngược. Khi tính biểu thức có nhiều phép tính, vẫn thực hiện nhân chia trước, cộng trừ sau.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Tính: 2/3 + 1/4 = ?",
+          "options": ["11/12", "3/7", "2/12", "3/12"],
+          "a": 0,
+          "explain": "Quy đồng mẫu số chung 12: 2/3 = 8/12, 1/4 = 3/12. Cộng: 8/12 + 3/12 = 11/12."
+        },
+        {
+          "type": "mcq",
+          "q": "Tính: 5/6 - 1/3 = ?",
+          "options": ["1/2", "4/3", "4/6", "1/3"],
+          "a": 0,
+          "explain": "Quy đồng mẫu số: 1/3 = 2/6. Trừ: 5/6 - 2/6 = 3/6 = 1/2."
+        },
+        {
+          "type": "mcq",
+          "q": "Tính: 2/3 x 3/5 = ?",
+          "options": ["2/5", "6/15", "5/8", "6/8"],
+          "a": 0,
+          "explain": "Nhân tử số với tử số, mẫu số với mẫu số: (2x3)/(3x5) = 6/15. Rút gọn 6/15 = 2/5."
+        },
+        {
+          "type": "mcq",
+          "q": "Tính: 4/5 : 2/3 = ?",
+          "options": ["6/5", "8/15", "5/6", "2/15"],
+          "a": 0,
+          "explain": "Muốn chia hai phân số, em nhân phân số thứ nhất với phân số thứ hai đảo ngược: 4/5 x 3/2 = 12/10 = 6/5."
+        },
+        {
+          "type": "mcq",
+          "q": "Tính giá trị biểu thức: 1/2 + 1/3 x 3/4 = ?",
+          "options": ["3/4", "5/6", "3/24", "1/2"],
+          "a": 0,
+          "explain": "Thực hiện phép nhân trước: 1/3 x 3/4 = 3/12 = 1/4. Sau đó cộng: 1/2 + 1/4 = 2/4 + 1/4 = 3/4."
+        },
+        {
+          "type": "fill",
+          "q": "Tính bằng cách thuận tiện: 2/7 x 5/9 + 2/7 x 4/9 = ___",
+          "answer": "2/7",
+          "accept": ["2/7"]
+        },
+        {
+          "type": "solve",
+          "de": "Một khu đất hình chữ nhật, đội siêu anh hùng dùng 1/2 khu đất để xây nhà, 1/5 khu đất để trồng cây, phần còn lại làm sân chơi. Hỏi phần đất làm sân chơi chiếm bao nhiêu phần khu đất?",
+          "hints": [
+            "Anh Fury hỏi em: coi cả khu đất là 1, muốn tìm phần đất làm sân chơi, em lấy 1 trừ đi những phần nào?",
+            "Đúng rồi, em lấy 1 trừ đi phần xây nhà (1/2) và trừ đi phần trồng cây (1/5). Hai phân số này khác mẫu số, em quy đồng mẫu số chung là bao nhiêu?",
+            "Mẫu số chung là 10: 1/2 = 5/10, 1/5 = 2/10. Em tính 10/10 - 5/10 - 2/10 xem còn lại bao nhiêu phần."
+          ],
+          "loiGiai": "Quy đồng mẫu số: 1/2 = 5/10 và 1/5 = 2/10.\nPhần đất làm sân chơi là:\n1 - 5/10 - 2/10 = 10/10 - 5/10 - 2/10 = 3/10 (khu đất)",
+          "dapSo": "3/10 khu đất"
+        },
+        {
+          "type": "solve",
+          "de": "Em hãy viết phân số 5/6 thành tổng của hai phân số có tử số đều là 1 (hai phân số đơn vị).",
+          "hints": [
+            "Anh Fury hỏi em: phân số đơn vị là phân số có tử số bằng 1, ví dụ 1/2, 1/3, 1/4... Em thử nghĩ xem 1/2 và phân số đơn vị nào khi cộng lại có thể ra 5/6?",
+            "Em thử cộng 1/2 với 1/3 xem có bằng 5/6 không nhé. Quy đồng mẫu số chung là 6.",
+            "1/2 = 3/6 và 1/3 = 2/6. Em cộng 3/6 + 2/6 xem có đúng bằng 5/6 không."
+          ],
+          "loiGiai": "Ta có: 1/2 = 3/6 và 1/3 = 2/6.\n1/2 + 1/3 = 3/6 + 2/6 = 5/6\nVậy 5/6 = 1/2 + 1/3.",
+          "dapSo": "5/6 = 1/2 + 1/3"
+        }
+      ]
+    },
+    {
+      "so": 71,
+      "ten": "Ôn tập hình học và đo lường",
+      "lyThuyet": "Góc nhọn bé hơn góc vuông, góc tù lớn hơn góc vuông. Hình bình hành có hai cặp cạnh đối diện song song và bằng nhau. Hình thoi có bốn cạnh bằng nhau và hai đường chéo vuông góc với nhau. Khi đổi đơn vị đo khối lượng: 1 tấn = 10 tạ = 100 yến = 1.000 kg. Khi đổi đơn vị đo diện tích: 1 m² = 100 dm² = 10.000 cm². Chu vi hình chữ nhật = (chiều dài + chiều rộng) x 2; diện tích hình chữ nhật = chiều dài x chiều rộng.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Hình thoi có đặc điểm nào sau đây?",
+          "options": [
+            "Bốn cạnh bằng nhau, hai đường chéo vuông góc với nhau",
+            "Bốn cạnh bằng nhau, hai đường chéo song song với nhau",
+            "Chỉ có hai cạnh bằng nhau",
+            "Bốn góc đều là góc vuông"
+          ],
+          "a": 0,
+          "explain": "Hình thoi có bốn cạnh bằng nhau và hai đường chéo vuông góc với nhau tại trung điểm mỗi đường."
+        },
+        {
+          "type": "mcq",
+          "q": "Đổi đơn vị: 7 tạ 5 yến = ? kg",
+          "options": ["750 kg", "705 kg", "75 kg", "7.500 kg"],
+          "a": 0,
+          "explain": "1 tạ = 100 kg nên 7 tạ = 700 kg. 1 yến = 10 kg nên 5 yến = 50 kg. Tổng: 700 + 50 = 750 kg."
+        },
+        {
+          "type": "mcq",
+          "q": "Đổi đơn vị: 2 giờ 15 phút = ? phút",
+          "options": ["135 phút", "125 phút", "215 phút", "145 phút"],
+          "a": 0,
+          "explain": "1 giờ = 60 phút nên 2 giờ = 120 phút. Cộng thêm 15 phút: 120 + 15 = 135 phút."
+        },
+        {
+          "type": "mcq",
+          "q": "Đổi đơn vị: 300 cm² = ? dm²",
+          "options": ["3 dm²", "30 dm²", "0,3 dm²", "3.000 dm²"],
+          "a": 0,
+          "explain": "1 dm² = 100 cm², vậy 300 cm² = 300 : 100 = 3 dm²."
+        },
+        {
+          "type": "mcq",
+          "q": "Một mảnh vườn hình chữ nhật có chiều dài 15 m, chiều rộng 8 m. Tính chu vi và diện tích mảnh vườn đó.",
+          "options": [
+            "Chu vi 46 m, diện tích 120 m²",
+            "Chu vi 23 m, diện tích 120 m²",
+            "Chu vi 46 m, diện tích 23 m²",
+            "Chu vi 120 m, diện tích 46 m²"
+          ],
+          "a": 0,
+          "explain": "Chu vi = (15 + 8) x 2 = 46 (m). Diện tích = 15 x 8 = 120 (m²)."
+        },
+        {
+          "type": "fill",
+          "q": "Điền số thích hợp vào chỗ trống: 5 m² = ___ dm²",
+          "answer": "500",
+          "accept": ["500"]
+        },
+        {
+          "type": "solve",
+          "de": "Bạn Bình sinh năm 1998 (số liệu ví dụ). Hỏi năm 1998 thuộc thế kỉ nào? Biết thế kỉ 20 tính từ năm 1901 đến năm 2000, thế kỉ 21 tính từ năm 2001 đến năm 2100.",
+          "hints": [
+            "Anh Fury hỏi em: năm 1998 nằm trong khoảng nào, từ 1901 đến 2000, hay từ 2001 đến 2100?",
+            "Đúng rồi, em so sánh xem 1998 có nhỏ hơn hoặc bằng 2000 không, và có lớn hơn hoặc bằng 1901 không.",
+            "Vì 1901 ≤ 1998 ≤ 2000 nên năm 1998 thuộc thế kỉ nào, em kết luận nhé."
+          ],
+          "loiGiai": "Vì 1901 ≤ 1998 ≤ 2000 nên năm 1998 thuộc thế kỉ 20.",
+          "dapSo": "Thế kỉ 20"
+        },
+        {
+          "type": "solve",
+          "de": "Một nền nhà hình chữ nhật có chiều dài 600 cm, chiều rộng 400 cm. Người ta lát nền nhà bằng các viên gạch hình vuông cạnh 40 cm, không có phần thừa hay chồng lên nhau. Hỏi cần bao nhiêu viên gạch để lát kín nền nhà đó?",
+          "hints": [
+            "Anh Fury hỏi em: muốn biết cần bao nhiêu viên gạch, trước tiên em cần tính gì của nền nhà và của một viên gạch?",
+            "Đúng rồi, em cần tính diện tích nền nhà (dài x rộng) và diện tích một viên gạch (cạnh x cạnh).",
+            "Sau khi có hai diện tích, em lấy diện tích nền nhà chia cho diện tích một viên gạch để tìm số viên gạch cần dùng."
+          ],
+          "loiGiai": "Diện tích nền nhà là:\n600 x 400 = 240.000 (cm²)\nDiện tích một viên gạch là:\n40 x 40 = 1.600 (cm²)\nSố viên gạch cần dùng là:\n240.000 : 1.600 = 150 (viên)",
+          "dapSo": "150 viên gạch"
+        }
+      ]
+    },
+    {
+      "so": 72,
+      "ten": "Ôn tập một số yếu tố thống kê và xác suất",
+      "lyThuyet": "Khi đọc dãy số liệu (như chiều cao, cân nặng của các bạn), em có thể sắp xếp theo thứ tự để dễ so sánh, tìm giá trị lớn nhất, giá trị bé nhất, và tính trung bình cộng bằng cách lấy tổng các số liệu chia cho số lượng số liệu đó. Khi đọc biểu đồ cột, mỗi cột cho biết số liệu của một đối tượng, cột càng cao thì số liệu càng lớn. Khi làm thí nghiệm nhiều lần (như lấy bóng màu từ hộp), em có thể đếm số lần xuất hiện của mỗi sự kiện để biết sự kiện nào xảy ra nhiều hơn.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Chiều cao của 5 bạn trong lớp lần lượt là: 128 cm, 132 cm, 125 cm, 140 cm, 130 cm. Bạn nào cao nhất?",
+          "options": ["Bạn cao 140 cm", "Bạn cao 132 cm", "Bạn cao 128 cm", "Bạn cao 125 cm"],
+          "a": 0,
+          "explain": "So sánh các số liệu: 125, 128, 130, 132, 140. Số lớn nhất là 140 cm."
+        },
+        {
+          "type": "mcq",
+          "q": "Cân nặng của 5 bạn lần lượt là: 28 kg, 32 kg, 25 kg, 30 kg, 35 kg. Tính cân nặng trung bình của 5 bạn.",
+          "options": ["30 kg", "28 kg", "32 kg", "150 kg"],
+          "a": 0,
+          "explain": "Tổng cân nặng: 28 + 32 + 25 + 30 + 35 = 150 (kg). Trung bình: 150 : 5 = 30 (kg)."
+        },
+        {
+          "type": "mcq",
+          "q": "Biểu đồ cột thống kê số học sinh yêu thích các môn thể thao: bóng đá 12 bạn, cầu lông 8 bạn, bơi 10 bạn, cờ vua 6 bạn. Môn nào được yêu thích nhất?",
+          "options": ["Bóng đá", "Cầu lông", "Bơi", "Cờ vua"],
+          "a": 0,
+          "explain": "So sánh số liệu các cột: 12, 8, 10, 6. Cột cao nhất ứng với bóng đá (12 bạn), vậy bóng đá được yêu thích nhất."
+        },
+        {
+          "type": "mcq",
+          "q": "Vẫn theo biểu đồ ở câu trên (bóng đá 12, cầu lông 8, bơi 10, cờ vua 6), tổng số học sinh được hỏi là bao nhiêu?",
+          "options": ["36 bạn", "30 bạn", "40 bạn", "26 bạn"],
+          "a": 0,
+          "explain": "Tổng số học sinh: 12 + 8 + 10 + 6 = 36 (bạn)."
+        },
+        {
+          "type": "mcq",
+          "q": "Một hộp có các quả bóng màu đỏ, xanh, vàng. An lấy ngẫu nhiên một quả bóng (có ghi lại rồi trả vào hộp) và lặp lại 50 lần, thống kê được: đỏ 20 lần, xanh 15 lần, vàng 15 lần. Màu nào xuất hiện nhiều lần nhất?",
+          "options": ["Màu đỏ", "Màu xanh", "Màu vàng", "Ba màu bằng nhau"],
+          "a": 0,
+          "explain": "So sánh số lần xuất hiện: đỏ 20 lần, xanh 15 lần, vàng 15 lần. Màu đỏ xuất hiện nhiều lần nhất (20 lần)."
+        },
+        {
+          "type": "fill",
+          "q": "Một hộp kẹo có 3 màu, bạn Minh lấy ra nhiều lần (có trả lại) và ghi kết quả: đỏ 9 lần, xanh 16 lần, vàng 15 lần. Tổng số lần Minh đã lấy bóng là ___",
+          "answer": "40",
+          "accept": ["40"]
+        },
+        {
+          "type": "solve",
+          "de": "Biểu đồ cột ghi lại số quyển sách một câu lạc bộ đọc được trong 4 tháng: tháng 1 đọc 15 quyển, tháng 2 đọc 20 quyển, tháng 3 đọc 18 quyển, tháng 4 đọc 23 quyển. Hỏi cả 4 tháng câu lạc bộ đọc được tất cả bao nhiêu quyển sách?",
+          "hints": [
+            "Anh Fury hỏi em: đề bài cho số liệu của 4 tháng riêng biệt, muốn tìm tổng số sách cả 4 tháng em làm phép tính gì?",
+            "Đúng rồi, em cộng số sách của cả 4 tháng lại với nhau: 15 + 20 + 18 + 23.",
+            "Em cộng dần từng cặp cho dễ: 15 + 20 = 35, rồi 35 + 18 = 53, cuối cùng 53 + 23 bằng bao nhiêu?"
+          ],
+          "loiGiai": "Tổng số quyển sách câu lạc bộ đọc được trong 4 tháng là:\n15 + 20 + 18 + 23 = 76 (quyển)",
+          "dapSo": "76 quyển sách"
+        },
+        {
+          "type": "solve",
+          "de": "Một hộp có 40 viên kẹo gồm 3 màu: đỏ, xanh, vàng. Bạn An lấy ngẫu nhiên một viên kẹo rồi trả lại hộp, lặp lại 40 lần và ghi kết quả: đỏ 9 lần, xanh 16 lần, vàng 15 lần. Hỏi màu nào xuất hiện ít lần nhất, và màu đó xuất hiện bao nhiêu lần?",
+          "hints": [
+            "Anh Fury hỏi em: đề bài cho số lần xuất hiện của ba màu, em cần so sánh ba số nào với nhau?",
+            "Đúng rồi, em so sánh 9, 16 và 15 xem số nào bé nhất.",
+            "Trong ba số 9, 16, 15 thì số nào nhỏ hơn cả hai số còn lại?"
+          ],
+          "loiGiai": "So sánh số lần xuất hiện của ba màu: đỏ 9 lần, xanh 16 lần, vàng 15 lần.\nVì 9 < 15 < 16 nên màu đỏ xuất hiện ít lần nhất.",
+          "dapSo": "Màu đỏ, xuất hiện 9 lần"
+        }
+      ]
+    },
+    {
+      "so": 73,
+      "ten": "Ôn tập chung",
+      "lyThuyet": "Đây là bài ôn tập tổng hợp tất cả kiến thức đã học trong Toán 4 tập 2: số tự nhiên, các phép tính, phân số, hình học, đo lường, thống kê và xác suất. Em hãy nhớ lại cách đọc viết số, đặt tính bốn phép tính, cách cộng trừ nhân chia phân số, cách tính chu vi diện tích hình chữ nhật, và cách giải các bài toán có lời văn quen thuộc như tìm hai số biết tổng và hiệu, bài toán về phân số.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Số gồm 6 trăm nghìn, 0 chục nghìn, 4 nghìn, 5 trăm, 0 chục, 2 đơn vị viết là:",
+          "options": ["604.502", "640.502", "604.520", "600.452"],
+          "a": 0,
+          "explain": "6 trăm nghìn = 600.000; 4 nghìn = 4.000; 5 trăm = 500; 2 đơn vị = 2. Cộng lại: 600.000 + 4.000 + 500 + 2 = 604.502."
+        },
+        {
+          "type": "mcq",
+          "q": "Đặt tính rồi tính: 3.245 x 6 = ?",
+          "options": ["19.470", "19.370", "18.470", "19.480"],
+          "a": 0,
+          "explain": "3.245 x 6 = 19.470 (đặt tính nhân theo cột, nhân lần lượt từng chữ số từ phải sang trái, nhớ khi cần)."
+        },
+        {
+          "type": "mcq",
+          "q": "Rút gọn phân số 24/36 về phân số tối giản:",
+          "options": ["2/3", "3/4", "4/6", "1/2"],
+          "a": 0,
+          "explain": "Cùng chia tử số và mẫu số cho 12: 24 : 12 = 2, 36 : 12 = 3. Vậy 24/36 = 2/3 (phân số tối giản)."
+        },
+        {
+          "type": "mcq",
+          "q": "Một mảnh đất hình chữ nhật có chiều dài 12 m, chiều rộng 7 m. Tính chu vi và diện tích mảnh đất.",
+          "options": [
+            "Chu vi 38 m, diện tích 84 m²",
+            "Chu vi 84 m, diện tích 38 m²",
+            "Chu vi 19 m, diện tích 84 m²",
+            "Chu vi 38 m, diện tích 19 m²"
+          ],
+          "a": 0,
+          "explain": "Chu vi = (12 + 7) x 2 = 38 (m). Diện tích = 12 x 7 = 84 (m²)."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong hình chữ nhật, hai cạnh liên tiếp (ví dụ cạnh dài và cạnh rộng chung một đỉnh) có quan hệ gì với nhau?",
+          "options": ["Vuông góc với nhau", "Song song với nhau", "Bằng nhau", "Không có quan hệ gì"],
+          "a": 0,
+          "explain": "Trong hình chữ nhật, hai cạnh liên tiếp (kề nhau) luôn vuông góc với nhau, còn hai cạnh đối diện thì song song và bằng nhau."
+        },
+        {
+          "type": "fill",
+          "q": "Đặt tính rồi tính: 7.280 : 8 = ___",
+          "answer": "910",
+          "accept": ["910"]
+        },
+        {
+          "type": "solve",
+          "de": "Một đội văn nghệ của trường có 36 bạn, trong đó số bạn nam ít hơn số bạn nữ là 4 bạn. Hỏi đội văn nghệ có bao nhiêu bạn nam, bao nhiêu bạn nữ?",
+          "hints": [
+            "Anh Fury hỏi em: đây là bài toán tìm hai số khi biết tổng (36 bạn) và hiệu (4 bạn), em còn nhớ công thức tìm số bé không?",
+            "Đúng rồi, số bé (ở đây là số bạn nam) = (tổng - hiệu) : 2. Em thử tính (36 - 4) : 2 xem được bao nhiêu.",
+            "Sau khi tìm được số bạn nam, em lấy tổng số bạn (36) trừ đi số bạn nam để tìm số bạn nữ."
+          ],
+          "loiGiai": "Số bạn nam trong đội văn nghệ là:\n(36 - 4) : 2 = 16 (bạn)\nSố bạn nữ trong đội văn nghệ là:\n36 - 16 = 20 (bạn)",
+          "dapSo": "16 bạn nam, 20 bạn nữ"
+        },
+        {
+          "type": "solve",
+          "de": "Một kho muối có 6/7 tấn muối. Đợt 1 kho xuất đi 2/7 tấn, đợt 2 xuất đi 3/7 tấn. Hỏi kho muối còn lại bao nhiêu phần tấn muối?",
+          "hints": [
+            "Anh Fury hỏi em: kho có sẵn một lượng muối, rồi xuất đi hai đợt liên tiếp, vậy để tìm phần còn lại em phải làm những phép tính gì?",
+            "Đúng rồi, em lấy số muối ban đầu trừ đi cả hai đợt xuất: 6/7 trừ đi 2/7, rồi trừ tiếp 3/7. Ba phân số này cùng mẫu số 7 nên em chỉ cần tính với tử số thôi.",
+            "Em tính tử số: 6 - 2 - 3 bằng bao nhiêu, rồi giữ nguyên mẫu số 7."
+          ],
+          "loiGiai": "Số muối kho còn lại là:\n6/7 - 2/7 - 3/7 = (6 - 2 - 3)/7 = 1/7 (tấn)",
+          "dapSo": "1/7 tấn"
+        }
+      ]
+    }
+  ]
+}

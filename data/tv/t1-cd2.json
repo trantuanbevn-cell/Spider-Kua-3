@@ -1,0 +1,276 @@
+{
+  "mon": "tv",
+  "tap": 1,
+  "chuDe": "Trải nghiệm và khám phá",
+  "cdSo": 2,
+  "bai": [
+    {
+      "so": 1,
+      "ten": "Tuần 5: Bầu trời sau ô cửa nhỏ",
+      "lyThuyet": "Tuần này em đọc câu chuyện về những điều kỳ diệu ẩn giấu quanh mình, từ bầu trời rộng lớn đến tiếng thì thầm của cỏ cây. Về Luyện từ và câu, em sẽ học động từ là những từ chỉ hoạt động, trạng thái của người, vật hoặc sự việc, ví dụ như chạy, nhảy, suy nghĩ, tồn tại.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Sáng nào cũng vậy, Nam thức dậy sớm để ngắm bầu trời qua ô cửa sổ nhỏ trên gác mái. Cậu thấy những đám mây trắng trôi chầm chậm, đôi khi biến thành hình con thỏ, lúc lại giống chiếc thuyền buồm. Nam thích tưởng tượng mình đang bay lượn cùng đàn chim én. Mỗi buổi sáng như thế, cậu lại khám phá thêm một hình dạng mây mới, và cậu ghi chúng vào cuốn sổ nhỏ của mình.",
+          "q": "Nam thường làm gì mỗi buổi sáng?",
+          "options": ["Ngắm bầu trời qua ô cửa sổ nhỏ", "Đi đá bóng cùng bạn", "Học bài cùng mẹ", "Tưới cây trong vườn"],
+          "a": 0,
+          "explain": "Đoạn văn cho biết sáng nào Nam cũng thức dậy sớm để ngắm bầu trời qua ô cửa sổ nhỏ."
+        },
+        {
+          "type": "read",
+          "vanBan": "Sáng nào cũng vậy, Nam thức dậy sớm để ngắm bầu trời qua ô cửa sổ nhỏ trên gác mái. Cậu thấy những đám mây trắng trôi chầm chậm, đôi khi biến thành hình con thỏ, lúc lại giống chiếc thuyền buồm. Nam thích tưởng tượng mình đang bay lượn cùng đàn chim én. Mỗi buổi sáng như thế, cậu lại khám phá thêm một hình dạng mây mới, và cậu ghi chúng vào cuốn sổ nhỏ của mình.",
+          "q": "Nam làm gì với những hình dạng mây mà cậu khám phá được?",
+          "options": ["Vẽ lên tường", "Ghi vào cuốn sổ nhỏ", "Kể cho cô giáo nghe", "Chụp ảnh lại"],
+          "a": 1,
+          "explain": "Câu cuối đoạn văn nói Nam ghi những hình dạng mây mới vào cuốn sổ nhỏ của mình."
+        },
+        {
+          "type": "mcq",
+          "q": "Từ nào dưới đây là động từ?",
+          "options": ["xanh biếc", "chạy nhảy", "đẹp đẽ", "cao lớn"],
+          "a": 1,
+          "explain": "Chạy nhảy chỉ hoạt động của người hoặc vật nên là động từ, các từ còn lại là tính từ chỉ đặc điểm."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu \"Minh suy nghĩ rất lâu trước khi trả lời\", động từ là từ nào?",
+          "options": ["Minh", "suy nghĩ", "rất lâu", "trả lời"],
+          "a": 1,
+          "explain": "\"Suy nghĩ\" là từ chỉ hoạt động của Minh nên đó là động từ (câu cũng có động từ \"trả lời\" nhưng ở vị trí khác)."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu nào dưới đây có chứa động từ chỉ trạng thái?",
+          "options": ["Bé An đang ngủ say.", "Chiếc bàn màu nâu.", "Quyển sách rất dày.", "Bầu trời xanh thẳm."],
+          "a": 0,
+          "explain": "\"Ngủ\" là động từ chỉ trạng thái của An, còn các câu khác chỉ có tính từ miêu tả đặc điểm."
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống với l hoặc n: Bầu trời hôm nay trong ___ắt.",
+          "answer": "l",
+          "accept": ["l", "lắt", "trong lắt"]
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống với ch hoặc tr: Đàn ___im bay về tổ khi trời tối.",
+          "answer": "ch",
+          "accept": ["ch", "chim"]
+        },
+        {
+          "type": "solve",
+          "de": "Viết 2-3 câu kể về một buổi sáng em quan sát bầu trời hoặc thiên nhiên xung quanh nhà, trong đó có dùng ít nhất một động từ.",
+          "hints": [
+            "Em nhớ lại xem sáng nào đó em đã nhìn thấy gì trên bầu trời hoặc trong vườn nhà nhé, mây, chim, hay ánh nắng đều được.",
+            "Em kể xem lúc đó em đang làm gì, cảm giác của em thế nào khi nhìn thấy điều đó.",
+            "Ví dụ em có thể viết: Sáng nay em đứng ở ban công ngắm những đám mây trôi. Em thấy một đám mây giống hình chú voi con. Em rất thích thú và chạy vào kể cho mẹ nghe."
+          ],
+          "loiGiai": "Sáng nay em đứng ở ban công ngắm những đám mây trôi. Em thấy một đám mây giống hình chú voi con. Em rất thích thú và chạy vào kể cho mẹ nghe.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    },
+    {
+      "so": 2,
+      "ten": "Tuần 6: Cậu bé và chiếc máy bay giấy đặc biệt",
+      "lyThuyet": "Tuần này em đọc về những bạn nhỏ ham học hỏi, thích viết lách và sáng tạo ra những điều mới lạ từ chính đôi tay của mình. Về Luyện từ và câu, em sẽ luyện tập tìm và sử dụng động từ trong câu, phân biệt động từ với các từ loại khác như danh từ, tính từ.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Bình rất thích viết nhật kí mỗi tối trước khi đi ngủ. Cậu ghi lại những chuyện xảy ra trong ngày, từ việc học bài, chơi đá bóng, đến việc giúp mẹ nhặt rau. Có hôm Bình viết cả một câu chuyện tưởng tượng về chú robot biết bay. Bố khen Bình viết ngày càng hay và khuyên cậu cứ viết đều đặn để trở thành một cây bút giỏi trong tương lai.",
+          "q": "Bình thường làm gì mỗi tối trước khi đi ngủ?",
+          "options": ["Xem ti vi", "Viết nhật kí", "Đọc truyện tranh", "Chơi điện tử"],
+          "a": 1,
+          "explain": "Đoạn văn nói rõ Bình rất thích viết nhật kí mỗi tối trước khi đi ngủ."
+        },
+        {
+          "type": "read",
+          "vanBan": "Bình rất thích viết nhật kí mỗi tối trước khi đi ngủ. Cậu ghi lại những chuyện xảy ra trong ngày, từ việc học bài, chơi đá bóng, đến việc giúp mẹ nhặt rau. Có hôm Bình viết cả một câu chuyện tưởng tượng về chú robot biết bay. Bố khen Bình viết ngày càng hay và khuyên cậu cứ viết đều đặn để trở thành một cây bút giỏi trong tương lai.",
+          "q": "Bố khuyên Bình điều gì?",
+          "options": ["Nên chơi thể thao nhiều hơn", "Cứ viết đều đặn để giỏi hơn", "Nên đọc thêm nhiều sách", "Nên ngủ sớm hơn"],
+          "a": 1,
+          "explain": "Câu cuối cho biết bố khuyên Bình cứ viết đều đặn để trở thành cây bút giỏi trong tương lai."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu \"Hùng đọc sách, ghi chép rồi vẽ lại sơ đồ\", có bao nhiêu động từ?",
+          "options": ["1", "2", "3", "4"],
+          "a": 2,
+          "explain": "Ba động từ là: đọc, ghi chép, vẽ."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu nào dưới đây KHÔNG chứa động từ?",
+          "options": ["Lan hát rất hay.", "Bầu trời cao và xanh.", "Nam chạy về nhà.", "An đang học bài."],
+          "a": 1,
+          "explain": "\"Bầu trời cao và xanh\" chỉ có tính từ miêu tả (cao, xanh), không có động từ chỉ hoạt động."
+        },
+        {
+          "type": "mcq",
+          "q": "Từ nào sau đây có thể thay thế cho động từ \"nói\" trong câu \"Minh nói với bạn về kế hoạch khám phá rừng\"?",
+          "options": ["kể", "vui vẻ", "thông minh", "rừng rậm"],
+          "a": 0,
+          "explain": "\"Kể\" cũng là động từ chỉ hoạt động, có thể thay thế cho \"nói\" trong câu, còn các từ khác không phải động từ phù hợp."
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống với s hoặc x: Bạn nhỏ ___ay mê đọc sách mỗi ngày.",
+          "answer": "s",
+          "accept": ["s", "say"]
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống với d, gi hoặc r: Cậu bé ___ành cả buổi chiều để làm thí nghiệm nhỏ.",
+          "answer": "d",
+          "accept": ["d", "dành"]
+        },
+        {
+          "type": "solve",
+          "de": "Viết 2-3 câu kể về một việc em đã tự tay làm ra hoặc sáng tạo (ví dụ: gấp máy bay giấy, vẽ tranh, làm đồ chơi), có dùng ít nhất một động từ.",
+          "hints": [
+            "Anh Fury gợi ý em nhé, em thử nhớ lại có lần nào em tự làm ra một món đồ nho nhỏ không, gấp giấy, vẽ tranh, hay nặn đất sét chẳng hạn.",
+            "Em kể xem lúc làm em cảm thấy thế nào, có khó không, cuối cùng thành quả ra sao.",
+            "Ví dụ câu mẫu cho em tham khảo: Chiều qua em gấp một chiếc máy bay giấy thật đẹp. Em phóng thử và nó bay rất xa. Em thấy vui vì tự tay mình làm ra được."
+          ],
+          "loiGiai": "Chiều qua em gấp một chiếc máy bay giấy thật đẹp. Em phóng thử và nó bay rất xa. Em thấy vui vì tự tay mình làm ra được.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    },
+    {
+      "so": 3,
+      "ten": "Tuần 7: Người bạn lông vũ nhiều màu",
+      "lyThuyet": "Tuần này em đọc về những chuyến dạo chơi khám phá góc phố, khu vườn và cả những người bạn nhỏ đáng yêu như chú vẹt biết nói. Về Luyện từ và câu, em mở rộng vốn từ về chủ đề khám phá, đặc biệt là các động từ chỉ hoạt động và động từ chỉ trạng thái.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Nhà An nuôi một chú vẹt tên là Bống, lông màu xanh biếc rất đẹp. Mỗi sáng, Bống líu lo chào cả nhà bằng câu \"Chào buổi sáng\" khiến ai cũng bật cười. An thích dạy Bống nói thêm những câu mới, còn Bống thì thích ăn hạt hướng dương và đu qua đu lại trên chiếc vòng treo trong lồng. Nhờ có Bống, mỗi buổi sáng của An trở nên vui vẻ hơn hẳn.",
+          "q": "Chú vẹt nhà An tên là gì?",
+          "options": ["Bống", "Vàng", "Mi", "Xanh"],
+          "a": 0,
+          "explain": "Đoạn văn cho biết chú vẹt nhà An tên là Bống."
+        },
+        {
+          "type": "read",
+          "vanBan": "Nhà An nuôi một chú vẹt tên là Bống, lông màu xanh biếc rất đẹp. Mỗi sáng, Bống líu lo chào cả nhà bằng câu \"Chào buổi sáng\" khiến ai cũng bật cười. An thích dạy Bống nói thêm những câu mới, còn Bống thì thích ăn hạt hướng dương và đu qua đu lại trên chiếc vòng treo trong lồng. Nhờ có Bống, mỗi buổi sáng của An trở nên vui vẻ hơn hẳn.",
+          "q": "Bống thích làm gì trong lồng?",
+          "options": ["Ngủ suốt ngày", "Ăn hạt hướng dương và đu qua đu lại", "Soi gương", "Xé giấy báo"],
+          "a": 1,
+          "explain": "Đoạn văn nói Bống thích ăn hạt hướng dương và đu qua đu lại trên chiếc vòng treo."
+        },
+        {
+          "type": "mcq",
+          "q": "Từ nào dưới đây là động từ chỉ hoạt động?",
+          "options": ["khám phá", "tò mò", "thú vị", "mới lạ"],
+          "a": 0,
+          "explain": "\"Khám phá\" chỉ hành động tìm hiểu, là động từ; các từ còn lại là tính từ miêu tả cảm xúc, đặc điểm."
+        },
+        {
+          "type": "mcq",
+          "q": "Từ nào dưới đây là động từ chỉ trạng thái?",
+          "options": ["chạy", "nhảy", "lo lắng", "viết"],
+          "a": 2,
+          "explain": "\"Lo lắng\" diễn tả trạng thái cảm xúc bên trong, còn chạy, nhảy, viết là động từ chỉ hoạt động cụ thể."
+        },
+        {
+          "type": "mcq",
+          "q": "Nhóm từ nào dưới đây đều là động từ chỉ hoạt động khám phá thiên nhiên?",
+          "options": ["quan sát, tìm hiểu, ghi chép", "xanh tươi, rực rỡ, mát mẻ", "vui vẻ, hào hứng, thích thú", "cây cối, dòng suối, ngọn núi"],
+          "a": 0,
+          "explain": "Quan sát, tìm hiểu, ghi chép đều là động từ chỉ hoạt động con người thực hiện khi khám phá."
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống với ch hoặc tr: Chú vẹt xanh biếc đậu trên cành cây, ríu rít ___ò chuyện.",
+          "answer": "tr",
+          "accept": ["tr", "trò"]
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống với l hoặc n: Bạn ___hỏ tuổi nhất trong nhóm rất thích khám phá góc phố mới.",
+          "answer": "n",
+          "accept": ["n", "nhỏ"]
+        },
+        {
+          "type": "solve",
+          "de": "Viết 2-3 câu tả một con vật em yêu thích (thật hoặc tưởng tượng), trong đó có ít nhất một động từ chỉ hoạt động của con vật đó.",
+          "hints": [
+            "Em nghĩ xem mình thích con vật nào nhất, mèo, chó, chim hay một con vật nào đó em từng thấy.",
+            "Em tả xem con vật đó thường làm gì, chạy nhảy, kêu, hay nằm ngủ chẳng hạn.",
+            "Câu mẫu cho em tham khảo: Nhà em có một chú mèo tên Mi Mi lông trắng muốt. Mi Mi thích nằm sưởi nắng bên cửa sổ mỗi buổi chiều. Khi em về nhà, Mi Mi luôn chạy ra đón em."
+          ],
+          "loiGiai": "Nhà em có một chú mèo tên Mi Mi lông trắng muốt. Mi Mi thích nằm sưởi nắng bên cửa sổ mỗi buổi chiều. Khi em về nhà, Mi Mi luôn chạy ra đón em.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    },
+    {
+      "so": 4,
+      "ten": "Tuần 8: Chuyến đi lên miền núi cao",
+      "lyThuyet": "Tuần này em đọc về những chuyến đi xa, những buổi học ở nơi mới lạ và cảm xúc lưu luyến khi phải chia tay quê hương thân thuộc. Về Luyện từ và câu, em luyện tập tổng hợp về động từ, biết cách sử dụng động từ để đặt câu và viết đoạn văn sinh động hơn.",
+      "cauHoi": [
+        {
+          "type": "read",
+          "vanBan": "Kì nghỉ hè này, Hùng được bố mẹ đưa lên một bản nhỏ ở miền núi để thăm bác. Con đường lên bản quanh co, hai bên là ruộng bậc thang xanh mướt. Hùng được các bạn nhỏ trong bản dẫn đi bắt cá suối, hái măng rừng và học cách gùi củi trên lưng. Buổi tối, cả nhóm ngồi quây quần bên bếp lửa, nghe bà kể chuyện cổ tích. Hùng thấy chuyến đi này thật đáng nhớ.",
+          "q": "Hùng được đưa đi đâu trong kì nghỉ hè?",
+          "options": ["Đi biển", "Lên một bản nhỏ ở miền núi", "Về quê ngoại ở đồng bằng", "Đi công viên nước"],
+          "a": 1,
+          "explain": "Đoạn văn cho biết Hùng được bố mẹ đưa lên một bản nhỏ ở miền núi để thăm bác."
+        },
+        {
+          "type": "read",
+          "vanBan": "Kì nghỉ hè này, Hùng được bố mẹ đưa lên một bản nhỏ ở miền núi để thăm bác. Con đường lên bản quanh co, hai bên là ruộng bậc thang xanh mướt. Hùng được các bạn nhỏ trong bản dẫn đi bắt cá suối, hái măng rừng và học cách gùi củi trên lưng. Buổi tối, cả nhóm ngồi quây quần bên bếp lửa, nghe bà kể chuyện cổ tích. Hùng thấy chuyến đi này thật đáng nhớ.",
+          "q": "Các bạn nhỏ trong bản đã dẫn Hùng đi làm những gì?",
+          "options": ["Bắt cá suối, hái măng rừng, gùi củi", "Đi chợ phiên và mua quà", "Học bơi ở sông", "Chăn trâu trên đồi"],
+          "a": 0,
+          "explain": "Đoạn văn nêu rõ Hùng được dẫn đi bắt cá suối, hái măng rừng và học cách gùi củi trên lưng."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong câu \"Cả nhóm ngồi quây quần bên bếp lửa, nghe bà kể chuyện\", có những động từ nào?",
+          "options": ["ngồi, nghe, kể", "quây quần, bếp lửa", "cả nhóm, bà", "chuyện, lửa"],
+          "a": 0,
+          "explain": "Ngồi, nghe, kể đều là những từ chỉ hoạt động nên là động từ trong câu."
+        },
+        {
+          "type": "mcq",
+          "q": "Câu nào dưới đây sử dụng động từ đúng và hợp lí nhất để tả một chuyến đi?",
+          "options": ["Em rất là chuyến đi vui vẻ.", "Em khám phá nhiều điều mới lạ trong chuyến đi.", "Chuyến đi của em rất đẹp đẽ và xanh tươi.", "Núi rừng của chuyến đi rất cao lớn."],
+          "a": 1,
+          "explain": "Câu \"Em khám phá nhiều điều mới lạ\" dùng đúng động từ \"khám phá\" diễn tả hoạt động của em trong chuyến đi."
+        },
+        {
+          "type": "mcq",
+          "q": "Từ nào dưới đây KHÔNG phải là động từ?",
+          "options": ["gùi", "hái", "quanh co", "kể"],
+          "a": 2,
+          "explain": "\"Quanh co\" là tính từ miêu tả hình dáng con đường, còn gùi, hái, kể đều là động từ chỉ hoạt động."
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống với s hoặc x: Con đường lên bản ___a xôi và quanh co.",
+          "answer": "x",
+          "accept": ["x", "xa"]
+        },
+        {
+          "type": "fill",
+          "q": "Điền vào chỗ trống với d, gi hoặc r: Đêm cuối cùng ở bản, Hùng thấy lòng bâng khuâng, ___ưng rưng nước mắt khi chia tay các bạn.",
+          "answer": "r",
+          "accept": ["r", "rưng"]
+        },
+        {
+          "type": "solve",
+          "de": "Viết 2-3 câu kể về một chuyến đi xa đáng nhớ của em (về quê, đi du lịch, hoặc đi dã ngoại), có dùng ít nhất hai động từ.",
+          "hints": [
+            "Em thử nhớ lại một chuyến đi mà em thích nhất, có thể là về quê, đi biển, hay đi cắm trại cùng gia đình.",
+            "Em kể xem ở đó em đã làm những gì, gặp ai, cảm xúc của em ra sao khi chuyến đi kết thúc.",
+            "Câu mẫu cho em tham khảo: Hè năm ngoái, em được về quê thăm ông bà ở Ninh Bình. Em cùng anh họ đi thả diều trên cánh đồng lúa chín. Lúc chia tay, em thấy rất buồn và mong được quay lại sớm."
+          ],
+          "loiGiai": "Hè năm ngoái, em được về quê thăm ông bà ở Ninh Bình. Em cùng anh họ đi thả diều trên cánh đồng lúa chín. Lúc chia tay, em thấy rất buồn và mong được quay lại sớm.",
+          "dapSo": "tự chấm"
+        }
+      ]
+    }
+  ]
+}

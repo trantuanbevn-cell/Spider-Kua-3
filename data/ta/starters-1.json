@@ -1,0 +1,108 @@
+{
+  "mon": "ta",
+  "level": "starters",
+  "chuDe": "Starters phần 1",
+  "cdSo": 1,
+  "bai": [
+    {
+      "so": 1,
+      "ten": "Unit 1: Numbers & Colours",
+      "lyThuyet": "Chào em, anh Fury đây! Hôm nay chúng ta học đếm số từ 1 đến 20 và gọi tên các màu sắc bằng tiếng Anh nhé. Em sẽ luyện mẫu câu 'This is...' và 'It is...' để nói về số lượng và màu sắc. Từ vựng chính: one (một), five (năm), ten (mười), red (màu đỏ), blue (màu xanh dương), green (màu xanh lá), yellow (màu vàng), black (màu đen). Cùng anh Fury luyện tập thật giỏi nào!",
+      "cauHoi": [
+        {"type":"listen","audioText":"I have got ten balloons.","q":"Bạn nhỏ trong câu nói có bao nhiêu quả bóng bay?","options":["Năm quả","Mười quả","Hai quả","Ba quả"],"a":1,"explain":"Câu 'I have got ten balloons' nghĩa là 'Tôi có mười quả bóng bay'. Từ 'ten' nghĩa là mười, nên đáp án đúng là Mười quả đó em!"},
+        {"type":"listen","audioText":"The car is red.","q":"Chiếc xe ô tô trong câu có màu gì?","options":["Màu xanh dương","Màu vàng","Màu đỏ","Màu đen"],"a":2,"explain":"'The car is red' nghĩa là 'Chiếc xe màu đỏ'. Từ 'red' là màu đỏ, em nhớ kỹ nhé!"},
+        {"type":"listen","audioText":"This is number fifteen.","q":"Số nào được nhắc đến trong câu nghe được?","options":["Số 5","Số 50","Số 15","Số 12"],"a":2,"explain":"'This is number fifteen' nghĩa là 'Đây là số 15'. Fifteen là mười lăm, chứ không phải fifty (năm mươi) hay twelve (mười hai) đâu nhé, em phải nghe kỹ âm cuối!"},
+        {"type":"speak","prompt":"Hãy nói: Con mèo màu đen","target":"The cat is black.","accept":["the cat is black","cat is black"]},
+        {"type":"speak","prompt":"Hãy nói: Tôi có bảy quả bóng","target":"I have got seven balls.","accept":["i have got seven balls","i have seven balls"]},
+        {"type":"speak","prompt":"Hãy nói: Đây là màu xanh lá","target":"This is green.","accept":["this is green","it is green","its green"]},
+        {"type":"read","vanBan":"Hello! My name is Tom. I have got twelve toy cars. Three cars are red, four cars are blue, and five cars are green. I like my toy cars very much.","q":"Tom có bao nhiêu chiếc xe ô tô đồ chơi màu xanh lá?","options":["Ba chiếc","Bốn chiếc","Năm chiếc","Mười hai chiếc"],"a":2,"explain":"Đoạn văn nói Tom có 12 xe: 3 đỏ, 4 xanh dương, 5 xanh lá. Vậy xe màu xanh lá (green) là năm chiếc nhé em!"},
+        {"type":"read","vanBan":"This is my school bag. It is yellow and black. I have got two books and one pencil in my bag.","q":"Chiếc cặp sách có những màu gì?","options":["Đỏ và xanh dương","Vàng và đen","Xanh lá và đỏ","Đen và xanh lá"],"a":1,"explain":"Câu 'It is yellow and black' nghĩa là 'Nó màu vàng và đen'. Đáp án đúng là Vàng và đen đó em!"},
+        {"type":"mcq","q":"Chọn từ đúng điền vào câu: 'I have got ___ apples.' (số 8)","options":["eight","eighteen","eighty","five"],"a":0,"explain":"Số 8 trong tiếng Anh là 'eight'. Còn 'eighteen' là 18, 'eighty' là 80 nha em, đừng nhầm lẫn!"},
+        {"type":"mcq","q":"Từ nào có nghĩa là 'màu tím'?","options":["orange","purple","pink","brown"],"a":1,"explain":"'Purple' nghĩa là màu tím. 'Orange' là màu cam, 'pink' là màu hồng, 'brown' là màu nâu, em nhớ phân biệt nhé!"},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: số hai mươi","answer":"twenty","accept":["twenty"]},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: màu trắng","answer":"white","accept":["white"]},
+        {"type":"spell","q":"Điền từ còn thiếu: 'The ball ___ (be) blue.' (chia động từ 'to be')","answer":"is","accept":["is"]}
+      ]
+    },
+    {
+      "so": 2,
+      "ten": "Unit 2: Family & People",
+      "lyThuyet": "Chào em, anh Fury đây! Unit này mình sẽ học từ vựng về gia đình và mọi người xung quanh nhé. Em sẽ luyện mẫu câu 'This is my...' và 'He/She is...' để giới thiệu người thân. Từ vựng chính: mother (mẹ), father (bố), brother (anh/em trai), sister (chị/em gái), grandmother (bà), grandfather (ông), friend (bạn), baby (em bé). Anh Fury tin em sẽ giới thiệu gia đình mình thật hay!",
+      "cauHoi": [
+        {"type":"listen","audioText":"This is my mother.","q":"Người được giới thiệu trong câu là ai?","options":["Bố","Mẹ","Chị gái","Bà"],"a":1,"explain":"'This is my mother' nghĩa là 'Đây là mẹ của tôi'. Mother là mẹ, em nhớ nha!"},
+        {"type":"listen","audioText":"My brother is tall.","q":"Anh/em trai trong câu như thế nào?","options":["Cao","Nhỏ","Vui vẻ","Béo"],"a":0,"explain":"'My brother is tall' nghĩa là 'Anh/em trai tôi cao'. Tall nghĩa là cao đó em!"},
+        {"type":"listen","audioText":"She has got two sisters.","q":"Bạn ấy có bao nhiêu chị/em gái?","options":["Một","Hai","Ba","Không có"],"a":1,"explain":"'She has got two sisters' nghĩa là 'Bạn ấy có hai chị/em gái'. Two là hai, sisters là chị/em gái nhé!"},
+        {"type":"speak","prompt":"Hãy nói: Đây là bố của tôi","target":"This is my father.","accept":["this is my father","this my father"]},
+        {"type":"speak","prompt":"Hãy nói: Bà tôi rất tốt bụng","target":"My grandmother is kind.","accept":["my grandmother is kind","grandmother is kind"]},
+        {"type":"speak","prompt":"Hãy nói: Anh ấy là bạn của tôi","target":"He is my friend.","accept":["he is my friend","hes my friend"]},
+        {"type":"read","vanBan":"Hi, I am Nam. This is my family. My father is a doctor. My mother is a teacher. I have got one brother. His name is Bao.","q":"Bố của Nam làm nghề gì?","options":["Giáo viên","Bác sĩ","Ca sĩ","Đầu bếp"],"a":1,"explain":"Câu 'My father is a doctor' nghĩa là 'Bố tôi là bác sĩ'. Doctor là bác sĩ nhé em!"},
+        {"type":"read","vanBan":"My grandfather is old but he is very strong. He likes to play football with me every weekend.","q":"Ông của bạn nhỏ thích làm gì vào cuối tuần?","options":["Đọc sách","Chơi bóng đá","Nấu ăn","Xem tivi"],"a":1,"explain":"Đoạn văn nói ông thích 'play football with me every weekend' nghĩa là chơi bóng đá cùng bạn nhỏ mỗi cuối tuần đó em!"},
+        {"type":"mcq","q":"Chọn từ đúng điền vào câu: 'He is my ___.' (em trai)","options":["sister","brother","mother","friend"],"a":1,"explain":"'Brother' nghĩa là anh/em trai. 'Sister' là chị/em gái, em nhớ phân biệt nha!"},
+        {"type":"mcq","q":"Từ nào có nghĩa là 'em bé'?","options":["baby","boy","girl","child"],"a":0,"explain":"'Baby' nghĩa là em bé. Đây là từ vựng quan trọng trong chủ đề gia đình đó em!"},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: ông","answer":"grandfather","accept":["grandfather"]},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: chị/em gái","answer":"sister","accept":["sister"]},
+        {"type":"spell","q":"Điền từ còn thiếu: 'She ___ (like) her family.' (chia động từ 'like')","answer":"likes","accept":["likes"]}
+      ]
+    },
+    {
+      "so": 3,
+      "ten": "Unit 3: My Body",
+      "lyThuyet": "Chào em, anh Fury đây! Hôm nay chúng ta cùng khám phá các bộ phận cơ thể bằng tiếng Anh nhé. Em sẽ luyện mẫu câu 'I have got...' và 'This is my...' để nói về cơ thể mình. Từ vựng chính: head (đầu), hand (bàn tay), leg (chân), eye (mắt), nose (mũi), mouth (miệng), ear (tai), foot (bàn chân). Anh Fury chắc chắn em sẽ nhớ hết luôn!",
+      "cauHoi": [
+        {"type":"listen","audioText":"I have got two eyes.","q":"Câu nói nhắc đến bộ phận cơ thể nào?","options":["Tay","Mắt","Chân","Tai"],"a":1,"explain":"'I have got two eyes' nghĩa là 'Tôi có hai con mắt'. Eyes là mắt đó em!"},
+        {"type":"listen","audioText":"My hands are small.","q":"Bàn tay trong câu như thế nào?","options":["Nhỏ","To","Dài","Bẩn"],"a":0,"explain":"'My hands are small' nghĩa là 'Bàn tay tôi nhỏ'. Small nghĩa là nhỏ nhé em!"},
+        {"type":"listen","audioText":"This is my nose.","q":"Bộ phận nào được giới thiệu trong câu?","options":["Miệng","Tai","Mũi","Đầu"],"a":2,"explain":"'This is my nose' nghĩa là 'Đây là cái mũi của tôi'. Nose là mũi đó em!"},
+        {"type":"speak","prompt":"Hãy nói: Đây là đầu của tôi","target":"This is my head.","accept":["this is my head","this my head"]},
+        {"type":"speak","prompt":"Hãy nói: Tôi có hai bàn chân","target":"I have got two feet.","accept":["i have got two feet","i have two feet"]},
+        {"type":"speak","prompt":"Hãy nói: Tai của tôi nhỏ","target":"My ears are small.","accept":["my ears are small","ears are small"]},
+        {"type":"read","vanBan":"Look at me! I have got two eyes, one nose, and one mouth. My arms are long and my legs are long too. I am a strong boy.","q":"Bạn nhỏ trong đoạn văn có bao nhiêu con mắt?","options":["Một","Hai","Ba","Không có"],"a":1,"explain":"Câu 'I have got two eyes' nghĩa là 'Tôi có hai con mắt'. Two eyes là hai mắt nhé em!"},
+        {"type":"read","vanBan":"This is a monster. It has got three eyes and four hands. It is very funny, not scary.","q":"Con quái vật trong đoạn văn có bao nhiêu bàn tay?","options":["Hai","Ba","Bốn","Năm"],"a":2,"explain":"Đoạn văn nói 'four hands' nghĩa là bốn bàn tay. Con quái vật này thật ngộ nghĩnh phải không em!"},
+        {"type":"mcq","q":"Chọn từ đúng điền vào câu: 'I can hear with my ___.' (tai)","options":["eyes","ears","nose","mouth"],"a":1,"explain":"'Ears' nghĩa là tai, dùng để nghe. Câu này nghĩa là 'Tôi nghe bằng tai của tôi' đó em!"},
+        {"type":"mcq","q":"Từ nào có nghĩa là 'cái miệng'?","options":["mouth","chin","hair","face"],"a":0,"explain":"'Mouth' nghĩa là cái miệng. Em nhớ đây là từ vựng cơ bản về cơ thể nhé!"},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: bàn tay","answer":"hand","accept":["hand"]},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: cái chân","answer":"leg","accept":["leg"]},
+        {"type":"spell","q":"Điền từ còn thiếu: 'He ___ (have) big hands.' (chia động từ 'have')","answer":"has","accept":["has"]}
+      ]
+    },
+    {
+      "so": 4,
+      "ten": "Unit 4: Animals",
+      "lyThuyet": "Chào em, anh Fury đây! Bài học hôm nay là về các loài động vật, cả thú cưng và thú ở sở thú luôn nhé. Em sẽ luyện mẫu câu 'Can it...?' và 'It can...' để nói về khả năng của động vật. Từ vựng chính: dog (chó), cat (mèo), lion (sư tử), elephant (voi), monkey (khỉ), bird (chim), fish (cá), rabbit (thỏ). Cùng anh Fury khám phá thế giới động vật thật thú vị nào!",
+      "cauHoi": [
+        {"type":"listen","audioText":"The lion can run fast.","q":"Con sư tử trong câu có thể làm gì?","options":["Bơi nhanh","Chạy nhanh","Bay cao","Nhảy xa"],"a":1,"explain":"'The lion can run fast' nghĩa là 'Con sư tử có thể chạy nhanh'. Run fast là chạy nhanh đó em!"},
+        {"type":"listen","audioText":"I have got a small dog.","q":"Con chó trong câu như thế nào?","options":["To","Nhỏ","Béo","Già"],"a":1,"explain":"'I have got a small dog' nghĩa là 'Tôi có một con chó nhỏ'. Small là nhỏ nhé em!"},
+        {"type":"listen","audioText":"The monkey can climb trees.","q":"Con khỉ trong câu có thể làm gì?","options":["Leo cây","Bơi lội","Bay","Đào đất"],"a":0,"explain":"'The monkey can climb trees' nghĩa là 'Con khỉ có thể leo cây'. Climb trees là leo cây đó em!"},
+        {"type":"speak","prompt":"Hãy nói: Con voi rất to","target":"The elephant is big.","accept":["the elephant is big","elephant is big"]},
+        {"type":"speak","prompt":"Hãy nói: Con cá có thể bơi","target":"The fish can swim.","accept":["the fish can swim","fish can swim"]},
+        {"type":"speak","prompt":"Hãy nói: Tôi có một con thỏ","target":"I have got a rabbit.","accept":["i have got a rabbit","i have a rabbit"]},
+        {"type":"read","vanBan":"Welcome to the zoo! You can see a big elephant, a tall giraffe, and a funny monkey. The monkey can jump and climb very well.","q":"Con khỉ ở sở thú có thể làm gì tốt?","options":["Bay và bơi","Nhảy và leo trèo","Chạy và đào đất","Hát và múa"],"a":1,"explain":"Đoạn văn nói 'The monkey can jump and climb very well' nghĩa là 'Con khỉ có thể nhảy và leo trèo rất giỏi' đó em!"},
+        {"type":"read","vanBan":"My pet is a dog. His name is Max. Max is brown and white. He can run and swim. I love Max very much.","q":"Con chó Max có màu gì?","options":["Đen và trắng","Nâu và trắng","Vàng và đen","Trắng và xanh"],"a":1,"explain":"Câu 'Max is brown and white' nghĩa là 'Max màu nâu và trắng'. Brown là nâu, white là trắng nhé em!"},
+        {"type":"mcq","q":"Chọn từ đúng điền vào câu: 'The bird can ___.' (bay)","options":["swim","fly","run","climb"],"a":1,"explain":"'Fly' nghĩa là bay, phù hợp với loài chim. Câu này nghĩa là 'Con chim có thể bay' đó em!"},
+        {"type":"mcq","q":"Từ nào có nghĩa là 'con mèo'?","options":["cat","cow","cap","car"],"a":0,"explain":"'Cat' nghĩa là con mèo. Các từ khác như 'cow' (con bò), 'car' (xe hơi) khác nghĩa hoàn toàn nhé!"},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: con sư tử","answer":"lion","accept":["lion"]},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: con chim","answer":"bird","accept":["bird"]},
+        {"type":"spell","q":"Điền từ còn thiếu: 'The dog ___ (can/run) very fast.' (động từ khiếm khuyết chỉ khả năng)","answer":"can","accept":["can"]}
+      ]
+    },
+    {
+      "so": 5,
+      "ten": "Unit 5: Food & Drink",
+      "lyThuyet": "Chào em, anh Fury đây! Bài học cuối cùng của phần này là về đồ ăn và thức uống nhé. Em sẽ luyện mẫu câu 'I like...' và 'I have got...' để nói về món ăn yêu thích. Từ vựng chính: apple (táo), rice (cơm), milk (sữa), bread (bánh mì), water (nước), banana (chuối), egg (trứng), juice (nước ép). Anh Fury tin bài này sẽ rất ngon lành và vui vẻ với em!",
+      "cauHoi": [
+        {"type":"listen","audioText":"I like apples very much.","q":"Bạn nhỏ trong câu thích ăn gì?","options":["Chuối","Táo","Bánh mì","Trứng"],"a":1,"explain":"'I like apples very much' nghĩa là 'Tôi rất thích ăn táo'. Apples là táo nhé em!"},
+        {"type":"listen","audioText":"She has got a glass of milk.","q":"Bạn ấy có gì để uống?","options":["Nước","Sữa","Nước ép","Trà"],"a":1,"explain":"'She has got a glass of milk' nghĩa là 'Bạn ấy có một ly sữa'. Milk là sữa đó em!"},
+        {"type":"listen","audioText":"We have got rice and eggs for lunch.","q":"Bữa trưa có những món gì?","options":["Cơm và trứng","Bánh mì và sữa","Chuối và nước","Cơm và cá"],"a":0,"explain":"'We have got rice and eggs for lunch' nghĩa là 'Chúng tôi có cơm và trứng cho bữa trưa'. Rice là cơm, eggs là trứng nhé em!"},
+        {"type":"speak","prompt":"Hãy nói: Tôi thích uống nước cam","target":"I like orange juice.","accept":["i like orange juice","i like orange juice very much"]},
+        {"type":"speak","prompt":"Hãy nói: Đây là bánh mì của tôi","target":"This is my bread.","accept":["this is my bread","this my bread"]},
+        {"type":"speak","prompt":"Hãy nói: Tôi có ba quả chuối","target":"I have got three bananas.","accept":["i have got three bananas","i have three bananas"]},
+        {"type":"read","vanBan":"For breakfast, I have got bread and milk. I like bananas too. My sister likes eggs and juice. We are happy at breakfast time.","q":"Chị/em gái của bạn nhỏ thích ăn gì cho bữa sáng?","options":["Bánh mì và sữa","Chuối và nước","Trứng và nước ép","Cơm và táo"],"a":2,"explain":"Câu 'My sister likes eggs and juice' nghĩa là 'Chị/em gái tôi thích trứng và nước ép'. Eggs là trứng, juice là nước ép nhé em!"},
+        {"type":"read","vanBan":"This is a fruit shop. You can see red apples, yellow bananas, and orange oranges. I want to buy some apples and bananas.","q":"Cửa hàng trái cây có những loại quả gì?","options":["Táo, chuối, cam","Táo, nho, dưa hấu","Chuối, xoài, dứa","Cam, chanh, bưởi"],"a":0,"explain":"Đoạn văn nhắc đến 'red apples, yellow bananas, and orange oranges' nghĩa là táo đỏ, chuối vàng và cam. Đáp án đúng là Táo, chuối, cam đó em!"},
+        {"type":"mcq","q":"Chọn từ đúng điền vào câu: 'I like to drink ___.' (nước)","options":["water","bread","rice","egg"],"a":0,"explain":"'Water' nghĩa là nước, dùng để uống. Câu này nghĩa là 'Tôi thích uống nước' đó em!"},
+        {"type":"mcq","q":"Từ nào có nghĩa là 'quả chuối'?","options":["banana","apple","mango","grape"],"a":0,"explain":"'Banana' nghĩa là quả chuối. Các từ khác như 'apple' (táo), 'mango' (xoài) khác nghĩa nhé em!"},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: quả táo","answer":"apple","accept":["apple"]},
+        {"type":"spell","q":"Viết từ tiếng Anh nghĩa là: sữa","answer":"milk","accept":["milk"]},
+        {"type":"spell","q":"Điền từ còn thiếu: 'She ___ (like) bananas.' (chia động từ 'like')","answer":"likes","accept":["likes"]}
+      ]
+    }
+  ]
+}

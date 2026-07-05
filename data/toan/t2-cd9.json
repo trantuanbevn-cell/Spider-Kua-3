@@ -1,0 +1,498 @@
+{
+  "mon": "toan",
+  "tap": 2,
+  "chuDe": "Phân số",
+  "cdSo": 9,
+  "bai": [
+    {
+      "so": 53,
+      "ten": "Khái niệm phân số",
+      "lyThuyet": "Khi chia một hình thành các phần bằng nhau rồi lấy một số phần, ta viết được một phân số. Phân số có dạng tử số / mẫu số: mẫu số là số phần bằng nhau mà hình được chia ra (phải là số tự nhiên khác 0), tử số là số phần đã lấy. Ví dụ: chia một chiếc bánh thành 6 phần bằng nhau, lấy 1 phần, ta viết 1/6, đọc là \"một phần sáu\".",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Một hình tròn được chia thành 5 phần bằng nhau, Nam tô màu 2 phần. Hỏi phần tô màu được viết bằng phân số nào?",
+          "options": ["2/5", "5/2", "2/3", "3/5"],
+          "a": 0,
+          "explain": "Mẫu số là tổng số phần bằng nhau (5), tử số là số phần đã tô màu (2), nên phân số là 2/5."
+        },
+        {
+          "type": "mcq",
+          "q": "Phân số \"bốn phần bảy\" được viết là?",
+          "options": ["7/4", "4/7", "4/11", "11/4"],
+          "a": 1,
+          "explain": "\"Bốn phần bảy\" nghĩa là tử số 4, mẫu số 7, viết là 4/7."
+        },
+        {
+          "type": "mcq",
+          "q": "Phân số \"năm mươi hai phần tám mươi lăm\" được viết là?",
+          "options": ["85/52", "52/85", "52/58", "58/52"],
+          "a": 1,
+          "explain": "Tử số là 52, mẫu số là 85, viết là 52/85."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong phân số 5/8, tử số và mẫu số lần lượt là?",
+          "options": ["Tử số 8, mẫu số 5", "Tử số 5, mẫu số 8", "Tử số 5, mẫu số 5", "Tử số 8, mẫu số 8"],
+          "a": 1,
+          "explain": "Trong phân số 5/8, số trên (5) là tử số, số dưới (8) là mẫu số."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong các số sau, số nào KHÔNG phải là phân số: 3/4, 7, 2/9, 5/6?",
+          "options": ["3/4", "7", "2/9", "5/6"],
+          "a": 1,
+          "explain": "7 là số tự nhiên, không có dạng tử số/mẫu số nên không phải là phân số viết theo dạng thông thường."
+        },
+        {
+          "type": "fill",
+          "q": "Phân số \"chín mươi tư phần một trăm\" được viết là ___",
+          "answer": "94/100",
+          "accept": ["94/100"]
+        },
+        {
+          "type": "solve",
+          "de": "Một đội bóng đá có sân tập hình chữ nhật được chia thành 8 phần bằng nhau để làm bài tập khởi động. Minh và các bạn đã chạy qua 3 phần. Hỏi phần sân Minh đã chạy qua được viết bằng phân số nào và đọc thế nào?",
+          "hints": [
+            "Em ơi, đề bài nói sân được chia thành mấy phần bằng nhau? Đó chính là mẫu số đó!",
+            "Vậy Minh đã chạy qua bao nhiêu phần trong số đó? Đó chính là tử số!",
+            "Ghép tử số lên trên, mẫu số xuống dưới, em sẽ có phân số cần tìm."
+          ],
+          "loiGiai": "Sân được chia thành 8 phần bằng nhau, nên mẫu số là 8. Minh đã chạy qua 3 phần, nên tử số là 3. Vậy phần sân Minh đã chạy qua được viết là 3/8, đọc là \"ba phần tám\".",
+          "dapSo": "3/8"
+        },
+        {
+          "type": "solve",
+          "de": "Một hình vuông tượng trưng cho tấm khiên của siêu anh hùng được chia thành 10 ô bằng nhau. An tô màu xanh 7 ô. Hỏi số ô An đã tô màu chiếm bao nhiêu phần của tấm khiên (viết dưới dạng phân số)?",
+          "hints": [
+            "Tấm khiên được chia thành bao nhiêu ô bằng nhau? Số đó sẽ nằm ở dưới mẫu số.",
+            "An tô màu mấy ô trong số đó? Số đó sẽ nằm ở trên, là tử số.",
+            "Viết tử số trên, mẫu số dưới là xong rồi đó em!"
+          ],
+          "loiGiai": "Tấm khiên được chia thành 10 ô bằng nhau, nên mẫu số là 10. An tô màu 7 ô, nên tử số là 7. Vậy số ô An đã tô màu chiếm 7/10 tấm khiên.",
+          "dapSo": "7/10"
+        }
+      ]
+    },
+    {
+      "so": 54,
+      "ten": "Phân số và phép chia số tự nhiên",
+      "lyThuyet": "Thương của phép chia một số tự nhiên a cho một số tự nhiên b (khác 0) có thể viết thành phân số a/b. Ví dụ: 3 cái bánh chia đều cho 4 bạn, mỗi bạn nhận được 3/4 cái bánh, vì 3 : 4 = 3/4. Mọi số tự nhiên đều có thể viết thành phân số có mẫu số là 1, ví dụ 6 = 6/1, 9 = 9/1, 0 = 0/1.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Phép chia 7 : 9 được viết dưới dạng phân số là?",
+          "options": ["9/7", "7/9", "7/16", "16/7"],
+          "a": 1,
+          "explain": "Số bị chia làm tử số, số chia làm mẫu số, nên 7 : 9 = 7/9."
+        },
+        {
+          "type": "mcq",
+          "q": "Phép chia 15 : 8 được viết dưới dạng phân số là?",
+          "options": ["8/15", "15/8", "8/23", "23/8"],
+          "a": 1,
+          "explain": "15 : 8 = 15/8 (số bị chia là tử số, số chia là mẫu số)."
+        },
+        {
+          "type": "mcq",
+          "q": "Số tự nhiên 9 được viết dưới dạng phân số là?",
+          "options": ["1/9", "9/1", "9/9", "0/9"],
+          "a": 1,
+          "explain": "Mọi số tự nhiên đều viết được thành phân số có mẫu số là 1, nên 9 = 9/1."
+        },
+        {
+          "type": "mcq",
+          "q": "Bình có 3 cái bánh pizza chia đều cho 4 bạn. Mỗi bạn nhận được bao nhiêu cái bánh?",
+          "options": ["4/3 cái", "3/4 cái", "3 cái", "1/4 cái"],
+          "a": 1,
+          "explain": "3 cái bánh chia đều cho 4 bạn: 3 : 4 = 3/4 (cái bánh mỗi bạn)."
+        },
+        {
+          "type": "mcq",
+          "q": "Số 0 được viết dưới dạng phân số là?",
+          "options": ["0/1", "1/0", "0/0", "1/1"],
+          "a": 0,
+          "explain": "0 = 0/1, vì 0 : 1 = 0. Chú ý mẫu số luôn phải khác 0."
+        },
+        {
+          "type": "fill",
+          "q": "Phép chia 8 : 11 được viết dưới dạng phân số là ___",
+          "answer": "8/11",
+          "accept": ["8/11"]
+        },
+        {
+          "type": "solve",
+          "de": "Trong giờ ra chơi, Nam có 5 quả táo muốn chia đều cho 6 bạn trong đội cờ vua. Hỏi mỗi bạn nhận được bao nhiêu phần quả táo?",
+          "hints": [
+            "Em ơi, đây là một phép chia: số táo chia cho số bạn. Em viết phép chia đó thế nào?",
+            "5 quả chia cho 6 bạn, tức là 5 : 6 đó em. Kết quả phép chia này viết thành phân số ra sao nhỉ?",
+            "Số bị chia (5) lên làm tử số, số chia (6) xuống làm mẫu số, thế là ra đáp số rồi!"
+          ],
+          "loiGiai": "Nam có 5 quả táo chia đều cho 6 bạn, tức là thực hiện phép chia 5 : 6. Ta có 5 : 6 = 5/6. Vậy mỗi bạn nhận được 5/6 quả táo.",
+          "dapSo": "5/6 quả táo"
+        },
+        {
+          "type": "solve",
+          "de": "Một huấn luyện viên bơi lội chia đều 11 chai nước cho 8 vận động viên sau buổi tập. Hỏi mỗi vận động viên nhận được bao nhiêu phần chai nước, và đây có phải phân số lớn hơn 1 không?",
+          "hints": [
+            "Trước tiên em viết phép chia: số chai nước chia cho số vận động viên nhé.",
+            "11 chai chia cho 8 người là phép chia 11 : 8, viết thành phân số thế nào?",
+            "So sánh tử số 11 với mẫu số 8 xem tử số có lớn hơn mẫu số không, để trả lời câu hỏi thứ hai."
+          ],
+          "loiGiai": "11 chai nước chia đều cho 8 vận động viên, tức là thực hiện phép chia 11 : 8. Ta có 11 : 8 = 11/8. Vì tử số (11) lớn hơn mẫu số (8) nên đây là phân số lớn hơn 1. Vậy mỗi vận động viên nhận được 11/8 chai nước, đây là phân số lớn hơn 1.",
+          "dapSo": "11/8 chai nước, đây là phân số lớn hơn 1"
+        }
+      ]
+    },
+    {
+      "so": 55,
+      "ten": "Tính chất cơ bản của phân số",
+      "lyThuyet": "Nếu nhân cả tử số và mẫu số của một phân số với cùng một số tự nhiên khác 0, ta được một phân số bằng phân số đã cho. Ví dụ: 2/3 = (2×2)/(3×2) = 4/6. Nếu chia cả tử số và mẫu số của một phân số cho cùng một số tự nhiên khác 0 (lớn hơn 1), ta cũng được một phân số bằng phân số đã cho. Ví dụ: 4/6 = (4:2)/(6:2) = 2/3.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Nhân cả tử số và mẫu số của phân số 3/5 với 2, ta được phân số nào?",
+          "options": ["5/7", "6/10", "3/10", "6/5"],
+          "a": 1,
+          "explain": "3/5 = (3×2)/(5×2) = 6/10."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong các phân số 1/2, 2/4, 3/6, 5/10, 4/8, có bao nhiêu phân số bằng nhau?",
+          "options": ["2 phân số", "3 phân số", "4 phân số", "Cả 5 phân số"],
+          "a": 3,
+          "explain": "1/2, 2/4, 3/6, 5/10, 4/8 đều bằng 1/2 (vì 2/4=1×2/2×2, 3/6=1×3/2×3, 5/10=1×5/2×5, 4/8=1×4/2×4), nên cả 5 phân số đều bằng nhau."
+        },
+        {
+          "type": "mcq",
+          "q": "Phân số 5/6 có bằng phân số 10/12 không?",
+          "options": ["Có, vì 5×2=10 và 6×2=12", "Không, vì 5 khác 10", "Không, vì 6 khác 12", "Có, nhưng chỉ là ngẫu nhiên"],
+          "a": 0,
+          "explain": "Nhân cả tử và mẫu của 5/6 với 2: (5×2)/(6×2) = 10/12, nên 5/6 = 10/12."
+        },
+        {
+          "type": "mcq",
+          "q": "Chia cả tử số và mẫu số của phân số 8/16 cho 8, ta được phân số nào?",
+          "options": ["1/2", "1/8", "2/1", "8/1"],
+          "a": 0,
+          "explain": "8/16 = (8:8)/(16:8) = 1/2."
+        },
+        {
+          "type": "mcq",
+          "q": "Số nào điền vào chỗ trống để 4/7 = (4×3)/(7×?)?",
+          "options": ["4", "7", "3", "12"],
+          "a": 2,
+          "explain": "Theo tính chất cơ bản của phân số, phải nhân mẫu số với cùng một số đã nhân với tử số, tức là nhân với 3."
+        },
+        {
+          "type": "fill",
+          "q": "3/5 = (3×2)/(5×2) = ___",
+          "answer": "6/10",
+          "accept": ["6/10"]
+        },
+        {
+          "type": "solve",
+          "de": "Trong một trận cờ vua, Bình thắng 2/3 số ván đấu. Bình muốn viết lại phân số này với mẫu số lớn hơn bằng cách nhân cả tử và mẫu với 4. Hỏi phân số mới là gì?",
+          "hints": [
+            "Em nhớ tính chất cơ bản của phân số không? Nhân cả tử và mẫu với cùng một số thì phân số không đổi giá trị đâu.",
+            "Đề bài yêu cầu nhân với 4, vậy em nhân tử số 2 với 4, và mẫu số 3 với 4 xem sao.",
+            "2×4 bằng bao nhiêu, và 3×4 bằng bao nhiêu? Ghép lại thành phân số mới nhé."
+          ],
+          "loiGiai": "Ta nhân cả tử số và mẫu số của phân số 2/3 với 4: 2/3 = (2×4)/(3×4) = 8/12. Vậy phân số mới là 8/12 (và 8/12 = 2/3).",
+          "dapSo": "8/12"
+        },
+        {
+          "type": "solve",
+          "de": "An có phân số 12/18 chỉ số bàn thắng ghi được so với số lần sút bóng. An muốn rút gọn bằng cách chia cả tử và mẫu cho 6. Hỏi phân số sau khi chia là gì, và nó có bằng phân số ban đầu không?",
+          "hints": [
+            "Em thử chia tử số 12 cho 6 xem được bao nhiêu.",
+            "Rồi chia mẫu số 18 cho 6 xem được bao nhiêu.",
+            "Theo tính chất cơ bản của phân số, khi chia cả tử và mẫu cho cùng một số thì phân số mới có bằng phân số cũ không?"
+          ],
+          "loiGiai": "Ta chia cả tử số và mẫu số của phân số 12/18 cho 6: 12/18 = (12:6)/(18:6) = 2/3. Vì đã chia cả tử và mẫu cho cùng một số (6) nên phân số mới 2/3 bằng phân số ban đầu 12/18.",
+          "dapSo": "2/3, và 2/3 = 12/18"
+        }
+      ]
+    },
+    {
+      "so": 56,
+      "ten": "Rút gọn phân số",
+      "lyThuyet": "Rút gọn phân số là chia cả tử số và mẫu số cho một số tự nhiên lớn hơn 1 để được một phân số đơn giản hơn nhưng vẫn bằng phân số ban đầu. Ta rút gọn dần cho đến khi được phân số tối giản, tức là tử số và mẫu số không cùng chia hết cho một số nào lớn hơn 1 nữa. Ví dụ: 6/8 = (6:2)/(8:2) = 3/4, và 3/4 là phân số tối giản.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Rút gọn phân số 4/6 ta được phân số tối giản nào?",
+          "options": ["2/3", "1/3", "4/6", "2/6"],
+          "a": 0,
+          "explain": "4/6 = (4:2)/(6:2) = 2/3. Đây là phân số tối giản vì 2 và 3 không cùng chia hết cho số nào lớn hơn 1."
+        },
+        {
+          "type": "mcq",
+          "q": "Rút gọn phân số 15/20 ta được phân số tối giản nào?",
+          "options": ["3/4", "5/4", "15/20", "1/4"],
+          "a": 0,
+          "explain": "15/20 = (15:5)/(20:5) = 3/4, là phân số tối giản."
+        },
+        {
+          "type": "mcq",
+          "q": "Rút gọn phân số 20/45 ta được phân số tối giản nào?",
+          "options": ["4/9", "2/9", "10/45", "4/5"],
+          "a": 0,
+          "explain": "20/45 = (20:5)/(45:5) = 4/9, là phân số tối giản."
+        },
+        {
+          "type": "mcq",
+          "q": "Rút gọn phân số 34/51 ta được phân số tối giản nào?",
+          "options": ["17/25", "2/3", "34/51", "1/2"],
+          "a": 1,
+          "explain": "34 và 51 cùng chia hết cho 17: 34/51 = (34:17)/(51:17) = 2/3, là phân số tối giản."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong các phân số sau, phân số nào đã là phân số tối giản: 6/8, 5/9, 10/15, 12/18?",
+          "options": ["6/8", "5/9", "10/15", "12/18"],
+          "a": 1,
+          "explain": "5/9 không thể rút gọn thêm vì 5 và 9 không cùng chia hết cho số nào lớn hơn 1, nên đây là phân số tối giản."
+        },
+        {
+          "type": "fill",
+          "q": "Rút gọn phân số 8/12 ta được phân số tối giản ___",
+          "answer": "2/3",
+          "accept": ["2/3"]
+        },
+        {
+          "type": "solve",
+          "de": "Lớp của Minh có 32 học sinh, trong đó có 14 bạn nam. Hỏi phân số chỉ số bạn nam so với cả lớp là bao nhiêu, viết dưới dạng phân số tối giản?",
+          "hints": [
+            "Em viết phân số chỉ số bạn nam so với cả lớp: tử số là số nam, mẫu số là tổng số học sinh nhé.",
+            "Ta có phân số 14/32. Em thử xem 14 và 32 có cùng chia hết cho 2 không?",
+            "Chia cả tử và mẫu cho 2 rồi, xem còn rút gọn tiếp được nữa không nhé!"
+          ],
+          "loiGiai": "Phân số chỉ số bạn nam so với cả lớp là 14/32. Ta rút gọn: 14/32 = (14:2)/(32:2) = 7/16. Vì 7 và 16 không cùng chia hết cho số nào lớn hơn 1 nên 7/16 là phân số tối giản. Vậy phân số chỉ số bạn nam so với cả lớp là 7/16.",
+          "dapSo": "7/16"
+        },
+        {
+          "type": "solve",
+          "de": "Đội bóng đá của trường có 28 cầu thủ tham gia buổi tập, trong đó có 12 cầu thủ đá vị trí hậu vệ. Hỏi phân số chỉ số cầu thủ hậu vệ so với cả đội là bao nhiêu, viết dưới dạng phân số tối giản?",
+          "hints": [
+            "Em lập phân số: tử số là số cầu thủ hậu vệ, mẫu số là tổng số cầu thủ cả đội.",
+            "Ta có phân số 12/28. Em thử tìm xem 12 và 28 cùng chia hết cho số nào lớn hơn 1 không?",
+            "12 và 28 đều chia hết cho 4 đó em, chia thử xem còn rút gọn được nữa không nhé."
+          ],
+          "loiGiai": "Phân số chỉ số cầu thủ hậu vệ so với cả đội là 12/28. Ta rút gọn: 12/28 = (12:4)/(28:4) = 3/7. Vì 3 và 7 không cùng chia hết cho số nào lớn hơn 1 nên 3/7 là phân số tối giản. Vậy phân số chỉ số cầu thủ hậu vệ so với cả đội là 3/7.",
+          "dapSo": "3/7"
+        }
+      ]
+    },
+    {
+      "so": 57,
+      "ten": "Quy đồng mẫu số các phân số",
+      "lyThuyet": "Quy đồng mẫu số hai phân số là làm cho chúng có cùng một mẫu số. Cách làm: nhân cả tử số và mẫu số của phân số này với mẫu số của phân số kia. Ví dụ: quy đồng 2/3 và 3/4: 2/3 = (2×4)/(3×4) = 8/12; 3/4 = (3×3)/(4×3) = 9/12. Mẫu số chung là 12. Nếu mẫu số của một phân số chia hết cho mẫu số của phân số kia, ta chọn mẫu số lớn hơn làm mẫu số chung, chỉ cần quy đồng phân số có mẫu số bé hơn. Ví dụ: 3/4 và 5/8, vì 8 chia hết cho 4 nên mẫu số chung là 8: 3/4 = 6/8, giữ nguyên 5/8.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Quy đồng mẫu số hai phân số 1/2 và 1/3, ta được cặp phân số nào?",
+          "options": ["3/6 và 2/6", "1/6 và 1/6", "2/6 và 3/6", "1/5 và 1/5"],
+          "a": 0,
+          "explain": "1/2 = (1×3)/(2×3) = 3/6; 1/3 = (1×2)/(3×2) = 2/6. Vậy quy đồng được 3/6 và 2/6."
+        },
+        {
+          "type": "mcq",
+          "q": "Quy đồng mẫu số hai phân số 2/5 và 3/4, ta được cặp phân số nào?",
+          "options": ["8/20 và 15/20", "2/20 và 3/20", "6/20 và 12/20", "8/9 và 15/9"],
+          "a": 0,
+          "explain": "2/5 = (2×4)/(5×4) = 8/20; 3/4 = (3×5)/(4×5) = 15/20."
+        },
+        {
+          "type": "mcq",
+          "q": "Quy đồng mẫu số hai phân số 3/4 và 5/8, mẫu số chung nên chọn là bao nhiêu?",
+          "options": ["32", "12", "8", "4"],
+          "a": 2,
+          "explain": "Vì 8 chia hết cho 4, nên ta chọn mẫu số chung là 8 (mẫu lớn hơn), chỉ cần quy đồng 3/4 thành 6/8, giữ nguyên 5/8."
+        },
+        {
+          "type": "mcq",
+          "q": "Quy đồng mẫu số hai phân số 3/4 và 5/8 (theo cách chọn mẫu số chung là 8), ta được cặp phân số nào?",
+          "options": ["6/8 và 5/8", "3/8 và 5/8", "24/32 và 20/32", "6/8 và 10/16"],
+          "a": 0,
+          "explain": "Vì 8 chia hết cho 4, mẫu số chung là 8. 3/4 = (3×2)/(4×2) = 6/8, giữ nguyên 5/8. Vậy được 6/8 và 5/8."
+        },
+        {
+          "type": "mcq",
+          "q": "Quy đồng mẫu số hai phân số 1/3 và 5/6, mẫu số chung nên chọn là bao nhiêu?",
+          "options": ["18", "3", "6", "9"],
+          "a": 2,
+          "explain": "Vì 6 chia hết cho 3, nên chọn mẫu số chung là 6 (mẫu lớn hơn), chỉ cần quy đồng 1/3 thành 2/6, giữ nguyên 5/6."
+        },
+        {
+          "type": "fill",
+          "q": "Quy đồng mẫu số hai phân số 3/8 và 7/5 (nhân chéo mẫu số), ta được ___ và 56/40",
+          "answer": "15/40",
+          "accept": ["15/40"]
+        },
+        {
+          "type": "solve",
+          "de": "Trong buổi tập bơi, Nam bơi được 2/3 quãng đường của hồ bơi, còn Bình bơi được 3/4 quãng đường của hồ bơi. Hãy quy đồng mẫu số hai phân số 2/3 và 3/4 để chuẩn bị so sánh ai bơi xa hơn.",
+          "hints": [
+            "Em nhớ cách quy đồng theo SGK không? Nhân cả tử và mẫu của phân số này với mẫu số của phân số kia nhé.",
+            "Với 2/3, em nhân cả tử và mẫu với 4 (mẫu số của phân số kia). Với 3/4, em nhân cả tử và mẫu với 3 (mẫu số của phân số kia).",
+            "2×4 và 3×4 là bao nhiêu? 3×3 và 4×3 là bao nhiêu? Ghép lại thành hai phân số mới có cùng mẫu số nhé."
+          ],
+          "loiGiai": "Ta quy đồng mẫu số hai phân số 2/3 và 3/4 bằng cách nhân tử và mẫu của phân số này với mẫu số của phân số kia: 2/3 = (2×4)/(3×4) = 8/12; 3/4 = (3×3)/(4×3) = 9/12. Vậy sau khi quy đồng, ta được hai phân số 8/12 và 9/12 (mẫu số chung là 12).",
+          "dapSo": "8/12 và 9/12"
+        },
+        {
+          "type": "solve",
+          "de": "An ăn 3/4 cái bánh, còn Minh ăn 5/8 cái bánh (hai cái bánh cùng kích thước). Hãy quy đồng mẫu số hai phân số 3/4 và 5/8 để chuẩn bị so sánh, biết rằng 8 chia hết cho 4.",
+          "hints": [
+            "Em để ý xem mẫu số 8 có chia hết cho mẫu số 4 không? Nếu có, ta không cần nhân chéo hai mẫu số đâu.",
+            "Khi một mẫu số chia hết cho mẫu số kia, ta chọn mẫu số lớn hơn (8) làm mẫu số chung, chỉ cần quy đồng phân số 3/4 thôi.",
+            "Em nhân cả tử và mẫu của 3/4 với số nào để mẫu số thành 8 nhỉ? (8 : 4 = ?)"
+          ],
+          "loiGiai": "Vì 8 chia hết cho 4 (8 : 4 = 2), nên ta chọn mẫu số chung là 8. Ta chỉ cần quy đồng phân số 3/4: 3/4 = (3×2)/(4×2) = 6/8. Giữ nguyên phân số 5/8. Vậy sau khi quy đồng, ta được hai phân số 6/8 và 5/8.",
+          "dapSo": "6/8 và 5/8"
+        }
+      ]
+    },
+    {
+      "so": 58,
+      "ten": "So sánh phân số",
+      "lyThuyet": "Khi hai phân số có cùng mẫu số, phân số nào có tử số lớn hơn thì phân số đó lớn hơn. Ví dụ: 2/5 < 3/5. Khi hai phân số khác mẫu số, ta quy đồng mẫu số hai phân số rồi so sánh tử số của chúng. Ví dụ: so sánh 1/2 và 1/3, quy đồng được 3/6 và 2/6, vì 3/6 > 2/6 nên 1/2 > 1/3.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "So sánh hai phân số 3/7 và 5/7?",
+          "options": ["3/7 > 5/7", "3/7 < 5/7", "3/7 = 5/7", "Không so sánh được"],
+          "a": 1,
+          "explain": "Hai phân số cùng mẫu số 7, vì 3 < 5 nên 3/7 < 5/7."
+        },
+        {
+          "type": "mcq",
+          "q": "So sánh hai phân số 4/9 và 2/9?",
+          "options": ["4/9 < 2/9", "4/9 = 2/9", "4/9 > 2/9", "Không xác định"],
+          "a": 2,
+          "explain": "Hai phân số cùng mẫu số 9, vì 4 > 2 nên 4/9 > 2/9."
+        },
+        {
+          "type": "mcq",
+          "q": "So sánh hai phân số 1/2 và 2/5 (đã quy đồng thành 5/10 và 4/10)?",
+          "options": ["1/2 < 2/5", "1/2 > 2/5", "1/2 = 2/5", "Không so sánh được"],
+          "a": 1,
+          "explain": "Quy đồng: 1/2 = 5/10, 2/5 = 4/10. Vì 5/10 > 4/10 nên 1/2 > 2/5."
+        },
+        {
+          "type": "mcq",
+          "q": "So sánh hai phân số 5/6 và 7/9?",
+          "options": ["5/6 < 7/9", "5/6 = 7/9", "5/6 > 7/9", "Không xác định"],
+          "a": 2,
+          "explain": "Quy đồng mẫu số chung 18: 5/6 = 15/18, 7/9 = 14/18. Vì 15/18 > 14/18 nên 5/6 > 7/9."
+        },
+        {
+          "type": "mcq",
+          "q": "So sánh hai phân số 2/4 và 3/4 (sau khi rút gọn 2/4 = 1/2)?",
+          "options": ["2/4 > 3/4", "2/4 = 3/4", "2/4 < 3/4", "Không so sánh được"],
+          "a": 2,
+          "explain": "2/4 = 1/2 = 2/4, và 2/4 < 3/4 vì cùng mẫu số 4, tử số 2 < 3."
+        },
+        {
+          "type": "fill",
+          "q": "So sánh 3/4 và 5/8 (quy đồng thành 6/8 và 5/8): vì 6/8 > 5/8 nên 3/4 ___ 5/8 (điền lớn hơn hoặc nhỏ hơn)",
+          "answer": "lớn hơn",
+          "accept": ["lớn hơn", "lon hon", ">"]
+        },
+        {
+          "type": "solve",
+          "de": "Nam ăn hết 1 cái bánh trong 1/2 giờ, còn Bình ăn hết 1 cái bánh trong 1/3 giờ. Hỏi ai ăn bánh nhanh hơn (tức là thời gian ít hơn)?",
+          "hints": [
+            "Em cần so sánh hai phân số 1/2 và 1/3. Vì hai phân số này khác mẫu số nên em phải làm gì trước đã?",
+            "Đúng rồi, em quy đồng mẫu số hai phân số trước: 1/2 thành mấy phần sáu, 1/3 thành mấy phần sáu nhỉ?",
+            "So sánh 3/6 và 2/6 xem phân số nào bé hơn, thì bạn đó ăn nhanh hơn (thời gian ít hơn) nhé!"
+          ],
+          "loiGiai": "Ta so sánh thời gian ăn bánh của hai bạn: 1/2 giờ và 1/3 giờ. Quy đồng mẫu số: 1/2 = 3/6; 1/3 = 2/6. Vì 3/6 > 2/6 nên 1/2 > 1/3, tức là Nam ăn bánh trong thời gian nhiều hơn Bình. Vậy Bình ăn bánh nhanh hơn Nam.",
+          "dapSo": "Bình ăn bánh nhanh hơn"
+        },
+        {
+          "type": "solve",
+          "de": "Xe của gia đình An đi từ nhà đến trường hết 3/4 giờ, còn xe của gia đình Minh đi cùng quãng đường đó hết 5/8 giờ. Hỏi xe nhà ai đi nhanh hơn (thời gian ít hơn)?",
+          "hints": [
+            "Em cần so sánh 3/4 giờ và 5/8 giờ. Em để ý xem 8 có chia hết cho 4 không, để chọn mẫu số chung cho nhanh.",
+            "Mẫu số chung là 8. Em quy đồng 3/4 thành mấy phần tám, còn 5/8 giữ nguyên nhé.",
+            "So sánh 6/8 và 5/8 xem phân số nào bé hơn, xe đó đi nhanh hơn (thời gian ít hơn) đó em!"
+          ],
+          "loiGiai": "Ta so sánh 3/4 giờ và 5/8 giờ. Vì 8 chia hết cho 4 nên mẫu số chung là 8: 3/4 = 6/8, giữ nguyên 5/8. Vì 6/8 > 5/8 nên 3/4 > 5/8, tức là xe nhà An đi mất thời gian nhiều hơn xe nhà Minh. Vậy xe nhà Minh đi nhanh hơn.",
+          "dapSo": "Xe nhà Minh đi nhanh hơn"
+        }
+      ]
+    },
+    {
+      "so": 59,
+      "ten": "Luyện tập chung",
+      "lyThuyet": "Ôn lại các kiến thức về phân số: khái niệm phân số (tử số, mẫu số), phân số bằng nhau, rút gọn phân số về dạng tối giản, quy đồng mẫu số hai phân số (nhân chéo mẫu số, hoặc chọn mẫu lớn hơn nếu một mẫu chia hết cho mẫu kia), và so sánh hai phân số (cùng mẫu so tử số, khác mẫu thì quy đồng trước khi so sánh).",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Rút gọn phân số 15/25 ta được phân số tối giản nào?",
+          "options": ["3/5", "5/3", "15/25", "1/5"],
+          "a": 0,
+          "explain": "15/25 = (15:5)/(25:5) = 3/5, là phân số tối giản."
+        },
+        {
+          "type": "mcq",
+          "q": "Rút gọn phân số 36/64 ta được phân số tối giản nào?",
+          "options": ["18/32", "9/16", "6/8", "36/64"],
+          "a": 1,
+          "explain": "36 và 64 cùng chia hết cho 4: 36/64 = (36:4)/(64:4) = 9/16, là phân số tối giản."
+        },
+        {
+          "type": "mcq",
+          "q": "Quy đồng mẫu số hai phân số 3/4 và 7/12 (biết 12 chia hết cho 4), mẫu số chung nên chọn là bao nhiêu?",
+          "options": ["48", "12", "4", "16"],
+          "a": 1,
+          "explain": "Vì 12 chia hết cho 4, nên chọn mẫu số chung là 12 (mẫu lớn hơn), chỉ cần quy đồng phân số 3/4 thành 9/12, giữ nguyên 7/12."
+        },
+        {
+          "type": "mcq",
+          "q": "Quy đồng mẫu số hai phân số 2/3 và 4/5, ta được cặp phân số nào?",
+          "options": ["10/15 và 12/15", "2/15 và 4/15", "8/15 và 12/15", "6/15 và 12/15"],
+          "a": 0,
+          "explain": "2/3 = (2×5)/(3×5) = 10/15; 4/5 = (4×3)/(5×3) = 12/15."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong ba phân số 1/4 (cà chua), 1/3 (bắp cải), 5/12 (su hào) chỉ phần diện tích mảnh vườn, quy đồng mẫu số chung 12 ta được 3/12, 4/12, 5/12. Loại rau nào chiếm diện tích lớn nhất?",
+          "options": ["Cà chua", "Bắp cải", "Su hào", "Diện tích bằng nhau"],
+          "a": 2,
+          "explain": "Quy đồng: 1/4 = 3/12, 1/3 = 4/12, 5/12 giữ nguyên. So sánh 3/12 < 4/12 < 5/12, nên su hào (5/12) chiếm diện tích lớn nhất."
+        },
+        {
+          "type": "fill",
+          "q": "Rút gọn phân số 18/27 ta được phân số tối giản ___",
+          "answer": "2/3",
+          "accept": ["2/3"]
+        },
+        {
+          "type": "solve",
+          "de": "Một mảnh vườn của trường được chia để trồng ba loại rau: cà chua chiếm 1/4 mảnh vườn, bắp cải chiếm 1/3 mảnh vườn, su hào chiếm 5/12 mảnh vườn. Hãy quy đồng mẫu số ba phân số này (mẫu số chung là 12) và cho biết loại rau nào chiếm diện tích nhỏ nhất.",
+          "hints": [
+            "Em quy đồng từng phân số về mẫu số 12 nhé. 1/4 nhân cả tử và mẫu với mấy để ra mẫu số 12?",
+            "Rồi 1/3 nhân cả tử và mẫu với mấy để ra mẫu số 12? Còn 5/12 thì sao, có cần đổi không?",
+            "Sau khi quy đồng xong, em so sánh ba tử số 3, 4, 5 xem số nào bé nhất, đó là loại rau chiếm diện tích nhỏ nhất."
+          ],
+          "loiGiai": "Ta quy đồng ba phân số về mẫu số chung 12: 1/4 = (1×3)/(4×3) = 3/12; 1/3 = (1×4)/(3×4) = 4/12; 5/12 giữ nguyên. So sánh ba tử số: 3 < 4 < 5, nên 3/12 < 4/12 < 5/12. Vậy cà chua (3/12) chiếm diện tích nhỏ nhất trong ba loại rau.",
+          "dapSo": "Cà chua chiếm diện tích nhỏ nhất (3/12 mảnh vườn)"
+        },
+        {
+          "type": "solve",
+          "de": "Bình có phân số 28/70 chỉ số bàn thắng ghi được trong mùa giải so với tổng số lần sút bóng. Hãy rút gọn phân số này về dạng tối giản, sau đó so sánh với phân số 2/5 của Nam để biết ai có tỉ lệ ghi bàn cao hơn.",
+          "hints": [
+            "Trước tiên em rút gọn 28/70. Em thử xem 28 và 70 có cùng chia hết cho số nào lớn không? (Gợi ý: cả hai đều chia hết cho 14 đó!)",
+            "28 : 14 = ? và 70 : 14 = ? Ghép lại thành phân số tối giản của Bình.",
+            "So sánh phân số tối giản đó với 2/5 của Nam xem hai phân số này có bằng nhau không nhé."
+          ],
+          "loiGiai": "Ta rút gọn phân số 28/70: cả 28 và 70 đều chia hết cho 14, nên 28/70 = (28:14)/(70:14) = 2/5. So sánh phân số tối giản của Bình (2/5) với phân số của Nam (2/5), ta thấy 2/5 = 2/5. Vậy tỉ lệ ghi bàn của Bình và Nam bằng nhau.",
+          "dapSo": "2/5, tỉ lệ ghi bàn của Bình và Nam bằng nhau"
+        }
+      ]
+    }
+  ]
+}
