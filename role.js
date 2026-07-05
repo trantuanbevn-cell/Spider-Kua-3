@@ -162,10 +162,9 @@ function adminChangePin(){
       if(taps>=5){
         taps=0;
         if(roleGet()==='parent'){ adminOpen(); return; }
-        var pin=prompt('Bố mẹ nhập PIN để vào quản lý:');
-        if(pin===null)return;
-        if(!checkParentPin(pin)){alert('❌ PIN không đúng!');return;}
-        adminOpen();
+        rolePinPad('BỐ MẸ — QUẢN LÝ','Nhập mã PIN quản trị','var(--blue2)',
+          function(v){ return v===(localStorage.getItem('parent_pin')||''); },
+          function(){ adminOpen(); });
       }
     });
   },600);
@@ -285,3 +284,85 @@ setInterval(function(){
     adminOpen();
   }catch(e){}
 }, 1200);
+
+// ═══════════════════════════════════════════════
+// BÀN PHÍM PIN S.H.I.E.L.D. — thay hộp prompt() xấu xí của trình duyệt
+// ═══════════════════════════════════════════════
+(function(){
+  var st=document.createElement('style');
+  st.textContent='@keyframes pinShake{0%,100%{transform:translateX(0)}20%,60%{transform:translateX(-9px)}40%,80%{transform:translateX(9px)}}'
+    +'@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(232,25,44,.35)}50%{box-shadow:0 0 0 10px rgba(232,25,44,0)}}'
+    +'.pinkey{width:72px;height:60px;border-radius:14px;background:var(--s2);border:1px solid var(--bd2);color:var(--tx);font-family:Rajdhani,sans-serif;font-weight:700;font-size:24px;cursor:pointer;transition:all .1s;}'
+    +'.pinkey:active{background:var(--s3);transform:scale(.94);}';
+  document.head.appendChild(st);
+})();
+
+var _pinState={val:'',verify:null,ok:null};
+function rolePinPad(title, sub, accent, verify, onOk){
+  _pinState={val:'',verify:verify,ok:onOk,accent:accent};
+  var ov=document.getElementById('pinPad');
+  if(!ov){
+    ov=document.createElement('div');
+    ov.id='pinPad';
+    ov.style.cssText='position:fixed;inset:0;background:rgba(4,5,10,.94);z-index:950;display:flex;align-items:center;justify-content:center;padding:20px;';
+    document.body.appendChild(ov);
+  }
+  ov.style.display='flex';
+  var keys=[1,2,3,4,5,6,7,8,9,'C',0,'⌫'];
+  ov.innerHTML='<div id="pinBox" style="text-align:center;max-width:300px;width:100%;">'
+    +'<div style="font-size:38px;margin-bottom:6px;">🛡️</div>'
+    +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:var(--tx3);letter-spacing:.35em;margin-bottom:2px;">S.H.I.E.L.D. ACCESS</div>'
+    +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:20px;color:'+accent+';letter-spacing:.05em;">'+title+'</div>'
+    +'<div style="font-size:11.5px;color:var(--tx3);margin:4px 0 18px;">'+sub+'</div>'
+    +'<div id="pinDots" style="display:flex;justify-content:center;gap:14px;margin-bottom:22px;"></div>'
+    +'<div style="display:grid;grid-template-columns:repeat(3,72px);gap:12px;justify-content:center;">'
+    +keys.map(function(k){return '<button class="pinkey" onclick="pinKey(\''+k+'\')">'+k+'</button>';}).join('')
+    +'</div>'
+    +'<button onclick="pinClose()" style="margin-top:18px;background:transparent;border:1px solid var(--bd);border-radius:10px;color:var(--tx3);font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;padding:8px 22px;cursor:pointer;">HỦY</button>'
+    +'</div>';
+  pinDraw();
+}
+function pinDraw(){
+  var d=document.getElementById('pinDots'); if(!d) return;
+  var n=_pinState.val.length, h='';
+  for(var i=0;i<6;i++){
+    h+='<div style="width:16px;height:16px;border-radius:50%;border:2px solid '+(i<n?_pinState.accent:'var(--bd2)')+';background:'+(i<n?_pinState.accent:'transparent')+';transition:all .15s;"></div>';
+  }
+  d.innerHTML=h;
+}
+function pinKey(k){
+  if(k==='C'){ _pinState.val=''; pinDraw(); return; }
+  if(k==='⌫'){ _pinState.val=_pinState.val.slice(0,-1); pinDraw(); return; }
+  if(_pinState.val.length>=6) return;
+  _pinState.val+=k; pinDraw();
+  if(_pinState.val.length===6){
+    setTimeout(function(){
+      if(_pinState.verify(_pinState.val)){
+        document.getElementById('pinPad').style.display='none';
+        _pinState.ok();
+      } else {
+        var box=document.getElementById('pinBox');
+        box.style.animation='pinShake .4s';
+        setTimeout(function(){box.style.animation='';},450);
+        _pinState.val=''; pinDraw();
+      }
+    },150);
+  }
+}
+function pinClose(){ var p=document.getElementById('pinPad'); if(p) p.style.display='none'; }
+
+// ── thay 3 chỗ nhập mã cũ bằng bàn phím mới ──
+roleLoginKua=function(){
+  var code=localStorage.getItem('kua_code');
+  if(!code){ roleSet('kua'); roleHide(); return; }
+  rolePinPad('AGENT KUA','Nhập mã truy cập của em','var(--red2)',
+    function(v){ return v===code; },
+    function(){ roleSet('kua'); roleHide();
+      if(typeof speak==='function') setTimeout(function(){speak('Chào mừng trở lại, Peter!');},600);
+    });
+};
+roleLoginParent=function(){
+  rolePinPad('BỐ MẸ — QUẢN LÝ','Nhập mã PIN quản trị','var(--blue2)',
+    function(v){ return v===(localStorage.getItem('parent_pin')||''); },
+    function(){ roleSet('parent'); roleHide(); setTimeout(adminOpen,300); });
+};
