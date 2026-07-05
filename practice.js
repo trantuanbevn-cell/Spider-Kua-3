@@ -183,7 +183,9 @@ function pcQ(){
       +'<div style="font-size:14.5px;line-height:1.9;color:var(--tx);">'+pcEsc(q.lyThuyet)+'</div>'
       +'<button onclick="speak&&speak(\''+pcEsc(q.lyThuyet).replace(/'/g,"\\'")+'\')" style="'+pcBtn2()+'margin-top:12px;font-size:12px;padding:8px 14px;">🔊 Nghe Fury giảng</button>'
       +'</div>'
-      +'<button onclick="pcTheoryAsk()" style="'+pcBtn2()+'width:100%;border-color:var(--gold);color:var(--gold);margin-bottom:8px;">💬 CHƯA HIỂU — NHẮN FURY GIẢNG KỸ HƠN</button>'
+      +'<div style="display:flex;gap:8px;margin-bottom:8px;">'
+      +'<button id="pcMicAskBtn" onclick="pcMicAsk(\'theory\')" style="'+pcBtn2()+'flex:1;border-color:var(--blue2);color:var(--blue2);font-size:13px;">🎤 NÓI CÂU HỎI</button>'
+      +'<button onclick="pcTheoryAsk()" style="'+pcBtn2()+'flex:1;border-color:var(--gold);color:var(--gold);font-size:13px;">💬 NHẮN FURY</button></div>'
       +'<button onclick="pcNext()" style="'+pcBtn()+'width:100%;background:var(--green);">✅ EM HIỂU RỒI — VÀO LÀM BÀI →</button>';
     pcBox().innerHTML=h;
     pcEl().scrollTop=0;
@@ -223,7 +225,9 @@ function pcQ(){
         :'<div style="font-size:12px;color:var(--tx2);margin-bottom:8px;">Em làm ra giấy/vở rồi so với bài mẫu nhé!</div>'
          +'<button onclick="pcRevealSolve(true)" style="'+pcBtn()+'width:100%;">📖 XEM BÀI MẪU & TỰ CHẤM</button>')
       +'<button onclick="pcHint()" style="'+pcBtn2()+'width:100%;margin-top:8px;border-color:var(--gold);color:var(--gold);">🕷️ GỢI Ý CỦA FURY</button>'
-      +'<button onclick="pcAskFury()" style="'+pcBtn2()+'width:100%;margin-top:8px;font-size:12px;">💬 Chat với Fury về bài này</button>';
+      +'<div style="display:flex;gap:8px;margin-top:8px;">'
+      +'<button id="pcMicAskBtn" onclick="pcMicAsk(\'solve\')" style="'+pcBtn2()+'flex:1;font-size:12px;border-color:var(--blue2);color:var(--blue2);">🎤 Nói để hỏi Fury</button>'
+      +'<button onclick="pcAskFury()" style="'+pcBtn2()+'flex:1;font-size:12px;">💬 Chat với Fury</button></div>';
   }
   h+='<div id="pcFb"></div>';
   pcBox().innerHTML=h;
@@ -422,3 +426,30 @@ function pcFinish(){
     ol.appendChild(rb);
   }, 800);
 })();
+
+
+// ═══ HỎI FURY BẰNG GIỌNG NÓI ngay trong bài luyện ═══
+var _pcMicSR=null;
+function pcMicAsk(kind){
+  var q=P.qs[P.qi];
+  var S=window.SpeechRecognition||window.webkitSpeechRecognition;
+  var btn=document.getElementById('pcMicAskBtn');
+  if(!S){ if(btn) btn.textContent='Máy không hỗ trợ mic'; return; }
+  if(_pcMicSR){ try{_pcMicSR.stop();}catch(e){} _pcMicSR=null; if(btn){btn.textContent='🎤 Nói để hỏi Fury';btn.style.background='';} return; }
+  _pcMicSR=new S(); _pcMicSR.lang='vi-VN'; _pcMicSR.interimResults=false;
+  if(btn){ btn.textContent='🔴 Đang nghe... (bấm lại để hủy)'; btn.style.background='rgba(232,25,44,.15)'; }
+  _pcMicSR.onresult=function(e){
+    var said=(e.results[0][0].transcript||'').trim();
+    _pcMicSR=null;
+    if(!said){ if(btn){btn.textContent='Không nghe rõ — thử lại';btn.style.background='';} return; }
+    var ctx = kind==='theory'
+      ? '[HỌC LÝ THUYẾT] Em đang học bài mới "'+(q.ten||'')+'".'
+      : '[LUYỆN TẬP] Em đang làm bài này trong app:\n"'+(q.de||q.q||'')+'"';
+    closePractice();
+    if(typeof qs==='function') qs(ctx+'\nEm hỏi (bằng giọng nói): '+said+'\n(Trả lời ngắn gọn, gợi mở — đừng nói thẳng đáp án bài luyện.)');
+  };
+  _pcMicSR.onerror=_pcMicSR.onend=function(){
+    if(_pcMicSR){ _pcMicSR=null; if(btn){btn.textContent='🎤 Nói để hỏi Fury';btn.style.background='';} }
+  };
+  _pcMicSR.start();
+}
