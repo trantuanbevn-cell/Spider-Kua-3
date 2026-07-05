@@ -1,0 +1,391 @@
+{
+ "mon": "on3",
+ "tap": 0,
+ "chuDe": "Ôn hè Tiếng Việt · Từ và câu",
+ "cdSo": 4,
+ "bai": [
+  {
+   "so": 16,
+   "ten": "Từ chỉ sự vật, hoạt động, đặc điểm",
+   "lyThuyet": "Chào em! Từ chỉ sự vật là từ gọi tên người, con vật, đồ vật, cây cối, hiện tượng... ví dụ: học sinh, con mèo, quyển sách, cây bàng. Từ chỉ hoạt động là từ nói lên việc làm, hành động của người hay vật, ví dụ: chạy, nhảy, học, đọc. Từ chỉ đặc điểm là từ miêu tả hình dáng, màu sắc, tính chất, ví dụ: xinh đẹp, cao lớn, đỏ tươi, chăm chỉ. Em hãy đọc kỹ câu văn, xác định từ đó nói về cái gì, việc gì hay tính chất gì để phân loại đúng nhé!",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Từ nào dưới đây là từ chỉ sự vật?",
+     "options": [
+      "quyển sách",
+      "chạy nhảy",
+      "xinh đẹp",
+      "nhanh nhẹn"
+     ],
+     "a": 0,
+     "explain": "\"Quyển sách\" là từ chỉ sự vật (đồ vật). Các từ còn lại chỉ hoạt động hoặc đặc điểm."
+    },
+    {
+     "type": "mcq",
+     "q": "Từ nào dưới đây là từ chỉ hoạt động?",
+     "options": [
+      "bơi lội",
+      "con cá",
+      "trong xanh",
+      "cái bàn"
+     ],
+     "a": 0,
+     "explain": "\"Bơi lội\" là từ chỉ hoạt động. Các từ còn lại chỉ sự vật hoặc đặc điểm."
+    },
+    {
+     "type": "mcq",
+     "q": "Từ nào dưới đây là từ chỉ đặc điểm?",
+     "options": [
+      "chăm chỉ",
+      "học sinh",
+      "viết bài",
+      "cây bàng"
+     ],
+     "a": 0,
+     "explain": "\"Chăm chỉ\" là từ chỉ đặc điểm (tính nết). Các từ còn lại chỉ sự vật hoặc hoạt động."
+    },
+    {
+     "type": "mcq",
+     "q": "Trong câu \"Chú chó Vàng chạy nhanh trên sân cỏ xanh mướt.\", từ nào là từ chỉ đặc điểm?",
+     "options": [
+      "xanh mướt",
+      "chú chó Vàng",
+      "chạy",
+      "sân cỏ"
+     ],
+     "a": 0,
+     "explain": "\"Xanh mướt\" là từ chỉ đặc điểm, miêu tả màu sắc của sân cỏ."
+    },
+    {
+     "type": "fill",
+     "q": "Điền một từ chỉ hoạt động thích hợp vào chỗ trống: Minh đang ___ bóng đá cùng các bạn. (điền một từ chỉ hoạt động)",
+     "answer": "đá",
+     "accept": [
+      "đá",
+      "chơi",
+      "tập"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Điền một từ chỉ đặc điểm thích hợp vào chỗ trống: Bầu trời hôm nay thật ___. (điền một từ chỉ đặc điểm)",
+     "answer": "trong xanh",
+     "accept": [
+      "trong xanh",
+      "xanh trong",
+      "đẹp",
+      "trong veo"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy tìm trong câu sau: \"Bạn An chăm chỉ luyện tập cờ vua mỗi buổi chiều.\" - một từ chỉ sự vật, một từ chỉ hoạt động và một từ chỉ đặc điểm.",
+     "hints": [
+      "Anh Fury hỏi em: trong câu này, từ nào gọi tên một người hay vật cụ thể (từ chỉ sự vật)?",
+      "Đúng rồi, \"bạn An\" hoặc \"cờ vua\" là từ chỉ sự vật. Vậy từ nào nói về việc làm (hoạt động) của bạn An?",
+      "\"Luyện tập\" là từ chỉ hoạt động. Còn từ nào miêu tả tính nết của bạn An (từ chỉ đặc điểm)?"
+     ],
+     "loiGiai": "Từ chỉ sự vật: \"bạn An\" (hoặc \"cờ vua\").\nTừ chỉ hoạt động: \"luyện tập\".\nTừ chỉ đặc điểm: \"chăm chỉ\".",
+     "dapSo": "Sự vật: bạn An; hoạt động: luyện tập; đặc điểm: chăm chỉ"
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy đặt một câu có đủ ba loại từ: một từ chỉ sự vật, một từ chỉ hoạt động, một từ chỉ đặc điểm, nói về một buổi tập bơi của Bình.",
+     "hints": [
+      "Anh Fury hỏi em: em hãy chọn từ chỉ sự vật trước, ví dụ \"Bình\" hoặc \"bể bơi\".",
+      "Sau đó em thêm một từ chỉ hoạt động, ví dụ \"bơi\", \"luyện tập\"...",
+      "Cuối cùng em thêm một từ chỉ đặc điểm để câu văn sinh động hơn, ví dụ \"chăm chỉ\", \"nhanh nhẹn\"..."
+     ],
+     "loiGiai": "Câu ví dụ: \"Bình chăm chỉ luyện tập bơi mỗi sáng.\"\nTrong câu: \"Bình\" là từ chỉ sự vật, \"luyện tập bơi\" là từ chỉ hoạt động, \"chăm chỉ\" là từ chỉ đặc điểm.",
+     "dapSo": "Câu ví dụ: Bình chăm chỉ luyện tập bơi mỗi sáng (tự chấm theo bài làm của em)"
+    }
+   ]
+  },
+  {
+   "so": 17,
+   "ten": "Câu: Ai là gì? Ai làm gì? Ai thế nào?",
+   "lyThuyet": "Câu kiểu \"Ai là gì?\" dùng để giới thiệu hoặc nhận định về người, vật, ví dụ: \"Nam là học sinh giỏi.\" Câu kiểu \"Ai làm gì?\" dùng để kể về hoạt động, ví dụ: \"Minh đang đọc sách.\" Câu kiểu \"Ai thế nào?\" dùng để miêu tả đặc điểm, tính chất, trạng thái, ví dụ: \"Bầu trời rất trong xanh.\" Em nhận biết bằng cách đặt câu hỏi cho bộ phận vị ngữ: nếu trả lời \"là gì\" thì thuộc kiểu Ai là gì?, nếu trả lời \"làm gì\" thì thuộc kiểu Ai làm gì?, nếu trả lời \"thế nào\" thì thuộc kiểu Ai thế nào?",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Câu \"Bình là một cầu thủ bóng đá xuất sắc.\" thuộc kiểu câu nào?",
+     "options": [
+      "Ai là gì?",
+      "Ai làm gì?",
+      "Ai thế nào?",
+      "Không thuộc kiểu câu nào"
+     ],
+     "a": 0,
+     "explain": "Câu giới thiệu Bình là một cầu thủ bóng đá xuất sắc, trả lời cho câu hỏi \"là gì\" nên thuộc kiểu câu Ai là gì?"
+    },
+    {
+     "type": "mcq",
+     "q": "Câu \"Nam đang tập bơi ở hồ bơi trường.\" thuộc kiểu câu nào?",
+     "options": [
+      "Ai làm gì?",
+      "Ai là gì?",
+      "Ai thế nào?",
+      "Không thuộc kiểu câu nào"
+     ],
+     "a": 0,
+     "explain": "Câu kể về hoạt động \"đang tập bơi\" của Nam, trả lời cho câu hỏi \"làm gì\" nên thuộc kiểu câu Ai làm gì?"
+    },
+    {
+     "type": "mcq",
+     "q": "Câu \"Minh rất thông minh và chăm chỉ.\" thuộc kiểu câu nào?",
+     "options": [
+      "Ai thế nào?",
+      "Ai là gì?",
+      "Ai làm gì?",
+      "Không thuộc kiểu câu nào"
+     ],
+     "a": 0,
+     "explain": "Câu miêu tả đặc điểm của Minh (thông minh, chăm chỉ), trả lời cho câu hỏi \"thế nào\" nên thuộc kiểu câu Ai thế nào?"
+    },
+    {
+     "type": "mcq",
+     "q": "Trong câu \"An là một học sinh chăm ngoan.\", bộ phận nào trả lời cho câu hỏi \"là gì\"?",
+     "options": [
+      "một học sinh chăm ngoan",
+      "An",
+      "chăm ngoan",
+      "học sinh"
+     ],
+     "a": 0,
+     "explain": "\"Một học sinh chăm ngoan\" là bộ phận vị ngữ, trả lời cho câu hỏi \"An là gì?\"."
+    },
+    {
+     "type": "fill",
+     "q": "Đặt câu theo kiểu \"Ai làm gì?\" nói về Bình đang chơi cờ vua: ___",
+     "answer": "Bình đang chơi cờ vua",
+     "accept": [
+      "Bình đang chơi cờ vua.",
+      "Bình chơi cờ vua"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Câu \"Đội bóng đá của trường em rất đoàn kết.\" thuộc kiểu câu Ai ___?",
+     "answer": "thế nào",
+     "accept": [
+      "thế nào",
+      "thế nào?"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy đặt một câu theo kiểu \"Ai là gì?\" để giới thiệu về một người bạn thân của em, sau đó gạch chân (hoặc ghi rõ) bộ phận nào là chủ ngữ, bộ phận nào là vị ngữ.",
+     "hints": [
+      "Anh Fury hỏi em: câu \"Ai là gì?\" cần có tên bạn (chủ ngữ) và phần giới thiệu bạn ấy là ai, làm nghề gì hay là học sinh thế nào (vị ngữ) đúng không?",
+      "Em thử đặt câu theo mẫu: \"(Tên bạn) là (một học sinh như thế nào / một người bạn ra sao)\".",
+      "Sau khi đặt câu xong, em xác định: phần đứng trước là chủ ngữ (tên bạn), phần đứng sau từ \"là\" là vị ngữ."
+     ],
+     "loiGiai": "Câu ví dụ: \"An là người bạn thân nhất của em.\"\nChủ ngữ: \"An\". Vị ngữ: \"là người bạn thân nhất của em\".",
+     "dapSo": "Câu ví dụ: An là người bạn thân nhất của em (tự chấm theo bài làm của em)"
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy đặt một câu theo kiểu \"Ai làm gì?\" và một câu theo kiểu \"Ai thế nào?\" nói về một buổi tập cờ vua của Nam.",
+     "hints": [
+      "Anh Fury hỏi em: câu \"Ai làm gì?\" cần kể một hành động cụ thể, ví dụ Nam đang làm gì trong buổi tập cờ vua?",
+      "Em thử đặt câu: \"Nam (làm gì đó) trong buổi tập cờ vua.\" Còn câu \"Ai thế nào?\" thì cần miêu tả đặc điểm hay trạng thái của Nam.",
+      "Em thử đặt câu: \"Nam (thế nào đó) khi chơi cờ vua\", ví dụ chăm chú, vui vẻ, tập trung..."
+     ],
+     "loiGiai": "Câu \"Ai làm gì?\": \"Nam đang suy nghĩ nước đi tiếp theo.\"\nCâu \"Ai thế nào?\": \"Nam rất tập trung khi chơi cờ vua.\"",
+     "dapSo": "Câu ví dụ (tự chấm theo bài làm của em)"
+    }
+   ]
+  },
+  {
+   "so": 18,
+   "ten": "Dấu chấm, dấu phẩy, dấu chấm hỏi, dấu chấm than",
+   "lyThuyet": "Dấu chấm (.) đặt ở cuối câu kể để kết thúc một câu. Dấu phẩy (,) dùng để ngăn cách các bộ phận trong câu (như trạng ngữ với phần còn lại, hoặc các từ ngữ liệt kê). Dấu chấm hỏi (?) đặt ở cuối câu hỏi. Dấu chấm than (!) đặt ở cuối câu cảm hoặc câu cầu khiến để bộc lộ cảm xúc mạnh (vui, ngạc nhiên, ra lệnh...). Em đọc kỹ nội dung và mục đích của câu để chọn dấu câu cho phù hợp nhé!",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Câu nào sau đây cần kết thúc bằng dấu chấm hỏi?",
+     "options": [
+      "Bạn có thích chơi cờ vua không",
+      "Hôm nay trời rất đẹp",
+      "Em rất yêu bóng đá",
+      "Cả lớp cùng nhau học bài"
+     ],
+     "a": 0,
+     "explain": "\"Bạn có thích chơi cờ vua không\" là câu hỏi, cần kết thúc bằng dấu chấm hỏi (?)."
+    },
+    {
+     "type": "mcq",
+     "q": "Câu nào sau đây cần kết thúc bằng dấu chấm than?",
+     "options": [
+      "Ôi, đội bóng của chúng ta đã thắng rồi",
+      "Nam đang đọc sách",
+      "Hôm nay là thứ hai",
+      "Minh thích bơi lội"
+     ],
+     "a": 0,
+     "explain": "\"Ôi, đội bóng của chúng ta đã thắng rồi\" bộc lộ cảm xúc vui mừng, cần kết thúc bằng dấu chấm than (!)."
+    },
+    {
+     "type": "mcq",
+     "q": "Câu \"Trên sân trường, các bạn đang chơi đá bóng, nhảy dây và đọc sách.\" cần dùng dấu phẩy để làm gì?",
+     "options": [
+      "Ngăn cách các từ ngữ liệt kê hoạt động",
+      "Kết thúc câu",
+      "Thể hiện câu hỏi",
+      "Thể hiện cảm xúc mạnh"
+     ],
+     "a": 0,
+     "explain": "Dấu phẩy trong câu này dùng để ngăn cách các hoạt động được liệt kê: đá bóng, nhảy dây, đọc sách."
+    },
+    {
+     "type": "mcq",
+     "q": "Điền dấu câu thích hợp: \"Bạn tên là gì___\"",
+     "options": [
+      "?",
+      ".",
+      "!",
+      ","
+     ],
+     "a": 0,
+     "explain": "Đây là câu hỏi (hỏi tên), nên cần kết thúc bằng dấu chấm hỏi (?)."
+    },
+    {
+     "type": "fill",
+     "q": "Điền dấu câu thích hợp vào chỗ trống: \"Cả đội reo lên vui sướng___\" (điền dấu chấm than hoặc dấu chấm)",
+     "answer": "!",
+     "accept": [
+      "!"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Điền dấu câu thích hợp vào chỗ trống: \"Sáng nay___ Bình dậy sớm để tập thể dục.\" (điền dấu phẩy)",
+     "answer": ",",
+     "accept": [
+      ","
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy chép lại đoạn văn sau và điền đúng các dấu câu (dấu chấm, dấu phẩy, dấu chấm hỏi, dấu chấm than) vào chỗ thích hợp: \"Hôm nay Nam Minh và An cùng nhau đi xem trận bóng đá Bạn có muốn đi cùng không Trận đấu thật tuyệt vời\"",
+     "hints": [
+      "Anh Fury hỏi em: câu đầu tiên kể về việc ba bạn cùng đi xem bóng đá, có ba tên riêng liệt kê (Nam, Minh, An), vậy cần dấu gì để ngăn cách và dấu gì để kết thúc câu kể?",
+      "Câu thứ hai là một câu hỏi (\"Bạn có muốn đi cùng không\"), cần dấu gì ở cuối?",
+      "Câu thứ ba bộc lộ cảm xúc rất vui, ngạc nhiên (\"Trận đấu thật tuyệt vời\"), cần dấu gì ở cuối?"
+     ],
+     "loiGiai": "Đoạn văn sau khi điền dấu câu:\n\"Hôm nay, Nam, Minh và An cùng nhau đi xem trận bóng đá. Bạn có muốn đi cùng không? Trận đấu thật tuyệt vời!\"",
+     "dapSo": "Hôm nay, Nam, Minh và An cùng nhau đi xem trận bóng đá. Bạn có muốn đi cùng không? Trận đấu thật tuyệt vời!"
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy viết 3 câu về một buổi đi bơi của em, trong đó có đủ 3 kiểu câu: một câu kể (kết thúc bằng dấu chấm), một câu hỏi (kết thúc bằng dấu chấm hỏi), một câu cảm (kết thúc bằng dấu chấm than).",
+     "hints": [
+      "Anh Fury hỏi em: câu kể thường dùng để thuật lại một việc đã xảy ra, ví dụ \"Em đi bơi cùng bạn.\" Em thử viết câu kể trước nhé.",
+      "Tiếp theo, em viết một câu hỏi, ví dụ hỏi bạn có thích bơi không, nhớ kết thúc bằng dấu chấm hỏi.",
+      "Cuối cùng, em viết một câu cảm để bộc lộ cảm xúc (vui, thích thú...) khi đi bơi, nhớ kết thúc bằng dấu chấm than."
+     ],
+     "loiGiai": "Ví dụ:\n\"Chiều nay, em đi bơi cùng Bình ở hồ bơi trường. Bạn có thích bơi không? Bơi lội thật là thích thú!\"",
+     "dapSo": "Câu ví dụ (tự chấm theo bài làm của em)"
+    }
+   ]
+  },
+  {
+   "so": 19,
+   "ten": "Biện pháp so sánh, nhân hoá",
+   "lyThuyet": "So sánh là đối chiếu hai sự vật, hiện tượng có nét giống nhau để câu văn sinh động hơn, thường dùng các từ \"như\", \"là\", \"tựa như\"..., ví dụ: \"Trăng tròn như quả bóng.\" Nhân hoá là gọi hoặc tả con vật, cây cối, đồ vật bằng những từ ngữ vốn dùng để tả người, làm cho chúng trở nên gần gũi, sinh động, ví dụ: \"Ông mặt trời thức dậy.\" Em nhận biết so sánh qua từ so sánh (như, là...), còn nhân hoá qua việc vật vô tri được gán hành động, tính cách của con người.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Câu nào sau đây có sử dụng biện pháp so sánh?",
+     "options": [
+      "Quả bóng tròn như trái đất thu nhỏ.",
+      "Quả bóng đang lăn trên sân.",
+      "Quả bóng nằm im dưới gốc cây.",
+      "Quả bóng màu trắng và đen."
+     ],
+     "a": 0,
+     "explain": "Câu \"Quả bóng tròn như trái đất thu nhỏ.\" dùng từ so sánh \"như\" để đối chiếu quả bóng với trái đất."
+    },
+    {
+     "type": "mcq",
+     "q": "Câu nào sau đây có sử dụng biện pháp nhân hoá?",
+     "options": [
+      "Hàng cây bên đường đang thì thầm trò chuyện cùng gió.",
+      "Hàng cây bên đường rất cao.",
+      "Hàng cây bên đường có nhiều lá xanh.",
+      "Hàng cây bên đường được trồng từ lâu."
+     ],
+     "a": 0,
+     "explain": "Câu \"Hàng cây bên đường đang thì thầm trò chuyện cùng gió.\" gán hành động \"thì thầm trò chuyện\" (vốn của người) cho cây, đó là biện pháp nhân hoá."
+    },
+    {
+     "type": "mcq",
+     "q": "Trong câu \"Đôi mắt của Bình sáng như hai vì sao.\", sự vật nào được so sánh với \"hai vì sao\"?",
+     "options": [
+      "Đôi mắt của Bình",
+      "Bình",
+      "Ánh sáng",
+      "Bầu trời"
+     ],
+     "a": 0,
+     "explain": "Câu so sánh \"đôi mắt của Bình\" với \"hai vì sao\" (đều có nét giống nhau là sáng lấp lánh)."
+    },
+    {
+     "type": "mcq",
+     "q": "Từ nào trong câu \"Chú chó Vàng vẫy đuôi chào đón em như một người bạn thân.\" là từ dùng để so sánh?",
+     "options": [
+      "như",
+      "chào đón",
+      "vẫy đuôi",
+      "chú chó"
+     ],
+     "a": 0,
+     "explain": "Từ \"như\" là từ so sánh, dùng để đối chiếu chú chó Vàng với một người bạn thân."
+    },
+    {
+     "type": "fill",
+     "q": "Điền từ so sánh thích hợp vào chỗ trống: Mặt trăng tròn ___ chiếc đĩa bạc. (điền từ so sánh)",
+     "answer": "như",
+     "accept": [
+      "như",
+      "tựa như"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Điền một từ chỉ hoạt động của người để nhân hoá cây trong câu: Hàng cây bên đường đang ___ trong gió. (điền từ chỉ hoạt động của người)",
+     "answer": "nhảy múa",
+     "accept": [
+      "nhảy múa",
+      "múa",
+      "vẫy tay",
+      "reo hò"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy đặt một câu có sử dụng biện pháp so sánh để miêu tả quả bóng đá hoặc bàn cờ vua.",
+     "hints": [
+      "Anh Fury hỏi em: em cần tìm một sự vật khác có đặc điểm giống với quả bóng đá hoặc bàn cờ vua (về hình dáng, màu sắc...) để so sánh.",
+      "Ví dụ quả bóng đá tròn giống quả gì? Em có thể dùng từ \"như\" để nối hai sự vật lại.",
+      "Em thử hoàn thành câu theo mẫu: \"(Sự vật) ... như (sự vật được so sánh)\"."
+     ],
+     "loiGiai": "Câu ví dụ: \"Quả bóng đá tròn như một quả dưa hấu nhỏ màu trắng đen.\"\nỞ đây, quả bóng đá được so sánh với quả dưa hấu nhỏ nhờ từ so sánh \"như\".",
+     "dapSo": "Câu ví dụ (tự chấm theo bài làm của em)"
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy đặt một câu có sử dụng biện pháp nhân hoá để miêu tả một đồ vật quen thuộc (ví dụ: cặp sách, quyển vở, chiếc bút).",
+     "hints": [
+      "Anh Fury hỏi em: nhân hoá là gán cho đồ vật những hành động, cảm xúc hay tính cách vốn chỉ dùng cho con người, ví dụ cây bút biết \"kể chuyện\", cặp sách biết \"nghỉ ngơi\".",
+      "Em chọn một đồ vật quen thuộc, rồi nghĩ xem đồ vật đó có thể \"làm\" gì giống người, ví dụ \"chiếc bút chì cần mẫn viết từng nét chữ\".",
+      "Em hoàn thành câu sao cho đồ vật được gán một hành động hoặc trạng thái của con người."
+     ],
+     "loiGiai": "Câu ví dụ: \"Chiếc cặp sách nằm im lặng lẽ chờ em trên bàn học, như đang mong em mau về.\"\nỞ đây, chiếc cặp sách được nhân hoá qua các từ \"nằm im lặng lẽ chờ\", \"mong\" vốn dùng để tả người.",
+     "dapSo": "Câu ví dụ (tự chấm theo bài làm của em)"
+    }
+   ]
+  }
+ ]
+}

@@ -101,6 +101,7 @@ function adminOpen(){
     +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:var(--tx2);letter-spacing:.08em;margin:16px 0 8px;">CÀI ĐẶT</div>'
     +row('🔑','Mã phòng đồng bộ: '+(room3||'chưa đặt'),'Đặt giống nhau trên 2 máy để đồng bộ bài tập','adminRoom()')
     +row('🧒','Mã đăng nhập của Kua: '+(kuaCode?'đã đặt':'chưa đặt'),'Mã để vào chế độ học sinh (không bắt buộc)','adminKuaCode()')
+    +row('🌞','Chế độ hè: '+((typeof summerOn==='function'&&summerOn())?'ĐANG BẬT':'ĐANG TẮT'),'70% ôn lớp 3 + 30% lớp 4 mới (Fury dạy lý thuyết trước) — tự tắt khi vào năm học','adminSummer()')
     +row('⏱️','Thời lượng buổi học: '+(localStorage.getItem('study_minutes_target')||'90')+' phút (trần)','Bắt đầu 20 phút, mỗi tuần tự tăng 5 phút tới mức trần này','adminStudyTime()')
     +row('🔐','Đổi PIN bố mẹ','PIN bảo vệ khu quản lý','adminChangePin()')
     +(roleGet()==='parent'
@@ -127,6 +128,11 @@ function adminKuaCode(){
   var c=prompt('Đặt mã đăng nhập cho Kua (để trống = không cần mã):',localStorage.getItem('kua_code')||'');
   if(c===null)return;
   if(c.trim()) localStorage.setItem('kua_code',c.trim()); else localStorage.removeItem('kua_code');
+  adminOpen();
+}
+function adminSummer(){
+  var cur=(typeof summerOn==='function'&&summerOn());
+  localStorage.setItem('summer_mode', cur?'off':'on');
   adminOpen();
 }
 function adminStudyTime(){

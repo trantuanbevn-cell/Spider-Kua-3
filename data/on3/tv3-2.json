@@ -1,0 +1,298 @@
+{
+ "mon": "on3",
+ "tap": 0,
+ "chuDe": "Ôn hè Tiếng Việt · Đọc hiểu và chính tả",
+ "cdSo": 5,
+ "bai": [
+  {
+   "so": 20,
+   "ten": "Đọc hiểu đoạn văn ngắn",
+   "lyThuyet": "Chào em! Khi đọc hiểu một đoạn văn, em nên đọc kỹ từ 2 đến 3 lần để nắm nội dung chính: đoạn văn nói về ai, việc gì, ở đâu, diễn ra như thế nào. Sau đó em đọc câu hỏi thật kỹ và quay lại đoạn văn để tìm câu trả lời chính xác, tránh đoán mò. Em cũng cần chú ý các từ khoá trong câu hỏi (như \"vì sao\", \"ở đâu\", \"khi nào\") để tìm đúng thông tin trong bài. Đọc hiểu tốt sẽ giúp em học tốt các môn khác nữa đó!",
+   "cauHoi": [
+    {
+     "type": "read",
+     "vanBan": "Chiều thứ Bảy, Nam, Minh và An rủ nhau ra sân trường đá bóng. Nam làm thủ môn, còn Minh và An chia thành hai đội để thi đấu. Trận đấu diễn ra rất sôi nổi, ai cũng chạy hết mình trên sân cỏ. Cuối buổi, dù đội của Minh thắng, cả ba bạn vẫn cười vui vẻ và hẹn nhau tuần sau lại chơi tiếp.",
+     "q": "Ba bạn Nam, Minh, An chơi trò gì vào chiều thứ Bảy?",
+     "options": [
+      "Đá bóng",
+      "Chơi cờ vua",
+      "Đi bơi",
+      "Đọc truyện"
+     ],
+     "a": 0,
+     "explain": "Đoạn văn cho biết ba bạn rủ nhau ra sân trường đá bóng vào chiều thứ Bảy."
+    },
+    {
+     "type": "read",
+     "vanBan": "Chiều thứ Bảy, Nam, Minh và An rủ nhau ra sân trường đá bóng. Nam làm thủ môn, còn Minh và An chia thành hai đội để thi đấu. Trận đấu diễn ra rất sôi nổi, ai cũng chạy hết mình trên sân cỏ. Cuối buổi, dù đội của Minh thắng, cả ba bạn vẫn cười vui vẻ và hẹn nhau tuần sau lại chơi tiếp.",
+     "q": "Trong trận đấu, Nam đảm nhận vị trí nào?",
+     "options": [
+      "Thủ môn",
+      "Đội trưởng",
+      "Trọng tài",
+      "Khán giả"
+     ],
+     "a": 0,
+     "explain": "Đoạn văn viết \"Nam làm thủ môn\", vậy Nam đảm nhận vị trí thủ môn."
+    },
+    {
+     "type": "read",
+     "vanBan": "Hồ bơi của trường mở cửa vào mỗi sáng thứ Ba và thứ Năm. Bình rất thích bơi lội nên bạn luôn đến sớm để tập luyện cùng thầy giáo. Nhờ chăm chỉ luyện tập, Bình bơi ngày càng nhanh và đã đạt giải nhì trong hội thi bơi lội của trường. Bình mong sau này sẽ trở thành một vận động viên bơi giỏi.",
+     "q": "Hồ bơi của trường mở cửa vào những ngày nào?",
+     "options": [
+      "Thứ Hai và thứ Tư",
+      "Thứ Ba và thứ Năm",
+      "Thứ Sáu và Chủ nhật",
+      "Cả tuần"
+     ],
+     "a": 1,
+     "explain": "Đoạn văn cho biết hồ bơi của trường mở cửa vào mỗi sáng thứ Ba và thứ Năm."
+    },
+    {
+     "type": "read",
+     "vanBan": "Hồ bơi của trường mở cửa vào mỗi sáng thứ Ba và thứ Năm. Bình rất thích bơi lội nên bạn luôn đến sớm để tập luyện cùng thầy giáo. Nhờ chăm chỉ luyện tập, Bình bơi ngày càng nhanh và đã đạt giải nhì trong hội thi bơi lội của trường. Bình mong sau này sẽ trở thành một vận động viên bơi giỏi.",
+     "q": "Nhờ đâu mà Bình bơi ngày càng nhanh?",
+     "options": [
+      "Nhờ chăm chỉ luyện tập",
+      "Nhờ may mắn",
+      "Nhờ được nghỉ nhiều",
+      "Nhờ có bạn bè giúp đỡ"
+     ],
+     "a": 0,
+     "explain": "Đoạn văn viết \"Nhờ chăm chỉ luyện tập, Bình bơi ngày càng nhanh\", vậy nhờ chăm chỉ luyện tập."
+    },
+    {
+     "type": "fill",
+     "q": "Trong đoạn văn về Bình đi bơi, tên vận động viên mà Bình mong muốn trở thành trong tương lai là người bơi ___",
+     "answer": "giỏi",
+     "accept": [
+      "giỏi"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Trong đoạn văn về ba bạn đá bóng, đội của bạn ___ đã thắng trong trận đấu.",
+     "answer": "Minh",
+     "accept": [
+      "Minh",
+      "đội của Minh"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy đọc đoạn văn sau và trả lời câu hỏi: \"Câu lạc bộ cờ vua của trường An sinh hoạt vào mỗi chiều thứ Tư. Hôm nay, An cùng các bạn học cách đi quân mã sao cho thật khéo léo. Thầy giáo khen An tiến bộ rất nhanh vì bạn luôn chăm chú lắng nghe và luyện tập đều đặn ở nhà.\" Hỏi: Vì sao thầy giáo khen An tiến bộ nhanh?",
+     "hints": [
+      "Anh Fury hỏi em: em hãy đọc lại câu cuối cùng của đoạn văn, xem thầy giáo giải thích lý do gì cho việc An tiến bộ nhanh.",
+      "Câu cuối viết: \"vì bạn luôn chăm chú lắng nghe và luyện tập đều đặn ở nhà\". Đây chính là lý do em cần tìm.",
+      "Em hãy viết lại câu trả lời đầy đủ, dựa theo đúng thông tin trong bài, không thêm ý ngoài bài."
+     ],
+     "loiGiai": "Thầy giáo khen An tiến bộ nhanh vì An luôn chăm chú lắng nghe và luyện tập đều đặn ở nhà.",
+     "dapSo": "Vì An luôn chăm chú lắng nghe và luyện tập đều đặn ở nhà"
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy đọc đoạn văn sau và trả lời câu hỏi: \"Mùa hè này, Minh được bố mẹ cho về quê chơi với ông bà. Ở quê, Minh được ông dạy cách câu cá bên bờ ao, còn bà thì kể cho Minh nghe những câu chuyện cổ tích thật hay. Minh cảm thấy rất vui và mong mùa hè năm sau lại được về quê.\" Hỏi: Ở quê, Minh được ông và bà làm những việc gì cho mình?",
+     "hints": [
+      "Anh Fury hỏi em: đoạn văn nhắc đến hai người là ông và bà, mỗi người làm một việc khác nhau cho Minh, em hãy đọc kỹ để tìm đúng việc của từng người.",
+      "Câu văn viết: \"Minh được ông dạy cách câu cá bên bờ ao, còn bà thì kể cho Minh nghe những câu chuyện cổ tích thật hay\".",
+      "Em hãy trả lời đầy đủ cả hai việc: việc của ông và việc của bà."
+     ],
+     "loiGiai": "Ở quê, ông dạy Minh cách câu cá bên bờ ao, còn bà kể cho Minh nghe những câu chuyện cổ tích thật hay.",
+     "dapSo": "Ông dạy câu cá; bà kể chuyện cổ tích"
+    }
+   ]
+  },
+  {
+   "so": 21,
+   "ten": "Chính tả: l/n, ch/tr, s/x, d/gi/r",
+   "lyThuyet": "Một số cặp chữ cái dễ viết sai chính tả mà em cần chú ý: l/n (ví dụ: lo lắng - no đủ), ch/tr (ví dụ: cha mẹ - trẻ em), s/x (ví dụ: sách vở - xe đạp), d/gi/r (ví dụ: dạy học - giữ gìn - rung rinh). Muốn viết đúng, em nên đọc nhiều, chú ý cách phát âm của từng vùng miền, và ghi nhớ nghĩa của từ để phân biệt. Khi làm bài, em thử đọc to từ đó lên và nghĩ xem từ này có nghĩa gì để chọn đúng chữ cái nhé!",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Từ nào viết đúng chính tả?",
+     "options": [
+      "long lanh",
+      "nong lanh",
+      "long nanh",
+      "nong nanh"
+     ],
+     "a": 0,
+     "explain": "\"Long lanh\" (tả đôi mắt sáng đẹp) viết đúng chính tả với hai chữ \"l\"."
+    },
+    {
+     "type": "mcq",
+     "q": "Từ nào viết đúng chính tả?",
+     "options": [
+      "trẻ em",
+      "chẻ em",
+      "trẻ êm",
+      "chẻ êm"
+     ],
+     "a": 0,
+     "explain": "\"Trẻ em\" (chỉ các bạn nhỏ) viết đúng với chữ \"tr\"."
+    },
+    {
+     "type": "mcq",
+     "q": "Từ nào viết đúng chính tả?",
+     "options": [
+      "xe đạp",
+      "se đạp",
+      "xe đạc",
+      "se đạc"
+     ],
+     "a": 0,
+     "explain": "\"Xe đạp\" (phương tiện có hai bánh) viết đúng với chữ \"x\"."
+    },
+    {
+     "type": "mcq",
+     "q": "Từ nào viết đúng chính tả?",
+     "options": [
+      "rung rinh",
+      "dung dinh",
+      "giung ginh",
+      "rung ginh"
+     ],
+     "a": 0,
+     "explain": "\"Rung rinh\" (tả sự lay động nhẹ nhàng) viết đúng với chữ \"r\" ở cả hai tiếng."
+    },
+    {
+     "type": "fill",
+     "q": "Điền l hoặc n vào chỗ trống: Bạn Nam rất chăm chỉ ___àm bài tập về nhà.",
+     "answer": "l",
+     "accept": [
+      "l",
+      "làm"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Điền ch hoặc tr vào chỗ trống: Đội bóng đá của ___ường em vừa giành chức vô địch.",
+     "answer": "tr",
+     "accept": [
+      "tr",
+      "trường"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy chép lại câu sau và điền đúng chữ cái còn thiếu (l/n, ch/tr, s/x, d/gi/r): \"Buổi ___áng, Bình cùng bạn ra ___ân trường tập bơi ___an ___á, ai cũng cảm thấy khỏe khoắn.\" (Gợi ý: sáng, sân, san sát hoặc rạng rỡ tùy ý nghĩa câu)",
+     "hints": [
+      "Anh Fury hỏi em: từ đầu tiên là tên buổi trong ngày, có nắng sớm, em nghĩ xem viết \"sáng\" hay \"xáng\"?",
+      "Từ thứ hai chỉ nơi rộng có cỏ ở trường, là \"sân\" hay \"xân\"? Em nhớ \"sân trường\" là từ quen thuộc.",
+      "Cụm từ cuối miêu tả niềm vui, sảng khoái của các bạn, em có thể chọn \"rạng rỡ\" (r) để diễn tả nét mặt vui tươi."
+     ],
+     "loiGiai": "Câu hoàn chỉnh: \"Buổi sáng, Bình cùng bạn ra sân trường tập bơi, gương mặt ai cũng rạng rỡ, cảm thấy khỏe khoắn.\"",
+     "dapSo": "sáng, sân, rạng rỡ"
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy tìm và viết lại đúng chính tả 3 từ bị viết sai trong đoạn sau: \"Mùa hè, Nam thường cùng ông đi câu cá bên dòng xông quê hương. Ông dặn Nam phải lo lắng cẩn thận khi ngồi gần mé nước, không được trạy nhảy lung tung kẻo ngã.\"",
+     "hints": [
+      "Anh Fury hỏi em: từ \"dòng xông\" nghe có vẻ sai, đây có phải muốn nói đến dòng nước chảy (dòng sông) không?",
+      "Từ \"trạy nhảy\" cũng có vẻ sai, em nghĩ xem đúng ra phải là \"chạy nhảy\" (hoạt động chạy và nhảy) đúng không?",
+      "Còn từ \"lo lắng\" trong câu này thực ra mang nghĩa \"cẩn thận, chú ý\", có thể giữ nguyên hoặc thay bằng \"cẩn thận\" cho hợp nghĩa hơn - nhưng quan trọng nhất là sửa đúng hai từ sai chính tả kia."
+     ],
+     "loiGiai": "Các từ viết sai và cách sửa:\n\"dòng xông\" sửa thành \"dòng sông\".\n\"trạy nhảy\" sửa thành \"chạy nhảy\".\nĐoạn văn sau khi sửa: \"Mùa hè, Nam thường cùng ông đi câu cá bên dòng sông quê hương. Ông dặn Nam phải cẩn thận khi ngồi gần mé nước, không được chạy nhảy lung tung kẻo ngã.\"",
+     "dapSo": "dòng sông; chạy nhảy"
+    }
+   ]
+  },
+  {
+   "so": 22,
+   "ten": "Viết câu, viết đoạn văn ngắn",
+   "lyThuyet": "Khi viết một câu, em nhớ câu phải có đủ chủ ngữ (nói về ai, cái gì) và vị ngữ (nói về hoạt động, đặc điểm), viết hoa chữ cái đầu câu và có dấu câu kết thúc. Khi viết một đoạn văn ngắn, em nên có câu mở đầu giới thiệu chung, các câu tiếp theo kể chi tiết theo trình tự hợp lý (thời gian hoặc diễn biến sự việc), và câu kết thể hiện cảm nghĩ của em. Em nhớ dùng thêm các từ so sánh, nhân hoá hoặc từ ngữ miêu tả để đoạn văn thêm sinh động nhé!",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Câu nào dưới đây viết đúng (có đủ chủ ngữ, vị ngữ, viết hoa đầu câu, có dấu câu)?",
+     "options": [
+      "Nam chăm chỉ luyện tập bóng đá mỗi ngày.",
+      "chăm chỉ luyện tập bóng đá mỗi ngày",
+      "Nam chăm chỉ luyện tập bóng đá mỗi ngày",
+      "nam chăm chỉ luyện tập bóng đá mỗi ngày."
+     ],
+     "a": 0,
+     "explain": "Câu \"Nam chăm chỉ luyện tập bóng đá mỗi ngày.\" có đủ chủ ngữ (Nam), vị ngữ, viết hoa chữ cái đầu và có dấu chấm kết thúc."
+    },
+    {
+     "type": "mcq",
+     "q": "Trong một đoạn văn kể chuyện, câu mở đầu thường có nhiệm vụ gì?",
+     "options": [
+      "Giới thiệu chung về nội dung sắp kể",
+      "Nêu cảm nghĩ kết thúc",
+      "Liệt kê toàn bộ chi tiết nhỏ",
+      "Không có nhiệm vụ gì đặc biệt"
+     ],
+     "a": 0,
+     "explain": "Câu mở đầu đoạn văn thường giới thiệu chung về nội dung sắp kể (ai, việc gì, ở đâu, khi nào), giúp người đọc hình dung được nội dung chính."
+    },
+    {
+     "type": "mcq",
+     "q": "Đoạn văn nào sau đây được sắp xếp theo trình tự hợp lý?",
+     "options": [
+      "Sáng sớm, Bình dậy tập thể dục. Sau đó, Bình ăn sáng rồi đi học. Buổi tối, Bình ôn bài trước khi ngủ.",
+      "Bình ôn bài trước khi ngủ. Bình dậy tập thể dục vào sáng sớm. Buổi tối, Bình đi học.",
+      "Bình đi học. Bình ăn sáng. Bình dậy sớm. Bình ôn bài.",
+      "Buổi tối Bình dậy sớm rồi ăn sáng đi học ôn bài."
+     ],
+     "a": 0,
+     "explain": "Đoạn văn thứ nhất được sắp xếp theo trình tự thời gian hợp lý: sáng sớm - sau đó - buổi tối, giúp người đọc dễ theo dõi diễn biến."
+    },
+    {
+     "type": "mcq",
+     "q": "Câu kết của một đoạn văn kể về buổi đi bơi thường nên thể hiện điều gì?",
+     "options": [
+      "Cảm nghĩ của người viết về buổi đi bơi",
+      "Một chi tiết mới hoàn toàn không liên quan",
+      "Lời chào tạm biệt người đọc",
+      "Không cần viết câu kết"
+     ],
+     "a": 0,
+     "explain": "Câu kết đoạn văn thường thể hiện cảm nghĩ của người viết (vui, thích thú, mong muốn...) về sự việc vừa kể, giúp đoạn văn trọn vẹn."
+    },
+    {
+     "type": "fill",
+     "q": "Một đoạn văn ngắn thường có 3 phần chính là: câu mở đầu, các câu ___, và câu kết.",
+     "answer": "kể chi tiết",
+     "accept": [
+      "kể chi tiết",
+      "chi tiết",
+      "thân bài",
+      "kể diễn biến"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Câu văn phải viết hoa chữ cái ___ câu và có dấu câu kết thúc.",
+     "answer": "đầu",
+     "accept": [
+      "đầu",
+      "đầu tiên"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy viết một đoạn văn ngắn (3-4 câu) kể về một buổi chơi cờ vua cùng bạn, có câu mở đầu giới thiệu, câu kể diễn biến, và câu kết nêu cảm nghĩ.",
+     "hints": [
+      "Anh Fury hỏi em: câu mở đầu nên giới thiệu ai chơi cờ vua, ở đâu, khi nào - em thử viết một câu như vậy trước.",
+      "Tiếp theo, em viết 1-2 câu kể lại diễn biến buổi chơi cờ, ví dụ ai thắng, có tình huống gì thú vị không.",
+      "Cuối cùng, em viết một câu kết nêu cảm nghĩ của em về buổi chơi đó, ví dụ em cảm thấy vui, học được điều gì mới."
+     ],
+     "loiGiai": "Đoạn văn ví dụ:\n\"Chiều Chủ nhật, em cùng bạn An chơi cờ vua ở nhà văn hoá phường. Chúng em suy nghĩ rất kỹ từng nước đi, ai cũng muốn giành chiến thắng. Cuối cùng, ván cờ kết thúc hòa sau gần một giờ đồng hồ căng thẳng. Em cảm thấy rất vui vì đã học thêm được nhiều nước cờ hay từ bạn An.\"",
+     "dapSo": "Đoạn văn ví dụ (tự chấm theo bài làm của em, cần đủ câu mở đầu - diễn biến - câu kết)"
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy viết một đoạn văn ngắn (3-4 câu) kể về một trận bóng đá của lớp em, trong đó có sử dụng ít nhất một câu so sánh hoặc nhân hoá.",
+     "hints": [
+      "Anh Fury hỏi em: câu mở đầu nên giới thiệu trận bóng đá diễn ra khi nào, giữa ai với ai - em thử viết trước nhé.",
+      "Tiếp theo, em kể lại diễn biến trận đấu, ai ghi bàn, không khí sân bóng ra sao. Em thử thêm một câu so sánh, ví dụ \"quả bóng bay nhanh như tên lửa\".",
+      "Cuối cùng, em viết câu kết nêu cảm nghĩ về trận đấu, ví dụ em cảm thấy tự hào, vui sướng thế nào."
+     ],
+     "loiGiai": "Đoạn văn ví dụ:\n\"Chiều thứ Sáu, lớp em thi đấu bóng đá với lớp bên cạnh. Quả bóng bay nhanh như một viên đạn trên sân cỏ xanh mướt. Bạn Nam đã ghi bàn thắng quyết định trong tiếng reo hò của cả lớp. Em cảm thấy rất tự hào về đội bóng của mình.\"",
+     "dapSo": "Đoạn văn ví dụ (tự chấm theo bài làm của em, cần có câu so sánh hoặc nhân hoá)"
+    }
+   ]
+  }
+ ]
+}

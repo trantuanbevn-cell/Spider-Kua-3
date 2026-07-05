@@ -8,8 +8,8 @@
 function adToday(){ var d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
 function adNames(){ return pcLS('bai_names','{}'); }
 function adSaveNames(d,f){ var n=adNames(); (d.bai||[]).forEach(function(b){ n[f+'|'+b.so]=b.ten; }); localStorage.setItem('bai_names',JSON.stringify(n)); }
-function adMonOf(f){ return f.indexOf('/toan/')>=0?'toan':f.indexOf('/tv/')>=0?'tv':'ta'; }
-function adMonTen(m){ return m==='toan'?'Toán':m==='tv'?'Tiếng Việt':'Tiếng Anh'; }
+function adMonOf(f){ if(f.indexOf('/on3/')>=0) return 'on3'; return f.indexOf('/toan/')>=0?'toan':f.indexOf('/tv/')>=0?'tv':'ta'; }
+function adMonTen(m){ return m==='toan'?'Toán':m==='tv'?'Tiếng Việt':m==='on3'?'Ôn hè lớp 3':'Tiếng Anh'; }
 
 // ── NHẬT KÝ HỌC: mỗi câu trả lời là 1 dòng ──
 function adLog(ok){
@@ -86,29 +86,76 @@ function adTargetMin(){
   var cap=parseInt(localStorage.getItem('study_minutes_target')||'90');
   return Math.max(20, Math.min(cap, 20+5*weeks));
 }
+// Chế độ hè: tự BẬT trước khai giảng 05/09/2026, bố mẹ tắt/bật được
+function summerOn(){
+  var o=localStorage.getItem('summer_mode');
+  if(o==='on') return true;
+  if(o==='off') return false;
+  return adToday()<'2026-09-05';
+}
+// KHÓA ĐỘ VỮNG: chỉ mở dạng mới khi các dạng đã học đạt >=70%
+// Trả về bài tiếp theo của môn: bài yếu nhất chưa vững, hoặc bài mới kế tiếp
+function adGateNext(mon, exclude){
+  exclude=exclude||{};
+  var prog=pcProg(), mast=adMastery(), files=adFilesOf(mon);
+  var worst=null;
+  for(var k in mast){
+    var p=k.split('|');
+    if(p[0]!==mon||exclude[k]) continue;
+    if(mast[k].s<70){ if(!worst||mast[k].s<mast[worst].s) worst=k; }
+  }
+  if(worst){ var p2=worst.split('|'); return {f:p2[1], so:parseInt(p2[2]), mode:'weak', key:worst}; }
+  for(var i=0;i<files.length;i++){
+    var done=0;
+    for(var k2 in prog){ if(k2.indexOf(mon+'|'+files[i].f+'|')===0) done++; }
+    if(done<files[i].soBai && !exclude[mon+'|'+files[i].f+'|new']) return {f:files[i].f, mode:'new', key:mon+'|'+files[i].f+'|new'};
+  }
+  return null;
+}
 function adGenRefs(){
-  var prog=pcProg(), mast=adMastery(), refs=[];
-  // hệ số theo thời lượng: 15 phút ≈ hệ số 1 (≈11 câu), 60 phút ≈ hệ số 4
+  var totalQ=Math.max(10, Math.round(adTargetMin()/1.6));
+  var refs=[];
+  if(summerOn()){
+    // ═══ HÈ: 70% ôn lớp 3 + 30% lớp 4 mới (có dạy lý thuyết trước) ═══
+    var nOn3=Math.round(totalQ*0.7), nL4=totalQ-nOn3;
+    var ex={}, taken=0, guard=0;
+    while(taken<nOn3 && guard<5){
+      guard++;
+      var g=adGateNext('on3', ex);
+      if(!g) break;
+      ex[g.key]=1;
+      g.n=Math.min(4, nOn3-taken); g._ord=0;
+      refs.push(g); taken+=g.n;
+    }
+    if(refs.length && taken<nOn3) refs[0].n+=(nOn3-taken); // dồn phần thiếu vào bài đầu
+    // lớp 4: mỗi ngày 1 môn xoay vòng Toán → TV → TA
+    var mons=['toan','tv','ta'];
+    var dayIdx=Math.floor(Date.now()/86400000)%3;
+    var g4=null;
+    for(var i=0;i<3&&!g4;i++) g4=adGateNext(mons[(dayIdx+i)%3], {});
+    if(g4){ g4.n=nL4; g4._ord=1; g4.theory=(g4.mode==='new'); refs.push(g4); }
+    return refs;
+  }
+  // ═══ TRONG NĂM HỌC: như cũ nhưng có khóa độ vững ═══
   var f=Math.max(1, Math.round(adTargetMin()/15));
-  // 1) MỚI: mỗi môn f bài kế tiếp chưa làm (mỗi bài 2 câu)
   ['toan','tv','ta'].forEach(function(mon){
-    var files=adFilesOf(mon), picked=0;
-    for(var i=0;i<files.length && picked<f;i++){
-      var done=0; for(var k in prog){ if(k.indexOf(mon+'|'+files[i].f+'|')===0) done++; }
-      if(done<files[i].soBai){ refs.push({f:files[i].f,mode:'new',n:2}); picked++; }
+    var ex={}, picked=0;
+    while(picked<f){
+      var g=adGateNext(mon, ex);
+      if(!g) break;
+      ex[g.key]=1;
+      g.n=2; g._ord=(g.mode==='new'?1:0); g.theory=(g.mode==='new');
+      refs.push(g); picked++;
     }
   });
-  // 2) BỔ TÚC: các dạng yếu nhất, quy mô theo thời lượng
-  adWeakList().slice(0,1+f).forEach(function(w,i){ refs.push({f:w.f,so:parseInt(w.so),mode:'weak',n:i===0?2:1}); });
-  // 3) ÔN VỮNG: 1 dạng đã vững nhưng >5 ngày chưa đụng (2 câu — thắng dễ)
-  var old=null, names=adNames();
+  // ôn dạng vững lâu chưa đụng (kết thúc bằng chiến thắng)
+  var mast=adMastery(), old=null;
   for(var k in mast){
     if(mast[k].s>=75 && (Date.now()-mast[k].last)>5*86400000){ if(!old||mast[k].last<mast[old].last) old=k; }
   }
-  if(old){ var p=old.split('|'); refs.push({f:p[1],so:parseInt(p[2]),mode:'review',n:2}); }
+  if(old){ var p=old.split('|'); refs.push({f:p[1],so:parseInt(p[2]),mode:'review',n:2,_ord:2}); }
   return refs;
 }
-
 function adGetMission(){ var ms=pcLS('daily_mission','{}'); return ms.date===adToday()?ms:null; }
 
 function adStartDaily(){
@@ -149,16 +196,19 @@ function adAssemble(refs, loaded){
       var wq=wrong.filter(function(x){return x.f===r.f&&x.so==bai.so;}).map(function(x){return x.q;});
       idxs.sort(function(a,b){ return (wq.indexOf(b)>=0?1:0)-(wq.indexOf(a)>=0?1:0) || Math.random()-0.5; });
     } else idxs.sort(function(){return Math.random()-0.5;});
+    if(r.theory && bai.lyThuyet){
+      qs.push({type:'theory', ten:bai.ten, lyThuyet:bai.lyThuyet, _i:-1, _f:r.f, _so:bai.so, _mode:r.mode, _ord:(r._ord!==undefined?r._ord:0)});
+    }
     idxs.slice(0,r.n).forEach(function(i){
       var q=Object.assign({},bai.cauHoi[i]);
       q._i=i; q._f=r.f; q._so=bai.so; q._mode=r.mode;
+      q._ord=(r._ord!==undefined?r._ord:0);
       qs.push(q);
     });
   });
   if(!qs.length){ pcHome(); return; }
-  // trộn: mới trước (đang tỉnh táo), yếu giữa, ôn vững cuối (kết thúc bằng chiến thắng)
-  var order={new:0,weak:1,review:2};
-  qs.sort(function(a,b){ return order[a._mode]-order[b._mode]; });
+  // sắp xếp theo kịch bản buổi học (_ord): khởi động ôn cũ → học mới → chốt
+  qs.sort(function(a,b){ return (a._ord||0)-(b._ord||0); });
   localStorage.setItem('daily_mission',JSON.stringify({date:adToday(),total:qs.length,done:false}));
   P.qs=qs; P.qi=0; P.review=true; P.dailyMode=true;
   P.bai={so:'⚡',ten:'Nhiệm vụ hôm nay'}; P.sess.ok=0; P.sess.total=0; P.mon='';

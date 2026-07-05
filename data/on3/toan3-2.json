@@ -1,0 +1,567 @@
+{
+ "mon": "on3",
+ "tap": 0,
+ "chuDe": "Ôn hè Toán · Nhân, chia",
+ "cdSo": 2,
+ "bai": [
+  {
+   "so": 5,
+   "ten": "Bảng nhân, bảng chia 2 đến 9",
+   "lyThuyet": "Chào em! Bảng nhân từ 2 đến 9 là công cụ tính nhanh mà em đã học thuộc từ lớp 2, lớp 3. Mỗi phép chia trong bảng chia đều là phép tính ngược của một phép nhân tương ứng, ví dụ 7 x 8 = 56 thì 56 : 8 = 7 và 56 : 7 = 8. Khi gặp phép tính trong bảng, em nhớ lại bảng nhân, bảng chia đã thuộc để tính thật nhanh, không cần đặt tính. Học chắc bảng nhân chia sẽ giúp em làm các bài toán lớn hơn dễ dàng hơn rất nhiều đó!",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Tính nhẩm: 7 x 8 = ?",
+     "options": [
+      "56",
+      "54",
+      "63",
+      "48"
+     ],
+     "a": 0,
+     "explain": "Theo bảng nhân 7 (hoặc bảng nhân 8): 7 x 8 = 56."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính nhẩm: 63 : 9 = ?",
+     "options": [
+      "7",
+      "8",
+      "9",
+      "6"
+     ],
+     "a": 0,
+     "explain": "Vì 9 x 7 = 63 nên 63 : 9 = 7."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính nhẩm: 6 x 9 = ?",
+     "options": [
+      "54",
+      "56",
+      "45",
+      "63"
+     ],
+     "a": 0,
+     "explain": "Theo bảng nhân 6 (hoặc bảng nhân 9): 6 x 9 = 54."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính nhẩm: 72 : 8 = ?",
+     "options": [
+      "9",
+      "8",
+      "7",
+      "6"
+     ],
+     "a": 0,
+     "explain": "Vì 8 x 9 = 72 nên 72 : 8 = 9."
+    },
+    {
+     "type": "fill",
+     "q": "Tính nhẩm: 5 x 9 = ___",
+     "answer": "45",
+     "accept": [
+      "45"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Tính nhẩm: 81 : 9 = ___",
+     "answer": "9",
+     "accept": [
+      "9"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Nam có 8 hộp bút chì, mỗi hộp có 7 chiếc bút chì. Hỏi Nam có tất cả bao nhiêu chiếc bút chì?",
+     "hints": [
+      "Anh Fury hỏi em: có nhiều hộp, mỗi hộp có số bút chì bằng nhau, vậy em dùng phép tính gì để tìm tổng số bút chì?",
+      "Đúng rồi, đó là phép nhân! Em lấy số hộp nhân với số bút chì mỗi hộp: 8 x 7.",
+      "Em nhớ lại bảng nhân 7 hoặc bảng nhân 8 xem 8 x 7 bằng bao nhiêu nhé."
+     ],
+     "loiGiai": "Số bút chì Nam có tất cả là:\n8 x 7 = 56 (chiếc bút chì)",
+     "dapSo": "56 chiếc bút chì"
+    },
+    {
+     "type": "solve",
+     "de": "Cô giáo có 54 quyển vở, chia đều cho các bạn trong đội cờ vua, mỗi bạn được 6 quyển. Hỏi đội cờ vua có bao nhiêu bạn?",
+     "hints": [
+      "Anh Fury hỏi em: chia đều một số vở cho các bạn, mỗi bạn được số vở bằng nhau, vậy em dùng phép tính gì để tìm số bạn?",
+      "Đúng rồi, đó là phép chia! Em lấy tổng số vở chia cho số vở mỗi bạn được: 54 : 6.",
+      "Em nhớ lại bảng chia 6 xem 54 : 6 bằng bao nhiêu nhé."
+     ],
+     "loiGiai": "Số bạn trong đội cờ vua là:\n54 : 6 = 9 (bạn)",
+     "dapSo": "9 bạn"
+    }
+   ]
+  },
+  {
+   "so": 6,
+   "ten": "Nhân số có hai, ba chữ số với số có một chữ số",
+   "lyThuyet": "Khi nhân số có hai hoặc ba chữ số với số có một chữ số, em đặt tính theo cột dọc, chữ số hàng đơn vị của số có một chữ số thẳng với chữ số hàng đơn vị của số kia. Em nhân lần lượt từ hàng đơn vị đến hàng cao nhất, nếu tích ở một hàng từ 10 trở lên thì viết chữ số hàng đơn vị và nhớ sang hàng liền trước. Em nhớ nhân cẩn thận từng hàng và cộng đúng số nhớ để kết quả chính xác nhé!",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Đặt tính rồi tính: 234 x 3 = ?",
+     "options": [
+      "702",
+      "692",
+      "712",
+      "642"
+     ],
+     "a": 0,
+     "explain": "Đặt tính rồi nhân từ hàng đơn vị: 4x3=12 viết 2 nhớ 1; 3x3=9 thêm 1 bằng 10 viết 0 nhớ 1; 2x3=6 thêm 1 bằng 7. Kết quả: 234 x 3 = 702."
+    },
+    {
+     "type": "mcq",
+     "q": "Đặt tính rồi tính: 142 x 6 = ?",
+     "options": [
+      "852",
+      "842",
+      "862",
+      "756"
+     ],
+     "a": 0,
+     "explain": "Đặt tính rồi nhân từ hàng đơn vị: 2x6=12 viết 2 nhớ 1; 4x6=24 thêm 1 bằng 25 viết 5 nhớ 2; 1x6=6 thêm 2 bằng 8. Kết quả: 142 x 6 = 852."
+    },
+    {
+     "type": "mcq",
+     "q": "Đặt tính rồi tính: 305 x 4 = ?",
+     "options": [
+      "1.220",
+      "1.200",
+      "1.320",
+      "1.250"
+     ],
+     "a": 0,
+     "explain": "Đặt tính rồi nhân từ hàng đơn vị: 5x4=20 viết 0 nhớ 2; 0x4=0 thêm 2 bằng 2; 3x4=12. Kết quả: 305 x 4 = 1.220."
+    },
+    {
+     "type": "mcq",
+     "q": "Đặt tính rồi tính: 123 x 7 = ?",
+     "options": [
+      "861",
+      "851",
+      "871",
+      "821"
+     ],
+     "a": 0,
+     "explain": "Đặt tính rồi nhân từ hàng đơn vị: 3x7=21 viết 1 nhớ 2; 2x7=14 thêm 2 bằng 16 viết 6 nhớ 1; 1x7=7 thêm 1 bằng 8. Kết quả: 123 x 7 = 861."
+    },
+    {
+     "type": "fill",
+     "q": "Đặt tính rồi tính: 216 x 4 = ___",
+     "answer": "864",
+     "accept": [
+      "864"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Đặt tính rồi tính: 507 x 5 = ___",
+     "answer": "2.535",
+     "accept": [
+      "2535",
+      "2.535"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một đội bơi có 6 nhóm, mỗi nhóm có 125 lượt bơi luyện tập trong tuần. Hỏi cả đội bơi có tất cả bao nhiêu lượt bơi luyện tập trong tuần?",
+     "hints": [
+      "Anh Fury hỏi em: có 6 nhóm, mỗi nhóm có số lượt bơi bằng nhau, vậy em dùng phép tính gì để tìm tổng số lượt bơi?",
+      "Đúng rồi, đó là phép nhân! Em lấy số lượt bơi mỗi nhóm nhân với số nhóm: 125 x 6.",
+      "Em đặt tính theo cột dọc rồi nhân từ hàng đơn vị: 5x6=30 viết 0 nhớ 3; 2x6=12 thêm 3 bằng 15 viết 5 nhớ 1; 1x6=6 thêm 1 bằng 7."
+     ],
+     "loiGiai": "Số lượt bơi luyện tập của cả đội trong tuần là:\n125 x 6 = 750 (lượt)",
+     "dapSo": "750 lượt bơi"
+    },
+    {
+     "type": "solve",
+     "de": "Một siêu thị nhập về 8 thùng táo, mỗi thùng có 234 quả táo. Hỏi siêu thị đã nhập về tất cả bao nhiêu quả táo?",
+     "hints": [
+      "Anh Fury hỏi em: có 8 thùng táo, mỗi thùng có số quả bằng nhau, vậy em dùng phép tính gì để tìm tổng số quả táo?",
+      "Đúng rồi, đó là phép nhân! Em lấy số quả táo mỗi thùng nhân với số thùng: 234 x 8.",
+      "Em đặt tính rồi nhân từ hàng đơn vị: 4x8=32 viết 2 nhớ 3; 3x8=24 thêm 3 bằng 27 viết 7 nhớ 2; 2x8=16 thêm 2 bằng 18."
+     ],
+     "loiGiai": "Số quả táo siêu thị đã nhập về là:\n234 x 8 = 1.872 (quả)",
+     "dapSo": "1.872 quả táo"
+    }
+   ]
+  },
+  {
+   "so": 7,
+   "ten": "Chia số có hai, ba chữ số cho số có một chữ số",
+   "lyThuyet": "Khi chia số có hai hoặc ba chữ số cho số có một chữ số, em thực hiện lần lượt từ trái sang phải: lấy từng chữ số (hoặc nhóm chữ số) của số bị chia chia cho số chia, viết thương rồi tìm số dư, hạ chữ số tiếp theo xuống để chia tiếp. Trong bài ôn hè này, các phép chia đều là chia hết (số dư cuối cùng bằng 0). Em nhớ kiểm tra lại bằng cách lấy thương nhân với số chia phải ra đúng số bị chia nhé!",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Đặt tính rồi tính: 846 : 6 = ?",
+     "options": [
+      "141",
+      "142",
+      "140",
+      "151"
+     ],
+     "a": 0,
+     "explain": "Đặt tính rồi chia lần lượt: 8:6=1 dư 2; hạ 4 được 24, 24:6=4; hạ 6 được 6, 6:6=1. Kết quả: 846 : 6 = 141."
+    },
+    {
+     "type": "mcq",
+     "q": "Đặt tính rồi tính: 936 : 8 = ?",
+     "options": [
+      "117",
+      "116",
+      "127",
+      "107"
+     ],
+     "a": 0,
+     "explain": "Đặt tính rồi chia lần lượt: 9:8=1 dư 1; hạ 3 được 13, 13:8=1 dư 5; hạ 6 được 56, 56:8=7. Kết quả: 936 : 8 = 117."
+    },
+    {
+     "type": "mcq",
+     "q": "Đặt tính rồi tính: 275 : 5 = ?",
+     "options": [
+      "55",
+      "45",
+      "65",
+      "50"
+     ],
+     "a": 0,
+     "explain": "Đặt tính rồi chia lần lượt: 27:5=5 dư 2; hạ 5 được 25, 25:5=5. Kết quả: 275 : 5 = 55."
+    },
+    {
+     "type": "mcq",
+     "q": "Đặt tính rồi tính: 1.236 : 3 = ?",
+     "options": [
+      "412",
+      "402",
+      "422",
+      "312"
+     ],
+     "a": 0,
+     "explain": "Đặt tính rồi chia lần lượt: 1:3=0; 12:3=4; hạ 3 được 3, 3:3=1; hạ 6 được 6, 6:3=2. Kết quả: 1.236 : 3 = 412."
+    },
+    {
+     "type": "fill",
+     "q": "Đặt tính rồi tính: 1.284 : 4 = ___",
+     "answer": "321",
+     "accept": [
+      "321"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Đặt tính rồi tính: 468 : 4 = ___",
+     "answer": "117",
+     "accept": [
+      "117"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một cửa hàng có 728 quyển truyện tranh siêu anh hùng, chia đều vào 8 thùng. Hỏi mỗi thùng có bao nhiêu quyển truyện?",
+     "hints": [
+      "Anh Fury hỏi em: chia đều tổng số quyển truyện cho số thùng bằng nhau, vậy em dùng phép tính gì?",
+      "Đúng rồi, đó là phép chia! Em lấy tổng số quyển truyện chia cho số thùng: 728 : 8.",
+      "Em đặt tính rồi chia lần lượt: 72:8=9; hạ 8 được 8, 8:8=1. Vậy kết quả là bao nhiêu?"
+     ],
+     "loiGiai": "Số quyển truyện mỗi thùng có là:\n728 : 8 = 91 (quyển)",
+     "dapSo": "91 quyển truyện"
+    },
+    {
+     "type": "solve",
+     "de": "Một đội cờ vua có 693 lá cờ để trang trí, chia đều cho 7 bàn cờ. Hỏi mỗi bàn cờ được trang trí bao nhiêu lá cờ?",
+     "hints": [
+      "Anh Fury hỏi em: chia đều tổng số lá cờ cho số bàn cờ bằng nhau, vậy em dùng phép tính gì?",
+      "Đúng rồi, đó là phép chia! Em lấy tổng số lá cờ chia cho số bàn cờ: 693 : 7.",
+      "Em đặt tính rồi chia lần lượt: 69:7=9 dư 6; hạ 3 được 63, 63:7=9. Vậy kết quả là bao nhiêu?"
+     ],
+     "loiGiai": "Số lá cờ mỗi bàn cờ được trang trí là:\n693 : 7 = 99 (lá cờ)",
+     "dapSo": "99 lá cờ"
+    }
+   ]
+  },
+  {
+   "so": 8,
+   "ten": "Gấp một số lên nhiều lần, giảm một số đi một số lần",
+   "lyThuyet": "Muốn gấp một số lên nhiều lần, em lấy số đó nhân với số lần cần gấp. Ví dụ gấp 6 lên 4 lần, em tính 6 x 4 = 24. Muốn giảm một số đi một số lần, em lấy số đó chia cho số lần cần giảm. Ví dụ giảm 40 đi 5 lần, em tính 40 : 5 = 8. Em chú ý phân biệt \"gấp lên\" dùng phép nhân, còn \"giảm đi\" (theo số lần) dùng phép chia, khác với \"thêm\" hay \"bớt\" một số đơn vị dùng phép cộng, trừ nhé!",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Gấp 8 lên 5 lần, ta được số nào?",
+     "options": [
+      "40",
+      "45",
+      "35",
+      "13"
+     ],
+     "a": 0,
+     "explain": "Muốn gấp 8 lên 5 lần, ta lấy 8 x 5 = 40."
+    },
+    {
+     "type": "mcq",
+     "q": "Giảm 45 đi 9 lần, ta được số nào?",
+     "options": [
+      "5",
+      "36",
+      "9",
+      "4"
+     ],
+     "a": 0,
+     "explain": "Muốn giảm 45 đi 9 lần, ta lấy 45 : 9 = 5."
+    },
+    {
+     "type": "mcq",
+     "q": "Bình có 7 quả bóng, số bóng của Minh gấp 6 lần số bóng của Bình. Hỏi Minh có bao nhiêu quả bóng?",
+     "options": [
+      "42 quả",
+      "13 quả",
+      "36 quả",
+      "48 quả"
+     ],
+     "a": 0,
+     "explain": "Số bóng của Minh gấp 6 lần số bóng của Bình: 7 x 6 = 42 (quả)."
+    },
+    {
+     "type": "mcq",
+     "q": "An có 72 viên bi, số bi của Nam giảm đi 8 lần so với An. Hỏi Nam có bao nhiêu viên bi?",
+     "options": [
+      "9 viên",
+      "64 viên",
+      "8 viên",
+      "80 viên"
+     ],
+     "a": 0,
+     "explain": "Số bi của Nam giảm đi 8 lần so với An: 72 : 8 = 9 (viên)."
+    },
+    {
+     "type": "fill",
+     "q": "Gấp 9 lên 7 lần, ta được số ___",
+     "answer": "63",
+     "accept": [
+      "63"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Giảm 96 đi 4 lần, ta được số ___",
+     "answer": "24",
+     "accept": [
+      "24"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Đội bóng đá có 9 cầu thủ, số cầu thủ của đội siêu anh hùng gấp 4 lần số cầu thủ của đội bóng đá. Hỏi đội siêu anh hùng có bao nhiêu cầu thủ?",
+     "hints": [
+      "Anh Fury hỏi em: đề bài nói \"gấp 4 lần\", vậy em dùng phép tính gì, nhân hay chia?",
+      "Đúng rồi, gấp lên nhiều lần thì dùng phép nhân! Em lấy số cầu thủ đội bóng đá nhân với 4: 9 x 4.",
+      "Em tính 9 x 4 xem kết quả là bao nhiêu."
+     ],
+     "loiGiai": "Số cầu thủ của đội siêu anh hùng là:\n9 x 4 = 36 (cầu thủ)",
+     "dapSo": "36 cầu thủ"
+    },
+    {
+     "type": "solve",
+     "de": "Một bể bơi có 84 người đến tập bơi vào buổi sáng. Buổi chiều, số người giảm đi 6 lần so với buổi sáng. Hỏi buổi chiều có bao nhiêu người đến tập bơi?",
+     "hints": [
+      "Anh Fury hỏi em: đề bài nói \"giảm đi 6 lần\", vậy em dùng phép tính gì, nhân hay chia?",
+      "Đúng rồi, giảm đi theo số lần thì dùng phép chia! Em lấy số người buổi sáng chia cho 6: 84 : 6.",
+      "Em tính 84 : 6 xem kết quả là bao nhiêu."
+     ],
+     "loiGiai": "Số người đến tập bơi buổi chiều là:\n84 : 6 = 14 (người)",
+     "dapSo": "14 người"
+    }
+   ]
+  },
+  {
+   "so": 9,
+   "ten": "Một phần mấy của một số",
+   "lyThuyet": "Muốn tìm một phần mấy của một số, em lấy số đó chia cho mẫu số tương ứng. Ví dụ muốn tìm 1/3 của 24, em tính 24 : 3 = 8. Trong bài ôn hè này, các số đều chia hết cho mẫu số nên em chỉ cần thực hiện một phép chia đơn giản là ra kết quả. Em nhớ đọc kỹ đề bài xem hỏi \"1 phần mấy\" của số nào để chia đúng số đó cho đúng mẫu số nhé!",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "1/3 của 27 là bao nhiêu?",
+     "options": [
+      "9",
+      "8",
+      "3",
+      "24"
+     ],
+     "a": 0,
+     "explain": "Muốn tìm 1/3 của 27, ta lấy 27 : 3 = 9."
+    },
+    {
+     "type": "mcq",
+     "q": "1/4 của 32 là bao nhiêu?",
+     "options": [
+      "8",
+      "4",
+      "28",
+      "16"
+     ],
+     "a": 0,
+     "explain": "Muốn tìm 1/4 của 32, ta lấy 32 : 4 = 8."
+    },
+    {
+     "type": "mcq",
+     "q": "1/5 của 45 kẹo là bao nhiêu viên kẹo?",
+     "options": [
+      "9 viên",
+      "5 viên",
+      "40 viên",
+      "15 viên"
+     ],
+     "a": 0,
+     "explain": "Muốn tìm 1/5 của 45, ta lấy 45 : 5 = 9 (viên kẹo)."
+    },
+    {
+     "type": "mcq",
+     "q": "Một đội có 36 bạn, số bạn nữ chiếm 1/6 số bạn cả đội. Hỏi đội đó có bao nhiêu bạn nữ?",
+     "options": [
+      "6 bạn",
+      "30 bạn",
+      "9 bạn",
+      "18 bạn"
+     ],
+     "a": 0,
+     "explain": "Số bạn nữ chiếm 1/6 số bạn cả đội: 36 : 6 = 6 (bạn)."
+    },
+    {
+     "type": "fill",
+     "q": "1/2 của 48 là ___",
+     "answer": "24",
+     "accept": [
+      "24"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "1/7 của 63 là ___",
+     "answer": "9",
+     "accept": [
+      "9"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Bình có 40 viên bi, Bình cho bạn 1/8 số viên bi của mình. Hỏi Bình đã cho bạn bao nhiêu viên bi, và Bình còn lại bao nhiêu viên bi?",
+     "hints": [
+      "Anh Fury hỏi em: muốn tìm 1/8 của 40 viên bi, em lấy 40 chia cho mấy?",
+      "Đúng rồi, em lấy 40 : 8 để tìm số viên bi Bình đã cho bạn.",
+      "Sau khi tìm được số bi đã cho, em lấy 40 trừ đi số đó để tìm số bi Bình còn lại."
+     ],
+     "loiGiai": "Số viên bi Bình đã cho bạn là:\n40 : 8 = 5 (viên bi)\nSố viên bi Bình còn lại là:\n40 - 5 = 35 (viên bi)",
+     "dapSo": "Đã cho 5 viên bi; còn lại 35 viên bi"
+    },
+    {
+     "type": "solve",
+     "de": "Một hồ bơi có 54 bạn đang tập bơi, trong đó 1/9 số bạn là các bạn mới tập lần đầu. Hỏi có bao nhiêu bạn mới tập bơi lần đầu, và bao nhiêu bạn đã biết bơi trước đó?",
+     "hints": [
+      "Anh Fury hỏi em: muốn tìm 1/9 của 54 bạn, em lấy 54 chia cho mấy?",
+      "Đúng rồi, em lấy 54 : 9 để tìm số bạn mới tập bơi lần đầu.",
+      "Sau khi tìm được số bạn mới, em lấy 54 trừ đi số đó để tìm số bạn đã biết bơi trước đó."
+     ],
+     "loiGiai": "Số bạn mới tập bơi lần đầu là:\n54 : 9 = 6 (bạn)\nSố bạn đã biết bơi trước đó là:\n54 - 6 = 48 (bạn)",
+     "dapSo": "Mới tập lần đầu: 6 bạn; đã biết bơi trước đó: 48 bạn"
+    }
+   ]
+  },
+  {
+   "so": 10,
+   "ten": "Giải toán có lời văn hai bước tính",
+   "lyThuyet": "Với bài toán giải bằng hai bước tính, em đọc kỹ đề bài để biết dữ kiện nào đã cho, dữ kiện nào cần tìm. Đầu tiên, em tìm một kết quả trung gian bằng một phép tính (cộng, trừ, nhân hoặc chia), rồi dùng kết quả đó để tính ra đáp số cuối cùng bằng phép tính thứ hai. Em nên viết rõ từng bước: \"Bước 1 tìm gì\", \"Bước 2 tìm gì\", để bài giải mạch lạc, dễ kiểm tra lại.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Một cửa hàng có 8 thùng cam, mỗi thùng 25 quả. Cửa hàng đã bán 120 quả. Hỏi cửa hàng còn lại bao nhiêu quả cam?",
+     "options": [
+      "80 quả",
+      "200 quả",
+      "100 quả",
+      "90 quả"
+     ],
+     "a": 0,
+     "explain": "Tổng số cam: 8 x 25 = 200 (quả). Số cam còn lại: 200 - 120 = 80 (quả)."
+    },
+    {
+     "type": "mcq",
+     "q": "Một đội cờ vua có 45 bạn, chia đều thành 9 nhóm. Sau đó có thêm 2 nhóm mới, mỗi nhóm 5 bạn tham gia. Hỏi đội cờ vua có tất cả bao nhiêu bạn?",
+     "options": [
+      "55 bạn",
+      "50 bạn",
+      "47 bạn",
+      "45 bạn"
+     ],
+     "a": 0,
+     "explain": "Số bạn thêm vào: 2 x 5 = 10 (bạn). Tổng số bạn: 45 + 10 = 55 (bạn)."
+    },
+    {
+     "type": "mcq",
+     "q": "Minh mua 6 hộp bút, mỗi hộp 8.000 đồng. Minh đưa cho cô bán hàng 50.000 đồng. Hỏi cô bán hàng phải trả lại Minh bao nhiêu tiền?",
+     "options": [
+      "2.000 đồng",
+      "48.000 đồng",
+      "4.000 đồng",
+      "10.000 đồng"
+     ],
+     "a": 0,
+     "explain": "Số tiền mua bút: 6 x 8.000 = 48.000 (đồng). Số tiền trả lại: 50.000 - 48.000 = 2.000 (đồng)."
+    },
+    {
+     "type": "mcq",
+     "q": "Một trại hè có 96 bạn, chia đều thành 8 đội. Mỗi đội có 1/4 số bạn tham gia thi bơi. Hỏi mỗi đội có bao nhiêu bạn thi bơi?",
+     "options": [
+      "3 bạn",
+      "12 bạn",
+      "24 bạn",
+      "4 bạn"
+     ],
+     "a": 0,
+     "explain": "Số bạn mỗi đội: 96 : 8 = 12 (bạn). Số bạn thi bơi mỗi đội: 12 : 4 = 3 (bạn)."
+    },
+    {
+     "type": "fill",
+     "q": "Một xe chở 7 thùng táo, mỗi thùng 45 kg. Sau khi bán đi 200 kg, xe còn lại ___ kg táo",
+     "answer": "115",
+     "accept": [
+      "115"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "An có 5 túi kẹo, mỗi túi 18 viên. An chia đều số kẹo cho 9 bạn. Mỗi bạn nhận được ___ viên kẹo",
+     "answer": "10",
+     "accept": [
+      "10"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Đội bóng đá mua 9 quả bóng, mỗi quả giá 35.000 đồng. Đội còn được nhà trường hỗ trợ thêm 45.000 đồng. Hỏi đội bóng đá còn phải trả bao nhiêu tiền để mua đủ số bóng đó?",
+     "hints": [
+      "Anh Fury hỏi em: đề bài có mấy bước, đầu tiên em cần tính gì trước - tổng số tiền mua bóng hay số tiền còn phải trả?",
+      "Đúng rồi, em tính tổng số tiền mua 9 quả bóng trước: 9 x 35.000.",
+      "Sau khi có tổng số tiền, em lấy tổng đó trừ đi số tiền được hỗ trợ (45.000 đồng) để tìm số tiền còn phải trả."
+     ],
+     "loiGiai": "Tổng số tiền mua 9 quả bóng là:\n9 x 35.000 = 315.000 (đồng)\nSố tiền đội bóng đá còn phải trả là:\n315.000 - 45.000 = 270.000 (đồng)",
+     "dapSo": "270.000 đồng"
+    },
+    {
+     "type": "solve",
+     "de": "Một bể bơi có 72 bạn đến tập luyện, chia đều thành 6 nhóm. Sau đó, 1/4 số bạn trong mỗi nhóm được chọn thi đấu. Hỏi có tất cả bao nhiêu bạn được chọn thi đấu?",
+     "hints": [
+      "Anh Fury hỏi em: đề bài có mấy bước, đầu tiên em cần tìm gì - số bạn mỗi nhóm hay số bạn được chọn?",
+      "Đúng rồi, em tìm số bạn mỗi nhóm trước: 72 : 6.",
+      "Sau khi có số bạn mỗi nhóm, em tìm 1/4 số bạn đó (số bạn được chọn thi đấu mỗi nhóm), rồi nhân với số nhóm (6) để tìm tổng số bạn được chọn."
+     ],
+     "loiGiai": "Số bạn mỗi nhóm là:\n72 : 6 = 12 (bạn)\nSố bạn được chọn thi đấu ở mỗi nhóm là:\n12 : 4 = 3 (bạn)\nTổng số bạn được chọn thi đấu là:\n3 x 6 = 18 (bạn)",
+     "dapSo": "18 bạn"
+    }
+   ]
+  }
+ ]
+}

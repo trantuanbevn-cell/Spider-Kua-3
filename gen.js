@@ -242,22 +242,23 @@ var _pcStart_genwrap = pcStart;
 pcStart = function(bi){
   _pcStart_genwrap(bi);
   try{
-    if(!P.file || P.file.indexOf('/toan/')<0 || !P.bai) return;
+    if(!P.file || !P.bai) return;
+    if(P.file.indexOf('/toan/')<0 && P.file.indexOf('/on3/')<0) return;
     var so=P.bai.so;
-    if(!GEN_MAP[so]) return;
+    if(!(P.file.indexOf('/on3/')>=0?GEN_ON3_MAP[so]:GEN_MAP[so])) return;
     var attempted = !!pcProg()[P.mon+'|'+P.file+'|'+so];
     var extra = attempted ? 3 : 1;
     if(attempted){
       // thay 1/2 số câu fill/mcq bằng biến thể mới toanh
       P.qs.forEach(function(q,i){
         if((q.type==='fill'||q.type==='mcq') && Math.random()<0.5){
-          var v=genToanQ(so);
+          var v=genAnyQ(so,P.file);
           if(v){ v._i=200+i; v._f=P.file; v._so=so; P.qs[i]=v; }
         }
       });
     }
     for(var k=0;k<extra;k++){
-      var v=genToanQ(so);
+      var v=genAnyQ(so,P.file);
       if(v){ v._i=300+k; v._f=P.file; v._so=so; P.qs.push(v); }
     }
   }catch(e){}
@@ -268,11 +269,109 @@ function genMissionAug(){
   try{
     var seen={};
     P.qs.slice().forEach(function(q){
-      if(q._f && q._f.indexOf('/toan/')>=0 && q._so && GEN_MAP[q._so] && !seen[q._so]){
-        seen[q._so]=1;
-        var v=genToanQ(q._so);
+      if(q._f && (q._f.indexOf('/toan/')>=0||q._f.indexOf('/on3/')>=0) && q._so && !seen[q._f+q._so] && q.type!=='theory'){
+        seen[q._f+q._so]=1;
+        var v=genAnyQ(q._so,q._f);
         if(v){ v._i=400+q._so; v._f=q._f; v._so=q._so; v._mode=q._mode; P.qs.push(v); }
       }
     });
   }catch(e){}
+}
+
+// ═══ MÁY SINH ĐỀ ÔN HÈ LỚP 3 (phạm vi kiến thức lớp 3) ═══
+var GEN_ON3_KINDS = {
+  docso3: function(){
+    var a=gR(1000,99999), b=a+gPick([-1,1])*gR(1,90)*10;
+    return gFill('Điền dấu >, < hoặc = :  '+gFmt(a)+' ___ '+gFmt(b), a>b?'>':(a<b?'<':'='), [a>b?'>':(a<b?'<':'=')]);
+  },
+  congtru3: function(){
+    var a=gR(1200,86000), b=gR(1100,Math.min(a-100,40000));
+    var op=gPick(['+','-']); var kq=op==='+'?a+b:a-b;
+    return gFill('Đặt tính rồi tính:  '+gFmt(a)+' '+op+' '+gFmt(b)+' = ___', kq, [String(kq),gFmt(kq)]);
+  },
+  timx3: function(){
+    var kind=gPick(['nhan','chia','cong','tru']);
+    if(kind==='nhan'){ var b=gR(2,9),x=gR(12,120),a=b*x; return gFill('Tìm x, biết:  x × '+b+' = '+gFmt(a), x, [String(x),gFmt(x)]); }
+    if(kind==='chia'){ var b=gR(2,9),kq=gR(12,120),x=kq*b; return gFill('Tìm x, biết:  x : '+b+' = '+kq, x, [String(x),gFmt(x)]); }
+    if(kind==='cong'){ var a=gR(120,900),t2=gR(1000,9000); return gFill('Tìm x, biết:  x + '+gFmt(a)+' = '+gFmt(t2+a), t2, [String(t2),gFmt(t2)]); }
+    var a=gR(120,900),x=gR(1000,9000); return gFill('Tìm x, biết:  x − '+gFmt(a)+' = '+gFmt(x-a), x, [String(x),gFmt(x)]);
+  },
+  lamtron3: function(){
+    var n=gR(1200,98000);
+    var hang=gPick([['nghìn',1000],['chục nghìn',10000]]);
+    var kq=Math.round(n/hang[1])*hang[1];
+    return gMcq('Làm tròn số '+gFmt(n)+' đến hàng '+hang[0]+' được:', gFmt(kq),
+      [gFmt(kq+hang[1]),gFmt(Math.max(0,kq-hang[1])),gFmt(kq+2*hang[1])],
+      'Nhìn chữ số bên phải hàng '+hang[0]+': từ 5 trở lên tròn lên, dưới 5 tròn xuống.');
+  },
+  bangnhan: function(){
+    var a=gR(2,9), b=gR(2,9);
+    if(Math.random()<0.5) return gFill(a+' × '+b+' = ___', a*b, [String(a*b)]);
+    return gFill((a*b)+' : '+a+' = ___', b, [String(b)]);
+  },
+  nhan3: function(){
+    var a=gR(24,320), b=gR(2,9);
+    return gFill('Đặt tính rồi tính:  '+a+' × '+b+' = ___', a*b, [String(a*b),gFmt(a*b)]);
+  },
+  chia3: function(){
+    var b=gR(2,9), kq=gR(24,160), a=kq*b;
+    return gFill('Đặt tính rồi tính:  '+a+' : '+b+' = ___', kq, [String(kq)]);
+  },
+  gapgiam: function(){
+    var kind=gPick(['gap','giam']);
+    var ctx=gPick(G_CTX), ten=gPick(G_TEN);
+    if(kind==='gap'){
+      var a=gR(4,25), k=gR(2,6);
+      return gSolve(ten+' có '+a+' '+ctx.dv+'. Anh của bạn ấy có số '+ctx.dv+' gấp '+k+' lần. Hỏi anh có bao nhiêu '+ctx.dv+'?',
+        ['"Gấp '+k+' lần" nghĩa là làm phép tính gì nhỉ?','Gấp lên = phép NHÂN. Lấy '+a+' × '+k+'.','Em tính '+a+' × '+k+' xem bằng bao nhiêu!'],
+        'Bài giải\nAnh có số '+ctx.dv+' là: '+a+' × '+k+' = '+(a*k)+' ('+ctx.dv+')\nĐáp số: '+(a*k)+' '+ctx.dv, String(a*k));
+    }
+    var k=gR(2,6), kq=gR(4,25), a=kq*k;
+    return gSolve(ten+' có '+a+' '+ctx.dv+'. Sau khi cho bạn, số '+ctx.dv+' giảm đi '+k+' lần. Hỏi còn lại bao nhiêu '+ctx.dv+'?',
+      ['"Giảm đi '+k+' lần" là phép tính gì?','Giảm đi = phép CHIA. Lấy '+a+' : '+k+'.','Em tính '+a+' : '+k+' nhé!'],
+      'Bài giải\nSố '+ctx.dv+' còn lại là: '+a+' : '+k+' = '+kq+' ('+ctx.dv+')\nĐáp số: '+kq+' '+ctx.dv, String(kq));
+  },
+  phanmay: function(){
+    var b=gPick([2,3,4,5,6,7,8,9]), kq=gR(3,12), n=b*kq;
+    return gFill('Tìm 1/'+b+' của '+n+' :  ___', kq, [String(kq)]);
+  },
+  chuvi3: function(){
+    if(Math.random()<0.5){
+      var d=gR(8,30), r=gR(3,d-1);
+      return gSolve('Một hình chữ nhật có chiều dài '+d+' cm, chiều rộng '+r+' cm. Tính chu vi hình chữ nhật đó.',
+        ['Em còn nhớ công thức chu vi hình chữ nhật không?','Chu vi = (dài + rộng) × 2.','('+d+' + '+r+') × 2 — em tính nốt!'],
+        'Bài giải\nChu vi hình chữ nhật là: ('+d+' + '+r+') × 2 = '+((d+r)*2)+' (cm)\nĐáp số: '+((d+r)*2)+' cm', ((d+r)*2)+' cm');
+    }
+    var c=gR(5,25);
+    return gFill('Hình vuông có cạnh '+c+' cm. Chu vi hình vuông là ___ cm.', c*4, [String(c*4)]);
+  },
+  doidv3: function(){
+    var v=gPick([
+      function(){var n=gR(2,9);return [n+' m = ___ cm', n*100];},
+      function(){var n=gR(2,9);return [n+' kg = ___ g', n*1000];},
+      function(){var n=gR(2,9);return [n+' l = ___ ml', n*1000];},
+      function(){var n=gR(2,9);return [n+' km = ___ m', n*1000];},
+      function(){var n=gR(2,9);return [n+' giờ = ___ phút', n*60];}
+    ])();
+    return gFill(v[0], v[1], [String(v[1]),gFmt(v[1])]);
+  },
+  tien3: function(){
+    var to=gPick([1000,2000,5000]), n=gR(2,8);
+    return gFill('Em có '+n+' tờ tiền '+gFmt(to)+' đồng. Em có tất cả ___ đồng.', to*n, [String(to*n),gFmt(to*n)]);
+  }
+};
+var GEN_ON3_MAP = {
+  1:['docso3'], 2:['congtru3'], 3:['timx3'], 4:['lamtron3'],
+  5:['bangnhan'], 6:['nhan3'], 7:['chia3'], 8:['gapgiam'], 9:['phanmay'], 10:['gapgiam'],
+  11:['chuvi3'], 12:['doidv3'], 13:['doidv3'], 15:['tien3']
+};
+function genOn3Q(so){
+  var kinds=GEN_ON3_MAP[so]; if(!kinds) return null;
+  try{ return GEN_ON3_KINDS[gPick(kinds)](); }catch(e){ return null; }
+}
+// mở rộng: sinh biến thể cho cả bài ôn hè
+function genAnyQ(so, f){
+  if(f && f.indexOf('/on3/')>=0) return genOn3Q(so);
+  if(f && f.indexOf('/toan/')>=0) return genToanQ(so);
+  return null;
 }

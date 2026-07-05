@@ -1,4 +1,55 @@
 {
+ "on3": {
+  "ten": "Ôn hè lớp 3",
+  "icon": "🌞",
+  "nhom": [
+   {
+    "ten": "Toán · củng cố nền tảng",
+    "files": [
+     {
+      "f": "data/on3/toan3-1.json",
+      "chuDe": "Ôn hè Toán · Số và phép tính",
+      "cdSo": 1,
+      "soBai": 4,
+      "soCau": 32
+     },
+     {
+      "f": "data/on3/toan3-2.json",
+      "chuDe": "Ôn hè Toán · Nhân, chia",
+      "cdSo": 2,
+      "soBai": 6,
+      "soCau": 48
+     },
+     {
+      "f": "data/on3/toan3-3.json",
+      "chuDe": "Ôn hè Toán · Hình học và đo lường",
+      "cdSo": 3,
+      "soBai": 5,
+      "soCau": 40
+     }
+    ]
+   },
+   {
+    "ten": "Tiếng Việt · củng cố nền tảng",
+    "files": [
+     {
+      "f": "data/on3/tv3-1.json",
+      "chuDe": "Ôn hè Tiếng Việt · Từ và câu",
+      "cdSo": 4,
+      "soBai": 4,
+      "soCau": 32
+     },
+     {
+      "f": "data/on3/tv3-2.json",
+      "chuDe": "Ôn hè Tiếng Việt · Đọc hiểu và chính tả",
+      "cdSo": 5,
+      "soBai": 3,
+      "soCau": 24
+     }
+    ]
+   }
+  ]
+ },
  "toan": {
   "ten": "Toán",
   "icon": "🔢",

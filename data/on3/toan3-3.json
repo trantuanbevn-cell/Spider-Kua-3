@@ -1,0 +1,478 @@
+{
+ "mon": "on3",
+ "tap": 0,
+ "chuDe": "Ôn hè Toán · Hình học và đo lường",
+ "cdSo": 3,
+ "bai": [
+  {
+   "so": 11,
+   "ten": "Chu vi hình chữ nhật, hình vuông",
+   "lyThuyet": "Chào em! Chu vi hình chữ nhật bằng (chiều dài + chiều rộng) x 2. Chu vi hình vuông bằng cạnh x 4 (vì hình vuông có 4 cạnh bằng nhau). Khi tính chu vi, em nhớ các số đo phải cùng một đơn vị (ví dụ cùng là mét hoặc cùng là xăng-ti-mét) trước khi làm phép tính. Em cũng có thể tính ngược lại: nếu biết chu vi hình vuông, em lấy chu vi chia cho 4 để tìm cạnh; nếu biết chu vi và một cạnh của hình chữ nhật, em có thể tìm cạnh còn lại.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Một sân bóng đá mini hình chữ nhật có chiều dài 12 m, chiều rộng 7 m. Tính chu vi sân bóng đó.",
+     "options": [
+      "38 m",
+      "19 m",
+      "84 m",
+      "40 m"
+     ],
+     "a": 0,
+     "explain": "Chu vi hình chữ nhật = (chiều dài + chiều rộng) x 2 = (12 + 7) x 2 = 38 (m)."
+    },
+    {
+     "type": "mcq",
+     "q": "Một tấm thảm hình vuông có cạnh 9 dm. Tính chu vi tấm thảm đó.",
+     "options": [
+      "36 dm",
+      "81 dm",
+      "18 dm",
+      "27 dm"
+     ],
+     "a": 0,
+     "explain": "Chu vi hình vuông = cạnh x 4 = 9 x 4 = 36 (dm)."
+    },
+    {
+     "type": "mcq",
+     "q": "Một hình chữ nhật có chu vi 50 m, chiều rộng 10 m. Tính chiều dài hình chữ nhật đó.",
+     "options": [
+      "15 m",
+      "25 m",
+      "20 m",
+      "30 m"
+     ],
+     "a": 0,
+     "explain": "Nửa chu vi = 50 : 2 = 25 (m). Chiều dài = 25 - 10 = 15 (m)."
+    },
+    {
+     "type": "mcq",
+     "q": "Một hình vuông có chu vi 24 cm. Tính độ dài cạnh hình vuông đó.",
+     "options": [
+      "6 cm",
+      "8 cm",
+      "4 cm",
+      "12 cm"
+     ],
+     "a": 0,
+     "explain": "Cạnh hình vuông = chu vi : 4 = 24 : 4 = 6 (cm)."
+    },
+    {
+     "type": "fill",
+     "q": "Một bể bơi hình chữ nhật có chiều dài 25 m, chiều rộng 15 m. Chu vi bể bơi là ___ m",
+     "answer": "80",
+     "accept": [
+      "80"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Một ô cửa sổ hình vuông có cạnh 8 dm. Chu vi ô cửa sổ là ___ dm",
+     "answer": "32",
+     "accept": [
+      "32"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một khu vườn hình chữ nhật có chiều dài 20 m, chiều rộng kém chiều dài 6 m. Tính chu vi khu vườn đó.",
+     "hints": [
+      "Anh Fury hỏi em: đề bài cho chiều dài và cho biết chiều rộng kém chiều dài mấy mét, vậy em cần tính gì trước?",
+      "Đúng rồi, em tính chiều rộng trước: lấy chiều dài trừ đi 6 mét.",
+      "Sau khi có chiều dài và chiều rộng, em áp dụng công thức chu vi hình chữ nhật = (dài + rộng) x 2."
+     ],
+     "loiGiai": "Chiều rộng khu vườn là:\n20 - 6 = 14 (m)\nChu vi khu vườn là:\n(20 + 14) x 2 = 68 (m)",
+     "dapSo": "68 m"
+    },
+    {
+     "type": "solve",
+     "de": "Bình có một sợi dây dài 48 cm, dùng để quây thành một hình vuông (dùng hết cả sợi dây làm chu vi). Hỏi cạnh của hình vuông đó dài bao nhiêu xăng-ti-mét?",
+     "hints": [
+      "Anh Fury hỏi em: sợi dây dùng để quây thành chu vi hình vuông, vậy độ dài sợi dây chính là gì của hình vuông?",
+      "Đúng rồi, độ dài sợi dây chính là chu vi hình vuông, bằng 48 cm. Em còn nhớ công thức tìm cạnh khi biết chu vi hình vuông không?",
+      "Cạnh hình vuông = chu vi : 4. Em lấy 48 : 4 để tìm độ dài cạnh."
+     ],
+     "loiGiai": "Cạnh của hình vuông là:\n48 : 4 = 12 (cm)",
+     "dapSo": "12 cm"
+    }
+   ]
+  },
+  {
+   "so": 12,
+   "ten": "Đơn vị đo độ dài, khối lượng, dung tích",
+   "lyThuyet": "Đơn vị đo độ dài từ lớn đến bé em đã học là: ki-lô-mét (km), mét (m), đề-xi-mét (dm), xăng-ti-mét (cm), mi-li-mét (mm); trong đó 1 km = 1.000 m, 1 m = 10 dm = 100 cm. Đơn vị đo khối lượng em đã học: 1 kg = 1.000 g, 1 yến = 10 kg. Đơn vị đo dung tích (thể tích chất lỏng) là lít (l). Khi đổi đơn vị, em nhớ số lần đơn vị lớn gấp đơn vị bé để nhân hoặc chia cho đúng.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Đổi đơn vị: 3 km = ? m",
+     "options": [
+      "3.000 m",
+      "300 m",
+      "30 m",
+      "30.000 m"
+     ],
+     "a": 0,
+     "explain": "1 km = 1.000 m, vậy 3 km = 3 x 1.000 = 3.000 m."
+    },
+    {
+     "type": "mcq",
+     "q": "Đổi đơn vị: 5 m = ? cm",
+     "options": [
+      "500 cm",
+      "50 cm",
+      "5.000 cm",
+      "5 cm"
+     ],
+     "a": 0,
+     "explain": "1 m = 100 cm, vậy 5 m = 5 x 100 = 500 cm."
+    },
+    {
+     "type": "mcq",
+     "q": "Đổi đơn vị: 4 kg = ? g",
+     "options": [
+      "4.000 g",
+      "400 g",
+      "40 g",
+      "40.000 g"
+     ],
+     "a": 0,
+     "explain": "1 kg = 1.000 g, vậy 4 kg = 4 x 1.000 = 4.000 g."
+    },
+    {
+     "type": "mcq",
+     "q": "Bể cá của Nam chứa được 8 l nước. Nam đổ thêm 5 l nước nữa. Hỏi bể cá lúc này có bao nhiêu lít nước?",
+     "options": [
+      "13 l",
+      "3 l",
+      "40 l",
+      "8 l"
+     ],
+     "a": 0,
+     "explain": "Số lít nước trong bể: 8 + 5 = 13 (l)."
+    },
+    {
+     "type": "fill",
+     "q": "Đổi đơn vị: 2 yến = ___ kg",
+     "answer": "20",
+     "accept": [
+      "20"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Đổi đơn vị: 60 cm = ___ dm",
+     "answer": "6",
+     "accept": [
+      "6"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một can dầu ăn chứa 10 l. Mẹ rót ra 3 chai, mỗi chai 2 l. Hỏi trong can còn lại bao nhiêu lít dầu ăn?",
+     "hints": [
+      "Anh Fury hỏi em: đầu tiên em cần tính tổng số lít dầu đã rót ra 3 chai, vậy em làm phép tính gì?",
+      "Đúng rồi, em lấy số lít mỗi chai nhân với số chai: 2 x 3.",
+      "Sau khi có tổng số lít đã rót ra, em lấy số lít ban đầu trong can (10 l) trừ đi số đó để tìm số lít còn lại."
+     ],
+     "loiGiai": "Số lít dầu đã rót ra 3 chai là:\n2 x 3 = 6 (l)\nSố lít dầu còn lại trong can là:\n10 - 6 = 4 (l)",
+     "dapSo": "4 lít dầu ăn"
+    },
+    {
+     "type": "solve",
+     "de": "Một bao gạo nặng 1 yến. Mẹ mua 3 bao gạo như vậy. Hỏi mẹ đã mua tất cả bao nhiêu ki-lô-gam gạo?",
+     "hints": [
+      "Anh Fury hỏi em: đề bài cho khối lượng 1 bao gạo theo đơn vị yến, em cần đổi ra đơn vị gì trước khi tính?",
+      "Đúng rồi, em đổi 1 yến ra ki-lô-gam trước: 1 yến = 10 kg.",
+      "Sau khi biết 1 bao nặng 10 kg, em lấy 10 kg nhân với số bao (3) để tìm tổng số ki-lô-gam gạo."
+     ],
+     "loiGiai": "Đổi: 1 yến = 10 kg\nSố ki-lô-gam gạo mẹ đã mua là:\n10 x 3 = 30 (kg)",
+     "dapSo": "30 kg gạo"
+    }
+   ]
+  },
+  {
+   "so": 13,
+   "ten": "Xem đồng hồ. Tháng, năm",
+   "lyThuyet": "Khi xem đồng hồ, kim ngắn chỉ giờ, kim dài chỉ phút. Mỗi giờ có 60 phút, mỗi ngày có 24 giờ. Một năm thường có 365 ngày, năm nhuận có 366 ngày (tháng 2 năm nhuận có 29 ngày thay vì 28 ngày). Một năm có 12 tháng; các tháng 1, 3, 5, 7, 8, 10, 12 có 31 ngày; các tháng 4, 6, 9, 11 có 30 ngày; riêng tháng 2 có 28 hoặc 29 ngày. Em nhớ những quy tắc này để tính toán ngày tháng chính xác nhé!",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Kim ngắn chỉ số 3, kim dài chỉ số 6 thì đồng hồ đang chỉ mấy giờ?",
+     "options": [
+      "3 giờ 30 phút",
+      "6 giờ 15 phút",
+      "3 giờ 6 phút",
+      "6 giờ 30 phút"
+     ],
+     "a": 0,
+     "explain": "Kim ngắn chỉ số 3 là 3 giờ. Kim dài chỉ số 6 tức là 6 x 5 = 30 phút. Vậy đồng hồ chỉ 3 giờ 30 phút."
+    },
+    {
+     "type": "mcq",
+     "q": "Một trận đấu cờ vua bắt đầu lúc 8 giờ, kéo dài 45 phút. Hỏi trận đấu kết thúc lúc mấy giờ?",
+     "options": [
+      "8 giờ 45 phút",
+      "9 giờ 45 phút",
+      "8 giờ 15 phút",
+      "9 giờ 15 phút"
+     ],
+     "a": 0,
+     "explain": "Trận đấu kết thúc lúc: 8 giờ cộng thêm 45 phút = 8 giờ 45 phút."
+    },
+    {
+     "type": "mcq",
+     "q": "Tháng 4 có bao nhiêu ngày?",
+     "options": [
+      "30 ngày",
+      "31 ngày",
+      "28 ngày",
+      "29 ngày"
+     ],
+     "a": 0,
+     "explain": "Tháng 4 thuộc nhóm tháng 4, 6, 9, 11 nên có 30 ngày."
+    },
+    {
+     "type": "mcq",
+     "q": "Một năm không nhuận có bao nhiêu ngày?",
+     "options": [
+      "365 ngày",
+      "366 ngày",
+      "360 ngày",
+      "364 ngày"
+     ],
+     "a": 0,
+     "explain": "Một năm thường (không nhuận) có 365 ngày; năm nhuận mới có 366 ngày."
+    },
+    {
+     "type": "fill",
+     "q": "1 giờ = ___ phút",
+     "answer": "60",
+     "accept": [
+      "60"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Tháng 7 có ___ ngày",
+     "answer": "31",
+     "accept": [
+      "31"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Đội bóng đá của Bình tập luyện từ 6 giờ 30 phút đến 8 giờ. Hỏi đội đã tập luyện trong bao nhiêu phút?",
+     "hints": [
+      "Anh Fury hỏi em: em đổi 8 giờ thành 7 giờ 60 phút để dễ trừ, hoặc tính từ 6 giờ 30 đến 7 giờ là bao nhiêu phút trước.",
+      "Từ 6 giờ 30 phút đến 7 giờ là 30 phút. Sau đó từ 7 giờ đến 8 giờ là bao nhiêu phút nữa?",
+      "Em cộng 30 phút (từ 6 giờ 30 đến 7 giờ) với 60 phút (từ 7 giờ đến 8 giờ) để ra tổng thời gian tập luyện."
+     ],
+     "loiGiai": "Từ 6 giờ 30 phút đến 7 giờ là 30 phút.\nTừ 7 giờ đến 8 giờ là 60 phút.\nThời gian đội tập luyện là:\n30 + 60 = 90 (phút)",
+     "dapSo": "90 phút"
+    },
+    {
+     "type": "solve",
+     "de": "Một câu lạc bộ cờ vua tổ chức thi đấu trong 3 tháng liên tiếp là tháng 9, tháng 10 và tháng 11. Hỏi tổng số ngày thi đấu trong 3 tháng đó là bao nhiêu ngày (biết mỗi tháng thi đấu đủ cả tháng)?",
+     "hints": [
+      "Anh Fury hỏi em: em cần nhớ lại số ngày của từng tháng 9, tháng 10, tháng 11 là bao nhiêu ngày mỗi tháng.",
+      "Tháng 9 có 30 ngày (thuộc nhóm tháng 4, 6, 9, 11). Tháng 10 có 31 ngày (thuộc nhóm tháng 1, 3, 5, 7, 8, 10, 12). Tháng 11 có 30 ngày.",
+      "Em cộng số ngày của cả 3 tháng lại: 30 + 31 + 30."
+     ],
+     "loiGiai": "Tháng 9 có 30 ngày, tháng 10 có 31 ngày, tháng 11 có 30 ngày.\nTổng số ngày thi đấu là:\n30 + 31 + 30 = 91 (ngày)",
+     "dapSo": "91 ngày"
+    }
+   ]
+  },
+  {
+   "so": 14,
+   "ten": "Góc vuông, góc không vuông",
+   "lyThuyet": "Góc vuông là góc tạo bởi ê ke tại đỉnh góc, giống hình chữ L. Góc không vuông gồm góc nhọn (bé hơn góc vuông) và góc tù (lớn hơn góc vuông). Muốn kiểm tra một góc có phải góc vuông không, em đặt ê ke sao cho đỉnh góc vuông của ê ke trùng với đỉnh của góc cần đo, một cạnh ê ke trùng với một cạnh của góc; nếu cạnh còn lại của góc trùng với cạnh còn lại của ê ke thì đó là góc vuông. Hình chữ nhật và hình vuông đều có 4 góc vuông.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Hình nào sau đây có 4 góc đều là góc vuông?",
+     "options": [
+      "Hình chữ nhật",
+      "Hình tam giác bất kỳ",
+      "Hình tròn",
+      "Hình có 3 cạnh"
+     ],
+     "a": 0,
+     "explain": "Hình chữ nhật (và hình vuông) có đủ 4 góc vuông."
+    },
+    {
+     "type": "mcq",
+     "q": "Góc nhọn là góc như thế nào so với góc vuông?",
+     "options": [
+      "Bé hơn góc vuông",
+      "Lớn hơn góc vuông",
+      "Bằng góc vuông",
+      "Không so sánh được với góc vuông"
+     ],
+     "a": 0,
+     "explain": "Góc nhọn là góc bé hơn góc vuông, còn góc tù là góc lớn hơn góc vuông."
+    },
+    {
+     "type": "mcq",
+     "q": "Dùng ê ke để kiểm tra góc, nếu cạnh còn lại của góc trùng khít với cạnh còn lại của ê ke (sau khi đặt đỉnh và một cạnh trùng nhau) thì đó là góc gì?",
+     "options": [
+      "Góc vuông",
+      "Góc nhọn",
+      "Góc tù",
+      "Không xác định được"
+     ],
+     "a": 0,
+     "explain": "Khi hai cạnh của góc trùng khít với hai cạnh của ê ke (ê ke có góc vuông), đó chính là góc vuông."
+    },
+    {
+     "type": "mcq",
+     "q": "Trong các góc: góc vuông, góc nhọn, góc tù, góc nào lớn hơn cả?",
+     "options": [
+      "Góc tù",
+      "Góc vuông",
+      "Góc nhọn",
+      "Cả ba góc bằng nhau"
+     ],
+     "a": 0,
+     "explain": "Sắp xếp theo độ lớn: góc nhọn < góc vuông < góc tù. Vậy góc tù là góc lớn hơn cả trong ba loại này."
+    },
+    {
+     "type": "fill",
+     "q": "Hình vuông có tất cả ___ góc vuông",
+     "answer": "4",
+     "accept": [
+      "4",
+      "bốn"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Dụng cụ dùng để kiểm tra góc vuông là cái ___",
+     "answer": "ê ke",
+     "accept": [
+      "ê ke",
+      "eke",
+      "e ke"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một lá cờ hình chữ nhật được gắn trên một cây cột thẳng đứng, cán cờ nằm ngang. Em hãy cho biết góc tạo bởi cây cột và cán cờ (nằm ngang, vuông góc với cột) là góc gì, và giải thích vì sao.",
+     "hints": [
+      "Anh Fury hỏi em: cây cột thẳng đứng và cán cờ nằm ngang, hai đường thẳng đứng và nằm ngang tạo với nhau góc gì, em thử hình dung chữ L xem sao.",
+      "Đúng rồi, hình chữ L chính là hình ảnh của góc vuông. Đường thẳng đứng và đường nằm ngang luôn tạo với nhau góc vuông.",
+      "Em kết luận: góc tạo bởi cây cột thẳng đứng và cán cờ nằm ngang là góc vuông, vì một đường thẳng đứng và một đường nằm ngang luôn vuông góc với nhau."
+     ],
+     "loiGiai": "Góc tạo bởi cây cột thẳng đứng và cán cờ nằm ngang là góc vuông.\nVì đường thẳng đứng (cây cột) và đường nằm ngang (cán cờ) luôn vuông góc với nhau, giống như hình chữ L.",
+     "dapSo": "Góc vuông"
+    },
+    {
+     "type": "solve",
+     "de": "Một chiếc bàn cờ vua hình vuông. Em hãy cho biết bàn cờ đó có tất cả bao nhiêu góc, và mỗi góc là góc gì?",
+     "hints": [
+      "Anh Fury hỏi em: bàn cờ hình vuông có mấy cạnh, và mỗi đỉnh của hình vuông tạo thành một góc, vậy có tất cả bao nhiêu góc?",
+      "Hình vuông có 4 cạnh và 4 đỉnh, mỗi đỉnh tạo thành một góc, vậy có tất cả 4 góc.",
+      "Em nhớ lại đặc điểm của hình vuông: cả 4 góc của hình vuông đều là góc gì (vuông, nhọn hay tù)?"
+     ],
+     "loiGiai": "Bàn cờ vua hình vuông có tất cả 4 góc.\nCả 4 góc của hình vuông đều là góc vuông.",
+     "dapSo": "4 góc, đều là góc vuông"
+    }
+   ]
+  },
+  {
+   "so": 15,
+   "ten": "Tiền Việt Nam",
+   "lyThuyet": "Các mệnh giá tiền Việt Nam em thường gặp gồm: 1.000 đồng, 2.000 đồng, 5.000 đồng, 10.000 đồng, 20.000 đồng, 50.000 đồng, 100.000 đồng... Khi mua hàng, số tiền phải trả bằng đơn giá nhân với số lượng. Khi đưa tiền nhiều hơn giá hàng, người bán phải trả lại phần chênh lệch (lấy số tiền đưa trừ đi số tiền hàng). Em cũng có thể cộng các tờ tiền khác mệnh giá lại với nhau để tính tổng số tiền mình có.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Nam có 3 tờ tiền mệnh giá 10.000 đồng và 2 tờ tiền mệnh giá 5.000 đồng. Hỏi Nam có tất cả bao nhiêu tiền?",
+     "options": [
+      "40.000 đồng",
+      "35.000 đồng",
+      "30.000 đồng",
+      "45.000 đồng"
+     ],
+     "a": 0,
+     "explain": "Số tiền tờ 10.000 đồng: 3 x 10.000 = 30.000 (đồng). Số tiền tờ 5.000 đồng: 2 x 5.000 = 10.000 (đồng). Tổng: 30.000 + 10.000 = 40.000 (đồng)."
+    },
+    {
+     "type": "mcq",
+     "q": "Một quả bóng đá giá 45.000 đồng. Bình đưa cho cô bán hàng tờ 50.000 đồng. Hỏi cô bán hàng phải trả lại Bình bao nhiêu tiền?",
+     "options": [
+      "5.000 đồng",
+      "95.000 đồng",
+      "45.000 đồng",
+      "10.000 đồng"
+     ],
+     "a": 0,
+     "explain": "Số tiền trả lại: 50.000 - 45.000 = 5.000 (đồng)."
+    },
+    {
+     "type": "mcq",
+     "q": "An mua 3 quyển vở, mỗi quyển giá 6.000 đồng. Hỏi An phải trả bao nhiêu tiền?",
+     "options": [
+      "18.000 đồng",
+      "9.000 đồng",
+      "24.000 đồng",
+      "15.000 đồng"
+     ],
+     "a": 0,
+     "explain": "Số tiền phải trả: 3 x 6.000 = 18.000 (đồng)."
+    },
+    {
+     "type": "mcq",
+     "q": "Minh có 20.000 đồng, mua một cái bút giá 8.000 đồng và một cục tẩy giá 3.000 đồng. Hỏi Minh còn lại bao nhiêu tiền?",
+     "options": [
+      "9.000 đồng",
+      "12.000 đồng",
+      "11.000 đồng",
+      "17.000 đồng"
+     ],
+     "a": 0,
+     "explain": "Tổng tiền mua hàng: 8.000 + 3.000 = 11.000 (đồng). Số tiền còn lại: 20.000 - 11.000 = 9.000 (đồng)."
+    },
+    {
+     "type": "fill",
+     "q": "Bình có 2 tờ 20.000 đồng và 1 tờ 10.000 đồng. Tổng số tiền Bình có là ___ đồng",
+     "answer": "50.000",
+     "accept": [
+      "50000",
+      "50.000"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Một chiếc cờ vua nhỏ giá 12.000 đồng, Nam mua 4 chiếc. Số tiền Nam phải trả là ___ đồng",
+     "answer": "48.000",
+     "accept": [
+      "48000",
+      "48.000"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Bình mua 2 quyển truyện siêu anh hùng, mỗi quyển giá 25.000 đồng. Bình đưa cho cô bán hàng 2 tờ tiền mệnh giá 50.000 đồng. Hỏi cô bán hàng phải trả lại Bình bao nhiêu tiền?",
+     "hints": [
+      "Anh Fury hỏi em: đầu tiên em cần tính tổng số tiền Bình phải trả cho 2 quyển truyện, vậy em làm phép tính gì?",
+      "Đúng rồi, em lấy giá 1 quyển nhân với số quyển: 25.000 x 2. Sau đó, em tính tổng số tiền Bình đã đưa: 2 tờ 50.000 đồng.",
+      "Cuối cùng, em lấy số tiền Bình đã đưa trừ đi số tiền phải trả cho truyện để tìm số tiền trả lại."
+     ],
+     "loiGiai": "Số tiền mua 2 quyển truyện là:\n25.000 x 2 = 50.000 (đồng)\nSố tiền Bình đã đưa là:\n50.000 x 2 = 100.000 (đồng)\nSố tiền cô bán hàng phải trả lại Bình là:\n100.000 - 50.000 = 50.000 (đồng)",
+     "dapSo": "50.000 đồng"
+    },
+    {
+     "type": "solve",
+     "de": "An để dành được 3 tờ tiền mệnh giá 10.000 đồng và 4 tờ tiền mệnh giá 5.000 đồng. An dùng số tiền đó mua một quả bóng bàn giá 30.000 đồng. Hỏi An còn lại bao nhiêu tiền?",
+     "hints": [
+      "Anh Fury hỏi em: đầu tiên em cần tính tổng số tiền An có, vậy em cộng các loại tờ tiền như thế nào?",
+      "Em tính số tiền tờ 10.000 đồng: 3 x 10.000, và số tiền tờ 5.000 đồng: 4 x 5.000, rồi cộng hai kết quả lại.",
+      "Sau khi có tổng số tiền An có, em lấy tổng đó trừ đi giá quả bóng bàn (30.000 đồng) để tìm số tiền còn lại."
+     ],
+     "loiGiai": "Số tiền tờ 10.000 đồng: 3 x 10.000 = 30.000 (đồng)\nSố tiền tờ 5.000 đồng: 4 x 5.000 = 20.000 (đồng)\nTổng số tiền An có là:\n30.000 + 20.000 = 50.000 (đồng)\nSố tiền An còn lại sau khi mua bóng bàn là:\n50.000 - 30.000 = 20.000 (đồng)",
+     "dapSo": "20.000 đồng"
+    }
+   ]
+  }
+ ]
+}

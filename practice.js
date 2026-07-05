@@ -56,7 +56,7 @@ function pcHome(){
   var w=pcWrong();
   var h=pcHead('🎯 LUYỆN TẬP','closePractice()');
   h+='<div style="font-size:13px;color:var(--tx2);margin-bottom:14px;">Chọn môn em muốn luyện hôm nay. Làm đúng có xu, đúng nhanh xu nhân đôi! ⚡</div>';
-  ['toan','tv','ta'].forEach(function(m){
+  (P.idx.on3?['on3','toan','tv','ta']:['toan','tv','ta']).forEach(function(m){
     var M=P.idx[m]; if(!M) return;
     var tot=0,done=0,prog=pcProg();
     M.nhom.forEach(function(n){ n.files.forEach(function(f){ tot+=f.soBai;
@@ -176,6 +176,20 @@ function pcQ(){
   else if(mins>0&&mins%25===0) h+='<div style="background:rgba(245,200,66,.12);border:1px solid var(--gold);border-radius:10px;padding:10px;font-size:12px;color:var(--gold);margin-bottom:10px;">⏰ Học liền '+mins+' phút rồi — nghỉ 5 phút cho mắt khỏe rồi chiến tiếp nhé!</div>';
   h+='<div style="height:6px;background:var(--s3);border-radius:3px;margin-bottom:14px;"><div style="height:6px;width:'+Math.round(P.qi/P.qs.length*100)+'%;background:var(--red);border-radius:3px;transition:width .3s;"></div></div>';
 
+  if(q.type==='theory'){
+    h+='<div style="background:linear-gradient(135deg,rgba(15,76,143,.3),rgba(232,25,44,.1));border:2px solid var(--blue2);border-radius:18px;padding:20px;margin-bottom:14px;">'
+      +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:12px;color:var(--gold);letter-spacing:.15em;margin-bottom:6px;">🛡️ BÀI HỌC MỚI — FURY DẠY TRƯỚC, LÀM SAU</div>'
+      +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:18px;color:var(--tx);margin-bottom:10px;">'+pcEsc(q.ten)+'</div>'
+      +'<div style="font-size:14.5px;line-height:1.9;color:var(--tx);">'+pcEsc(q.lyThuyet)+'</div>'
+      +'<button onclick="speak&&speak(\''+pcEsc(q.lyThuyet).replace(/'/g,"\\'")+'\')" style="'+pcBtn2()+'margin-top:12px;font-size:12px;padding:8px 14px;">🔊 Nghe Fury giảng</button>'
+      +'</div>'
+      +'<button onclick="pcTheoryAsk()" style="'+pcBtn2()+'width:100%;border-color:var(--gold);color:var(--gold);margin-bottom:8px;">💬 CHƯA HIỂU — NHẮN FURY GIẢNG KỸ HƠN</button>'
+      +'<button onclick="pcNext()" style="'+pcBtn()+'width:100%;background:var(--green);">✅ EM HIỂU RỒI — VÀO LÀM BÀI →</button>';
+    pcBox().innerHTML=h;
+    pcEl().scrollTop=0;
+    if(typeof speak==='function') speak('Bài mới nhé Peter: '+q.ten+'. Đọc kỹ phần anh giảng, chưa hiểu thì nhắn anh!');
+    return;
+  }
   if(q.type==='mcq'||q.type==='read'||q.type==='listen'){
     if(q.type==='read'&&q.vanBan)
       h+='<div style="background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:16px;font-size:14px;line-height:1.9;color:var(--tx);margin-bottom:12px;">📄 '+pcEsc(q.vanBan)+'</div>';
@@ -314,6 +328,11 @@ function pcAskFury(){
   var q=P.qs[P.qi];
   closePractice();
   if(typeof qs==='function') qs('[LUYỆN TẬP] Anh Fury ơi, em đang luyện bài này trong app:\n"'+q.de+'"\nEm bí rồi. Anh gợi ý bước tiếp theo cho em nghĩ nhé (đừng nói đáp án)!');
+}
+function pcTheoryAsk(){
+  var q=P.qs[P.qi];
+  closePractice();
+  if(typeof qs==='function') qs('[HỌC LÝ THUYẾT] Anh Fury ơi, dạy em bài mới "'+q.ten+'" nhé. Em chưa học bài này bao giờ — anh giảng thật dễ hiểu bằng ví dụ đời thường, xong đố em 1 câu dễ để thử xem em hiểu chưa.');
 }
 
 // ── nói tiếng Anh ──

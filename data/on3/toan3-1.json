@@ -1,0 +1,388 @@
+{
+ "mon": "on3",
+ "tap": 0,
+ "chuDe": "Ôn hè Toán · Số và phép tính",
+ "cdSo": 1,
+ "bai": [
+  {
+   "so": 1,
+   "ten": "Đọc, viết, so sánh các số đến 100 000",
+   "lyThuyet": "Chào em, anh Fury đây! Các số đến 100.000 có tới 5 chữ số, gồm các hàng: chục nghìn, nghìn, trăm, chục, đơn vị. Khi đọc số, em đọc từ hàng cao đến hàng thấp, ví dụ 45.302 đọc là \"bốn mươi lăm nghìn ba trăm linh hai\". Muốn so sánh hai số, trước tiên em so sánh số chữ số: số nào có nhiều chữ số hơn thì lớn hơn; nếu số chữ số bằng nhau thì so sánh từng cặp chữ số từ trái sang phải. Em nhớ viết số có dấu chấm ngăn cách hàng nghìn cho dễ đọc nhé!",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Số gồm 5 chục nghìn, 3 nghìn, 4 trăm, 0 chục, 6 đơn vị viết là:",
+     "options": [
+      "53.406",
+      "50.346",
+      "53.460",
+      "34.506"
+     ],
+     "a": 0,
+     "explain": "5 chục nghìn = 50.000; 3 nghìn = 3.000; 4 trăm = 400; 6 đơn vị = 6. Cộng lại: 50.000 + 3.000 + 400 + 6 = 53.406."
+    },
+    {
+     "type": "mcq",
+     "q": "Số 70.508 đọc là:",
+     "options": [
+      "Bảy mươi nghìn năm trăm linh tám",
+      "Bảy nghìn năm trăm linh tám",
+      "Bảy mươi nghìn năm trăm tám mươi",
+      "Bảy mươi lăm nghìn không trăm tám"
+     ],
+     "a": 0,
+     "explain": "70.508 gồm 7 chục nghìn, 0 nghìn, 5 trăm, 0 chục, 8 đơn vị nên đọc là \"bảy mươi nghìn năm trăm linh tám\"."
+    },
+    {
+     "type": "mcq",
+     "q": "So sánh hai số 45.678 và 45.687, số nào lớn hơn?",
+     "options": [
+      "45.687",
+      "45.678",
+      "Hai số bằng nhau",
+      "Không so sánh được"
+     ],
+     "a": 0,
+     "explain": "Hai số có cùng 5 chữ số, các hàng chục nghìn, nghìn, trăm giống nhau (4-5-6). Đến hàng chục: 8 > 7 nên 45.687 > 45.678."
+    },
+    {
+     "type": "mcq",
+     "q": "Trong các số 12.450; 21.045; 12.045; 20.145, số lớn nhất là:",
+     "options": [
+      "21.045",
+      "12.450",
+      "12.045",
+      "20.145"
+     ],
+     "a": 0,
+     "explain": "So sánh hàng chục nghìn: 1-1-1-2. Số 21.045 và 20.145 có chục nghìn là 2, lớn hơn hai số còn lại (chục nghìn là 1). So sánh tiếp 21.045 và 20.145 ở hàng nghìn: 1 > 0 nên 21.045 lớn nhất."
+    },
+    {
+     "type": "fill",
+     "q": "Sắp xếp các số 34.500; 34.050; 34.005 theo thứ tự từ bé đến lớn: ___",
+     "answer": "34.005, 34.050, 34.500",
+     "accept": [
+      "34.005,34.050,34.500",
+      "34005, 34050, 34500",
+      "34005,34050,34500"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Số liền sau của 99.999 là ___",
+     "answer": "100.000",
+     "accept": [
+      "100000",
+      "100.000"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một sân vận động có 68.245 người đến xem trận bóng đá. Em hãy viết số 68.245 thành tổng theo các hàng của nó, rồi cho biết chữ số 8 thuộc hàng nào và có giá trị bao nhiêu.",
+     "hints": [
+      "Anh Fury hỏi em: số 68.245 có mấy chữ số, và mỗi chữ số ứng với hàng nào tính từ trái sang: chục nghìn, nghìn, trăm, chục, đơn vị?",
+      "Em viết lần lượt: 6 chục nghìn, 8 nghìn, 2 trăm, 4 chục, 5 đơn vị, rồi đổi mỗi phần ra số rồi cộng lại xem có đúng bằng 68.245 không.",
+      "Chữ số 8 đứng ở vị trí thứ hai từ trái sang, đó là hàng nghìn. Giá trị của nó bằng 8 nhân với giá trị của hàng nghìn."
+     ],
+     "loiGiai": "Số 68.245 viết thành tổng theo các hàng là:\n68.245 = 60.000 + 8.000 + 200 + 40 + 5\nChữ số 8 trong số 68.245 thuộc hàng nghìn, có giá trị là 8.000.",
+     "dapSo": "68.245 = 60.000 + 8.000 + 200 + 40 + 5; chữ số 8 thuộc hàng nghìn, giá trị 8.000"
+    },
+    {
+     "type": "solve",
+     "de": "Từ bốn chữ số 2, 0, 6, 9 (mỗi chữ số dùng một lần), em hãy lập số có 4 chữ số khác nhau lớn nhất và số có 4 chữ số khác nhau bé nhất. Biết chữ số hàng nghìn không được là 0.",
+     "hints": [
+      "Anh Fury hỏi em: muốn số có 4 chữ số lớn nhất, em nên xếp các chữ số theo thứ tự nào, tăng dần hay giảm dần?",
+      "Đúng rồi, xếp giảm dần: chữ số lớn nhất ở hàng nghìn, rồi các chữ số còn lại giảm dần. Còn muốn số bé nhất, chữ số hàng nghìn có được là 0 không?",
+      "Chữ số hàng nghìn không được là 0, vậy với số bé nhất em chọn chữ số bé nhất khác 0 đặt ở hàng nghìn, rồi xếp 0 và các chữ số còn lại tăng dần phía sau."
+     ],
+     "loiGiai": "Sắp xếp 4 chữ số 2, 0, 6, 9 theo thứ tự giảm dần: 9, 6, 2, 0 ta được số lớn nhất là 9.620.\nVì chữ số hàng nghìn không được là 0, số bé nhất phải có chữ số hàng nghìn là 2 (chữ số bé nhất khác 0), sau đó xếp các chữ số còn lại (0, 6, 9) tăng dần: 2.069.",
+     "dapSo": "Số lớn nhất: 9.620; Số bé nhất: 2.069"
+    }
+   ]
+  },
+  {
+   "so": 2,
+   "ten": "Cộng, trừ trong phạm vi 100 000",
+   "lyThuyet": "Khi đặt tính cộng hoặc trừ, em viết các chữ số thẳng cột: hàng đơn vị thẳng hàng đơn vị, hàng chục thẳng hàng chục... rồi tính từ phải sang trái. Với phép cộng, nếu tổng ở một hàng từ 10 trở lên thì em viết chữ số hàng đơn vị và nhớ 1 sang hàng liền trước. Với phép trừ, nếu chữ số bị trừ bé hơn chữ số trừ thì em mượn 1 chục ở hàng liền trước. Em nhớ kiểm tra lại bằng phép tính ngược (lấy hiệu cộng với số trừ phải ra số bị trừ) để chắc chắn kết quả đúng.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Đặt tính rồi tính: 34.526 + 25.318 = ?",
+     "options": [
+      "59.844",
+      "58.844",
+      "59.744",
+      "60.844"
+     ],
+     "a": 0,
+     "explain": "Đặt tính thẳng cột rồi cộng từ phải sang trái: 34.526 + 25.318 = 59.844."
+    },
+    {
+     "type": "mcq",
+     "q": "Đặt tính rồi tính: 70.000 - 24.685 = ?",
+     "options": [
+      "45.315",
+      "46.315",
+      "45.415",
+      "44.315"
+     ],
+     "a": 0,
+     "explain": "Đặt tính thẳng cột rồi trừ từ phải sang trái, có mượn khi cần: 70.000 - 24.685 = 45.315."
+    },
+    {
+     "type": "mcq",
+     "q": "Một cửa hàng buổi sáng bán được 12.450 kg gạo, buổi chiều bán được 8.320 kg gạo. Hỏi cả ngày cửa hàng bán được bao nhiêu ki-lô-gam gạo?",
+     "options": [
+      "20.770 kg",
+      "20.670 kg",
+      "21.770 kg",
+      "19.770 kg"
+     ],
+     "a": 0,
+     "explain": "Số gạo cả ngày bán được: 12.450 + 8.320 = 20.770 (kg)."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính giá trị biểu thức: 15.000 + 8.400 - 6.200 = ?",
+     "options": [
+      "17.200",
+      "17.600",
+      "16.200",
+      "18.200"
+     ],
+     "a": 0,
+     "explain": "Tính từ trái sang phải: 15.000 + 8.400 = 23.400; sau đó 23.400 - 6.200 = 17.200."
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống: 48.235 + 15.640 = ___",
+     "answer": "63.875",
+     "accept": [
+      "63875",
+      "63.875"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống: 90.512 - 37.408 = ___",
+     "answer": "53.104",
+     "accept": [
+      "53104",
+      "53.104"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Đội bóng đá của Nam có 25.600 đồng tiền quỹ lớp. Các bạn góp thêm 14.800 đồng nữa. Sau đó lớp dùng 18.500 đồng để mua bóng mới. Hỏi quỹ lớp còn lại bao nhiêu tiền?",
+     "hints": [
+      "Anh Fury hỏi em: đề bài có mấy bước, đầu tiên số tiền tăng lên hay giảm đi khi các bạn góp thêm?",
+      "Đúng rồi, tăng lên! Em lấy 25.600 + 14.800 để tìm số tiền quỹ lớp có tất cả sau khi góp thêm.",
+      "Sau khi có tổng số tiền, em lấy số đó trừ đi 18.500 (tiền mua bóng) để tìm số tiền còn lại."
+     ],
+     "loiGiai": "Số tiền quỹ lớp có tất cả sau khi góp thêm là:\n25.600 + 14.800 = 40.400 (đồng)\nSố tiền quỹ lớp còn lại sau khi mua bóng là:\n40.400 - 18.500 = 21.900 (đồng)",
+     "dapSo": "21.900 đồng"
+    },
+    {
+     "type": "solve",
+     "de": "Hai đội bơi của trường thi đấu, đội A được 32.450 điểm, đội B được ít hơn đội A 8.600 điểm. Hỏi tổng số điểm của cả hai đội là bao nhiêu?",
+     "hints": [
+      "Anh Fury hỏi em: đề bài cho điểm đội A, còn điểm đội B thì nhiều hơn hay ít hơn đội A? Em cần tính điểm đội B trước.",
+      "Đúng rồi, đội B ít hơn đội A 8.600 điểm, vậy em lấy 32.450 - 8.600 để tìm điểm đội B.",
+      "Sau khi có điểm đội B, em cộng điểm đội A với điểm đội B để tìm tổng điểm của cả hai đội."
+     ],
+     "loiGiai": "Điểm của đội B là:\n32.450 - 8.600 = 23.850 (điểm)\nTổng số điểm của cả hai đội là:\n32.450 + 23.850 = 56.300 (điểm)",
+     "dapSo": "56.300 điểm"
+    }
+   ]
+  },
+  {
+   "so": 3,
+   "ten": "Tìm thành phần chưa biết (tìm x)",
+   "lyThuyet": "Khi tìm thành phần chưa biết trong phép tính, em ghi nhớ các quy tắc sau: muốn tìm số hạng chưa biết, ta lấy tổng trừ đi số hạng đã biết. Muốn tìm số bị trừ, ta lấy hiệu cộng với số trừ; muốn tìm số trừ, ta lấy số bị trừ trừ đi hiệu. Muốn tìm thừa số chưa biết, ta lấy tích chia cho thừa số đã biết. Muốn tìm số bị chia, ta lấy thương nhân với số chia; muốn tìm số chia, ta lấy số bị chia chia cho thương.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Tìm x, biết: x + 2.350 = 8.700",
+     "options": [
+      "x = 6.350",
+      "x = 6.450",
+      "x = 5.350",
+      "x = 11.050"
+     ],
+     "a": 0,
+     "explain": "Muốn tìm số hạng chưa biết, ta lấy tổng trừ đi số hạng đã biết: x = 8.700 - 2.350 = 6.350."
+    },
+    {
+     "type": "mcq",
+     "q": "Tìm x, biết: x - 1.500 = 4.200",
+     "options": [
+      "x = 5.700",
+      "x = 2.700",
+      "x = 5.600",
+      "x = 6.700"
+     ],
+     "a": 0,
+     "explain": "Muốn tìm số bị trừ, ta lấy hiệu cộng với số trừ: x = 4.200 + 1.500 = 5.700."
+    },
+    {
+     "type": "mcq",
+     "q": "Tìm x, biết: x x 6 = 4.242",
+     "options": [
+      "x = 707",
+      "x = 706",
+      "x = 717",
+      "x = 704"
+     ],
+     "a": 0,
+     "explain": "Muốn tìm thừa số chưa biết, ta lấy tích chia cho thừa số đã biết: x = 4.242 : 6 = 707."
+    },
+    {
+     "type": "mcq",
+     "q": "Tìm x, biết: x : 5 = 1.208",
+     "options": [
+      "x = 6.040",
+      "x = 6.400",
+      "x = 6.140",
+      "x = 6.004"
+     ],
+     "a": 0,
+     "explain": "Muốn tìm số bị chia, ta lấy thương nhân với số chia: x = 1.208 x 5 = 6.040."
+    },
+    {
+     "type": "fill",
+     "q": "Tìm x, biết: 9.000 - x = 3.450. Vậy x = ___",
+     "answer": "5.550",
+     "accept": [
+      "5550",
+      "5.550"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Tìm x, biết: 7 x x = 4.032. Vậy x = ___",
+     "answer": "576",
+     "accept": [
+      "576"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Tìm x, biết: x + 3.800 = 9.500 - 1.200. Em hãy tính vế phải trước rồi tìm x.",
+     "hints": [
+      "Anh Fury hỏi em: vế phải của phép tính có hai số, em cần làm phép tính gì trước khi tìm x?",
+      "Đúng rồi, em tính 9.500 - 1.200 trước để đưa về dạng x + 3.800 = một số cụ thể.",
+      "Sau khi có kết quả vế phải, em áp dụng quy tắc: muốn tìm số hạng chưa biết, lấy tổng trừ đi số hạng đã biết."
+     ],
+     "loiGiai": "Tính vế phải: 9.500 - 1.200 = 8.300\nVậy: x + 3.800 = 8.300\nx = 8.300 - 3.800\nx = 4.500",
+     "dapSo": "x = 4.500"
+    },
+    {
+     "type": "solve",
+     "de": "Một cửa hàng có một số quyển vở, sau khi bán đi 2.400 quyển thì còn lại 5.600 quyển. Hỏi lúc đầu cửa hàng có bao nhiêu quyển vở? Em hãy đặt phép tính tìm x rồi giải.",
+     "hints": [
+      "Anh Fury hỏi em: gọi số vở lúc đầu là x, sau khi bán đi 2.400 quyển thì còn 5.600 quyển, em viết được phép tính nào có chứa x?",
+      "Đúng rồi, đó là: x - 2.400 = 5.600. Đây là dạng tìm số bị trừ, em còn nhớ quy tắc tìm số bị trừ không?",
+      "Muốn tìm số bị trừ, ta lấy hiệu cộng với số trừ: x = 5.600 + 2.400."
+     ],
+     "loiGiai": "Gọi số quyển vở lúc đầu là x, ta có:\nx - 2.400 = 5.600\nx = 5.600 + 2.400\nx = 8.000\nVậy lúc đầu cửa hàng có 8.000 quyển vở.",
+     "dapSo": "8.000 quyển vở"
+    }
+   ]
+  },
+  {
+   "so": 4,
+   "ten": "Làm tròn số đến hàng nghìn, chục nghìn",
+   "lyThuyet": "Muốn làm tròn một số đến hàng nghìn, em nhìn chữ số ở hàng trăm (hàng liền sau hàng nghìn): nếu chữ số đó từ 5 trở lên thì làm tròn lên (tăng thêm 1 ở hàng nghìn), nếu bé hơn 5 thì làm tròn xuống (giữ nguyên hàng nghìn, các hàng sau đều là 0). Muốn làm tròn đến hàng chục nghìn, em nhìn chữ số ở hàng nghìn theo đúng quy tắc tương tự. Làm tròn số giúp em tính nhẩm nhanh và ước lượng kết quả trong thực tế.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Làm tròn số 24.650 đến hàng nghìn, ta được:",
+     "options": [
+      "25.000",
+      "24.000",
+      "24.600",
+      "20.000"
+     ],
+     "a": 0,
+     "explain": "Nhìn chữ số hàng trăm của 24.650 là 6 (từ 5 trở lên) nên làm tròn lên: 24.650 làm tròn thành 25.000."
+    },
+    {
+     "type": "mcq",
+     "q": "Làm tròn số 63.280 đến hàng nghìn, ta được:",
+     "options": [
+      "63.000",
+      "64.000",
+      "63.300",
+      "60.000"
+     ],
+     "a": 0,
+     "explain": "Nhìn chữ số hàng trăm của 63.280 là 2 (bé hơn 5) nên làm tròn xuống, giữ nguyên hàng nghìn: 63.280 làm tròn thành 63.000."
+    },
+    {
+     "type": "mcq",
+     "q": "Làm tròn số 45.600 đến hàng chục nghìn, ta được:",
+     "options": [
+      "50.000",
+      "40.000",
+      "45.000",
+      "46.000"
+     ],
+     "a": 0,
+     "explain": "Nhìn chữ số hàng nghìn của 45.600 là 5 (từ 5 trở lên) nên làm tròn lên: 45.600 làm tròn thành 50.000."
+    },
+    {
+     "type": "mcq",
+     "q": "Một sân vận động có 38.420 khán giả đến xem bóng đá. Làm tròn số này đến hàng chục nghìn để ước lượng, ta được khoảng:",
+     "options": [
+      "40.000 khán giả",
+      "30.000 khán giả",
+      "38.000 khán giả",
+      "39.000 khán giả"
+     ],
+     "a": 0,
+     "explain": "Nhìn chữ số hàng nghìn của 38.420 là 8 (từ 5 trở lên) nên làm tròn lên: 38.420 làm tròn đến hàng chục nghìn thành 40.000."
+    },
+    {
+     "type": "fill",
+     "q": "Làm tròn số 17.500 đến hàng nghìn, ta được ___",
+     "answer": "18.000",
+     "accept": [
+      "18000",
+      "18.000"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Làm tròn số 82.300 đến hàng chục nghìn, ta được ___",
+     "answer": "80.000",
+     "accept": [
+      "80000",
+      "80.000"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một trường học có 3.480 học sinh. Em hãy làm tròn số học sinh đến hàng nghìn và đến hàng trăm, sau đó cho biết cách làm tròn nào cho kết quả gần với số thực hơn.",
+     "hints": [
+      "Anh Fury hỏi em: khi làm tròn 3.480 đến hàng nghìn, em nhìn chữ số hàng trăm là 4, vậy làm tròn lên hay xuống?",
+      "Chữ số hàng trăm là 4 (bé hơn 5) nên làm tròn xuống, giữ nguyên hàng nghìn là 3, các hàng sau là 0. Còn làm tròn đến hàng trăm thì em nhìn chữ số hàng chục là 8, làm tròn lên hay xuống?",
+      "Chữ số hàng chục là 8 (từ 5 trở lên) nên làm tròn lên. Em so sánh khoảng cách của hai kết quả làm tròn với số 3.480 để biết cách nào gần hơn."
+     ],
+     "loiGiai": "Làm tròn 3.480 đến hàng nghìn: chữ số hàng trăm là 4 (bé hơn 5) nên làm tròn xuống, được 3.000.\nLàm tròn 3.480 đến hàng trăm: chữ số hàng chục là 8 (từ 5 trở lên) nên làm tròn lên, được 3.500.\nSố 3.500 gần với 3.480 hơn (chỉ chênh 20), còn 3.000 chênh tới 480. Vậy làm tròn đến hàng trăm cho kết quả gần với số thực hơn.",
+     "dapSo": "Làm tròn đến hàng nghìn: 3.000; làm tròn đến hàng trăm: 3.500; làm tròn đến hàng trăm gần số thực hơn"
+    },
+    {
+     "type": "solve",
+     "de": "Một cửa hàng sách bán được 26.750 quyển sách trong một năm. Em hãy làm tròn số 26.750 đến hàng nghìn và đến hàng chục nghìn.",
+     "hints": [
+      "Anh Fury hỏi em: làm tròn 26.750 đến hàng nghìn, em nhìn chữ số hàng trăm là số nào, và số đó từ 5 trở lên hay bé hơn 5?",
+      "Chữ số hàng trăm là 7 (từ 5 trở lên) nên làm tròn lên, hàng nghìn tăng thêm 1. Còn làm tròn đến hàng chục nghìn thì em nhìn chữ số hàng nghìn là số nào?",
+      "Chữ số hàng nghìn là 6 (từ 5 trở lên) nên cũng làm tròn lên, hàng chục nghìn tăng thêm 1."
+     ],
+     "loiGiai": "Làm tròn 26.750 đến hàng nghìn: chữ số hàng trăm là 7 (từ 5 trở lên) nên làm tròn lên, được 27.000.\nLàm tròn 26.750 đến hàng chục nghìn: chữ số hàng nghìn là 6 (từ 5 trở lên) nên làm tròn lên, được 30.000.",
+     "dapSo": "Làm tròn đến hàng nghìn: 27.000; làm tròn đến hàng chục nghìn: 30.000"
+    }
+   ]
+  }
+ ]
+}
