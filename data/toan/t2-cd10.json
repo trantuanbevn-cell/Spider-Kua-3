@@ -1,218 +1,303 @@
 {
-  "mon": "toan",
-  "tap": 2,
-  "chuDe": "Phép cộng, phép trừ phân số",
-  "cdSo": 10,
-  "bai": [
+ "mon": "toan",
+ "tap": 2,
+ "chuDe": "Phép cộng, phép trừ phân số",
+ "cdSo": 11,
+ "bai": [
+  {
+   "so": 60,
+   "ten": "Phép cộng phân số",
+   "lyThuyet": "Muốn cộng hai phân số CÙNG mẫu số, em cộng hai tử số với nhau và giữ nguyên mẫu số. Ví dụ: 3/8 + 2/8 = 5/8. Muốn cộng hai phân số KHÁC mẫu số, em quy đồng mẫu số hai phân số rồi cộng như hai phân số cùng mẫu số. Ví dụ: 1/2 + 1/3 = 3/6 + 2/6 = 5/6. Sau khi cộng, nếu có thể thì rút gọn kết quả về phân số tối giản.",
+   "cauHoi": [
     {
-      "so": 60,
-      "ten": "Phép cộng phân số",
-      "lyThuyet": "Muốn cộng hai phân số CÙNG mẫu số, em cộng hai tử số với nhau và giữ nguyên mẫu số. Ví dụ: 3/8 + 2/8 = 5/8. Muốn cộng hai phân số KHÁC mẫu số, em quy đồng mẫu số hai phân số rồi cộng như hai phân số cùng mẫu số. Ví dụ: 1/2 + 1/3 = 3/6 + 2/6 = 5/6. Sau khi cộng, nếu có thể thì rút gọn kết quả về phân số tối giản.",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "Tính: 1/4 + 2/4 = ?",
-          "options": ["3/4", "3/8", "2/4", "1/8"],
-          "a": 0,
-          "explain": "Hai phân số cùng mẫu số 4, ta cộng tử số: 1 + 2 = 3, giữ nguyên mẫu số. Vậy 1/4 + 2/4 = 3/4."
-        },
-        {
-          "type": "mcq",
-          "q": "Nam có 3/7 quả dưa hấu, Minh có 2/7 quả dưa hấu bằng nhau. Cả hai bạn có tất cả bao nhiêu phần quả dưa hấu?",
-          "options": ["5/7", "5/14", "1/7", "6/7"],
-          "a": 0,
-          "explain": "Cộng hai phân số cùng mẫu số 7: 3/7 + 2/7 = (3+2)/7 = 5/7."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính: 1/3 + 1/4 = ?",
-          "options": ["7/12", "2/7", "1/12", "5/12"],
-          "a": 0,
-          "explain": "Quy đồng mẫu số: 1/3 = 4/12, 1/4 = 3/12. Sau đó cộng: 4/12 + 3/12 = 7/12."
-        },
-        {
-          "type": "mcq",
-          "q": "An tập bơi thuận tiện, tính nhanh: 1/5 + 2/5 + 3/5 = ?",
-          "options": ["6/5", "6/15", "1", "5/5"],
-          "a": 0,
-          "explain": "Ba phân số cùng mẫu số 5, ta cộng các tử số: 1 + 2 + 3 = 6, giữ nguyên mẫu số: kết quả là 6/5."
-        },
-        {
-          "type": "mcq",
-          "q": "Rút gọn rồi tính: 4/8 + 1/2 = ?",
-          "options": ["1", "5/8", "5/10", "3/4"],
-          "a": 0,
-          "explain": "Rút gọn 4/8 = 1/2. Vậy phép tính trở thành 1/2 + 1/2 = 2/2 = 1."
-        },
-        {
-          "type": "fill",
-          "q": "Điền số thích hợp vào chỗ trống: 3/10 + 6/10 = ___/10",
-          "answer": "9",
-          "accept": ["9", "9/10"]
-        },
-        {
-          "type": "solve",
-          "de": "Đội cờ vua của Bình có một mảnh vườn hình chữ nhật để trồng hoa, chiều dài mảnh vườn là 3/4 m, chiều rộng là 1/2 m. Tính nửa chu vi mảnh vườn đó (nửa chu vi = chiều dài + chiều rộng).",
-          "hints": [
-            "Anh Fury hỏi em nhé: nửa chu vi hình chữ nhật được tính bằng cách nào từ chiều dài và chiều rộng?",
-            "Đúng rồi, nửa chu vi = chiều dài + chiều rộng. Vậy em cần cộng 3/4 với 1/2, mà hai phân số này khác mẫu số đấy, em làm sao để cộng được?",
-            "Em hãy quy đồng mẫu số 1/2 thành 2/4, rồi cộng 3/4 + 2/4 xem kết quả là bao nhiêu."
-          ],
-          "loiGiai": "Nửa chu vi mảnh vườn là:\n3/4 + 1/2 = 3/4 + 2/4 = 5/4 (m)",
-          "dapSo": "5/4 m"
-        },
-        {
-          "type": "solve",
-          "de": "Vòi nước thứ nhất chảy vào bể trong 2 giờ được 1/3 bể, vòi nước thứ hai chảy vào bể trong 2 giờ được 2/5 bể. Hỏi cả hai vòi cùng chảy trong 2 giờ thì được bao nhiêu phần bể nước?",
-          "hints": [
-            "Anh Fury hỏi: đề bài cho hai vòi nước, mỗi vòi chảy được một phần bể khác nhau. Muốn biết cả hai vòi chảy được bao nhiêu, em phải làm phép tính gì?",
-            "Đúng vậy, em cần cộng 1/3 bể và 2/5 bể lại. Nhưng hai phân số này khác mẫu số, em nhớ cách quy đồng chứ?",
-            "Mẫu số chung là 15: 1/3 = 5/15 và 2/5 = 6/15. Bây giờ em cộng 5/15 + 6/15 nhé."
-          ],
-          "loiGiai": "Cả hai vòi cùng chảy trong 2 giờ được số phần bể là:\n1/3 + 2/5 = 5/15 + 6/15 = 11/15 (bể)",
-          "dapSo": "11/15 bể"
-        }
-      ]
+     "type": "mcq",
+     "q": "Tính: 1/4 + 2/4 = ?",
+     "options": [
+      "3/4",
+      "3/8",
+      "2/4",
+      "1/8"
+     ],
+     "a": 0,
+     "explain": "Hai phân số cùng mẫu số 4, ta cộng tử số: 1 + 2 = 3, giữ nguyên mẫu số. Vậy 1/4 + 2/4 = 3/4."
     },
     {
-      "so": 61,
-      "ten": "Phép trừ phân số",
-      "lyThuyet": "Muốn trừ hai phân số CÙNG mẫu số, em trừ tử số của phân số thứ nhất cho tử số của phân số thứ hai và giữ nguyên mẫu số. Ví dụ: 4/5 - 1/5 = 3/5. Muốn trừ hai phân số KHÁC mẫu số, em quy đồng mẫu số hai phân số rồi trừ như hai phân số cùng mẫu số. Ví dụ: 1/2 - 1/4 = 2/4 - 1/4 = 1/4. Sau khi trừ, nếu có thể thì rút gọn kết quả về phân số tối giản.",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "Tính: 3/4 - 1/4 = ?",
-          "options": ["1/2", "2/4", "1/4", "2/8"],
-          "a": 0,
-          "explain": "Hai phân số cùng mẫu số 4, ta trừ tử số: 3 - 1 = 2, giữ nguyên mẫu số, được 2/4. Rút gọn 2/4 = 1/2."
-        },
-        {
-          "type": "mcq",
-          "q": "Minh có 7/8 chiếc bánh, Minh ăn hết 3/8 chiếc bánh. Hỏi Minh còn lại bao nhiêu phần chiếc bánh?",
-          "options": ["1/2", "4/8", "4/16", "3/8"],
-          "a": 0,
-          "explain": "Trừ hai phân số cùng mẫu số 8: 7/8 - 3/8 = 4/8. Rút gọn 4/8 = 1/2."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính: 1/2 - 1/8 = ?",
-          "options": ["3/8", "1/6", "2/8", "1/4"],
-          "a": 0,
-          "explain": "Quy đồng mẫu số: 1/2 = 4/8. Sau đó trừ: 4/8 - 1/8 = 3/8."
-        },
-        {
-          "type": "mcq",
-          "q": "An và Nam thi đấu cờ vua, An giải được 5/6 số bài, Nam giải được 1/3 số bài. Hỏi An giải nhiều hơn Nam bao nhiêu phần số bài?",
-          "options": ["1/2", "4/3", "4/6", "2/3"],
-          "a": 0,
-          "explain": "Quy đồng: 5/6 giữ nguyên, 1/3 = 2/6. Trừ: 5/6 - 2/6 = 3/6 = 1/2."
-        },
-        {
-          "type": "mcq",
-          "q": "Rút gọn rồi tính: 6/9 - 1/3 = ?",
-          "options": ["1/3", "5/6", "5/9", "2/3"],
-          "a": 0,
-          "explain": "Rút gọn 6/9 = 2/3. Vậy phép tính trở thành 2/3 - 1/3 = 1/3."
-        },
-        {
-          "type": "fill",
-          "q": "Điền số thích hợp vào chỗ trống: 9/10 - 7/10 = ___/10",
-          "answer": "2",
-          "accept": ["2", "2/10", "1/5"]
-        },
-        {
-          "type": "solve",
-          "de": "Một mảnh vườn hình chữ nhật của đội siêu anh hùng có diện tích 3/4 ha, các bạn dùng 1/2 ha để trồng cây ăn quả, phần còn lại trồng hoa. Hỏi phần đất trồng hoa chiếm bao nhiêu phần héc-ta?",
-          "hints": [
-            "Anh Fury hỏi em: muốn tìm phần đất còn lại, em lấy tổng diện tích trừ đi phần nào?",
-            "Đúng rồi, em lấy 3/4 (tổng diện tích) trừ đi 1/2 (phần trồng cây ăn quả). Nhưng hai phân số này khác mẫu số đấy.",
-            "Em quy đồng 1/2 thành 2/4, rồi tính 3/4 - 2/4 xem còn lại bao nhiêu."
-          ],
-          "loiGiai": "Diện tích đất trồng hoa là:\n3/4 - 1/2 = 3/4 - 2/4 = 1/4 (ha)",
-          "dapSo": "1/4 ha"
-        },
-        {
-          "type": "solve",
-          "de": "Bình có 5/6 chiếc bánh pizza hình tròn dùng để đãi bạn sau trận bóng đá. Bình đã mời các bạn ăn hết 1/3 chiếc bánh. Hỏi Bình còn lại bao nhiêu phần chiếc bánh?",
-          "hints": [
-            "Anh Fury hỏi: Bình có một lượng bánh ban đầu, sau đó bớt đi một phần. Vậy để tìm phần còn lại em làm phép tính cộng hay trừ?",
-            "Đúng là phép trừ! Em lấy 5/6 trừ đi 1/3, nhưng hai phân số này khác mẫu số, em nhớ quy đồng nhé.",
-            "Mẫu số chung là 6: 1/3 = 2/6. Bây giờ em tính 5/6 - 2/6 xem kết quả là bao nhiêu."
-          ],
-          "loiGiai": "Số phần bánh Bình còn lại là:\n5/6 - 1/3 = 5/6 - 2/6 = 3/6 = 1/2 (chiếc bánh)",
-          "dapSo": "1/2 chiếc bánh"
-        }
-      ]
+     "type": "mcq",
+     "q": "Nam có 3/7 quả dưa hấu, Minh có 2/7 quả dưa hấu bằng nhau. Cả hai bạn có tất cả bao nhiêu phần quả dưa hấu?",
+     "options": [
+      "5/7",
+      "5/14",
+      "1/7",
+      "6/7"
+     ],
+     "a": 0,
+     "explain": "Cộng hai phân số cùng mẫu số 7: 3/7 + 2/7 = (3+2)/7 = 5/7."
     },
     {
-      "so": 62,
-      "ten": "Luyện tập chung",
-      "lyThuyet": "Khi cộng hoặc trừ hai phân số cùng mẫu số, em chỉ cần cộng (hoặc trừ) hai tử số và giữ nguyên mẫu số. Khi cộng hoặc trừ hai phân số khác mẫu số, em phải quy đồng mẫu số trước, rồi mới cộng (hoặc trừ) như hai phân số cùng mẫu số. Luôn nhớ rút gọn kết quả về phân số tối giản nếu có thể.",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "Tính: 1/4 + 3/8 = ?",
-          "options": ["5/8", "4/12", "4/8", "1/2"],
-          "a": 0,
-          "explain": "Quy đồng mẫu số: 1/4 = 2/8. Cộng: 2/8 + 3/8 = 5/8."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính: 8/9 - 2/3 = ?",
-          "options": ["2/9", "6/6", "1/3", "6/9"],
-          "a": 0,
-          "explain": "Quy đồng mẫu số: 2/3 = 6/9. Trừ: 8/9 - 6/9 = 2/9."
-        },
-        {
-          "type": "mcq",
-          "q": "Tìm phân số thích hợp: 1/2 + ? = 5/6",
-          "options": ["1/3", "1/2", "2/3", "1/6"],
-          "a": 0,
-          "explain": "Quy đồng: 1/2 = 3/6, 5/6 giữ nguyên. Vậy phân số cần tìm là 5/6 - 3/6 = 2/6 = 1/3. Kiểm tra lại: 1/2 + 1/3 = 3/6 + 2/6 = 5/6, đúng."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính thuận tiện: 1/5 + 2/7 + 4/5 = ?",
-          "options": ["9/7", "7/17", "1", "2/7"],
-          "a": 0,
-          "explain": "Nhóm hai phân số cùng mẫu số lại trước: (1/5 + 4/5) + 2/7 = 1 + 2/7 = 7/7 + 2/7 = 9/7."
-        },
-        {
-          "type": "mcq",
-          "q": "Rút gọn rồi tính: 2/4 + 1/6 = ?",
-          "options": ["2/3", "3/10", "1/2", "3/6"],
-          "a": 0,
-          "explain": "Rút gọn 2/4 = 1/2. Quy đồng: 1/2 = 3/6, 1/6 giữ nguyên. Cộng: 3/6 + 1/6 = 4/6 = 2/3."
-        },
-        {
-          "type": "fill",
-          "q": "Điền số thích hợp vào chỗ trống: 7/10 + 1/5 = 7/10 + 2/10 = ___/10",
-          "answer": "9",
-          "accept": ["9", "9/10"]
-        },
-        {
-          "type": "solve",
-          "de": "Một cửa hàng thể thao có 5/8 tấn gạo dùng để đổi thưởng cho đội bóng đá thiếu nhi, cửa hàng đã bán đi 1/4 tấn. Hỏi cửa hàng còn lại bao nhiêu tấn gạo?",
-          "hints": [
-            "Anh Fury hỏi: cửa hàng có sẵn một số gạo rồi bán bớt đi, vậy để tìm số gạo còn lại em dùng phép tính gì?",
-            "Chính xác, đó là phép trừ: lấy số gạo ban đầu trừ đi số gạo đã bán. Hai phân số 5/8 và 1/4 khác mẫu số, em quy đồng thế nào?",
-            "Mẫu số chung là 8: 1/4 = 2/8. Bây giờ em tính 5/8 - 2/8 xem còn lại bao nhiêu tấn."
-          ],
-          "loiGiai": "Số tấn gạo cửa hàng còn lại là:\n5/8 - 1/4 = 5/8 - 2/8 = 3/8 (tấn)",
-          "dapSo": "3/8 tấn"
-        },
-        {
-          "type": "solve",
-          "de": "Tìm tổng và hiệu của hai phân số 1/3 và 1/4.",
-          "hints": [
-            "Anh Fury hỏi: đề bài yêu cầu tìm cả tổng và hiệu, vậy em cần thực hiện mấy phép tính, và đó là những phép tính nào?",
-            "Đúng rồi, hai phép tính: một phép cộng để tìm tổng, một phép trừ để tìm hiệu. Hai phân số 1/3 và 1/4 khác mẫu số, em quy đồng mẫu số chung là bao nhiêu?",
-            "Mẫu số chung là 12: 1/3 = 4/12, 1/4 = 3/12. Em hãy tính 4/12 + 3/12 để ra tổng, và 4/12 - 3/12 để ra hiệu."
-          ],
-          "loiGiai": "Quy đồng mẫu số: 1/3 = 4/12 và 1/4 = 3/12.\nTổng của hai phân số là:\n1/3 + 1/4 = 4/12 + 3/12 = 7/12\nHiệu của hai phân số là:\n1/3 - 1/4 = 4/12 - 3/12 = 1/12",
-          "dapSo": "Tổng = 7/12; Hiệu = 1/12"
-        }
-      ]
+     "type": "mcq",
+     "q": "Tính: 1/3 + 1/4 = ?",
+     "options": [
+      "7/12",
+      "2/7",
+      "1/12",
+      "5/12"
+     ],
+     "a": 0,
+     "explain": "Quy đồng mẫu số: 1/3 = 4/12, 1/4 = 3/12. Sau đó cộng: 4/12 + 3/12 = 7/12."
+    },
+    {
+     "type": "mcq",
+     "q": "An tập bơi thuận tiện, tính nhanh: 1/5 + 2/5 + 3/5 = ?",
+     "options": [
+      "6/5",
+      "6/15",
+      "1",
+      "7/5"
+     ],
+     "a": 0,
+     "explain": "Ba phân số cùng mẫu số 5, ta cộng các tử số: 1 + 2 + 3 = 6, giữ nguyên mẫu số: kết quả là 6/5."
+    },
+    {
+     "type": "mcq",
+     "q": "Rút gọn rồi tính: 4/8 + 1/2 = ?",
+     "options": [
+      "1",
+      "5/8",
+      "5/10",
+      "3/4"
+     ],
+     "a": 0,
+     "explain": "Rút gọn 4/8 = 1/2. Vậy phép tính trở thành 1/2 + 1/2 = 2/2 = 1."
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống: 3/10 + 6/10 = ___/10",
+     "answer": "9",
+     "accept": [
+      "9",
+      "9/10"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Đội cờ vua của Bình có một mảnh vườn hình chữ nhật để trồng hoa, chiều dài mảnh vườn là 3/4 m, chiều rộng là 1/2 m. Tính nửa chu vi mảnh vườn đó (nửa chu vi = chiều dài + chiều rộng).",
+     "hints": [
+      "Anh Fury hỏi em nhé: nửa chu vi hình chữ nhật được tính bằng cách nào từ chiều dài và chiều rộng?",
+      "Đúng rồi, nửa chu vi = chiều dài + chiều rộng. Vậy em cần cộng 3/4 với 1/2, mà hai phân số này khác mẫu số đấy, em làm sao để cộng được?",
+      "Em hãy quy đồng mẫu số 1/2 thành 2/4, rồi cộng 3/4 + 2/4 xem kết quả là bao nhiêu."
+     ],
+     "loiGiai": "Nửa chu vi mảnh vườn là:\n3/4 + 1/2 = 3/4 + 2/4 = 5/4 (m)",
+     "dapSo": "5/4 m"
+    },
+    {
+     "type": "solve",
+     "de": "Vòi nước thứ nhất chảy vào bể trong 2 giờ được 1/3 bể, vòi nước thứ hai chảy vào bể trong 2 giờ được 2/5 bể. Hỏi cả hai vòi cùng chảy trong 2 giờ thì được bao nhiêu phần bể nước?",
+     "hints": [
+      "Anh Fury hỏi: đề bài cho hai vòi nước, mỗi vòi chảy được một phần bể khác nhau. Muốn biết cả hai vòi chảy được bao nhiêu, em phải làm phép tính gì?",
+      "Đúng vậy, em cần cộng 1/3 bể và 2/5 bể lại. Nhưng hai phân số này khác mẫu số, em nhớ cách quy đồng chứ?",
+      "Mẫu số chung là 15: 1/3 = 5/15 và 2/5 = 6/15. Bây giờ em cộng 5/15 + 6/15 nhé."
+     ],
+     "loiGiai": "Cả hai vòi cùng chảy trong 2 giờ được số phần bể là:\n1/3 + 2/5 = 5/15 + 6/15 = 11/15 (bể)",
+     "dapSo": "11/15 bể"
     }
-  ]
+   ]
+  },
+  {
+   "so": 61,
+   "ten": "Phép trừ phân số",
+   "lyThuyet": "Muốn trừ hai phân số CÙNG mẫu số, em trừ tử số của phân số thứ nhất cho tử số của phân số thứ hai và giữ nguyên mẫu số. Ví dụ: 4/5 - 1/5 = 3/5. Muốn trừ hai phân số KHÁC mẫu số, em quy đồng mẫu số hai phân số rồi trừ như hai phân số cùng mẫu số. Ví dụ: 1/2 - 1/4 = 2/4 - 1/4 = 1/4. Sau khi trừ, nếu có thể thì rút gọn kết quả về phân số tối giản.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Tính: 3/4 - 1/4 = ?",
+     "options": [
+      "1/2",
+      "4/4",
+      "1/4",
+      "3/8"
+     ],
+     "a": 0,
+     "explain": "Hai phân số cùng mẫu số 4, ta trừ tử số: 3 - 1 = 2, giữ nguyên mẫu số, được 2/4. Rút gọn 2/4 = 1/2."
+    },
+    {
+     "type": "mcq",
+     "q": "Minh có 7/8 chiếc bánh, Minh ăn hết 3/8 chiếc bánh. Hỏi Minh còn lại bao nhiêu phần chiếc bánh?",
+     "options": [
+      "1/2",
+      "5/4",
+      "4/16",
+      "3/8"
+     ],
+     "a": 0,
+     "explain": "Trừ hai phân số cùng mẫu số 8: 7/8 - 3/8 = 4/8. Rút gọn 4/8 = 1/2."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính: 1/2 - 1/8 = ?",
+     "options": [
+      "3/8",
+      "1/6",
+      "5/8",
+      "1/4"
+     ],
+     "a": 0,
+     "explain": "Quy đồng mẫu số: 1/2 = 4/8. Sau đó trừ: 4/8 - 1/8 = 3/8."
+    },
+    {
+     "type": "mcq",
+     "q": "An và Nam thi đấu cờ vua, An giải được 5/6 số bài, Nam giải được 1/3 số bài. Hỏi An giải nhiều hơn Nam bao nhiêu phần số bài?",
+     "options": [
+      "1/2",
+      "4/3",
+      "5/3",
+      "2/3"
+     ],
+     "a": 0,
+     "explain": "Quy đồng: 5/6 giữ nguyên, 1/3 = 2/6. Trừ: 5/6 - 2/6 = 3/6 = 1/2."
+    },
+    {
+     "type": "mcq",
+     "q": "Rút gọn rồi tính: 6/9 - 1/3 = ?",
+     "options": [
+      "1/3",
+      "5/6",
+      "5/9",
+      "2/3"
+     ],
+     "a": 0,
+     "explain": "Rút gọn 6/9 = 2/3. Vậy phép tính trở thành 2/3 - 1/3 = 1/3."
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống: 9/10 - 7/10 = ___/10",
+     "answer": "2",
+     "accept": [
+      "2",
+      "2/10",
+      "1/5"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một mảnh vườn hình chữ nhật của đội siêu anh hùng có diện tích 3/4 ha, các bạn dùng 1/2 ha để trồng cây ăn quả, phần còn lại trồng hoa. Hỏi phần đất trồng hoa chiếm bao nhiêu phần héc-ta?",
+     "hints": [
+      "Anh Fury hỏi em: muốn tìm phần đất còn lại, em lấy tổng diện tích trừ đi phần nào?",
+      "Đúng rồi, em lấy 3/4 (tổng diện tích) trừ đi 1/2 (phần trồng cây ăn quả). Nhưng hai phân số này khác mẫu số đấy.",
+      "Em quy đồng 1/2 thành 2/4, rồi tính 3/4 - 2/4 xem còn lại bao nhiêu."
+     ],
+     "loiGiai": "Diện tích đất trồng hoa là:\n3/4 - 1/2 = 3/4 - 2/4 = 1/4 (ha)",
+     "dapSo": "1/4 ha"
+    },
+    {
+     "type": "solve",
+     "de": "Bình có 5/6 chiếc bánh pizza hình tròn dùng để đãi bạn sau trận bóng đá. Bình đã mời các bạn ăn hết 1/3 chiếc bánh. Hỏi Bình còn lại bao nhiêu phần chiếc bánh?",
+     "hints": [
+      "Anh Fury hỏi: Bình có một lượng bánh ban đầu, sau đó bớt đi một phần. Vậy để tìm phần còn lại em làm phép tính cộng hay trừ?",
+      "Đúng là phép trừ! Em lấy 5/6 trừ đi 1/3, nhưng hai phân số này khác mẫu số, em nhớ quy đồng nhé.",
+      "Mẫu số chung là 6: 1/3 = 2/6. Bây giờ em tính 5/6 - 2/6 xem kết quả là bao nhiêu."
+     ],
+     "loiGiai": "Số phần bánh Bình còn lại là:\n5/6 - 1/3 = 5/6 - 2/6 = 3/6 = 1/2 (chiếc bánh)",
+     "dapSo": "1/2 chiếc bánh"
+    }
+   ]
+  },
+  {
+   "so": 62,
+   "ten": "Luyện tập chung",
+   "lyThuyet": "Khi cộng hoặc trừ hai phân số cùng mẫu số, em chỉ cần cộng (hoặc trừ) hai tử số và giữ nguyên mẫu số. Khi cộng hoặc trừ hai phân số khác mẫu số, em phải quy đồng mẫu số trước, rồi mới cộng (hoặc trừ) như hai phân số cùng mẫu số. Luôn nhớ rút gọn kết quả về phân số tối giản nếu có thể.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Tính: 1/4 + 3/8 = ?",
+     "options": [
+      "5/8",
+      "4/12",
+      "1/8",
+      "1/2"
+     ],
+     "a": 0,
+     "explain": "Quy đồng mẫu số: 1/4 = 2/8. Cộng: 2/8 + 3/8 = 5/8."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính: 8/9 - 2/3 = ?",
+     "options": [
+      "2/9",
+      "6/6",
+      "1/3",
+      "6/9"
+     ],
+     "a": 0,
+     "explain": "Quy đồng mẫu số: 2/3 = 6/9. Trừ: 8/9 - 6/9 = 2/9."
+    },
+    {
+     "type": "mcq",
+     "q": "Tìm phân số thích hợp: 1/2 + ? = 5/6",
+     "options": [
+      "1/3",
+      "1/2",
+      "2/3",
+      "1/6"
+     ],
+     "a": 0,
+     "explain": "Quy đồng: 1/2 = 3/6, 5/6 giữ nguyên. Vậy phân số cần tìm là 5/6 - 3/6 = 2/6 = 1/3. Kiểm tra lại: 1/2 + 1/3 = 3/6 + 2/6 = 5/6, đúng."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính thuận tiện: 1/5 + 2/7 + 4/5 = ?",
+     "options": [
+      "9/7",
+      "7/17",
+      "1",
+      "2/7"
+     ],
+     "a": 0,
+     "explain": "Nhóm hai phân số cùng mẫu số lại trước: (1/5 + 4/5) + 2/7 = 1 + 2/7 = 7/7 + 2/7 = 9/7."
+    },
+    {
+     "type": "mcq",
+     "q": "Rút gọn rồi tính: 2/4 + 1/6 = ?",
+     "options": [
+      "2/3",
+      "3/10",
+      "1/2",
+      "5/6"
+     ],
+     "a": 0,
+     "explain": "Rút gọn 2/4 = 1/2. Quy đồng: 1/2 = 3/6, 1/6 giữ nguyên. Cộng: 3/6 + 1/6 = 4/6 = 2/3."
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống: 7/10 + 1/5 = 7/10 + 2/10 = ___/10",
+     "answer": "9",
+     "accept": [
+      "9",
+      "9/10"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một cửa hàng thể thao có 5/8 tấn gạo dùng để đổi thưởng cho đội bóng đá thiếu nhi, cửa hàng đã bán đi 1/4 tấn. Hỏi cửa hàng còn lại bao nhiêu tấn gạo?",
+     "hints": [
+      "Anh Fury hỏi: cửa hàng có sẵn một số gạo rồi bán bớt đi, vậy để tìm số gạo còn lại em dùng phép tính gì?",
+      "Chính xác, đó là phép trừ: lấy số gạo ban đầu trừ đi số gạo đã bán. Hai phân số 5/8 và 1/4 khác mẫu số, em quy đồng thế nào?",
+      "Mẫu số chung là 8: 1/4 = 2/8. Bây giờ em tính 5/8 - 2/8 xem còn lại bao nhiêu tấn."
+     ],
+     "loiGiai": "Số tấn gạo cửa hàng còn lại là:\n5/8 - 1/4 = 5/8 - 2/8 = 3/8 (tấn)",
+     "dapSo": "3/8 tấn"
+    },
+    {
+     "type": "solve",
+     "de": "Tìm tổng và hiệu của hai phân số 1/3 và 1/4.",
+     "hints": [
+      "Anh Fury hỏi: đề bài yêu cầu tìm cả tổng và hiệu, vậy em cần thực hiện mấy phép tính, và đó là những phép tính nào?",
+      "Đúng rồi, hai phép tính: một phép cộng để tìm tổng, một phép trừ để tìm hiệu. Hai phân số 1/3 và 1/4 khác mẫu số, em quy đồng mẫu số chung là bao nhiêu?",
+      "Mẫu số chung là 12: 1/3 = 4/12, 1/4 = 3/12. Em hãy tính 4/12 + 3/12 để ra tổng, và 4/12 - 3/12 để ra hiệu."
+     ],
+     "loiGiai": "Quy đồng mẫu số: 1/3 = 4/12 và 1/4 = 3/12.\nTổng của hai phân số là:\n1/3 + 1/4 = 4/12 + 3/12 = 7/12\nHiệu của hai phân số là:\n1/3 - 1/4 = 4/12 - 3/12 = 1/12",
+     "dapSo": "Tổng = 7/12; Hiệu = 1/12"
+    }
+   ]
+  }
+ ]
 }

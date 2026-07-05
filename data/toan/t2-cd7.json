@@ -1,823 +1,1082 @@
 {
-  "mon": "toan",
-  "tap": 2,
-  "chuDe": "Phép nhân và phép chia",
-  "cdSo": 7,
-  "bai": [
+ "mon": "toan",
+ "tap": 2,
+ "chuDe": "Phép nhân và phép chia",
+ "cdSo": 8,
+ "bai": [
+  {
+   "so": 38,
+   "ten": "Nhân với số có một chữ số",
+   "lyThuyet": "Khi nhân một số có nhiều chữ số với số có một chữ số, em đặt tính theo cột dọc rồi nhân lần lượt từ hàng đơn vị (phải sang trái). Nếu tích ở một hàng lớn hơn 9 thì viết chữ số hàng đơn vị của tích đó và nhớ sang hàng liền trước. Ví dụ: 160.140 × 7 = 1.120.980.",
+   "cauHoi": [
     {
-      "so": 38,
-      "ten": "Nhân với số có một chữ số",
-      "lyThuyet": "Khi nhân một số có nhiều chữ số với số có một chữ số, em đặt tính theo cột dọc rồi nhân lần lượt từ hàng đơn vị (phải sang trái). Nếu tích ở một hàng lớn hơn 9 thì viết chữ số hàng đơn vị của tích đó và nhớ sang hàng liền trước. Ví dụ: 160.140 × 7 = 1.120.980.",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "Kết quả của phép tính 27.283 × 3 là bao nhiêu?",
-          "options": ["81.849", "81.949", "80.849", "82.849"],
-          "a": 0,
-          "explain": "27.283 × 3 = 81.849. Em nhân từng hàng từ phải sang trái: 3×3=9, 3×8=24 (viết 4 nhớ 2), 3×2=6 thêm 2 nhớ = 8, 3×7=21 (viết 1 nhớ 2), 3×2=6 thêm 2 nhớ = 8."
-        },
-        {
-          "type": "mcq",
-          "q": "40.819 × 5 = ?",
-          "options": ["200.095", "204.095", "204.905", "214.095"],
-          "a": 1,
-          "explain": "40.819 × 5 = 204.095. Đặt tính rồi nhân từng chữ số từ phải sang trái, nhớ khi tích vượt quá 9."
-        },
-        {
-          "type": "mcq",
-          "q": "374.519 × 2 = ?",
-          "options": ["749.038", "748.038", "749.048", "740.038"],
-          "a": 0,
-          "explain": "374.519 × 2 = 749.038."
-        },
-        {
-          "type": "mcq",
-          "q": "Một chiếc bóng đèn thường có tuổi thọ 800 giờ. Bóng đèn tiết kiệm điện có tuổi thọ gấp 3 lần bóng đèn thường. Hỏi bóng đèn tiết kiệm điện có tuổi thọ bao nhiêu giờ?",
-          "options": ["2.300 giờ", "2.400 giờ", "2.500 giờ", "1.400 giờ"],
-          "a": 1,
-          "explain": "Tuổi thọ bóng đèn tiết kiệm điện là 800 × 3 = 2.400 (giờ)."
-        },
-        {
-          "type": "mcq",
-          "q": "Trong trò chơi xếp hạt thóc lên bàn cờ, ô thứ nhất có 1 hạt, mỗi ô sau gấp đôi ô liền trước. Hỏi ô thứ 5 có bao nhiêu hạt thóc?",
-          "options": ["8 hạt", "16 hạt", "32 hạt", "10 hạt"],
-          "a": 1,
-          "explain": "Số hạt các ô lần lượt là 1, 2, 4, 8, 16. Vậy ô thứ 5 có 16 hạt (vì 2×2×2×2 = 16)."
-        },
-        {
-          "type": "fill",
-          "q": "Điền số thích hợp vào chỗ trống: 48.102 × 5 = ___",
-          "answer": "240.510",
-          "accept": ["240510", "240.510"]
-        },
-        {
-          "type": "solve",
-          "de": "Đội bóng của Nam mỗi buổi tập uống hết 32.419 ml nước lọc. Hỏi 4 buổi tập đội uống hết bao nhiêu mi-li-lít nước?",
-          "hints": [
-            "Em ơi, đề cho biết một buổi tập đội uống bao nhiêu nước, và người ta hỏi bao nhiêu buổi tập vậy?",
-            "Muốn tìm 4 buổi uống hết bao nhiêu, mình lấy số nước một buổi nhân hay chia cho 4 nhỉ?",
-            "Đúng rồi, mình sẽ đặt tính 32.419 nhân với 4, nhớ nhân từ phải sang trái và nhớ khi tích vượt quá 9 nhé."
-          ],
-          "loiGiai": "Số mi-li-lít nước 4 buổi tập đội uống hết là:\n32.419 × 4 = 129.676 (ml)\nĐáp số: 129.676 ml",
-          "dapSo": "129.676 ml"
-        },
-        {
-          "type": "solve",
-          "de": "Một cửa hàng có 31.090 viên bi. Cửa hàng nhập thêm số bi gấp 2 lần số bi đang có. Hỏi sau khi nhập thêm, cửa hàng có tất cả bao nhiêu viên bi?",
-          "hints": [
-            "Em thử tìm xem số bi nhập thêm là bao nhiêu đã nhé, nó gấp mấy lần số bi ban đầu?",
-            "Số bi nhập thêm mình tính bằng 31.090 nhân với 2 đúng không? Sau đó còn phải làm gì nữa?",
-            "Sau khi tính được số bi nhập thêm, mình cộng với số bi ban đầu là ra tổng số bi cuối cùng đó em."
-          ],
-          "loiGiai": "Số bi nhập thêm là:\n31.090 × 2 = 62.180 (viên)\nSố bi cửa hàng có tất cả là:\n31.090 + 62.180 = 93.270 (viên)\nĐáp số: 93.270 viên bi",
-          "dapSo": "93.270 viên bi"
-        }
-      ]
+     "type": "mcq",
+     "q": "Kết quả của phép tính 27.283 × 3 là bao nhiêu?",
+     "options": [
+      "81.849",
+      "81.949",
+      "80.849",
+      "82.849"
+     ],
+     "a": 0,
+     "explain": "27.283 × 3 = 81.849. Em nhân từng hàng từ phải sang trái: 3×3=9, 3×8=24 (viết 4 nhớ 2), 3×2=6 thêm 2 nhớ = 8, 3×7=21 (viết 1 nhớ 2), 3×2=6 thêm 2 nhớ = 8."
     },
     {
-      "so": 39,
-      "ten": "Chia cho số có một chữ số",
-      "lyThuyet": "Khi chia một số cho số có một chữ số, em đặt tính theo cột dọc và chia lần lượt từ trái sang phải, mỗi bước gồm ba việc: chia, nhân, trừ rồi hạ chữ số tiếp theo. Phép chia có thể chia hết (số dư bằng 0) hoặc chia có dư (số dư khác 0 và luôn nhỏ hơn số chia). Ví dụ: 125.730 : 5 = 25.146 (chia hết); 125.734 : 5 = 25.146 dư 4.",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "38.295 : 3 = ?",
-          "options": ["12.765", "12.675", "12.756", "12.765 dư 1"],
-          "a": 0,
-          "explain": "38.295 : 3 = 12.765 (chia hết vì 12.765 × 3 = 38.295)."
-        },
-        {
-          "type": "mcq",
-          "q": "729.316 : 4 = ?",
-          "options": ["182.329", "182.239", "182.329 dư 1", "180.329"],
-          "a": 0,
-          "explain": "729.316 : 4 = 182.329 (chia hết vì 182.329 × 4 = 729.316)."
-        },
-        {
-          "type": "mcq",
-          "q": "872.905 : 6 = ?",
-          "options": ["145.484 dư 1", "145.484", "145.483 dư 7", "145.474 dư 1"],
-          "a": 0,
-          "explain": "872.905 : 6 = 145.484 dư 1, vì 145.484 × 6 = 872.904, còn dư 872.905 - 872.904 = 1."
-        },
-        {
-          "type": "mcq",
-          "q": "Minh làm phép chia 250 : 6 và ghi kết quả là 41 dư 4. Bạn An kiểm tra lại xem đúng hay sai. Kết luận nào đúng?",
-          "options": [
-            "Đúng, vì 41 × 6 + 4 = 250",
-            "Sai, vì 41 × 6 + 4 = 254",
-            "Sai, vì kết quả đúng phải là 40 dư 10",
-            "Sai, vì số dư phải lớn hơn số chia"
-          ],
-          "a": 0,
-          "explain": "Kiểm tra: 41 × 6 = 246, 246 + 4 = 250. Đúng bằng số bị chia ban đầu nên phép chia của Minh là đúng."
-        },
-        {
-          "type": "mcq",
-          "q": "Một vựa trái cây có 96 kg xoài, muốn xếp đều vào các túi, mỗi túi 5 kg. Hỏi xếp được nhiều nhất bao nhiêu túi đầy và còn thừa bao nhiêu ki-lô-gam?",
-          "options": ["19 túi, thừa 1 kg", "18 túi, thừa 6 kg", "19 túi, thừa 0 kg", "20 túi, thừa 4 kg"],
-          "a": 0,
-          "explain": "96 : 5 = 19 dư 1. Vậy xếp được 19 túi đầy và còn thừa 1 kg xoài."
-        },
-        {
-          "type": "fill",
-          "q": "Điền số thích hợp vào chỗ trống: 125.730 : 5 = ___",
-          "answer": "25.146",
-          "accept": ["25146", "25.146"]
-        },
-        {
-          "type": "solve",
-          "de": "Một xưởng đóng sữa có 250 hộp sữa, đóng đều vào các vỉ, mỗi vỉ 6 hộp. Hỏi đóng được nhiều nhất bao nhiêu vỉ đầy và còn thừa bao nhiêu hộp sữa?",
-          "hints": [
-            "Em ơi, muốn biết đóng được bao nhiêu vỉ đầy, mình lấy tổng số hộp chia cho số hộp một vỉ, đúng không nào?",
-            "Mình thử đặt tính 250 chia cho 6 xem thương và số dư là bao nhiêu nhé.",
-            "Sau khi chia, thương chính là số vỉ đầy, còn số dư chính là số hộp sữa còn thừa lại, chưa đủ để đóng thêm một vỉ nữa đâu em."
-          ],
-          "loiGiai": "Ta thực hiện phép chia:\n250 : 6 = 41 (dư 4)\nVậy đóng được nhiều nhất 41 vỉ đầy và còn thừa 4 hộp sữa.\nĐáp số: 41 vỉ, thừa 4 hộp",
-          "dapSo": "41 vỉ, thừa 4 hộp sữa"
-        },
-        {
-          "type": "solve",
-          "de": "Tổng số tuổi của hai anh em Bình và An là 96 tuổi, hiệu số tuổi của hai anh em là 12 tuổi. Hỏi mỗi người bao nhiêu tuổi (Bình là anh)?",
-          "hints": [
-            "Em còn nhớ dạng toán tìm hai số khi biết tổng và hiệu không? Số lớn sẽ tính bằng cách nào từ tổng và hiệu?",
-            "Số lớn (tuổi anh Bình) bằng (tổng + hiệu) chia 2, còn số bé (tuổi em An) bằng (tổng - hiệu) chia 2 đó em.",
-            "Em thử thay tổng là 96 và hiệu là 12 vào hai công thức đó rồi tính xem mỗi người bao nhiêu tuổi nhé."
-          ],
-          "loiGiai": "Tuổi của Bình (anh, số lớn) là:\n(96 + 12) : 2 = 54 (tuổi)\nTuổi của An (em, số bé) là:\n96 - 54 = 42 (tuổi)\nĐáp số: Bình 54 tuổi, An 42 tuổi",
-          "dapSo": "Bình 54 tuổi, An 42 tuổi"
-        }
-      ]
+     "type": "mcq",
+     "q": "40.819 × 5 = ?",
+     "options": [
+      "200.095",
+      "204.095",
+      "204.905",
+      "214.095"
+     ],
+     "a": 1,
+     "explain": "40.819 × 5 = 204.095. Đặt tính rồi nhân từng chữ số từ phải sang trái, nhớ khi tích vượt quá 9."
     },
     {
-      "so": 40,
-      "ten": "Tính chất giao hoán và kết hợp của phép nhân",
-      "lyThuyet": "Tính chất giao hoán: khi đổi chỗ các thừa số trong một tích thì tích không thay đổi, viết là a × b = b × a. Tính chất kết hợp: khi nhân một tích hai số với số thứ ba, ta có thể nhân số thứ nhất với tích của số thứ hai và số thứ ba, viết là (a × b) × c = a × (b × c). Hai tính chất này giúp em tính nhanh và tính thuận tiện hơn.",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "Theo tính chất giao hoán của phép nhân, 3 × 4 bằng phép tính nào sau đây?",
-          "options": ["4 × 3", "4 + 3", "3 + 4", "4 : 3"],
-          "a": 0,
-          "explain": "Tính chất giao hoán: a × b = b × a, nên 3 × 4 = 4 × 3 (đều bằng 12)."
-        },
-        {
-          "type": "mcq",
-          "q": "Biểu thức nào sau đây thể hiện đúng tính chất kết hợp của phép nhân?",
-          "options": [
-            "(3 × 2) × 4 = 3 × (2 × 4)",
-            "(3 + 2) × 4 = 3 × (2 + 4)",
-            "(3 × 2) + 4 = 3 × (2 + 4)",
-            "3 × 2 × 4 = 3 + 2 + 4"
-          ],
-          "a": 0,
-          "explain": "Tính chất kết hợp: (a × b) × c = a × (b × c). Cả hai vế đều bằng 24."
-        },
-        {
-          "type": "mcq",
-          "q": "Áp dụng tính chất giao hoán, cách tính nhanh nhất của phép tính 6 × 15 là gì?",
-          "options": [
-            "Tính 15 × 6 = 90",
-            "Tính 6 + 15 = 21",
-            "Tính 15 : 6",
-            "Tính 6 × 6 × 15"
-          ],
-          "a": 0,
-          "explain": "Đổi chỗ hai thừa số: 6 × 15 = 15 × 6 = 90, giúp tính nhẩm dễ hơn."
-        },
-        {
-          "type": "mcq",
-          "q": "Cặp phép tính nào sau đây có cùng kết quả?",
-          "options": [
-            "(2 × 5) × 8 và 2 × (5 × 8)",
-            "(2 × 5) × 8 và 2 + 5 + 8",
-            "(2 × 5) × 8 và 2 × 5 + 8",
-            "(2 × 5) × 8 và 8 : 5 × 2"
-          ],
-          "a": 0,
-          "explain": "Theo tính chất kết hợp, (2 × 5) × 8 = 2 × (5 × 8) = 80."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính bằng cách thuận tiện: 4 × 37 × 25 = ?",
-          "options": ["3.700", "3.600", "3.500", "3.750"],
-          "a": 0,
-          "explain": "Áp dụng tính chất giao hoán và kết hợp: 4 × 37 × 25 = (4 × 25) × 37 = 100 × 37 = 3.700."
-        },
-        {
-          "type": "fill",
-          "q": "Điền số thích hợp vào chỗ trống để hoàn thành tính chất kết hợp: (a × b) × c = a × (___ × c)",
-          "answer": "b",
-          "accept": ["b"]
-        },
-        {
-          "type": "solve",
-          "de": "Một sân bóng đá mini có 5 hàng ghế, mỗi hàng có 15 ghế. Ban tổ chức muốn tính nhanh tổng số ghế bằng cách đổi chỗ hai số. Hỏi sân có tất cả bao nhiêu ghế?",
-          "hints": [
-            "Em ơi, đề cho 5 hàng, mỗi hàng 15 ghế, vậy phép tính ban đầu là gì nhỉ?",
-            "Mình có thể đổi chỗ hai thừa số 5 và 15 để tính 15 × 5 cho dễ nhẩm hơn không?",
-            "15 × 5 chính là 15 × 5 = 75, và theo tính chất giao hoán thì 5 × 15 cũng bằng như vậy đó em."
-          ],
-          "loiGiai": "Áp dụng tính chất giao hoán của phép nhân:\n5 × 15 = 15 × 5 = 75\nVậy sân bóng có tất cả 75 ghế.\nĐáp số: 75 ghế",
-          "dapSo": "75 ghế"
-        },
-        {
-          "type": "solve",
-          "de": "Một câu lạc bộ cờ vua có 2 phòng, mỗi phòng có 4 bàn cờ, mỗi bàn cờ xếp cho 5 người chơi. Hỏi câu lạc bộ cần chuẩn bị chỗ cho bao nhiêu người chơi? (Tính bằng cách thuận tiện dùng tính chất kết hợp)",
-          "hints": [
-            "Em thử viết phép tính từ đề bài xem: có 2 phòng, mỗi phòng 4 bàn, mỗi bàn 5 người, vậy là phép nhân ba số nào?",
-            "Theo tính chất kết hợp, mình có thể nhân 4 và 5 trước, rồi mới nhân với 2, xem có dễ tính hơn không?",
-            "4 × 5 bằng bao nhiêu, sau đó em nhân tiếp với 2 là ra số người chơi cần chuẩn bị chỗ đó."
-          ],
-          "loiGiai": "Số người chơi câu lạc bộ cần chuẩn bị chỗ là:\n2 × 4 × 5 = 2 × (4 × 5) = 2 × 20 = 40 (người)\nĐáp số: 40 người",
-          "dapSo": "40 người"
-        }
-      ]
+     "type": "mcq",
+     "q": "374.519 × 2 = ?",
+     "options": [
+      "749.038",
+      "748.038",
+      "749.048",
+      "740.038"
+     ],
+     "a": 0,
+     "explain": "374.519 × 2 = 749.038."
     },
     {
-      "so": 41,
-      "ten": "Nhân, chia với 10, 100, 1000,...",
-      "lyThuyet": "Muốn nhân một số với 10, 100, 1000,... em chỉ cần viết thêm 1, 2, 3,... chữ số 0 vào bên phải số đó. Muốn chia một số tròn chục, tròn trăm, tròn nghìn,... cho 10, 100, 1000,... em chỉ cần bỏ bớt 1, 2, 3,... chữ số 0 ở bên phải số đó. Ví dụ: 36 × 10 = 360; 36 × 100 = 3.600; 36 × 1000 = 36.000.",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "36 × 100 = ?",
-          "options": ["360", "3.600", "36.000", "3.060"],
-          "a": 1,
-          "explain": "Nhân với 100, ta thêm 2 chữ số 0 vào bên phải: 36 × 100 = 3.600."
-        },
-        {
-          "type": "mcq",
-          "q": "45.000 : 1000 = ?",
-          "options": ["45", "450", "4.500", "4,5"],
-          "a": 0,
-          "explain": "Chia cho 1000, ta bỏ bớt 3 chữ số 0 ở bên phải: 45.000 : 1000 = 45."
-        },
-        {
-          "type": "mcq",
-          "q": "Đổi đơn vị: 5 tấn = ? kg",
-          "options": ["50 kg", "500 kg", "5.000 kg", "50.000 kg"],
-          "a": 2,
-          "explain": "1 tấn = 1000 kg, nên 5 tấn = 5 × 1000 = 5.000 kg."
-        },
-        {
-          "type": "mcq",
-          "q": "Đổi đơn vị: 7 tạ = ? kg",
-          "options": ["70 kg", "700 kg", "7.000 kg", "7 kg"],
-          "a": 1,
-          "explain": "1 tạ = 100 kg, nên 7 tạ = 7 × 100 = 700 kg."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính thuận tiện: 23 × 5 × 2 = ?",
-          "options": ["230", "220", "215", "240"],
-          "a": 0,
-          "explain": "Áp dụng tính chất kết hợp: 23 × 5 × 2 = 23 × (5 × 2) = 23 × 10 = 230."
-        },
-        {
-          "type": "fill",
-          "q": "Điền số thích hợp vào chỗ trống: 3 yến = ___ kg",
-          "answer": "30",
-          "accept": ["30", "30 kg"]
-        },
-        {
-          "type": "solve",
-          "de": "Một kho hàng có 12 tấn gạo. Hỏi kho hàng có bao nhiêu ki-lô-gam gạo?",
-          "hints": [
-            "Em còn nhớ 1 tấn bằng bao nhiêu ki-lô-gam không nào?",
-            "Muốn đổi từ tấn sang ki-lô-gam, mình nhân số tấn với 1000, đúng không em?",
-            "Vậy 12 tấn thì mình lấy 12 nhân với 1000, chỉ cần thêm 3 chữ số 0 vào sau số 12 thôi đó."
-          ],
-          "loiGiai": "Đổi đơn vị: 1 tấn = 1000 kg\nVậy 12 tấn = 12 × 1000 = 12.000 (kg)\nĐáp số: 12.000 kg",
-          "dapSo": "12.000 kg"
-        },
-        {
-          "type": "solve",
-          "de": "Một cửa hàng thể thao nhập về 25 hộp bóng bàn, mỗi hộp có 100 quả bóng. Hỏi cửa hàng nhập về tất cả bao nhiêu quả bóng bàn?",
-          "hints": [
-            "Em ơi, muốn biết tổng số quả bóng, mình lấy số hộp nhân với số quả trong mỗi hộp đúng không?",
-            "Phép tính cần làm là 25 nhân với 100, mà nhân với 100 thì mình chỉ cần làm gì với số 25?",
-            "Đúng rồi, chỉ cần viết thêm 2 chữ số 0 vào bên phải số 25 là ra kết quả liền đó em."
-          ],
-          "loiGiai": "Số quả bóng bàn cửa hàng nhập về là:\n25 × 100 = 2.500 (quả)\nĐáp số: 2.500 quả bóng bàn",
-          "dapSo": "2.500 quả bóng bàn"
-        }
-      ]
+     "type": "mcq",
+     "q": "Một chiếc bóng đèn thường có tuổi thọ 800 giờ. Bóng đèn tiết kiệm điện có tuổi thọ gấp 3 lần bóng đèn thường. Hỏi bóng đèn tiết kiệm điện có tuổi thọ bao nhiêu giờ?",
+     "options": [
+      "2.300 giờ",
+      "2.400 giờ",
+      "2.500 giờ",
+      "1.400 giờ"
+     ],
+     "a": 1,
+     "explain": "Tuổi thọ bóng đèn tiết kiệm điện là 800 × 3 = 2.400 (giờ)."
     },
     {
-      "so": 42,
-      "ten": "Tính chất phân phối của phép nhân đối với phép cộng",
-      "lyThuyet": "Khi nhân một số với một tổng, ta có thể nhân số đó với từng số hạng của tổng rồi cộng các kết quả lại: a × (b + c) = a × b + a × c. Tương tự, khi nhân một tổng với một số: (a + b) × c = a × c + b × c. Với phép trừ cũng có tính chất tương tự: a × (b - c) = a × b - a × c.",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "15 × (3 + 2) bằng biểu thức nào sau đây?",
-          "options": ["15 × 3 + 15 × 2", "15 × 3 + 2", "15 + 3 × 15 + 2", "15 × 3 - 15 × 2"],
-          "a": 0,
-          "explain": "Theo tính chất phân phối: a × (b + c) = a × b + a × c, nên 15 × (3 + 2) = 15 × 3 + 15 × 2 = 45 + 30 = 75."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính thuận tiện: 67 × 3 + 67 × 7 = ?",
-          "options": ["670", "660", "607", "700"],
-          "a": 0,
-          "explain": "Áp dụng tính chất phân phối: 67 × 3 + 67 × 7 = 67 × (3 + 7) = 67 × 10 = 670."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính thuận tiện: 27 × 6 + 73 × 6 = ?",
-          "options": ["600", "500", "610", "590"],
-          "a": 0,
-          "explain": "Áp dụng tính chất phân phối (a × c + b × c = (a+b) × c): 27 × 6 + 73 × 6 = (27 + 73) × 6 = 100 × 6 = 600."
-        },
-        {
-          "type": "mcq",
-          "q": "Biểu thức nào đúng với tính chất phân phối của phép nhân đối với phép trừ?",
-          "options": [
-            "a × (b - c) = a × b - a × c",
-            "a × (b - c) = a × b + a × c",
-            "a × (b - c) = a - b × c",
-            "a × (b - c) = (a - b) × c"
-          ],
-          "a": 0,
-          "explain": "Tính chất phân phối của phép nhân với phép trừ: a × (b - c) = a × b - a × c."
-        },
-        {
-          "type": "mcq",
-          "q": "45 × 6 + 45 × 4 = ?",
-          "options": ["450", "460", "440", "445"],
-          "a": 0,
-          "explain": "45 × 6 + 45 × 4 = 45 × (6 + 4) = 45 × 10 = 450."
-        },
-        {
-          "type": "fill",
-          "q": "Điền số thích hợp vào chỗ trống: a × (b + c) = a × b + a × ___",
-          "answer": "c",
-          "accept": ["c"]
-        },
-        {
-          "type": "solve",
-          "de": "Một đội tuyển bơi có 36 bạn nam và 4 bạn nữ. Mỗi bạn được phát 6 chiếc huy hiệu đội tuyển. Hỏi cả đội cần bao nhiêu chiếc huy hiệu? (Tính bằng cách thuận tiện)",
-          "hints": [
-            "Em thử viết phép tính: số huy hiệu của nam là 36 × 6, số huy hiệu của nữ là 4 × 6, đúng không?",
-            "Hai tích này có chung thừa số 6, vậy mình có thể gộp lại thành (36 + 4) × 6 được không em?",
-            "36 cộng 4 bằng bao nhiêu, rồi em nhân kết quả đó với 6 là ra tổng số huy hiệu cần chuẩn bị."
-          ],
-          "loiGiai": "Số huy hiệu cả đội cần là:\n36 × 6 + 4 × 6 = (36 + 4) × 6 = 40 × 6 = 240 (chiếc)\nĐáp số: 240 chiếc huy hiệu",
-          "dapSo": "240 chiếc huy hiệu"
-        },
-        {
-          "type": "solve",
-          "de": "Một siêu thị có 8 kệ hàng, mỗi kệ có 25 hộp bánh và 15 hộp kẹo. Hỏi siêu thị có tất cả bao nhiêu hộp bánh và kẹo? (Tính bằng cách thuận tiện)",
-          "hints": [
-            "Em thử tính xem: mỗi kệ có bao nhiêu hộp bánh và kẹo cộng lại đã nhé.",
-            "Sau khi biết mỗi kệ có bao nhiêu hộp, mình nhân với số kệ là ra tổng số hộp, đúng không em?",
-            "Hoặc em có thể tính 8 × 25 cộng với 8 × 15 cũng ra kết quả giống vậy đó, vì đó chính là tính chất phân phối."
-          ],
-          "loiGiai": "Cách 1: Số hộp mỗi kệ có là 25 + 15 = 40 (hộp)\nSố hộp cả siêu thị có là: 8 × 40 = 320 (hộp)\nCách 2 (kiểm tra): 8 × 25 + 8 × 15 = 200 + 120 = 320 (hộp)\nĐáp số: 320 hộp",
-          "dapSo": "320 hộp bánh và kẹo"
-        }
-      ]
+     "type": "mcq",
+     "q": "Trong trò chơi xếp hạt thóc lên bàn cờ, ô thứ nhất có 1 hạt, mỗi ô sau gấp đôi ô liền trước. Hỏi ô thứ 5 có bao nhiêu hạt thóc?",
+     "options": [
+      "8 hạt",
+      "16 hạt",
+      "32 hạt",
+      "10 hạt"
+     ],
+     "a": 1,
+     "explain": "Số hạt các ô lần lượt là 1, 2, 4, 8, 16. Vậy ô thứ 5 có 16 hạt (vì 2×2×2×2 = 16)."
     },
     {
-      "so": 43,
-      "ten": "Nhân với số có hai chữ số",
-      "lyThuyet": "Khi nhân một số với số có hai chữ số, em tính hai tích riêng: tích riêng thứ nhất là số đó nhân với chữ số hàng đơn vị, tích riêng thứ hai là số đó nhân với chữ số hàng chục (viết lùi sang trái một cột vì đây là số chục). Cuối cùng cộng hai tích riêng lại để được kết quả. Ví dụ: 34 × 12 = 408.",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "34 × 12 = ?",
-          "options": ["408", "418", "398", "480"],
-          "a": 0,
-          "explain": "34 × 12 = 34 × 2 + 34 × 10 = 68 + 340 = 408."
-        },
-        {
-          "type": "mcq",
-          "q": "87 × 23 = ?",
-          "options": ["2.001", "1.901", "2.011", "2.010"],
-          "a": 0,
-          "explain": "87 × 23 = 87 × 3 + 87 × 20 = 261 + 1.740 = 2.001."
-        },
-        {
-          "type": "mcq",
-          "q": "134 × 32 = ?",
-          "options": ["4.288", "4.188", "4.298", "4.388"],
-          "a": 0,
-          "explain": "134 × 32 = 134 × 2 + 134 × 30 = 268 + 4.020 = 4.288."
-        },
-        {
-          "type": "mcq",
-          "q": "Một sân bóng đá hình chữ nhật có chiều dài 47 m, chiều rộng 26 m. Diện tích sân bóng là bao nhiêu mét vuông?",
-          "options": ["1.222 m²", "1.222 m", "1.212 m²", "1.322 m²"],
-          "a": 0,
-          "explain": "Diện tích hình chữ nhật S = a × b = 47 × 26 = 1.222 (m²)."
-        },
-        {
-          "type": "mcq",
-          "q": "Trong phép tính đặt tính nhân 34 × 12, tích riêng thứ hai (34 × 1 chục) được viết như thế nào?",
-          "options": [
-            "Viết lùi sang trái một cột so với tích riêng thứ nhất",
-            "Viết thẳng cột với tích riêng thứ nhất",
-            "Viết lùi sang phải một cột",
-            "Viết ở dòng trên cùng"
-          ],
-          "a": 0,
-          "explain": "Vì chữ số hàng chục có giá trị là chục, nên tích riêng thứ hai phải viết lùi sang trái một cột so với tích riêng thứ nhất."
-        },
-        {
-          "type": "fill",
-          "q": "Điền số thích hợp vào chỗ trống: 2021 × 36 = ___",
-          "answer": "72.756",
-          "accept": ["72756", "72.756"]
-        },
-        {
-          "type": "solve",
-          "de": "Một xe tải chở 18 bao ngô, mỗi bao nặng 35 kg. Hỏi xe tải đó chở tất cả bao nhiêu ki-lô-gam ngô?",
-          "hints": [
-            "Em ơi, đề cho biết có bao nhiêu bao ngô và mỗi bao nặng bao nhiêu ki-lô-gam, vậy phép tính cần làm là gì?",
-            "Muốn tìm tổng khối lượng ngô, mình lấy số cân nặng một bao nhân với số bao, đúng không nào?",
-            "Mình đặt tính 35 nhân với 18: tính tích riêng 35×8 trước, rồi tích riêng 35×1 chục, sau đó cộng lại là ra kết quả."
-          ],
-          "loiGiai": "Số ki-lô-gam ngô xe tải chở tất cả là:\n35 × 18 = 630 (kg)\nĐáp số: 630 kg",
-          "dapSo": "630 kg"
-        },
-        {
-          "type": "solve",
-          "de": "Một sân trường hình chữ nhật dùng để tập thể dục có chiều dài 24 m, chiều rộng 18 m. Tính diện tích sân trường đó.",
-          "hints": [
-            "Em còn nhớ công thức tính diện tích hình chữ nhật không? Nó liên quan đến chiều dài và chiều rộng đó.",
-            "Diện tích hình chữ nhật S = a × b, với a là chiều dài, b là chiều rộng, em thử thay số vào xem.",
-            "Vậy mình cần tính 24 nhân với 18, đặt tính rồi tính hai tích riêng rồi cộng lại để ra đáp số nhé."
-          ],
-          "loiGiai": "Diện tích sân trường là:\nS = 24 × 18 = 432 (m²)\nĐáp số: 432 m²",
-          "dapSo": "432 m²"
-        }
-      ]
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống: 48.102 × 5 = ___",
+     "answer": "240.510",
+     "accept": [
+      "240510",
+      "240.510"
+     ]
     },
     {
-      "so": 44,
-      "ten": "Chia cho số có hai chữ số",
-      "lyThuyet": "Khi chia một số cho số có hai chữ số, em đặt tính theo cột dọc và thực hiện chia, nhân, trừ, hạ giống như chia cho số có một chữ số, nhưng mỗi lần cần ước lượng thương cẩn thận hơn. Mẹo nhỏ: khi chia số tròn chục, tròn trăm cho số tròn chục, tròn trăm, em có thể cùng xóa bớt số chữ số 0 giống nhau ở cả số bị chia và số chia. Ví dụ: 450 : 90 = 45 : 9 = 5.",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "216 : 12 = ?",
-          "options": ["18", "16", "19", "17"],
-          "a": 0,
-          "explain": "216 : 12 = 18 (chia hết, vì 18 × 12 = 216)."
-        },
-        {
-          "type": "mcq",
-          "q": "218 : 18 = ?",
-          "options": ["12 dư 2", "12 dư 4", "11 dư 20", "13 dư 4"],
-          "a": 0,
-          "explain": "18 × 12 = 216, còn dư 218 - 216 = 2. Vậy 218 : 18 = 12 dư 2."
-        },
-        {
-          "type": "mcq",
-          "q": "1.554 : 37 = ?",
-          "options": ["42", "41", "43", "42 dư 1"],
-          "a": 0,
-          "explain": "1.554 : 37 = 42 (chia hết, vì 42 × 37 = 1.554)."
-        },
-        {
-          "type": "mcq",
-          "q": "Áp dụng mẹo xóa chữ số 0, kết quả của 450 : 90 là bao nhiêu?",
-          "options": ["5", "50", "4", "45"],
-          "a": 0,
-          "explain": "Xóa cùng 1 chữ số 0 ở cả hai số: 450 : 90 = 45 : 9 = 5."
-        },
-        {
-          "type": "mcq",
-          "q": "Một hội trường có diện tích 7.140 m², chiều rộng 68 m. Tính chu vi hội trường hình chữ nhật đó.",
-          "options": ["346 m", "336 m", "356 m", "326 m"],
-          "a": 0,
-          "explain": "Chiều dài = 7.140 : 68 = 105 (m). Chu vi = (105 + 68) × 2 = 346 (m)."
-        },
-        {
-          "type": "fill",
-          "q": "Điền số thích hợp vào chỗ trống: 2.294 : 62 = ___",
-          "answer": "37",
-          "accept": ["37"]
-        },
-        {
-          "type": "solve",
-          "de": "Một sân khấu văn nghệ cần xếp 384 chiếc ghế thành các dãy, mỗi dãy 24 chiếc ghế. Hỏi xếp được tất cả bao nhiêu dãy ghế?",
-          "hints": [
-            "Em ơi, mình có tổng số ghế và số ghế trong mỗi dãy rồi, vậy cần tìm số dãy thì làm phép tính gì?",
-            "Muốn tìm số dãy, mình lấy tổng số ghế chia cho số ghế mỗi dãy đúng không nào?",
-            "Em đặt tính 384 chia cho 24, ước lượng thương cẩn thận rồi nhân, trừ để tìm ra kết quả nhé."
-          ],
-          "loiGiai": "Số dãy ghế xếp được là:\n384 : 24 = 16 (dãy)\nĐáp số: 16 dãy ghế",
-          "dapSo": "16 dãy ghế"
-        },
-        {
-          "type": "solve",
-          "de": "Một xưởng đóng gói được 4.896 hộp bút, chia đều vào các thùng, mỗi thùng 12 hộp. Hỏi cần bao nhiêu thùng để đựng hết số hộp bút đó?",
-          "hints": [
-            "Em thử nghĩ xem, muốn biết cần bao nhiêu thùng, mình lấy tổng số hộp bút chia cho số hộp mỗi thùng phải không?",
-            "Vậy phép tính cần làm là 4.896 chia cho 12, em đặt tính rồi chia từ trái sang phải nhé.",
-            "Nhớ làm đúng ba bước chia - nhân - trừ - hạ ở từng bước để ra được thương chính xác."
-          ],
-          "loiGiai": "Số thùng cần dùng là:\n4.896 : 12 = 408 (thùng)\nĐáp số: 408 thùng",
-          "dapSo": "408 thùng"
-        }
-      ]
+     "type": "solve",
+     "de": "Đội bóng của Nam mỗi buổi tập uống hết 32.419 ml nước lọc. Hỏi 4 buổi tập đội uống hết bao nhiêu mi-li-lít nước?",
+     "hints": [
+      "Em ơi, đề cho biết một buổi tập đội uống bao nhiêu nước, và người ta hỏi bao nhiêu buổi tập vậy?",
+      "Muốn tìm 4 buổi uống hết bao nhiêu, mình lấy số nước một buổi nhân hay chia cho 4 nhỉ?",
+      "Đúng rồi, mình sẽ đặt tính 32.419 nhân với 4, nhớ nhân từ phải sang trái và nhớ khi tích vượt quá 9 nhé."
+     ],
+     "loiGiai": "Số mi-li-lít nước 4 buổi tập đội uống hết là:\n32.419 × 4 = 129.676 (ml)\nĐáp số: 129.676 ml",
+     "dapSo": "129.676 ml"
     },
     {
-      "so": 45,
-      "ten": "Thực hành và trải nghiệm ước lượng trong tính toán",
-      "lyThuyet": "Để ước lượng nhanh kết quả một phép tính, em làm tròn các số đến hàng nghìn hoặc hàng chục nghìn (số gần nhất), rồi tính với các số đã làm tròn đó. Kết quả ước lượng giúp em kiểm tra xem phép tính chính xác của mình có hợp lí hay không. Ví dụ: 5.978 làm tròn thành 6.000, 2.967 làm tròn thành 3.000, nên 5.978 + 2.967 ước lượng khoảng 6.000 + 3.000 = 9.000.",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "Làm tròn 7.960 đến hàng nghìn ta được số nào?",
-          "options": ["8.000", "7.000", "7.900", "8.900"],
-          "a": 0,
-          "explain": "7.960 gần với 8.000 hơn (vì chữ số hàng trăm là 9, lớn hơn hoặc bằng 5 nên làm tròn lên), làm tròn đến hàng nghìn được 8.000."
-        },
-        {
-          "type": "mcq",
-          "q": "Ước lượng kết quả của phép tính 7.960 + 1.980 bằng cách làm tròn đến hàng nghìn là khoảng bao nhiêu?",
-          "options": ["10.000", "9.000", "11.000", "8.000"],
-          "a": 0,
-          "explain": "7.960 làm tròn thành 8.000; 1.980 làm tròn thành 2.000. Ước lượng: 8.000 + 2.000 = 10.000 (kết quả đúng là 9.940, khá gần với ước lượng)."
-        },
-        {
-          "type": "mcq",
-          "q": "Ước lượng kết quả của phép tính 5.985 - 3.897 bằng cách làm tròn đến hàng nghìn là khoảng bao nhiêu?",
-          "options": ["2.000", "3.000", "1.000", "2.500"],
-          "a": 0,
-          "explain": "5.985 làm tròn thành 6.000; 3.897 làm tròn thành 4.000. Ước lượng: 6.000 - 4.000 = 2.000 (kết quả đúng là 2.088, gần với ước lượng)."
-        },
-        {
-          "type": "mcq",
-          "q": "Ước lượng kết quả của phép tính 19.870 + 30.480 bằng cách làm tròn đến hàng chục nghìn là khoảng bao nhiêu?",
-          "options": ["50.000", "40.000", "60.000", "45.000"],
-          "a": 0,
-          "explain": "19.870 làm tròn đến hàng chục nghìn thành 20.000; 30.480 làm tròn thành 30.000. Ước lượng: 20.000 + 30.000 = 50.000 (kết quả đúng là 50.350, rất gần với ước lượng)."
-        },
-        {
-          "type": "mcq",
-          "q": "Bạn Bình ước lượng phép tính 89 × 26 bằng cách làm tròn thành 90 × 30 = 2.700 rồi kết luận 89 × 26 > 2.700. Nhận xét nào đúng?",
-          "options": [
-            "Sai, vì 89 × 26 = 2.314, nhỏ hơn 2.700",
-            "Đúng, vì làm tròn lên nên kết quả thật cũng lớn hơn",
-            "Đúng, vì 89 × 26 luôn bằng 2.700",
-            "Sai, vì 89 × 26 = 2.900, lớn hơn 2.700"
-          ],
-          "a": 0,
-          "explain": "Tính chính xác: 89 × 26 = 2.314. Vì cả hai số đều được làm tròn lên (89→90, 26→30) nên kết quả ước lượng 2.700 lớn hơn kết quả thật, do đó kết luận của Bình là sai."
-        },
-        {
-          "type": "fill",
-          "q": "Điền số thích hợp vào chỗ trống: Làm tròn 50.217 - 21.052 đến hàng chục nghìn, ta ước lượng kết quả khoảng ___",
-          "answer": "30.000",
-          "accept": ["30000", "30.000"]
-        },
-        {
-          "type": "solve",
-          "de": "Một cửa hàng thể thao buổi sáng bán được 5.978 quả bóng đá, buổi chiều bán được 2.967 quả bóng đá. Em hãy ước lượng (làm tròn đến hàng nghìn) xem cả ngày cửa hàng bán được khoảng bao nhiêu quả bóng, sau đó tính kết quả chính xác.",
-          "hints": [
-            "Trước tiên em làm tròn từng số đến hàng nghìn xem: 5.978 gần với số tròn nghìn nào, 2.967 gần với số tròn nghìn nào?",
-            "Sau khi làm tròn, mình cộng hai số đã làm tròn lại để có kết quả ước lượng, rồi mới cộng hai số thật để có kết quả chính xác nhé.",
-            "5.978 làm tròn thành 6.000, 2.967 làm tròn thành 3.000, cộng lại là con số ước lượng; còn kết quả chính xác thì em cộng 5.978 với 2.967."
-          ],
-          "loiGiai": "Ước lượng: 5.978 làm tròn thành 6.000; 2.967 làm tròn thành 3.000\nCả ngày ước lượng bán được khoảng: 6.000 + 3.000 = 9.000 (quả)\nKết quả chính xác: 5.978 + 2.967 = 8.945 (quả)\nĐáp số: ước lượng khoảng 9.000 quả, chính xác là 8.945 quả",
-          "dapSo": "Ước lượng khoảng 9.000 quả, chính xác 8.945 quả"
-        },
-        {
-          "type": "solve",
-          "de": "Một trường học có 19.870 cuốn sách ở thư viện cũ và nhận thêm 30.480 cuốn sách mới. Em hãy ước lượng (làm tròn đến hàng chục nghìn) tổng số sách của trường, sau đó tính kết quả chính xác.",
-          "hints": [
-            "Em thử làm tròn 19.870 đến hàng chục nghìn xem, nó gần với 20.000 hay 10.000 hơn?",
-            "Tương tự, 30.480 làm tròn đến hàng chục nghìn thì thành số nào? Sau đó em cộng hai số đã làm tròn lại nhé.",
-            "Cuối cùng, để có đáp số chính xác, em cộng thẳng hai số 19.870 và 30.480 với nhau."
-          ],
-          "loiGiai": "Ước lượng: 19.870 làm tròn thành 20.000; 30.480 làm tròn thành 30.000\nTổng số sách ước lượng khoảng: 20.000 + 30.000 = 50.000 (cuốn)\nKết quả chính xác: 19.870 + 30.480 = 50.350 (cuốn)\nĐáp số: ước lượng khoảng 50.000 cuốn, chính xác là 50.350 cuốn",
-          "dapSo": "Ước lượng khoảng 50.000 cuốn, chính xác 50.350 cuốn"
-        }
-      ]
-    },
-    {
-      "so": 46,
-      "ten": "Tìm số trung bình cộng",
-      "lyThuyet": "Trung bình cộng của một nhóm số bằng tổng các số đó chia cho số các số hạng. Ví dụ: trung bình cộng của 10 và 50 là (10 + 50) : 2 = 30. Trung bình cộng của 13, 14 và 18 là (13 + 14 + 18) : 3 = 15.",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "Trung bình cộng của 20 và 30 là bao nhiêu?",
-          "options": ["25", "20", "30", "50"],
-          "a": 0,
-          "explain": "Trung bình cộng = (20 + 30) : 2 = 50 : 2 = 25."
-        },
-        {
-          "type": "mcq",
-          "q": "Trung bình cộng của ba số 10, 20 và 30 là bao nhiêu?",
-          "options": ["20", "60", "15", "30"],
-          "a": 0,
-          "explain": "Trung bình cộng = (10 + 20 + 30) : 3 = 60 : 3 = 20."
-        },
-        {
-          "type": "mcq",
-          "q": "Trung bình cộng của ba số 5, 12 và 19 là bao nhiêu?",
-          "options": ["12", "10", "14", "13"],
-          "a": 0,
-          "explain": "Trung bình cộng = (5 + 12 + 19) : 3 = 36 : 3 = 12."
-        },
-        {
-          "type": "mcq",
-          "q": "Ba bạn học sinh trồng cây: Nam trồng 15 cây, Minh trồng 20 cây, An trồng 22 cây. Hỏi trung bình mỗi bạn trồng được bao nhiêu cây?",
-          "options": ["19 cây", "18 cây", "20 cây", "57 cây"],
-          "a": 0,
-          "explain": "Trung bình mỗi bạn trồng: (15 + 20 + 22) : 3 = 57 : 3 = 19 (cây)."
-        },
-        {
-          "type": "mcq",
-          "q": "Bốn lớp 4 của một trường có số học sinh lần lượt là 35, 37, 43 và 45 bạn. Hỏi trung bình mỗi lớp có bao nhiêu học sinh?",
-          "options": ["40 bạn", "39 bạn", "41 bạn", "42 bạn"],
-          "a": 0,
-          "explain": "Trung bình mỗi lớp có: (35 + 37 + 43 + 45) : 4 = 160 : 4 = 40 (bạn)."
-        },
-        {
-          "type": "fill",
-          "q": "Điền số thích hợp vào chỗ trống: Trung bình cộng của 13, 14 và 18 là ___",
-          "answer": "15",
-          "accept": ["15"]
-        },
-        {
-          "type": "solve",
-          "de": "Ba đội bóng đá của trường ghi được số bàn thắng trong giải đấu lần lượt là: đội của Nam ghi 26 bàn, đội của Bình ghi 35 bàn, đội của An ghi 44 bàn. Hỏi trung bình mỗi đội ghi được bao nhiêu bàn thắng?",
-          "hints": [
-            "Em ơi, muốn tìm trung bình cộng của ba số, đầu tiên mình cần làm gì với ba số đó?",
-            "Đúng rồi, mình cộng cả ba số bàn thắng lại với nhau trước, sau đó mới chia cho số đội đúng không?",
-            "Sau khi có tổng số bàn thắng, em chia tổng đó cho 3 (vì có 3 đội) là ra được số trung bình mỗi đội ghi được."
-          ],
-          "loiGiai": "Tổng số bàn thắng ba đội ghi được là:\n26 + 35 + 44 = 105 (bàn)\nTrung bình mỗi đội ghi được số bàn thắng là:\n105 : 3 = 35 (bàn)\nĐáp số: 35 bàn",
-          "dapSo": "35 bàn"
-        },
-        {
-          "type": "solve",
-          "de": "Minh đi bơi 4 buổi trong tuần, số phút bơi mỗi buổi lần lượt là 28 phút, 32 phút, 30 phút và 34 phút. Hỏi trung bình mỗi buổi Minh bơi được bao nhiêu phút?",
-          "hints": [
-            "Em thử cộng tổng số phút của cả 4 buổi bơi lại với nhau xem được bao nhiêu đã nhé.",
-            "Sau khi có tổng số phút, mình chia tổng đó cho số buổi bơi (là 4 buổi) để tìm trung bình cộng.",
-            "Vậy phép tính cuối cùng em cần làm là lấy tổng số phút chia cho 4, kết quả đó chính là số phút trung bình mỗi buổi."
-          ],
-          "loiGiai": "Tổng số phút Minh bơi trong 4 buổi là:\n28 + 32 + 30 + 34 = 124 (phút)\nTrung bình mỗi buổi Minh bơi được số phút là:\n124 : 4 = 31 (phút)\nĐáp số: 31 phút",
-          "dapSo": "31 phút"
-        }
-      ]
-    },
-    {
-      "so": 47,
-      "ten": "Bài toán liên quan đến rút về đơn vị",
-      "lyThuyet": "Bài toán rút về đơn vị có hai dạng chính. Dạng 1: tìm giá trị của một đơn vị (ví dụ một hộp, một can) trước, sau đó nhân lên để tìm giá trị của nhiều đơn vị hơn. Dạng 2: tìm giá trị của một đơn vị trước, sau đó chia để tìm xem có bao nhiêu đơn vị trong một giá trị cho trước. Ví dụ dạng 1: 36 cái bánh chia đều 6 hộp thì 1 hộp có 6 cái, vậy 4 hộp có 6 × 4 = 24 cái.",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "Có 36 chiếc bánh chia đều vào 6 hộp. Hỏi 1 hộp có bao nhiêu chiếc bánh?",
-          "options": ["6 chiếc", "8 chiếc", "5 chiếc", "7 chiếc"],
-          "a": 0,
-          "explain": "Số bánh trong 1 hộp là: 36 : 6 = 6 (chiếc)."
-        },
-        {
-          "type": "mcq",
-          "q": "Biết 1 hộp có 6 chiếc bánh (như câu trên), hỏi 4 hộp có bao nhiêu chiếc bánh?",
-          "options": ["24 chiếc", "20 chiếc", "22 chiếc", "26 chiếc"],
-          "a": 0,
-          "explain": "Số bánh trong 4 hộp là: 6 × 4 = 24 (chiếc). Đây là dạng 1 của bài toán rút về đơn vị: tìm giá trị 1 đơn vị rồi nhân lên."
-        },
-        {
-          "type": "mcq",
-          "q": "Có 18 lít mật ong chia đều vào 6 can. Hỏi cần bao nhiêu can để đựng 12 lít mật ong?",
-          "options": ["4 can", "3 can", "5 can", "6 can"],
-          "a": 0,
-          "explain": "1 can chứa: 18 : 6 = 3 (lít). Số can cần để đựng 12 lít là: 12 : 3 = 4 (can). Đây là dạng 2 của bài toán rút về đơn vị."
-        },
-        {
-          "type": "mcq",
-          "q": "Có 54 lít nước mắm chia đều vào 9 can. Hỏi 1 can chứa bao nhiêu lít nước mắm?",
-          "options": ["6 lít", "5 lít", "7 lít", "9 lít"],
-          "a": 0,
-          "explain": "1 can chứa: 54 : 9 = 6 (lít)."
-        },
-        {
-          "type": "mcq",
-          "q": "Bài toán rút về đơn vị dạng 2 thường có bước tính cuối cùng là gì?",
-          "options": [
-            "Lấy giá trị đã cho chia cho giá trị của 1 đơn vị",
-            "Lấy giá trị của 1 đơn vị nhân với số đơn vị đã cho",
-            "Lấy tổng cộng với giá trị của 1 đơn vị",
-            "Lấy giá trị của 1 đơn vị trừ đi giá trị đã cho"
-          ],
-          "a": 0,
-          "explain": "Ở dạng 2, sau khi tìm giá trị của 1 đơn vị, ta lấy giá trị đã cho chia cho giá trị 1 đơn vị đó để tìm số đơn vị."
-        },
-        {
-          "type": "fill",
-          "q": "Có 40 que tính xếp thành các hình vuông, mỗi hình vuông cần 4 que tính. Hỏi xếp được bao nhiêu hình vuông? Điền số thích hợp: ___",
-          "answer": "10",
-          "accept": ["10", "10 hình"]
-        },
-        {
-          "type": "solve",
-          "de": "Một cửa hàng có 250 tờ giấy, cứ 10 tờ giấy đổi được 1 cây bút. Hỏi 250 tờ giấy đổi được bao nhiêu cây bút?",
-          "hints": [
-            "Em ơi, đề cho biết cứ bao nhiêu tờ giấy thì đổi được 1 cây bút rồi đó, em thử xác định xem nhé.",
-            "Vậy để tìm số cây bút đổi được từ 250 tờ, mình lấy 250 chia cho 10, đúng không nào?",
-            "250 chia cho 10, em chỉ cần bỏ bớt 1 chữ số 0 ở bên phải số 250 là ra kết quả rồi đó."
-          ],
-          "loiGiai": "Số cây bút đổi được là:\n250 : 10 = 25 (cây)\nĐáp số: 25 cây bút",
-          "dapSo": "25 cây bút"
-        },
-        {
-          "type": "solve",
-          "de": "Một lớp học có 6 bàn học chia đều 36 quyển vở cho học sinh, mỗi bàn nhận số vở như nhau. Hỏi nếu lớp có 9 bàn học (với số vở phát cho mỗi bàn không đổi) thì cần tất cả bao nhiêu quyển vở?",
-          "hints": [
-            "Trước tiên em tìm xem mỗi bàn học nhận được bao nhiêu quyển vở đã, dựa vào 36 quyển chia đều cho 6 bàn.",
-            "Sau khi biết mỗi bàn nhận bao nhiêu quyển, mình nhân số đó với 9 bàn là ra tổng số vở cần chuẩn bị.",
-            "36 chia 6 bằng bao nhiêu quyển một bàn, rồi em nhân kết quả đó với 9 để có đáp số cuối cùng."
-          ],
-          "loiGiai": "Số vở mỗi bàn nhận được là:\n36 : 6 = 6 (quyển)\nSố vở cần cho 9 bàn học là:\n6 × 9 = 54 (quyển)\nĐáp số: 54 quyển vở",
-          "dapSo": "54 quyển vở"
-        }
-      ]
-    },
-    {
-      "so": 48,
-      "ten": "Luyện tập chung",
-      "lyThuyet": "Bài luyện tập chung giúp em ôn lại toàn bộ kiến thức đã học trong chủ đề: nhân chia với số có một, hai chữ số; tính chất giao hoán, kết hợp, phân phối của phép nhân; nhân chia nhẩm với 10, 100, 1000; ước lượng trong tính toán; tìm số trung bình cộng và bài toán rút về đơn vị. Em hãy vận dụng linh hoạt các kiến thức này để giải toán nhanh và chính xác.",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "Tính nhẩm: 56 × 100 = ?",
-          "options": ["5.600", "560", "56.000", "5.060"],
-          "a": 0,
-          "explain": "Nhân với 100, thêm 2 chữ số 0 vào bên phải: 56 × 100 = 5.600."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính nhẩm: 78.000 : 1000 = ?",
-          "options": ["78", "780", "7.800", "7,8"],
-          "a": 0,
-          "explain": "Chia cho 1000, bỏ bớt 3 chữ số 0 ở bên phải: 78.000 : 1000 = 78."
-        },
-        {
-          "type": "mcq",
-          "q": "Một hình chữ nhật có chiều dài 15 m, chiều rộng 8 m. Một hình vuông có cạnh 12 m. Hình nào có diện tích lớn hơn?",
-          "options": [
-            "Hình vuông lớn hơn (144 m² so với 120 m²)",
-            "Hình chữ nhật lớn hơn (120 m² so với 100 m²)",
-            "Hai hình có diện tích bằng nhau",
-            "Không thể so sánh được"
-          ],
-          "a": 0,
-          "explain": "Diện tích hình chữ nhật = 15 × 8 = 120 m². Diện tích hình vuông = 12 × 12 = 144 m². Vậy hình vuông có diện tích lớn hơn."
-        },
-        {
-          "type": "mcq",
-          "q": "936 : 24 = ?",
-          "options": ["39", "38", "40", "39 dư 1"],
-          "a": 0,
-          "explain": "936 : 24 = 39 (chia hết, vì 39 × 24 = 936)."
-        },
-        {
-          "type": "mcq",
-          "q": "Bốn bạn Nam, Minh, An, Bình lần lượt ghi được 28, 32, 30 và 34 điểm trong một trò chơi trí tuệ. Trung bình mỗi bạn ghi được bao nhiêu điểm?",
-          "options": ["31 điểm", "30 điểm", "32 điểm", "124 điểm"],
-          "a": 0,
-          "explain": "Trung bình cộng = (28 + 32 + 30 + 34) : 4 = 124 : 4 = 31 (điểm)."
-        },
-        {
-          "type": "fill",
-          "q": "Điền số thích hợp vào chỗ trống: 134 × 32 = ___",
-          "answer": "4.288",
-          "accept": ["4288", "4.288"]
-        },
-        {
-          "type": "solve",
-          "de": "Một đội cờ vua có 45 vận động viên. Ban tổ chức muốn chia đều vào các bàn thi đấu, mỗi bàn 15 người, sau đó ước lượng xem cần khoảng bao nhiêu bàn bằng cách làm tròn. Em hãy tính chính xác số bàn cần dùng.",
-          "hints": [
-            "Em ơi, muốn tìm số bàn cần dùng, mình lấy tổng số vận động viên chia cho số người mỗi bàn đúng không?",
-            "Vậy phép tính cần làm là 45 chia cho 15, em thử tính xem kết quả là bao nhiêu.",
-            "45 chia 15 chính là một phép chia hết, em nhân thử 15 với vài số xem số nào ra đúng 45 nhé."
-          ],
-          "loiGiai": "Số bàn thi đấu cần dùng là:\n45 : 15 = 3 (bàn)\nĐáp số: 3 bàn",
-          "dapSo": "3 bàn"
-        },
-        {
-          "type": "solve",
-          "de": "Một cửa hàng đồ chơi siêu anh hùng có 4 kệ, mỗi kệ có 25 mô hình người nhện và 15 mô hình người sắt. Hỏi cửa hàng có tất cả bao nhiêu mô hình siêu anh hùng? (Tính bằng cách thuận tiện, áp dụng tính chất phân phối)",
-          "hints": [
-            "Em thử tính xem mỗi kệ có tất cả bao nhiêu mô hình (cả người nhện và người sắt cộng lại) đã nhé.",
-            "Sau khi biết mỗi kệ có bao nhiêu mô hình, mình nhân số đó với số kệ là ra tổng số mô hình toàn cửa hàng.",
-            "Hoặc em có thể tính 4×25 cộng với 4×15 cũng ra kết quả như vậy, đó chính là tính chất phân phối của phép nhân đối với phép cộng."
-          ],
-          "loiGiai": "Cách 1: Số mô hình mỗi kệ có là 25 + 15 = 40 (mô hình)\nTổng số mô hình cả cửa hàng có là: 4 × 40 = 160 (mô hình)\nCách 2 (kiểm tra bằng tính chất phân phối): 4 × 25 + 4 × 15 = 100 + 60 = 160 (mô hình)\nĐáp số: 160 mô hình",
-          "dapSo": "160 mô hình siêu anh hùng"
-        }
-      ]
+     "type": "solve",
+     "de": "Một cửa hàng có 31.090 viên bi. Cửa hàng nhập thêm số bi gấp 2 lần số bi đang có. Hỏi sau khi nhập thêm, cửa hàng có tất cả bao nhiêu viên bi?",
+     "hints": [
+      "Em thử tìm xem số bi nhập thêm là bao nhiêu đã nhé, nó gấp mấy lần số bi ban đầu?",
+      "Số bi nhập thêm mình tính bằng 31.090 nhân với 2 đúng không? Sau đó còn phải làm gì nữa?",
+      "Sau khi tính được số bi nhập thêm, mình cộng với số bi ban đầu là ra tổng số bi cuối cùng đó em."
+     ],
+     "loiGiai": "Số bi nhập thêm là:\n31.090 × 2 = 62.180 (viên)\nSố bi cửa hàng có tất cả là:\n31.090 + 62.180 = 93.270 (viên)\nĐáp số: 93.270 viên bi",
+     "dapSo": "93.270 viên bi"
     }
-  ]
+   ]
+  },
+  {
+   "so": 39,
+   "ten": "Chia cho số có một chữ số",
+   "lyThuyet": "Khi chia một số cho số có một chữ số, em đặt tính theo cột dọc và chia lần lượt từ trái sang phải, mỗi bước gồm ba việc: chia, nhân, trừ rồi hạ chữ số tiếp theo. Phép chia có thể chia hết (số dư bằng 0) hoặc chia có dư (số dư khác 0 và luôn nhỏ hơn số chia). Ví dụ: 125.730 : 5 = 25.146 (chia hết); 125.734 : 5 = 25.146 dư 4.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "38.295 : 3 = ?",
+     "options": [
+      "12.765",
+      "12.675",
+      "12.756",
+      "12.765 dư 1"
+     ],
+     "a": 0,
+     "explain": "38.295 : 3 = 12.765 (chia hết vì 12.765 × 3 = 38.295)."
+    },
+    {
+     "type": "mcq",
+     "q": "729.316 : 4 = ?",
+     "options": [
+      "182.329",
+      "182.239",
+      "182.329 dư 1",
+      "180.329"
+     ],
+     "a": 0,
+     "explain": "729.316 : 4 = 182.329 (chia hết vì 182.329 × 4 = 729.316)."
+    },
+    {
+     "type": "mcq",
+     "q": "872.905 : 6 = ?",
+     "options": [
+      "145.484 dư 1",
+      "145.484",
+      "145.483 dư 7",
+      "145.474 dư 1"
+     ],
+     "a": 0,
+     "explain": "872.905 : 6 = 145.484 dư 1, vì 145.484 × 6 = 872.904, còn dư 872.905 - 872.904 = 1."
+    },
+    {
+     "type": "mcq",
+     "q": "Minh làm phép chia 250 : 6 và ghi kết quả là 41 dư 4. Bạn An kiểm tra lại xem đúng hay sai. Kết luận nào đúng?",
+     "options": [
+      "Đúng, vì 41 × 6 + 4 = 250",
+      "Sai, vì 41 × 6 + 4 = 254",
+      "Sai, vì kết quả đúng phải là 40 dư 10",
+      "Sai, vì số dư phải lớn hơn số chia"
+     ],
+     "a": 0,
+     "explain": "Kiểm tra: 41 × 6 = 246, 246 + 4 = 250. Đúng bằng số bị chia ban đầu nên phép chia của Minh là đúng."
+    },
+    {
+     "type": "mcq",
+     "q": "Một vựa trái cây có 96 kg xoài, muốn xếp đều vào các túi, mỗi túi 5 kg. Hỏi xếp được nhiều nhất bao nhiêu túi đầy và còn thừa bao nhiêu ki-lô-gam?",
+     "options": [
+      "19 túi, thừa 1 kg",
+      "18 túi, thừa 6 kg",
+      "19 túi, thừa 0 kg",
+      "20 túi, thừa 4 kg"
+     ],
+     "a": 0,
+     "explain": "96 : 5 = 19 dư 1. Vậy xếp được 19 túi đầy và còn thừa 1 kg xoài."
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống: 125.730 : 5 = ___",
+     "answer": "25.146",
+     "accept": [
+      "25146",
+      "25.146"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một xưởng đóng sữa có 250 hộp sữa, đóng đều vào các vỉ, mỗi vỉ 6 hộp. Hỏi đóng được nhiều nhất bao nhiêu vỉ đầy và còn thừa bao nhiêu hộp sữa?",
+     "hints": [
+      "Em ơi, muốn biết đóng được bao nhiêu vỉ đầy, mình lấy tổng số hộp chia cho số hộp một vỉ, đúng không nào?",
+      "Mình thử đặt tính 250 chia cho 6 xem thương và số dư là bao nhiêu nhé.",
+      "Sau khi chia, thương chính là số vỉ đầy, còn số dư chính là số hộp sữa còn thừa lại, chưa đủ để đóng thêm một vỉ nữa đâu em."
+     ],
+     "loiGiai": "Ta thực hiện phép chia:\n250 : 6 = 41 (dư 4)\nVậy đóng được nhiều nhất 41 vỉ đầy và còn thừa 4 hộp sữa.\nĐáp số: 41 vỉ, thừa 4 hộp",
+     "dapSo": "41 vỉ, thừa 4 hộp sữa"
+    },
+    {
+     "type": "solve",
+     "de": "Tổng số tuổi của hai anh em Bình và An là 96 tuổi, hiệu số tuổi của hai anh em là 12 tuổi. Hỏi mỗi người bao nhiêu tuổi (Bình là anh)?",
+     "hints": [
+      "Em còn nhớ dạng toán tìm hai số khi biết tổng và hiệu không? Số lớn sẽ tính bằng cách nào từ tổng và hiệu?",
+      "Số lớn (tuổi anh Bình) bằng (tổng + hiệu) chia 2, còn số bé (tuổi em An) bằng (tổng - hiệu) chia 2 đó em.",
+      "Em thử thay tổng là 96 và hiệu là 12 vào hai công thức đó rồi tính xem mỗi người bao nhiêu tuổi nhé."
+     ],
+     "loiGiai": "Tuổi của Bình (anh, số lớn) là:\n(96 + 12) : 2 = 54 (tuổi)\nTuổi của An (em, số bé) là:\n96 - 54 = 42 (tuổi)\nĐáp số: Bình 54 tuổi, An 42 tuổi",
+     "dapSo": "Bình 54 tuổi, An 42 tuổi"
+    }
+   ]
+  },
+  {
+   "so": 40,
+   "ten": "Tính chất giao hoán và kết hợp của phép nhân",
+   "lyThuyet": "Tính chất giao hoán: khi đổi chỗ các thừa số trong một tích thì tích không thay đổi, viết là a × b = b × a. Tính chất kết hợp: khi nhân một tích hai số với số thứ ba, ta có thể nhân số thứ nhất với tích của số thứ hai và số thứ ba, viết là (a × b) × c = a × (b × c). Hai tính chất này giúp em tính nhanh và tính thuận tiện hơn.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Theo tính chất giao hoán của phép nhân, 3 × 4 bằng phép tính nào sau đây?",
+     "options": [
+      "4 × 3",
+      "4 + 3",
+      "3 + 4",
+      "4 : 3"
+     ],
+     "a": 0,
+     "explain": "Tính chất giao hoán: a × b = b × a, nên 3 × 4 = 4 × 3 (đều bằng 12)."
+    },
+    {
+     "type": "mcq",
+     "q": "Biểu thức nào sau đây thể hiện đúng tính chất kết hợp của phép nhân?",
+     "options": [
+      "(3 × 2) × 4 = 3 × (2 × 4)",
+      "(3 + 2) × 4 = 3 × (2 + 4)",
+      "(3 × 2) + 4 = 3 × (2 + 4)",
+      "3 × 2 × 4 = 3 + 2 + 4"
+     ],
+     "a": 0,
+     "explain": "Tính chất kết hợp: (a × b) × c = a × (b × c). Cả hai vế đều bằng 24."
+    },
+    {
+     "type": "mcq",
+     "q": "Áp dụng tính chất giao hoán, cách tính nhanh nhất của phép tính 6 × 15 là gì?",
+     "options": [
+      "Tính 15 × 6 = 90",
+      "Tính 6 + 15 = 21",
+      "Tính 15 : 6",
+      "Tính 6 × 6 × 15"
+     ],
+     "a": 0,
+     "explain": "Đổi chỗ hai thừa số: 6 × 15 = 15 × 6 = 90, giúp tính nhẩm dễ hơn."
+    },
+    {
+     "type": "mcq",
+     "q": "Cặp phép tính nào sau đây có cùng kết quả?",
+     "options": [
+      "(2 × 5) × 8 và 2 × (5 × 8)",
+      "(2 × 5) × 8 và 2 + 5 + 8",
+      "(2 × 5) × 8 và 2 × 5 + 8",
+      "(2 × 5) × 8 và 8 : 5 × 2"
+     ],
+     "a": 0,
+     "explain": "Theo tính chất kết hợp, (2 × 5) × 8 = 2 × (5 × 8) = 80."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính bằng cách thuận tiện: 4 × 37 × 25 = ?",
+     "options": [
+      "3.700",
+      "3.600",
+      "3.500",
+      "3.750"
+     ],
+     "a": 0,
+     "explain": "Áp dụng tính chất giao hoán và kết hợp: 4 × 37 × 25 = (4 × 25) × 37 = 100 × 37 = 3.700."
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống để hoàn thành tính chất kết hợp: (a × b) × c = a × (___ × c)",
+     "answer": "b",
+     "accept": [
+      "b"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một sân bóng đá mini có 5 hàng ghế, mỗi hàng có 15 ghế. Ban tổ chức muốn tính nhanh tổng số ghế bằng cách đổi chỗ hai số. Hỏi sân có tất cả bao nhiêu ghế?",
+     "hints": [
+      "Em ơi, đề cho 5 hàng, mỗi hàng 15 ghế, vậy phép tính ban đầu là gì nhỉ?",
+      "Mình có thể đổi chỗ hai thừa số 5 và 15 để tính 15 × 5 cho dễ nhẩm hơn không?",
+      "15 × 5 chính là 15 × 5 = 75, và theo tính chất giao hoán thì 5 × 15 cũng bằng như vậy đó em."
+     ],
+     "loiGiai": "Áp dụng tính chất giao hoán của phép nhân:\n5 × 15 = 15 × 5 = 75\nVậy sân bóng có tất cả 75 ghế.\nĐáp số: 75 ghế",
+     "dapSo": "75 ghế"
+    },
+    {
+     "type": "solve",
+     "de": "Một câu lạc bộ cờ vua có 2 phòng, mỗi phòng có 4 bàn cờ, mỗi bàn cờ xếp cho 5 người chơi. Hỏi câu lạc bộ cần chuẩn bị chỗ cho bao nhiêu người chơi? (Tính bằng cách thuận tiện dùng tính chất kết hợp)",
+     "hints": [
+      "Em thử viết phép tính từ đề bài xem: có 2 phòng, mỗi phòng 4 bàn, mỗi bàn 5 người, vậy là phép nhân ba số nào?",
+      "Theo tính chất kết hợp, mình có thể nhân 4 và 5 trước, rồi mới nhân với 2, xem có dễ tính hơn không?",
+      "4 × 5 bằng bao nhiêu, sau đó em nhân tiếp với 2 là ra số người chơi cần chuẩn bị chỗ đó."
+     ],
+     "loiGiai": "Số người chơi câu lạc bộ cần chuẩn bị chỗ là:\n2 × 4 × 5 = 2 × (4 × 5) = 2 × 20 = 40 (người)\nĐáp số: 40 người",
+     "dapSo": "40 người"
+    }
+   ]
+  },
+  {
+   "so": 41,
+   "ten": "Nhân, chia với 10, 100, 1000,...",
+   "lyThuyet": "Muốn nhân một số với 10, 100, 1000,... em chỉ cần viết thêm 1, 2, 3,... chữ số 0 vào bên phải số đó. Muốn chia một số tròn chục, tròn trăm, tròn nghìn,... cho 10, 100, 1000,... em chỉ cần bỏ bớt 1, 2, 3,... chữ số 0 ở bên phải số đó. Ví dụ: 36 × 10 = 360; 36 × 100 = 3.600; 36 × 1000 = 36.000.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "36 × 100 = ?",
+     "options": [
+      "360",
+      "3.600",
+      "36.000",
+      "3.060"
+     ],
+     "a": 1,
+     "explain": "Nhân với 100, ta thêm 2 chữ số 0 vào bên phải: 36 × 100 = 3.600."
+    },
+    {
+     "type": "mcq",
+     "q": "45.000 : 1000 = ?",
+     "options": [
+      "45",
+      "450",
+      "4.500",
+      "4,5"
+     ],
+     "a": 0,
+     "explain": "Chia cho 1000, ta bỏ bớt 3 chữ số 0 ở bên phải: 45.000 : 1000 = 45."
+    },
+    {
+     "type": "mcq",
+     "q": "Đổi đơn vị: 5 tấn = ? kg",
+     "options": [
+      "50 kg",
+      "500 kg",
+      "5.000 kg",
+      "50.000 kg"
+     ],
+     "a": 2,
+     "explain": "1 tấn = 1000 kg, nên 5 tấn = 5 × 1000 = 5.000 kg."
+    },
+    {
+     "type": "mcq",
+     "q": "Đổi đơn vị: 7 tạ = ? kg",
+     "options": [
+      "70 kg",
+      "700 kg",
+      "7.000 kg",
+      "7 kg"
+     ],
+     "a": 1,
+     "explain": "1 tạ = 100 kg, nên 7 tạ = 7 × 100 = 700 kg."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính thuận tiện: 23 × 5 × 2 = ?",
+     "options": [
+      "230",
+      "220",
+      "215",
+      "240"
+     ],
+     "a": 0,
+     "explain": "Áp dụng tính chất kết hợp: 23 × 5 × 2 = 23 × (5 × 2) = 23 × 10 = 230."
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống: 3 yến = ___ kg",
+     "answer": "30",
+     "accept": [
+      "30",
+      "30 kg"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một kho hàng có 12 tấn gạo. Hỏi kho hàng có bao nhiêu ki-lô-gam gạo?",
+     "hints": [
+      "Em còn nhớ 1 tấn bằng bao nhiêu ki-lô-gam không nào?",
+      "Muốn đổi từ tấn sang ki-lô-gam, mình nhân số tấn với 1000, đúng không em?",
+      "Vậy 12 tấn thì mình lấy 12 nhân với 1000, chỉ cần thêm 3 chữ số 0 vào sau số 12 thôi đó."
+     ],
+     "loiGiai": "Đổi đơn vị: 1 tấn = 1000 kg\nVậy 12 tấn = 12 × 1000 = 12.000 (kg)\nĐáp số: 12.000 kg",
+     "dapSo": "12.000 kg"
+    },
+    {
+     "type": "solve",
+     "de": "Một cửa hàng thể thao nhập về 25 hộp bóng bàn, mỗi hộp có 100 quả bóng. Hỏi cửa hàng nhập về tất cả bao nhiêu quả bóng bàn?",
+     "hints": [
+      "Em ơi, muốn biết tổng số quả bóng, mình lấy số hộp nhân với số quả trong mỗi hộp đúng không?",
+      "Phép tính cần làm là 25 nhân với 100, mà nhân với 100 thì mình chỉ cần làm gì với số 25?",
+      "Đúng rồi, chỉ cần viết thêm 2 chữ số 0 vào bên phải số 25 là ra kết quả liền đó em."
+     ],
+     "loiGiai": "Số quả bóng bàn cửa hàng nhập về là:\n25 × 100 = 2.500 (quả)\nĐáp số: 2.500 quả bóng bàn",
+     "dapSo": "2.500 quả bóng bàn"
+    }
+   ]
+  },
+  {
+   "so": 42,
+   "ten": "Tính chất phân phối của phép nhân đối với phép cộng",
+   "lyThuyet": "Khi nhân một số với một tổng, ta có thể nhân số đó với từng số hạng của tổng rồi cộng các kết quả lại: a × (b + c) = a × b + a × c. Tương tự, khi nhân một tổng với một số: (a + b) × c = a × c + b × c. Với phép trừ cũng có tính chất tương tự: a × (b - c) = a × b - a × c.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "15 × (3 + 2) bằng biểu thức nào sau đây?",
+     "options": [
+      "15 × 3 + 15 × 2",
+      "15 × 3 + 2",
+      "15 + 3 × 15 + 2",
+      "15 × 3 - 15 × 2"
+     ],
+     "a": 0,
+     "explain": "Theo tính chất phân phối: a × (b + c) = a × b + a × c, nên 15 × (3 + 2) = 15 × 3 + 15 × 2 = 45 + 30 = 75."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính thuận tiện: 67 × 3 + 67 × 7 = ?",
+     "options": [
+      "670",
+      "660",
+      "607",
+      "700"
+     ],
+     "a": 0,
+     "explain": "Áp dụng tính chất phân phối: 67 × 3 + 67 × 7 = 67 × (3 + 7) = 67 × 10 = 670."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính thuận tiện: 27 × 6 + 73 × 6 = ?",
+     "options": [
+      "600",
+      "500",
+      "610",
+      "590"
+     ],
+     "a": 0,
+     "explain": "Áp dụng tính chất phân phối (a × c + b × c = (a+b) × c): 27 × 6 + 73 × 6 = (27 + 73) × 6 = 100 × 6 = 600."
+    },
+    {
+     "type": "mcq",
+     "q": "Biểu thức nào đúng với tính chất phân phối của phép nhân đối với phép trừ?",
+     "options": [
+      "a × (b - c) = a × b - a × c",
+      "a × (b - c) = a × b + a × c",
+      "a × (b - c) = a - b × c",
+      "a × (b - c) = (a - b) × c"
+     ],
+     "a": 0,
+     "explain": "Tính chất phân phối của phép nhân với phép trừ: a × (b - c) = a × b - a × c."
+    },
+    {
+     "type": "mcq",
+     "q": "45 × 6 + 45 × 4 = ?",
+     "options": [
+      "450",
+      "460",
+      "440",
+      "445"
+     ],
+     "a": 0,
+     "explain": "45 × 6 + 45 × 4 = 45 × (6 + 4) = 45 × 10 = 450."
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống: a × (b + c) = a × b + a × ___",
+     "answer": "c",
+     "accept": [
+      "c"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một đội tuyển bơi có 36 bạn nam và 4 bạn nữ. Mỗi bạn được phát 6 chiếc huy hiệu đội tuyển. Hỏi cả đội cần bao nhiêu chiếc huy hiệu? (Tính bằng cách thuận tiện)",
+     "hints": [
+      "Em thử viết phép tính: số huy hiệu của nam là 36 × 6, số huy hiệu của nữ là 4 × 6, đúng không?",
+      "Hai tích này có chung thừa số 6, vậy mình có thể gộp lại thành (36 + 4) × 6 được không em?",
+      "36 cộng 4 bằng bao nhiêu, rồi em nhân kết quả đó với 6 là ra tổng số huy hiệu cần chuẩn bị."
+     ],
+     "loiGiai": "Số huy hiệu cả đội cần là:\n36 × 6 + 4 × 6 = (36 + 4) × 6 = 40 × 6 = 240 (chiếc)\nĐáp số: 240 chiếc huy hiệu",
+     "dapSo": "240 chiếc huy hiệu"
+    },
+    {
+     "type": "solve",
+     "de": "Một siêu thị có 8 kệ hàng, mỗi kệ có 25 hộp bánh và 15 hộp kẹo. Hỏi siêu thị có tất cả bao nhiêu hộp bánh và kẹo? (Tính bằng cách thuận tiện)",
+     "hints": [
+      "Em thử tính xem: mỗi kệ có bao nhiêu hộp bánh và kẹo cộng lại đã nhé.",
+      "Sau khi biết mỗi kệ có bao nhiêu hộp, mình nhân với số kệ là ra tổng số hộp, đúng không em?",
+      "Hoặc em có thể tính 8 × 25 cộng với 8 × 15 cũng ra kết quả giống vậy đó, vì đó chính là tính chất phân phối."
+     ],
+     "loiGiai": "Cách 1: Số hộp mỗi kệ có là 25 + 15 = 40 (hộp)\nSố hộp cả siêu thị có là: 8 × 40 = 320 (hộp)\nCách 2 (kiểm tra): 8 × 25 + 8 × 15 = 200 + 120 = 320 (hộp)\nĐáp số: 320 hộp",
+     "dapSo": "320 hộp bánh và kẹo"
+    }
+   ]
+  },
+  {
+   "so": 43,
+   "ten": "Nhân với số có hai chữ số",
+   "lyThuyet": "Khi nhân một số với số có hai chữ số, em tính hai tích riêng: tích riêng thứ nhất là số đó nhân với chữ số hàng đơn vị, tích riêng thứ hai là số đó nhân với chữ số hàng chục (viết lùi sang trái một cột vì đây là số chục). Cuối cùng cộng hai tích riêng lại để được kết quả. Ví dụ: 34 × 12 = 408.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "34 × 12 = ?",
+     "options": [
+      "408",
+      "418",
+      "398",
+      "480"
+     ],
+     "a": 0,
+     "explain": "34 × 12 = 34 × 2 + 34 × 10 = 68 + 340 = 408."
+    },
+    {
+     "type": "mcq",
+     "q": "87 × 23 = ?",
+     "options": [
+      "2.001",
+      "1.901",
+      "2.011",
+      "2.010"
+     ],
+     "a": 0,
+     "explain": "87 × 23 = 87 × 3 + 87 × 20 = 261 + 1.740 = 2.001."
+    },
+    {
+     "type": "mcq",
+     "q": "134 × 32 = ?",
+     "options": [
+      "4.288",
+      "4.188",
+      "4.298",
+      "4.388"
+     ],
+     "a": 0,
+     "explain": "134 × 32 = 134 × 2 + 134 × 30 = 268 + 4.020 = 4.288."
+    },
+    {
+     "type": "mcq",
+     "q": "Một sân bóng đá hình chữ nhật có chiều dài 47 m, chiều rộng 26 m. Diện tích sân bóng là bao nhiêu mét vuông?",
+     "options": [
+      "1.222 m²",
+      "1.202 m²",
+      "1.212 m²",
+      "1.322 m²"
+     ],
+     "a": 0,
+     "explain": "Diện tích hình chữ nhật S = a × b = 47 × 26 = 1.222 (m²)."
+    },
+    {
+     "type": "mcq",
+     "q": "Trong phép tính đặt tính nhân 34 × 12, tích riêng thứ hai (34 × 1 chục) được viết như thế nào?",
+     "options": [
+      "Viết lùi sang trái một cột so với tích riêng thứ nhất",
+      "Viết thẳng cột với tích riêng thứ nhất",
+      "Viết lùi sang phải một cột",
+      "Viết ở dòng trên cùng"
+     ],
+     "a": 0,
+     "explain": "Vì chữ số hàng chục có giá trị là chục, nên tích riêng thứ hai phải viết lùi sang trái một cột so với tích riêng thứ nhất."
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống: 2021 × 36 = ___",
+     "answer": "72.756",
+     "accept": [
+      "72756",
+      "72.756"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một xe tải chở 18 bao ngô, mỗi bao nặng 35 kg. Hỏi xe tải đó chở tất cả bao nhiêu ki-lô-gam ngô?",
+     "hints": [
+      "Em ơi, đề cho biết có bao nhiêu bao ngô và mỗi bao nặng bao nhiêu ki-lô-gam, vậy phép tính cần làm là gì?",
+      "Muốn tìm tổng khối lượng ngô, mình lấy số cân nặng một bao nhân với số bao, đúng không nào?",
+      "Mình đặt tính 35 nhân với 18: tính tích riêng 35×8 trước, rồi tích riêng 35×1 chục, sau đó cộng lại là ra kết quả."
+     ],
+     "loiGiai": "Số ki-lô-gam ngô xe tải chở tất cả là:\n35 × 18 = 630 (kg)\nĐáp số: 630 kg",
+     "dapSo": "630 kg"
+    },
+    {
+     "type": "solve",
+     "de": "Một sân trường hình chữ nhật dùng để tập thể dục có chiều dài 24 m, chiều rộng 18 m. Tính diện tích sân trường đó.",
+     "hints": [
+      "Em còn nhớ công thức tính diện tích hình chữ nhật không? Nó liên quan đến chiều dài và chiều rộng đó.",
+      "Diện tích hình chữ nhật S = a × b, với a là chiều dài, b là chiều rộng, em thử thay số vào xem.",
+      "Vậy mình cần tính 24 nhân với 18, đặt tính rồi tính hai tích riêng rồi cộng lại để ra đáp số nhé."
+     ],
+     "loiGiai": "Diện tích sân trường là:\nS = 24 × 18 = 432 (m²)\nĐáp số: 432 m²",
+     "dapSo": "432 m²"
+    }
+   ]
+  },
+  {
+   "so": 44,
+   "ten": "Chia cho số có hai chữ số",
+   "lyThuyet": "Khi chia một số cho số có hai chữ số, em đặt tính theo cột dọc và thực hiện chia, nhân, trừ, hạ giống như chia cho số có một chữ số, nhưng mỗi lần cần ước lượng thương cẩn thận hơn. Mẹo nhỏ: khi chia số tròn chục, tròn trăm cho số tròn chục, tròn trăm, em có thể cùng xóa bớt số chữ số 0 giống nhau ở cả số bị chia và số chia. Ví dụ: 450 : 90 = 45 : 9 = 5.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "216 : 12 = ?",
+     "options": [
+      "18",
+      "16",
+      "19",
+      "17"
+     ],
+     "a": 0,
+     "explain": "216 : 12 = 18 (chia hết, vì 18 × 12 = 216)."
+    },
+    {
+     "type": "mcq",
+     "q": "218 : 18 = ?",
+     "options": [
+      "12 dư 2",
+      "12 dư 4",
+      "11 dư 20",
+      "13 dư 4"
+     ],
+     "a": 0,
+     "explain": "18 × 12 = 216, còn dư 218 - 216 = 2. Vậy 218 : 18 = 12 dư 2."
+    },
+    {
+     "type": "mcq",
+     "q": "1.554 : 37 = ?",
+     "options": [
+      "42",
+      "41",
+      "43",
+      "42 dư 1"
+     ],
+     "a": 0,
+     "explain": "1.554 : 37 = 42 (chia hết, vì 42 × 37 = 1.554)."
+    },
+    {
+     "type": "mcq",
+     "q": "Áp dụng mẹo xóa chữ số 0, kết quả của 450 : 90 là bao nhiêu?",
+     "options": [
+      "5",
+      "50",
+      "4",
+      "45"
+     ],
+     "a": 0,
+     "explain": "Xóa cùng 1 chữ số 0 ở cả hai số: 450 : 90 = 45 : 9 = 5."
+    },
+    {
+     "type": "mcq",
+     "q": "Một hội trường có diện tích 7.140 m², chiều rộng 68 m. Tính chu vi hội trường hình chữ nhật đó.",
+     "options": [
+      "346 m",
+      "336 m",
+      "356 m",
+      "326 m"
+     ],
+     "a": 0,
+     "explain": "Chiều dài = 7.140 : 68 = 105 (m). Chu vi = (105 + 68) × 2 = 346 (m)."
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống: 2.294 : 62 = ___",
+     "answer": "37",
+     "accept": [
+      "37"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một sân khấu văn nghệ cần xếp 384 chiếc ghế thành các dãy, mỗi dãy 24 chiếc ghế. Hỏi xếp được tất cả bao nhiêu dãy ghế?",
+     "hints": [
+      "Em ơi, mình có tổng số ghế và số ghế trong mỗi dãy rồi, vậy cần tìm số dãy thì làm phép tính gì?",
+      "Muốn tìm số dãy, mình lấy tổng số ghế chia cho số ghế mỗi dãy đúng không nào?",
+      "Em đặt tính 384 chia cho 24, ước lượng thương cẩn thận rồi nhân, trừ để tìm ra kết quả nhé."
+     ],
+     "loiGiai": "Số dãy ghế xếp được là:\n384 : 24 = 16 (dãy)\nĐáp số: 16 dãy ghế",
+     "dapSo": "16 dãy ghế"
+    },
+    {
+     "type": "solve",
+     "de": "Một xưởng đóng gói được 4.896 hộp bút, chia đều vào các thùng, mỗi thùng 12 hộp. Hỏi cần bao nhiêu thùng để đựng hết số hộp bút đó?",
+     "hints": [
+      "Em thử nghĩ xem, muốn biết cần bao nhiêu thùng, mình lấy tổng số hộp bút chia cho số hộp mỗi thùng phải không?",
+      "Vậy phép tính cần làm là 4.896 chia cho 12, em đặt tính rồi chia từ trái sang phải nhé.",
+      "Nhớ làm đúng ba bước chia - nhân - trừ - hạ ở từng bước để ra được thương chính xác."
+     ],
+     "loiGiai": "Số thùng cần dùng là:\n4.896 : 12 = 408 (thùng)\nĐáp số: 408 thùng",
+     "dapSo": "408 thùng"
+    }
+   ]
+  },
+  {
+   "so": 45,
+   "ten": "Thực hành và trải nghiệm ước lượng trong tính toán",
+   "lyThuyet": "Để ước lượng nhanh kết quả một phép tính, em làm tròn các số đến hàng nghìn hoặc hàng chục nghìn (số gần nhất), rồi tính với các số đã làm tròn đó. Kết quả ước lượng giúp em kiểm tra xem phép tính chính xác của mình có hợp lí hay không. Ví dụ: 5.978 làm tròn thành 6.000, 2.967 làm tròn thành 3.000, nên 5.978 + 2.967 ước lượng khoảng 6.000 + 3.000 = 9.000.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Làm tròn 7.960 đến hàng nghìn ta được số nào?",
+     "options": [
+      "8.000",
+      "7.000",
+      "7.900",
+      "8.900"
+     ],
+     "a": 0,
+     "explain": "7.960 gần với 8.000 hơn (vì chữ số hàng trăm là 9, lớn hơn hoặc bằng 5 nên làm tròn lên), làm tròn đến hàng nghìn được 8.000."
+    },
+    {
+     "type": "mcq",
+     "q": "Ước lượng kết quả của phép tính 7.960 + 1.980 bằng cách làm tròn đến hàng nghìn là khoảng bao nhiêu?",
+     "options": [
+      "10.000",
+      "9.000",
+      "11.000",
+      "8.000"
+     ],
+     "a": 0,
+     "explain": "7.960 làm tròn thành 8.000; 1.980 làm tròn thành 2.000. Ước lượng: 8.000 + 2.000 = 10.000 (kết quả đúng là 9.940, khá gần với ước lượng)."
+    },
+    {
+     "type": "mcq",
+     "q": "Ước lượng kết quả của phép tính 5.985 - 3.897 bằng cách làm tròn đến hàng nghìn là khoảng bao nhiêu?",
+     "options": [
+      "2.000",
+      "3.000",
+      "1.000",
+      "2.500"
+     ],
+     "a": 0,
+     "explain": "5.985 làm tròn thành 6.000; 3.897 làm tròn thành 4.000. Ước lượng: 6.000 - 4.000 = 2.000 (kết quả đúng là 2.088, gần với ước lượng)."
+    },
+    {
+     "type": "mcq",
+     "q": "Ước lượng kết quả của phép tính 19.870 + 30.480 bằng cách làm tròn đến hàng chục nghìn là khoảng bao nhiêu?",
+     "options": [
+      "50.000",
+      "40.000",
+      "60.000",
+      "45.000"
+     ],
+     "a": 0,
+     "explain": "19.870 làm tròn đến hàng chục nghìn thành 20.000; 30.480 làm tròn thành 30.000. Ước lượng: 20.000 + 30.000 = 50.000 (kết quả đúng là 50.350, rất gần với ước lượng)."
+    },
+    {
+     "type": "mcq",
+     "q": "Bạn Bình ước lượng phép tính 89 × 26 bằng cách làm tròn thành 90 × 30 = 2.700 rồi kết luận 89 × 26 > 2.700. Nhận xét nào đúng?",
+     "options": [
+      "Sai, vì 89 × 26 = 2.314, nhỏ hơn 2.700",
+      "Đúng, vì làm tròn lên nên kết quả thật cũng lớn hơn",
+      "Đúng, vì 89 × 26 luôn bằng 2.700",
+      "Sai, vì 89 × 26 = 2.900, lớn hơn 2.700"
+     ],
+     "a": 0,
+     "explain": "Tính chính xác: 89 × 26 = 2.314. Vì cả hai số đều được làm tròn lên (89→90, 26→30) nên kết quả ước lượng 2.700 lớn hơn kết quả thật, do đó kết luận của Bình là sai."
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống: Làm tròn 50.217 - 21.052 đến hàng chục nghìn, ta ước lượng kết quả khoảng ___",
+     "answer": "30.000",
+     "accept": [
+      "30000",
+      "30.000"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một cửa hàng thể thao buổi sáng bán được 5.978 quả bóng đá, buổi chiều bán được 2.967 quả bóng đá. Em hãy ước lượng (làm tròn đến hàng nghìn) xem cả ngày cửa hàng bán được khoảng bao nhiêu quả bóng, sau đó tính kết quả chính xác.",
+     "hints": [
+      "Trước tiên em làm tròn từng số đến hàng nghìn xem: 5.978 gần với số tròn nghìn nào, 2.967 gần với số tròn nghìn nào?",
+      "Sau khi làm tròn, mình cộng hai số đã làm tròn lại để có kết quả ước lượng, rồi mới cộng hai số thật để có kết quả chính xác nhé.",
+      "5.978 làm tròn thành 6.000, 2.967 làm tròn thành 3.000, cộng lại là con số ước lượng; còn kết quả chính xác thì em cộng 5.978 với 2.967."
+     ],
+     "loiGiai": "Ước lượng: 5.978 làm tròn thành 6.000; 2.967 làm tròn thành 3.000\nCả ngày ước lượng bán được khoảng: 6.000 + 3.000 = 9.000 (quả)\nKết quả chính xác: 5.978 + 2.967 = 8.945 (quả)\nĐáp số: ước lượng khoảng 9.000 quả, chính xác là 8.945 quả",
+     "dapSo": "Ước lượng khoảng 9.000 quả, chính xác 8.945 quả"
+    },
+    {
+     "type": "solve",
+     "de": "Một trường học có 19.870 cuốn sách ở thư viện cũ và nhận thêm 30.480 cuốn sách mới. Em hãy ước lượng (làm tròn đến hàng chục nghìn) tổng số sách của trường, sau đó tính kết quả chính xác.",
+     "hints": [
+      "Em thử làm tròn 19.870 đến hàng chục nghìn xem, nó gần với 20.000 hay 10.000 hơn?",
+      "Tương tự, 30.480 làm tròn đến hàng chục nghìn thì thành số nào? Sau đó em cộng hai số đã làm tròn lại nhé.",
+      "Cuối cùng, để có đáp số chính xác, em cộng thẳng hai số 19.870 và 30.480 với nhau."
+     ],
+     "loiGiai": "Ước lượng: 19.870 làm tròn thành 20.000; 30.480 làm tròn thành 30.000\nTổng số sách ước lượng khoảng: 20.000 + 30.000 = 50.000 (cuốn)\nKết quả chính xác: 19.870 + 30.480 = 50.350 (cuốn)\nĐáp số: ước lượng khoảng 50.000 cuốn, chính xác là 50.350 cuốn",
+     "dapSo": "Ước lượng khoảng 50.000 cuốn, chính xác 50.350 cuốn"
+    }
+   ]
+  },
+  {
+   "so": 46,
+   "ten": "Tìm số trung bình cộng",
+   "lyThuyet": "Trung bình cộng của một nhóm số bằng tổng các số đó chia cho số các số hạng. Ví dụ: trung bình cộng của 10 và 50 là (10 + 50) : 2 = 30. Trung bình cộng của 13, 14 và 18 là (13 + 14 + 18) : 3 = 15.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Trung bình cộng của 20 và 30 là bao nhiêu?",
+     "options": [
+      "25",
+      "20",
+      "30",
+      "50"
+     ],
+     "a": 0,
+     "explain": "Trung bình cộng = (20 + 30) : 2 = 50 : 2 = 25."
+    },
+    {
+     "type": "mcq",
+     "q": "Trung bình cộng của ba số 10, 20 và 30 là bao nhiêu?",
+     "options": [
+      "20",
+      "60",
+      "15",
+      "30"
+     ],
+     "a": 0,
+     "explain": "Trung bình cộng = (10 + 20 + 30) : 3 = 60 : 3 = 20."
+    },
+    {
+     "type": "mcq",
+     "q": "Trung bình cộng của ba số 5, 12 và 19 là bao nhiêu?",
+     "options": [
+      "12",
+      "10",
+      "14",
+      "13"
+     ],
+     "a": 0,
+     "explain": "Trung bình cộng = (5 + 12 + 19) : 3 = 36 : 3 = 12."
+    },
+    {
+     "type": "mcq",
+     "q": "Ba bạn học sinh trồng cây: Nam trồng 15 cây, Minh trồng 20 cây, An trồng 22 cây. Hỏi trung bình mỗi bạn trồng được bao nhiêu cây?",
+     "options": [
+      "19 cây",
+      "18 cây",
+      "20 cây",
+      "57 cây"
+     ],
+     "a": 0,
+     "explain": "Trung bình mỗi bạn trồng: (15 + 20 + 22) : 3 = 57 : 3 = 19 (cây)."
+    },
+    {
+     "type": "mcq",
+     "q": "Bốn lớp 4 của một trường có số học sinh lần lượt là 35, 37, 43 và 45 bạn. Hỏi trung bình mỗi lớp có bao nhiêu học sinh?",
+     "options": [
+      "40 bạn",
+      "39 bạn",
+      "41 bạn",
+      "42 bạn"
+     ],
+     "a": 0,
+     "explain": "Trung bình mỗi lớp có: (35 + 37 + 43 + 45) : 4 = 160 : 4 = 40 (bạn)."
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống: Trung bình cộng của 13, 14 và 18 là ___",
+     "answer": "15",
+     "accept": [
+      "15"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Ba đội bóng đá của trường ghi được số bàn thắng trong giải đấu lần lượt là: đội của Nam ghi 26 bàn, đội của Bình ghi 35 bàn, đội của An ghi 44 bàn. Hỏi trung bình mỗi đội ghi được bao nhiêu bàn thắng?",
+     "hints": [
+      "Em ơi, muốn tìm trung bình cộng của ba số, đầu tiên mình cần làm gì với ba số đó?",
+      "Đúng rồi, mình cộng cả ba số bàn thắng lại với nhau trước, sau đó mới chia cho số đội đúng không?",
+      "Sau khi có tổng số bàn thắng, em chia tổng đó cho 3 (vì có 3 đội) là ra được số trung bình mỗi đội ghi được."
+     ],
+     "loiGiai": "Tổng số bàn thắng ba đội ghi được là:\n26 + 35 + 44 = 105 (bàn)\nTrung bình mỗi đội ghi được số bàn thắng là:\n105 : 3 = 35 (bàn)\nĐáp số: 35 bàn",
+     "dapSo": "35 bàn"
+    },
+    {
+     "type": "solve",
+     "de": "Minh đi bơi 4 buổi trong tuần, số phút bơi mỗi buổi lần lượt là 28 phút, 32 phút, 30 phút và 34 phút. Hỏi trung bình mỗi buổi Minh bơi được bao nhiêu phút?",
+     "hints": [
+      "Em thử cộng tổng số phút của cả 4 buổi bơi lại với nhau xem được bao nhiêu đã nhé.",
+      "Sau khi có tổng số phút, mình chia tổng đó cho số buổi bơi (là 4 buổi) để tìm trung bình cộng.",
+      "Vậy phép tính cuối cùng em cần làm là lấy tổng số phút chia cho 4, kết quả đó chính là số phút trung bình mỗi buổi."
+     ],
+     "loiGiai": "Tổng số phút Minh bơi trong 4 buổi là:\n28 + 32 + 30 + 34 = 124 (phút)\nTrung bình mỗi buổi Minh bơi được số phút là:\n124 : 4 = 31 (phút)\nĐáp số: 31 phút",
+     "dapSo": "31 phút"
+    }
+   ]
+  },
+  {
+   "so": 47,
+   "ten": "Bài toán liên quan đến rút về đơn vị",
+   "lyThuyet": "Bài toán rút về đơn vị có hai dạng chính. Dạng 1: tìm giá trị của một đơn vị (ví dụ một hộp, một can) trước, sau đó nhân lên để tìm giá trị của nhiều đơn vị hơn. Dạng 2: tìm giá trị của một đơn vị trước, sau đó chia để tìm xem có bao nhiêu đơn vị trong một giá trị cho trước. Ví dụ dạng 1: 36 cái bánh chia đều 6 hộp thì 1 hộp có 6 cái, vậy 4 hộp có 6 × 4 = 24 cái.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Có 36 chiếc bánh chia đều vào 6 hộp. Hỏi 1 hộp có bao nhiêu chiếc bánh?",
+     "options": [
+      "6 chiếc",
+      "8 chiếc",
+      "5 chiếc",
+      "7 chiếc"
+     ],
+     "a": 0,
+     "explain": "Số bánh trong 1 hộp là: 36 : 6 = 6 (chiếc)."
+    },
+    {
+     "type": "mcq",
+     "q": "Biết 1 hộp có 6 chiếc bánh (như câu trên), hỏi 4 hộp có bao nhiêu chiếc bánh?",
+     "options": [
+      "24 chiếc",
+      "20 chiếc",
+      "22 chiếc",
+      "26 chiếc"
+     ],
+     "a": 0,
+     "explain": "Số bánh trong 4 hộp là: 6 × 4 = 24 (chiếc). Đây là dạng 1 của bài toán rút về đơn vị: tìm giá trị 1 đơn vị rồi nhân lên."
+    },
+    {
+     "type": "mcq",
+     "q": "Có 18 lít mật ong chia đều vào 6 can. Hỏi cần bao nhiêu can để đựng 12 lít mật ong?",
+     "options": [
+      "4 can",
+      "3 can",
+      "5 can",
+      "6 can"
+     ],
+     "a": 0,
+     "explain": "1 can chứa: 18 : 6 = 3 (lít). Số can cần để đựng 12 lít là: 12 : 3 = 4 (can). Đây là dạng 2 của bài toán rút về đơn vị."
+    },
+    {
+     "type": "mcq",
+     "q": "Có 54 lít nước mắm chia đều vào 9 can. Hỏi 1 can chứa bao nhiêu lít nước mắm?",
+     "options": [
+      "6 lít",
+      "5 lít",
+      "7 lít",
+      "9 lít"
+     ],
+     "a": 0,
+     "explain": "1 can chứa: 54 : 9 = 6 (lít)."
+    },
+    {
+     "type": "mcq",
+     "q": "Bài toán rút về đơn vị dạng 2 thường có bước tính cuối cùng là gì?",
+     "options": [
+      "Lấy giá trị đã cho chia cho giá trị của 1 đơn vị",
+      "Lấy giá trị của 1 đơn vị nhân với số đơn vị đã cho",
+      "Lấy tổng cộng với giá trị của 1 đơn vị",
+      "Lấy giá trị của 1 đơn vị trừ đi giá trị đã cho"
+     ],
+     "a": 0,
+     "explain": "Ở dạng 2, sau khi tìm giá trị của 1 đơn vị, ta lấy giá trị đã cho chia cho giá trị 1 đơn vị đó để tìm số đơn vị."
+    },
+    {
+     "type": "fill",
+     "q": "Có 40 que tính xếp thành các hình vuông, mỗi hình vuông cần 4 que tính. Hỏi xếp được bao nhiêu hình vuông? Điền số thích hợp: ___",
+     "answer": "10",
+     "accept": [
+      "10",
+      "10 hình"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một cửa hàng có 250 tờ giấy, cứ 10 tờ giấy đổi được 1 cây bút. Hỏi 250 tờ giấy đổi được bao nhiêu cây bút?",
+     "hints": [
+      "Em ơi, đề cho biết cứ bao nhiêu tờ giấy thì đổi được 1 cây bút rồi đó, em thử xác định xem nhé.",
+      "Vậy để tìm số cây bút đổi được từ 250 tờ, mình lấy 250 chia cho 10, đúng không nào?",
+      "250 chia cho 10, em chỉ cần bỏ bớt 1 chữ số 0 ở bên phải số 250 là ra kết quả rồi đó."
+     ],
+     "loiGiai": "Số cây bút đổi được là:\n250 : 10 = 25 (cây)\nĐáp số: 25 cây bút",
+     "dapSo": "25 cây bút"
+    },
+    {
+     "type": "solve",
+     "de": "Một lớp học có 6 bàn học chia đều 36 quyển vở cho học sinh, mỗi bàn nhận số vở như nhau. Hỏi nếu lớp có 9 bàn học (với số vở phát cho mỗi bàn không đổi) thì cần tất cả bao nhiêu quyển vở?",
+     "hints": [
+      "Trước tiên em tìm xem mỗi bàn học nhận được bao nhiêu quyển vở đã, dựa vào 36 quyển chia đều cho 6 bàn.",
+      "Sau khi biết mỗi bàn nhận bao nhiêu quyển, mình nhân số đó với 9 bàn là ra tổng số vở cần chuẩn bị.",
+      "36 chia 6 bằng bao nhiêu quyển một bàn, rồi em nhân kết quả đó với 9 để có đáp số cuối cùng."
+     ],
+     "loiGiai": "Số vở mỗi bàn nhận được là:\n36 : 6 = 6 (quyển)\nSố vở cần cho 9 bàn học là:\n6 × 9 = 54 (quyển)\nĐáp số: 54 quyển vở",
+     "dapSo": "54 quyển vở"
+    }
+   ]
+  },
+  {
+   "so": 48,
+   "ten": "Luyện tập chung",
+   "lyThuyet": "Bài luyện tập chung giúp em ôn lại toàn bộ kiến thức đã học trong chủ đề: nhân chia với số có một, hai chữ số; tính chất giao hoán, kết hợp, phân phối của phép nhân; nhân chia nhẩm với 10, 100, 1000; ước lượng trong tính toán; tìm số trung bình cộng và bài toán rút về đơn vị. Em hãy vận dụng linh hoạt các kiến thức này để giải toán nhanh và chính xác.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Tính nhẩm: 56 × 100 = ?",
+     "options": [
+      "5.600",
+      "560",
+      "56.000",
+      "5.060"
+     ],
+     "a": 0,
+     "explain": "Nhân với 100, thêm 2 chữ số 0 vào bên phải: 56 × 100 = 5.600."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính nhẩm: 78.000 : 1000 = ?",
+     "options": [
+      "78",
+      "780",
+      "7.800",
+      "7,8"
+     ],
+     "a": 0,
+     "explain": "Chia cho 1000, bỏ bớt 3 chữ số 0 ở bên phải: 78.000 : 1000 = 78."
+    },
+    {
+     "type": "mcq",
+     "q": "Một hình chữ nhật có chiều dài 15 m, chiều rộng 8 m. Một hình vuông có cạnh 12 m. Hình nào có diện tích lớn hơn?",
+     "options": [
+      "Hình vuông lớn hơn (144 m² so với 120 m²)",
+      "Hình chữ nhật lớn hơn (120 m² so với 100 m²)",
+      "Hai hình có diện tích bằng nhau",
+      "Không thể so sánh được"
+     ],
+     "a": 0,
+     "explain": "Diện tích hình chữ nhật = 15 × 8 = 120 m². Diện tích hình vuông = 12 × 12 = 144 m². Vậy hình vuông có diện tích lớn hơn."
+    },
+    {
+     "type": "mcq",
+     "q": "936 : 24 = ?",
+     "options": [
+      "39",
+      "38",
+      "40",
+      "39 dư 1"
+     ],
+     "a": 0,
+     "explain": "936 : 24 = 39 (chia hết, vì 39 × 24 = 936)."
+    },
+    {
+     "type": "mcq",
+     "q": "Bốn bạn Nam, Minh, An, Bình lần lượt ghi được 28, 32, 30 và 34 điểm trong một trò chơi trí tuệ. Trung bình mỗi bạn ghi được bao nhiêu điểm?",
+     "options": [
+      "31 điểm",
+      "30 điểm",
+      "32 điểm",
+      "124 điểm"
+     ],
+     "a": 0,
+     "explain": "Trung bình cộng = (28 + 32 + 30 + 34) : 4 = 124 : 4 = 31 (điểm)."
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống: 134 × 32 = ___",
+     "answer": "4.288",
+     "accept": [
+      "4288",
+      "4.288"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một đội cờ vua có 45 vận động viên. Ban tổ chức muốn chia đều vào các bàn thi đấu, mỗi bàn 15 người, sau đó ước lượng xem cần khoảng bao nhiêu bàn bằng cách làm tròn. Em hãy tính chính xác số bàn cần dùng.",
+     "hints": [
+      "Em ơi, muốn tìm số bàn cần dùng, mình lấy tổng số vận động viên chia cho số người mỗi bàn đúng không?",
+      "Vậy phép tính cần làm là 45 chia cho 15, em thử tính xem kết quả là bao nhiêu.",
+      "45 chia 15 chính là một phép chia hết, em nhân thử 15 với vài số xem số nào ra đúng 45 nhé."
+     ],
+     "loiGiai": "Số bàn thi đấu cần dùng là:\n45 : 15 = 3 (bàn)\nĐáp số: 3 bàn",
+     "dapSo": "3 bàn"
+    },
+    {
+     "type": "solve",
+     "de": "Một cửa hàng đồ chơi siêu anh hùng có 4 kệ, mỗi kệ có 25 mô hình người nhện và 15 mô hình người sắt. Hỏi cửa hàng có tất cả bao nhiêu mô hình siêu anh hùng? (Tính bằng cách thuận tiện, áp dụng tính chất phân phối)",
+     "hints": [
+      "Em thử tính xem mỗi kệ có tất cả bao nhiêu mô hình (cả người nhện và người sắt cộng lại) đã nhé.",
+      "Sau khi biết mỗi kệ có bao nhiêu mô hình, mình nhân số đó với số kệ là ra tổng số mô hình toàn cửa hàng.",
+      "Hoặc em có thể tính 4×25 cộng với 4×15 cũng ra kết quả như vậy, đó chính là tính chất phân phối của phép nhân đối với phép cộng."
+     ],
+     "loiGiai": "Cách 1: Số mô hình mỗi kệ có là 25 + 15 = 40 (mô hình)\nTổng số mô hình cả cửa hàng có là: 4 × 40 = 160 (mô hình)\nCách 2 (kiểm tra bằng tính chất phân phối): 4 × 25 + 4 × 15 = 100 + 60 = 160 (mô hình)\nĐáp số: 160 mô hình",
+     "dapSo": "160 mô hình siêu anh hùng"
+    }
+   ]
+  }
+ ]
 }

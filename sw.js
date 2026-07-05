@@ -1,7 +1,7 @@
 // Spider-Kua Service Worker — cache để mở nhanh & dùng offline một phần
-const VER = 'sk-v40';
+const VER = 'sk-v45';
 const CORE = [
-  './', 'index.html', 'styles.css', 'app.js', 'tts.js', 'practice.js',
+  './', 'index.html', 'styles.css', 'app.js', 'tts.js', 'practice.js', 'adaptive.js', 'role.js', 'gen.js',
   'manifest.json', 'Spider-Man-Logo-PNG-Isolated-HD.png', 'the-avengers-seeklogo.png',
   'icon-192_2.png', 'icon-512_2.png'
 ];

@@ -1,281 +1,392 @@
 {
-  "mon": "tv",
-  "tap": 2,
-  "chuDe": "Thế giới trong mắt em",
-  "cdSo": 7,
-  "bai": [
+ "mon": "tv",
+ "tap": 2,
+ "chuDe": "Quê hương trong tôi",
+ "cdSo": 7,
+ "bai": [
+  {
+   "so": 1,
+   "ten": "Tuần 28: Cây đa quê hương · Bước mùa xuân",
+   "lyThuyet": "Tuần này em đọc về niềm vui khám phá thế giới mới lạ và tiếng chim hót rộn ràng buổi sáng. Về luyện từ và câu, em ôn lại trạng ngữ chỉ thời gian, nơi chốn, nguyên nhân và tập thêm trạng ngữ phù hợp cho câu.",
+   "cauHoi": [
     {
-      "so": 1,
-      "ten": "Tuần 28: Bầu trời trong quả trứng",
-      "lyThuyet": "Tuần này em đọc về niềm vui khám phá thế giới mới lạ và tiếng chim hót rộn ràng buổi sáng. Về luyện từ và câu, em ôn lại trạng ngữ chỉ thời gian, nơi chốn, nguyên nhân và tập thêm trạng ngữ phù hợp cho câu.",
-      "cauHoi": [
-        {
-          "type": "read",
-          "vanBan": "Sáng hôm ấy, Nam thức dậy thật sớm để xem đàn kiến vàng làm tổ dưới gốc cây bàng. Cậu nằm sấp trên bãi cỏ, chăm chú nhìn từng con kiến tha những hạt cát nhỏ xíu, xếp thành một lối đi ngoằn ngoèo. Nam thầm nghĩ, thế giới bé xíu dưới chân mình cũng rộng lớn và bận rộn chẳng kém gì thế giới của con người. Cậu bé mỉm cười, cảm thấy mọi vật xung quanh đều chứa đựng những điều kì diệu đang chờ được khám phá.",
-          "q": "Nam thức dậy sớm để làm gì?",
-          "options": ["Đi học sớm", "Xem đàn kiến vàng làm tổ", "Tưới cây trong vườn", "Chơi bóng với bạn"],
-          "a": 1,
-          "explain": "Bài đọc nêu rõ Nam thức dậy sớm để xem đàn kiến vàng làm tổ dưới gốc cây bàng."
-        },
-        {
-          "type": "read",
-          "vanBan": "Minh có một ước mơ thật đặc biệt: được làm phi hành gia để bay vào vũ trụ. Mỗi tối, cậu thường ra ban công, ngước nhìn bầu trời đầy sao và tưởng tượng mình đang ngồi trong con tàu vũ trụ, lướt qua mặt trăng, ghé thăm sao Hỏa. Bố Minh bảo rằng, để thực hiện ước mơ ấy, trước hết cậu cần học giỏi toán và khoa học, rèn luyện sức khỏe thật tốt. Từ đó, Minh chăm chỉ học tập hơn, vì cậu tin rằng bầu trời không phải là giới hạn mà chỉ là điểm khởi đầu.",
-          "q": "Vì sao Minh chăm chỉ học tập hơn?",
-          "options": ["Vì bị bố mẹ bắt ép", "Vì muốn được điểm cao để có quà", "Vì muốn thực hiện ước mơ làm phi hành gia", "Vì sợ bạn bè chê cười"],
-          "a": 2,
-          "explain": "Minh chăm chỉ học hơn vì tin rằng học giỏi sẽ giúp cậu thực hiện được ước mơ làm phi hành gia."
-        },
-        {
-          "type": "mcq",
-          "q": "Trạng ngữ trong câu \"Sáng nay, đàn chim sáo bay về đậu kín cả vòm cây.\" chỉ ý nghĩa gì?",
-          "options": ["Chỉ thời gian", "Chỉ nơi chốn", "Chỉ nguyên nhân", "Chỉ mục đích"],
-          "a": 0,
-          "explain": "\"Sáng nay\" là trạng ngữ chỉ thời gian, cho biết sự việc xảy ra vào lúc nào."
-        },
-        {
-          "type": "mcq",
-          "q": "Câu nào có trạng ngữ chỉ nơi chốn?",
-          "options": ["Vì mưa to, buổi học ngoài trời phải hoãn lại.", "Trong vườn, những chú chim đang ríu rít gọi nhau.", "Cuối tuần, cả nhà em đi thăm ông bà.", "Nhờ chăm chỉ tập luyện, An đã thắng cuộc thi chạy."],
-          "a": 1,
-          "explain": "\"Trong vườn\" là trạng ngữ chỉ nơi chốn, cho biết sự việc diễn ra ở đâu."
-        },
-        {
-          "type": "mcq",
-          "q": "Trạng ngữ nào phù hợp để điền vào chỗ trống trong câu: \"___, chú gà con đã mổ vỡ vỏ trứng chui ra ngoài.\" ?",
-          "options": ["Vì trời mưa", "Sau ba tuần ấp trứng", "Để lớn nhanh", "Trên sân"],
-          "a": 1,
-          "explain": "\"Sau ba tuần ấp trứng\" là trạng ngữ chỉ thời gian, phù hợp với nội dung câu nói về việc gà con chào đời."
-        },
-        {
-          "type": "fill",
-          "q": "Bầu trời hôm nay ___ (trong xanh hay chong xanh?) và cao vời vợi.",
-          "answer": "trong xanh",
-          "accept": ["trong xanh"]
-        },
-        {
-          "type": "fill",
-          "q": "Đàn chim ___ (ríu rít hay ríu rít) hót vang trên những cành cây cao.",
-          "answer": "ríu rít",
-          "accept": ["ríu rít"]
-        },
-        {
-          "type": "solve",
-          "de": "Em hãy viết 2-3 câu kể về một buổi sáng em nghe thấy tiếng chim hót, trong đó có ít nhất một câu dùng trạng ngữ chỉ thời gian hoặc nơi chốn.",
-          "hints": [
-            "Em thử nhớ lại một buổi sáng em thức dậy và nghe thấy âm thanh gì đầu tiên nhé.",
-            "Em có thể bắt đầu câu bằng trạng ngữ như \"Sáng sớm,\" hoặc \"Trong vườn nhà em,\" rồi mới kể tiếp.",
-            "Đừng quên tả cảm xúc của em khi nghe tiếng chim hót, vui hay thích thú thế nào, Fury tin em viết được mà!"
-          ],
-          "loiGiai": "Sáng sớm, em tỉnh giấc bởi tiếng chim hót líu lo ngoài cửa sổ. Trong vườn nhà em, chú chim sơn ca đậu trên cành ổi, cất tiếng hót thánh thót. Em cảm thấy lòng mình thật nhẹ nhàng và tràn đầy niềm vui.",
-          "dapSo": "tự chấm"
-        }
-      ]
+     "type": "read",
+     "vanBan": "Sáng hôm ấy, Nam thức dậy thật sớm để xem đàn kiến vàng làm tổ dưới gốc cây bàng. Cậu nằm sấp trên bãi cỏ, chăm chú nhìn từng con kiến tha những hạt cát nhỏ xíu, xếp thành một lối đi ngoằn ngoèo. Nam thầm nghĩ, thế giới bé xíu dưới chân mình cũng rộng lớn và bận rộn chẳng kém gì thế giới của con người. Cậu bé mỉm cười, cảm thấy mọi vật xung quanh đều chứa đựng những điều kì diệu đang chờ được khám phá.",
+     "q": "Nam thức dậy sớm để làm gì?",
+     "options": [
+      "Đi học sớm",
+      "Xem đàn kiến vàng làm tổ",
+      "Tưới cây trong vườn",
+      "Chơi bóng với bạn"
+     ],
+     "a": 1,
+     "explain": "Bài đọc nêu rõ Nam thức dậy sớm để xem đàn kiến vàng làm tổ dưới gốc cây bàng."
     },
     {
-      "so": 2,
-      "ten": "Tuần 29: Những cánh buồm trắng",
-      "lyThuyet": "Tuần này em đọc về ngọn hải đăng canh giữ biển đảo và những cánh buồm trắng hướng ra khơi xa. Về luyện từ và câu, em học cách thêm trạng ngữ chỉ mục đích cho câu và chuyển cụm từ \"để...\" thành trạng ngữ đứng đầu câu.",
-      "cauHoi": [
-        {
-          "type": "read",
-          "vanBan": "Bình theo bố ra đảo nhỏ thăm bác hải đăng. Đứng dưới chân ngọn hải đăng cao vút, Bình ngước nhìn ánh sáng trắng xoay tròn, chiếu rọi khắp mặt biển đêm tối. Bác hải đăng kể rằng, để những con tàu ngoài khơi không bị lạc đường hay va vào đá ngầm, ngọn đèn phải sáng suốt đêm, bất kể mưa gió bão bùng. Nghe vậy, Bình thấy công việc của bác thật thầm lặng mà cao quý, như một người lính canh giữ sự bình yên cho biển cả.",
-          "q": "Vì sao ngọn hải đăng phải sáng suốt đêm?",
-          "options": ["Để trang trí cho hòn đảo thêm đẹp", "Để tàu thuyền ngoài khơi không bị lạc đường, va vào đá ngầm", "Để thu hút khách du lịch đến thăm", "Để báo hiệu giờ ăn cho ngư dân"],
-          "a": 1,
-          "explain": "Bài đọc cho biết ngọn đèn hải đăng sáng suốt đêm để giúp tàu thuyền không bị lạc đường hay va vào đá ngầm."
-        },
-        {
-          "type": "read",
-          "vanBan": "Chiều nay, An đứng trên bến cảng nhìn những cánh buồm trắng dần khuất sau đường chân trời. Cậu bé tưởng tượng, ngoài kia là những hòn đảo xa xôi, nơi có san hô rực rỡ và những đàn cá lấp lánh. An ước một ngày nào đó mình sẽ được lên thuyền, giương buồm ra khơi để khám phá những vùng biển mới lạ. Gió biển thổi mát rượi, mang theo mùi muối mặn, khiến lòng An càng thêm háo hức với những chuyến phiêu lưu trong mơ.",
-          "q": "An đứng ở đâu để ngắm những cánh buồm trắng?",
-          "options": ["Trên đỉnh núi", "Trong lớp học", "Trên bến cảng", "Ở sân trường"],
-          "a": 2,
-          "explain": "Bài đọc nêu rõ An đứng trên bến cảng nhìn những cánh buồm trắng dần khuất sau đường chân trời."
-        },
-        {
-          "type": "mcq",
-          "q": "Câu nào có trạng ngữ chỉ mục đích?",
-          "options": ["Buổi sáng, biển lặng như tờ.", "Trên đảo, có một ngọn hải đăng cao lớn.", "Để bảo vệ tàu thuyền, ngọn hải đăng luôn sáng đèn mỗi đêm.", "Vì bão to, thuyền chưa thể ra khơi."],
-          "a": 2,
-          "explain": "\"Để bảo vệ tàu thuyền\" là trạng ngữ chỉ mục đích, trả lời cho câu hỏi \"Để làm gì?\"."
-        },
-        {
-          "type": "mcq",
-          "q": "Cụm từ nào có thể chuyển thành trạng ngữ chỉ mục đích đứng đầu câu \"Các chú hải quân luyện tập chăm chỉ để giữ vững chủ quyền biển đảo.\"?",
-          "options": ["Các chú hải quân", "luyện tập chăm chỉ", "để giữ vững chủ quyền biển đảo", "biển đảo"],
-          "a": 2,
-          "explain": "Cụm từ \"để giữ vững chủ quyền biển đảo\" nêu mục đích của hành động, có thể chuyển lên đầu câu làm trạng ngữ: \"Để giữ vững chủ quyền biển đảo, các chú hải quân luyện tập chăm chỉ.\""
-        },
-        {
-          "type": "mcq",
-          "q": "Trạng ngữ chỉ mục đích thường trả lời cho câu hỏi nào?",
-          "options": ["Khi nào?", "Ở đâu?", "Để làm gì?", "Vì sao?"],
-          "a": 2,
-          "explain": "Trạng ngữ chỉ mục đích nêu lên mục đích của hành động, thường trả lời cho câu hỏi \"Để làm gì?\"."
-        },
-        {
-          "type": "fill",
-          "q": "Con thuyền ___ (dương hay giương?) cánh buồm trắng, lướt nhẹ trên sóng biển.",
-          "answer": "giương",
-          "accept": ["giương"]
-        },
-        {
-          "type": "fill",
-          "q": "Người thợ canh ___ (hải đăng hay hải đăn?) luôn thức đêm để giữ ánh sáng không tắt.",
-          "answer": "hải đăng",
-          "accept": ["hải đăng"]
-        },
-        {
-          "type": "solve",
-          "de": "Em hãy viết 2-3 câu về ước mơ khám phá biển cả của em, trong đó có một câu chứa trạng ngữ chỉ mục đích (bắt đầu bằng \"Để...\").",
-          "hints": [
-            "Em nghĩ xem mình ước mơ được làm gì liên quan tới biển: thủy thủ, nhà thám hiểm hay người lặn biển?",
-            "Em thử đặt câu có cụm \"Để...\" ở đầu câu, ví dụ \"Để khám phá đại dương,...\"",
-            "Fury gợi ý em thêm một câu tả cảm xúc háo hức của em khi nghĩ về ước mơ đó nhé!"
-          ],
-          "loiGiai": "Em ước mơ trở thành một nhà thám hiểm đại dương. Để thực hiện ước mơ đó, em sẽ chăm chỉ học bơi và tìm hiểu về các loài sinh vật biển. Em tin rằng một ngày nào đó mình sẽ được lặn xuống những rặng san hô rực rỡ.",
-          "dapSo": "tự chấm"
-        }
-      ]
+     "type": "read",
+     "vanBan": "Minh có một ước mơ thật đặc biệt: được làm phi hành gia để bay vào vũ trụ. Mỗi tối, cậu thường ra ban công, ngước nhìn bầu trời đầy sao và tưởng tượng mình đang ngồi trong con tàu vũ trụ, lướt qua mặt trăng, ghé thăm sao Hỏa. Bố Minh bảo rằng, để thực hiện ước mơ ấy, trước hết cậu cần học giỏi toán và khoa học, rèn luyện sức khỏe thật tốt. Từ đó, Minh chăm chỉ học tập hơn, vì cậu tin rằng bầu trời không phải là giới hạn mà chỉ là điểm khởi đầu.",
+     "q": "Vì sao Minh chăm chỉ học tập hơn?",
+     "options": [
+      "Vì bị bố mẹ bắt ép",
+      "Vì muốn được điểm cao để có quà",
+      "Vì muốn thực hiện ước mơ làm phi hành gia",
+      "Vì sợ bạn bè chê cười"
+     ],
+     "a": 2,
+     "explain": "Minh chăm chỉ học hơn vì tin rằng học giỏi sẽ giúp cậu thực hiện được ước mơ làm phi hành gia."
     },
     {
-      "so": 3,
-      "ten": "Tuần 30: Ngôi nhà của chúng ta",
-      "lyThuyet": "Tuần này em đọc về chuyến tham quan bảo tàng tìm hiểu đời sống cha ông xưa và về Trái Đất - ngôi nhà chung của muôn loài cần được bảo vệ. Về luyện từ và câu, em luyện lựa chọn trạng ngữ Vì/Để/Lúc/Ở phù hợp để điền vào câu.",
-      "cauHoi": [
-        {
-          "type": "read",
-          "vanBan": "Lớp của Nam được cô giáo dẫn đi tham quan bảo tàng lịch sử. Đứng trước tủ kính trưng bày những chiếc rìu đá, mũi tên đồng, Nam ngạc nhiên khi biết cha ông ta ngày xưa đã dùng chúng để săn bắt thú rừng và trồng trọt. Cô hướng dẫn viên còn kể về những chiếc bình gốm hoa văn tinh xảo, được nặn hoàn toàn bằng tay. Nam thầm cảm phục sự khéo léo và thông minh của người xưa, dù không có máy móc hiện đại nhưng vẫn tạo ra biết bao vật dụng hữu ích.",
-          "q": "Cha ông ta ngày xưa dùng rìu đá, mũi tên đồng để làm gì?",
-          "options": ["Để trang trí nhà cửa", "Để săn bắt thú rừng và trồng trọt", "Để làm đồ chơi cho trẻ em", "Để đổi lấy tiền bạc"],
-          "a": 1,
-          "explain": "Bài đọc cho biết cha ông ta dùng rìu đá, mũi tên đồng để săn bắt thú rừng và trồng trọt."
-        },
-        {
-          "type": "read",
-          "vanBan": "Cô giáo giảng cho cả lớp nghe rằng Trái Đất giống như một ngôi nhà lớn, nơi con người, cây cối và muôn loài động vật cùng chung sống. Nếu rừng bị chặt phá, sông suối bị ô nhiễm, không khí bị vấy bẩn, ngôi nhà chung ấy sẽ dần trở nên ốm yếu. Nghe vậy, An quyết tâm cùng các bạn trồng thêm cây xanh quanh sân trường và nhắc nhau không vứt rác bừa bãi. Cậu bé nghĩ, mỗi việc làm nhỏ của mình cũng góp phần giữ gìn ngôi nhà chung thêm trong lành và tươi đẹp.",
-          "q": "An đã làm gì để góp phần bảo vệ ngôi nhà chung Trái Đất?",
-          "options": ["Chặt bớt cây xanh trong sân trường", "Trồng thêm cây xanh và không vứt rác bừa bãi", "Đốt rác trong vườn trường", "Xả nước thải ra sông suối"],
-          "a": 1,
-          "explain": "An cùng các bạn trồng thêm cây xanh quanh sân trường và nhắc nhau không vứt rác bừa bãi."
-        },
-        {
-          "type": "mcq",
-          "q": "Chọn trạng ngữ phù hợp điền vào chỗ trống: \"___ trời mưa to, buổi tham quan bảo tàng phải hoãn lại.\"",
-          "options": ["Vì", "Để", "Lúc", "Ở"],
-          "a": 0,
-          "explain": "\"Vì\" dùng để chỉ nguyên nhân, phù hợp vì câu nêu lý do buổi tham quan bị hoãn."
-        },
-        {
-          "type": "mcq",
-          "q": "Chọn trạng ngữ phù hợp điền vào chỗ trống: \"___ bảo vệ nguồn nước sạch, mọi người không nên xả rác xuống sông.\"",
-          "options": ["Vì", "Để", "Lúc", "Ở"],
-          "a": 1,
-          "explain": "\"Để\" dùng để chỉ mục đích, phù hợp vì câu nêu mục đích của việc không xả rác xuống sông."
-        },
-        {
-          "type": "mcq",
-          "q": "Chọn trạng ngữ phù hợp điền vào chỗ trống: \"___ bảo tàng, có rất nhiều cổ vật quý giá được trưng bày.\"",
-          "options": ["Vì", "Để", "Lúc", "Ở"],
-          "a": 3,
-          "explain": "\"Ở\" dùng để chỉ nơi chốn, phù hợp vì câu nêu địa điểm trưng bày cổ vật."
-        },
-        {
-          "type": "fill",
-          "q": "Chiếc bình ___ (gốm hay gớm?) có hoa văn tinh xảo được trưng bày trong bảo tàng.",
-          "answer": "gốm",
-          "accept": ["gốm"]
-        },
-        {
-          "type": "fill",
-          "q": "Chúng ta cần bảo vệ ___ (nguồn hay ngùn?) nước sạch cho ngôi nhà chung Trái Đất.",
-          "answer": "nguồn",
-          "accept": ["nguồn"]
-        },
-        {
-          "type": "solve",
-          "de": "Em hãy viết 2-3 câu về việc bảo vệ môi trường, trong đó có sử dụng ít nhất hai trong bốn trạng ngữ Vì/Để/Lúc/Ở.",
-          "hints": [
-            "Em nghĩ về một việc bảo vệ môi trường mà em từng làm hoặc muốn làm, ví dụ trồng cây, nhặt rác.",
-            "Em thử dùng \"Để...\" để nêu mục đích và \"Vì...\" để nêu lý do trong hai câu khác nhau.",
-            "Fury tin là em sẽ viết được đoạn văn thật ý nghĩa về ngôi nhà chung Trái Đất đấy!"
-          ],
-          "loiGiai": "Để giữ cho không khí trong lành, em cùng các bạn trồng thêm nhiều cây xanh quanh sân trường. Vì muốn bảo vệ nguồn nước sạch, mọi người trong xóm em không còn vứt rác xuống dòng sông nữa. Lúc rảnh rỗi, em thường nhắc em trai không xả rác bừa bãi.",
-          "dapSo": "tự chấm"
-        }
-      ]
+     "type": "mcq",
+     "q": "Trạng ngữ trong câu \"Sáng nay, đàn chim sáo bay về đậu kín cả vòm cây.\" chỉ ý nghĩa gì?",
+     "options": [
+      "Chỉ thời gian",
+      "Chỉ nơi chốn",
+      "Chỉ nguyên nhân",
+      "Chỉ mục đích"
+     ],
+     "a": 0,
+     "explain": "\"Sáng nay\" là trạng ngữ chỉ thời gian, cho biết sự việc xảy ra vào lúc nào."
     },
     {
-      "so": 4,
-      "ten": "Tuần 31: Khám phá đại dương",
-      "lyThuyet": "Tuần này em đọc về rặng san hô kỳ diệu dưới lòng biển sâu và những bước chân không mỏi của vận động viên leo núi chinh phục đỉnh cao. Về luyện từ và câu, em luyện tập tổng hợp xác định trạng ngữ, chủ ngữ, vị ngữ trong cùng một câu.",
-      "cauHoi": [
-        {
-          "type": "read",
-          "vanBan": "Chú Bình là một nhà khoa học chuyên nghiên cứu đại dương. Trong chuyến thám hiểm mới nhất, chú lặn xuống độ sâu năm mươi mét để quan sát rặng san hô rực rỡ sắc màu. Chú kể rằng, dưới đáy biển sâu, có hàng nghìn loài cá bơi lội tung tăng, có cả những loài sinh vật kỳ lạ mà con người chưa từng biết đến. Nghe chú kể, Nam ước mơ sau này sẽ trở thành nhà khoa học, để được tận mắt khám phá những điều bí ẩn dưới lòng đại dương bao la.",
-          "q": "Chú Bình lặn xuống độ sâu bao nhiêu mét để quan sát rặng san hô?",
-          "options": ["Hai mươi mét", "Ba mươi mét", "Năm mươi mét", "Một trăm mét"],
-          "a": 2,
-          "explain": "Bài đọc cho biết chú Bình lặn xuống độ sâu năm mươi mét để quan sát rặng san hô."
-        },
-        {
-          "type": "read",
-          "vanBan": "Chị Lan là một vận động viên leo núi nổi tiếng. Để chinh phục đỉnh Fansipan, chị đã luyện tập suốt nhiều tháng trời, bất kể nắng mưa. Trên đường leo núi, đôi chân chị nhiều lần đau nhức, hơi thở dồn dập vì không khí loãng, nhưng chị chưa bao giờ có ý định bỏ cuộc. Cuối cùng, sau bao gian khó, chị Lan cũng đặt chân lên đỉnh núi, ngắm nhìn biển mây bồng bềnh dưới chân mình. Câu chuyện của chị khiến Minh hiểu rằng, ý chí kiên cường có thể giúp con người vượt qua mọi thử thách.",
-          "q": "Điều gì giúp chị Lan chinh phục thành công đỉnh Fansipan?",
-          "options": ["May mắn tình cờ", "Ý chí kiên cường và sự luyện tập bền bỉ", "Được người khác cõng lên núi", "Đi cáp treo lên thẳng đỉnh"],
-          "a": 1,
-          "explain": "Nhờ luyện tập bền bỉ và ý chí kiên cường, không bỏ cuộc dù gian khó, chị Lan đã chinh phục được đỉnh Fansipan."
-        },
-        {
-          "type": "mcq",
-          "q": "Xác định trạng ngữ, chủ ngữ, vị ngữ trong câu: \"Sáng sớm, trên những cành cây, chim chóc hót líu lo.\"",
-          "options": [
-            "TN: Sáng sớm, trên những cành cây; CN: chim chóc; VN: hót líu lo",
-            "TN: Sáng sớm; CN: trên những cành cây; VN: chim chóc hót líu lo",
-            "TN: hót líu lo; CN: chim chóc; VN: Sáng sớm, trên những cành cây",
-            "TN: không có; CN: Sáng sớm; VN: chim chóc hót líu lo"
-          ],
-          "a": 0,
-          "explain": "\"Sáng sớm\" và \"trên những cành cây\" đều là trạng ngữ (chỉ thời gian và nơi chốn); \"chim chóc\" là chủ ngữ; \"hót líu lo\" là vị ngữ."
-        },
-        {
-          "type": "mcq",
-          "q": "Trong câu \"Để khám phá đáy biển sâu, các nhà khoa học đã chế tạo tàu lặn hiện đại.\", đâu là chủ ngữ?",
-          "options": ["Để khám phá đáy biển sâu", "các nhà khoa học", "đã chế tạo tàu lặn hiện đại", "tàu lặn hiện đại"],
-          "a": 1,
-          "explain": "\"các nhà khoa học\" là chủ ngữ, chỉ đối tượng thực hiện hành động \"chế tạo tàu lặn hiện đại\"."
-        },
-        {
-          "type": "mcq",
-          "q": "Trong câu \"Vì say mê khám phá đại dương, Bình đã đọc rất nhiều sách về sinh vật biển.\", trạng ngữ trong câu chỉ ý nghĩa gì?",
-          "options": ["Chỉ nơi chốn", "Chỉ thời gian", "Chỉ nguyên nhân", "Chỉ mục đích"],
-          "a": 2,
-          "explain": "\"Vì say mê khám phá đại dương\" là trạng ngữ chỉ nguyên nhân, giải thích lý do Bình đọc nhiều sách."
-        },
-        {
-          "type": "fill",
-          "q": "Đàn cá bơi lội tung tăng quanh ___ (rặng hay dặng?) san hô rực rỡ sắc màu.",
-          "answer": "rặng",
-          "accept": ["rặng"]
-        },
-        {
-          "type": "fill",
-          "q": "Vận động viên leo núi có ý chí ___ (kiên cường hay kiên cừơng?), không bao giờ bỏ cuộc.",
-          "answer": "kiên cường",
-          "accept": ["kiên cường"]
-        },
-        {
-          "type": "solve",
-          "de": "Em hãy viết một câu có đủ ba thành phần: trạng ngữ, chủ ngữ, vị ngữ, nói về đại dương hoặc núi non, rồi gạch chân (hoặc ghi rõ) từng thành phần.",
-          "hints": [
-            "Em nghĩ về một cảnh biển hoặc núi mà em thích, ví dụ lúc bình minh trên biển hay lúc leo núi.",
-            "Em đặt trạng ngữ ở đầu câu (chỉ thời gian hoặc nơi chốn), sau đó thêm chủ ngữ là người hoặc sự vật, rồi thêm vị ngữ là hành động.",
-            "Sau khi viết xong, em thử chỉ rõ đâu là TN, đâu là CN, đâu là VN nhé, Fury tin em làm được!"
-          ],
-          "loiGiai": "Buổi sáng sớm, trên bãi biển vắng, những chú cá heo nhảy vọt lên khỏi mặt nước. Trạng ngữ: \"Buổi sáng sớm, trên bãi biển vắng\"; Chủ ngữ: \"những chú cá heo\"; Vị ngữ: \"nhảy vọt lên khỏi mặt nước\".",
-          "dapSo": "tự chấm"
-        }
-      ]
+     "type": "mcq",
+     "q": "Câu nào có trạng ngữ chỉ nơi chốn?",
+     "options": [
+      "Vì mưa to, buổi học ngoài trời phải hoãn lại.",
+      "Trong vườn, những chú chim đang ríu rít gọi nhau.",
+      "Cuối tuần, cả nhà em đi thăm ông bà.",
+      "Nhờ chăm chỉ tập luyện, An đã thắng cuộc thi chạy."
+     ],
+     "a": 1,
+     "explain": "\"Trong vườn\" là trạng ngữ chỉ nơi chốn, cho biết sự việc diễn ra ở đâu."
+    },
+    {
+     "type": "mcq",
+     "q": "Trạng ngữ nào phù hợp để điền vào chỗ trống trong câu: \"___, chú gà con đã mổ vỡ vỏ trứng chui ra ngoài.\" ?",
+     "options": [
+      "Vì trời mưa",
+      "Sau ba tuần ấp trứng",
+      "Để lớn nhanh",
+      "Trên sân"
+     ],
+     "a": 1,
+     "explain": "\"Sau ba tuần ấp trứng\" là trạng ngữ chỉ thời gian, phù hợp với nội dung câu nói về việc gà con chào đời."
+    },
+    {
+     "type": "fill",
+     "q": "Bầu trời hôm nay ___ (trong xanh hay chong xanh?) và cao vời vợi.",
+     "answer": "trong xanh",
+     "accept": [
+      "trong xanh"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Đàn chim ___ (ríu rít hay ríu rít) hót vang trên những cành cây cao.",
+     "answer": "ríu rít",
+     "accept": [
+      "ríu rít"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy viết 2-3 câu kể về một buổi sáng em nghe thấy tiếng chim hót, trong đó có ít nhất một câu dùng trạng ngữ chỉ thời gian hoặc nơi chốn.",
+     "hints": [
+      "Em thử nhớ lại một buổi sáng em thức dậy và nghe thấy âm thanh gì đầu tiên nhé.",
+      "Em có thể bắt đầu câu bằng trạng ngữ như \"Sáng sớm,\" hoặc \"Trong vườn nhà em,\" rồi mới kể tiếp.",
+      "Đừng quên tả cảm xúc của em khi nghe tiếng chim hót, vui hay thích thú thế nào, Fury tin em viết được mà!"
+     ],
+     "loiGiai": "Sáng sớm, em tỉnh giấc bởi tiếng chim hót líu lo ngoài cửa sổ. Trong vườn nhà em, chú chim sơn ca đậu trên cành ổi, cất tiếng hót thánh thót. Em cảm thấy lòng mình thật nhẹ nhàng và tràn đầy niềm vui.",
+     "dapSo": "tự chấm"
     }
-  ]
+   ]
+  },
+  {
+   "so": 2,
+   "ten": "Tuần 29: Đi hội chùa Hương · Chiều ngoại ô",
+   "lyThuyet": "Tuần này em đọc về ngọn hải đăng canh giữ biển đảo và những cánh buồm trắng hướng ra khơi xa. Về luyện từ và câu, em học cách thêm trạng ngữ chỉ mục đích cho câu và chuyển cụm từ \"để...\" thành trạng ngữ đứng đầu câu.",
+   "cauHoi": [
+    {
+     "type": "read",
+     "vanBan": "Bình theo bố ra đảo nhỏ thăm bác hải đăng. Đứng dưới chân ngọn hải đăng cao vút, Bình ngước nhìn ánh sáng trắng xoay tròn, chiếu rọi khắp mặt biển đêm tối. Bác hải đăng kể rằng, để những con tàu ngoài khơi không bị lạc đường hay va vào đá ngầm, ngọn đèn phải sáng suốt đêm, bất kể mưa gió bão bùng. Nghe vậy, Bình thấy công việc của bác thật thầm lặng mà cao quý, như một người lính canh giữ sự bình yên cho biển cả.",
+     "q": "Vì sao ngọn hải đăng phải sáng suốt đêm?",
+     "options": [
+      "Để trang trí cho hòn đảo thêm đẹp",
+      "Để tàu thuyền ngoài khơi không bị lạc đường, va vào đá ngầm",
+      "Để thu hút khách du lịch đến thăm",
+      "Để báo hiệu giờ ăn cho ngư dân"
+     ],
+     "a": 1,
+     "explain": "Bài đọc cho biết ngọn đèn hải đăng sáng suốt đêm để giúp tàu thuyền không bị lạc đường hay va vào đá ngầm."
+    },
+    {
+     "type": "read",
+     "vanBan": "Chiều nay, An đứng trên bến cảng nhìn những cánh buồm trắng dần khuất sau đường chân trời. Cậu bé tưởng tượng, ngoài kia là những hòn đảo xa xôi, nơi có san hô rực rỡ và những đàn cá lấp lánh. An ước một ngày nào đó mình sẽ được lên thuyền, giương buồm ra khơi để khám phá những vùng biển mới lạ. Gió biển thổi mát rượi, mang theo mùi muối mặn, khiến lòng An càng thêm háo hức với những chuyến phiêu lưu trong mơ.",
+     "q": "An đứng ở đâu để ngắm những cánh buồm trắng?",
+     "options": [
+      "Trên đỉnh núi",
+      "Trong lớp học",
+      "Trên bến cảng",
+      "Ở sân trường"
+     ],
+     "a": 2,
+     "explain": "Bài đọc nêu rõ An đứng trên bến cảng nhìn những cánh buồm trắng dần khuất sau đường chân trời."
+    },
+    {
+     "type": "mcq",
+     "q": "Câu nào có trạng ngữ chỉ mục đích?",
+     "options": [
+      "Buổi sáng, biển lặng như tờ.",
+      "Trên đảo, có một ngọn hải đăng cao lớn.",
+      "Để bảo vệ tàu thuyền, ngọn hải đăng luôn sáng đèn mỗi đêm.",
+      "Vì bão to, thuyền chưa thể ra khơi."
+     ],
+     "a": 2,
+     "explain": "\"Để bảo vệ tàu thuyền\" là trạng ngữ chỉ mục đích, trả lời cho câu hỏi \"Để làm gì?\"."
+    },
+    {
+     "type": "mcq",
+     "q": "Cụm từ nào có thể chuyển thành trạng ngữ chỉ mục đích đứng đầu câu \"Các chú hải quân luyện tập chăm chỉ để giữ vững chủ quyền biển đảo.\"?",
+     "options": [
+      "Các chú hải quân",
+      "luyện tập chăm chỉ",
+      "để giữ vững chủ quyền biển đảo",
+      "biển đảo"
+     ],
+     "a": 2,
+     "explain": "Cụm từ \"để giữ vững chủ quyền biển đảo\" nêu mục đích của hành động, có thể chuyển lên đầu câu làm trạng ngữ: \"Để giữ vững chủ quyền biển đảo, các chú hải quân luyện tập chăm chỉ.\""
+    },
+    {
+     "type": "mcq",
+     "q": "Trạng ngữ chỉ mục đích thường trả lời cho câu hỏi nào?",
+     "options": [
+      "Khi nào?",
+      "Ở đâu?",
+      "Để làm gì?",
+      "Vì sao?"
+     ],
+     "a": 2,
+     "explain": "Trạng ngữ chỉ mục đích nêu lên mục đích của hành động, thường trả lời cho câu hỏi \"Để làm gì?\"."
+    },
+    {
+     "type": "fill",
+     "q": "Con thuyền ___ (dương hay giương?) cánh buồm trắng, lướt nhẹ trên sóng biển.",
+     "answer": "giương",
+     "accept": [
+      "giương"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Người thợ canh ___ (hải đăng hay hải đăn?) luôn thức đêm để giữ ánh sáng không tắt.",
+     "answer": "hải đăng",
+     "accept": [
+      "hải đăng"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy viết 2-3 câu về ước mơ khám phá biển cả của em, trong đó có một câu chứa trạng ngữ chỉ mục đích (bắt đầu bằng \"Để...\").",
+     "hints": [
+      "Em nghĩ xem mình ước mơ được làm gì liên quan tới biển: thủy thủ, nhà thám hiểm hay người lặn biển?",
+      "Em thử đặt câu có cụm \"Để...\" ở đầu câu, ví dụ \"Để khám phá đại dương,...\"",
+      "Fury gợi ý em thêm một câu tả cảm xúc háo hức của em khi nghĩ về ước mơ đó nhé!"
+     ],
+     "loiGiai": "Em ước mơ trở thành một nhà thám hiểm đại dương. Để thực hiện ước mơ đó, em sẽ chăm chỉ học bơi và tìm hiểu về các loài sinh vật biển. Em tin rằng một ngày nào đó mình sẽ được lặn xuống những rặng san hô rực rỡ.",
+     "dapSo": "tự chấm"
+    }
+   ]
+  },
+  {
+   "so": 3,
+   "ten": "Tuần 30: Những cánh buồm · Cái cầu",
+   "lyThuyet": "Tuần này em đọc về chuyến tham quan bảo tàng tìm hiểu đời sống cha ông xưa và về Trái Đất - ngôi nhà chung của muôn loài cần được bảo vệ. Về luyện từ và câu, em luyện lựa chọn trạng ngữ Vì/Để/Lúc/Ở phù hợp để điền vào câu.",
+   "cauHoi": [
+    {
+     "type": "read",
+     "vanBan": "Lớp của Nam được cô giáo dẫn đi tham quan bảo tàng lịch sử. Đứng trước tủ kính trưng bày những chiếc rìu đá, mũi tên đồng, Nam ngạc nhiên khi biết cha ông ta ngày xưa đã dùng chúng để săn bắt thú rừng và trồng trọt. Cô hướng dẫn viên còn kể về những chiếc bình gốm hoa văn tinh xảo, được nặn hoàn toàn bằng tay. Nam thầm cảm phục sự khéo léo và thông minh của người xưa, dù không có máy móc hiện đại nhưng vẫn tạo ra biết bao vật dụng hữu ích.",
+     "q": "Cha ông ta ngày xưa dùng rìu đá, mũi tên đồng để làm gì?",
+     "options": [
+      "Để trang trí nhà cửa",
+      "Để săn bắt thú rừng và trồng trọt",
+      "Để làm đồ chơi cho trẻ em",
+      "Để đổi lấy tiền bạc"
+     ],
+     "a": 1,
+     "explain": "Bài đọc cho biết cha ông ta dùng rìu đá, mũi tên đồng để săn bắt thú rừng và trồng trọt."
+    },
+    {
+     "type": "read",
+     "vanBan": "Cô giáo giảng cho cả lớp nghe rằng Trái Đất giống như một ngôi nhà lớn, nơi con người, cây cối và muôn loài động vật cùng chung sống. Nếu rừng bị chặt phá, sông suối bị ô nhiễm, không khí bị vấy bẩn, ngôi nhà chung ấy sẽ dần trở nên ốm yếu. Nghe vậy, An quyết tâm cùng các bạn trồng thêm cây xanh quanh sân trường và nhắc nhau không vứt rác bừa bãi. Cậu bé nghĩ, mỗi việc làm nhỏ của mình cũng góp phần giữ gìn ngôi nhà chung thêm trong lành và tươi đẹp.",
+     "q": "An đã làm gì để góp phần bảo vệ ngôi nhà chung Trái Đất?",
+     "options": [
+      "Chặt bớt cây xanh trong sân trường",
+      "Trồng thêm cây xanh và không vứt rác bừa bãi",
+      "Đốt rác trong vườn trường",
+      "Xả nước thải ra sông suối"
+     ],
+     "a": 1,
+     "explain": "An cùng các bạn trồng thêm cây xanh quanh sân trường và nhắc nhau không vứt rác bừa bãi."
+    },
+    {
+     "type": "mcq",
+     "q": "Chọn trạng ngữ phù hợp điền vào chỗ trống: \"___ trời mưa to, buổi tham quan bảo tàng phải hoãn lại.\"",
+     "options": [
+      "Vì",
+      "Để",
+      "Lúc",
+      "Ở"
+     ],
+     "a": 0,
+     "explain": "\"Vì\" dùng để chỉ nguyên nhân, phù hợp vì câu nêu lý do buổi tham quan bị hoãn."
+    },
+    {
+     "type": "mcq",
+     "q": "Chọn trạng ngữ phù hợp điền vào chỗ trống: \"___ bảo vệ nguồn nước sạch, mọi người không nên xả rác xuống sông.\"",
+     "options": [
+      "Vì",
+      "Để",
+      "Lúc",
+      "Ở"
+     ],
+     "a": 1,
+     "explain": "\"Để\" dùng để chỉ mục đích, phù hợp vì câu nêu mục đích của việc không xả rác xuống sông."
+    },
+    {
+     "type": "mcq",
+     "q": "Chọn trạng ngữ phù hợp điền vào chỗ trống: \"___ bảo tàng, có rất nhiều cổ vật quý giá được trưng bày.\"",
+     "options": [
+      "Vì",
+      "Để",
+      "Lúc",
+      "Ở"
+     ],
+     "a": 3,
+     "explain": "\"Ở\" dùng để chỉ nơi chốn, phù hợp vì câu nêu địa điểm trưng bày cổ vật."
+    },
+    {
+     "type": "fill",
+     "q": "Chiếc bình ___ (gốm hay gớm?) có hoa văn tinh xảo được trưng bày trong bảo tàng.",
+     "answer": "gốm",
+     "accept": [
+      "gốm"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Chúng ta cần bảo vệ ___ (nguồn hay ngùn?) nước sạch cho ngôi nhà chung Trái Đất.",
+     "answer": "nguồn",
+     "accept": [
+      "nguồn"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy viết 2-3 câu về việc bảo vệ môi trường, trong đó có sử dụng ít nhất hai trong bốn trạng ngữ Vì/Để/Lúc/Ở.",
+     "hints": [
+      "Em nghĩ về một việc bảo vệ môi trường mà em từng làm hoặc muốn làm, ví dụ trồng cây, nhặt rác.",
+      "Em thử dùng \"Để...\" để nêu mục đích và \"Vì...\" để nêu lý do trong hai câu khác nhau.",
+      "Fury tin là em sẽ viết được đoạn văn thật ý nghĩa về ngôi nhà chung Trái Đất đấy!"
+     ],
+     "loiGiai": "Để giữ cho không khí trong lành, em cùng các bạn trồng thêm nhiều cây xanh quanh sân trường. Vì muốn bảo vệ nguồn nước sạch, mọi người trong xóm em không còn vứt rác xuống dòng sông nữa. Lúc rảnh rỗi, em thường nhắc em trai không xả rác bừa bãi.",
+     "dapSo": "tự chấm"
+    }
+   ]
+  },
+  {
+   "so": 4,
+   "ten": "Tuần 31: Đường đi Sa Pa · Quê ngoại",
+   "lyThuyet": "Tuần này em đọc về rặng san hô kỳ diệu dưới lòng biển sâu và những bước chân không mỏi của vận động viên leo núi chinh phục đỉnh cao. Về luyện từ và câu, em luyện tập tổng hợp xác định trạng ngữ, chủ ngữ, vị ngữ trong cùng một câu.",
+   "cauHoi": [
+    {
+     "type": "read",
+     "vanBan": "Chú Bình là một nhà khoa học chuyên nghiên cứu đại dương. Trong chuyến thám hiểm mới nhất, chú lặn xuống độ sâu năm mươi mét để quan sát rặng san hô rực rỡ sắc màu. Chú kể rằng, dưới đáy biển sâu, có hàng nghìn loài cá bơi lội tung tăng, có cả những loài sinh vật kỳ lạ mà con người chưa từng biết đến. Nghe chú kể, Nam ước mơ sau này sẽ trở thành nhà khoa học, để được tận mắt khám phá những điều bí ẩn dưới lòng đại dương bao la.",
+     "q": "Chú Bình lặn xuống độ sâu bao nhiêu mét để quan sát rặng san hô?",
+     "options": [
+      "Hai mươi mét",
+      "Ba mươi mét",
+      "Năm mươi mét",
+      "Một trăm mét"
+     ],
+     "a": 2,
+     "explain": "Bài đọc cho biết chú Bình lặn xuống độ sâu năm mươi mét để quan sát rặng san hô."
+    },
+    {
+     "type": "read",
+     "vanBan": "Chị Lan là một vận động viên leo núi nổi tiếng. Để chinh phục đỉnh Fansipan, chị đã luyện tập suốt nhiều tháng trời, bất kể nắng mưa. Trên đường leo núi, đôi chân chị nhiều lần đau nhức, hơi thở dồn dập vì không khí loãng, nhưng chị chưa bao giờ có ý định bỏ cuộc. Cuối cùng, sau bao gian khó, chị Lan cũng đặt chân lên đỉnh núi, ngắm nhìn biển mây bồng bềnh dưới chân mình. Câu chuyện của chị khiến Minh hiểu rằng, ý chí kiên cường có thể giúp con người vượt qua mọi thử thách.",
+     "q": "Điều gì giúp chị Lan chinh phục thành công đỉnh Fansipan?",
+     "options": [
+      "May mắn tình cờ",
+      "Ý chí kiên cường và sự luyện tập bền bỉ",
+      "Được người khác cõng lên núi",
+      "Đi cáp treo lên thẳng đỉnh"
+     ],
+     "a": 1,
+     "explain": "Nhờ luyện tập bền bỉ và ý chí kiên cường, không bỏ cuộc dù gian khó, chị Lan đã chinh phục được đỉnh Fansipan."
+    },
+    {
+     "type": "mcq",
+     "q": "Xác định trạng ngữ, chủ ngữ, vị ngữ trong câu: \"Sáng sớm, trên những cành cây, chim chóc hót líu lo.\"",
+     "options": [
+      "TN: Sáng sớm, trên những cành cây; CN: chim chóc; VN: hót líu lo",
+      "TN: Sáng sớm; CN: trên những cành cây; VN: chim chóc hót líu lo",
+      "TN: hót líu lo; CN: chim chóc; VN: Sáng sớm, trên những cành cây",
+      "TN: không có; CN: Sáng sớm; VN: chim chóc hót líu lo"
+     ],
+     "a": 0,
+     "explain": "\"Sáng sớm\" và \"trên những cành cây\" đều là trạng ngữ (chỉ thời gian và nơi chốn); \"chim chóc\" là chủ ngữ; \"hót líu lo\" là vị ngữ."
+    },
+    {
+     "type": "mcq",
+     "q": "Trong câu \"Để khám phá đáy biển sâu, các nhà khoa học đã chế tạo tàu lặn hiện đại.\", đâu là chủ ngữ?",
+     "options": [
+      "Để khám phá đáy biển sâu",
+      "các nhà khoa học",
+      "đã chế tạo tàu lặn hiện đại",
+      "tàu lặn hiện đại"
+     ],
+     "a": 1,
+     "explain": "\"các nhà khoa học\" là chủ ngữ, chỉ đối tượng thực hiện hành động \"chế tạo tàu lặn hiện đại\"."
+    },
+    {
+     "type": "mcq",
+     "q": "Trong câu \"Vì say mê khám phá đại dương, Bình đã đọc rất nhiều sách về sinh vật biển.\", trạng ngữ trong câu chỉ ý nghĩa gì?",
+     "options": [
+      "Chỉ nơi chốn",
+      "Chỉ thời gian",
+      "Chỉ nguyên nhân",
+      "Chỉ mục đích"
+     ],
+     "a": 2,
+     "explain": "\"Vì say mê khám phá đại dương\" là trạng ngữ chỉ nguyên nhân, giải thích lý do Bình đọc nhiều sách."
+    },
+    {
+     "type": "fill",
+     "q": "Đàn cá bơi lội tung tăng quanh ___ (rặng hay dặng?) san hô rực rỡ sắc màu.",
+     "answer": "rặng",
+     "accept": [
+      "rặng"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Vận động viên leo núi có ý chí ___ (kiên cường hay kiên cừơng?), không bao giờ bỏ cuộc.",
+     "answer": "kiên cường",
+     "accept": [
+      "kiên cường"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy viết một câu có đủ ba thành phần: trạng ngữ, chủ ngữ, vị ngữ, nói về đại dương hoặc núi non, rồi gạch chân (hoặc ghi rõ) từng thành phần.",
+     "hints": [
+      "Em nghĩ về một cảnh biển hoặc núi mà em thích, ví dụ lúc bình minh trên biển hay lúc leo núi.",
+      "Em đặt trạng ngữ ở đầu câu (chỉ thời gian hoặc nơi chốn), sau đó thêm chủ ngữ là người hoặc sự vật, rồi thêm vị ngữ là hành động.",
+      "Sau khi viết xong, em thử chỉ rõ đâu là TN, đâu là CN, đâu là VN nhé, Fury tin em làm được!"
+     ],
+     "loiGiai": "Buổi sáng sớm, trên bãi biển vắng, những chú cá heo nhảy vọt lên khỏi mặt nước. Trạng ngữ: \"Buổi sáng sớm, trên bãi biển vắng\"; Chủ ngữ: \"những chú cá heo\"; Vị ngữ: \"nhảy vọt lên khỏi mặt nước\".",
+     "dapSo": "tự chấm"
+    }
+   ]
+  }
+ ]
 }

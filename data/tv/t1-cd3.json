@@ -1,276 +1,393 @@
 {
-  "mon": "tv",
-  "tap": 1,
-  "chuDe": "Niềm vui sáng tạo",
-  "cdSo": 3,
-  "bai": [
+ "mon": "tv",
+ "tap": 1,
+ "chuDe": "Niềm vui sáng tạo",
+ "cdSo": 3,
+ "bai": [
+  {
+   "so": 1,
+   "ten": "Tuần 10: Vẽ màu · Đồng cỏ nở hoa",
+   "lyThuyet": "Tuần này em đọc câu chuyện về niềm vui khi vẽ tranh và khám phá vẻ đẹp thiên nhiên qua sắc màu. Em cũng học về tính từ - những từ dùng để chỉ đặc điểm, tính chất, màu sắc, hình dáng của sự vật, ví dụ như: đẹp, xanh, to, nhỏ, vui. Nhận biết được tính từ giúp em viết câu văn sinh động và giàu hình ảnh hơn.",
+   "cauHoi": [
     {
-      "so": 1,
-      "ten": "Tuần 10: Hộp màu kỳ diệu",
-      "lyThuyet": "Tuần này em đọc câu chuyện về niềm vui khi vẽ tranh và khám phá vẻ đẹp thiên nhiên qua sắc màu. Em cũng học về tính từ - những từ dùng để chỉ đặc điểm, tính chất, màu sắc, hình dáng của sự vật, ví dụ như: đẹp, xanh, to, nhỏ, vui. Nhận biết được tính từ giúp em viết câu văn sinh động và giàu hình ảnh hơn.",
-      "cauHoi": [
-        {
-          "type": "read",
-          "vanBan": "Nam có một hộp màu nhỏ mẹ tặng nhân sinh nhật. Mỗi buổi chiều, cậu mang giá vẽ ra sân, say sưa tô những mảng màu rực rỡ lên tờ giấy trắng. Hôm nay, Nam vẽ cảnh đồng lúa chín vàng óng, xa xa có mấy chú trâu đang gặm cỏ thong thả. Bức tranh tuy còn vụng về nhưng chứa đầy tình yêu của cậu bé dành cho quê hương yên bình.",
-          "q": "Nam vẽ cảnh gì trong bức tranh của mình?",
-          "options": ["Cảnh biển buổi sáng", "Cảnh đồng lúa chín và trâu gặm cỏ", "Cảnh phố phường đông đúc", "Cảnh núi rừng mùa đông"],
-          "a": 1,
-          "explain": "Đoạn văn cho biết Nam vẽ cảnh đồng lúa chín vàng óng, có mấy chú trâu đang gặm cỏ."
-        },
-        {
-          "type": "read",
-          "vanBan": "Nam có một hộp màu nhỏ mẹ tặng nhân sinh nhật. Mỗi buổi chiều, cậu mang giá vẽ ra sân, say sưa tô những mảng màu rực rỡ lên tờ giấy trắng. Hôm nay, Nam vẽ cảnh đồng lúa chín vàng óng, xa xa có mấy chú trâu đang gặm cỏ thong thả. Bức tranh tuy còn vụng về nhưng chứa đầy tình yêu của cậu bé dành cho quê hương yên bình.",
-          "q": "Vì sao bức tranh của Nam trở nên đáng quý dù còn vụng về?",
-          "options": ["Vì tranh được bán rất đắt tiền", "Vì tranh chứa đầy tình yêu quê hương của cậu bé", "Vì tranh được vẽ bằng màu đắt tiền", "Vì tranh được trưng bày ở bảo tàng"],
-          "a": 1,
-          "explain": "Đoạn văn nhấn mạnh bức tranh chứa đầy tình yêu của cậu bé dành cho quê hương yên bình."
-        },
-        {
-          "type": "mcq",
-          "q": "Từ nào dưới đây là tính từ?",
-          "options": ["chạy", "rực rỡ", "vẽ tranh", "cái bàn"],
-          "a": 1,
-          "explain": "\"Rực rỡ\" chỉ đặc điểm của màu sắc nên là tính từ; các từ còn lại là động từ hoặc danh từ."
-        },
-        {
-          "type": "mcq",
-          "q": "Trong câu \"Bầu trời hôm nay trong xanh và cao vời vợi.\", từ nào là tính từ?",
-          "options": ["Bầu trời", "hôm nay", "trong xanh", "và"],
-          "a": 2,
-          "explain": "\"Trong xanh\" là tính từ miêu tả đặc điểm của bầu trời."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính từ thường dùng để làm gì?",
-          "options": ["Chỉ hoạt động của sự vật", "Chỉ tên gọi của sự vật", "Chỉ đặc điểm, tính chất của sự vật", "Nối các câu với nhau"],
-          "a": 2,
-          "explain": "Tính từ là từ chỉ đặc điểm, tính chất, màu sắc, hình dáng, mùi vị... của sự vật, hiện tượng."
-        },
-        {
-          "type": "fill",
-          "q": "Điền l hoặc n vào chỗ trống: Bức tranh có màu sắc ...ộng lẫy khiến ai cũng trầm trồ khen ngợi.",
-          "answer": "lộng lẫy",
-          "accept": ["lộng lẫy", "long lẫy"]
-        },
-        {
-          "type": "fill",
-          "q": "Điền ch hoặc tr vào chỗ trống: Nam thích vẽ những bức ...anh về phong cảnh làng quê.",
-          "answer": "tranh",
-          "accept": ["tranh"]
-        },
-        {
-          "type": "solve",
-          "de": "Viết 2-3 câu tả một bức tranh em thích vẽ, trong đó có dùng ít nhất một tính từ.",
-          "hints": [
-            "Em thử nghĩ xem bức tranh em vẽ có những gì nhé - con vật, cây cối, hay bầu trời?",
-            "Giờ thêm vào vài tính từ tả màu sắc hoặc hình dáng, ví dụ như xanh biếc, tròn xoe, rực rỡ cho câu văn thêm sinh động.",
-            "Câu mẫu gần giống thế này: Em vẽ một chú mèo lông vàng óng đang nằm dưới gốc cây xanh mát. Bầu trời phía sau tranh có vài đám mây trắng bồng bềnh."
-          ],
-          "loiGiai": "Em vẽ một chú mèo lông vàng óng đang nằm dưới gốc cây xanh mát. Bầu trời phía sau tranh có vài đám mây trắng bồng bềnh trôi nhẹ nhàng.",
-          "dapSo": "tự chấm"
-        }
-      ]
+     "type": "read",
+     "vanBan": "Nam có một hộp màu nhỏ mẹ tặng nhân sinh nhật. Mỗi buổi chiều, cậu mang giá vẽ ra sân, say sưa tô những mảng màu rực rỡ lên tờ giấy trắng. Hôm nay, Nam vẽ cảnh đồng lúa chín vàng óng, xa xa có mấy chú trâu đang gặm cỏ thong thả. Bức tranh tuy còn vụng về nhưng chứa đầy tình yêu của cậu bé dành cho quê hương yên bình.",
+     "q": "Nam vẽ cảnh gì trong bức tranh của mình?",
+     "options": [
+      "Cảnh biển buổi sáng",
+      "Cảnh đồng lúa chín và trâu gặm cỏ",
+      "Cảnh phố phường đông đúc",
+      "Cảnh núi rừng mùa đông"
+     ],
+     "a": 1,
+     "explain": "Đoạn văn cho biết Nam vẽ cảnh đồng lúa chín vàng óng, có mấy chú trâu đang gặm cỏ."
     },
     {
-      "so": 2,
-      "ten": "Tuần 11: Tiếng đàn trong chiều thu",
-      "lyThuyet": "Tuần này em đọc câu chuyện về âm nhạc và vẻ đẹp bầu trời mùa thu, cảm nhận sự sáng tạo qua âm thanh và cảnh vật. Em luyện tập thêm về tính từ: cách tìm tính từ trong câu, biết cách dùng tính từ để miêu tả sự vật cụ thể hơn, sinh động hơn. Việc luyện tập giúp em dùng từ ngữ chính xác khi viết văn miêu tả.",
-      "cauHoi": [
-        {
-          "type": "read",
-          "vanBan": "Minh có một cây đàn ghi-ta cũ do ông nội để lại. Mỗi chiều thu, khi gió heo may thổi nhẹ, cậu lại ngồi trước hiên nhà gảy vài giai điệu đơn sơ. Tiếng đàn trầm ấm hòa cùng tiếng lá vàng xào xạc rơi ngoài sân, tạo nên một bản nhạc êm dịu lạ thường. Bà của Minh bảo, đó chính là bản nhạc đẹp nhất mà bà từng nghe.",
-          "q": "Minh gảy đàn vào lúc nào trong ngày?",
-          "options": ["Buổi sáng sớm", "Buổi trưa nắng", "Mỗi chiều thu có gió heo may", "Nửa đêm khuya"],
-          "a": 2,
-          "explain": "Đoạn văn nói rõ mỗi chiều thu, khi gió heo may thổi nhẹ, Minh lại gảy đàn."
-        },
-        {
-          "type": "read",
-          "vanBan": "Minh có một cây đàn ghi-ta cũ do ông nội để lại. Mỗi chiều thu, khi gió heo may thổi nhẹ, cậu lại ngồi trước hiên nhà gảy vài giai điệu đơn sơ. Tiếng đàn trầm ấm hòa cùng tiếng lá vàng xào xạc rơi ngoài sân, tạo nên một bản nhạc êm dịu lạ thường. Bà của Minh bảo, đó chính là bản nhạc đẹp nhất mà bà từng nghe.",
-          "q": "Điều gì hòa cùng tiếng đàn tạo nên bản nhạc êm dịu?",
-          "options": ["Tiếng mưa rơi", "Tiếng lá vàng xào xạc rơi", "Tiếng chim hót", "Tiếng xe cộ"],
-          "a": 1,
-          "explain": "Đoạn văn cho biết tiếng đàn hòa cùng tiếng lá vàng xào xạc rơi ngoài sân."
-        },
-        {
-          "type": "mcq",
-          "q": "Từ nào dưới đây là tính từ chỉ âm thanh?",
-          "options": ["gảy đàn", "trầm ấm", "cây đàn", "buổi chiều"],
-          "a": 1,
-          "explain": "\"Trầm ấm\" là tính từ miêu tả đặc điểm của âm thanh tiếng đàn."
-        },
-        {
-          "type": "mcq",
-          "q": "Câu nào dưới đây có chứa hai tính từ?",
-          "options": ["Bầu trời mùa thu cao và trong xanh.", "Minh mang đàn ra sân.", "Bà ngồi nghe cháu chơi đàn.", "Lá cây rơi xuống đất."],
-          "a": 0,
-          "explain": "Câu \"Bầu trời mùa thu cao và trong xanh\" có hai tính từ là \"cao\" và \"trong xanh\"."
-        },
-        {
-          "type": "mcq",
-          "q": "Muốn câu văn miêu tả sinh động hơn, em nên làm gì?",
-          "options": ["Bỏ hết các tính từ trong câu", "Thêm tính từ phù hợp để tả rõ đặc điểm sự vật", "Chỉ dùng động từ", "Viết câu thật ngắn, không có chi tiết"],
-          "a": 1,
-          "explain": "Thêm tính từ phù hợp giúp câu văn miêu tả sự vật rõ ràng, sinh động và gợi cảm hơn."
-        },
-        {
-          "type": "fill",
-          "q": "Điền s hoặc x vào chỗ trống: Tiếng lá vàng ...ào xạc rơi ngoài sân nghe thật êm tai.",
-          "answer": "xào",
-          "accept": ["xào"]
-        },
-        {
-          "type": "fill",
-          "q": "Điền d, gi hoặc r vào chỗ trống: Gió heo may thổi nhẹ làm những chiếc lá ...ung rinh trên cành.",
-          "answer": "rung",
-          "accept": ["rung"]
-        },
-        {
-          "type": "solve",
-          "de": "Viết 2-3 câu tả bầu trời mùa thu mà em quan sát được, có dùng ít nhất hai tính từ.",
-          "hints": [
-            "Em nhớ lại xem bầu trời mùa thu thường có màu gì, mây trông ra sao nhé.",
-            "Hãy thêm những tính từ như trong xanh, cao vời vợi, mát mẻ, nhẹ nhàng vào câu văn của em.",
-            "Câu mẫu để em tham khảo: Bầu trời mùa thu trong xanh và cao vời vợi. Những đám mây trắng nhẹ nhàng trôi như đang chơi đùa cùng gió."
-          ],
-          "loiGiai": "Bầu trời mùa thu trong xanh và cao vời vợi. Những đám mây trắng nhẹ nhàng trôi như đang chơi đùa cùng gió thu mát mẻ.",
-          "dapSo": "tự chấm"
-        }
-      ]
+     "type": "read",
+     "vanBan": "Nam có một hộp màu nhỏ mẹ tặng nhân sinh nhật. Mỗi buổi chiều, cậu mang giá vẽ ra sân, say sưa tô những mảng màu rực rỡ lên tờ giấy trắng. Hôm nay, Nam vẽ cảnh đồng lúa chín vàng óng, xa xa có mấy chú trâu đang gặm cỏ thong thả. Bức tranh tuy còn vụng về nhưng chứa đầy tình yêu của cậu bé dành cho quê hương yên bình.",
+     "q": "Vì sao bức tranh của Nam trở nên đáng quý dù còn vụng về?",
+     "options": [
+      "Vì tranh được bán rất đắt tiền",
+      "Vì tranh chứa đầy tình yêu quê hương của cậu bé",
+      "Vì tranh được vẽ bằng màu đắt tiền",
+      "Vì tranh được trưng bày ở bảo tàng"
+     ],
+     "a": 1,
+     "explain": "Đoạn văn nhấn mạnh bức tranh chứa đầy tình yêu của cậu bé dành cho quê hương yên bình."
     },
     {
-      "so": 3,
-      "ten": "Tuần 12: Chú thỏ giấy của An",
-      "lyThuyet": "Tuần này em đọc về niềm vui khi tự tay làm đồ chơi bằng giấy và khám phá những điều kỳ diệu quanh ngôi nhà. Em học về biện pháp nhân hoá - cách gọi hoặc tả sự vật, con vật, cây cối bằng những từ ngữ vốn dùng để tả người, giúp sự vật trở nên sống động, gần gũi như con người. Nhận biết nhân hoá giúp em cảm nhận vẻ đẹp của câu văn hay hơn.",
-      "cauHoi": [
-        {
-          "type": "read",
-          "vanBan": "An rất thích gấp giấy origami. Một buổi chiều, cậu tỉ mẩn gấp một chú thỏ con bằng giấy trắng, đôi tai dài vểnh lên trông thật đáng yêu. An đặt chú thỏ giấy lên bàn học, tưởng tượng nó đang nhảy nhót vui đùa cùng mình. Mỗi khi nhìn chú thỏ, An lại thấy lòng vui vẻ vì đó là thành quả do chính đôi tay mình tạo ra.",
-          "q": "An đã làm gì trong một buổi chiều?",
-          "options": ["Vẽ một bức tranh phong cảnh", "Gấp một chú thỏ con bằng giấy", "Nặn một con thỏ bằng đất sét", "Cắt hình bông hoa bằng giấy"],
-          "a": 1,
-          "explain": "Đoạn văn kể An tỉ mẩn gấp một chú thỏ con bằng giấy trắng."
-        },
-        {
-          "type": "read",
-          "vanBan": "An rất thích gấp giấy origami. Một buổi chiều, cậu tỉ mẩn gấp một chú thỏ con bằng giấy trắng, đôi tai dài vểnh lên trông thật đáng yêu. An đặt chú thỏ giấy lên bàn học, tưởng tượng nó đang nhảy nhót vui đùa cùng mình. Mỗi khi nhìn chú thỏ, An lại thấy lòng vui vẻ vì đó là thành quả do chính đôi tay mình tạo ra.",
-          "q": "Vì sao An cảm thấy vui vẻ khi nhìn chú thỏ giấy?",
-          "options": ["Vì chú thỏ được mua ở cửa hàng đắt tiền", "Vì đó là thành quả do chính đôi tay mình tạo ra", "Vì chú thỏ biết chạy nhảy thật sự", "Vì bạn bè khen chú thỏ rất to"],
-          "a": 1,
-          "explain": "Đoạn văn nêu rõ An vui vì đó là thành quả do chính đôi tay mình tạo ra."
-        },
-        {
-          "type": "mcq",
-          "q": "Câu nào dưới đây có sử dụng biện pháp nhân hoá?",
-          "options": ["Chú thỏ giấy nằm yên trên bàn học.", "Chú thỏ giấy tủm tỉm cười với An mỗi sáng.", "An đặt chú thỏ giấy lên bàn.", "Chiếc bàn học màu nâu gỗ."],
-          "a": 1,
-          "explain": "Câu \"Chú thỏ giấy tủm tỉm cười\" dùng từ tả hành động của người (cười) cho đồ vật, đó là nhân hoá."
-        },
-        {
-          "type": "mcq",
-          "q": "Trong câu \"Ông mặt trời thức dậy, vươn vai chiếu những tia nắng đầu tiên xuống sân.\", sự vật nào được nhân hoá?",
-          "options": ["Sân nhà", "Tia nắng", "Ông mặt trời", "Buổi sáng"],
-          "a": 2,
-          "explain": "\"Ông mặt trời thức dậy, vươn vai\" là cách gọi và tả mặt trời như một con người, đây là nhân hoá."
-        },
-        {
-          "type": "mcq",
-          "q": "Biện pháp nhân hoá có tác dụng gì trong câu văn?",
-          "options": ["Làm câu văn dài hơn", "Làm sự vật trở nên sống động, gần gũi như con người", "Làm câu văn khó hiểu hơn", "Không có tác dụng gì đặc biệt"],
-          "a": 1,
-          "explain": "Nhân hoá giúp sự vật, con vật, cây cối trở nên sinh động, có hồn và gần gũi như con người."
-        },
-        {
-          "type": "fill",
-          "q": "Điền ch hoặc tr vào chỗ trống: An gấp ...ú thỏ giấy rất tỉ mỉ và cẩn thận.",
-          "answer": "chú",
-          "accept": ["chú"]
-        },
-        {
-          "type": "fill",
-          "q": "Điền l hoặc n vào chỗ trống: Đôi tai chú thỏ giấy vểnh ...ên trông thật đáng yêu.",
-          "answer": "lên",
-          "accept": ["lên"]
-        },
-        {
-          "type": "solve",
-          "de": "Viết 2-3 câu tả một đồ vật hoặc con vật quen thuộc, trong đó có sử dụng biện pháp nhân hoá.",
-          "hints": [
-            "Em chọn một đồ vật hay con vật em thích, ví dụ như chiếc cặp sách, con mèo, hay cái cây trước nhà.",
-            "Bây giờ em thử gọi nó bằng từ như \"anh\", \"chị\", \"chú\" và tả nó biết cười, biết nói, biết vươn vai như người xem sao.",
-            "Câu mẫu cho em tham khảo: Chú mèo mướp nhà em uể oải vươn vai rồi khoan thai bước ra sân sưởi nắng. Nó nhìn em như đang chào buổi sáng."
-          ],
-          "loiGiai": "Chú mèo mướp nhà em uể oải vươn vai rồi khoan thai bước ra sân sưởi nắng. Nó nhìn em như đang chào buổi sáng thật đáng yêu.",
-          "dapSo": "tự chấm"
-        }
-      ]
+     "type": "mcq",
+     "q": "Từ nào dưới đây là tính từ?",
+     "options": [
+      "chạy",
+      "rực rỡ",
+      "vẽ tranh",
+      "cái bàn"
+     ],
+     "a": 1,
+     "explain": "\"Rực rỡ\" chỉ đặc điểm của màu sắc nên là tính từ; các từ còn lại là động từ hoặc danh từ."
     },
     {
-      "so": 4,
-      "ten": "Tuần 13: Buổi triển lãm nhỏ của lớp em",
-      "lyThuyet": "Tuần này em đọc về một buổi triển lãm tranh và nhạc cụ tự làm của các bạn học sinh, cảm nhận niềm vui sáng tạo qua nghệ thuật. Em luyện tập thêm về biện pháp nhân hoá: cách đặt câu có nhân hoá, nhận biết tác dụng của nhân hoá trong đoạn văn, đoạn thơ. Luyện tập giúp em vận dụng nhân hoá để viết văn hay và giàu cảm xúc hơn.",
-      "cauHoi": [
-        {
-          "type": "read",
-          "vanBan": "Lớp của Bình tổ chức một buổi triển lãm nhỏ trưng bày tranh vẽ và nhạc cụ tự làm. Hùng mang đến một chiếc đàn bằng dây thun và hộp gỗ, gảy lên nghe vui tai lạ. Lan trưng bày bức tranh vẽ khu vườn với những bông hoa như đang nghiêng mình chào khách tham quan. Ai nấy đều tự hào khoe sản phẩm mình dày công sáng tạo suốt mấy tuần qua.",
-          "q": "Hùng mang đến buổi triển lãm sản phẩm gì?",
-          "options": ["Một bức tranh phong cảnh", "Một chiếc đàn bằng dây thun và hộp gỗ", "Một cuốn sách tự viết", "Một chiếc diều giấy"],
-          "a": 1,
-          "explain": "Đoạn văn cho biết Hùng mang đến một chiếc đàn bằng dây thun và hộp gỗ."
-        },
-        {
-          "type": "read",
-          "vanBan": "Lớp của Bình tổ chức một buổi triển lãm nhỏ trưng bày tranh vẽ và nhạc cụ tự làm. Hùng mang đến một chiếc đàn bằng dây thun và hộp gỗ, gảy lên nghe vui tai lạ. Lan trưng bày bức tranh vẽ khu vườn với những bông hoa như đang nghiêng mình chào khách tham quan. Ai nấy đều tự hào khoe sản phẩm mình dày công sáng tạo suốt mấy tuần qua.",
-          "q": "Trong bức tranh của Lan, những bông hoa được miêu tả như thế nào?",
-          "options": ["Như đang héo úa", "Như đang nghiêng mình chào khách tham quan", "Như đang ngủ say", "Như đang rơi rụng"],
-          "a": 1,
-          "explain": "Đoạn văn miêu tả những bông hoa như đang nghiêng mình chào khách tham quan, đây là hình ảnh nhân hoá."
-        },
-        {
-          "type": "mcq",
-          "q": "Câu \"Những bông hoa như đang nghiêng mình chào khách tham quan\" sử dụng biện pháp nghệ thuật nào?",
-          "options": ["So sánh", "Nhân hoá", "Điệp từ", "Liệt kê"],
-          "a": 1,
-          "explain": "Câu văn tả hoa biết \"nghiêng mình chào\" như con người, đó là biện pháp nhân hoá."
-        },
-        {
-          "type": "mcq",
-          "q": "Câu nào dưới đây KHÔNG sử dụng biện pháp nhân hoá?",
-          "options": ["Hàng cây đứng im lặng ngắm nhìn lũ trẻ nô đùa.", "Chiếc bàn học được làm bằng gỗ.", "Ông trăng tròn nhô lên, mỉm cười với muôn vì sao.", "Cơn gió nhẹ nhàng vuốt ve mái tóc em."],
-          "a": 1,
-          "explain": "Câu \"Chiếc bàn học được làm bằng gỗ\" chỉ nêu chất liệu, không có yếu tố nhân hoá."
-        },
-        {
-          "type": "mcq",
-          "q": "Khi viết văn, dùng biện pháp nhân hoá hợp lí sẽ giúp bài viết như thế nào?",
-          "options": ["Trở nên khô khan, thiếu cảm xúc", "Trở nên sinh động, giàu cảm xúc và gần gũi hơn", "Trở nên khó hiểu và rối rắm", "Không thay đổi gì so với câu văn thường"],
-          "a": 1,
-          "explain": "Nhân hoá hợp lí giúp bài văn sinh động, giàu cảm xúc và gần gũi với người đọc hơn."
-        },
-        {
-          "type": "fill",
-          "q": "Điền tr hoặc ch vào chỗ trống: Lớp em tổ chức buổi ...iển lãm tranh vẽ và nhạc cụ tự làm.",
-          "answer": "triển",
-          "accept": ["triển"]
-        },
-        {
-          "type": "fill",
-          "q": "Điền d, gi hoặc r vào chỗ trống: Cơn gió nhẹ nhàng ...ung lay những cành hoa trong vườn.",
-          "answer": "rung",
-          "accept": ["rung"]
-        },
-        {
-          "type": "solve",
-          "de": "Viết 2-3 câu tả khu vườn hoặc góc sân nhà em, trong đó có ít nhất một câu sử dụng biện pháp nhân hoá.",
-          "hints": [
-            "Em thử nhớ lại khu vườn hay góc sân nhà mình có cây gì, hoa gì, có nắng hay gió không nhé.",
-            "Bây giờ em hãy cho cây cối, bông hoa hay ánh nắng biết \"cười\", \"nhảy múa\", \"trò chuyện\" như con người xem sao.",
-            "Câu mẫu cho em tham khảo: Khu vườn nhỏ nhà em có hàng cây xoè tán lá như đang vẫy tay chào đón nắng sớm. Những bông hoa hồng khẽ đung đưa, thì thầm trò chuyện cùng đàn bướm."
-          ],
-          "loiGiai": "Khu vườn nhỏ nhà em có hàng cây xoè tán lá như đang vẫy tay chào đón nắng sớm. Những bông hoa hồng khẽ đung đưa, thì thầm trò chuyện cùng đàn bướm bay lượn.",
-          "dapSo": "tự chấm"
-        }
-      ]
+     "type": "mcq",
+     "q": "Trong câu \"Bầu trời hôm nay trong xanh và cao vời vợi.\", từ nào là tính từ?",
+     "options": [
+      "Bầu trời",
+      "hôm nay",
+      "trong xanh",
+      "và"
+     ],
+     "a": 2,
+     "explain": "\"Trong xanh\" là tính từ miêu tả đặc điểm của bầu trời."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính từ thường dùng để làm gì?",
+     "options": [
+      "Chỉ hoạt động của sự vật",
+      "Chỉ tên gọi của sự vật",
+      "Chỉ đặc điểm, tính chất của sự vật",
+      "Nối các câu với nhau"
+     ],
+     "a": 2,
+     "explain": "Tính từ là từ chỉ đặc điểm, tính chất, màu sắc, hình dáng, mùi vị... của sự vật, hiện tượng."
+    },
+    {
+     "type": "fill",
+     "q": "Điền l hoặc n vào chỗ trống: Bức tranh có màu sắc ...ộng lẫy khiến ai cũng trầm trồ khen ngợi.",
+     "answer": "lộng lẫy",
+     "accept": [
+      "lộng lẫy",
+      "long lẫy"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Điền ch hoặc tr vào chỗ trống: Nam thích vẽ những bức ...anh về phong cảnh làng quê.",
+     "answer": "tranh",
+     "accept": [
+      "tranh"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Viết 2-3 câu tả một bức tranh em thích vẽ, trong đó có dùng ít nhất một tính từ.",
+     "hints": [
+      "Em thử nghĩ xem bức tranh em vẽ có những gì nhé - con vật, cây cối, hay bầu trời?",
+      "Giờ thêm vào vài tính từ tả màu sắc hoặc hình dáng, ví dụ như xanh biếc, tròn xoe, rực rỡ cho câu văn thêm sinh động.",
+      "Câu mẫu gần giống thế này: Em vẽ một chú mèo lông vàng óng đang nằm dưới gốc cây xanh mát. Bầu trời phía sau tranh có vài đám mây trắng bồng bềnh."
+     ],
+     "loiGiai": "Em vẽ một chú mèo lông vàng óng đang nằm dưới gốc cây xanh mát. Bầu trời phía sau tranh có vài đám mây trắng bồng bềnh trôi nhẹ nhàng.",
+     "dapSo": "tự chấm"
     }
-  ]
+   ]
+  },
+  {
+   "so": 2,
+   "ten": "Tuần 11: Thanh âm của núi · Bầu trời mùa thu",
+   "lyThuyet": "Tuần này em đọc câu chuyện về âm nhạc và vẻ đẹp bầu trời mùa thu, cảm nhận sự sáng tạo qua âm thanh và cảnh vật. Em luyện tập thêm về tính từ: cách tìm tính từ trong câu, biết cách dùng tính từ để miêu tả sự vật cụ thể hơn, sinh động hơn. Việc luyện tập giúp em dùng từ ngữ chính xác khi viết văn miêu tả.",
+   "cauHoi": [
+    {
+     "type": "read",
+     "vanBan": "Minh có một cây đàn ghi-ta cũ do ông nội để lại. Mỗi chiều thu, khi gió heo may thổi nhẹ, cậu lại ngồi trước hiên nhà gảy vài giai điệu đơn sơ. Tiếng đàn trầm ấm hòa cùng tiếng lá vàng xào xạc rơi ngoài sân, tạo nên một bản nhạc êm dịu lạ thường. Bà của Minh bảo, đó chính là bản nhạc đẹp nhất mà bà từng nghe.",
+     "q": "Minh gảy đàn vào lúc nào trong ngày?",
+     "options": [
+      "Buổi sáng sớm",
+      "Buổi trưa nắng",
+      "Mỗi chiều thu có gió heo may",
+      "Nửa đêm khuya"
+     ],
+     "a": 2,
+     "explain": "Đoạn văn nói rõ mỗi chiều thu, khi gió heo may thổi nhẹ, Minh lại gảy đàn."
+    },
+    {
+     "type": "read",
+     "vanBan": "Minh có một cây đàn ghi-ta cũ do ông nội để lại. Mỗi chiều thu, khi gió heo may thổi nhẹ, cậu lại ngồi trước hiên nhà gảy vài giai điệu đơn sơ. Tiếng đàn trầm ấm hòa cùng tiếng lá vàng xào xạc rơi ngoài sân, tạo nên một bản nhạc êm dịu lạ thường. Bà của Minh bảo, đó chính là bản nhạc đẹp nhất mà bà từng nghe.",
+     "q": "Điều gì hòa cùng tiếng đàn tạo nên bản nhạc êm dịu?",
+     "options": [
+      "Tiếng mưa rơi",
+      "Tiếng lá vàng xào xạc rơi",
+      "Tiếng chim hót",
+      "Tiếng xe cộ"
+     ],
+     "a": 1,
+     "explain": "Đoạn văn cho biết tiếng đàn hòa cùng tiếng lá vàng xào xạc rơi ngoài sân."
+    },
+    {
+     "type": "mcq",
+     "q": "Từ nào dưới đây là tính từ chỉ âm thanh?",
+     "options": [
+      "gảy đàn",
+      "trầm ấm",
+      "cây đàn",
+      "buổi chiều"
+     ],
+     "a": 1,
+     "explain": "\"Trầm ấm\" là tính từ miêu tả đặc điểm của âm thanh tiếng đàn."
+    },
+    {
+     "type": "mcq",
+     "q": "Câu nào dưới đây có chứa hai tính từ?",
+     "options": [
+      "Bầu trời mùa thu cao và trong xanh.",
+      "Minh mang đàn ra sân.",
+      "Bà ngồi nghe cháu chơi đàn.",
+      "Lá cây rơi xuống đất."
+     ],
+     "a": 0,
+     "explain": "Câu \"Bầu trời mùa thu cao và trong xanh\" có hai tính từ là \"cao\" và \"trong xanh\"."
+    },
+    {
+     "type": "mcq",
+     "q": "Muốn câu văn miêu tả sinh động hơn, em nên làm gì?",
+     "options": [
+      "Bỏ hết các tính từ trong câu",
+      "Thêm tính từ phù hợp để tả rõ đặc điểm sự vật",
+      "Chỉ dùng động từ",
+      "Viết câu thật ngắn, không có chi tiết"
+     ],
+     "a": 1,
+     "explain": "Thêm tính từ phù hợp giúp câu văn miêu tả sự vật rõ ràng, sinh động và gợi cảm hơn."
+    },
+    {
+     "type": "fill",
+     "q": "Điền s hoặc x vào chỗ trống: Tiếng lá vàng ...ào xạc rơi ngoài sân nghe thật êm tai.",
+     "answer": "xào",
+     "accept": [
+      "xào"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Điền d, gi hoặc r vào chỗ trống: Gió heo may thổi nhẹ làm những chiếc lá ...ung rinh trên cành.",
+     "answer": "rung",
+     "accept": [
+      "rung"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Viết 2-3 câu tả bầu trời mùa thu mà em quan sát được, có dùng ít nhất hai tính từ.",
+     "hints": [
+      "Em nhớ lại xem bầu trời mùa thu thường có màu gì, mây trông ra sao nhé.",
+      "Hãy thêm những tính từ như trong xanh, cao vời vợi, mát mẻ, nhẹ nhàng vào câu văn của em.",
+      "Câu mẫu để em tham khảo: Bầu trời mùa thu trong xanh và cao vời vợi. Những đám mây trắng nhẹ nhàng trôi như đang chơi đùa cùng gió."
+     ],
+     "loiGiai": "Bầu trời mùa thu trong xanh và cao vời vợi. Những đám mây trắng nhẹ nhàng trôi như đang chơi đùa cùng gió thu mát mẻ.",
+     "dapSo": "tự chấm"
+    }
+   ]
+  },
+  {
+   "so": 3,
+   "ten": "Tuần 12: Làm thỏ con bằng giấy · Bức tường có nhiều phép lạ",
+   "lyThuyet": "Tuần này em đọc về niềm vui khi tự tay làm đồ chơi bằng giấy và khám phá những điều kỳ diệu quanh ngôi nhà. Em học về biện pháp nhân hoá - cách gọi hoặc tả sự vật, con vật, cây cối bằng những từ ngữ vốn dùng để tả người, giúp sự vật trở nên sống động, gần gũi như con người. Nhận biết nhân hoá giúp em cảm nhận vẻ đẹp của câu văn hay hơn.",
+   "cauHoi": [
+    {
+     "type": "read",
+     "vanBan": "An rất thích gấp giấy origami. Một buổi chiều, cậu tỉ mẩn gấp một chú thỏ con bằng giấy trắng, đôi tai dài vểnh lên trông thật đáng yêu. An đặt chú thỏ giấy lên bàn học, tưởng tượng nó đang nhảy nhót vui đùa cùng mình. Mỗi khi nhìn chú thỏ, An lại thấy lòng vui vẻ vì đó là thành quả do chính đôi tay mình tạo ra.",
+     "q": "An đã làm gì trong một buổi chiều?",
+     "options": [
+      "Vẽ một bức tranh phong cảnh",
+      "Gấp một chú thỏ con bằng giấy",
+      "Nặn một con thỏ bằng đất sét",
+      "Cắt hình bông hoa bằng giấy"
+     ],
+     "a": 1,
+     "explain": "Đoạn văn kể An tỉ mẩn gấp một chú thỏ con bằng giấy trắng."
+    },
+    {
+     "type": "read",
+     "vanBan": "An rất thích gấp giấy origami. Một buổi chiều, cậu tỉ mẩn gấp một chú thỏ con bằng giấy trắng, đôi tai dài vểnh lên trông thật đáng yêu. An đặt chú thỏ giấy lên bàn học, tưởng tượng nó đang nhảy nhót vui đùa cùng mình. Mỗi khi nhìn chú thỏ, An lại thấy lòng vui vẻ vì đó là thành quả do chính đôi tay mình tạo ra.",
+     "q": "Vì sao An cảm thấy vui vẻ khi nhìn chú thỏ giấy?",
+     "options": [
+      "Vì chú thỏ được mua ở cửa hàng đắt tiền",
+      "Vì đó là thành quả do chính đôi tay mình tạo ra",
+      "Vì chú thỏ biết chạy nhảy thật sự",
+      "Vì bạn bè khen chú thỏ rất to"
+     ],
+     "a": 1,
+     "explain": "Đoạn văn nêu rõ An vui vì đó là thành quả do chính đôi tay mình tạo ra."
+    },
+    {
+     "type": "mcq",
+     "q": "Câu nào dưới đây có sử dụng biện pháp nhân hoá?",
+     "options": [
+      "Chú thỏ giấy nằm yên trên bàn học.",
+      "Chú thỏ giấy tủm tỉm cười với An mỗi sáng.",
+      "An đặt chú thỏ giấy lên bàn.",
+      "Chiếc bàn học màu nâu gỗ."
+     ],
+     "a": 1,
+     "explain": "Câu \"Chú thỏ giấy tủm tỉm cười\" dùng từ tả hành động của người (cười) cho đồ vật, đó là nhân hoá."
+    },
+    {
+     "type": "mcq",
+     "q": "Trong câu \"Ông mặt trời thức dậy, vươn vai chiếu những tia nắng đầu tiên xuống sân.\", sự vật nào được nhân hoá?",
+     "options": [
+      "Sân nhà",
+      "Tia nắng",
+      "Ông mặt trời",
+      "Buổi sáng"
+     ],
+     "a": 2,
+     "explain": "\"Ông mặt trời thức dậy, vươn vai\" là cách gọi và tả mặt trời như một con người, đây là nhân hoá."
+    },
+    {
+     "type": "mcq",
+     "q": "Biện pháp nhân hoá có tác dụng gì trong câu văn?",
+     "options": [
+      "Làm câu văn dài hơn",
+      "Làm sự vật trở nên sống động, gần gũi như con người",
+      "Làm câu văn khó hiểu hơn",
+      "Không có tác dụng gì đặc biệt"
+     ],
+     "a": 1,
+     "explain": "Nhân hoá giúp sự vật, con vật, cây cối trở nên sinh động, có hồn và gần gũi như con người."
+    },
+    {
+     "type": "fill",
+     "q": "Điền ch hoặc tr vào chỗ trống: An gấp ...ú thỏ giấy rất tỉ mỉ và cẩn thận.",
+     "answer": "chú",
+     "accept": [
+      "chú"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Điền l hoặc n vào chỗ trống: Đôi tai chú thỏ giấy vểnh ...ên trông thật đáng yêu.",
+     "answer": "lên",
+     "accept": [
+      "lên"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Viết 2-3 câu tả một đồ vật hoặc con vật quen thuộc, trong đó có sử dụng biện pháp nhân hoá.",
+     "hints": [
+      "Em chọn một đồ vật hay con vật em thích, ví dụ như chiếc cặp sách, con mèo, hay cái cây trước nhà.",
+      "Bây giờ em thử gọi nó bằng từ như \"anh\", \"chị\", \"chú\" và tả nó biết cười, biết nói, biết vươn vai như người xem sao.",
+      "Câu mẫu cho em tham khảo: Chú mèo mướp nhà em uể oải vươn vai rồi khoan thai bước ra sân sưởi nắng. Nó nhìn em như đang chào buổi sáng."
+     ],
+     "loiGiai": "Chú mèo mướp nhà em uể oải vươn vai rồi khoan thai bước ra sân sưởi nắng. Nó nhìn em như đang chào buổi sáng thật đáng yêu.",
+     "dapSo": "tự chấm"
+    }
+   ]
+  },
+  {
+   "so": 4,
+   "ten": "Tuần 13: Bét-tô-ven và Bản xô-nát Ánh trăng · Người tìm đường lên các vì sao",
+   "lyThuyet": "Tuần này em đọc về một buổi triển lãm tranh và nhạc cụ tự làm của các bạn học sinh, cảm nhận niềm vui sáng tạo qua nghệ thuật. Em luyện tập thêm về biện pháp nhân hoá: cách đặt câu có nhân hoá, nhận biết tác dụng của nhân hoá trong đoạn văn, đoạn thơ. Luyện tập giúp em vận dụng nhân hoá để viết văn hay và giàu cảm xúc hơn.",
+   "cauHoi": [
+    {
+     "type": "read",
+     "vanBan": "Lớp của Bình tổ chức một buổi triển lãm nhỏ trưng bày tranh vẽ và nhạc cụ tự làm. Hùng mang đến một chiếc đàn bằng dây thun và hộp gỗ, gảy lên nghe vui tai lạ. Lan trưng bày bức tranh vẽ khu vườn với những bông hoa như đang nghiêng mình chào khách tham quan. Ai nấy đều tự hào khoe sản phẩm mình dày công sáng tạo suốt mấy tuần qua.",
+     "q": "Hùng mang đến buổi triển lãm sản phẩm gì?",
+     "options": [
+      "Một bức tranh phong cảnh",
+      "Một chiếc đàn bằng dây thun và hộp gỗ",
+      "Một cuốn sách tự viết",
+      "Một chiếc diều giấy"
+     ],
+     "a": 1,
+     "explain": "Đoạn văn cho biết Hùng mang đến một chiếc đàn bằng dây thun và hộp gỗ."
+    },
+    {
+     "type": "read",
+     "vanBan": "Lớp của Bình tổ chức một buổi triển lãm nhỏ trưng bày tranh vẽ và nhạc cụ tự làm. Hùng mang đến một chiếc đàn bằng dây thun và hộp gỗ, gảy lên nghe vui tai lạ. Lan trưng bày bức tranh vẽ khu vườn với những bông hoa như đang nghiêng mình chào khách tham quan. Ai nấy đều tự hào khoe sản phẩm mình dày công sáng tạo suốt mấy tuần qua.",
+     "q": "Trong bức tranh của Lan, những bông hoa được miêu tả như thế nào?",
+     "options": [
+      "Như đang héo úa",
+      "Như đang nghiêng mình chào khách tham quan",
+      "Như đang ngủ say",
+      "Như đang rơi rụng"
+     ],
+     "a": 1,
+     "explain": "Đoạn văn miêu tả những bông hoa như đang nghiêng mình chào khách tham quan, đây là hình ảnh nhân hoá."
+    },
+    {
+     "type": "mcq",
+     "q": "Câu \"Những bông hoa như đang nghiêng mình chào khách tham quan\" sử dụng biện pháp nghệ thuật nào?",
+     "options": [
+      "So sánh",
+      "Nhân hoá",
+      "Điệp từ",
+      "Liệt kê"
+     ],
+     "a": 1,
+     "explain": "Câu văn tả hoa biết \"nghiêng mình chào\" như con người, đó là biện pháp nhân hoá."
+    },
+    {
+     "type": "mcq",
+     "q": "Câu nào dưới đây KHÔNG sử dụng biện pháp nhân hoá?",
+     "options": [
+      "Hàng cây đứng im lặng ngắm nhìn lũ trẻ nô đùa.",
+      "Chiếc bàn học được làm bằng gỗ.",
+      "Ông trăng tròn nhô lên, mỉm cười với muôn vì sao.",
+      "Cơn gió nhẹ nhàng vuốt ve mái tóc em."
+     ],
+     "a": 1,
+     "explain": "Câu \"Chiếc bàn học được làm bằng gỗ\" chỉ nêu chất liệu, không có yếu tố nhân hoá."
+    },
+    {
+     "type": "mcq",
+     "q": "Khi viết văn, dùng biện pháp nhân hoá hợp lí sẽ giúp bài viết như thế nào?",
+     "options": [
+      "Trở nên khô khan, thiếu cảm xúc",
+      "Trở nên sinh động, giàu cảm xúc và gần gũi hơn",
+      "Trở nên khó hiểu và rối rắm",
+      "Không thay đổi gì so với câu văn thường"
+     ],
+     "a": 1,
+     "explain": "Nhân hoá hợp lí giúp bài văn sinh động, giàu cảm xúc và gần gũi với người đọc hơn."
+    },
+    {
+     "type": "fill",
+     "q": "Điền tr hoặc ch vào chỗ trống: Lớp em tổ chức buổi ...iển lãm tranh vẽ và nhạc cụ tự làm.",
+     "answer": "triển",
+     "accept": [
+      "triển"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Điền d, gi hoặc r vào chỗ trống: Cơn gió nhẹ nhàng ...ung lay những cành hoa trong vườn.",
+     "answer": "rung",
+     "accept": [
+      "rung"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Viết 2-3 câu tả khu vườn hoặc góc sân nhà em, trong đó có ít nhất một câu sử dụng biện pháp nhân hoá.",
+     "hints": [
+      "Em thử nhớ lại khu vườn hay góc sân nhà mình có cây gì, hoa gì, có nắng hay gió không nhé.",
+      "Bây giờ em hãy cho cây cối, bông hoa hay ánh nắng biết \"cười\", \"nhảy múa\", \"trò chuyện\" như con người xem sao.",
+      "Câu mẫu cho em tham khảo: Khu vườn nhỏ nhà em có hàng cây xoè tán lá như đang vẫy tay chào đón nắng sớm. Những bông hoa hồng khẽ đung đưa, thì thầm trò chuyện cùng đàn bướm."
+     ],
+     "loiGiai": "Khu vườn nhỏ nhà em có hàng cây xoè tán lá như đang vẫy tay chào đón nắng sớm. Những bông hoa hồng khẽ đung đưa, thì thầm trò chuyện cùng đàn bướm bay lượn.",
+     "dapSo": "tự chấm"
+    }
+   ]
+  }
+ ]
 }

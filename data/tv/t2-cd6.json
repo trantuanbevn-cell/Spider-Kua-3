@@ -1,316 +1,392 @@
 {
-  "mon": "tv",
-  "tap": 2,
-  "chuDe": "Uống nước nhớ nguồn",
-  "cdSo": 6,
-  "bai": [
+ "mon": "tv",
+ "tap": 2,
+ "chuDe": "Uống nước nhớ nguồn",
+ "cdSo": 6,
+ "bai": [
+  {
+   "so": 1,
+   "ten": "Tuần 23: Sự tích con Rồng cháu Tiên · Cảm xúc Trường Sa",
+   "lyThuyet": "Tuần này em học về nguồn gốc con Rồng cháu Tiên và tình yêu biển đảo quê hương. Về Luyện từ và câu, em ôn lại hai thành phần chính của câu là chủ ngữ và vị ngữ.",
+   "cauHoi": [
     {
-      "so": 1,
-      "ten": "Tuần 23: Sự tích con Rồng cháu Tiên",
-      "lyThuyet": "Tuần này em học về nguồn gốc con Rồng cháu Tiên và tình yêu biển đảo quê hương. Về Luyện từ và câu, em ôn lại hai thành phần chính của câu là chủ ngữ và vị ngữ.",
-      "cauHoi": [
-        {
-          "type": "read",
-          "vanBan": "Làng Nam có một ngôi đền cổ thờ các vị vua Hùng. Mỗi năm, vào ngày giỗ Tổ mồng mười tháng ba, cả làng lại nô nức kéo nhau về đền dâng hương. Ông của Nam kể rằng tổ tiên người Việt vốn là con Rồng cháu Tiên, từ bọc trăm trứng mà sinh ra trăm người con. Nghe chuyện, Nam thấy tự hào vô cùng và tự nhủ phải cố gắng học giỏi để xứng đáng là con cháu Lạc Hồng.",
-          "q": "Ngôi đền trong làng Nam thờ ai?",
-          "options": ["Các vị vua Hùng", "Thần Kim Quy", "Sơn Tinh", "Thánh Gióng"],
-          "a": 0,
-          "explain": "Bài đọc cho biết ngôi đền cổ trong làng thờ các vị vua Hùng."
-        },
-        {
-          "type": "read",
-          "vanBan": "Chiều nay, Minh cùng bố xem ti vi có phóng sự về Trường Sa. Trên màn hình, những chú bộ đội đứng gác bên cột mốc chủ quyền giữa nắng gió biển khơi. Bố bảo ngoài đảo xa còn có cây bàng vuông kiên cường bám rễ vào đá san hô, cũng như các chiến sĩ ngày đêm canh giữ biển trời Tổ quốc. Minh thầm ước sau này lớn lên sẽ trở thành một người lính hải quân dũng cảm.",
-          "q": "Loài cây được nhắc đến trong phóng sự về Trường Sa là cây gì?",
-          "options": ["Cây phượng", "Cây bàng vuông", "Cây dừa", "Cây bàng thường"],
-          "a": 1,
-          "explain": "Bài đọc nhắc đến cây bàng vuông kiên cường bám rễ vào đá san hô ngoài đảo."
-        },
-        {
-          "type": "mcq",
-          "q": "Trong câu \"Lạc Long Quân có sức khỏe vô địch.\", bộ phận nào là chủ ngữ?",
-          "options": ["Lạc Long Quân", "có sức khỏe", "sức khỏe vô địch", "vô địch"],
-          "a": 0,
-          "explain": "Chủ ngữ là bộ phận nêu người, vật được nói đến, ở đây là \"Lạc Long Quân\"."
-        },
-        {
-          "type": "mcq",
-          "q": "Trong câu \"Thần có nhiều phép lạ.\", vị ngữ của câu là gì?",
-          "options": ["Thần", "có nhiều phép lạ", "nhiều phép lạ", "phép lạ"],
-          "a": 1,
-          "explain": "Vị ngữ nêu hoạt động, trạng thái, đặc điểm của chủ ngữ, ở đây là \"có nhiều phép lạ\"."
-        },
-        {
-          "type": "mcq",
-          "q": "Câu nào dưới đây có đủ hai thành phần chính chủ ngữ và vị ngữ?",
-          "options": ["Trên bầu trời cao xanh thẳm.", "Đàn chim bay về tổ.", "Buổi chiều mùa thu.", "Rất đẹp và trong lành."],
-          "a": 1,
-          "explain": "Câu \"Đàn chim bay về tổ.\" có chủ ngữ \"Đàn chim\" và vị ngữ \"bay về tổ\", đủ hai thành phần chính."
-        },
-        {
-          "type": "fill",
-          "q": "Điền l hoặc n: Con cháu phải ghi nhớ công ơn dựng ___ước của các vua Hùng.",
-          "answer": "n",
-          "accept": ["n"]
-        },
-        {
-          "type": "fill",
-          "q": "Điền ch hoặc tr: Biển đảo quê hương luôn in đậm trong ___ái tim mỗi người dân đất Việt.",
-          "answer": "tr",
-          "accept": ["tr"]
-        },
-        {
-          "type": "solve",
-          "de": "Em hãy viết 2-3 câu kể về một cảnh vật hoặc con người mà em yêu thích, trong đó có ít nhất một câu chỉ rõ được chủ ngữ và vị ngữ.",
-          "hints": [
-            "Anh Fury gợi ý: em muốn kể về ai hay cái gì nào, ông bà, biển đảo hay quê hương của em?",
-            "Nhớ tách rõ hai phần: phần nêu tên người/vật (chủ ngữ) và phần kể hoạt động, đặc điểm của người/vật đó (vị ngữ) nhé!",
-            "Viết xong em thử tự gạch chân chủ ngữ một gạch, vị ngữ hai gạch xem có đúng không nha."
-          ],
-          "loiGiai": "Quê em có một dòng sông hiền hòa. Dòng sông uốn lượn quanh những cánh đồng lúa xanh mướt. Buổi chiều, đàn trâu thong thả gặm cỏ ven bờ.",
-          "dapSo": "tự chấm"
-        }
-      ]
+     "type": "read",
+     "vanBan": "Làng Nam có một ngôi đền cổ thờ các vị vua Hùng. Mỗi năm, vào ngày giỗ Tổ mồng mười tháng ba, cả làng lại nô nức kéo nhau về đền dâng hương. Ông của Nam kể rằng tổ tiên người Việt vốn là con Rồng cháu Tiên, từ bọc trăm trứng mà sinh ra trăm người con. Nghe chuyện, Nam thấy tự hào vô cùng và tự nhủ phải cố gắng học giỏi để xứng đáng là con cháu Lạc Hồng.",
+     "q": "Ngôi đền trong làng Nam thờ ai?",
+     "options": [
+      "Các vị vua Hùng",
+      "Thần Kim Quy",
+      "Sơn Tinh",
+      "Thánh Gióng"
+     ],
+     "a": 0,
+     "explain": "Bài đọc cho biết ngôi đền cổ trong làng thờ các vị vua Hùng."
     },
     {
-      "so": 2,
-      "ten": "Tuần 24: Chàng trai làng Phù Ủng",
-      "lyThuyet": "Tuần này em đọc về hình ảnh Bác Hồ trong buổi sáng tháng Năm và câu chuyện Phạm Ngũ Lão mải nghĩ việc quân. Về Luyện từ và câu, em học khái niệm trạng ngữ và cách nhận biết trạng ngữ đứng đầu câu.",
-      "cauHoi": [
-        {
-          "type": "read",
-          "vanBan": "Sáng chủ nhật, An theo ông nội đi thăm khu di tích lịch sử gần nhà. Ông chỉ cho An xem bức tượng một người thanh niên ngồi đan sọt bên vệ đường, ánh mắt đăm chiêu như đang suy nghĩ điều gì đó rất xa xôi. Ông kể đó chính là hình ảnh danh tướng thời xưa, người vì mải lo việc nước mà không hay biết ngọn giáo đâm vào chân mình. An nghe xong vô cùng cảm phục ý chí và lòng yêu nước của người xưa.",
-          "q": "Bức tượng mà An và ông xem khắc họa hình ảnh gì?",
-          "options": [
-            "Một vị vua đang cưỡi ngựa",
-            "Một người thanh niên ngồi đan sọt bên vệ đường",
-            "Một đoàn quân đang hành quân",
-            "Một người nông dân đang cày ruộng"
-          ],
-          "a": 1,
-          "explain": "Bài đọc miêu tả bức tượng một người thanh niên ngồi đan sọt bên vệ đường."
-        },
-        {
-          "type": "read",
-          "vanBan": "Mỗi buổi sáng tháng Năm, nắng vàng nhẹ trải khắp con phố nhỏ nơi Bình sinh sống. Bà của Bình thường ngồi trước hiên nhà, kể cho Bình nghe những câu chuyện về Bác Hồ kính yêu, về những năm tháng gian khó mà cả dân tộc đã cùng nhau vượt qua. Bình rất thích nghe những câu chuyện ấy, vì qua đó em hiểu thêm về công lao to lớn của Bác đối với đất nước.",
-          "q": "Bà của Bình thường kể chuyện cho Bình nghe vào lúc nào?",
-          "options": ["Buổi tối trước khi ngủ", "Buổi trưa sau giờ học", "Mỗi buổi sáng tháng Năm", "Buổi chiều cuối tuần"],
-          "a": 2,
-          "explain": "Bài đọc nêu rõ bà thường kể chuyện vào mỗi buổi sáng tháng Năm, trước hiên nhà."
-        },
-        {
-          "type": "mcq",
-          "q": "Trạng ngữ trong câu là thành phần phụ bổ sung ý nghĩa gì cho câu?",
-          "options": [
-            "Chỉ nêu tên sự vật chính trong câu",
-            "Bổ sung ý nghĩa về thời gian, nơi chốn, nguyên nhân, mục đích... cho câu",
-            "Chỉ để nối hai câu với nhau",
-            "Thay thế cho chủ ngữ khi cần"
-          ],
-          "a": 1,
-          "explain": "Trạng ngữ là thành phần phụ của câu, bổ sung ý nghĩa về thời gian, nơi chốn, nguyên nhân, mục đích, phương tiện,... cho câu."
-        },
-        {
-          "type": "mcq",
-          "q": "Xác định trạng ngữ trong câu: \"Sáng nay, lớp em đi thăm Bảo tàng Hồ Chí Minh.\"",
-          "options": ["lớp em", "đi thăm Bảo tàng Hồ Chí Minh", "Sáng nay", "Bảo tàng Hồ Chí Minh"],
-          "a": 2,
-          "explain": "\"Sáng nay\" đứng đầu câu, được ngăn cách bởi dấu phẩy, là trạng ngữ chỉ thời gian."
-        },
-        {
-          "type": "mcq",
-          "q": "Câu nào dưới đây có trạng ngữ?",
-          "options": [
-            "Em rất yêu quê hương mình.",
-            "Ở trong vườn, hoa hồng đang đua nhau khoe sắc.",
-            "Bạn Lan là học sinh giỏi.",
-            "Chúng em chăm chỉ học tập."
-          ],
-          "a": 1,
-          "explain": "Câu \"Ở trong vườn, hoa hồng đang đua nhau khoe sắc.\" có trạng ngữ \"Ở trong vườn\" đứng đầu câu, ngăn cách bằng dấu phẩy."
-        },
-        {
-          "type": "fill",
-          "q": "Điền s hoặc x: Phạm Ngũ Lão là một danh tướng nổi tiếng trong lịch ___ nước ta.",
-          "answer": "s",
-          "accept": ["s"]
-        },
-        {
-          "type": "fill",
-          "q": "Điền d, gi hoặc r: Nhân ___ân ta luôn khắc ghi công ơn của các anh hùng ___ân tộc.",
-          "answer": "d",
-          "accept": ["d"]
-        },
-        {
-          "type": "solve",
-          "de": "Em hãy viết 2 câu có trạng ngữ đứng đầu câu, nhớ dùng dấu phẩy để ngăn cách trạng ngữ với phần còn lại của câu.",
-          "hints": [
-            "Anh Fury gợi ý: em thử nghĩ xem chuyện đó xảy ra khi nào hoặc ở đâu nhé, đó có thể là trạng ngữ đó!",
-            "Nhớ đặt trạng ngữ lên đầu câu và có dấu phẩy ngăn cách với phần sau nha.",
-            "Ví dụ mẫu: Vào buổi sáng, ... Ở sân trường, ... Em thử ghép câu của riêng mình xem sao!"
-          ],
-          "loiGiai": "Vào mỗi buổi chiều, em cùng các bạn ra sân chơi đá cầu. Trong lớp học, các bạn đang chăm chú nghe cô giáo giảng bài.",
-          "dapSo": "tự chấm"
-        }
-      ]
+     "type": "read",
+     "vanBan": "Chiều nay, Minh cùng bố xem ti vi có phóng sự về Trường Sa. Trên màn hình, những chú bộ đội đứng gác bên cột mốc chủ quyền giữa nắng gió biển khơi. Bố bảo ngoài đảo xa còn có cây bàng vuông kiên cường bám rễ vào đá san hô, cũng như các chiến sĩ ngày đêm canh giữ biển trời Tổ quốc. Minh thầm ước sau này lớn lên sẽ trở thành một người lính hải quân dũng cảm.",
+     "q": "Loài cây được nhắc đến trong phóng sự về Trường Sa là cây gì?",
+     "options": [
+      "Cây phượng",
+      "Cây bàng vuông",
+      "Cây dừa",
+      "Cây bàng thường"
+     ],
+     "a": 1,
+     "explain": "Bài đọc nhắc đến cây bàng vuông kiên cường bám rễ vào đá san hô ngoài đảo."
     },
     {
-      "so": 3,
-      "ten": "Tuần 25: Vườn của ông tôi",
-      "lyThuyet": "Tuần này em đọc về khu vườn đầy cây trái của ông và lời ru ngọt ngào của mẹ. Về Luyện từ và câu, em học cách nhận biết trạng ngữ chỉ thời gian và trạng ngữ chỉ nơi chốn.",
-      "cauHoi": [
-        {
-          "type": "read",
-          "vanBan": "Mỗi dịp hè về, Nam lại được bố mẹ cho về quê thăm ông bà. Khu vườn sau nhà ông trồng đủ loại cây trái: bưởi, na, ổi và cả một giàn mướp xanh mướt. Ông thường dậy từ sáng sớm để tưới cây, bắt sâu cho từng gốc cây một cách tỉ mỉ. Nam rất thích phụ ông chăm vườn, vì mỗi lần như vậy em lại cảm nhận được tình yêu thương ông dành cho khu vườn và cho cả gia đình.",
-          "q": "Khu vườn của ông Nam trồng những loại cây gì?",
-          "options": ["Chỉ trồng lúa và ngô", "Bưởi, na, ổi và giàn mướp", "Chỉ trồng hoa hồng", "Cà phê và cao su"],
-          "a": 1,
-          "explain": "Bài đọc cho biết khu vườn của ông trồng bưởi, na, ổi và một giàn mướp xanh mướt."
-        },
-        {
-          "type": "read",
-          "vanBan": "Tối nào cũng vậy, trước khi đi ngủ, Bình lại được mẹ ngồi bên hát ru những câu ca dao quen thuộc. Trong lời mẹ hát, Bình như thấy hiện ra cả một thế giới cổ tích với nàng tiên, ông Bụt hiền từ. Bình thầm nghĩ, dù sau này có lớn khôn đến đâu, em cũng sẽ không bao giờ quên những lời ru ngọt ngào ấy của mẹ.",
-          "q": "Trong lời ru của mẹ, Bình như thấy hiện ra điều gì?",
-          "options": [
-            "Một thế giới cổ tích với nàng tiên, ông Bụt",
-            "Một trận bóng đá sôi động",
-            "Một chuyến du lịch biển",
-            "Một buổi học ở trường"
-          ],
-          "a": 0,
-          "explain": "Bài đọc cho biết trong lời mẹ hát, Bình như thấy hiện ra thế giới cổ tích với nàng tiên, ông Bụt hiền từ."
-        },
-        {
-          "type": "mcq",
-          "q": "Trạng ngữ chỉ thời gian dùng để trả lời cho câu hỏi nào?",
-          "options": ["Ở đâu?", "Bao giờ?/Khi nào?", "Để làm gì?", "Vì sao?"],
-          "a": 1,
-          "explain": "Trạng ngữ chỉ thời gian bổ sung ý nghĩa về thời gian, trả lời cho câu hỏi Bao giờ?, Khi nào?, Mấy giờ?..."
-        },
-        {
-          "type": "mcq",
-          "q": "Xác định trạng ngữ trong câu: \"Mùa xuân, trăm hoa đua nở.\" và cho biết đó là loại trạng ngữ gì?",
-          "options": [
-            "\"trăm hoa\" - trạng ngữ chỉ nơi chốn",
-            "\"đua nở\" - trạng ngữ chỉ thời gian",
-            "\"Mùa xuân\" - trạng ngữ chỉ thời gian",
-            "\"Mùa xuân\" - trạng ngữ chỉ nơi chốn"
-          ],
-          "a": 2,
-          "explain": "\"Mùa xuân\" đứng đầu câu, chỉ thời điểm xảy ra sự việc nên là trạng ngữ chỉ thời gian."
-        },
-        {
-          "type": "mcq",
-          "q": "Câu \"Trong vườn, bướm bay dập dìu.\" có trạng ngữ chỉ nơi chốn là bộ phận nào?",
-          "options": ["bướm bay dập dìu", "Trong vườn", "bướm", "dập dìu"],
-          "a": 1,
-          "explain": "\"Trong vườn\" trả lời cho câu hỏi Ở đâu?, đây là trạng ngữ chỉ nơi chốn."
-        },
-        {
-          "type": "fill",
-          "q": "Điền ch hoặc tr: Khu vườn của ông có nhiều loại ___ái cây thơm ngon.",
-          "answer": "tr",
-          "accept": ["tr"]
-        },
-        {
-          "type": "fill",
-          "q": "Điền l hoặc n: Lời ru của mẹ ngọt ngào như dòng suối mát ___ành.",
-          "answer": "l",
-          "accept": ["l"]
-        },
-        {
-          "type": "solve",
-          "de": "Em hãy viết một câu có trạng ngữ chỉ thời gian và một câu có trạng ngữ chỉ nơi chốn.",
-          "hints": [
-            "Anh Fury gợi ý: câu chỉ thời gian thì bắt đầu bằng lúc nào đó, ví dụ buổi sáng, mùa hè, tối nay...",
-            "Câu chỉ nơi chốn thì bắt đầu bằng một địa điểm, ví dụ trong vườn, ở sân trường, trên cánh đồng...",
-            "Đừng quên dấu phẩy sau trạng ngữ nhé, nó giúp câu rõ ràng và đúng ngữ pháp hơn đó!"
-          ],
-          "loiGiai": "Mùa hè, khu vườn nhà ông rợp bóng cây xanh mát. Trên cành cây, những chú chim đang ríu rít hót vang.",
-          "dapSo": "tự chấm"
-        }
-      ]
+     "type": "mcq",
+     "q": "Trong câu \"Lạc Long Quân có sức khỏe vô địch.\", bộ phận nào là chủ ngữ?",
+     "options": [
+      "Lạc Long Quân",
+      "có sức khỏe",
+      "sức khỏe vô địch",
+      "vô địch"
+     ],
+     "a": 0,
+     "explain": "Chủ ngữ là bộ phận nêu người, vật được nói đến, ở đây là \"Lạc Long Quân\"."
     },
     {
-      "so": 4,
-      "ten": "Tuần 26: Người thầy đầu tiên của bố tôi",
-      "lyThuyet": "Tuần này em đọc về người thầy đầu tiên kiên nhẫn dạy dỗ và chú ngựa biên phòng dũng cảm. Về Luyện từ và câu, em học cách nhận biết trạng ngữ chỉ nguyên nhân và trạng ngữ chỉ mục đích.",
-      "cauHoi": [
-        {
-          "type": "read",
-          "vanBan": "Bố của Minh kể rằng, ngày xưa bố học chữ rất chậm, mỗi lần viết sai là lại nản lòng muốn bỏ cuộc. Nhưng thầy giáo dạy bố hồi ấy rất kiên nhẫn, thầy luôn nhẹ nhàng động viên và cầm tay bố uốn nắn từng nét chữ. Nhờ sự tận tâm của thầy, bố dần viết đẹp hơn và học giỏi lên trông thấy. Đến bây giờ, mỗi khi nhắc đến thầy, bố vẫn xúc động và biết ơn vô cùng.",
-          "q": "Vì sao bố của Minh viết đẹp hơn và học giỏi lên?",
-          "options": [
-            "Vì bố tự học một mình",
-            "Nhờ sự tận tâm, kiên nhẫn của người thầy",
-            "Vì bố được đi học thêm ở thành phố",
-            "Vì bố mua được bút mới"
-          ],
-          "a": 1,
-          "explain": "Bài đọc cho biết nhờ sự tận tâm, kiên nhẫn của thầy giáo mà bố dần viết đẹp hơn và học giỏi lên."
-        },
-        {
-          "type": "read",
-          "vanBan": "Ở đồn biên phòng nơi bố của An công tác, có một chú ngựa tên là Kim rất khôn ngoan và trung thành. Để giúp các chú bộ đội tuần tra những cung đường hiểm trở, chú ngựa Kim ngày ngày cần mẫn thồ hàng vượt suối, băng rừng. Có lần trời mưa lớn, suối chảy xiết, nhưng nhờ chú ngựa quen thuộc địa hình mà cả đoàn vẫn an toàn vượt qua. An nghe bố kể mà thấy khâm phục chú ngựa biên phòng vô cùng.",
-          "q": "Chú ngựa Kim đã giúp các chú bộ đội biên phòng làm việc gì?",
-          "options": [
-            "Chỉ đứng canh gác ở đồn",
-            "Thồ hàng, vượt suối, băng rừng giúp việc tuần tra",
-            "Kéo xe chở khách du lịch",
-            "Chăn thả gia súc trong bản"
-          ],
-          "a": 1,
-          "explain": "Bài đọc cho biết chú ngựa Kim ngày ngày thồ hàng, vượt suối, băng rừng để giúp các chú bộ đội tuần tra."
-        },
-        {
-          "type": "mcq",
-          "q": "Trạng ngữ chỉ nguyên nhân thường trả lời cho câu hỏi nào?",
-          "options": ["Để làm gì?", "Ở đâu?", "Vì sao?/Nhờ đâu?", "Bằng gì?"],
-          "a": 2,
-          "explain": "Trạng ngữ chỉ nguyên nhân bổ sung ý nghĩa về nguyên nhân, trả lời cho câu hỏi Vì sao? hoặc Nhờ đâu?"
-        },
-        {
-          "type": "mcq",
-          "q": "Xác định trạng ngữ trong câu: \"Vì mải chơi, Nam quên chưa làm bài tập.\" và cho biết loại trạng ngữ.",
-          "options": [
-            "\"Nam quên\" - trạng ngữ chỉ mục đích",
-            "\"Vì mải chơi\" - trạng ngữ chỉ nguyên nhân",
-            "\"chưa làm bài tập\" - trạng ngữ chỉ nơi chốn",
-            "\"Vì mải chơi\" - trạng ngữ chỉ thời gian"
-          ],
-          "a": 1,
-          "explain": "\"Vì mải chơi\" trả lời cho câu hỏi Vì sao?, nêu lý do của sự việc nên là trạng ngữ chỉ nguyên nhân."
-        },
-        {
-          "type": "mcq",
-          "q": "Câu \"Để học tốt môn Tiếng Việt, em cần đọc sách nhiều hơn.\" có trạng ngữ chỉ mục đích là bộ phận nào?",
-          "options": ["em cần đọc sách", "nhiều hơn", "Để học tốt môn Tiếng Việt", "môn Tiếng Việt"],
-          "a": 2,
-          "explain": "\"Để học tốt môn Tiếng Việt\" trả lời cho câu hỏi Để làm gì?, nêu mục đích của hành động nên là trạng ngữ chỉ mục đích."
-        },
-        {
-          "type": "fill",
-          "q": "Điền tr hoặc ch: Thầy giáo luôn kiên nhẫn dạy dỗ học ___ò của mình.",
-          "answer": "tr",
-          "accept": ["tr"]
-        },
-        {
-          "type": "fill",
-          "q": "Điền x hoặc s: Chú ngựa biên phòng vượt ___uối, băng rừng giúp bộ đội tuần tra.",
-          "answer": "s",
-          "accept": ["s"]
-        },
-        {
-          "type": "solve",
-          "de": "Em hãy viết một câu có trạng ngữ chỉ nguyên nhân và một câu có trạng ngữ chỉ mục đích.",
-          "hints": [
-            "Anh Fury gợi ý: câu chỉ nguyên nhân thường bắt đầu bằng Vì..., Nhờ..., Do... để trả lời Vì sao?",
-            "Câu chỉ mục đích thường bắt đầu bằng Để... nhằm trả lời Để làm gì?",
-            "Nhớ đặt trạng ngữ ở đầu câu và có dấu phẩy ngăn cách nha, sau đó mới đến phần chủ ngữ - vị ngữ!"
-          ],
-          "loiGiai": "Nhờ thầy giáo tận tâm chỉ bảo, bố của Minh đã viết chữ đẹp hơn rất nhiều. Để trở thành người lính biên phòng giỏi, các chú bộ đội phải luyện tập rất chăm chỉ.",
-          "dapSo": "tự chấm"
-        }
-      ]
+     "type": "mcq",
+     "q": "Trong câu \"Thần có nhiều phép lạ.\", vị ngữ của câu là gì?",
+     "options": [
+      "Thần",
+      "có nhiều phép lạ",
+      "nhiều phép lạ",
+      "phép lạ"
+     ],
+     "a": 1,
+     "explain": "Vị ngữ nêu hoạt động, trạng thái, đặc điểm của chủ ngữ, ở đây là \"có nhiều phép lạ\"."
+    },
+    {
+     "type": "mcq",
+     "q": "Câu nào dưới đây có đủ hai thành phần chính chủ ngữ và vị ngữ?",
+     "options": [
+      "Trên bầu trời cao xanh thẳm.",
+      "Đàn chim bay về tổ.",
+      "Buổi chiều mùa thu.",
+      "Rất đẹp và trong lành."
+     ],
+     "a": 1,
+     "explain": "Câu \"Đàn chim bay về tổ.\" có chủ ngữ \"Đàn chim\" và vị ngữ \"bay về tổ\", đủ hai thành phần chính."
+    },
+    {
+     "type": "fill",
+     "q": "Điền l hoặc n: Con cháu phải ghi nhớ công ơn dựng ___ước của các vua Hùng.",
+     "answer": "n",
+     "accept": [
+      "n"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Điền ch hoặc tr: Biển đảo quê hương luôn in đậm trong ___ái tim mỗi người dân đất Việt.",
+     "answer": "tr",
+     "accept": [
+      "tr"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy viết 2-3 câu kể về một cảnh vật hoặc con người mà em yêu thích, trong đó có ít nhất một câu chỉ rõ được chủ ngữ và vị ngữ.",
+     "hints": [
+      "Anh Fury gợi ý: em muốn kể về ai hay cái gì nào, ông bà, biển đảo hay quê hương của em?",
+      "Nhớ tách rõ hai phần: phần nêu tên người/vật (chủ ngữ) và phần kể hoạt động, đặc điểm của người/vật đó (vị ngữ) nhé!",
+      "Viết xong em thử tự gạch chân chủ ngữ một gạch, vị ngữ hai gạch xem có đúng không nha."
+     ],
+     "loiGiai": "Quê em có một dòng sông hiền hòa. Dòng sông uốn lượn quanh những cánh đồng lúa xanh mướt. Buổi chiều, đàn trâu thong thả gặm cỏ ven bờ.",
+     "dapSo": "tự chấm"
     }
-  ]
+   ]
+  },
+  {
+   "so": 2,
+   "ten": "Tuần 24: Sáng tháng năm · Chàng trai làng Phù Ủng",
+   "lyThuyet": "Tuần này em đọc về hình ảnh Bác Hồ trong buổi sáng tháng Năm và câu chuyện Phạm Ngũ Lão mải nghĩ việc quân. Về Luyện từ và câu, em học khái niệm trạng ngữ và cách nhận biết trạng ngữ đứng đầu câu.",
+   "cauHoi": [
+    {
+     "type": "read",
+     "vanBan": "Sáng chủ nhật, An theo ông nội đi thăm khu di tích lịch sử gần nhà. Ông chỉ cho An xem bức tượng một người thanh niên ngồi đan sọt bên vệ đường, ánh mắt đăm chiêu như đang suy nghĩ điều gì đó rất xa xôi. Ông kể đó chính là hình ảnh danh tướng thời xưa, người vì mải lo việc nước mà không hay biết ngọn giáo đâm vào chân mình. An nghe xong vô cùng cảm phục ý chí và lòng yêu nước của người xưa.",
+     "q": "Bức tượng mà An và ông xem khắc họa hình ảnh gì?",
+     "options": [
+      "Một vị vua đang cưỡi ngựa",
+      "Một người thanh niên ngồi đan sọt bên vệ đường",
+      "Một đoàn quân đang hành quân",
+      "Một người nông dân đang cày ruộng"
+     ],
+     "a": 1,
+     "explain": "Bài đọc miêu tả bức tượng một người thanh niên ngồi đan sọt bên vệ đường."
+    },
+    {
+     "type": "read",
+     "vanBan": "Mỗi buổi sáng tháng Năm, nắng vàng nhẹ trải khắp con phố nhỏ nơi Bình sinh sống. Bà của Bình thường ngồi trước hiên nhà, kể cho Bình nghe những câu chuyện về Bác Hồ kính yêu, về những năm tháng gian khó mà cả dân tộc đã cùng nhau vượt qua. Bình rất thích nghe những câu chuyện ấy, vì qua đó em hiểu thêm về công lao to lớn của Bác đối với đất nước.",
+     "q": "Bà của Bình thường kể chuyện cho Bình nghe vào lúc nào?",
+     "options": [
+      "Buổi tối trước khi ngủ",
+      "Buổi trưa sau giờ học",
+      "Mỗi buổi sáng tháng Năm",
+      "Buổi chiều cuối tuần"
+     ],
+     "a": 2,
+     "explain": "Bài đọc nêu rõ bà thường kể chuyện vào mỗi buổi sáng tháng Năm, trước hiên nhà."
+    },
+    {
+     "type": "mcq",
+     "q": "Trạng ngữ trong câu là thành phần phụ bổ sung ý nghĩa gì cho câu?",
+     "options": [
+      "Chỉ nêu tên sự vật chính trong câu",
+      "Bổ sung ý nghĩa về thời gian, nơi chốn, nguyên nhân, mục đích... cho câu",
+      "Chỉ để nối hai câu với nhau",
+      "Thay thế cho chủ ngữ khi cần"
+     ],
+     "a": 1,
+     "explain": "Trạng ngữ là thành phần phụ của câu, bổ sung ý nghĩa về thời gian, nơi chốn, nguyên nhân, mục đích, phương tiện,... cho câu."
+    },
+    {
+     "type": "mcq",
+     "q": "Xác định trạng ngữ trong câu: \"Sáng nay, lớp em đi thăm Bảo tàng Hồ Chí Minh.\"",
+     "options": [
+      "lớp em",
+      "đi thăm Bảo tàng Hồ Chí Minh",
+      "Sáng nay",
+      "Bảo tàng Hồ Chí Minh"
+     ],
+     "a": 2,
+     "explain": "\"Sáng nay\" đứng đầu câu, được ngăn cách bởi dấu phẩy, là trạng ngữ chỉ thời gian."
+    },
+    {
+     "type": "mcq",
+     "q": "Câu nào dưới đây có trạng ngữ?",
+     "options": [
+      "Em rất yêu quê hương mình.",
+      "Ở trong vườn, hoa hồng đang đua nhau khoe sắc.",
+      "Bạn Lan là học sinh giỏi.",
+      "Chúng em chăm chỉ học tập."
+     ],
+     "a": 1,
+     "explain": "Câu \"Ở trong vườn, hoa hồng đang đua nhau khoe sắc.\" có trạng ngữ \"Ở trong vườn\" đứng đầu câu, ngăn cách bằng dấu phẩy."
+    },
+    {
+     "type": "fill",
+     "q": "Điền s hoặc x: Phạm Ngũ Lão là một danh tướng nổi tiếng trong lịch ___ nước ta.",
+     "answer": "s",
+     "accept": [
+      "s"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Điền d, gi hoặc r: Nhân ___ân ta luôn khắc ghi công ơn của các anh hùng ___ân tộc.",
+     "answer": "d",
+     "accept": [
+      "d"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy viết 2 câu có trạng ngữ đứng đầu câu, nhớ dùng dấu phẩy để ngăn cách trạng ngữ với phần còn lại của câu.",
+     "hints": [
+      "Anh Fury gợi ý: em thử nghĩ xem chuyện đó xảy ra khi nào hoặc ở đâu nhé, đó có thể là trạng ngữ đó!",
+      "Nhớ đặt trạng ngữ lên đầu câu và có dấu phẩy ngăn cách với phần sau nha.",
+      "Ví dụ mẫu: Vào buổi sáng, ... Ở sân trường, ... Em thử ghép câu của riêng mình xem sao!"
+     ],
+     "loiGiai": "Vào mỗi buổi chiều, em cùng các bạn ra sân chơi đá cầu. Trong lớp học, các bạn đang chăm chú nghe cô giáo giảng bài.",
+     "dapSo": "tự chấm"
+    }
+   ]
+  },
+  {
+   "so": 3,
+   "ten": "Tuần 25: Vườn của ông tôi · Trong lời mẹ hát",
+   "lyThuyet": "Tuần này em đọc về khu vườn đầy cây trái của ông và lời ru ngọt ngào của mẹ. Về Luyện từ và câu, em học cách nhận biết trạng ngữ chỉ thời gian và trạng ngữ chỉ nơi chốn.",
+   "cauHoi": [
+    {
+     "type": "read",
+     "vanBan": "Mỗi dịp hè về, Nam lại được bố mẹ cho về quê thăm ông bà. Khu vườn sau nhà ông trồng đủ loại cây trái: bưởi, na, ổi và cả một giàn mướp xanh mướt. Ông thường dậy từ sáng sớm để tưới cây, bắt sâu cho từng gốc cây một cách tỉ mỉ. Nam rất thích phụ ông chăm vườn, vì mỗi lần như vậy em lại cảm nhận được tình yêu thương ông dành cho khu vườn và cho cả gia đình.",
+     "q": "Khu vườn của ông Nam trồng những loại cây gì?",
+     "options": [
+      "Chỉ trồng lúa và ngô",
+      "Bưởi, na, ổi và giàn mướp",
+      "Chỉ trồng hoa hồng",
+      "Cà phê và cao su"
+     ],
+     "a": 1,
+     "explain": "Bài đọc cho biết khu vườn của ông trồng bưởi, na, ổi và một giàn mướp xanh mướt."
+    },
+    {
+     "type": "read",
+     "vanBan": "Tối nào cũng vậy, trước khi đi ngủ, Bình lại được mẹ ngồi bên hát ru những câu ca dao quen thuộc. Trong lời mẹ hát, Bình như thấy hiện ra cả một thế giới cổ tích với nàng tiên, ông Bụt hiền từ. Bình thầm nghĩ, dù sau này có lớn khôn đến đâu, em cũng sẽ không bao giờ quên những lời ru ngọt ngào ấy của mẹ.",
+     "q": "Trong lời ru của mẹ, Bình như thấy hiện ra điều gì?",
+     "options": [
+      "Một thế giới cổ tích với nàng tiên, ông Bụt",
+      "Một trận bóng đá sôi động",
+      "Một chuyến du lịch biển",
+      "Một buổi học ở trường"
+     ],
+     "a": 0,
+     "explain": "Bài đọc cho biết trong lời mẹ hát, Bình như thấy hiện ra thế giới cổ tích với nàng tiên, ông Bụt hiền từ."
+    },
+    {
+     "type": "mcq",
+     "q": "Trạng ngữ chỉ thời gian dùng để trả lời cho câu hỏi nào?",
+     "options": [
+      "Ở đâu?",
+      "Bao giờ?/Khi nào?",
+      "Để làm gì?",
+      "Vì sao?"
+     ],
+     "a": 1,
+     "explain": "Trạng ngữ chỉ thời gian bổ sung ý nghĩa về thời gian, trả lời cho câu hỏi Bao giờ?, Khi nào?, Mấy giờ?..."
+    },
+    {
+     "type": "mcq",
+     "q": "Xác định trạng ngữ trong câu: \"Mùa xuân, trăm hoa đua nở.\" và cho biết đó là loại trạng ngữ gì?",
+     "options": [
+      "\"trăm hoa\" - trạng ngữ chỉ nơi chốn",
+      "\"đua nở\" - trạng ngữ chỉ thời gian",
+      "\"Mùa xuân\" - trạng ngữ chỉ thời gian",
+      "\"Mùa xuân\" - trạng ngữ chỉ nơi chốn"
+     ],
+     "a": 2,
+     "explain": "\"Mùa xuân\" đứng đầu câu, chỉ thời điểm xảy ra sự việc nên là trạng ngữ chỉ thời gian."
+    },
+    {
+     "type": "mcq",
+     "q": "Câu \"Trong vườn, bướm bay dập dìu.\" có trạng ngữ chỉ nơi chốn là bộ phận nào?",
+     "options": [
+      "bướm bay dập dìu",
+      "Trong vườn",
+      "bướm",
+      "dập dìu"
+     ],
+     "a": 1,
+     "explain": "\"Trong vườn\" trả lời cho câu hỏi Ở đâu?, đây là trạng ngữ chỉ nơi chốn."
+    },
+    {
+     "type": "fill",
+     "q": "Điền ch hoặc tr: Khu vườn của ông có nhiều loại ___ái cây thơm ngon.",
+     "answer": "tr",
+     "accept": [
+      "tr"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Điền l hoặc n: Lời ru của mẹ ngọt ngào như dòng suối mát ___ành.",
+     "answer": "l",
+     "accept": [
+      "l"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy viết một câu có trạng ngữ chỉ thời gian và một câu có trạng ngữ chỉ nơi chốn.",
+     "hints": [
+      "Anh Fury gợi ý: câu chỉ thời gian thì bắt đầu bằng lúc nào đó, ví dụ buổi sáng, mùa hè, tối nay...",
+      "Câu chỉ nơi chốn thì bắt đầu bằng một địa điểm, ví dụ trong vườn, ở sân trường, trên cánh đồng...",
+      "Đừng quên dấu phẩy sau trạng ngữ nhé, nó giúp câu rõ ràng và đúng ngữ pháp hơn đó!"
+     ],
+     "loiGiai": "Mùa hè, khu vườn nhà ông rợp bóng cây xanh mát. Trên cành cây, những chú chim đang ríu rít hót vang.",
+     "dapSo": "tự chấm"
+    }
+   ]
+  },
+  {
+   "so": 4,
+   "ten": "Tuần 26: Người thầy đầu tiên của bố tôi · Ngựa biên phòng",
+   "lyThuyet": "Tuần này em đọc về người thầy đầu tiên kiên nhẫn dạy dỗ và chú ngựa biên phòng dũng cảm. Về Luyện từ và câu, em học cách nhận biết trạng ngữ chỉ nguyên nhân và trạng ngữ chỉ mục đích.",
+   "cauHoi": [
+    {
+     "type": "read",
+     "vanBan": "Bố của Minh kể rằng, ngày xưa bố học chữ rất chậm, mỗi lần viết sai là lại nản lòng muốn bỏ cuộc. Nhưng thầy giáo dạy bố hồi ấy rất kiên nhẫn, thầy luôn nhẹ nhàng động viên và cầm tay bố uốn nắn từng nét chữ. Nhờ sự tận tâm của thầy, bố dần viết đẹp hơn và học giỏi lên trông thấy. Đến bây giờ, mỗi khi nhắc đến thầy, bố vẫn xúc động và biết ơn vô cùng.",
+     "q": "Vì sao bố của Minh viết đẹp hơn và học giỏi lên?",
+     "options": [
+      "Vì bố tự học một mình",
+      "Nhờ sự tận tâm, kiên nhẫn của người thầy",
+      "Vì bố được đi học thêm ở thành phố",
+      "Vì bố mua được bút mới"
+     ],
+     "a": 1,
+     "explain": "Bài đọc cho biết nhờ sự tận tâm, kiên nhẫn của thầy giáo mà bố dần viết đẹp hơn và học giỏi lên."
+    },
+    {
+     "type": "read",
+     "vanBan": "Ở đồn biên phòng nơi bố của An công tác, có một chú ngựa tên là Kim rất khôn ngoan và trung thành. Để giúp các chú bộ đội tuần tra những cung đường hiểm trở, chú ngựa Kim ngày ngày cần mẫn thồ hàng vượt suối, băng rừng. Có lần trời mưa lớn, suối chảy xiết, nhưng nhờ chú ngựa quen thuộc địa hình mà cả đoàn vẫn an toàn vượt qua. An nghe bố kể mà thấy khâm phục chú ngựa biên phòng vô cùng.",
+     "q": "Chú ngựa Kim đã giúp các chú bộ đội biên phòng làm việc gì?",
+     "options": [
+      "Chỉ đứng canh gác ở đồn",
+      "Thồ hàng, vượt suối, băng rừng giúp việc tuần tra",
+      "Kéo xe chở khách du lịch",
+      "Chăn thả gia súc trong bản"
+     ],
+     "a": 1,
+     "explain": "Bài đọc cho biết chú ngựa Kim ngày ngày thồ hàng, vượt suối, băng rừng để giúp các chú bộ đội tuần tra."
+    },
+    {
+     "type": "mcq",
+     "q": "Trạng ngữ chỉ nguyên nhân thường trả lời cho câu hỏi nào?",
+     "options": [
+      "Để làm gì?",
+      "Ở đâu?",
+      "Vì sao?/Nhờ đâu?",
+      "Bằng gì?"
+     ],
+     "a": 2,
+     "explain": "Trạng ngữ chỉ nguyên nhân bổ sung ý nghĩa về nguyên nhân, trả lời cho câu hỏi Vì sao? hoặc Nhờ đâu?"
+    },
+    {
+     "type": "mcq",
+     "q": "Xác định trạng ngữ trong câu: \"Vì mải chơi, Nam quên chưa làm bài tập.\" và cho biết loại trạng ngữ.",
+     "options": [
+      "\"Nam quên\" - trạng ngữ chỉ mục đích",
+      "\"Vì mải chơi\" - trạng ngữ chỉ nguyên nhân",
+      "\"chưa làm bài tập\" - trạng ngữ chỉ nơi chốn",
+      "\"Vì mải chơi\" - trạng ngữ chỉ thời gian"
+     ],
+     "a": 1,
+     "explain": "\"Vì mải chơi\" trả lời cho câu hỏi Vì sao?, nêu lý do của sự việc nên là trạng ngữ chỉ nguyên nhân."
+    },
+    {
+     "type": "mcq",
+     "q": "Câu \"Để học tốt môn Tiếng Việt, em cần đọc sách nhiều hơn.\" có trạng ngữ chỉ mục đích là bộ phận nào?",
+     "options": [
+      "em cần đọc sách",
+      "nhiều hơn",
+      "Để học tốt môn Tiếng Việt",
+      "môn Tiếng Việt"
+     ],
+     "a": 2,
+     "explain": "\"Để học tốt môn Tiếng Việt\" trả lời cho câu hỏi Để làm gì?, nêu mục đích của hành động nên là trạng ngữ chỉ mục đích."
+    },
+    {
+     "type": "fill",
+     "q": "Điền tr hoặc ch: Thầy giáo luôn kiên nhẫn dạy dỗ học ___ò của mình.",
+     "answer": "tr",
+     "accept": [
+      "tr"
+     ]
+    },
+    {
+     "type": "fill",
+     "q": "Điền x hoặc s: Chú ngựa biên phòng vượt ___uối, băng rừng giúp bộ đội tuần tra.",
+     "answer": "s",
+     "accept": [
+      "s"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Em hãy viết một câu có trạng ngữ chỉ nguyên nhân và một câu có trạng ngữ chỉ mục đích.",
+     "hints": [
+      "Anh Fury gợi ý: câu chỉ nguyên nhân thường bắt đầu bằng Vì..., Nhờ..., Do... để trả lời Vì sao?",
+      "Câu chỉ mục đích thường bắt đầu bằng Để... nhằm trả lời Để làm gì?",
+      "Nhớ đặt trạng ngữ ở đầu câu và có dấu phẩy ngăn cách nha, sau đó mới đến phần chủ ngữ - vị ngữ!"
+     ],
+     "loiGiai": "Nhờ thầy giáo tận tâm chỉ bảo, bố của Minh đã viết chữ đẹp hơn rất nhiều. Để trở thành người lính biên phòng giỏi, các chú bộ đội phải luyện tập rất chăm chỉ.",
+     "dapSo": "tự chấm"
+    }
+   ]
+  }
+ ]
 }

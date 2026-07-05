@@ -63,42 +63,42 @@
      {
       "f": "data/toan/t2-cd7.json",
       "chuDe": "Phép nhân và phép chia",
-      "cdSo": 7,
+      "cdSo": 8,
       "soBai": 11,
       "soCau": 88
      },
      {
       "f": "data/toan/t2-cd8.json",
       "chuDe": "Làm quen với yếu tố thống kê, xác suất",
-      "cdSo": 8,
+      "cdSo": 9,
       "soBai": 4,
       "soCau": 32
      },
      {
       "f": "data/toan/t2-cd9.json",
       "chuDe": "Phân số",
-      "cdSo": 9,
+      "cdSo": 10,
       "soBai": 7,
       "soCau": 56
      },
      {
       "f": "data/toan/t2-cd10.json",
       "chuDe": "Phép cộng, phép trừ phân số",
-      "cdSo": 10,
+      "cdSo": 11,
       "soBai": 3,
       "soCau": 24
      },
      {
       "f": "data/toan/t2-cd11.json",
       "chuDe": "Phép nhân, phép chia phân số",
-      "cdSo": 11,
+      "cdSo": 12,
       "soBai": 4,
       "soCau": 32
      },
      {
       "f": "data/toan/t2-cd12.json",
       "chuDe": "Ôn tập cuối năm",
-      "cdSo": 12,
+      "cdSo": 13,
       "soBai": 7,
       "soCau": 56
      }
@@ -162,7 +162,7 @@
      },
      {
       "f": "data/tv/t2-cd7.json",
-      "chuDe": "Thế giới trong mắt em",
+      "chuDe": "Quê hương trong tôi",
       "cdSo": 7,
       "soBai": 4,
       "soCau": 32

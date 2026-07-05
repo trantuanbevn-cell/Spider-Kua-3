@@ -1,298 +1,401 @@
 {
-  "mon": "toan",
-  "tap": 2,
-  "chuDe": "Phép nhân, phép chia phân số",
-  "cdSo": 11,
-  "bai": [
+ "mon": "toan",
+ "tap": 2,
+ "chuDe": "Phép nhân, phép chia phân số",
+ "cdSo": 12,
+ "bai": [
+  {
+   "so": 63,
+   "ten": "Phép nhân phân số",
+   "lyThuyet": "Muốn nhân hai phân số, em lấy tử số nhân với tử số, mẫu số nhân với mẫu số. Ví dụ: 4/5 × 2/3 = (4×2)/(5×3) = 8/15. Muốn nhân một phân số với một số tự nhiên, em lấy tử số nhân với số tự nhiên đó rồi giữ nguyên mẫu số. Ví dụ: 1/4 × 3 = 3/4. Khi tính, nhớ rút gọn kết quả về phân số tối giản nhé!",
+   "cauHoi": [
     {
-      "so": 63,
-      "ten": "Phép nhân phân số",
-      "lyThuyet": "Muốn nhân hai phân số, em lấy tử số nhân với tử số, mẫu số nhân với mẫu số. Ví dụ: 4/5 × 2/3 = (4×2)/(5×3) = 8/15. Muốn nhân một phân số với một số tự nhiên, em lấy tử số nhân với số tự nhiên đó rồi giữ nguyên mẫu số. Ví dụ: 1/4 × 3 = 3/4. Khi tính, nhớ rút gọn kết quả về phân số tối giản nhé!",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "Tính: 2/3 × 4/5 = ?",
-          "options": ["8/15", "6/8", "8/8", "2/15"],
-          "a": 0,
-          "explain": "Lấy tử số nhân tử số, mẫu số nhân mẫu số: 2/3 × 4/5 = (2×4)/(3×5) = 8/15."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính: 3/4 × 1/7 = ?",
-          "options": ["4/11", "3/11", "3/28", "4/28"],
-          "a": 2,
-          "explain": "3/4 × 1/7 = (3×1)/(4×7) = 3/28."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính: 5/6 × 1/2 = ?",
-          "options": ["5/12", "6/8", "5/8", "6/12"],
-          "a": 0,
-          "explain": "5/6 × 1/2 = (5×1)/(6×2) = 5/12."
-        },
-        {
-          "type": "mcq",
-          "q": "Rút gọn rồi tính: 4/6 × 1/3 = ?",
-          "options": ["4/18", "2/9", "1/3", "4/9"],
-          "a": 1,
-          "explain": "Rút gọn 4/6 = 2/3 trước, rồi tính 2/3 × 1/3 = 2/9."
-        },
-        {
-          "type": "mcq",
-          "q": "Muốn nhân một phân số với một số tự nhiên, ta làm thế nào?",
-          "options": [
-            "Lấy tử số nhân với số tự nhiên, giữ nguyên mẫu số",
-            "Lấy mẫu số nhân với số tự nhiên, giữ nguyên tử số",
-            "Cộng số tự nhiên vào tử số",
-            "Nhân cả tử số và mẫu số với số tự nhiên"
-          ],
-          "a": 0,
-          "explain": "Ví dụ: 2/5 × 2 = (2×2)/5 = 4/5. Ta lấy tử số nhân với số tự nhiên, mẫu số giữ nguyên."
-        },
-        {
-          "type": "fill",
-          "q": "Điền số thích hợp vào chỗ trống: 3/8 × 4/5 = ___ (rút gọn tối giản)",
-          "answer": "3/10",
-          "accept": ["3/10", "3 phần 10"]
-        },
-        {
-          "type": "solve",
-          "de": "Một sân chơi hình vuông có cạnh dài 3/4 m. Tính chu vi và diện tích sân chơi đó.",
-          "hints": [
-            "Này em, muốn tính chu vi hình vuông thì em lấy cạnh nhân với mấy nào?",
-            "Còn diện tích hình vuông thì em lấy cạnh nhân với cạnh đúng không? Thử nhân 3/4 với 3/4 xem.",
-            "Chu vi = 3/4 × 4, còn diện tích = 3/4 × 3/4. Em tính hai phép này rồi rút gọn nhé!"
-          ],
-          "loiGiai": "Chu vi sân chơi là:\n3/4 × 4 = 3 (m)\nDiện tích sân chơi là:\n3/4 × 3/4 = 9/16 (m2)",
-          "dapSo": "Chu vi: 3m; Diện tích: 9/16 m2"
-        },
-        {
-          "type": "solve",
-          "de": "Mỗi ngày bạn Nam dùng hết 1/2 lít sữa để tập luyện bơi. Hỏi trong 7 ngày, bạn Nam dùng hết bao nhiêu lít sữa?",
-          "hints": [
-            "Mỗi ngày dùng 1/2 lít, vậy 7 ngày dùng gấp mấy lần 1/2 lít hả em?",
-            "Đây là phép nhân phân số với số tự nhiên đó em: 1/2 nhân với 7.",
-            "Em lấy tử số 1 nhân với 7, giữ nguyên mẫu số 2, xem ra kết quả gì nhé."
-          ],
-          "loiGiai": "Số lít sữa bạn Nam dùng trong 7 ngày là:\n1/2 × 7 = 7/2 (lít)",
-          "dapSo": "7/2 lít sữa"
-        }
-      ]
+     "type": "mcq",
+     "q": "Tính: 2/3 × 4/5 = ?",
+     "options": [
+      "8/15",
+      "6/8",
+      "8/8",
+      "2/15"
+     ],
+     "a": 0,
+     "explain": "Lấy tử số nhân tử số, mẫu số nhân mẫu số: 2/3 × 4/5 = (2×4)/(3×5) = 8/15."
     },
     {
-      "so": 64,
-      "ten": "Phép chia phân số",
-      "lyThuyet": "Muốn chia phân số thứ nhất cho phân số thứ hai, em lấy phân số thứ nhất nhân với phân số thứ hai đảo ngược (đảo ngược là đổi chỗ tử số và mẫu số cho nhau). Ví dụ: 8/15 : 2/3 = 8/15 × 3/2 = 24/30 = 4/5. Khi chia phân số cho số tự nhiên, em có thể giữ nguyên tử số và nhân mẫu số với số đó. Khi chia số tự nhiên cho phân số, em nhân số đó với phân số đảo ngược.",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "Phân số đảo ngược của 2/5 là gì?",
-          "options": ["5/2", "2/5", "5/5", "2/2"],
-          "a": 0,
-          "explain": "Đảo ngược một phân số là đổi chỗ tử số và mẫu số, nên đảo ngược của 2/5 là 5/2."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính: 3/4 : 2/5 = ?",
-          "options": ["6/20", "15/8", "8/15", "5/8"],
-          "a": 1,
-          "explain": "3/4 : 2/5 = 3/4 × 5/2 = 15/8."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính: 5/6 : 1/3 = ?",
-          "options": ["5/18", "5/2", "18/5", "2/5"],
-          "a": 1,
-          "explain": "5/6 : 1/3 = 5/6 × 3/1 = 15/6 = 5/2."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính: 3/4 : 2 = ?",
-          "options": ["3/8", "6/4", "3/2", "1/4"],
-          "a": 0,
-          "explain": "Chia phân số cho số tự nhiên: giữ nguyên tử số, nhân mẫu số với số đó: 3/(4×2) = 3/8."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính: 4 : 2/5 = ?",
-          "options": ["8/5", "10", "2/20", "8"],
-          "a": 1,
-          "explain": "Chia số tự nhiên cho phân số: 4 : 2/5 = 4 × 5/2 = 20/2 = 10."
-        },
-        {
-          "type": "fill",
-          "q": "Rút gọn rồi tính: 2/5 : 4/7 = ___ (viết dạng phân số tối giản)",
-          "answer": "7/10",
-          "accept": ["7/10", "7 phần 10"]
-        },
-        {
-          "type": "solve",
-          "de": "Một mảnh bìa hình chữ nhật có diện tích 2/3 m2, chiều dài 4/5 m. Tính chiều rộng mảnh bìa đó.",
-          "hints": [
-            "Em nhớ lại công thức tính diện tích hình chữ nhật xem: diện tích bằng chiều dài nhân chiều rộng, đúng không?",
-            "Vậy muốn tìm chiều rộng, em lấy diện tích chia cho chiều dài. Ở đây là 2/3 chia cho 4/5.",
-            "Nhớ quy tắc chia phân số nhé: lấy 2/3 nhân với phân số đảo ngược của 4/5, tức là nhân với 5/4."
-          ],
-          "loiGiai": "Chiều rộng mảnh bìa hình chữ nhật là:\n2/3 : 4/5 = 2/3 × 5/4 = 10/12 = 5/6 (m)",
-          "dapSo": "5/6 m"
-        },
-        {
-          "type": "solve",
-          "de": "Bạn An có một sợi dây dài 4m, muốn cắt thành các đoạn dài bằng nhau, mỗi đoạn 1/2 m. Hỏi bạn An cắt được bao nhiêu đoạn dây như vậy?",
-          "hints": [
-            "Sợi dây dài 4m, mỗi đoạn cắt ra dài 1/2 m, vậy em cần chia 4 cho mấy?",
-            "Đây là phép chia số tự nhiên cho phân số: 4 chia cho 1/2 đó em.",
-            "Em lấy 4 nhân với phân số đảo ngược của 1/2, tức là nhân với 2/1, xem được bao nhiêu đoạn."
-          ],
-          "loiGiai": "Số đoạn dây bạn An cắt được là:\n4 : 1/2 = 4 × 2 = 8 (đoạn)",
-          "dapSo": "8 đoạn dây"
-        }
-      ]
+     "type": "mcq",
+     "q": "Tính: 3/4 × 1/7 = ?",
+     "options": [
+      "4/11",
+      "3/11",
+      "3/28",
+      "4/28"
+     ],
+     "a": 2,
+     "explain": "3/4 × 1/7 = (3×1)/(4×7) = 3/28."
     },
     {
-      "so": 65,
-      "ten": "Tìm phân số của một số",
-      "lyThuyet": "Muốn tìm phân số của một số, em lấy số đó nhân với phân số. Ví dụ: muốn tìm 2/3 của 12, em tính 12 × 2/3 = 8. Đây là dạng toán rất hay gặp trong đời sống, như tìm số học sinh nữ trong lớp, tìm quãng đường đã đi được, tìm số lượng hàng đã bán... Em chỉ cần nhớ: \"của\" nghĩa là nhân!",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "Tính 3/4 của 16 là bao nhiêu?",
-          "options": ["12", "10", "4", "16"],
-          "a": 0,
-          "explain": "3/4 của 16 = 16 × 3/4 = 12."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính 2/5 của 20 là bao nhiêu?",
-          "options": ["10", "8", "4", "12"],
-          "a": 1,
-          "explain": "2/5 của 20 = 20 × 2/5 = 8."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính 5/6 của 18 là bao nhiêu?",
-          "options": ["15", "12", "18", "10"],
-          "a": 0,
-          "explain": "5/6 của 18 = 18 × 5/6 = 15."
-        },
-        {
-          "type": "mcq",
-          "q": "1/4 của 24 kg là bao nhiêu ki-lô-gam?",
-          "options": ["4 kg", "6 kg", "8 kg", "12 kg"],
-          "a": 1,
-          "explain": "1/4 của 24 kg = 24 × 1/4 = 6 kg."
-        },
-        {
-          "type": "mcq",
-          "q": "Muốn tìm phân số của một số, em làm như thế nào?",
-          "options": [
-            "Lấy số đó nhân với phân số",
-            "Lấy số đó chia cho phân số",
-            "Lấy số đó cộng với phân số",
-            "Lấy số đó trừ đi phân số"
-          ],
-          "a": 0,
-          "explain": "Quy tắc: muốn tìm phân số của một số, ta lấy số đó nhân với phân số."
-        },
-        {
-          "type": "fill",
-          "q": "Điền số thích hợp: 4/5 của 50m là ___ m",
-          "answer": "40",
-          "accept": ["40", "40m", "40 m"]
-        },
-        {
-          "type": "solve",
-          "de": "Lớp 4A có 30 học sinh, trong đó số học sinh nữ chiếm 3/5 số học sinh cả lớp. Hỏi lớp 4A có bao nhiêu học sinh nữ?",
-          "hints": [
-            "Em ơi, đề bài hỏi 3/5 CỦA 30 học sinh đúng không? Nhớ quy tắc \"của\" là làm phép tính gì nào?",
-            "Đúng rồi, muốn tìm phân số của một số, ta lấy số đó nhân với phân số kia.",
-            "Em lấy 30 nhân với 3/5 xem ra được bao nhiêu học sinh nữ nhé."
-          ],
-          "loiGiai": "Số học sinh nữ của lớp 4A là:\n30 × 3/5 = 18 (học sinh)",
-          "dapSo": "18 học sinh nữ"
-        },
-        {
-          "type": "solve",
-          "de": "Một vườn bưởi nhà bạn Bình thu hoạch được 60 quả bưởi. Bạn Bình đã bán 2/5 số bưởi đó. Hỏi vườn bưởi nhà bạn Bình còn lại bao nhiêu quả bưởi?",
-          "hints": [
-            "Trước tiên em tìm xem đã bán bao nhiêu quả nhé: 2/5 của 60 quả là bao nhiêu?",
-            "Muốn tìm phân số của một số, em lấy số đó nhân với phân số: 60 × 2/5.",
-            "Sau khi biết số quả đã bán, em lấy tổng số quả 60 trừ đi số đã bán để tìm số còn lại."
-          ],
-          "loiGiai": "Số quả bưởi đã bán là:\n60 × 2/5 = 24 (quả)\nSố quả bưởi còn lại là:\n60 - 24 = 36 (quả)",
-          "dapSo": "36 quả bưởi"
-        }
-      ]
+     "type": "mcq",
+     "q": "Tính: 5/6 × 1/2 = ?",
+     "options": [
+      "5/12",
+      "6/8",
+      "5/8",
+      "6/12"
+     ],
+     "a": 0,
+     "explain": "5/6 × 1/2 = (5×1)/(6×2) = 5/12."
     },
     {
-      "so": 66,
-      "ten": "Luyện tập chung",
-      "lyThuyet": "Bài học này giúp em ôn lại phép nhân, phép chia phân số và cách tìm phân số của một số. Khi tính biểu thức có cả nhân, chia, cộng, trừ mà không có dấu ngoặc, em thực hiện phép nhân và chia trước, rồi mới đến phép cộng và phép trừ. Nếu biểu thức chỉ có nhân và chia, em tính lần lượt từ trái sang phải. Đừng quên: chia phân số là nhân với phân số đảo ngược!",
-      "cauHoi": [
-        {
-          "type": "mcq",
-          "q": "Tính: 3/4 : 5/8 = ?",
-          "options": ["6/5", "15/32", "5/6", "32/15"],
-          "a": 0,
-          "explain": "3/4 : 5/8 = 3/4 × 8/5 = 24/20 = 6/5."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính: 1/2 × 1/3 × 1/4 = ?",
-          "options": ["1/9", "1/24", "3/9", "1/12"],
-          "a": 1,
-          "explain": "1/2 × 1/3 × 1/4 = (1×1×1)/(2×3×4) = 1/24."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính giá trị biểu thức: 5/6 : 2/3 × 1/5 = ?",
-          "options": ["1/4", "1/2", "5/4", "1/9"],
-          "a": 0,
-          "explain": "Không có ngoặc nên tính từ trái sang phải: 5/6 : 2/3 = 5/6 × 3/2 = 5/4. Sau đó 5/4 × 1/5 = 5/20 = 1/4."
-        },
-        {
-          "type": "mcq",
-          "q": "Tính giá trị biểu thức: 1/2 + 1/4 × 2/3 = ?",
-          "options": ["2/3", "1/3", "3/4", "1/2"],
-          "a": 0,
-          "explain": "Nhân trước, cộng sau: 1/4 × 2/3 = 2/12 = 1/6. Rồi 1/2 + 1/6 = 3/6 + 1/6 = 4/6 = 2/3."
-        },
-        {
-          "type": "mcq",
-          "q": "Lớp 4B có 32 học sinh, số học sinh nam chiếm 3/8 số học sinh cả lớp. Hỏi lớp 4B có bao nhiêu học sinh nữ?",
-          "options": ["12 học sinh", "20 học sinh", "8 học sinh", "24 học sinh"],
-          "a": 1,
-          "explain": "Số học sinh nam là 32 × 3/8 = 12 (học sinh). Số học sinh nữ là 32 - 12 = 20 (học sinh)."
-        },
-        {
-          "type": "fill",
-          "q": "Rút gọn rồi tính: 6/8 × 4/9 = ___ (viết dạng phân số tối giản)",
-          "answer": "1/3",
-          "accept": ["1/3", "1 phần 3"]
-        },
-        {
-          "type": "solve",
-          "de": "Một tấm kính hình chữ nhật dài 4/5 m, rộng 1/2 m. Người ta chia tấm kính thành 4 phần bằng nhau. Hỏi mỗi phần có diện tích bao nhiêu mét vuông?",
-          "hints": [
-            "Việc đầu tiên em cần làm là tính diện tích cả tấm kính đã, bằng cách lấy chiều dài nhân chiều rộng.",
-            "Diện tích tấm kính là 4/5 × 1/2. Em tính xem ra bao nhiêu m2 nhé.",
-            "Sau khi có diện tích cả tấm, muốn tìm diện tích mỗi phần, em lấy diện tích đó chia cho 4."
-          ],
-          "loiGiai": "Diện tích tấm kính hình chữ nhật là:\n4/5 × 1/2 = 4/10 = 2/5 (m2)\nDiện tích mỗi phần là:\n2/5 : 4 = 2/20 = 1/10 (m2)",
-          "dapSo": "1/10 m2"
-        },
-        {
-          "type": "solve",
-          "de": "Nhà bạn Minh có một túi gạo nặng 5kg. Ngày thứ nhất mẹ dùng hết 1/5 số gạo đó. Ngày thứ hai mẹ dùng hết 1/4 số gạo còn lại sau ngày thứ nhất. Hỏi sau hai ngày, túi gạo còn lại bao nhiêu ki-lô-gam gạo?",
-          "hints": [
-            "Trước tiên, em tìm xem ngày thứ nhất mẹ dùng hết bao nhiêu ki-lô-gam: 1/5 của 5kg là bao nhiêu?",
-            "Sau ngày thứ nhất, túi gạo còn lại bao nhiêu kg? Lấy 5kg trừ đi phần đã dùng ngày thứ nhất nhé.",
-            "Ngày thứ hai mẹ dùng 1/4 của SỐ GẠO CÒN LẠI (chứ không phải 1/4 của 5kg ban đầu đâu em), rồi lấy số còn lại sau ngày 1 trừ tiếp đi phần dùng ngày 2."
-          ],
-          "loiGiai": "Số ki-lô-gam gạo dùng trong ngày thứ nhất là:\n5 × 1/5 = 1 (kg)\nSố ki-lô-gam gạo còn lại sau ngày thứ nhất là:\n5 - 1 = 4 (kg)\nSố ki-lô-gam gạo dùng trong ngày thứ hai là:\n4 × 1/4 = 1 (kg)\nSố ki-lô-gam gạo còn lại sau hai ngày là:\n4 - 1 = 3 (kg)",
-          "dapSo": "3 kg gạo"
-        }
-      ]
+     "type": "mcq",
+     "q": "Rút gọn rồi tính: 4/6 × 1/3 = ?",
+     "options": [
+      "1/2",
+      "2/9",
+      "1/3",
+      "4/9"
+     ],
+     "a": 1,
+     "explain": "Rút gọn 4/6 = 2/3 trước, rồi tính 2/3 × 1/3 = 2/9."
+    },
+    {
+     "type": "mcq",
+     "q": "Muốn nhân một phân số với một số tự nhiên, ta làm thế nào?",
+     "options": [
+      "Lấy tử số nhân với số tự nhiên, giữ nguyên mẫu số",
+      "Lấy mẫu số nhân với số tự nhiên, giữ nguyên tử số",
+      "Cộng số tự nhiên vào tử số",
+      "Nhân cả tử số và mẫu số với số tự nhiên"
+     ],
+     "a": 0,
+     "explain": "Ví dụ: 2/5 × 2 = (2×2)/5 = 4/5. Ta lấy tử số nhân với số tự nhiên, mẫu số giữ nguyên."
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp vào chỗ trống: 3/8 × 4/5 = ___ (rút gọn tối giản)",
+     "answer": "3/10",
+     "accept": [
+      "3/10",
+      "3 phần 10"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một sân chơi hình vuông có cạnh dài 3/4 m. Tính chu vi và diện tích sân chơi đó.",
+     "hints": [
+      "Này em, muốn tính chu vi hình vuông thì em lấy cạnh nhân với mấy nào?",
+      "Còn diện tích hình vuông thì em lấy cạnh nhân với cạnh đúng không? Thử nhân 3/4 với 3/4 xem.",
+      "Chu vi = 3/4 × 4, còn diện tích = 3/4 × 3/4. Em tính hai phép này rồi rút gọn nhé!"
+     ],
+     "loiGiai": "Chu vi sân chơi là:\n3/4 × 4 = 3 (m)\nDiện tích sân chơi là:\n3/4 × 3/4 = 9/16 (m2)",
+     "dapSo": "Chu vi: 3m; Diện tích: 9/16 m2"
+    },
+    {
+     "type": "solve",
+     "de": "Mỗi ngày bạn Nam dùng hết 1/2 lít sữa để tập luyện bơi. Hỏi trong 7 ngày, bạn Nam dùng hết bao nhiêu lít sữa?",
+     "hints": [
+      "Mỗi ngày dùng 1/2 lít, vậy 7 ngày dùng gấp mấy lần 1/2 lít hả em?",
+      "Đây là phép nhân phân số với số tự nhiên đó em: 1/2 nhân với 7.",
+      "Em lấy tử số 1 nhân với 7, giữ nguyên mẫu số 2, xem ra kết quả gì nhé."
+     ],
+     "loiGiai": "Số lít sữa bạn Nam dùng trong 7 ngày là:\n1/2 × 7 = 7/2 (lít)",
+     "dapSo": "7/2 lít sữa"
     }
-  ]
+   ]
+  },
+  {
+   "so": 64,
+   "ten": "Phép chia phân số",
+   "lyThuyet": "Muốn chia phân số thứ nhất cho phân số thứ hai, em lấy phân số thứ nhất nhân với phân số thứ hai đảo ngược (đảo ngược là đổi chỗ tử số và mẫu số cho nhau). Ví dụ: 8/15 : 2/3 = 8/15 × 3/2 = 24/30 = 4/5. Khi chia phân số cho số tự nhiên, em có thể giữ nguyên tử số và nhân mẫu số với số đó. Khi chia số tự nhiên cho phân số, em nhân số đó với phân số đảo ngược.",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Phân số đảo ngược của 2/5 là gì?",
+     "options": [
+      "5/2",
+      "2/5",
+      "5/5",
+      "5/1"
+     ],
+     "a": 0,
+     "explain": "Đảo ngược một phân số là đổi chỗ tử số và mẫu số, nên đảo ngược của 2/5 là 5/2."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính: 3/4 : 2/5 = ?",
+     "options": [
+      "6/20",
+      "15/8",
+      "8/15",
+      "5/8"
+     ],
+     "a": 1,
+     "explain": "3/4 : 2/5 = 3/4 × 5/2 = 15/8."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính: 5/6 : 1/3 = ?",
+     "options": [
+      "5/18",
+      "5/2",
+      "18/5",
+      "2/5"
+     ],
+     "a": 1,
+     "explain": "5/6 : 1/3 = 5/6 × 3/1 = 15/6 = 5/2."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính: 3/4 : 2 = ?",
+     "options": [
+      "3/8",
+      "3/6",
+      "3/2",
+      "1/4"
+     ],
+     "a": 0,
+     "explain": "Chia phân số cho số tự nhiên: giữ nguyên tử số, nhân mẫu số với số đó: 3/(4×2) = 3/8."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính: 4 : 2/5 = ?",
+     "options": [
+      "8/5",
+      "10",
+      "2/20",
+      "8"
+     ],
+     "a": 1,
+     "explain": "Chia số tự nhiên cho phân số: 4 : 2/5 = 4 × 5/2 = 20/2 = 10."
+    },
+    {
+     "type": "fill",
+     "q": "Rút gọn rồi tính: 2/5 : 4/7 = ___ (viết dạng phân số tối giản)",
+     "answer": "7/10",
+     "accept": [
+      "7/10",
+      "7 phần 10"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một mảnh bìa hình chữ nhật có diện tích 2/3 m2, chiều dài 4/5 m. Tính chiều rộng mảnh bìa đó.",
+     "hints": [
+      "Em nhớ lại công thức tính diện tích hình chữ nhật xem: diện tích bằng chiều dài nhân chiều rộng, đúng không?",
+      "Vậy muốn tìm chiều rộng, em lấy diện tích chia cho chiều dài. Ở đây là 2/3 chia cho 4/5.",
+      "Nhớ quy tắc chia phân số nhé: lấy 2/3 nhân với phân số đảo ngược của 4/5, tức là nhân với 5/4."
+     ],
+     "loiGiai": "Chiều rộng mảnh bìa hình chữ nhật là:\n2/3 : 4/5 = 2/3 × 5/4 = 10/12 = 5/6 (m)",
+     "dapSo": "5/6 m"
+    },
+    {
+     "type": "solve",
+     "de": "Bạn An có một sợi dây dài 4m, muốn cắt thành các đoạn dài bằng nhau, mỗi đoạn 1/2 m. Hỏi bạn An cắt được bao nhiêu đoạn dây như vậy?",
+     "hints": [
+      "Sợi dây dài 4m, mỗi đoạn cắt ra dài 1/2 m, vậy em cần chia 4 cho mấy?",
+      "Đây là phép chia số tự nhiên cho phân số: 4 chia cho 1/2 đó em.",
+      "Em lấy 4 nhân với phân số đảo ngược của 1/2, tức là nhân với 2/1, xem được bao nhiêu đoạn."
+     ],
+     "loiGiai": "Số đoạn dây bạn An cắt được là:\n4 : 1/2 = 4 × 2 = 8 (đoạn)",
+     "dapSo": "8 đoạn dây"
+    }
+   ]
+  },
+  {
+   "so": 65,
+   "ten": "Tìm phân số của một số",
+   "lyThuyet": "Muốn tìm phân số của một số, em lấy số đó nhân với phân số. Ví dụ: muốn tìm 2/3 của 12, em tính 12 × 2/3 = 8. Đây là dạng toán rất hay gặp trong đời sống, như tìm số học sinh nữ trong lớp, tìm quãng đường đã đi được, tìm số lượng hàng đã bán... Em chỉ cần nhớ: \"của\" nghĩa là nhân!",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Tính 3/4 của 16 là bao nhiêu?",
+     "options": [
+      "12",
+      "10",
+      "4",
+      "16"
+     ],
+     "a": 0,
+     "explain": "3/4 của 16 = 16 × 3/4 = 12."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính 2/5 của 20 là bao nhiêu?",
+     "options": [
+      "10",
+      "8",
+      "4",
+      "12"
+     ],
+     "a": 1,
+     "explain": "2/5 của 20 = 20 × 2/5 = 8."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính 5/6 của 18 là bao nhiêu?",
+     "options": [
+      "15",
+      "12",
+      "18",
+      "10"
+     ],
+     "a": 0,
+     "explain": "5/6 của 18 = 18 × 5/6 = 15."
+    },
+    {
+     "type": "mcq",
+     "q": "1/4 của 24 kg là bao nhiêu ki-lô-gam?",
+     "options": [
+      "4 kg",
+      "6 kg",
+      "8 kg",
+      "12 kg"
+     ],
+     "a": 1,
+     "explain": "1/4 của 24 kg = 24 × 1/4 = 6 kg."
+    },
+    {
+     "type": "mcq",
+     "q": "Muốn tìm phân số của một số, em làm như thế nào?",
+     "options": [
+      "Lấy số đó nhân với phân số",
+      "Lấy số đó chia cho phân số",
+      "Lấy số đó cộng với phân số",
+      "Lấy số đó trừ đi phân số"
+     ],
+     "a": 0,
+     "explain": "Quy tắc: muốn tìm phân số của một số, ta lấy số đó nhân với phân số."
+    },
+    {
+     "type": "fill",
+     "q": "Điền số thích hợp: 4/5 của 50m là ___ m",
+     "answer": "40",
+     "accept": [
+      "40",
+      "40m",
+      "40 m"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Lớp 4A có 30 học sinh, trong đó số học sinh nữ chiếm 3/5 số học sinh cả lớp. Hỏi lớp 4A có bao nhiêu học sinh nữ?",
+     "hints": [
+      "Em ơi, đề bài hỏi 3/5 CỦA 30 học sinh đúng không? Nhớ quy tắc \"của\" là làm phép tính gì nào?",
+      "Đúng rồi, muốn tìm phân số của một số, ta lấy số đó nhân với phân số kia.",
+      "Em lấy 30 nhân với 3/5 xem ra được bao nhiêu học sinh nữ nhé."
+     ],
+     "loiGiai": "Số học sinh nữ của lớp 4A là:\n30 × 3/5 = 18 (học sinh)",
+     "dapSo": "18 học sinh nữ"
+    },
+    {
+     "type": "solve",
+     "de": "Một vườn bưởi nhà bạn Bình thu hoạch được 60 quả bưởi. Bạn Bình đã bán 2/5 số bưởi đó. Hỏi vườn bưởi nhà bạn Bình còn lại bao nhiêu quả bưởi?",
+     "hints": [
+      "Trước tiên em tìm xem đã bán bao nhiêu quả nhé: 2/5 của 60 quả là bao nhiêu?",
+      "Muốn tìm phân số của một số, em lấy số đó nhân với phân số: 60 × 2/5.",
+      "Sau khi biết số quả đã bán, em lấy tổng số quả 60 trừ đi số đã bán để tìm số còn lại."
+     ],
+     "loiGiai": "Số quả bưởi đã bán là:\n60 × 2/5 = 24 (quả)\nSố quả bưởi còn lại là:\n60 - 24 = 36 (quả)",
+     "dapSo": "36 quả bưởi"
+    }
+   ]
+  },
+  {
+   "so": 66,
+   "ten": "Luyện tập chung",
+   "lyThuyet": "Bài học này giúp em ôn lại phép nhân, phép chia phân số và cách tìm phân số của một số. Khi tính biểu thức có cả nhân, chia, cộng, trừ mà không có dấu ngoặc, em thực hiện phép nhân và chia trước, rồi mới đến phép cộng và phép trừ. Nếu biểu thức chỉ có nhân và chia, em tính lần lượt từ trái sang phải. Đừng quên: chia phân số là nhân với phân số đảo ngược!",
+   "cauHoi": [
+    {
+     "type": "mcq",
+     "q": "Tính: 3/4 : 5/8 = ?",
+     "options": [
+      "6/5",
+      "15/32",
+      "5/6",
+      "32/15"
+     ],
+     "a": 0,
+     "explain": "3/4 : 5/8 = 3/4 × 8/5 = 24/20 = 6/5."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính: 1/2 × 1/3 × 1/4 = ?",
+     "options": [
+      "1/9",
+      "1/24",
+      "3/9",
+      "1/12"
+     ],
+     "a": 1,
+     "explain": "1/2 × 1/3 × 1/4 = (1×1×1)/(2×3×4) = 1/24."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính giá trị biểu thức: 5/6 : 2/3 × 1/5 = ?",
+     "options": [
+      "1/4",
+      "1/2",
+      "5/4",
+      "1/9"
+     ],
+     "a": 0,
+     "explain": "Không có ngoặc nên tính từ trái sang phải: 5/6 : 2/3 = 5/6 × 3/2 = 5/4. Sau đó 5/4 × 1/5 = 5/20 = 1/4."
+    },
+    {
+     "type": "mcq",
+     "q": "Tính giá trị biểu thức: 1/2 + 1/4 × 2/3 = ?",
+     "options": [
+      "2/3",
+      "1/3",
+      "3/4",
+      "1/2"
+     ],
+     "a": 0,
+     "explain": "Nhân trước, cộng sau: 1/4 × 2/3 = 2/12 = 1/6. Rồi 1/2 + 1/6 = 3/6 + 1/6 = 4/6 = 2/3."
+    },
+    {
+     "type": "mcq",
+     "q": "Lớp 4B có 32 học sinh, số học sinh nam chiếm 3/8 số học sinh cả lớp. Hỏi lớp 4B có bao nhiêu học sinh nữ?",
+     "options": [
+      "12 học sinh",
+      "20 học sinh",
+      "8 học sinh",
+      "24 học sinh"
+     ],
+     "a": 1,
+     "explain": "Số học sinh nam là 32 × 3/8 = 12 (học sinh). Số học sinh nữ là 32 - 12 = 20 (học sinh)."
+    },
+    {
+     "type": "fill",
+     "q": "Rút gọn rồi tính: 6/8 × 4/9 = ___ (viết dạng phân số tối giản)",
+     "answer": "1/3",
+     "accept": [
+      "1/3",
+      "1 phần 3"
+     ]
+    },
+    {
+     "type": "solve",
+     "de": "Một tấm kính hình chữ nhật dài 4/5 m, rộng 1/2 m. Người ta chia tấm kính thành 4 phần bằng nhau. Hỏi mỗi phần có diện tích bao nhiêu mét vuông?",
+     "hints": [
+      "Việc đầu tiên em cần làm là tính diện tích cả tấm kính đã, bằng cách lấy chiều dài nhân chiều rộng.",
+      "Diện tích tấm kính là 4/5 × 1/2. Em tính xem ra bao nhiêu m2 nhé.",
+      "Sau khi có diện tích cả tấm, muốn tìm diện tích mỗi phần, em lấy diện tích đó chia cho 4."
+     ],
+     "loiGiai": "Diện tích tấm kính hình chữ nhật là:\n4/5 × 1/2 = 4/10 = 2/5 (m2)\nDiện tích mỗi phần là:\n2/5 : 4 = 2/20 = 1/10 (m2)",
+     "dapSo": "1/10 m2"
+    },
+    {
+     "type": "solve",
+     "de": "Nhà bạn Minh có một túi gạo nặng 5kg. Ngày thứ nhất mẹ dùng hết 1/5 số gạo đó. Ngày thứ hai mẹ dùng hết 1/4 số gạo còn lại sau ngày thứ nhất. Hỏi sau hai ngày, túi gạo còn lại bao nhiêu ki-lô-gam gạo?",
+     "hints": [
+      "Trước tiên, em tìm xem ngày thứ nhất mẹ dùng hết bao nhiêu ki-lô-gam: 1/5 của 5kg là bao nhiêu?",
+      "Sau ngày thứ nhất, túi gạo còn lại bao nhiêu kg? Lấy 5kg trừ đi phần đã dùng ngày thứ nhất nhé.",
+      "Ngày thứ hai mẹ dùng 1/4 của SỐ GẠO CÒN LẠI (chứ không phải 1/4 của 5kg ban đầu đâu em), rồi lấy số còn lại sau ngày 1 trừ tiếp đi phần dùng ngày 2."
+     ],
+     "loiGiai": "Số ki-lô-gam gạo dùng trong ngày thứ nhất là:\n5 × 1/5 = 1 (kg)\nSố ki-lô-gam gạo còn lại sau ngày thứ nhất là:\n5 - 1 = 4 (kg)\nSố ki-lô-gam gạo dùng trong ngày thứ hai là:\n4 × 1/4 = 1 (kg)\nSố ki-lô-gam gạo còn lại sau hai ngày là:\n4 - 1 = 3 (kg)",
+     "dapSo": "3 kg gạo"
+    }
+   ]
+  }
+ ]
 }
