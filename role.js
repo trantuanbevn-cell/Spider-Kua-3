@@ -219,7 +219,7 @@ roleApply();
     b.style.cssText='margin:6px 10px;padding:12px 14px;background:linear-gradient(135deg,rgba(232,25,44,.2),rgba(15,76,143,.25));border:2px solid var(--red);border-radius:14px;cursor:pointer;display:flex;align-items:center;gap:12px;flex-shrink:0;animation:pulse 2s infinite;';
     b.innerHTML='<div style="font-size:28px;">⚡</div><div style="flex:1;">'
       +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:15px;color:#fff;">NHIỆM VỤ HÔM NAY — '+target+' PHÚT</div>'
-      +'<div style="font-size:11.5px;color:var(--tx2);">Fury đã soạn sẵn bài cho em · xong +30 xu · chuỗi '+st.n+' ngày 🔥</div></div>'
+      +'<div style="font-size:11.5px;color:var(--tx2);">Fury đã soạn sẵn bài cho em · xong +15 xu · chuỗi '+st.n+' ngày 🔥</div></div>'
       +'<div style="background:var(--red);border-radius:10px;padding:8px 14px;font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:#fff;">BẮT ĐẦU</div>';
     b.onclick=function(){ openPractice(); setTimeout(function(){ if(typeof adStartDaily==='function') adStartDaily(); },400); };
     msgs.parentNode.insertBefore(b, msgs);

@@ -959,7 +959,7 @@ function parseReply(text,con){
   const ms=[];
   let c=text.replace(/\[MISSION:([^\]]+)\]/g,(_,x)=>{ms.push(x.trim());return'';});
   const xuN=(c.match(/\[\+XU_NHANH\]/g)||[]).length;
-  c=c.replace(/\[\+XU_NHANH\]/g,'<span style="color:var(--gold);font-weight:700;">🚀+15 xu</span>');
+  c=c.replace(/\[\+XU_NHANH\]/g,'<span style="color:var(--gold);font-weight:700;">🚀+5 xu</span>');
   const xpN=(c.match(/\[\+XP\]/g)||[]).length;
   c=c.replace(/\[\+XP\]/g,'<span class="gr">⚡+5 xu</span>');
   const bm=c.match(/\[BADGE:([^\]]+)\]/);let badge=null;
@@ -967,8 +967,8 @@ function parseReply(text,con){
   const mb=document.createElement('div');mb.className='mb';mb.innerHTML=c.trim().replace(/\n/g,'<br>');con.appendChild(mb);
   if(ms.length){const card=document.createElement('div');card.className='mcard';card.innerHTML='<div class="mcardtitle">⚡ NHIỆM VỤ HÔM NAY</div>';ms.forEach(t=>{const it=document.createElement('div');it.className='mitem';it.innerHTML='<div class="mchk" onclick="chk(this)">○</div><span>'+t+'</span>';card.appendChild(it);});con.appendChild(card);}
   if(badge){const m=M();if(!m.badges.includes(badge)){m.badges.push(badge);SM(m);updateUI();const bd=document.createElement('div');bd.className='bdg';bd.innerHTML='<div class="bdgi">🏅</div><div class="bdgn">HUY HIỆU: '+badge.toUpperCase()+'</div>';con.appendChild(bd);}}
-  if(xuN>0){addXu(xuN*15);addXP(xuN*15);}
-  if(xpN>0){addXu(xpN*5);addXP(xpN*10);const m=M();m.missions+=xpN;SM(m);updateUI();}
+  if(xuN>0){addXu(xuN*5);addXP(xuN*15);}
+  if(xpN>0){addXu(xpN*2);addXP(xpN*10);const m=M();m.missions+=xpN;SM(m);updateUI();}
 }
 
 async function startChat(){
@@ -1016,7 +1016,7 @@ function resize(el){el.style.height='auto';el.style.height=Math.min(el.scrollHei
 
 function clearImg(){imgArr=[];const p=document.getElementById('iPrev');p.innerHTML='';p.style.display='none';}
 
-function chk(el){el.classList.toggle('done');el.textContent=el.classList.contains('done')?'✓':'○';if(el.classList.contains('done')){addXu(5);const m=M();m.missions+=1;SM(m);updateUI();}}
+function chk(el){el.classList.toggle('done');el.textContent=el.classList.contains('done')?'✓':'○';if(el.classList.contains('done')){addXu(2);const m=M();m.missions+=1;SM(m);updateUI();}}
 
 function initVoice(){
   const S=window.SpeechRecognition||window.webkitSpeechRecognition;if(!S)return;
@@ -1169,7 +1169,7 @@ function sys(){
     +'- Khi em làm đúng: khen CỤ THỂ điều em làm tốt ("Em tự nhận ra phải nhân trước cộng sau — đỉnh đấy!"), không khen suông "giỏi lắm".\n'
     +'- Khi em sai: KHÔNG chê. Nói "gần đúng rồi" và chỉ ra chỗ chưa ổn như một manh mối trinh thám để em tự phát hiện.\n'
     +'- Khi em nản/lười: đồng cảm trước ("Anh biết bài này nhìn dài thật"), rồi chia nhỏ nhiệm vụ ("Mình chỉ làm câu a thôi, 2 phút").\n'
-    +'- Khi đúng nhanh <1 phút: "[+XU_NHANH]" (+15 xu). Khi đúng bình thường: "[+XP]" (+5 xu).\n'
+    +'- Khi đúng nhanh <1 phút: "[+XU_NHANH]" (+5 xu). Khi đúng bình thường: "[+XP]" (+2 xu). Xu quý — chỉ thưởng khi thật sự xứng đáng, KHÔNG thưởng câu trả lời hời hợt.\n'
     +'- Tạo nhiệm vụ: "[MISSION:nội dung]". Thưởng huy hiệu: "[BADGE:tên]".\n\n'
     +'QUY TẮC TRẢ LỜI — QUAN TRỌNG NHẤT:\n'
     +'1. TRẢ LỜI THẲNG: em hỏi gì → trả lời ngay ý đó. KHÔNG tóm tắt lại câu hỏi, KHÔNG lặp lại đề bài.\n'

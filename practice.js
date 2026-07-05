@@ -55,7 +55,7 @@ function pcHead(title, backFn){
 function pcHome(){
   var w=pcWrong();
   var h=pcHead('🎯 LUYỆN TẬP','closePractice()');
-  h+='<div style="font-size:13px;color:var(--tx2);margin-bottom:14px;">Chọn môn em muốn luyện hôm nay. Làm đúng có xu, đúng nhanh xu nhân đôi! ⚡</div>';
+  h+='<div style="font-size:13px;color:var(--tx2);margin-bottom:14px;">Chọn môn em muốn luyện. Làm đúng có xu — đúng nhanh và không cần gợi ý mới được thưởng lớn! ⚡</div>';
   (P.idx.on3?['on3','toan','tv','ta']:['toan','tv','ta']).forEach(function(m){
     var M=P.idx[m]; if(!M) return;
     var tot=0,done=0,prog=pcProg();
@@ -234,8 +234,8 @@ function pcQ(){
 // ── chấm điểm & phản hồi ──
 function pcElapsed(){ return (Date.now()-P.t0)/1000; }
 function pcReward(base){
-  var fast=pcElapsed()<20;
-  var n=fast?base*3:base;
+  var fast=pcElapsed()<15;
+  var n=fast?base+3:base;
   pcXu(n);
   return (fast?'⚡ TỐC ĐỘ! +':'+')+n+' xu';
 }
@@ -269,7 +269,7 @@ function pcAns(i){
     else if(k===i) el.style.borderColor='var(--red2)', el.style.background='rgba(232,25,44,.08)';
     else el.style.opacity='.45';
   }
-  if(i===q.a){ P.sess.ok++; pcMarkRight(); pcFb(true, pcEsc(q.explain||''), pcReward(5)); }
+  if(i===q.a){ P.sess.ok++; pcMarkRight(); pcFb(true, pcEsc(q.explain||''), pcReward(2)); }
   else { pcMarkWrong(); pcFb(false, '<b>Đáp án đúng: '+String.fromCharCode(65+q.a)+'.</b> '+pcEsc(q.explain||'')); }
 }
 
@@ -278,7 +278,7 @@ function pcCheckIn(){
   if(!pcNorm(v)) return;
   P.sess.total++;
   var ok=(q.accept||[q.answer]).some(function(a){ return pcNorm(a)===pcNorm(v)||pcNormNum(a)===pcNormNum(v); });
-  if(ok){ P.sess.ok++; pcMarkRight(); pcFb(true,'', pcReward(5)); }
+  if(ok){ P.sess.ok++; pcMarkRight(); pcFb(true,'', pcReward(2)); }
   else { pcMarkWrong(); pcFb(false, '<b>Đáp án đúng: '+pcEsc(q.answer)+'</b>'); }
 }
 
@@ -299,7 +299,7 @@ function pcSolveCheck(){
   var ok=pcNormNum(q.dapSo).indexOf(pcNormNum(v))>=0||pcNormNum(v).indexOf(pcNormNum(q.dapSo))>=0||pcNorm(v)===pcNorm(q.dapSo);
   if(ok){
     P.sess.ok++; pcMarkRight();
-    var base=P.hints===0?20:(P.hints===1?10:5);
+    var base=P.hints===0?10:(P.hints===1?5:2);
     pcXu(base);
     pcFb(true,'<div style="margin-top:6px;"><b>Bài giải mẫu:</b><br>'+pcEsc(q.loiGiai).replace(/\n/g,'<br>')+'</div>','+'+base+' xu'+(P.hints===0?' (không cần gợi ý — đỉnh!)':''));
   } else {
@@ -355,7 +355,7 @@ function pcSpeak(){
       var na=pcNorm(a);
       return ns===na||ns.indexOf(na)>=0||na.indexOf(ns)>=0;
     });
-    if(ok){ P.sess.ok++; pcMarkRight(); pcFb(true,'Phát âm được Fury duyệt! 🎤', pcReward(5)); }
+    if(ok){ P.sess.ok++; pcMarkRight(); pcFb(true,'Phát âm được Fury duyệt! 🎤', pcReward(2)); }
     else { pcMarkWrong(); pcFb(false,'Câu chuẩn là: <b>"'+pcEsc(q.target)+'"</b> — bấm 🔊 nghe mẫu rồi thử lại lần sau nhé!'); }
   };
   _pcSR.onerror=_pcSR.onend=function(){ btn.style.background='var(--blue2)'; if(st.textContent.indexOf('Đang nghe')>=0) st.textContent='Không nghe rõ — bấm nói lại nhé.'; };

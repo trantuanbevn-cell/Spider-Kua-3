@@ -295,7 +295,7 @@ pcHome=function(){
   var card='<div onclick="adStartDaily()" style="'+pcCard()+'border:2px solid '+(doneToday?'var(--green)':'var(--red)')+';background:linear-gradient(135deg,rgba(232,25,44,.12),rgba(15,76,143,.15));display:flex;align-items:center;gap:14px;">'
     +'<div style="font-size:34px;">'+(doneToday?'✅':'⚡')+'</div><div style="flex:1;">'
     +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:18px;color:'+(doneToday?'var(--green)':'var(--tx)')+';">NHIỆM VỤ HÔM NAY</div>'
-    +'<div style="font-size:12px;color:var(--tx2);">'+(doneToday?'Hoàn thành! Chuỗi '+st.n+' ngày 🔥 — mai lại có nhiệm vụ mới':'~'+adTargetMin()+' phút trộn nhiều dạng · xong +30 xu · chuỗi '+st.n+' ngày 🔥')+'</div></div>'
+    +'<div style="font-size:12px;color:var(--tx2);">'+(doneToday?'Hoàn thành! Chuỗi '+st.n+' ngày 🔥 — mai lại có nhiệm vụ mới':'~'+adTargetMin()+' phút trộn nhiều dạng · xong +15 xu · chuỗi '+st.n+' ngày 🔥')+'</div></div>'
     +'<div style="color:var(--tx3);font-size:20px;">›</div></div>'
     +'<div onclick="adMap()" style="'+pcCard()+'display:flex;align-items:center;gap:14px;">'
     +'<div style="font-size:30px;">🗺️</div><div style="flex:1;">'
@@ -317,11 +317,11 @@ pcFinish=function(){
     if(ms.date===adToday()&&!ms.done){
       ms.done=true; localStorage.setItem('daily_mission',JSON.stringify(ms));
       var st=adBumpStreak();
-      pcXu(30);
+      pcXu(15);
       var head=pcBox().children[0];
       if(head) head.insertAdjacentHTML('afterend',
         '<div style="background:linear-gradient(135deg,rgba(48,209,88,.15),rgba(245,200,66,.1));border:2px solid var(--green);border-radius:14px;padding:14px;margin-bottom:12px;text-align:center;">'
-        +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:17px;color:var(--green);">🎖️ NHIỆM VỤ NGÀY HOÀN THÀNH — +30 XU</div>'
+        +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:17px;color:var(--green);">🎖️ NHIỆM VỤ NGÀY HOÀN THÀNH — +15 XU</div>'
         +'<div style="font-size:13px;color:var(--tx);margin-top:4px;">Chuỗi '+st.n+' ngày liên tiếp 🔥 Fury tự hào về em!</div></div>');
       if(typeof speak==='function') speak('Nhiệm vụ hoàn thành! Chuỗi '+st.n+' ngày. Fury tự hào về em, Peter!');
     }
