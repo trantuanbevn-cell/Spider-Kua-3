@@ -40,3 +40,22 @@ Như vậy key có lộ cũng không ai dùng được ở nơi khác.
 - PIN phụ huynh: không còn PIN mặc định — lần đầu mở khu phụ huynh sẽ bắt tự đặt.
 - Mã phòng đồng bộ: không còn mã cứng "KUA".
 - API key vẫn chỉ lưu localStorage trên từng thiết bị, không nằm trong code.
+
+## 4. Bảng nhật ký buổi học (để máy bố mẹ xem từ xa)
+Supabase Dashboard → SQL Editor → chạy 1 lần:
+
+```sql
+create table if not exists study_log (
+  id bigserial primary key,
+  room_code text not null,
+  day date,
+  ts timestamptz default now(),
+  data jsonb
+);
+alter table study_log enable row level security;
+create policy "read log" on study_log for select using (true);
+create policy "insert log" on study_log for insert with check (length(room_code) >= 3);
+```
+
+Chưa chạy SQL này thì nhật ký vẫn xem được trên máy của con (lưu trong máy);
+chạy xong thì máy bố mẹ ở bất kỳ đâu cũng xem được.

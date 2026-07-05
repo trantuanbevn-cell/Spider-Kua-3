@@ -289,3 +289,98 @@ setTimeout(function(){
   b.onclick=function(){ document.getElementById('parentOL').style.display='none'; adReport(); };
   ol.appendChild(b);
 }, 900);
+
+// ═══════════════════════════════════════════════
+// NHẬT KÝ BUỔI HỌC — khung giờ, nội dung, kết quả, nhận xét Fury
+// Lưu trên máy + đẩy lên cloud (bảng study_log) để máy bố mẹ xem từ xa
+// ═══════════════════════════════════════════════
+function adFmtTime(ts){ var d=new Date(ts); return String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0'); }
+
+function adFuryEval(ok,tot,avgT,hints){
+  if(!tot) return '';
+  var pct=Math.round(ok/tot*100), p=[];
+  if(pct>=90) p.push('Xuất sắc! Em làm chủ gần như toàn bộ nội dung buổi này.');
+  else if(pct>=70) p.push('Buổi học tốt — em nắm được phần lớn kiến thức.');
+  else if(pct>=50) p.push('Em đã cố gắng, nhưng còn vài dạng chưa chắc — anh sẽ trộn lại vào nhiệm vụ tới.');
+  else p.push('Buổi này hơi khó với em, không sao — anh đã ghi lại các dạng cần luyện và sẽ cho ôn lại từ dễ đến khó.');
+  if(avgT>0&&avgT<=25) p.push('Tốc độ phản xạ rất tốt ('+avgT+' giây/câu).');
+  else if(avgT>60) p.push('Em làm còn chậm ('+avgT+' giây/câu) — cần luyện phản xạ thêm.');
+  if(hints>=4) p.push('Em xin gợi ý khá nhiều ('+hints+' lần) — lần sau thử tự nghĩ thêm 1 phút trước khi gọi anh nhé.');
+  else if(hints>0) p.push('Em biết chủ động xin gợi ý khi bí ('+hints+' lần) — thói quen tốt.');
+  var w=adWeakList().slice(0,2);
+  if(w.length) p.push('Dạng cần chú ý: '+w.map(function(x){return adMonTen(x.mon)+' — '+x.ten;}).join('; ')+'.');
+  return p.join(' ');
+}
+
+function adSaveJournal(kind){
+  try{
+    var logs=pcLS('luyen_log','[]').filter(function(e){return e.d>=P.sess.start;});
+    if(!P.sess.total) return;
+    var names=adNames(), content={}, mons={};
+    (P.qs||[]).forEach(function(q){
+      var f=q._f||P.file, so=(q._so!==undefined?q._so:(P.bai&&P.bai.so));
+      if(f&&so!==undefined){ content[names[f+'|'+so]||('Bài '+so)]=1; mons[adMonTen(adMonOf(f))]=1; }
+    });
+    var avgT=logs.length?Math.round(logs.reduce(function(s,e){return s+e.t;},0)/logs.length):0;
+    var hints=logs.reduce(function(s,e){return s+(e.h||0);},0);
+    var entry={
+      d:P.sess.start, e:Date.now(), kind:kind,
+      mon:Object.keys(mons).join(', '), noiDung:Object.keys(content).slice(0,8).join(' · '),
+      ok:P.sess.ok, tot:P.sess.total, xu:P.sess.xu,
+      nhanXet: adFuryEval(P.sess.ok,P.sess.total,avgT,hints)
+    };
+    var j=pcLS('hoc_nhatky','[]'); j.push(entry);
+    localStorage.setItem('hoc_nhatky',JSON.stringify(j.slice(-80)));
+    // đẩy lên cloud để máy bố mẹ xem (im lặng nếu chưa tạo bảng)
+    try{
+      if(typeof sbFetch==='function') sbFetch('study_log',{method:'POST',prefer:'return=minimal',
+        body:JSON.stringify({room_code:room(),day:adToday(),data:entry})}).catch(function(){});
+    }catch(e){}
+  }catch(e){}
+}
+
+function adJournal(){
+  pcEl().style.display='block';
+  pcBox().innerHTML=pcHead('📖 NHẬT KÝ BUỔI HỌC','closePractice()')+'<div style="text-align:center;color:var(--tx2);padding:30px 0;">🕸️ Đang tải nhật ký...</div>';
+  var local=pcLS('hoc_nhatky','[]');
+  var render=function(all){
+    // gộp & khử trùng lặp theo thời gian bắt đầu
+    var seen={}, list=[];
+    all.forEach(function(x){ if(x&&x.d&&!seen[x.d]){seen[x.d]=1;list.push(x);} });
+    list.sort(function(a,b){return b.d-a.d;});
+    var h=pcHead('📖 NHẬT KÝ BUỔI HỌC','closePractice()');
+    if(!list.length){ pcBox().innerHTML=h+'<div style="text-align:center;color:var(--tx2);padding:40px 0;">Chưa có buổi học nào được ghi lại.</div>'; return; }
+    var lastDay='';
+    list.slice(0,40).forEach(function(s){
+      var day=new Date(s.d);
+      var dayStr=['CN','Thứ 2','Thứ 3','Thứ 4','Thứ 5','Thứ 6','Thứ 7'][day.getDay()]+' '+day.getDate()+'/'+(day.getMonth()+1);
+      if(dayStr!==lastDay){ lastDay=dayStr; h+='<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;color:var(--gold);letter-spacing:.06em;margin:16px 0 8px;">📅 '+dayStr+'</div>'; }
+      var pct=s.tot?Math.round(s.ok/s.tot*100):0;
+      var kindLabel=s.kind==='daily'?'⚡ Nhiệm vụ ngày':(s.kind==='review'?'🔁 Ôn lỗi sai':'🎯 Tự luyện');
+      h+='<div style="background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:13px 15px;margin-bottom:8px;">'
+        +'<div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;">'
+        +'<span style="font-size:12.5px;color:var(--tx);"><b>'+adFmtTime(s.d)+' – '+adFmtTime(s.e)+'</b> · '+kindLabel+(s.mon?' · '+s.mon:'')+'</span>'
+        +'<span style="font-size:12.5px;color:'+(pct>=70?'var(--green)':'var(--gold)')+';font-weight:700;">'+s.ok+'/'+s.tot+' ('+pct+'%) · +'+(s.xu||0)+'🪙</span></div>'
+        +(s.noiDung?'<div style="font-size:12px;color:var(--tx2);margin-bottom:6px;">📚 '+pcEsc(s.noiDung)+'</div>':'')
+        +(s.nhanXet?'<div style="font-size:12px;color:var(--tx);background:rgba(15,76,143,.15);border-left:3px solid var(--blue2);border-radius:0 8px 8px 0;padding:8px 10px;line-height:1.7;">🛡️ <b>Fury:</b> '+pcEsc(s.nhanXet)+'</div>':'')
+        +'</div>';
+    });
+    pcBox().innerHTML=h;
+  };
+  // máy bố mẹ: kéo thêm từ cloud
+  try{
+    if(typeof sbFetch==='function'){
+      sbFetch('study_log?room_code=eq.'+room()+'&order=ts.desc&limit=60')
+        .then(function(rows){ render(local.concat((rows||[]).map(function(r){return r.data;}))); })
+        .catch(function(){ render(local); });
+    } else render(local);
+  }catch(e){ render(local); }
+}
+
+// ghi nhật ký mỗi khi kết thúc phiên (gắn thêm vào pcFinish đã wrap)
+var _pcFinish_journal=pcFinish;
+pcFinish=function(){
+  var kind=P.dailyMode?'daily':(P.review?'review':'practice');
+  adSaveJournal(kind);
+  _pcFinish_journal();
+};

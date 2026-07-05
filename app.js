@@ -1645,3 +1645,12 @@ if('serviceWorker' in navigator){
     navigator.serviceWorker.register('sw.js').catch(function(){});
   });
 }
+
+// Khi có phiên bản mới của app → tự nạp lại trang (sửa lỗi kẹt bản cũ trong cache)
+if('serviceWorker' in navigator){
+  var _swReloaded=false;
+  navigator.serviceWorker.addEventListener('controllerchange',function(){
+    if(_swReloaded) return; _swReloaded=true;
+    location.reload();
+  });
+}

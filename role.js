@@ -28,7 +28,8 @@ function roleApply(){
 (function(){
   var st=document.createElement('style');
   st.textContent=
-    'body.role-kua .hbtn{display:none!important;}' /* nút 👩 và KEY */
+    'body.role-kua .hbtn{display:none!important;}'
+    +'body.role-kua .stats .tkb-btn[title="Thống kê học tập"]{display:none!important;}' /* nút 👩 và KEY */
     +'body.role-parent #adminFab{display:flex!important;}'
     +'#adminFab{display:none;position:fixed;right:14px;bottom:14px;z-index:450;width:54px;height:54px;border-radius:50%;background:var(--blue2);border:none;color:#fff;font-size:24px;cursor:pointer;box-shadow:0 4px 18px rgba(0,0,0,.5);align-items:center;justify-content:center;}';
   document.head.appendChild(st);
@@ -91,6 +92,7 @@ function adminOpen(){
   }
   pcBox().innerHTML=pcHead('👨‍👩‍👦 BẢNG ĐIỀU KHIỂN BỐ MẸ','closePractice()')
     +row('📚','Giao bài tập từ xa','Gửi bài — máy Kua nhận thông báo ngay','closePractice();document.getElementById(\'parentOL\').style.display=\'flex\';renderHW&&renderHW();','var(--red)')
+    +row('📖','Nhật ký buổi học','Khung giờ, nội dung, kết quả và nhận xét của Fury từng buổi','adJournal()','var(--gold)')
     +row('📊','Báo cáo tuần','% đúng từng môn, thời gian học, dạng cần bổ túc','adReport()','var(--green)')
     +row('🗺️','Bản đồ sức mạnh','Độ vững từng dạng bài của con','adMap()')
     +row('📈','Thống kê buổi học','Lịch sử phiên học với Fury','closePractice();showLearningStats&&showLearningStats();')
@@ -159,6 +161,7 @@ function adminChangePin(){
       timer=setTimeout(function(){taps=0;},1500);
       if(taps>=5){
         taps=0;
+        if(roleGet()==='parent'){ adminOpen(); return; }
         var pin=prompt('Bố mẹ nhập PIN để vào quản lý:');
         if(pin===null)return;
         if(!checkParentPin(pin)){alert('❌ PIN không đúng!');return;}
@@ -192,3 +195,93 @@ roleApply();
     roleChooser(false);
   }, 700);
 })();
+
+// ── MÁY KUA: banner nhiệm vụ hôm nay ngay trên màn hình chat ──
+// Con mở app là thấy việc cần làm — không phải tự đi tìm
+(function(){
+  function showNudge(){
+    if(roleGet()!=='kua') return;
+    if(document.getElementById('dailyNudge')) return;
+    var ms=(typeof adGetMission==='function')?adGetMission():null;
+    if(ms&&ms.done) return;
+    var msgs=document.getElementById('msgs'); if(!msgs) return;
+    var target=(typeof adTargetMin==='function')?adTargetMin():20;
+    var st=(typeof adStreak==='function')?adStreak():{n:0};
+    var b=document.createElement('div');
+    b.id='dailyNudge';
+    b.style.cssText='margin:6px 10px;padding:12px 14px;background:linear-gradient(135deg,rgba(232,25,44,.2),rgba(15,76,143,.25));border:2px solid var(--red);border-radius:14px;cursor:pointer;display:flex;align-items:center;gap:12px;flex-shrink:0;animation:pulse 2s infinite;';
+    b.innerHTML='<div style="font-size:28px;">⚡</div><div style="flex:1;">'
+      +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:15px;color:#fff;">NHIỆM VỤ HÔM NAY — '+target+' PHÚT</div>'
+      +'<div style="font-size:11.5px;color:var(--tx2);">Fury đã soạn sẵn bài cho em · xong +30 xu · chuỗi '+st.n+' ngày 🔥</div></div>'
+      +'<div style="background:var(--red);border-radius:10px;padding:8px 14px;font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:#fff;">BẮT ĐẦU</div>';
+    b.onclick=function(){ openPractice(); setTimeout(function(){ if(typeof adStartDaily==='function') adStartDaily(); },400); };
+    msgs.parentNode.insertBefore(b, msgs);
+  }
+  // kiểm tra định kỳ: hiện khi vào app, tự ẩn khi đã hoàn thành
+  setInterval(function(){
+    var ms=(typeof adGetMission==='function')?adGetMission():null;
+    var el=document.getElementById('dailyNudge');
+    if(ms&&ms.done&&el){ el.remove(); return; }
+    showNudge();
+  }, 3000);
+})();
+
+// ═══════════════════════════════════════════════
+// MÁY BỐ MẸ = DASHBOARD THUẦN TÚY
+// Vào app là thấy bảng điều khiển, không thấy giao diện của con
+// ═══════════════════════════════════════════════
+window._peekKid=false;
+
+// thẻ số liệu nhanh trên đầu dashboard
+function adminStats(){
+  try{
+    var log=pcLS('luyen_log','[]');
+    var t0=new Date(); t0.setHours(0,0,0,0);
+    var today=log.filter(function(e){return e.d>=t0.getTime();});
+    var mins=Math.round(today.reduce(function(s,e){return s+e.t;},0)/60);
+    var okPct=today.length?Math.round(today.filter(function(e){return e.ok;}).length/today.length*100):0;
+    var st=(typeof adStreak==='function')?adStreak():{n:0};
+    var xu=(typeof getXu==='function')?getXu().toLocaleString('vi-VN'):'0';
+    var cell=function(icon,val,lbl){
+      return '<div style="flex:1;background:var(--s2);border:1px solid var(--bd);border-radius:12px;padding:12px 6px;text-align:center;">'
+        +'<div style="font-size:18px;">'+icon+'</div>'
+        +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:19px;color:var(--tx);margin:2px 0;">'+val+'</div>'
+        +'<div style="font-size:10.5px;color:var(--tx3);">'+lbl+'</div></div>';
+    };
+    return '<div style="display:flex;gap:8px;margin-bottom:14px;">'
+      +cell('⏱',mins+"'",'phút hôm nay')+cell('✏️',today.length,'câu hôm nay')
+      +cell('✅',okPct+'%','đúng hôm nay')+cell('🔥',st.n,'chuỗi ngày')+'</div>';
+  }catch(e){ return ''; }
+}
+
+// vẽ lại dashboard với thẻ số liệu (bọc adminOpen gốc)
+var _adminOpen_core=adminOpen;
+adminOpen=function(){
+  window._peekKid=false;
+  _adminOpen_core();
+  var head=pcBox().children[0];
+  if(head) head.insertAdjacentHTML('afterend', adminStats()
+    +'<div onclick="adminPeek()" style="'+pcCard()+'display:flex;align-items:center;gap:14px;border-style:dashed;">'
+    +'<div style="font-size:24px;">🧪</div><div style="flex:1;">'
+    +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;color:var(--tx2);">Xem giao diện của con</div>'
+    +'<div style="font-size:11.5px;color:var(--tx3);">Chạm 5 lần vào logo 🛡️ để quay lại bảng điều khiển</div></div></div>');
+};
+function adminPeek(){ window._peekKid=true; closePractice(); }
+
+// máy bố mẹ: nếu không có overlay nào đang mở → luôn quay về dashboard
+setInterval(function(){
+  try{
+    if(roleGet()!=='parent'||window._peekKid) return;
+    if(!localStorage.getItem('gem3')&&!localStorage.getItem('sk3')) return;
+    var app=document.getElementById('app');
+    if(!app||getComputedStyle(app).display==='none') return; // chưa qua splash/setup
+    var ov=document.getElementById('roleOL');
+    if(ov&&getComputedStyle(ov).display!=='none') return;
+    if(pcEl().style.display==='block') return;
+    var pol=document.getElementById('parentOL'), tkb=document.getElementById('tkbPopup'), shop=document.getElementById('shopOL');
+    if(pol&&getComputedStyle(pol).display!=='none') return;
+    if(tkb&&getComputedStyle(tkb).display!=='none') return;
+    if(shop&&getComputedStyle(shop).display!=='none') return;
+    adminOpen();
+  }catch(e){}
+}, 1200);

@@ -165,8 +165,15 @@ function pcQ(){
   if(P.qi>=P.qs.length){ pcFinish(); return; }
   var q=P.qs[P.qi]; P.t0=Date.now(); P.hints=0; P.revealed=false;
   var mins=Math.round((Date.now()-P.sess.start)/60000);
+  var target=(typeof adTargetMin==='function')?adTargetMin():25;
   var h=pcHead((P.review?'🔁 ÔN LỖI SAI':'BÀI '+P.bai.so)+' · CÂU '+(P.qi+1)+'/'+P.qs.length, P.review?'pcHome()':'pcFile(\''+P.file+'\')');
-  if(mins>=25) h+='<div style="background:rgba(245,200,66,.12);border:1px solid var(--gold);border-radius:10px;padding:10px;font-size:12px;color:var(--gold);margin-bottom:10px;">⏰ Em đã học '+mins+' phút rồi — làm nốt câu này rồi nghỉ 5 phút cho mắt khỏe nhé!</div>';
+  // đồng hồ buổi học: luôn hiển thị
+  var tPct=Math.min(100,Math.round(mins/target*100));
+  h+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">'
+    +'<span style="font-size:12px;color:'+(mins>=target?'var(--green)':'var(--tx2)')+';">⏱ '+mins+'/'+target+' phút</span>'
+    +'<div style="flex:1;height:4px;background:var(--s3);border-radius:2px;"><div style="height:4px;width:'+tPct+'%;background:'+(mins>=target?'var(--green)':'var(--gold)')+';border-radius:2px;"></div></div></div>';
+  if(mins>=target) h+='<div style="background:rgba(48,209,88,.1);border:1px solid var(--green);border-radius:10px;padding:10px;font-size:12px;color:var(--green);margin-bottom:10px;">🎖️ Đủ '+target+' phút hôm nay rồi! Làm nốt câu này rồi nghỉ nhé — cố quá lại thành quá cố đấy Peter!</div>';
+  else if(mins>0&&mins%25===0) h+='<div style="background:rgba(245,200,66,.12);border:1px solid var(--gold);border-radius:10px;padding:10px;font-size:12px;color:var(--gold);margin-bottom:10px;">⏰ Học liền '+mins+' phút rồi — nghỉ 5 phút cho mắt khỏe rồi chiến tiếp nhé!</div>';
   h+='<div style="height:6px;background:var(--s3);border-radius:3px;margin-bottom:14px;"><div style="height:6px;width:'+Math.round(P.qi/P.qs.length*100)+'%;background:var(--red);border-radius:3px;transition:width .3s;"></div></div>';
 
   if(q.type==='mcq'||q.type==='read'||q.type==='listen'){
