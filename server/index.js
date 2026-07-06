@@ -49,13 +49,20 @@ async function cfgSet(k, v) {
   });
 }
 async function tg(text) {
-  if (!TG_TOKEN || !TG_CHAT) return;
+  if (!TG_TOKEN || !TG_CHAT || TG_TOKEN === 'NHAP_SAU') return;
   try {
     await fetch(`https://api.telegram.org/bot${TG_TOKEN}/sendMessage`, {
       method: 'POST', headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ chat_id: TG_CHAT, text })
     });
   } catch (e) {}
+}
+// Gửi cảnh báo cho bố mẹ: đẩy lên điện thoại (app Spider-Kua) + Telegram nếu có cài
+async function notifyParent(text) {
+  await Promise.all([
+    pushTo('parent', { type: 'alert', title: '🛡️ Spider-Kua báo cáo', text }),
+    tg(text)
+  ]);
 }
 
 // ── VAPID: tự sinh khóa lần đầu, lưu vào Supabase ──
@@ -118,7 +125,7 @@ app.post('/summon', async (req, res) => {
       const s = summons[id];
       if (!s || s.acked || s.tries >= 5) {
         if (s && !s.acked && s.tries >= 5) {
-          await tg('🔴 Đã gọi 5 lần trong 10 phút — con KHÔNG phản hồi lệnh: "' + s.text + '"');
+          await notifyParent('🔴 Đã gọi 5 lần trong 10 phút — con KHÔNG phản hồi lệnh: "' + s.text + '"');
           clearInterval(s.timer);
         }
         return;
@@ -129,7 +136,7 @@ app.post('/summon', async (req, res) => {
         title: s.kind === 'call' ? '📞 BỐ MẸ ĐANG GỌI!' : '🛡️ S.H.I.E.L.D. TRIỆU TẬP!',
         urgency: s.tries
       });
-      if (!ok && s.tries === 1) await tg('⚠️ Không đẩy được thông báo tới tablet (tablet chưa đăng ký nhận thông báo?).');
+      if (!ok && s.tries === 1) await notifyParent('⚠️ Không đẩy được thông báo tới tablet (tablet chưa đăng ký nhận thông báo?).');
     };
     await fire();
     summons[id].timer = setInterval(fire, 2 * 60 * 1000);
@@ -145,7 +152,7 @@ app.post('/ack', async (req, res) => {
     const now = new Date();
     const hhmm = `${String(now.getUTCHours() + 7).padStart(2, '0').replace('24','00')}:${String(now.getUTCMinutes()).padStart(2, '0')}`;
     if (s) { s.acked = true; clearInterval(s.timer); }
-    await tg(`✅ Con đã xác nhận lúc ${hhmm}: "${action || 'Con vào học ngay'}"`);
+    await notifyParent(`✅ Con đã xác nhận lúc ${hhmm}: "${action || 'Con vào học ngay'}"`);
 
     // XÁC MINH: 15 phút sau kiểm tra có buổi học mới không
     const ackTime = Date.now();
@@ -157,7 +164,7 @@ app.post('/ack', async (req, res) => {
           const d = r.data || {};
           return (d.d && d.d > ackTime - 5 * 60000) || (new Date(r.ts).getTime() > ackTime - 5 * 60000);
         });
-        if (!started) await tg('⚠️ XÁC MINH: con đã bấm xác nhận nhưng SAU 15 PHÚT vẫn chưa vào học buổi nào!');
+        if (!started) await notifyParent('⚠️ XÁC MINH: con đã bấm xác nhận nhưng SAU 15 PHÚT vẫn chưa vào học buổi nào!');
       } catch (e) {}
     }, 15 * 60 * 1000);
     res.json({ ok: true });
@@ -175,8 +182,7 @@ app.post('/msg', async (req, res) => {
     if (from === 'parent') {
       await pushTo('kua', { type: 'msg', title: '📡 Điện khẩn từ Tổng hành dinh', text });
     } else {
-      await tg('💬 Con nhắn: ' + text);
-      await pushTo('parent', { type: 'msg', title: '💬 Kua nhắn', text });
+      await notifyParent('💬 Con nhắn: ' + text);
     }
     res.json({ ok: true });
   } catch (e) { res.status(500).json({ err: e.message }); }
@@ -189,6 +195,17 @@ app.get('/msgs', async (req, res) => {
   } catch (e) { res.status(500).json({ err: e.message }); }
 });
 
+
+// máy Kua báo sự kiện (mở app, học xong...) → chuyển tới bố mẹ
+app.post('/notify', async (req, res) => {
+  try {
+    const { text } = req.body || {};
+    if (!text || String(text).length > 1500) return res.status(400).json({ err: 'thiếu/quá dài' });
+    await notifyParent(String(text));
+    res.json({ ok: true });
+  } catch (e) { res.status(500).json({ err: e.message }); }
+});
+
 // ── báo cáo 23h VN hằng ngày (thay thế GitHub Actions khi server chạy) ──
 setInterval(async () => {
   const vn = new Date(Date.now() + 7 * 3600e3);
@@ -197,10 +214,10 @@ setInterval(async () => {
       const day = vn.toISOString().slice(0, 10);
       const rows = await sb(`study_log?room_code=eq.${ROOM}&day=eq.${day}&select=data`);
       const ss = (rows || []).map(r => r.data).filter(Boolean);
-      if (!ss.length) { await tg(`🔴 TỔNG KẾT ${day.slice(8)}/${day.slice(5,7)}: hôm nay con CHƯA HỌC buổi nào.`); return; }
+      if (!ss.length) { await notifyParent(`🔴 TỔNG KẾT ${day.slice(8)}/${day.slice(5,7)}: hôm nay con CHƯA HỌC buổi nào.`); return; }
       const ok = ss.reduce((s, x) => s + (x.ok || 0), 0), tot = ss.reduce((s, x) => s + (x.tot || 0), 0);
       const mins = ss.reduce((s, x) => s + Math.max(1, Math.round(((x.e || 0) - (x.d || 0)) / 60000)), 0);
-      await tg(`🟢 TỔNG KẾT ${day.slice(8)}/${day.slice(5,7)}: ${ss.length} buổi · ~${mins} phút · đúng ${ok}/${tot} (${tot ? Math.round(ok/tot*100) : 0}%)`);
+      await notifyParent(`🟢 TỔNG KẾT ${day.slice(8)}/${day.slice(5,7)}: ${ss.length} buổi · ~${mins} phút · đúng ${ok}/${tot} (${tot ? Math.round(ok/tot*100) : 0}%)`);
     } catch (e) {}
   }
 }, 60 * 1000);

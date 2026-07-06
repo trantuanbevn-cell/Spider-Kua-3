@@ -7,6 +7,13 @@
 function tgCfg(){ return { t: localStorage.getItem('tg_token')||'', c: localStorage.getItem('tg_chat')||'' }; }
 
 function tgNotify(text){
+  // ưu tiên gửi qua server (đẩy lên điện thoại bố mẹ) — Telegram chỉ là dự phòng
+  try{
+    if(typeof srvOn==='function'&&srvOn()){
+      fetch(srvUrl()+'/notify',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({text:text})}).catch(function(){});
+      return;
+    }
+  }catch(e){}
   var g=tgCfg(); if(!g.t||!g.c) return;
   try{
     fetch('https://api.telegram.org/bot'+g.t+'/sendMessage', {
