@@ -1,0 +1,15 @@
+{
+  "name": "spider-kua-command",
+  "version": "1.0.0",
+  "description": "S.H.I.E.L.D. Command — server trieu tap, xac minh hoc tap, lien lac 2 chieu cho Spider-Kua",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": { "node": ">=18" },
+  "dependencies": {
+    "express": "^4.19.2",
+    "web-push": "^3.6.7",
+    "cors": "^2.8.5"
+  }
+}

@@ -90,7 +90,14 @@ function adminOpen(){
       +'<div style="font-size:12px;color:var(--tx3);">'+mota+'</div></div>'
       +'<div style="color:var(--tx3);font-size:20px;">›</div></div>';
   }
+  var srvReady=(typeof srvOn==='function'&&srvOn());
   pcBox().innerHTML=pcHead('👨‍👩‍👦 BẢNG ĐIỀU KHIỂN BỐ MẸ','closePractice()')
+    +(srvReady
+      ?'<div style="display:flex;gap:8px;margin-bottom:10px;">'
+       +'<button onclick="adminCommand()" style="flex:1.4;background:var(--red);border:none;border-radius:14px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:15px;padding:14px 8px;cursor:pointer;">📡 GỌI VÀO HỌC</button>'
+       +'<button onclick="adminCall()" style="flex:1;background:var(--green);border:none;border-radius:14px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:15px;padding:14px 8px;cursor:pointer;">📞 GỌI</button>'
+       +'<button onclick="adminMsgKid()" style="flex:1;background:var(--blue2);border:none;border-radius:14px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:15px;padding:14px 8px;cursor:pointer;">💬 NHẮN</button></div>'
+      :'')
     +row('📚','Giao bài tập từ xa','Gửi bài — máy Kua nhận thông báo ngay','closePractice();document.getElementById(\'parentOL\').style.display=\'flex\';renderHW&&renderHW();','var(--red)')
     +row('📖','Nhật ký buổi học','Khung giờ, nội dung, kết quả và nhận xét của Fury từng buổi','adJournal()','var(--gold)')
     +row('📊','Báo cáo tuần','% đúng từng môn, thời gian học, dạng cần bổ túc','adReport()','var(--green)')
@@ -101,6 +108,9 @@ function adminOpen(){
     +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:var(--tx2);letter-spacing:.08em;margin:16px 0 8px;">CÀI ĐẶT</div>'
     +row('🔑','Mã phòng đồng bộ: '+(room3||'chưa đặt'),'Đặt giống nhau trên 2 máy để đồng bộ bài tập','adminRoom()')
     +row('🧒','Mã đăng nhập của Kua: '+(kuaCode?'đã đặt':'chưa đặt'),'Mã để vào chế độ học sinh (không bắt buộc)','adminKuaCode()')
+    +row('🔔','Thông báo Telegram: '+((localStorage.getItem('tg_token')&&localStorage.getItem('tg_chat'))?'ĐÃ BẬT':'chưa cài'),'Báo về điện thoại khi con mở app, học xong, tổng kết 23h — xem HUONG_DAN_THONG_BAO.md','adminNotify()')
+    +row('🖥️','Server Command: '+((typeof srvOn==='function'&&srvOn())?'ĐÃ NỐI':'chưa cài'),'Triệu tập khi app tắt, gọi, xác minh học thật — xem HUONG_DAN_RAILWAY.md','adminServerSetup()')
+    +row('📳','Bật nhận thông báo trên máy này','Bắt buộc trên máy Kua (và cả máy bố mẹ nếu muốn nhận tin con nhắn)','cmdSubscribe().then(function(ok){if(ok)alert(\'✅ Máy này đã nhận được lệnh triệu tập!\');}).catch(function(e){alert(\'Lỗi: \'+e.message);});')
     +row('🌞','Chế độ hè: '+((typeof summerOn==='function'&&summerOn())?'ĐANG BẬT':'ĐANG TẮT'),'70% ôn lớp 3 + 30% lớp 4 mới (Fury dạy lý thuyết trước) — tự tắt khi vào năm học','adminSummer()')
     +row('⏱️','Thời lượng buổi học: '+(localStorage.getItem('study_minutes_target')||'90')+' phút (trần)','Bắt đầu 20 phút, mỗi tuần tự tăng 5 phút tới mức trần này','adminStudyTime()')
     +row('🔐','Đổi PIN bố mẹ','PIN bảo vệ khu quản lý','adminChangePin()')
@@ -128,6 +138,20 @@ function adminKuaCode(){
   var c=prompt('Đặt mã đăng nhập cho Kua (để trống = không cần mã):',localStorage.getItem('kua_code')||'');
   if(c===null)return;
   if(c.trim()) localStorage.setItem('kua_code',c.trim()); else localStorage.removeItem('kua_code');
+  adminOpen();
+}
+function adminNotify(){
+  var t=prompt('TOKEN bot Telegram (lấy từ @BotFather — xem HUONG_DAN_THONG_BAO.md):', localStorage.getItem('tg_token')||'');
+  if(t===null) return;
+  var c=prompt('CHAT ID (id nhóm/chat nhận thông báo):', localStorage.getItem('tg_chat')||'');
+  if(c===null) return;
+  localStorage.setItem('tg_token', t.trim());
+  localStorage.setItem('tg_chat', c.trim());
+  if(t.trim()&&c.trim()){
+    if(typeof tgPushToCloud==='function') tgPushToCloud();
+    if(typeof tgNotify==='function') tgNotify('✅ Spider-Kua đã kết nối! Từ giờ mọi hoạt động học của con sẽ được báo về đây.');
+    alert('Đã lưu. Kiểm tra điện thoại — nếu nhận được tin thử là thành công!\nCấu hình sẽ tự đồng bộ sang máy của con (cần chung mã phòng).');
+  } else alert('Đã xóa cấu hình thông báo trên máy này.');
   adminOpen();
 }
 function adminSummer(){
