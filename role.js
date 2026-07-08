@@ -228,34 +228,39 @@ roleApply();
   }, 700);
 })();
 
-// ── MÁY KUA: banner nhiệm vụ hôm nay ngay trên màn hình chat ──
-// Con mở app là thấy việc cần làm — không phải tự đi tìm
+// ── MÁY KUA: banner nhiệm vụ — cửa duy nhất vào 3 ca môn ──
 (function(){
-  function showNudge(){
+  function render(){
     if(roleGet()!=='kua') return;
-    if(document.getElementById('dailyNudge')) return;
-    var ms=(typeof adGetMission==='function')?adGetMission():null;
-    if(ms&&ms.done) return;
     var msgs=document.getElementById('msgs'); if(!msgs) return;
-    var target=(typeof adTargetMin==='function')?adTargetMin():20;
+    var s=null;
+    try{ s=(typeof dhState==='function')?dhState():null; }catch(e){}
+    var doneCnt=s?['toan','tv','ta'].filter(function(m){return s[m].complete;}).length:0;
     var st=(typeof adStreak==='function')?adStreak():{n:0};
-    var b=document.createElement('div');
-    b.id='dailyNudge';
-    b.style.cssText='margin:6px 10px;padding:12px 14px;background:linear-gradient(135deg,rgba(232,25,44,.2),rgba(15,76,143,.25));border:2px solid var(--red);border-radius:14px;cursor:pointer;display:flex;align-items:center;gap:12px;flex-shrink:0;animation:pulse 2s infinite;';
-    b.innerHTML='<div style="font-size:28px;">⚡</div><div style="flex:1;">'
-      +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:15px;color:#fff;">NHIỆM VỤ HÔM NAY — '+target+' PHÚT</div>'
-      +'<div style="font-size:11.5px;color:var(--tx2);">Fury đã soạn sẵn bài cho em · xong +15 xu · chuỗi '+st.n+' ngày 🔥</div></div>'
-      +'<div style="background:var(--red);border-radius:10px;padding:8px 14px;font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:#fff;">BẮT ĐẦU</div>';
-    b.onclick=function(){ openPractice(); setTimeout(function(){ if(typeof adStartDaily==='function') adStartDaily(); },400); };
-    msgs.parentNode.insertBefore(b, msgs);
+    var all=doneCnt===3;
+    var b=document.getElementById('dailyNudge');
+    if(!b){
+      b=document.createElement('div');
+      b.id='dailyNudge';
+      b.onclick=function(){ if(typeof openPractice==='function') openPractice(); };
+      msgs.parentNode.insertBefore(b, msgs);
+    }
+    b.style.cssText='margin:6px 10px;padding:12px 14px;border-radius:14px;cursor:pointer;display:flex;align-items:center;gap:12px;flex-shrink:0;'
+      +(all?'background:rgba(48,209,88,.1);border:2px solid var(--green);'
+           :'background:linear-gradient(135deg,rgba(232,25,44,.2),rgba(15,76,143,.25));border:2px solid var(--red);animation:pulse 2s infinite;');
+    var chips=s?['toan','tv','ta'].map(function(m){
+      var ic={toan:'🔢',tv:'📖',ta:'🌏'}[m];
+      return '<span style="opacity:'+(s[m].complete?'1':'0.45')+';">'+(s[m].complete?'✅':ic)+'</span>';
+    }).join(' '):'🔢 📖 🌏';
+    b.innerHTML='<div style="font-size:26px;">'+(all?'🏆':'⚡')+'</div><div style="flex:1;">'
+      +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:15px;color:'+(all?'var(--green)':'#fff')+';">'
+      +(all?'NHIỆM VỤ HÔM NAY HOÀN THÀNH!':'NHIỆM VỤ HÔM NAY')+'</div>'
+      +'<div style="font-size:12px;color:var(--tx2);">'+chips+' · '+doneCnt+'/3 ca'
+      +(st.n?' · chuỗi '+st.n+' ngày 🔥':'')
+      +(all?' — muốn luyện thêm cứ bấm vào!':'')+'</div></div>'
+      +'<div style="background:'+(all?'var(--green)':'var(--red)')+';border-radius:10px;padding:8px 14px;font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:#fff;">'+(all?'LUYỆN THÊM':'VÀO NHIỆM VỤ')+'</div>';
   }
-  // kiểm tra định kỳ: hiện khi vào app, tự ẩn khi đã hoàn thành
-  setInterval(function(){
-    var ms=(typeof adGetMission==='function')?adGetMission():null;
-    var el=document.getElementById('dailyNudge');
-    if(ms&&ms.done&&el){ el.remove(); return; }
-    showNudge();
-  }, 3000);
+  setInterval(render, 3000);
 })();
 
 // ═══════════════════════════════════════════════
