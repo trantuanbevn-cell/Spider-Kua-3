@@ -100,6 +100,7 @@ function adminOpen(){
       :'')
     +row('📚','Giao bài tập từ xa','Gửi bài — máy Kua nhận thông báo ngay','closePractice();document.getElementById(\'parentOL\').style.display=\'flex\';renderHW&&renderHW();','var(--red)')
     +row('📖','Nhật ký buổi học','Khung giờ, nội dung, kết quả và nhận xét của Fury từng buổi','adJournal()','var(--gold)')
+    +row('🧭','Đánh giá 5 ngày & định hướng','Trình độ từng môn, máy tự điều chỉnh lộ trình 5 ngày tới','dhReviewView&&dhReviewView()','var(--blue2)')
     +row('📊','Báo cáo tuần','% đúng từng môn, thời gian học, dạng cần bổ túc','adReport()','var(--green)')
     +row('🗺️','Bản đồ sức mạnh','Độ vững từng dạng bài của con','adMap()')
     +row('📈','Thống kê buổi học','Lịch sử phiên học với Fury','closePractice();showLearningStats&&showLearningStats();')

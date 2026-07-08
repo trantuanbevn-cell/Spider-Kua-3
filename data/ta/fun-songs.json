@@ -1,0 +1,47 @@
+{
+ "mon": "ta", "tap": 0, "chuDe": "Học qua bài hát 🎵", "cdSo": 99,
+ "bai": [
+  {
+   "so": 60, "ten": "🎵 Twinkle, Twinkle, Little Star",
+   "lyThuyet": "Bài hát ru kinh điển về ngôi sao nhỏ lấp lánh. Nghe anh đọc từng câu, hát nhại theo, rồi làm bài — vừa chơi vừa thuộc từ: star (ngôi sao), sky (bầu trời), diamond (kim cương), world (thế giới).",
+   "cauHoi": [
+    {"type":"listen","audioText":"Twinkle, twinkle, little star, how I wonder what you are.","q":"Bài hát đang nói về cái gì?","options":["Ngôi sao nhỏ","Mặt trăng","Đám mây","Chiếc máy bay"],"a":0,"explain":"star = ngôi sao. 'Twinkle' là lấp lánh!"},
+    {"type":"fill","q":"Điền từ còn thiếu: Twinkle, twinkle, little ___ (ngôi sao)","answer":"star","accept":["star"]},
+    {"type":"listen","audioText":"Up above the world so high, like a diamond in the sky.","q":"Ngôi sao được ví như cái gì?","options":["a diamond — viên kim cương","a ball — quả bóng","a lamp — cái đèn","a bird — con chim"],"a":0,"explain":"like a diamond in the sky = như viên kim cương trên bầu trời."},
+    {"type":"spell","q":"Viết từ tiếng Anh nghĩa là 'bầu trời' (có trong bài hát)","answer":"sky","accept":["sky"]},
+    {"type":"speak","prompt":"Hát/đọc theo câu đầu tiên của bài","target":"twinkle twinkle little star","accept":["twinkle twinkle little star","twinkle twinkle a little star"]},
+    {"type":"mcq","q":"'How I wonder what you are' nghĩa là gì?","options":["Tớ tự hỏi bạn là gì","Tớ muốn bay lên trời","Tớ thấy bạn rất to","Tớ đang đếm sao"],"a":0,"explain":"wonder = tự hỏi, băn khoăn."},
+    {"type":"fill","q":"Like a ___ in the sky (viên kim cương)","answer":"diamond","accept":["diamond"]},
+    {"type":"speak","prompt":"Đọc to: 'Up above the world so high'","target":"up above the world so high","accept":["up above the world so high","above the world so high"]}
+   ]
+  },
+  {
+   "so": 61, "ten": "🎵 Old MacDonald Had a Farm",
+   "lyThuyet": "Bài hát về bác nông dân MacDonald và trang trại đầy con vật. Học từ: farm (trang trại), cow (bò), duck (vịt), pig (lợn) — và tiếng kêu của chúng bằng tiếng Anh!",
+   "cauHoi": [
+    {"type":"listen","audioText":"Old MacDonald had a farm, E-I-E-I-O. And on his farm he had a cow.","q":"Bác MacDonald có con gì trong trang trại?","options":["a cow — con bò","a cat — con mèo","a lion — sư tử","a fish — con cá"],"a":0,"explain":"cow = con bò. Tiếng bò kêu tiếng Anh là moo!"},
+    {"type":"fill","q":"Old MacDonald had a ___ (trang trại)","answer":"farm","accept":["farm"]},
+    {"type":"mcq","q":"Con vịt (duck) kêu thế nào trong tiếng Anh?","options":["quack quack","moo moo","oink oink","meow meow"],"a":0,"explain":"Vịt: quack! Bò: moo! Lợn: oink! Mèo: meow!"},
+    {"type":"spell","q":"Viết từ tiếng Anh nghĩa là 'con vịt'","answer":"duck","accept":["duck"]},
+    {"type":"speak","prompt":"Hát/đọc theo: 'Old MacDonald had a farm'","target":"old macdonald had a farm","accept":["old macdonald had a farm","old mcdonald had a farm"]},
+    {"type":"listen","audioText":"With a moo-moo here, and a moo-moo there.","q":"Đây là tiếng kêu của con gì?","options":["con bò","con gà","con chó","con vịt"],"a":0,"explain":"moo là tiếng bò kêu."},
+    {"type":"spell","q":"Viết từ tiếng Anh nghĩa là 'con lợn'","answer":"pig","accept":["pig"]},
+    {"type":"mcq","q":"'On his farm' nghĩa là gì?","options":["Trong trang trại của bác ấy","Trên núi cao","Ở ngoài biển","Trong thành phố"],"a":0,"explain":"on his farm = trong/trên trang trại của bác ấy."}
+   ]
+  },
+  {
+   "so": 62, "ten": "🎵 Head, Shoulders, Knees and Toes",
+   "lyThuyet": "Bài hát vận động về các bộ phận cơ thể — vừa hát vừa chỉ tay vào đầu, vai, đầu gối, ngón chân! Học từ: head (đầu), shoulders (vai), knees (đầu gối), toes (ngón chân), eyes (mắt), ears (tai), mouth (miệng), nose (mũi).",
+   "cauHoi": [
+    {"type":"listen","audioText":"Head, shoulders, knees and toes, knees and toes.","q":"Bài hát nhắc đến những bộ phận nào?","options":["Đầu, vai, đầu gối, ngón chân","Tay, chân, bụng, lưng","Mắt, mũi, miệng, tai","Tóc, răng, má, cằm"],"a":0,"explain":"head-đầu, shoulders-vai, knees-đầu gối, toes-ngón chân."},
+    {"type":"fill","q":"Head, shoulders, ___ and toes (đầu gối)","answer":"knees","accept":["knees","knee"]},
+    {"type":"mcq","q":"'Eyes' nghĩa là gì?","options":["Đôi mắt","Đôi tai","Cái mũi","Cái miệng"],"a":0,"explain":"eyes = mắt, ears = tai, mouth = miệng, nose = mũi."},
+    {"type":"spell","q":"Viết từ tiếng Anh nghĩa là 'cái đầu'","answer":"head","accept":["head"]},
+    {"type":"speak","prompt":"Hát/đọc theo: 'Head, shoulders, knees and toes'","target":"head shoulders knees and toes","accept":["head shoulders knees and toes","head shoulder knees and toes"]},
+    {"type":"listen","audioText":"And eyes and ears and mouth and nose.","q":"Từ 'nose' trong câu nghĩa là gì?","options":["Cái mũi","Cái cổ","Bàn tay","Mái tóc"],"a":0,"explain":"nose = mũi. Chỉ tay vào mũi khi hát nhé!"},
+    {"type":"spell","q":"Viết từ tiếng Anh nghĩa là 'cái miệng'","answer":"mouth","accept":["mouth"]},
+    {"type":"mcq","q":"Khi hát đến 'toes' em nên chỉ tay vào đâu?","options":["Ngón chân","Ngón tay","Đầu gối","Vai"],"a":0,"explain":"toes = ngón chân — cúi xuống chạm ngón chân nào!"}
+   ]
+  }
+ ]
+}

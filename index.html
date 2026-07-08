@@ -13,7 +13,7 @@
 <meta name="theme-color" content="#0a0f1a">
 <title>Spider-Kua</title>
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Nunito:wght@400;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=57">
+<link rel="stylesheet" href="styles.css?v=59">
 </head>
 <body>
 
@@ -98,7 +98,7 @@
     <div class="hlogo">🛡️</div>
     <div style="flex:1">
       <div class="htitle">SPIDER-<span>KUA</span></div>
-      <div style="font-size:9px;color:var(--tx3);letter-spacing:.1em;text-transform:uppercase;font-family:'Rajdhani',sans-serif;">S.H.I.E.L.D. TRAINING · LỚP 4 · <span id="appVer" style="color:var(--gold);">v5.7</span></div>
+      <div style="font-size:9px;color:var(--tx3);letter-spacing:.1em;text-transform:uppercase;font-family:'Rajdhani',sans-serif;">S.H.I.E.L.D. TRAINING · LỚP 4 · <span id="appVer" style="color:var(--gold);">v5.9</span></div>
     </div>
     <div class="xpw">
       <div class="xpl" id="xpLbl">⚡ 0XP</div>
@@ -181,17 +181,13 @@
 
   <div class="ipa">
     <div class="quick">
+      <button class="qbtn" onclick="openPractice()" style="border-color:var(--green);color:var(--green);font-weight:700;font-size:13px;padding:8px 16px;">⚡ NHIỆM VỤ HÔM NAY</button>
       <button class="qbtn qbtn-fury" onclick="showFurySearch()" title="Tra nội dung sách">
         <img src="the-avengers-seeklogo.png" style="width:13px;height:13px;object-fit:contain;display:block;flex-shrink:0;">
-        <span>Fury</span>
+        <span>Tra sách</span>
       </button>
-      <button class="qbtn" onclick="openPractice()" style="border-color:var(--green);color:var(--green);font-weight:700;">🎯 Luyện tập</button>
-      <button class="qbtn" onclick="qs('Luyện Toán đi anh')">🔢 Toán</button>
-      <button class="qbtn" onclick="qs('Học Tiếng Việt nào')">📖 TV</button>
-      <button class="qbtn" onclick="qs('Tiếng Anh hôm nay')">🌏 TA</button>
-      <button class="qbtn" onclick="showHWInChat()">📋 Mẹ gửi</button>
-      <button class="qbtn" onclick="kuaMsgParent()" style="border-color:var(--blue2);color:var(--blue2);">💬 Bố mẹ</button>
-      <button class="qbtn" onclick="showCupUpload()" style="border-color:var(--gold);color:var(--gold);">🏆 Điểm 10</button>
+      <button class="qbtn" onclick="ccOpenChat&&ccOpenChat(false)" title="Tin nhắn gia đình" style="border-color:var(--blue2);color:var(--blue2);">🔔</button>
+      <button class="qbtn" onclick="showCupUpload()" title="Khoe điểm 10" style="border-color:var(--gold);color:var(--gold);">🏆</button>
       <button class="qbtn" onclick="showShop()" style="border-color:var(--gold);color:var(--gold);">🪙 Đổi xu</button>
     </div>
     <div class="iprev" id="iPrev"></div>
@@ -205,9 +201,8 @@
       </div>
       <!-- Hàng dưới: mic, camera, gallery nằm ngang -->
       <div class="abtns">
-        <button class="abtn mic" id="micBtn" onclick="toggleMic()">🎤 Mic</button>
-        <label class="abtn imgb" title="Chụp ảnh">📷 Chụp<input type="file" accept="image/*" capture="environment" multiple style="display:none" onchange="onImg(this)"></label>
-        <label class="abtn imgb" title="Thư viện ảnh">🖼️ Ảnh<input type="file" accept="image/*" multiple style="display:none" onchange="onImg(this)"></label>
+        <button class="abtn mic" id="micBtn" onclick="toggleMic()" style="flex:3;height:58px;font-size:17px;background:linear-gradient(135deg,var(--blue2),#0d3a6e);color:#fff;border:none;border-radius:14px;font-family:Rajdhani,sans-serif;font-weight:700;letter-spacing:.03em;">🎤 NÓI CHUYỆN VỚI FURY</button>
+        <label class="abtn imgb" title="Chụp hoặc chọn ảnh bài tập" style="flex:1;height:58px;display:flex;align-items:center;justify-content:center;font-size:24px;border-radius:14px;">📷<input type="file" accept="image/*" multiple style="display:none" onchange="onImg(this)"></label>
       </div>
     </div>
   </div>
@@ -238,15 +233,16 @@
   </div>
 </div>
 
-<script src="tts.js?v=57"></script>
-<script src="app.js?v=57"></script>
-<script src="practice.js?v=57"></script>
-<script src="adaptive.js?v=57"></script>
-<script src="role.js?v=57"></script>
-<script src="gen.js?v=57"></script>
-<script src="notify.js?v=57"></script>
-<script src="command.js?v=57"></script>
-<script src="callchat.js?v=57"></script></div>
+<script src="tts.js?v=59"></script>
+<script src="app.js?v=59"></script>
+<script src="practice.js?v=59"></script>
+<script src="adaptive.js?v=59"></script>
+<script src="role.js?v=59"></script>
+<script src="gen.js?v=59"></script>
+<script src="notify.js?v=59"></script>
+<script src="command.js?v=59"></script>
+<script src="callchat.js?v=59"></script>
+<script src="dailyhub.js?v=59"></script></div>
   </div>
 </div>
 

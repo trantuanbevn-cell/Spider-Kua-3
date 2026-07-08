@@ -270,6 +270,18 @@
       "soCau": 65
      }
     ]
+   },
+   {
+    "ten": "Học mà chơi 🎵",
+    "files": [
+     {
+      "f": "data/ta/fun-songs.json",
+      "chuDe": "Học qua bài hát 🎵",
+      "cdSo": 99,
+      "soBai": 3,
+      "soCau": 24
+     }
+    ]
    }
   ]
  }

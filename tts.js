@@ -97,13 +97,13 @@ async function speak(text){
 
 // Đọc tiếng Anh cho bài nghe (practice)
 async function speakEN(text, cb){
-  var blob = await _geminiTTS(text, 'Read this in clear, natural English at a slow, friendly pace suitable for a young learner');
+  var blob = await _geminiTTS(text, 'Read this in clear, natural English at a normal conversational pace, like a friendly native speaker');
   if(blob){ _playBlob(blob).then(function(){ if(cb) cb(); }); return; }
   // fallback
   if(window.speechSynthesis){
     window.speechSynthesis.cancel();
     var u = new SpeechSynthesisUtterance(text);
-    u.lang='en-US'; u.rate=0.8;
+    u.lang='en-US'; u.rate=1.0;
     var vv = window.speechSynthesis.getVoices();
     var en = vv.find(function(v){return v.lang.indexOf('en')===0;});
     if(en) u.voice = en;

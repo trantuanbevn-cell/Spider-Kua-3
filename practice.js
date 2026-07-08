@@ -83,7 +83,7 @@ function pcHome(){
 // ── màn 2: chọn chủ đề ──
 function pcMon(m){
   P.mon=m; var M=P.idx[m];
-  var h=pcHead(M.icon+' '+M.ten.toUpperCase(),'pcHome()');
+  var h=pcHead(M.icon+' '+M.ten.toUpperCase(),'window.pcCatalog?pcCatalog():pcHome()');
   M.nhom.forEach(function(n,ni){
     h+='<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;color:var(--tx2);letter-spacing:.08em;text-transform:uppercase;margin:14px 0 8px;">'+n.ten+'</div>';
     n.files.forEach(function(f){
@@ -165,15 +165,9 @@ function pcQ(){
   if(P.qi>=P.qs.length){ pcFinish(); return; }
   var q=P.qs[P.qi]; P.t0=Date.now(); P.hints=0; P.revealed=false;
   var mins=Math.round((Date.now()-P.sess.start)/60000);
-  var target=(typeof adTargetMin==='function')?adTargetMin():25;
   var h=pcHead((P.review?'🔁 ÔN LỖI SAI':'BÀI '+P.bai.so)+' · CÂU '+(P.qi+1)+'/'+P.qs.length, P.review?'pcHome()':'pcFile(\''+P.file+'\')');
-  // đồng hồ buổi học: luôn hiển thị
-  var tPct=Math.min(100,Math.round(mins/target*100));
-  h+='<div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">'
-    +'<span style="font-size:12px;color:'+(mins>=target?'var(--green)':'var(--tx2)')+';">⏱ '+mins+'/'+target+' phút</span>'
-    +'<div style="flex:1;height:4px;background:var(--s3);border-radius:2px;"><div style="height:4px;width:'+tPct+'%;background:'+(mins>=target?'var(--green)':'var(--gold)')+';border-radius:2px;"></div></div></div>';
-  if(mins>=target) h+='<div style="background:rgba(48,209,88,.1);border:1px solid var(--green);border-radius:10px;padding:10px;font-size:12px;color:var(--green);margin-bottom:10px;">🎖️ Đủ '+target+' phút hôm nay rồi! Làm nốt câu này rồi nghỉ nhé — cố quá lại thành quá cố đấy Peter!</div>';
-  else if(mins>0&&mins%25===0) h+='<div style="background:rgba(245,200,66,.12);border:1px solid var(--gold);border-radius:10px;padding:10px;font-size:12px;color:var(--gold);margin-bottom:10px;">⏰ Học liền '+mins+' phút rồi — nghỉ 5 phút cho mắt khỏe rồi chiến tiếp nhé!</div>';
+  // không hiện số phút cho con — chỉ nhắc nghỉ nhẹ nhàng mỗi ~25 phút liên tục
+  if(mins>0&&mins%25===0) h+='<div style="background:rgba(245,200,66,.12);border:1px solid var(--gold);border-radius:10px;padding:10px;font-size:12px;color:var(--gold);margin-bottom:10px;">🧘 Fury lệnh: nghỉ 5 phút cho mắt khỏe, uống miếng nước rồi chiến tiếp nhé!</div>';
   h+='<div style="height:6px;background:var(--s3);border-radius:3px;margin-bottom:14px;"><div style="height:6px;width:'+Math.round(P.qi/P.qs.length*100)+'%;background:var(--red);border-radius:3px;transition:width .3s;"></div></div>';
 
   if(q.type==='theory'){
@@ -215,6 +209,20 @@ function pcQ(){
       +'<div id="pcMicSt" style="font-size:12px;color:var(--tx3);margin-top:10px;min-height:20px;"></div></div>'
       +'<button onclick="speakEN(\''+pcEsc(q.target).replace(/'/g,"\\'")+'\')" style="'+pcBtn2()+'width:100%;font-size:12px;">🔊 Nghe mẫu trước</button>'
       +'<button onclick="pcSkipSpeak()" style="'+pcBtn2()+'width:100%;margin-top:8px;font-size:12px;color:var(--tx3);">Bỏ qua câu này</button>';
+  }
+  else if(q.type==='scramble'){
+    h+='<div style="font-size:15px;font-weight:700;color:var(--tx);margin-bottom:6px;">🧩 GHÉP TỪ TIẾNG ANH</div>'
+      +'<div style="font-size:13.5px;color:var(--tx2);margin-bottom:12px;">Nghĩa: <b style="color:var(--gold);">'+pcEsc(q.hint)+'</b>'
+      +' <button onclick="speakEN&&speakEN(\''+pcEsc(q.word).replace(/'/g,"\\'")+'\')" style="'+pcBtn2()+'font-size:11px;padding:5px 10px;margin-left:8px;">🔊 Nghe</button></div>'
+      +'<div id="scrOut" style="min-height:52px;background:var(--s1);border:2px dashed var(--bd2);border-radius:14px;display:flex;align-items:center;justify-content:center;gap:6px;font-family:Rajdhani,sans-serif;font-weight:700;font-size:26px;color:var(--gold);letter-spacing:.15em;margin-bottom:14px;padding:8px;">&nbsp;</div>'
+      +'<div id="scrLetters" style="display:flex;flex-wrap:wrap;gap:8px;justify-content:center;margin-bottom:12px;"></div>'
+      +'<div style="display:flex;gap:8px;">'
+      +'<button onclick="scrBack()" style="'+pcBtn2()+'flex:1;">⌫ Xóa</button>'
+      +'<button onclick="scrCheck()" style="'+pcBtn()+'flex:2;">✔ KIỂM TRA</button></div>';
+    pcBox().innerHTML=h+'<div id="pcFb"></div>';
+    pcEl().scrollTop=0;
+    scrInit(q.word);
+    return;
   }
   else if(q.type==='solve'){
     h+='<div style="background:var(--s1);border:1px solid var(--bd);border-radius:14px;padding:16px;font-size:14.5px;line-height:1.9;color:var(--tx);margin-bottom:12px;">📝 '+pcEsc(q.de)+'</div>'
@@ -290,8 +298,11 @@ function pcCheckIn(){
 function pcHint(){
   var q=P.qs[P.qi];
   if(P.hints>=(q.hints||[]).length){ return; }
+  // gợi ý có giá: -2 xu mỗi lần (đã báo trước trong hợp đồng nhiệm vụ)
+  var cost=0;
+  if(typeof spendXu==='function'&&typeof getXu==='function'&&getXu()>=2){ spendXu(2); cost=2; P.sess.xu-=2; }
   var hd=document.getElementById('pcHints');
-  hd.innerHTML+='<div style="background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.35);border-radius:12px;padding:12px 14px;margin-bottom:10px;font-size:13.5px;line-height:1.8;color:var(--tx);">🛡️ <b style="color:var(--gold);">Fury gợi ý '+(P.hints+1)+':</b> '+pcEsc(q.hints[P.hints])+'</div>';
+  hd.innerHTML+='<div style="background:rgba(245,200,66,.08);border:1px solid rgba(245,200,66,.35);border-radius:12px;padding:12px 14px;margin-bottom:10px;font-size:13.5px;line-height:1.8;color:var(--tx);">🛡️ <b style="color:var(--gold);">Fury gợi ý '+(P.hints+1)+(cost?' <span style=\'color:var(--red2);font-size:11px;\'>(-'+cost+' xu)</span>':'')+':</b> '+pcEsc(q.hints[P.hints])+'</div>';
   if(typeof speak==='function') speak(q.hints[P.hints]);
   P.hints++;
   hd.scrollIntoView({behavior:'smooth',block:'end'});
@@ -339,7 +350,7 @@ function pcTheoryAsk(){
   if(typeof qs==='function') qs('[HỌC LÝ THUYẾT] Anh Fury ơi, dạy em bài mới "'+q.ten+'" nhé. Em chưa học bài này bao giờ — anh giảng thật dễ hiểu bằng ví dụ đời thường, xong đố em 1 câu dễ để thử xem em hiểu chưa.');
 }
 
-// ── nói tiếng Anh ──
+// ── nói tiếng Anh: nhận 5 phương án nghe + sửa lỗi từng từ ──
 var _pcSR=null;
 function pcSpeak(){
   var q=P.qs[P.qi];
@@ -347,23 +358,60 @@ function pcSpeak(){
   var st=document.getElementById('pcMicSt'), btn=document.getElementById('pcMicBtn');
   if(!S){ st.textContent='Thiết bị không hỗ trợ mic — bấm Bỏ qua nhé.'; return; }
   if(_pcSR){ try{_pcSR.stop();}catch(e){} _pcSR=null; }
+  if(P._spkTries===undefined) P._spkTries=0;
   _pcSR=new S(); _pcSR.lang='en-US'; _pcSR.interimResults=false;
-  btn.style.background='var(--red)'; st.textContent='🔴 Đang nghe... nói to và rõ nhé!';
+  _pcSR.maxAlternatives=5;
+  btn.style.background='var(--red)'; st.textContent='🔴 Đang nghe... nói to, rõ, sát mic nhé!';
   _pcSR.onresult=function(e){
-    var said=e.results[0][0].transcript;
-    st.textContent='Em nói: "'+said+'"';
     btn.style.background='var(--blue2)';
-    P.sess.total++;
-    var ns=pcNorm(said);
-    var ok=(q.accept||[q.target]).some(function(a){
+    // gom TẤT CẢ phương án máy nghe được — chỉ cần 1 cái khớp là tính đúng
+    var alts=[];
+    for(var i=0;i<e.results[0].length;i++) alts.push(e.results[0][i].transcript||'');
+    var targets=(q.accept||[q.target]).map(pcNorm);
+    var hit=null;
+    alts.some(function(a){
       var na=pcNorm(a);
-      return ns===na||ns.indexOf(na)>=0||na.indexOf(ns)>=0;
+      return targets.some(function(tg){ if(na===tg||na.indexOf(tg)>=0||tg.indexOf(na)>=0){hit=a;return true;} return false; });
     });
-    if(ok){ P.sess.ok++; pcMarkRight(); pcFb(true,'Phát âm được Fury duyệt! 🎤', pcReward(2)); }
-    else { pcMarkWrong(); pcFb(false,'Câu chuẩn là: <b>"'+pcEsc(q.target)+'"</b> — bấm 🔊 nghe mẫu rồi thử lại lần sau nhé!'); }
+    st.textContent='Em nói: "'+(alts[0]||'')+'"';
+    if(hit){
+      P.sess.total++; P.sess.ok++; pcMarkRight(); P._spkTries=0;
+      pcFb(true,'Phát âm được Fury duyệt! 🎤', pcReward(2));
+      return;
+    }
+    // SỬA LỖI TRỰC TIẾP: tìm từ nào phát âm chưa chuẩn
+    var saidWords=pcNorm(alts.join(' ')).split(' ');
+    var tgWords=pcNorm(q.target).split(' ');
+    var chips=tgWords.map(function(w){
+      var ok=saidWords.indexOf(w)>=0;
+      return '<span style="display:inline-block;background:'+(ok?'rgba(48,209,88,.15)':'rgba(232,25,44,.2)')+';border:1px solid '+(ok?'var(--green)':'var(--red2)')+';color:'+(ok?'var(--green)':'var(--red2)')+';border-radius:8px;padding:4px 10px;margin:3px;font-size:15px;font-weight:700;">'+pcEsc(w)+'</span>';
+    }).join('');
+    var missing=tgWords.filter(function(w){return saidWords.indexOf(w)<0;});
+    var focusWord=missing[0]||tgWords[0];
+    P._spkTries++;
+    var fb=document.getElementById('pcFb');
+    fb.innerHTML='<div style="background:var(--s1);border:1px solid var(--gold);border-radius:14px;padding:15px;margin-top:14px;">'
+      +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:14px;color:var(--gold);margin-bottom:8px;">🎯 GẦN ĐƯỢC RỒI — SỬA PHÁT ÂM NHÉ!</div>'
+      +'<div style="margin-bottom:8px;">'+chips+'</div>'
+      +(missing.length?'<div style="font-size:13px;color:var(--tx);line-height:1.7;margin-bottom:10px;">Từ <b style="color:var(--red2);">"'+pcEsc(focusWord)+'"</b> em phát âm chưa chuẩn. Bấm nghe rồi nhại theo thật giống nhé!</div>':'')
+      +'<div style="display:flex;gap:8px;margin-bottom:8px;">'
+      +'<button onclick="speakEN(\''+pcEsc(focusWord).replace(/'/g,"\\'")+'\')" style="'+pcBtn2()+'flex:1;border-color:var(--blue2);color:var(--blue2);">🔊 Nghe từ "'+pcEsc(focusWord)+'"</button>'
+      +'<button onclick="speakEN(\''+pcEsc(q.target).replace(/'/g,"\\'")+'\')" style="'+pcBtn2()+'flex:1;">🔊 Nghe cả câu</button></div>'
+      +(P._spkTries<3
+        ?'<button onclick="pcSpeak()" style="'+pcBtn()+'width:100%;background:var(--blue2);">🎤 THỬ LẠI (lần '+(P._spkTries+1)+'/3)</button>'
+        :'<button onclick="pcSpeakGiveUp()" style="'+pcBtn2()+'width:100%;">Câu này khó — sang câu tiếp →</button>')
+      +'</div>';
+    fb.scrollIntoView({behavior:'smooth',block:'end'});
+    if(typeof speakEN==='function') setTimeout(function(){ speakEN(focusWord); }, 400);
   };
   _pcSR.onerror=_pcSR.onend=function(){ btn.style.background='var(--blue2)'; if(st.textContent.indexOf('Đang nghe')>=0) st.textContent='Không nghe rõ — bấm nói lại nhé.'; };
   _pcSR.start();
+}
+function pcSpeakGiveUp(){
+  var q=P.qs[P.qi];
+  P._spkTries=0; P.sess.total++;
+  pcMarkWrong();
+  pcFb(false,'Không sao — câu mẫu: <b>"'+pcEsc(q.target)+'"</b>. Mai luyện lại là chuẩn!');
 }
 function pcSkipSpeak(){ P.sess.total++; pcMarkWrong(); pcFb(false,'Câu mẫu: <b>"'+pcEsc(P.qs[P.qi].target)+'"</b>'); }
 
@@ -452,4 +500,48 @@ function pcMicAsk(kind){
     if(_pcMicSR){ _pcMicSR=null; if(btn){btn.textContent='🎤 Nói để hỏi Fury';btn.style.background='';} }
   };
   _pcMicSR.start();
+}
+
+
+// ═══ GHÉP TỪ — logic ═══
+var _scr={word:'',picked:[],pool:[]};
+function scrInit(word){
+  _scr.word=word.toLowerCase();
+  _scr.picked=[];
+  _scr.pool=word.toLowerCase().split('').sort(function(){return Math.random()-0.5;});
+  // đảm bảo không hiện sẵn đúng thứ tự
+  if(_scr.pool.join('')===_scr.word && word.length>2) _scr.pool.reverse();
+  scrDraw();
+}
+function scrDraw(){
+  var out=document.getElementById('scrOut'), box=document.getElementById('scrLetters');
+  if(!out||!box) return;
+  out.innerHTML=_scr.picked.length?_scr.picked.join('').toUpperCase():'&nbsp;';
+  box.innerHTML=_scr.pool.map(function(ch,i){
+    return '<button onclick="scrPick('+i+')" style="width:52px;height:52px;border-radius:12px;background:var(--s2);border:2px solid var(--blue2);color:var(--tx);font-family:Rajdhani,sans-serif;font-weight:700;font-size:24px;cursor:pointer;text-transform:uppercase;">'+ch+'</button>';
+  }).join('');
+}
+function scrPick(i){
+  _scr.picked.push(_scr.pool[i]);
+  _scr.pool.splice(i,1);
+  scrDraw();
+}
+function scrBack(){
+  if(!_scr.picked.length) return;
+  _scr.pool.push(_scr.picked.pop());
+  scrDraw();
+}
+function scrCheck(){
+  var q=P.qs[P.qi];
+  var got=_scr.picked.join('');
+  if(!got) return;
+  P.sess.total++;
+  if(got===_scr.word){
+    P.sess.ok++; pcMarkRight();
+    if(typeof speakEN==='function') speakEN(_scr.word);
+    pcFb(true,'<b style="font-size:18px;letter-spacing:.1em;">'+_scr.word.toUpperCase()+'</b> — chuẩn từng chữ cái!', pcReward(2));
+  } else {
+    pcMarkWrong();
+    pcFb(false,'Từ đúng là: <b style="font-size:16px;letter-spacing:.1em;">'+_scr.word.toUpperCase()+'</b>');
+  }
 }
