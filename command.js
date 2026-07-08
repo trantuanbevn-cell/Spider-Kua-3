@@ -188,3 +188,18 @@ async function cmdAutoSetup(role, pin){
     }).catch(function(){});
   }catch(e){}
 }
+
+// Máy đã chọn vai từ trước (không qua màn nhập mã): lần chạm đầu tiên vào app
+// sẽ tự đăng ký nhận thông báo — không cần thao tác gì thêm
+(function(){
+  function once(){
+    document.removeEventListener('click', once);
+    try{
+      var role=(typeof roleGet==='function')?roleGet():localStorage.getItem('device_role');
+      if(!role) return;
+      if(localStorage.getItem('push_ready')) return;
+      cmdSubscribe().catch(function(){});
+    }catch(e){}
+  }
+  document.addEventListener('click', once);
+})();
