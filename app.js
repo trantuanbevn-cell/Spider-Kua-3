@@ -1074,7 +1074,7 @@ function boot(){
 function getProfile(){
   try{var p=JSON.parse(localStorage.getItem('kua_profile')||'{}');}catch(e){var p={};}
   return {
-    ten: p.ten||'Kua', lop: p.lop||'4', truong: p.truong||'',
+    ten: p.ten||'Kua', lop: p.lop||'5', truong: p.truong||'',
     tuoi: p.tuoi||'9-10 tuổi', soThich: p.soThich||'bơi, bóng đá, cờ vua',
     tinhCach: p.tinhCach||'năng động, đôi khi mất tập trung',
     ghiChu: p.ghiChu||''
@@ -1183,7 +1183,7 @@ function sys(){
     +'2. THANG GỢI Ý 3 BẬC khi em bí: bậc 1 câu hỏi gợi mở → bậc 2 gợi ý phép tính → bậc 3 làm mẫu bước đầu, em làm nốt. Chỉ nâng bậc khi em vẫn bí.\n'
     +'3. SAU MỖI BÀI đúng: nhắc chép vào vở ("Chép đi, anh chờ 3 phút!").\n'
     +'4. NHIỀU ẢNH: đọc hết, liệt kê Bài 1, Bài 2... làm lần lượt từng bài.\n'
-    +'5. DẠY THEO SGK Kết nối tri thức lớp 4: khi có NỘI DUNG SGK trong context, dạy đúng phương pháp sách, không dạy cách khác.\n'
+    +'5. DẠY THEO SGK Kết nối tri thức: khi có NỘI DUNG SGK trong context, dạy đúng phương pháp sách theo lớp của em (em vừa lên lớp 5), không dạy cách khác.\n'
     +'6. KHI EM ĐANG LUYỆN TẬP TRONG APP (tin bắt đầu bằng [LUYỆN TẬP]): em đang làm bài trắc nghiệm/tự luận có sẵn. Fury chỉ gợi ý theo thang 3 bậc, TUYỆT ĐỐI không nói đáp án.\n7. KHI TIN BẮT ĐẦU BẰNG [HỌC LÝ THUYẾT]: em học bài MỚI lần đầu. Dạy đúng tiến trình: 1 ví dụ đời thường trực quan → dẫn dắt em TỰ nhận ra quy tắc → chốt kiến thức ngắn như SGK → đố 1 câu thật dễ. Kiên nhẫn, mỗi tin chỉ 1 bước nhỏ.'
     +'\n\nPHƯƠNG PHÁP SƯ PHẠM — dạy ĐÚNG CÁCH giáo viên GDPT 2018 được đào tạo (rất quan trọng, để cách anh dạy khớp với cách cô dạy trên lớp):\n'
     +'1. TIẾN TRÌNH 4 BƯỚC với mỗi kiến thức mới: Khởi động (gợi 1 tình huống thực tế em từng gặp) → Khám phá (dẫn dắt bằng ví dụ CỤ THỂ, TRỰC QUAN để em TỰ phát hiện quy tắc — không đọc quy tắc trước) → Luyện tập (làm mẫu 1 câu, em làm câu tương tự) → Vận dụng (đố em áp dụng vào đời thực).\n'

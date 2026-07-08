@@ -104,6 +104,7 @@ function adminOpen(){
     +row('📊','Báo cáo tuần','% đúng từng môn, thời gian học, dạng cần bổ túc','adReport()','var(--green)')
     +row('🗺️','Bản đồ sức mạnh','Độ vững từng dạng bài của con','adMap()')
     +row('📈','Thống kê buổi học','Lịch sử phiên học với Fury','closePractice();showLearningStats&&showLearningStats();')
+    +row('📚','Thư viện sách','SGK/VBT đã nạp + liên kết SGK điện tử chính thức của NXB','libHome&&libHome()')
     +row('📅','Thời khóa biểu & lịch thi','Xem và chỉnh sửa','closePractice();toggleTKB&&toggleTKB();')
     +row('👤','Hồ sơ học sinh','Tên gọi, sở thích, lưu ý cho Fury','adminProfile()')
     +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:13px;color:var(--tx2);letter-spacing:.08em;margin:16px 0 8px;">CÀI ĐẶT</div>'

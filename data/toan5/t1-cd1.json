@@ -1,0 +1,851 @@
+{
+  "mon": "toan5",
+  "tap": 1,
+  "chuDe": "Ôn tập và bổ sung",
+  "cdSo": 1,
+  "bai": [
+    {
+      "so": 1,
+      "ten": "Ôn tập số tự nhiên",
+      "lyThuyet": "Chào em! Ở lớp 4 mình đã học đọc, viết và so sánh các số tự nhiên rồi đúng không nào? Lên lớp 5, mình ôn lại và làm quen thêm với những số lớn hơn, có thể tới hàng triệu, hàng chục triệu luôn đó em. Ví dụ số 2.450.700 gồm 2 triệu, 4 trăm nghìn, 5 chục nghìn và 7 trăm. Khi so sánh hai số tự nhiên, số nào có nhiều chữ số hơn thì lớn hơn; còn nếu số chữ số bằng nhau thì mình so sánh từng hàng từ trái sang phải, y như hồi lớp 4 em đã quen tay rồi.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Số 4.256.183 được đọc là gì?",
+          "options": [
+            "Bốn triệu hai trăm năm mươi sáu nghìn một trăm tám mươi ba",
+            "Bốn triệu hai trăm sáu mươi lăm nghìn một trăm tám mươi ba",
+            "Bốn triệu năm trăm hai mươi sáu nghìn một trăm tám mươi ba",
+            "Bốn triệu hai trăm năm mươi sáu nghìn một trăm ba mươi tám"
+          ],
+          "a": 0,
+          "explain": "4.256.183 gồm 4 triệu, 256 nghìn và 183 đơn vị nên đọc là bốn triệu hai trăm năm mươi sáu nghìn một trăm tám mươi ba."
+        },
+        {
+          "type": "mcq",
+          "q": "Số nào có chữ số hàng trăm nghìn là 7?",
+          "options": [
+            "3.712.450",
+            "3.172.450",
+            "3.127.450",
+            "3.271.450"
+          ],
+          "a": 0,
+          "explain": "3.712.450 có các chữ số sau hàng triệu là 7-1-2, tức chữ số hàng trăm nghìn là 7. Ba số còn lại đều có chữ số hàng trăm nghìn là 1 hoặc 2."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong các số 5.678.230; 5.687.230; 5.768.230; 5.786.230, số nào lớn nhất?",
+          "options": [
+            "5.678.230",
+            "5.687.230",
+            "5.768.230",
+            "5.786.230"
+          ],
+          "a": 3,
+          "explain": "Cả 4 số đều có 5 triệu. So hàng trăm nghìn: 6, 6, 7, 7 nên hai số sau lớn hơn hai số đầu. So tiếp hàng chục nghìn của hai số này: 6 và 8, vậy 5.786.230 là số lớn nhất."
+        },
+        {
+          "type": "mcq",
+          "q": "Số 3.050.600 gồm mấy triệu, mấy trăm nghìn, mấy chục nghìn, mấy nghìn và mấy trăm?",
+          "options": [
+            "3 triệu, 0 trăm nghìn, 5 chục nghìn, 0 nghìn, 6 trăm",
+            "3 triệu, 5 trăm nghìn, 0 chục nghìn, 6 nghìn, 0 trăm",
+            "3 triệu, 0 trăm nghìn, 6 chục nghìn, 0 nghìn, 5 trăm",
+            "3 triệu, 5 trăm nghìn, 0 chục nghìn, 0 nghìn, 6 trăm"
+          ],
+          "a": 0,
+          "explain": "3.050.600 = 3.000.000 + 0 + 50.000 + 0 + 600, tức là 3 triệu, 0 trăm nghìn, 5 chục nghìn, 0 nghìn, 6 trăm."
+        },
+        {
+          "type": "fill",
+          "q": "Số liền sau của 999.999 là ___.",
+          "answer": "1.000.000",
+          "accept": [
+            "1.000.000",
+            "1000000"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Số gồm 6 triệu, 4 trăm nghìn, 0 chục nghìn, 8 nghìn và 5 trăm viết là ___.",
+          "answer": "6.408.500",
+          "accept": [
+            "6.408.500",
+            "6408500"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Một trận bóng đá được phát trực tuyến. Buổi tối có 1.250.000 lượt xem, nhiều hơn buổi chiều 320.000 lượt xem. Hỏi buổi chiều có bao nhiêu lượt xem?",
+          "hints": [
+            "Em thử đọc lại đề xem buổi tối và buổi chiều, số lượt xem của buổi nào đã biết rõ luôn rồi nhé?",
+            "Đề nói buổi tối nhiều hơn buổi chiều 320.000 lượt xem, vậy muốn tìm số bé hơn (buổi chiều), mình lấy số lớn trừ đi phần hơn, đúng không nào?",
+            "Em thử lấy 1.250.000 trừ đi 320.000 xem được bao nhiêu nhé."
+          ],
+          "loiGiai": "Bài giải\nSố lượt xem buổi chiều là:\n1.250.000 - 320.000 = 930.000 (lượt xem)\nĐáp số: 930.000 lượt xem",
+          "dapSo": "930.000 lượt xem"
+        },
+        {
+          "type": "solve",
+          "de": "Một nhà máy sản xuất được 2.340.000 chiếc khẩu trang trong tháng 1 và 1.870.000 chiếc trong tháng 2. Hỏi tháng nào nhà máy sản xuất được nhiều khẩu trang hơn, và nhiều hơn bao nhiêu chiếc?",
+          "hints": [
+            "Em đọc kỹ đề xem tháng nào có số khẩu trang lớn hơn trước đã nhé?",
+            "So sánh hai số 2.340.000 và 1.870.000 xem số nào lớn hơn, đó chính là tháng sản xuất nhiều hơn.",
+            "Sau khi biết tháng 1 nhiều hơn, em lấy số của tháng 1 trừ đi số của tháng 2 để tìm phần chênh lệch nhé."
+          ],
+          "loiGiai": "Bài giải\nSo sánh hai số 2.340.000 và 1.870.000, ta thấy 2.340.000 > 1.870.000 nên tháng 1 sản xuất được nhiều khẩu trang hơn.\nTháng 1 sản xuất nhiều hơn tháng 2 số khẩu trang là:\n2.340.000 - 1.870.000 = 470.000 (chiếc)\nĐáp số: Tháng 1 nhiều hơn 470.000 chiếc",
+          "dapSo": "Tháng 1 nhiều hơn 470.000 chiếc"
+        }
+      ]
+    },
+    {
+      "so": 2,
+      "ten": "Ôn tập các phép tính với số tự nhiên",
+      "lyThuyet": "Anh nhắc lại nhé: cộng và trừ là hai phép tính ngược nhau, còn nhân và chia cũng vậy. Khi tính một biểu thức có nhiều phép tính, mình luôn làm trong ngoặc trước, rồi đến nhân chia, cuối cùng mới đến cộng trừ. Ví dụ 12.000 + 3.500 x 4, mình phải nhân 3.500 x 4 trước rồi mới cộng, chứ không được cộng trước đâu nhé. Nắm chắc thứ tự này thì tính bài toán nhiều bước sẽ không còn khó với em nữa.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "24.568 + 15.347 = ?",
+          "options": [
+            "39.915",
+            "39.815",
+            "40.915",
+            "39.905"
+          ],
+          "a": 0,
+          "explain": "24.568 + 15.347 = 39.915."
+        },
+        {
+          "type": "mcq",
+          "q": "82.634 - 27.459 = ?",
+          "options": [
+            "55.175",
+            "55.075",
+            "54.175",
+            "55.185"
+          ],
+          "a": 0,
+          "explain": "82.634 - 27.459 = 55.175."
+        },
+        {
+          "type": "mcq",
+          "q": "1.234 x 6 = ?",
+          "options": [
+            "7.404",
+            "7.304",
+            "7.414",
+            "6.404"
+          ],
+          "a": 0,
+          "explain": "1.234 x 6 = 7.404 (4x6=24 viết 4 nhớ 2; 3x6=18 thêm 2 = 20 viết 0 nhớ 2; 2x6=12 thêm 2 = 14 viết 4 nhớ 1; 1x6=6 thêm 1 = 7)."
+        },
+        {
+          "type": "mcq",
+          "q": "Tính giá trị biểu thức: 12.000 + 3.500 x 4",
+          "options": [
+            "62.000",
+            "26.000",
+            "15.500",
+            "60.000"
+          ],
+          "a": 1,
+          "explain": "Theo thứ tự thực hiện phép tính, nhân trước: 3.500 x 4 = 14.000, sau đó cộng: 12.000 + 14.000 = 26.000."
+        },
+        {
+          "type": "fill",
+          "q": "9.576 : 8 = ___.",
+          "answer": "1.197",
+          "accept": [
+            "1.197",
+            "1197"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Tính bằng cách thuận tiện: 25 x 37 x 4 = ___",
+          "answer": "3.700",
+          "accept": [
+            "3.700",
+            "3700"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Một cửa hàng bán đồ bơi có 3 thùng phao, mỗi thùng 45 chiếc phao. Cửa hàng đã bán được 98 chiếc phao. Hỏi cửa hàng còn lại bao nhiêu chiếc phao?",
+          "hints": [
+            "Em thử tính xem tổng số phao trong 3 thùng là bao nhiêu trước đã nhé, dùng phép nhân đó.",
+            "Sau khi có tổng số phao, mình lấy tổng đó trừ đi số phao đã bán để tìm số còn lại, đúng không nào?",
+            "Em thử tính 45 x 3 rồi lấy kết quả trừ đi 98 xem còn bao nhiêu nhé."
+          ],
+          "loiGiai": "Bài giải\nTổng số phao cửa hàng có là:\n45 x 3 = 135 (chiếc)\nSố phao còn lại là:\n135 - 98 = 37 (chiếc)\nĐáp số: 37 chiếc phao",
+          "dapSo": "37 chiếc phao"
+        },
+        {
+          "type": "solve",
+          "de": "Một trận đấu bóng đá có 3.240 cổ động viên đến sân, chia đều lên 4 khán đài. Sau đó khán đài A có thêm 150 người đến xem buổi tập chiều. Hỏi khán đài A lúc đó có bao nhiêu người?",
+          "hints": [
+            "Em đọc kỹ đề xem 3.240 cổ động viên được chia đều lên mấy khán đài nhé?",
+            "Bước đầu, mình tính số người ở mỗi khán đài lúc đầu bằng phép chia, đúng không?",
+            "Sau khi biết số người ban đầu ở khán đài A, em cộng thêm 150 người mới đến xem thử được bao nhiêu nhé."
+          ],
+          "loiGiai": "Bài giải\nSố cổ động viên mỗi khán đài lúc đầu là:\n3.240 : 4 = 810 (người)\nSố người ở khán đài A sau khi có thêm là:\n810 + 150 = 960 (người)\nĐáp số: 960 người",
+          "dapSo": "960 người"
+        }
+      ]
+    },
+    {
+      "so": 3,
+      "ten": "Ôn tập phân số",
+      "lyThuyet": "Phân số gồm tử số ở trên và mẫu số ở dưới, giống như khi mình chia một chiếc bánh pizza thành nhiều phần bằng nhau rồi lấy một số phần trong đó. Muốn rút gọn phân số, mình tìm số lớn nhất chia hết cho cả tử và mẫu rồi chia cả hai cho số đó, ví dụ 18/24 rút gọn còn 3/4. Muốn so sánh hai phân số khác mẫu số, mình có thể quy đồng mẫu số rồi so sánh tử số, hoặc nhân chéo như em đã học ở lớp 4.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Một chiếc bánh pizza được chia thành 6 phần bằng nhau, Nam ăn 2 phần. Viết phân số chỉ số phần bánh Nam đã ăn.",
+          "options": [
+            "2/6",
+            "6/2",
+            "4/6",
+            "2/4"
+          ],
+          "a": 0,
+          "explain": "Bánh được chia thành 6 phần bằng nhau (mẫu số là 6), Nam ăn 2 phần (tử số là 2), nên phân số chỉ phần bánh Nam ăn là 2/6."
+        },
+        {
+          "type": "mcq",
+          "q": "Phân số nào lớn hơn: 3/5 hay 4/7?",
+          "options": [
+            "3/5 lớn hơn 4/7",
+            "4/7 lớn hơn 3/5",
+            "Hai phân số bằng nhau",
+            "Không so sánh được"
+          ],
+          "a": 0,
+          "explain": "Nhân chéo: 3 x 7 = 21 và 4 x 5 = 20. Vì 21 > 20 nên 3/5 > 4/7."
+        },
+        {
+          "type": "mcq",
+          "q": "Quy đồng mẫu số hai phân số 1/3 và 1/4 được cặp phân số nào?",
+          "options": [
+            "4/12 và 3/12",
+            "1/12 và 1/12",
+            "3/4 và 4/3",
+            "8/12 và 3/12"
+          ],
+          "a": 0,
+          "explain": "Mẫu số chung của 3 và 4 là 12. Ta có 1/3 = 4/12 và 1/4 = 3/12."
+        },
+        {
+          "type": "mcq",
+          "q": "Phân số nào bằng phân số 2/5?",
+          "options": [
+            "4/10",
+            "4/8",
+            "3/5",
+            "2/10"
+          ],
+          "a": 0,
+          "explain": "Nhân cả tử số và mẫu số của 2/5 với 2, ta được 4/10, một phân số bằng 2/5."
+        },
+        {
+          "type": "fill",
+          "q": "Rút gọn phân số 18/24 về phân số tối giản, ta được phân số ___.",
+          "answer": "3/4",
+          "accept": [
+            "3/4"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Một hình chữ nhật được chia thành 8 ô bằng nhau, tô màu 5 ô. Phân số chỉ phần tô màu là ___.",
+          "answer": "5/8",
+          "accept": [
+            "5/8"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Một đội bơi có 20 vận động viên, trong đó có 12 vận động viên nữ. Hỏi số vận động viên nữ chiếm bao nhiêu phần (viết phân số tối giản) tổng số vận động viên của đội?",
+          "hints": [
+            "Em thử đọc lại đề xem đội bơi có tất cả bao nhiêu vận động viên và bao nhiêu nữ nhé.",
+            "Muốn viết số vận động viên nữ dưới dạng phân số của cả đội, mình lấy số nữ làm tử số, tổng số vận động viên làm mẫu số, đúng không nào?",
+            "Em viết phân số 12/20 rồi rút gọn xem còn bao nhiêu nhé, tìm số lớn nhất chia hết cho cả 12 và 20."
+          ],
+          "loiGiai": "Bài giải\nSố vận động viên nữ chiếm số phần của đội là:\n12/20 = 3/5 (đội)\nĐáp số: 3/5 đội",
+          "dapSo": "3/5 tổng số vận động viên"
+        },
+        {
+          "type": "solve",
+          "de": "Một hộp có 24 viên bi gồm bi đỏ và bi xanh. Biết số bi đỏ bằng 1/3 tổng số bi trong hộp. Hỏi hộp có bao nhiêu viên bi đỏ và bao nhiêu viên bi xanh?",
+          "hints": [
+            "Em đọc kỹ đề xem số bi đỏ bằng phần mấy của tổng số bi trong hộp nhé?",
+            "Muốn tìm số bi đỏ, mình lấy tổng số bi nhân với phân số 1/3, mà nhân với 1/3 cũng chính là chia cho 3 đó.",
+            "Sau khi tìm được số bi đỏ, em lấy tổng số bi trừ đi số bi đỏ để tìm số bi xanh nhé."
+          ],
+          "loiGiai": "Bài giải\nSố viên bi đỏ trong hộp là:\n24 : 3 = 8 (viên)\nSố viên bi xanh trong hộp là:\n24 - 8 = 16 (viên)\nĐáp số: 8 viên bi đỏ, 16 viên bi xanh",
+          "dapSo": "8 viên bi đỏ, 16 viên bi xanh"
+        }
+      ]
+    },
+    {
+      "so": 4,
+      "ten": "Phân số thập phân",
+      "lyThuyet": "Đây là một khái niệm mới nhưng không khó đâu em: phân số thập phân là phân số có mẫu số là 10, 100, 1.000,... ví dụ như 3/10, 7/100, 25/1.000. Muốn chuyển một phân số bình thường thành phân số thập phân, mình nhân (hoặc chia) cả tử số và mẫu số với cùng một số sao cho mẫu số mới là 10, 100 hay 1.000. Chẳng hạn 1/2, mình nhân cả tử và mẫu với 5 thì được 5/10. Kiến thức này rất quan trọng vì nó sẽ giúp em học số thập phân ở chủ đề sau đó, nên em nhớ kỹ nhé.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Phân số nào dưới đây là phân số thập phân?",
+          "options": [
+            "7/100",
+            "7/12",
+            "7/9",
+            "7/15"
+          ],
+          "a": 0,
+          "explain": "Phân số thập phân là phân số có mẫu số là 10, 100, 1.000,... Trong các phân số trên, chỉ có 7/100 có mẫu số là 100."
+        },
+        {
+          "type": "mcq",
+          "q": "Phân số nào dưới đây KHÔNG phải là phân số thập phân?",
+          "options": [
+            "3/10",
+            "5/8",
+            "9/1000",
+            "5/100"
+          ],
+          "a": 1,
+          "explain": "5/8 có mẫu số là 8, không phải là 10, 100 hay 1.000,... nên không phải là phân số thập phân."
+        },
+        {
+          "type": "mcq",
+          "q": "Chuyển phân số 3/4 thành phân số thập phân, ta được phân số nào?",
+          "options": [
+            "75/100",
+            "34/100",
+            "7/100",
+            "3/40"
+          ],
+          "a": 0,
+          "explain": "Vì 4 x 25 = 100 nên ta nhân cả tử số và mẫu số của 3/4 với 25, được 75/100."
+        },
+        {
+          "type": "mcq",
+          "q": "Phân số thập phân 45/100 rút gọn thành phân số tối giản nào?",
+          "options": [
+            "9/20",
+            "45/100",
+            "4/10",
+            "9/10"
+          ],
+          "a": 0,
+          "explain": "Số lớn nhất chia hết cho cả 45 và 100 là 5. Lấy 45 : 5 = 9 và 100 : 5 = 20, ta được phân số tối giản 9/20."
+        },
+        {
+          "type": "fill",
+          "q": "Chuyển phân số 1/2 thành phân số thập phân, ta được phân số ___.",
+          "answer": "5/10",
+          "accept": [
+            "5/10"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Muốn chuyển phân số 2/5 thành phân số thập phân có mẫu số 10, ta nhân cả tử số và mẫu số với ___.",
+          "answer": "2",
+          "accept": [
+            "2"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Minh có một thanh sô-cô-la được cắt thành 10 miếng bằng nhau, Minh đã ăn hết 7 miếng. Hỏi Minh đã ăn bao nhiêu phần thanh sô-cô-la, viết kết quả dưới dạng phân số thập phân?",
+          "hints": [
+            "Em thử đọc lại đề xem một thanh sô-cô-la được chia thành bao nhiêu miếng bằng nhau nhé.",
+            "Minh ăn hết 7 trong số 10 miếng đó, vậy phần đã ăn viết dưới dạng phân số sẽ có tử số và mẫu số là bao nhiêu?",
+            "Em để ý xem phân số 7/10 có phải là phân số thập phân không nhé, vì mẫu số của nó là 10 rồi đó."
+          ],
+          "loiGiai": "Bài giải\nThanh sô-cô-la được chia thành 10 miếng bằng nhau, Minh ăn hết 7 miếng nên Minh đã ăn số phần thanh sô-cô-la là:\n7/10 (thanh)\nĐáp số: 7/10 thanh sô-cô-la",
+          "dapSo": "7/10 thanh sô-cô-la"
+        },
+        {
+          "type": "solve",
+          "de": "Một cửa hàng đã bán được 3/4 tấm vải. Hỏi số vải đã bán chiếm bao nhiêu phần tấm vải, viết dưới dạng phân số thập phân có mẫu số là 100?",
+          "hints": [
+            "Em thử nhớ lại phân số thập phân là phân số có mẫu số là 10, 100, 1.000,... nhé.",
+            "Muốn mẫu số 4 trở thành 100, mình cần nhân mẫu số với số nào? Sau đó nhớ nhân tử số với đúng số đó luôn nhé.",
+            "Em thử nhân cả tử và mẫu của phân số 3/4 với 25 xem được phân số nào nhé."
+          ],
+          "loiGiai": "Bài giải\nTa cần chuyển phân số 3/4 thành phân số thập phân có mẫu số 100.\nVì 4 x 25 = 100 nên ta nhân cả tử số và mẫu số với 25:\n3/4 = (3 x 25)/(4 x 25) = 75/100\nĐáp số: 75/100 tấm vải",
+          "dapSo": "75/100 tấm vải"
+        }
+      ]
+    },
+    {
+      "so": 5,
+      "ten": "Ôn tập các phép tính với phân số",
+      "lyThuyet": "Anh nhắc lại các quy tắc tính với phân số nhé: cộng hoặc trừ hai phân số cùng mẫu số thì mình giữ nguyên mẫu số và cộng (hoặc trừ) tử số. Nhân hai phân số thì lấy tử số nhân tử số, mẫu số nhân mẫu số. Còn chia một phân số cho một phân số khác, mình giữ nguyên phân số thứ nhất rồi nhân với phân số thứ hai đã đảo ngược tử và mẫu. Khi biểu thức có cả nhân, chia và cộng, trừ, mình vẫn nhân chia trước, cộng trừ sau như bình thường nhé.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "2/7 + 3/7 = ?",
+          "options": [
+            "5/7",
+            "5/14",
+            "6/7",
+            "1/7"
+          ],
+          "a": 0,
+          "explain": "Hai phân số cùng mẫu số 7 nên ta giữ nguyên mẫu số và cộng tử số: 2 + 3 = 5, được 5/7."
+        },
+        {
+          "type": "mcq",
+          "q": "5/9 - 2/9 = ?",
+          "options": [
+            "3/9",
+            "3/18",
+            "7/9",
+            "2/9"
+          ],
+          "a": 0,
+          "explain": "Hai phân số cùng mẫu số 9 nên ta giữ nguyên mẫu số và trừ tử số: 5 - 2 = 3, được 3/9 (có thể rút gọn thành 1/3)."
+        },
+        {
+          "type": "mcq",
+          "q": "2/3 x 3/5 = ?",
+          "options": [
+            "6/15",
+            "5/8",
+            "6/8",
+            "2/15"
+          ],
+          "a": 0,
+          "explain": "Nhân phân số: lấy tử số nhân tử số, mẫu số nhân mẫu số: (2 x 3)/(3 x 5) = 6/15."
+        },
+        {
+          "type": "mcq",
+          "q": "Tính giá trị biểu thức: 1/2 + 1/4 x 2",
+          "options": [
+            "1",
+            "3/2",
+            "3/4",
+            "1/4"
+          ],
+          "a": 0,
+          "explain": "Nhân trước: 1/4 x 2 = 2/4 = 1/2. Sau đó cộng: 1/2 + 1/2 = 1."
+        },
+        {
+          "type": "fill",
+          "q": "3/4 : 1/2 = ___.",
+          "answer": "3/2",
+          "accept": [
+            "3/2"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Kết quả của phép tính 4/5 - 1/5 là ___.",
+          "answer": "3/5",
+          "accept": [
+            "3/5"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Một bể nước, buổi sáng bơm được 3/8 bể, buổi chiều bơm thêm được 2/8 bể. Hỏi cả hai buổi bơm được bao nhiêu phần bể nước?",
+          "hints": [
+            "Em đọc kỹ đề xem buổi sáng và buổi chiều bơm được bao nhiêu phần bể, hai phân số này có cùng mẫu số không nhé?",
+            "Vì hai phân số đã cùng mẫu số rồi, mình chỉ cần cộng tử số và giữ nguyên mẫu số thôi, đúng không nào?",
+            "Em thử lấy 3/8 cộng với 2/8 xem được bao nhiêu phần bể nhé."
+          ],
+          "loiGiai": "Bài giải\nCả hai buổi bơm được số phần bể nước là:\n3/8 + 2/8 = 5/8 (bể)\nĐáp số: 5/8 bể nước",
+          "dapSo": "5/8 bể nước"
+        },
+        {
+          "type": "solve",
+          "de": "An có 3/4 kg kẹo, An chia đều số kẹo đó cho 3 bạn. Hỏi mỗi bạn nhận được bao nhiêu ki-lô-gam kẹo?",
+          "hints": [
+            "Em thử đọc lại đề xem An có bao nhiêu ki-lô-gam kẹo và muốn chia đều cho mấy bạn nhé.",
+            "Muốn chia một phân số cho một số tự nhiên, mình có thể viết số tự nhiên đó thành phân số rồi nhân với phân số đảo ngược của nó, đúng không nào?",
+            "Em thử tính 3/4 : 3 bằng cách nhân 3/4 với 1/3 xem được bao nhiêu nhé."
+          ],
+          "loiGiai": "Bài giải\nMỗi bạn nhận được số ki-lô-gam kẹo là:\n3/4 : 3 = 3/4 x 1/3 = 3/12 = 1/4 (kg)\nĐáp số: 1/4 kg kẹo",
+          "dapSo": "1/4 kg kẹo"
+        }
+      ]
+    },
+    {
+      "so": 6,
+      "ten": "Cộng, trừ hai phân số khác mẫu số",
+      "lyThuyet": "Muốn cộng hoặc trừ hai phân số khác mẫu số, mình không thể cộng trừ tử số ngay được mà phải quy đồng mẫu số của chúng trước. Ví dụ muốn tính 1/2 + 1/3, mình quy đồng về mẫu số chung là 6, được 3/6 + 2/6 = 5/6. Em nhớ tìm mẫu số chung nhỏ nhất để việc tính toán được gọn gàng, dễ dàng hơn nhé.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "1/2 + 1/3 = ?",
+          "options": [
+            "5/6",
+            "2/5",
+            "1/6",
+            "5/5"
+          ],
+          "a": 0,
+          "explain": "Mẫu số chung của 2 và 3 là 6. Ta có 1/2 = 3/6 và 1/3 = 2/6, cộng lại: 3/6 + 2/6 = 5/6."
+        },
+        {
+          "type": "mcq",
+          "q": "3/4 - 1/6 = ?",
+          "options": [
+            "7/12",
+            "2/2",
+            "7/10",
+            "1/12"
+          ],
+          "a": 0,
+          "explain": "Mẫu số chung của 4 và 6 là 12. Ta có 3/4 = 9/12 và 1/6 = 2/12, trừ đi: 9/12 - 2/12 = 7/12."
+        },
+        {
+          "type": "mcq",
+          "q": "5/6 - 1/3 = ?",
+          "options": [
+            "1/2",
+            "4/6",
+            "2/3",
+            "4/3"
+          ],
+          "a": 0,
+          "explain": "Mẫu số chung của 6 và 3 là 6. Ta có 1/3 = 2/6, trừ đi: 5/6 - 2/6 = 3/6 = 1/2."
+        },
+        {
+          "type": "mcq",
+          "q": "1/3 + 1/2 + 1/6 = ?",
+          "options": [
+            "1",
+            "3/11",
+            "5/6",
+            "1/2"
+          ],
+          "a": 0,
+          "explain": "Mẫu số chung của 3, 2, 6 là 6. Ta có 1/3 = 2/6, 1/2 = 3/6, còn 1/6 giữ nguyên. Cộng lại: 2/6 + 3/6 + 1/6 = 6/6 = 1."
+        },
+        {
+          "type": "fill",
+          "q": "2/5 + 1/4 = ___.",
+          "answer": "13/20",
+          "accept": [
+            "13/20"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Quy đồng mẫu số hai phân số 1/4 và 1/5 rồi cộng lại, kết quả là ___.",
+          "answer": "9/20",
+          "accept": [
+            "9/20"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Nam đi xe đạp buổi sáng được 2/3 quãng đường, buổi chiều đi thêm được 1/5 quãng đường. Hỏi cả hai buổi Nam đã đi được bao nhiêu phần quãng đường?",
+          "hints": [
+            "Em đọc kỹ đề xem hai phân số 2/3 và 1/5 có cùng mẫu số không nhé, nếu không cùng thì mình cần làm gì trước khi cộng?",
+            "Mình cần quy đồng mẫu số của hai phân số này về cùng một mẫu số chung trước khi cộng đó, mẫu số chung có thể là 15.",
+            "Em thử quy đồng 2/3 và 1/5 về mẫu số 15 rồi cộng tử số lại xem được bao nhiêu nhé."
+          ],
+          "loiGiai": "Bài giải\nMẫu số chung của 3 và 5 là 15.\nCả hai buổi Nam đã đi được số phần quãng đường là:\n2/3 + 1/5 = 10/15 + 3/15 = 13/15 (quãng đường)\nĐáp số: 13/15 quãng đường",
+          "dapSo": "13/15 quãng đường"
+        },
+        {
+          "type": "solve",
+          "de": "Một thùng nước có 7/8 thùng đầy nước, sau khi dùng để tưới cây thì còn lại 1/4 thùng. Hỏi đã dùng hết bao nhiêu phần thùng nước để tưới cây?",
+          "hints": [
+            "Em đọc kỹ đề xem lúc đầu thùng nước đầy bao nhiêu phần, và sau khi tưới cây còn lại bao nhiêu phần nhé.",
+            "Muốn tìm phần nước đã dùng, mình lấy phần lúc đầu trừ đi phần còn lại, nhưng trước tiên cần quy đồng mẫu số hai phân số đã.",
+            "Em thử quy đồng 7/8 và 1/4 về cùng mẫu số 8 rồi trừ tử số cho nhau xem được bao nhiêu nhé."
+          ],
+          "loiGiai": "Bài giải\nMẫu số chung của 8 và 4 là 8.\nSố phần thùng nước đã dùng để tưới cây là:\n7/8 - 1/4 = 7/8 - 2/8 = 5/8 (thùng)\nĐáp số: 5/8 thùng nước",
+          "dapSo": "5/8 thùng nước"
+        }
+      ]
+    },
+    {
+      "so": 7,
+      "ten": "Hỗn số",
+      "lyThuyet": "Hỗn số là cách viết gồm một phần nguyên đứng trước và một phần phân số đứng sau, ví dụ 2 và 3/4 viết gọn là 2 và 3/4. Muốn chuyển hỗn số thành phân số, mình lấy phần nguyên nhân với mẫu số rồi cộng với tử số, kết quả đó là tử số mới, còn mẫu số giữ nguyên. Ví dụ 2 và 3/4 = (2 x 4 + 3)/4 = 11/4. Ngược lại, muốn chuyển phân số lớn hơn 1 thành hỗn số, mình lấy tử số chia cho mẫu số, thương là phần nguyên và số dư là tử số mới của phần phân số.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Hỗn số 3 và 1/2 được chuyển thành phân số nào?",
+          "options": [
+            "7/2",
+            "6/2",
+            "4/2",
+            "3/2"
+          ],
+          "a": 0,
+          "explain": "Lấy phần nguyên nhân với mẫu số rồi cộng tử số: 3 x 2 + 1 = 7, giữ nguyên mẫu số, được 7/2."
+        },
+        {
+          "type": "mcq",
+          "q": "Phân số 11/4 chuyển thành hỗn số nào?",
+          "options": [
+            "2 và 3/4",
+            "3 và 2/4",
+            "2 và 1/4",
+            "4 và 3/4"
+          ],
+          "a": 0,
+          "explain": "Lấy 11 chia cho 4 được thương là 2, dư 3. Vậy 11/4 = 2 và 3/4."
+        },
+        {
+          "type": "mcq",
+          "q": "Phân số 17/5 chuyển thành hỗn số nào?",
+          "options": [
+            "3 và 2/5",
+            "2 và 3/5",
+            "3 và 1/5",
+            "5 và 2/5"
+          ],
+          "a": 0,
+          "explain": "Lấy 17 chia cho 5 được thương là 3, dư 2. Vậy 17/5 = 3 và 2/5."
+        },
+        {
+          "type": "mcq",
+          "q": "Hỗn số nào lớn hơn: 2 và 1/3 hay 2 và 1/4?",
+          "options": [
+            "2 và 1/3 lớn hơn",
+            "2 và 1/4 lớn hơn",
+            "Bằng nhau",
+            "Không so sánh được"
+          ],
+          "a": 0,
+          "explain": "Hai hỗn số có cùng phần nguyên là 2, so sánh phần phân số: 1/3 > 1/4 (quy đồng: 4/12 > 3/12), nên 2 và 1/3 lớn hơn."
+        },
+        {
+          "type": "fill",
+          "q": "Hỗn số 2 và 2/3 được chuyển thành phân số ___.",
+          "answer": "8/3",
+          "accept": [
+            "8/3"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Hỗn số 4 và 1/5 viết dưới dạng phân số là ___.",
+          "answer": "21/5",
+          "accept": [
+            "21/5"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Một sợi dây dài 3 và 1/2 mét. Bình cắt sợi dây thành 2 sợi dây bằng nhau. Hỏi mỗi sợi dây dài bao nhiêu mét?",
+          "hints": [
+            "Em thử đổi hỗn số 3 và 1/2 mét ra phân số trước đã nhé, để dễ tính toán hơn.",
+            "Sau khi có phân số, mình chia phân số đó cho 2 để tìm độ dài mỗi sợi dây, đúng không nào?",
+            "Em thử tính 7/2 : 2 xem được phân số nào, rồi đổi lại thành hỗn số nhé."
+          ],
+          "loiGiai": "Bài giải\nĐổi hỗn số ra phân số: 3 và 1/2 = 7/2 (m)\nMỗi sợi dây dài số mét là:\n7/2 : 2 = 7/4 = 1 và 3/4 (m)\nĐáp số: 1 và 3/4 m",
+          "dapSo": "1 và 3/4 m"
+        },
+        {
+          "type": "solve",
+          "de": "Một cửa hàng có 2 và 1/4 kg táo và 1 và 1/2 kg cam. Hỏi cửa hàng có tất cả bao nhiêu ki-lô-gam trái cây?",
+          "hints": [
+            "Em thử đổi cả hai hỗn số 2 và 1/4 kg, 1 và 1/2 kg ra phân số trước đã nhé.",
+            "Sau khi đổi ra phân số, mình cần quy đồng mẫu số của chúng trước khi cộng lại, đúng không nào?",
+            "Em thử cộng 9/4 với 6/4 xem được bao nhiêu, rồi đổi kết quả thành hỗn số nhé."
+          ],
+          "loiGiai": "Bài giải\nĐổi các hỗn số ra phân số: 2 và 1/4 = 9/4 (kg), 1 và 1/2 = 6/4 (kg)\nTổng số ki-lô-gam trái cây cửa hàng có là:\n9/4 + 6/4 = 15/4 = 3 và 3/4 (kg)\nĐáp số: 3 và 3/4 kg",
+          "dapSo": "3 và 3/4 kg"
+        }
+      ]
+    },
+    {
+      "so": 8,
+      "ten": "Ôn tập hình học và đo lường",
+      "lyThuyet": "Anh nhắc lại vài công thức quen thuộc nhé: chu vi hình chữ nhật bằng (chiều dài + chiều rộng) x 2, còn diện tích hình chữ nhật bằng chiều dài x chiều rộng. Với hình vuông, chu vi bằng cạnh x 4 và diện tích bằng cạnh x cạnh. Em cũng nhớ ôn lại cách đổi đơn vị đo độ dài (km, m, cm), khối lượng (kg, g) và thời gian (giờ, phút) nhé, vì các bài toán thực tế hay cần đổi đơn vị trước khi tính đó.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Chu vi hình chữ nhật có chiều dài 8cm, chiều rộng 5cm là bao nhiêu?",
+          "options": [
+            "26cm",
+            "40cm",
+            "13cm",
+            "20cm"
+          ],
+          "a": 0,
+          "explain": "Chu vi hình chữ nhật = (chiều dài + chiều rộng) x 2 = (8 + 5) x 2 = 26cm."
+        },
+        {
+          "type": "mcq",
+          "q": "Diện tích hình vuông có cạnh 6cm là bao nhiêu?",
+          "options": [
+            "36cm²",
+            "24cm²",
+            "12cm²",
+            "42cm²"
+          ],
+          "a": 0,
+          "explain": "Diện tích hình vuông = cạnh x cạnh = 6 x 6 = 36cm²."
+        },
+        {
+          "type": "mcq",
+          "q": "2kg 300g = ? g",
+          "options": [
+            "2.300 g",
+            "2.030 g",
+            "230 g",
+            "23.000 g"
+          ],
+          "a": 0,
+          "explain": "1 kg = 1.000 g nên 2kg = 2.000g, cộng thêm 300g được 2.300g."
+        },
+        {
+          "type": "mcq",
+          "q": "Diện tích hình chữ nhật có chiều dài 9m, chiều rộng 4m là bao nhiêu?",
+          "options": [
+            "36m²",
+            "26m²",
+            "13m²",
+            "18m²"
+          ],
+          "a": 0,
+          "explain": "Diện tích hình chữ nhật = chiều dài x chiều rộng = 9 x 4 = 36m²."
+        },
+        {
+          "type": "fill",
+          "q": "3 km = ___ m.",
+          "answer": "3.000",
+          "accept": [
+            "3.000",
+            "3000"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "1 giờ 30 phút = ___ phút.",
+          "answer": "90",
+          "accept": [
+            "90",
+            "90 phút"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Một sân bóng đá hình chữ nhật có chiều dài 25m, chiều rộng 15m. Người ta muốn rào lưới xung quanh sân. Hỏi cần bao nhiêu mét lưới để rào hết chu vi sân?",
+          "hints": [
+            "Em nhớ lại công thức tính chu vi hình chữ nhật là gì nhé, có liên quan đến chiều dài và chiều rộng đó.",
+            "Muốn tính chu vi, mình lấy chiều dài cộng chiều rộng rồi nhân với 2, đúng không nào?",
+            "Em thử lấy (25 + 15) rồi nhân với 2 xem được bao nhiêu mét nhé."
+          ],
+          "loiGiai": "Bài giải\nChu vi sân bóng đá là:\n(25 + 15) x 2 = 80 (m)\nĐáp số: 80 m lưới",
+          "dapSo": "80 m lưới"
+        },
+        {
+          "type": "solve",
+          "de": "Một mảnh vườn hình vuông có cạnh 12m được dùng để trồng rau. Người ta dùng 1/4 diện tích mảnh vườn để trồng cà chua, phần còn lại trồng rau cải. Hỏi diện tích trồng rau cải là bao nhiêu mét vuông?",
+          "hints": [
+            "Em thử tính diện tích cả mảnh vườn hình vuông trước đã nhé, dùng công thức cạnh nhân cạnh.",
+            "Sau khi có diện tích cả vườn, mình tính diện tích trồng cà chua bằng cách lấy diện tích đó chia cho 4, đúng không nào?",
+            "Cuối cùng em lấy diện tích cả vườn trừ đi diện tích trồng cà chua để tìm diện tích trồng rau cải nhé."
+          ],
+          "loiGiai": "Bài giải\nDiện tích mảnh vườn hình vuông là:\n12 x 12 = 144 (m²)\nDiện tích trồng cà chua là:\n144 : 4 = 36 (m²)\nDiện tích trồng rau cải là:\n144 - 36 = 108 (m²)\nĐáp số: 108 m²",
+          "dapSo": "108 m²"
+        }
+      ]
+    },
+    {
+      "so": 9,
+      "ten": "Luyện tập chung",
+      "lyThuyet": "Đây là bài luyện tập chung để em ôn lại tất cả những gì đã học trong chủ đề 1: đọc viết so sánh số tự nhiên, các phép tính với số tự nhiên và phân số, phân số thập phân, hỗn số, và cả hình học đo lường nữa. Em cứ bình tĩnh đọc kỹ từng câu hỏi, nhớ lại kiến thức đã ôn ở các bài trước, chắc chắn em sẽ làm tốt thôi.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Số 5.076.200 gồm mấy chữ số, và chữ số hàng trăm nghìn là chữ số nào?",
+          "options": [
+            "7 chữ số, chữ số hàng trăm nghìn là 0",
+            "7 chữ số, chữ số hàng trăm nghìn là 7",
+            "6 chữ số, chữ số hàng trăm nghìn là 0",
+            "7 chữ số, chữ số hàng trăm nghìn là 6"
+          ],
+          "a": 0,
+          "explain": "5.076.200 có 7 chữ số: 5, 0, 7, 6, 2, 0, 0. Chữ số hàng trăm nghìn (ngay sau hàng triệu) là 0."
+        },
+        {
+          "type": "mcq",
+          "q": "3/8 + 1/4 = ?",
+          "options": [
+            "5/8",
+            "4/12",
+            "1/2",
+            "5/4"
+          ],
+          "a": 0,
+          "explain": "Mẫu số chung của 8 và 4 là 8. Ta có 1/4 = 2/8, cộng lại: 3/8 + 2/8 = 5/8."
+        },
+        {
+          "type": "mcq",
+          "q": "Hỗn số 3 và 2/5 chuyển thành phân số là?",
+          "options": [
+            "17/5",
+            "15/5",
+            "13/5",
+            "11/5"
+          ],
+          "a": 0,
+          "explain": "Lấy phần nguyên nhân mẫu số rồi cộng tử số: 3 x 5 + 2 = 17, giữ nguyên mẫu số, được 17/5."
+        },
+        {
+          "type": "mcq",
+          "q": "Một đội bóng có 32 cầu thủ, số cầu thủ hậu vệ chiếm 1/4 đội. Hỏi có bao nhiêu cầu thủ hậu vệ, và số đó là chẵn hay lẻ?",
+          "options": [
+            "8 cầu thủ, số chẵn",
+            "8 cầu thủ, số lẻ",
+            "4 cầu thủ, số chẵn",
+            "16 cầu thủ, số chẵn"
+          ],
+          "a": 0,
+          "explain": "Số cầu thủ hậu vệ là 32 : 4 = 8 cầu thủ. Số 8 có chữ số tận cùng là 8 nên là số chẵn."
+        },
+        {
+          "type": "fill",
+          "q": "Diện tích hình chữ nhật có chiều dài 10m, chiều rộng 6m là ___ m².",
+          "answer": "60",
+          "accept": [
+            "60"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Phân số thập phân bằng phân số 3/5 (có mẫu số là 10) là ___.",
+          "answer": "6/10",
+          "accept": [
+            "6/10"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Một cửa hàng có 480kg gạo, đã bán 3/8 số gạo đó. Hỏi cửa hàng còn lại bao nhiêu ki-lô-gam gạo?",
+          "hints": [
+            "Em thử tính xem cửa hàng đã bán bao nhiêu ki-lô-gam gạo trước đã nhé, bằng cách lấy tổng số gạo nhân với phân số 3/8.",
+            "Muốn tính 3/8 của 480kg, mình có thể lấy 480 chia cho 8 rồi nhân với 3, đúng không nào?",
+            "Sau khi biết số gạo đã bán, em lấy tổng số gạo trừ đi số đã bán để tìm số còn lại nhé."
+          ],
+          "loiGiai": "Bài giải\nSố ki-lô-gam gạo cửa hàng đã bán là:\n480 : 8 x 3 = 180 (kg)\nSố ki-lô-gam gạo còn lại là:\n480 - 180 = 300 (kg)\nĐáp số: 300 kg gạo",
+          "dapSo": "300 kg gạo"
+        },
+        {
+          "type": "solve",
+          "de": "Một khu vườn hình chữ nhật có chiều dài 20m, chiều rộng bằng 3/4 chiều dài. Hỏi diện tích khu vườn đó là bao nhiêu mét vuông?",
+          "hints": [
+            "Em đọc kỹ đề xem chiều rộng khu vườn được tính như thế nào từ chiều dài nhé.",
+            "Muốn tìm chiều rộng, mình lấy chiều dài (20m) nhân với phân số 3/4, đúng không nào?",
+            "Sau khi biết chiều rộng, em lấy chiều dài nhân với chiều rộng để tìm diện tích khu vườn nhé."
+          ],
+          "loiGiai": "Bài giải\nChiều rộng khu vườn là:\n20 x 3/4 = 15 (m)\nDiện tích khu vườn là:\n20 x 15 = 300 (m²)\nĐáp số: 300 m²",
+          "dapSo": "300 m²"
+        }
+      ]
+    }
+  ]
+}

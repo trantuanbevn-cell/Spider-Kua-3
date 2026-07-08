@@ -1,0 +1,577 @@
+{
+  "mon": "toan5",
+  "tap": 1,
+  "chuDe": "Các phép tính với số thập phân",
+  "cdSo": 4,
+  "bai": [
+    {
+      "so": 19,
+      "ten": "Phép cộng số thập phân",
+      "lyThuyet": "Khi cộng hai số thập phân, em đặt tính sao cho các chữ số cùng hàng thẳng cột với nhau, đặc biệt dấu phẩy phải thẳng dấu phẩy. Nếu hai số có số chữ số phần thập phân khác nhau, em có thể viết thêm chữ số 0 vào bên phải cho đủ hàng rồi mới cộng. Sau đó em cộng như cộng hai số tự nhiên, từ phải sang trái, rồi viết dấu phẩy ở kết quả thẳng với dấu phẩy đã đặt tính. Ví dụ mẹ đi chợ mua 1,5kg thịt và 2,25kg cá, muốn biết tổng cân nặng, mình chỉ cần đặt tính rồi cộng 1,50 với 2,25 là ra ngay 3,75kg. Anh tin em sẽ làm rất tốt, chỉ cần nhớ luôn giữ dấu phẩy thẳng hàng thôi!",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "3,5 + 2,4 = ?",
+          "options": [
+            "5,9",
+            "6,9",
+            "5,8",
+            "4,9"
+          ],
+          "a": 0,
+          "explain": "Đặt tính thẳng cột, thẳng dấu phẩy: cộng phần thập phân 5 + 4 = 9, cộng phần nguyên 3 + 2 = 5, được kết quả 5,9."
+        },
+        {
+          "type": "mcq",
+          "q": "12,7 + 5,8 = ?",
+          "options": [
+            "18,5",
+            "17,5",
+            "18,4",
+            "19,5"
+          ],
+          "a": 0,
+          "explain": "Cộng phần thập phân: 7 + 8 = 15, viết 5 nhớ 1; cộng phần nguyên: 12 + 5 = 17, thêm 1 nhớ được 18. Vậy 12,7 + 5,8 = 18,5."
+        },
+        {
+          "type": "mcq",
+          "q": "15,08 + 6,7 = ?",
+          "options": [
+            "21,78",
+            "21,15",
+            "22,78",
+            "20,78"
+          ],
+          "a": 0,
+          "explain": "Viết 6,7 thành 6,70, đặt tính thẳng cột: 15,08 + 6,70 = 21,78."
+        },
+        {
+          "type": "mcq",
+          "q": "23,45 + 8,79 = ?",
+          "options": [
+            "32,24",
+            "31,24",
+            "32,14",
+            "33,24"
+          ],
+          "a": 0,
+          "explain": "Cộng phần thập phân: 45 + 79 = 124, viết 24 nhớ 1; cộng phần nguyên: 23 + 8 = 31, thêm 1 nhớ được 32. Vậy 23,45 + 8,79 = 32,24."
+        },
+        {
+          "type": "fill",
+          "q": "4,25 + 3,6 = ___.",
+          "answer": "7,85",
+          "accept": [
+            "7,85",
+            "7.85"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Điền số thích hợp vào chỗ trống: 8,4 + 1,6 = ___",
+          "answer": "10",
+          "accept": [
+            "10",
+            "10,0"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Minh đi siêu thị mua 2,4kg cam và 1,75kg táo. Hỏi Minh đã mua tất cả bao nhiêu ki-lô-gam trái cây?",
+          "hints": [
+            "Em thử đọc lại đề xem Minh mua mấy loại trái cây, mỗi loại nặng bao nhiêu nhé?",
+            "Muốn biết tổng số ki-lô-gam trái cây, mình dùng phép cộng hai số cân nặng lại, đúng không nào?",
+            "Em đặt tính 2,4 cộng 1,75 (nhớ viết 2,4 thành 2,40 cho thẳng hàng) rồi cộng xem được bao nhiêu nhé."
+          ],
+          "loiGiai": "Bài giải\nSố ki-lô-gam trái cây Minh mua tất cả là:\n2,4 + 1,75 = 4,15 (kg)\nĐáp số: 4,15kg",
+          "dapSo": "4,15kg"
+        },
+        {
+          "type": "solve",
+          "de": "Một cửa hàng vải buổi sáng bán được 15,6m vải, buổi chiều bán được nhiều hơn buổi sáng 4,25m. Hỏi cả ngày cửa hàng bán được bao nhiêu mét vải?",
+          "hints": [
+            "Em đọc kỹ đề xem buổi chiều bán nhiều hơn hay ít hơn buổi sáng nhé?",
+            "Trước tiên mình tính số mét vải bán được buổi chiều bằng cách lấy số mét buổi sáng cộng thêm phần nhiều hơn, đúng không nào?",
+            "Sau khi có số mét buổi chiều, em cộng với số mét buổi sáng để ra tổng số mét vải cả ngày nhé."
+          ],
+          "loiGiai": "Bài giải\nSố mét vải cửa hàng bán được buổi chiều là:\n15,6 + 4,25 = 19,85 (m)\nSố mét vải cửa hàng bán được cả ngày là:\n15,6 + 19,85 = 35,45 (m)\nĐáp số: 35,45m",
+          "dapSo": "35,45m"
+        }
+      ]
+    },
+    {
+      "so": 20,
+      "ten": "Phép trừ số thập phân",
+      "lyThuyet": "Phép trừ số thập phân cũng đặt tính giống phép cộng: các hàng thẳng cột, dấu phẩy thẳng dấu phẩy. Nếu số bị trừ có ít chữ số phần thập phân hơn số trừ, em viết thêm số 0 vào bên phải cho đủ rồi mới trừ như trừ số tự nhiên. Em nhớ trừ lần lượt từ phải sang trái, nếu hàng nào không đủ trừ thì mượn 1 ở hàng liền trước, giống hệt lúc em trừ số tự nhiên hồi lớp 4. Ví dụ Bình có cuộn dây dài 5m, dùng hết 2,25m để buộc hộp quà, cuộn dây còn lại là 5,00 - 2,25 = 2,75m. Cứ đặt tính cẩn thận, thẳng cột là em trừ đúng ngay thôi!",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "8,7 - 3,2 = ?",
+          "options": [
+            "5,5",
+            "5,4",
+            "4,5",
+            "6,5"
+          ],
+          "a": 0,
+          "explain": "Trừ thẳng cột: phần thập phân 7 - 2 = 5, phần nguyên 8 - 3 = 5. Vậy 8,7 - 3,2 = 5,5."
+        },
+        {
+          "type": "mcq",
+          "q": "15,6 - 4,8 = ?",
+          "options": [
+            "10,8",
+            "11,8",
+            "10,2",
+            "9,8"
+          ],
+          "a": 0,
+          "explain": "Phần thập phân 6 không trừ được 8 nên mượn 1 ở phần nguyên: 16 - 8 = 8; phần nguyên 15 bớt 1 còn 14, 14 - 4 = 10. Vậy 15,6 - 4,8 = 10,8."
+        },
+        {
+          "type": "mcq",
+          "q": "20,5 - 12,75 = ?",
+          "options": [
+            "7,75",
+            "8,75",
+            "7,25",
+            "6,75"
+          ],
+          "a": 0,
+          "explain": "Viết 20,5 thành 20,50 cho đủ 2 chữ số thập phân rồi trừ: 20,50 - 12,75 = 7,75."
+        },
+        {
+          "type": "mcq",
+          "q": "34,08 - 15,69 = ?",
+          "options": [
+            "18,39",
+            "18,49",
+            "19,39",
+            "17,39"
+          ],
+          "a": 0,
+          "explain": "Đặt tính thẳng cột rồi trừ lần lượt từ phải sang trái, có mượn ở một vài hàng: 34,08 - 15,69 = 18,39."
+        },
+        {
+          "type": "fill",
+          "q": "9,25 - 3,4 = ___.",
+          "answer": "5,85",
+          "accept": [
+            "5,85",
+            "5.85"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Điền số thích hợp vào chỗ trống: 12,5 - ___ = 7,5",
+          "answer": "5",
+          "accept": [
+            "5",
+            "5,0"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "An có một sợi dây dài 4,5m, An cắt đi 1,25m để làm dây nhảy. Hỏi sợi dây còn lại dài bao nhiêu mét?",
+          "hints": [
+            "Em đọc lại đề xem sợi dây ban đầu dài bao nhiêu và đã cắt đi bao nhiêu mét nhé?",
+            "Muốn tìm phần dây còn lại, mình lấy độ dài ban đầu trừ đi phần đã cắt, đúng không nào?",
+            "Em đặt tính 4,5 trừ 1,25 (nhớ viết 4,5 thành 4,50 cho thẳng hàng) rồi tính xem còn lại bao nhiêu nhé."
+          ],
+          "loiGiai": "Bài giải\nSợi dây An còn lại dài số mét là:\n4,5 - 1,25 = 3,25 (m)\nĐáp số: 3,25m",
+          "dapSo": "3,25m"
+        },
+        {
+          "type": "solve",
+          "de": "Một xe chở 25,8kg gạo. Buổi sáng bán đi 8,3kg, buổi chiều bán thêm 6,5kg nữa. Hỏi xe còn lại bao nhiêu ki-lô-gam gạo?",
+          "hints": [
+            "Em thử đọc lại đề xem gạo được bán mấy lần, mỗi lần bao nhiêu ki-lô-gam nhé?",
+            "Trước tiên mình tính số gạo còn lại sau buổi sáng bằng cách lấy tổng số gạo trừ đi phần đã bán buổi sáng, đúng không nào?",
+            "Sau đó em lấy số gạo còn lại sau buổi sáng trừ tiếp phần bán buổi chiều để ra số gạo còn lại cuối cùng nhé."
+          ],
+          "loiGiai": "Bài giải\nSố ki-lô-gam gạo còn lại sau buổi sáng là:\n25,8 - 8,3 = 17,5 (kg)\nSố ki-lô-gam gạo còn lại sau buổi chiều là:\n17,5 - 6,5 = 11 (kg)\nĐáp số: 11kg gạo",
+          "dapSo": "11kg gạo"
+        }
+      ]
+    },
+    {
+      "so": 21,
+      "ten": "Phép nhân số thập phân",
+      "lyThuyet": "Muốn nhân hai số thập phân, đầu tiên em cứ nhân như nhân hai số tự nhiên bình thường, tạm thời quên hết dấu phẩy đi đã. Sau khi có tích, em đếm xem cả hai thừa số có tất cả bao nhiêu chữ số ở phần thập phân, rồi đếm từ phải sang trái đúng bấy nhiêu chữ số để đặt dấu phẩy vào tích. Ví dụ 2,5 x 1,2: em nhân 25 x 12 = 300, hai thừa số có tổng cộng 2 chữ số thập phân, nên đếm từ phải sang trái 2 chữ số, dấu phẩy đặt vào được 3,00 = 3. Quy tắc này áp dụng cả khi một thừa số là số tự nhiên, ví dụ tính tiền mua mấy chai nước 1,5 lít mỗi chai. Em cứ nhân bình thường rồi đếm chữ số thập phân, sẽ không sai đâu!",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "2,5 x 3 = ?",
+          "options": [
+            "7,5",
+            "6,5",
+            "8,5",
+            "7,05"
+          ],
+          "a": 0,
+          "explain": "Nhân như số tự nhiên: 25 x 3 = 75. Thừa số 2,5 có 1 chữ số thập phân nên đếm từ phải sang trái 1 chữ số để đặt dấu phẩy, được 7,5."
+        },
+        {
+          "type": "mcq",
+          "q": "1,4 x 2,5 = ?",
+          "options": [
+            "3,5",
+            "0,35",
+            "35",
+            "4,5"
+          ],
+          "a": 0,
+          "explain": "Nhân như số tự nhiên: 14 x 25 = 350. Hai thừa số có tổng cộng 2 chữ số thập phân, đếm từ phải sang trái 2 chữ số vào 350 được 3,50 = 3,5."
+        },
+        {
+          "type": "mcq",
+          "q": "0,4 x 0,6 = ?",
+          "options": [
+            "0,24",
+            "2,4",
+            "0,4",
+            "0,42"
+          ],
+          "a": 0,
+          "explain": "Nhân như số tự nhiên: 4 x 6 = 24. Hai thừa số có tổng cộng 2 chữ số thập phân, đếm từ phải sang trái 2 chữ số vào 24 được 0,24."
+        },
+        {
+          "type": "mcq",
+          "q": "2,05 x 4 = ?",
+          "options": [
+            "8,2",
+            "8,02",
+            "82",
+            "7,2"
+          ],
+          "a": 0,
+          "explain": "Nhân như số tự nhiên: 205 x 4 = 820. Thừa số 2,05 có 2 chữ số thập phân, đếm từ phải sang trái 2 chữ số vào 820 được 8,20 = 8,2."
+        },
+        {
+          "type": "fill",
+          "q": "3,2 x 1,5 = ___.",
+          "answer": "4,8",
+          "accept": [
+            "4,8",
+            "4.8"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Điền số thích hợp vào chỗ trống: 1,2 x 3 = ___",
+          "answer": "3,6",
+          "accept": [
+            "3,6",
+            "3.6"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Mỗi chai nước có dung tích 1,5 lít. Nam mua 4 chai nước như vậy. Hỏi Nam đã mua tất cả bao nhiêu lít nước?",
+          "hints": [
+            "Em đọc lại đề xem mỗi chai có bao nhiêu lít và Nam mua mấy chai nhé?",
+            "Vì các chai có dung tích bằng nhau, mình dùng phép nhân để tính nhanh tổng số lít, đúng không nào?",
+            "Em lấy 1,5 nhân với 4 xem được bao nhiêu lít nhé."
+          ],
+          "loiGiai": "Bài giải\nSố lít nước Nam mua tất cả là:\n1,5 x 4 = 6 (lít)\nĐáp số: 6 lít nước",
+          "dapSo": "6 lít nước"
+        },
+        {
+          "type": "solve",
+          "de": "Một thửa ruộng hình chữ nhật có chiều dài 12,5m và chiều rộng 4m. Người ta dùng 0,5kg phân bón cho mỗi mét vuông đất. Hỏi cần bao nhiêu ki-lô-gam phân bón để bón hết thửa ruộng?",
+          "hints": [
+            "Em thử tính diện tích thửa ruộng trước bằng cách lấy chiều dài nhân chiều rộng nhé?",
+            "Sau khi có diện tích, mình biết mỗi mét vuông cần 0,5kg phân bón, vậy để tìm tổng số phân bón mình làm phép tính gì nhỉ?",
+            "Em lấy diện tích vừa tính nhân với 0,5kg xem cần bao nhiêu ki-lô-gam phân bón nhé."
+          ],
+          "loiGiai": "Bài giải\nDiện tích thửa ruộng là:\n12,5 x 4 = 50 (m²)\nSố ki-lô-gam phân bón cần dùng là:\n50 x 0,5 = 25 (kg)\nĐáp số: 25kg phân bón",
+          "dapSo": "25kg phân bón"
+        }
+      ]
+    },
+    {
+      "so": 22,
+      "ten": "Phép chia số thập phân",
+      "lyThuyet": "Chia số thập phân có nhiều dạng: số thập phân chia cho số tự nhiên, số tự nhiên chia cho số thập phân, hoặc số thập phân chia cho số thập phân. Với số thập phân chia cho số tự nhiên, em chia như chia số tự nhiên, khi hạ đến dấu phẩy ở số bị chia thì viết luôn dấu phẩy vào thương. Khi số chia là số thập phân, em chuyển dấu phẩy của cả số chia và số bị chia sang phải cùng một số chữ số sao cho số chia trở thành số tự nhiên, rồi chia như bình thường - ví dụ 7,2 : 0,4 em dịch dấu phẩy cả hai số sang phải 1 chữ số thành 72 : 4 = 18. Cách này giúp phép chia trở nên đơn giản hơn nhiều. Em cứ bình tĩnh làm từng bước, nhất định sẽ chia đúng!",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "8,4 : 2 = ?",
+          "options": [
+            "4,2",
+            "4,4",
+            "42",
+            "0,42"
+          ],
+          "a": 0,
+          "explain": "Chia phần nguyên trước: 8 : 2 = 4, hạ dấu phẩy, rồi chia tiếp phần thập phân: 4 : 2 = 2. Vậy 8,4 : 2 = 4,2."
+        },
+        {
+          "type": "mcq",
+          "q": "12,6 : 3 = ?",
+          "options": [
+            "4,2",
+            "4,3",
+            "42",
+            "0,42"
+          ],
+          "a": 0,
+          "explain": "Chia phần nguyên: 12 : 3 = 4, hạ dấu phẩy, chia tiếp 6 : 3 = 2. Vậy 12,6 : 3 = 4,2."
+        },
+        {
+          "type": "mcq",
+          "q": "9,6 : 2,4 = ?",
+          "options": [
+            "4",
+            "0,4",
+            "40",
+            "2,4"
+          ],
+          "a": 0,
+          "explain": "Dịch dấu phẩy của cả hai số sang phải 1 chữ số: 9,6 : 2,4 trở thành 96 : 24 = 4."
+        },
+        {
+          "type": "mcq",
+          "q": "15,75 : 5 = ?",
+          "options": [
+            "3,15",
+            "3,5",
+            "31,5",
+            "3,05"
+          ],
+          "a": 0,
+          "explain": "Chia phần nguyên: 15 : 5 = 3, hạ dấu phẩy rồi chia tiếp phần thập phân 75 : 5 = 15, được 3,15."
+        },
+        {
+          "type": "fill",
+          "q": "7,2 : 0,4 = ___.",
+          "answer": "18",
+          "accept": [
+            "18"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Điền số thích hợp vào chỗ trống: 9,6 : 4 = ___",
+          "answer": "2,4",
+          "accept": [
+            "2,4",
+            "2.4"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Một sợi dây dài 8,4m được cắt thành 4 đoạn bằng nhau. Hỏi mỗi đoạn dây dài bao nhiêu mét?",
+          "hints": [
+            "Em đọc lại đề xem sợi dây được chia thành mấy đoạn bằng nhau nhé?",
+            "Muốn tìm độ dài mỗi đoạn bằng nhau, mình dùng phép chia, đúng không nào?",
+            "Em lấy 8,4 chia cho 4 xem mỗi đoạn dài bao nhiêu mét nhé."
+          ],
+          "loiGiai": "Bài giải\nMỗi đoạn dây dài số mét là:\n8,4 : 4 = 2,1 (m)\nĐáp số: 2,1m",
+          "dapSo": "2,1m"
+        },
+        {
+          "type": "solve",
+          "de": "Một cửa hàng có 25,5kg gạo, đóng đều vào các túi, mỗi túi 1,5kg. Sau đó cửa hàng bán đi 6 túi. Hỏi cửa hàng còn lại bao nhiêu túi gạo?",
+          "hints": [
+            "Em thử tính xem 25,5kg gạo đóng được tất cả bao nhiêu túi trước đã nhé?",
+            "Muốn tìm số túi, mình lấy tổng số ki-lô-gam gạo chia cho số ki-lô-gam mỗi túi, đúng không nào?",
+            "Sau khi biết tổng số túi, em lấy tổng số túi trừ đi số túi đã bán (6 túi) để tìm số túi còn lại nhé."
+          ],
+          "loiGiai": "Bài giải\nSố túi gạo cửa hàng đóng được là:\n25,5 : 1,5 = 17 (túi)\nSố túi gạo cửa hàng còn lại là:\n17 - 6 = 11 (túi)\nĐáp số: 11 túi gạo",
+          "dapSo": "11 túi gạo"
+        }
+      ]
+    },
+    {
+      "so": 23,
+      "ten": "Nhân, chia số thập phân với 10; 100; 1000;... hoặc với 0,1; 0,01; 0,001;...",
+      "lyThuyet": "Đây là một mẹo tính rất nhanh mà không cần đặt tính luôn đó em! Khi nhân một số thập phân với 10, 100, 1000, em chỉ cần dịch chuyển dấu phẩy sang bên PHẢI lần lượt 1, 2, 3 chữ số. Ngược lại, khi chia một số thập phân cho 10, 100, 1000 (hoặc nhân với 0,1; 0,01; 0,001), em dịch chuyển dấu phẩy sang bên TRÁI 1, 2, 3 chữ số. Ví dụ 3,45 x 10 = 34,5 (dịch phẩy sang phải 1 chữ số), còn 3,45 : 10 = 0,345 (dịch phẩy sang trái 1 chữ số). Em cứ nhớ câu thần chú 'nhân phải, chia trái' là làm nhanh như chớp luôn!",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "3,45 x 10 = ?",
+          "options": [
+            "34,5",
+            "345",
+            "3,45",
+            "0,345"
+          ],
+          "a": 0,
+          "explain": "Nhân với 10, ta dịch dấu phẩy của 3,45 sang phải 1 chữ số, được 34,5."
+        },
+        {
+          "type": "mcq",
+          "q": "3,45 x 100 = ?",
+          "options": [
+            "345",
+            "34,5",
+            "3450",
+            "3,45"
+          ],
+          "a": 0,
+          "explain": "Nhân với 100, ta dịch dấu phẩy của 3,45 sang phải 2 chữ số, được 345."
+        },
+        {
+          "type": "mcq",
+          "q": "7,2 x 0,1 = ?",
+          "options": [
+            "0,72",
+            "72",
+            "7,2",
+            "0,072"
+          ],
+          "a": 0,
+          "explain": "Nhân với 0,1 cũng giống như chia cho 10, ta dịch dấu phẩy của 7,2 sang trái 1 chữ số, được 0,72."
+        },
+        {
+          "type": "mcq",
+          "q": "56 : 1000 = ?",
+          "options": [
+            "0,056",
+            "5,6",
+            "0,56",
+            "560"
+          ],
+          "a": 0,
+          "explain": "Chia cho 1000, ta dịch dấu phẩy của 56,0 sang trái 3 chữ số, được 0,056."
+        },
+        {
+          "type": "fill",
+          "q": "128,6 : 100 = ___.",
+          "answer": "1,286",
+          "accept": [
+            "1,286",
+            "1.286"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Điền số thích hợp vào chỗ trống: 4,7 x 1000 = ___",
+          "answer": "4.700",
+          "accept": [
+            "4.700",
+            "4700",
+            "4700,0"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Một cuộn dây dài 2,35m. Hỏi 10 cuộn dây như vậy dài tất cả bao nhiêu mét?",
+          "hints": [
+            "Em đọc lại đề xem mỗi cuộn dây dài bao nhiêu mét và có tất cả mấy cuộn nhé?",
+            "Muốn tính nhanh độ dài của 10 cuộn dây, mình nhân độ dài 1 cuộn với 10, đúng không nào?",
+            "Em nhớ quy tắc nhân với 10 là dịch dấu phẩy sang phải 1 chữ số, thử áp dụng cho 2,35 xem được bao nhiêu nhé."
+          ],
+          "loiGiai": "Bài giải\nĐộ dài của 10 cuộn dây là:\n2,35 x 10 = 23,5 (m)\nĐáp số: 23,5m",
+          "dapSo": "23,5m"
+        },
+        {
+          "type": "solve",
+          "de": "Một bao gạo nặng 25,4kg được chia đều thành 100 phần bằng nhau. Bình lấy ra 5 phần để dùng. Hỏi Bình đã lấy ra bao nhiêu ki-lô-gam gạo?",
+          "hints": [
+            "Em thử tính xem mỗi phần gạo nặng bao nhiêu ki-lô-gam trước đã nhé, nhớ quy tắc chia cho 100 là dịch dấu phẩy sang trái 2 chữ số.",
+            "Sau khi biết mỗi phần nặng bao nhiêu, mình cần tính khối lượng của 5 phần, dùng phép tính gì nhỉ?",
+            "Em lấy khối lượng 1 phần nhân với 5 xem được bao nhiêu ki-lô-gam nhé."
+          ],
+          "loiGiai": "Bài giải\nMỗi phần gạo nặng số ki-lô-gam là:\n25,4 : 100 = 0,254 (kg)\nSố ki-lô-gam gạo Bình đã lấy ra là:\n0,254 x 5 = 1,27 (kg)\nĐáp số: 1,27kg gạo",
+          "dapSo": "1,27kg gạo"
+        }
+      ]
+    },
+    {
+      "so": 24,
+      "ten": "Luyện tập chung",
+      "lyThuyet": "Bài học hôm nay mình cùng ôn lại cả 4 phép tính với số thập phân: cộng, trừ, nhân, chia mà em đã học ở các bài trước. Em nhớ nhé: cộng trừ thì đặt tính thẳng cột, thẳng dấu phẩy; nhân thì nhân trước rồi đếm chữ số thập phân sau; chia thì chuyển dấu phẩy cho số chia thành số tự nhiên nếu cần. Khi biểu thức có cả nhân và cộng (hoặc trừ), em vẫn nhớ quy tắc thực hiện nhân chia trước, cộng trừ sau nhé. Cứ đọc kỹ đề bài, xác định đúng phép tính cần dùng, em sẽ giải quyết ngon lành hết các bài toán thập phân này thôi!",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "5,6 + 3,4 = ?",
+          "options": [
+            "9",
+            "8,9",
+            "9,1",
+            "10"
+          ],
+          "a": 0,
+          "explain": "Cộng phần thập phân: 6 + 4 = 10, viết 0 nhớ 1; cộng phần nguyên: 5 + 3 = 8, thêm 1 nhớ được 9. Vậy 5,6 + 3,4 = 9."
+        },
+        {
+          "type": "mcq",
+          "q": "12,5 - 4,8 = ?",
+          "options": [
+            "7,7",
+            "7,3",
+            "8,7",
+            "6,7"
+          ],
+          "a": 0,
+          "explain": "Phần thập phân 5 không trừ được 8 nên mượn 1: 15 - 8 = 7; phần nguyên 12 bớt 1 còn 11, 11 - 4 = 7. Vậy 12,5 - 4,8 = 7,7."
+        },
+        {
+          "type": "mcq",
+          "q": "14,4 : 4 = ?",
+          "options": [
+            "3,6",
+            "3,4",
+            "36",
+            "0,36"
+          ],
+          "a": 0,
+          "explain": "Chia phần nguyên: 14 : 4 = 3 (dư 2), hạ dấu phẩy rồi hạ tiếp chữ số 4 xuống được 24, chia tiếp 24 : 4 = 6. Vậy 14,4 : 4 = 3,6."
+        },
+        {
+          "type": "mcq",
+          "q": "Tính giá trị của biểu thức: 3,5 x 2 + 1,5",
+          "options": [
+            "8,5",
+            "7,5",
+            "10",
+            "5,5"
+          ],
+          "a": 0,
+          "explain": "Trong biểu thức có cả nhân và cộng, ta thực hiện phép nhân trước: 3,5 x 2 = 7, sau đó cộng: 7 + 1,5 = 8,5."
+        },
+        {
+          "type": "fill",
+          "q": "2,4 x 5 = ___.",
+          "answer": "12",
+          "accept": [
+            "12"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Điền số thích hợp vào chỗ trống: 25,6 : 10 = ___",
+          "answer": "2,56",
+          "accept": [
+            "2,56",
+            "2.56"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Nam mua 2,5kg táo với giá 32 nghìn đồng mỗi ki-lô-gam. Hỏi Nam phải trả bao nhiêu nghìn đồng?",
+          "hints": [
+            "Em đọc lại đề xem Nam mua bao nhiêu ki-lô-gam táo và giá mỗi ki-lô-gam là bao nhiêu nhé?",
+            "Muốn tính số tiền phải trả, mình lấy số ki-lô-gam nhân với giá tiền mỗi ki-lô-gam, đúng không nào?",
+            "Em lấy 2,5 nhân với 32 xem Nam phải trả bao nhiêu nghìn đồng nhé."
+          ],
+          "loiGiai": "Bài giải\nSố tiền Nam phải trả là:\n2,5 x 32 = 80 (nghìn đồng)\nĐáp số: 80 nghìn đồng",
+          "dapSo": "80 nghìn đồng"
+        },
+        {
+          "type": "solve",
+          "de": "Một cửa hàng có 45,6kg đường. Buổi sáng cửa hàng bán được 12,4kg, buổi chiều bán được gấp đôi buổi sáng. Hỏi cửa hàng còn lại bao nhiêu ki-lô-gam đường?",
+          "hints": [
+            "Em thử tính xem buổi chiều cửa hàng bán được bao nhiêu ki-lô-gam, biết gấp đôi buổi sáng nhé?",
+            "Sau khi biết số ki-lô-gam bán được cả buổi sáng và buổi chiều, mình cộng lại để biết tổng số đã bán, đúng không nào?",
+            "Cuối cùng em lấy tổng số đường ban đầu trừ đi tổng số đã bán để tìm số đường còn lại nhé."
+          ],
+          "loiGiai": "Bài giải\nSố ki-lô-gam đường bán được buổi chiều là:\n12,4 x 2 = 24,8 (kg)\nTổng số ki-lô-gam đường đã bán là:\n12,4 + 24,8 = 37,2 (kg)\nSố ki-lô-gam đường cửa hàng còn lại là:\n45,6 - 37,2 = 8,4 (kg)\nĐáp số: 8,4kg đường",
+          "dapSo": "8,4kg đường"
+        }
+      ]
+    }
+  ]
+}

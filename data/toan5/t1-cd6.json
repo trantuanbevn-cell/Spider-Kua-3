@@ -1,0 +1,576 @@
+{
+  "mon": "toan5",
+  "tap": 1,
+  "chuDe": "Ôn tập học kì 1",
+  "cdSo": 6,
+  "bai": [
+    {
+      "so": 30,
+      "ten": "Ôn tập số thập phân",
+      "lyThuyet": "Chào em! Số thập phân gồm phần nguyên và phần thập phân, ngăn cách bởi dấu phẩy. Các hàng ở phần thập phân từ trái sang phải lần lượt là hàng phần mười, hàng phần trăm, hàng phần nghìn... Khi so sánh hai số thập phân, ta so sánh phần nguyên trước, nếu phần nguyên bằng nhau thì so sánh lần lượt từng hàng ở phần thập phân. Khi làm tròn số thập phân đến một hàng nào đó, ta nhìn chữ số ngay sau hàng đó: nếu từ 5 trở lên thì làm tròn lên, nhỏ hơn 5 thì giữ nguyên. Anh tin em đã nắm chắc phần này từ các bài trước rồi, ôn lại một chút nữa là em sẽ tự tin bước vào bài kiểm tra học kì 1 thôi!",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Số 24,708 được đọc là gì?",
+          "options": [
+            "Hai mươi tư phẩy bảy trăm linh tám",
+            "Hai mươi tư phẩy không bảy tám",
+            "Hai bốn phẩy bảy không tám",
+            "Hai mươi tư phẩy bảy trăm tám"
+          ],
+          "a": 0,
+          "explain": "24,708 gồm phần nguyên là 24 và phần thập phân là 708 phần nghìn, đọc là hai mươi tư phẩy bảy trăm linh tám."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong số 5,364, chữ số 6 thuộc hàng nào?",
+          "options": [
+            "Hàng phần mười",
+            "Hàng phần trăm",
+            "Hàng phần nghìn",
+            "Hàng đơn vị"
+          ],
+          "a": 1,
+          "explain": "Trong số 5,364, chữ số 3 ở hàng phần mười, chữ số 6 ở hàng phần trăm, chữ số 4 ở hàng phần nghìn."
+        },
+        {
+          "type": "mcq",
+          "q": "So sánh hai số 8,45 và 8,5, số nào lớn hơn?",
+          "options": [
+            "8,45",
+            "8,5",
+            "Hai số bằng nhau",
+            "Không so sánh được"
+          ],
+          "a": 1,
+          "explain": "8,5 = 8,50. So sánh hàng phần mười: 5 > 4 nên 8,50 > 8,45, vậy 8,5 lớn hơn."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong các số 12,09; 12,9; 12,099; 12,19, số nào lớn nhất?",
+          "options": [
+            "12,09",
+            "12,9",
+            "12,099",
+            "12,19"
+          ],
+          "a": 1,
+          "explain": "Viết các số về cùng ba chữ số ở phần thập phân: 12,090; 12,900; 12,099; 12,190. So sánh hàng phần mười, số 12,900 có hàng phần mười là 9, lớn nhất, nên 12,9 là số lớn nhất."
+        },
+        {
+          "type": "fill",
+          "q": "Làm tròn số 6,378 đến hàng phần trăm, ta được số ___.",
+          "answer": "6,38",
+          "accept": [
+            "6,38",
+            "6.38"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Số gồm 3 đơn vị, 5 phần mười và 2 phần trăm viết là ___.",
+          "answer": "3,52",
+          "accept": [
+            "3,52",
+            "3.52"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Ba bạn Nam, Minh, An thi nhảy xa. Nam nhảy được 3,25 m, Minh nhảy được 3,4 m, An nhảy được 3,08 m. Hỏi bạn nào nhảy xa nhất, và quãng đường bạn đó nhảy được dài hơn bạn nhảy gần nhất bao nhiêu mét?",
+          "hints": [
+            "Em đưa cả ba số về cùng hai chữ số ở phần thập phân để dễ so sánh nhé (ví dụ 3,4 viết thành 3,40).",
+            "So sánh hàng phần mười của ba số 3,25; 3,40; 3,08 xem số nào lớn nhất, số nào bé nhất nhé.",
+            "Sau khi tìm được bạn nhảy xa nhất và bạn nhảy gần nhất, em lấy quãng đường xa nhất trừ đi quãng đường gần nhất để tìm phần chênh lệch."
+          ],
+          "loiGiai": "Bài giải\nĐổi các số về cùng hai chữ số phần thập phân: 3,25 m; 3,40 m; 3,08 m.\nSo sánh: 3,40 m > 3,25 m > 3,08 m.\nVậy bạn Minh nhảy xa nhất (3,4 m), bạn An nhảy gần nhất (3,08 m).\nQuãng đường Minh nhảy xa hơn An là:\n3,4 - 3,08 = 0,32 (m)\nĐáp số: Minh nhảy xa nhất, hơn An 0,32 m",
+          "dapSo": "Minh nhảy xa nhất, hơn An 0,32 m"
+        },
+        {
+          "type": "solve",
+          "de": "Một sân bóng đá mini có chiều dài 24,68 m. Bác bảo vệ muốn ghi lại chiều dài sân, làm tròn đến hàng phần mười cho dễ nhớ. Hỏi bác bảo vệ ghi được số nào, và số đó lớn hơn hay bé hơn chiều dài thật của sân?",
+          "hints": [
+            "Hàng phần mười của số 24,68 là chữ số nào, em xác định trước nhé?",
+            "Em nhìn chữ số ngay sau hàng phần mười (hàng phần trăm) là 8, số này có từ 5 trở lên không?",
+            "Vì chữ số hàng phần trăm là 8 (từ 5 trở lên), em làm tròn hàng phần mười lên 1 đơn vị, từ 6 thành 7, được số nào?"
+          ],
+          "loiGiai": "Bài giải\nHàng phần mười của 24,68 là chữ số 6.\nChữ số hàng phần trăm liền sau là 8, mà 8 ≥ 5 nên ta làm tròn lên.\nSố 24,68 làm tròn đến hàng phần mười là: 24,7\nSo sánh: 24,70 > 24,68 nên số làm tròn lớn hơn chiều dài thật của sân.\nĐáp số: 24,7 m, lớn hơn chiều dài thật",
+          "dapSo": "24,7 m (lớn hơn chiều dài thật)"
+        }
+      ]
+    },
+    {
+      "so": 31,
+      "ten": "Ôn tập các phép tính với số thập phân",
+      "lyThuyet": "Khi cộng hoặc trừ hai số thập phân, em đặt tính sao cho các dấu phẩy thẳng cột rồi cộng (trừ) như với số tự nhiên. Khi nhân một số thập phân với 10, 100, 1000,... em chỉ cần dịch dấu phẩy sang phải 1, 2, 3... chữ số. Khi nhân với 0,1; 0,01; 0,001,... (cũng chính là quy tắc chia cho 10, 100, 1000), em dịch dấu phẩy sang trái 1, 2, 3... chữ số. Anh thấy đây là dạng bài em đã luyện rất nhiều rồi, chỉ cần cẩn thận đặt tính là làm đúng ngay thôi!",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "5,64 + 3,27 = ?",
+          "options": [
+            "8,91",
+            "8,81",
+            "9,91",
+            "8,71"
+          ],
+          "a": 0,
+          "explain": "Đặt tính thẳng hàng: 4+7=11 viết 1 nhớ 1; 6+2=8 thêm 1 bằng 9; 5+3=8. Vậy 5,64 + 3,27 = 8,91."
+        },
+        {
+          "type": "mcq",
+          "q": "12,5 - 4,68 = ?",
+          "options": [
+            "7,82",
+            "8,82",
+            "7,92",
+            "7,72"
+          ],
+          "a": 0,
+          "explain": "12,5 = 12,50. 12,50 - 4,68 = 7,82."
+        },
+        {
+          "type": "mcq",
+          "q": "7,3 x 0,01 = ?",
+          "options": [
+            "0,73",
+            "0,073",
+            "73",
+            "0,0073"
+          ],
+          "a": 1,
+          "explain": "Nhân với 0,01 nghĩa là dịch dấu phẩy sang trái 2 chữ số: 7,3 x 0,01 = 0,073."
+        },
+        {
+          "type": "mcq",
+          "q": "3,6 : 100 = ?",
+          "options": [
+            "0,036",
+            "0,36",
+            "360",
+            "36"
+          ],
+          "a": 0,
+          "explain": "Chia một số thập phân cho 100, ta dịch dấu phẩy sang trái 2 chữ số: 3,6 : 100 = 0,036."
+        },
+        {
+          "type": "fill",
+          "q": "4,25 x 10 = ___.",
+          "answer": "42,5",
+          "accept": [
+            "42,5",
+            "42.5"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Điền số thích hợp vào chỗ trống: 2,45 x 100 = ___.",
+          "answer": "245",
+          "accept": [
+            "245"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "An mua 3 quyển vở, mỗi quyển giá 8,5 nghìn đồng và 1 cái bút giá 6,25 nghìn đồng. Hỏi An phải trả tất cả bao nhiêu nghìn đồng?",
+          "hints": [
+            "Em tính xem 3 quyển vở hết bao nhiêu tiền trước, dùng phép nhân nhé.",
+            "Sau khi có tiền mua vở, em cộng thêm tiền mua bút (6,25 nghìn đồng) để ra tổng số tiền.",
+            "Em thử tính 8,5 x 3 rồi cộng với 6,25 xem kết quả là bao nhiêu nhé."
+          ],
+          "loiGiai": "Bài giải\nSố tiền mua 3 quyển vở là:\n8,5 x 3 = 25,5 (nghìn đồng)\nSố tiền An phải trả tất cả là:\n25,5 + 6,25 = 31,75 (nghìn đồng)\nĐáp số: 31,75 nghìn đồng",
+          "dapSo": "31,75 nghìn đồng"
+        },
+        {
+          "type": "solve",
+          "de": "Một cửa hàng có 18,4 kg gạo, đóng đều vào các túi nhỏ, mỗi túi 0,4 kg. Hỏi cửa hàng đóng được bao nhiêu túi gạo?",
+          "hints": [
+            "Em đọc kỹ đề: tổng số gạo là 18,4 kg, mỗi túi đựng 0,4 kg, vậy cần phép tính gì để tìm số túi?",
+            "Em thử đặt phép chia 18,4 : 0,4 xem nhé.",
+            "Muốn chia 18,4 cho 0,4, em có thể nhân cả số bị chia và số chia với 10 để được 184 : 4, rồi tính xem bằng bao nhiêu."
+          ],
+          "loiGiai": "Bài giải\nSố túi gạo cửa hàng đóng được là:\n18,4 : 0,4 = 46 (túi)\nĐáp số: 46 túi gạo",
+          "dapSo": "46 túi gạo"
+        }
+      ]
+    },
+    {
+      "so": 32,
+      "ten": "Ôn tập một số hình phẳng",
+      "lyThuyet": "Hình tam giác có ba cạnh, ba đỉnh; một cạnh được chọn làm đáy thì đoạn thẳng vuông góc từ đỉnh đối diện xuống đáy gọi là chiều cao. Hình thang có hai cạnh đối diện song song: cạnh dài hơn là đáy lớn, cạnh ngắn hơn là đáy bé, khoảng cách vuông góc giữa hai đáy là chiều cao. Hình tròn có tâm là điểm chính giữa, bán kính nối tâm với một điểm trên đường tròn, còn đường kính đi qua tâm và dài gấp đôi bán kính. Anh tin chỉ cần ôn lại các tên gọi này, em sẽ nhận ra ngay các yếu tố của mỗi hình.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Trong hình tam giác, đoạn thẳng vuông góc kẻ từ đỉnh xuống cạnh đáy (hoặc phần kéo dài của đáy) được gọi là gì?",
+          "options": [
+            "Chiều cao",
+            "Đường kính",
+            "Bán kính",
+            "Đáy bé"
+          ],
+          "a": 0,
+          "explain": "Đoạn thẳng vuông góc từ đỉnh xuống cạnh đáy (hoặc đường kéo dài của đáy) chính là chiều cao của hình tam giác."
+        },
+        {
+          "type": "mcq",
+          "q": "Trong hình thang, cạnh đáy dài hơn được gọi là gì?",
+          "options": [
+            "Đáy bé",
+            "Chiều cao",
+            "Đáy lớn",
+            "Cạnh bên"
+          ],
+          "a": 2,
+          "explain": "Trong hai cạnh đáy song song của hình thang, cạnh dài hơn gọi là đáy lớn, cạnh ngắn hơn gọi là đáy bé."
+        },
+        {
+          "type": "mcq",
+          "q": "Đường kính của hình tròn có đặc điểm gì so với bán kính?",
+          "options": [
+            "Bằng một nửa bán kính",
+            "Bằng bán kính",
+            "Gấp đôi bán kính",
+            "Gấp ba bán kính"
+          ],
+          "a": 2,
+          "explain": "Đường kính đi qua tâm và nối hai điểm trên đường tròn, có độ dài gấp đôi bán kính."
+        },
+        {
+          "type": "mcq",
+          "q": "Một hình tròn có bán kính 5 cm. Hỏi đường kính của hình tròn đó là bao nhiêu?",
+          "options": [
+            "5 cm",
+            "10 cm",
+            "15 cm",
+            "2,5 cm"
+          ],
+          "a": 1,
+          "explain": "Đường kính gấp đôi bán kính: 5 x 2 = 10 (cm)."
+        },
+        {
+          "type": "fill",
+          "q": "Hình thang có ___ cạnh đáy song song với nhau.",
+          "answer": "2",
+          "accept": [
+            "2"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Điểm chính giữa hình tròn, cách đều mọi điểm trên đường tròn, được gọi là ___ của hình tròn.",
+          "answer": "tâm",
+          "accept": [
+            "tâm",
+            "Tâm"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Một hình tam giác có đáy dài 12 cm. Chiều cao của tam giác đó bằng một nửa độ dài đáy. Hỏi chiều cao của hình tam giác là bao nhiêu xăng-ti-mét?",
+          "hints": [
+            "Em đọc kỹ đề: chiều cao bằng một nửa đáy, vậy chiều cao tính bằng phép tính gì với đáy?",
+            "Muốn tìm một nửa của 12 cm, em lấy 12 chia cho 2, đúng không nào?",
+            "Em thử tính 12 : 2 xem kết quả là bao nhiêu nhé."
+          ],
+          "loiGiai": "Bài giải\nChiều cao của hình tam giác là:\n12 : 2 = 6 (cm)\nĐáp số: 6 cm",
+          "dapSo": "6 cm"
+        },
+        {
+          "type": "solve",
+          "de": "Một hình thang có đáy lớn dài 18 cm, đáy bé dài 12 cm. Hỏi đáy lớn dài hơn đáy bé bao nhiêu xăng-ti-mét, và tổng độ dài hai đáy là bao nhiêu?",
+          "hints": [
+            "Em tính xem đáy lớn hơn đáy bé bao nhiêu bằng phép trừ nhé.",
+            "Sau đó, em cộng đáy lớn và đáy bé lại để tìm tổng độ dài hai đáy.",
+            "Em thử tính 18 - 12 và 18 + 12 xem kết quả lần lượt là bao nhiêu nhé."
+          ],
+          "loiGiai": "Bài giải\nĐáy lớn dài hơn đáy bé số xăng-ti-mét là:\n18 - 12 = 6 (cm)\nTổng độ dài hai đáy là:\n18 + 12 = 30 (cm)\nĐáp số: hơn 6 cm; tổng 30 cm",
+          "dapSo": "Đáy lớn hơn đáy bé 6 cm; tổng hai đáy 30 cm"
+        }
+      ]
+    },
+    {
+      "so": 33,
+      "ten": "Ôn tập diện tích, chu vi một số hình phẳng",
+      "lyThuyet": "Diện tích hình tam giác bằng độ dài đáy nhân với chiều cao rồi chia 2: S = (đáy x chiều cao) : 2. Diện tích hình thang bằng tổng hai đáy nhân với chiều cao rồi chia 2: S = (đáy lớn + đáy bé) x chiều cao : 2. Với hình tròn, chu vi bằng đường kính nhân 3,14, còn diện tích bằng bán kính nhân bán kính rồi nhân 3,14. Anh nhắc em nhớ kỹ các công thức này và luôn ghi đơn vị đo (cm², m²...) cho đúng khi làm bài nhé.",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Diện tích hình tam giác có đáy 8 cm, chiều cao 5 cm là bao nhiêu?",
+          "options": [
+            "40 cm²",
+            "20 cm²",
+            "13 cm²",
+            "20 cm"
+          ],
+          "a": 1,
+          "explain": "Diện tích tam giác = (đáy x chiều cao) : 2 = (8 x 5) : 2 = 40 : 2 = 20 (cm²)."
+        },
+        {
+          "type": "mcq",
+          "q": "Diện tích hình thang có đáy lớn 10 cm, đáy bé 6 cm, chiều cao 4 cm là bao nhiêu?",
+          "options": [
+            "64 cm²",
+            "32 cm²",
+            "40 cm²",
+            "16 cm²"
+          ],
+          "a": 1,
+          "explain": "Diện tích hình thang = (đáy lớn + đáy bé) x chiều cao : 2 = (10 + 6) x 4 : 2 = 64 : 2 = 32 (cm²)."
+        },
+        {
+          "type": "mcq",
+          "q": "Một hình tròn có bán kính 4 cm. Diện tích của hình tròn đó là bao nhiêu?",
+          "options": [
+            "25,12 cm²",
+            "50,24 cm²",
+            "50,24 cm",
+            "12,56 cm²"
+          ],
+          "a": 1,
+          "explain": "Diện tích hình tròn = bán kính x bán kính x 3,14 = 4 x 4 x 3,14 = 16 x 3,14 = 50,24 (cm²)."
+        },
+        {
+          "type": "mcq",
+          "q": "Hình tam giác A có đáy 12 cm, chiều cao 5 cm. Hình thang B có đáy lớn 9 cm, đáy bé 5 cm, chiều cao 4 cm. Hình nào có diện tích lớn hơn?",
+          "options": [
+            "Hình tam giác A",
+            "Hình thang B",
+            "Bằng nhau",
+            "Không so sánh được"
+          ],
+          "a": 0,
+          "explain": "Diện tích tam giác A = (12 x 5) : 2 = 30 (cm²). Diện tích hình thang B = (9 + 5) x 4 : 2 = 56 : 2 = 28 (cm²). Vì 30 cm² > 28 cm² nên hình tam giác A có diện tích lớn hơn."
+        },
+        {
+          "type": "fill",
+          "q": "Một hình tròn có đường kính 6 cm. Chu vi của hình tròn đó là ___ cm.",
+          "answer": "18,84",
+          "accept": [
+            "18,84",
+            "18.84"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "Một hình tròn có bán kính 3 cm. Diện tích hình tròn đó là ___ cm².",
+          "answer": "28,26",
+          "accept": [
+            "28,26",
+            "28.26"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Một mảnh vườn hình tam giác có đáy 14 m, chiều cao 8 m. Người ta trồng rau trên toàn bộ mảnh vườn. Hỏi diện tích trồng rau là bao nhiêu mét vuông?",
+          "hints": [
+            "Em nhớ lại công thức tính diện tích hình tam giác là gì nào?",
+            "Diện tích tam giác bằng đáy nhân chiều cao rồi chia 2, em thử áp dụng với đáy 14 m và chiều cao 8 m nhé.",
+            "Em tính 14 x 8 trước, sau đó chia kết quả cho 2 xem được bao nhiêu."
+          ],
+          "loiGiai": "Bài giải\nDiện tích mảnh vườn hình tam giác là:\n(14 x 8) : 2 = 112 : 2 = 56 (m²)\nĐáp số: 56 m²",
+          "dapSo": "56 m²"
+        },
+        {
+          "type": "solve",
+          "de": "Một cái ao hình tròn có bán kính 5 m. Hỏi chu vi và diện tích của cái ao đó là bao nhiêu?",
+          "hints": [
+            "Em tính đường kính của cái ao trước bằng cách lấy bán kính nhân 2 nhé.",
+            "Chu vi hình tròn bằng đường kính nhân 3,14, em thử tính xem.",
+            "Diện tích hình tròn bằng bán kính nhân bán kính rồi nhân 3,14, em tính nốt phần này nhé."
+          ],
+          "loiGiai": "Bài giải\nĐường kính cái ao là:\n5 x 2 = 10 (m)\nChu vi cái ao là:\n10 x 3,14 = 31,4 (m)\nDiện tích cái ao là:\n5 x 5 x 3,14 = 78,5 (m²)\nĐáp số: chu vi 31,4 m, diện tích 78,5 m²",
+          "dapSo": "Chu vi 31,4 m; diện tích 78,5 m²"
+        }
+      ]
+    },
+    {
+      "so": 34,
+      "ten": "Ôn tập đo lường",
+      "lyThuyet": "Bảng đơn vị đo diện tích từ lớn đến bé là: km², ha, m², dm², cm², mm². Hai đơn vị đo diện tích liền kề nhau hơn kém nhau 100 lần, vì vậy 1 km² = 100 ha = 1.000.000 m², và 1 ha = 10.000 m². Khi đổi từ đơn vị lớn sang đơn vị bé em nhân với 100 (ứng với mỗi lần đổi), khi đổi từ đơn vị bé sang đơn vị lớn em chia cho 100. Anh thấy phần này chỉ cần em thuộc bảng đơn vị là đổi rất nhanh thôi!",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "1 km² bằng bao nhiêu héc-ta (ha)?",
+          "options": [
+            "10 ha",
+            "100 ha",
+            "1.000 ha",
+            "10.000 ha"
+          ],
+          "a": 1,
+          "explain": "1 km² = 100 ha vì hai đơn vị liền kề hơn kém nhau 100 lần."
+        },
+        {
+          "type": "mcq",
+          "q": "5 km² bằng bao nhiêu mét vuông?",
+          "options": [
+            "500.000 m²",
+            "5.000.000 m²",
+            "50.000.000 m²",
+            "5.000 m²"
+          ],
+          "a": 1,
+          "explain": "1 km² = 1.000.000 m², nên 5 km² = 5 x 1.000.000 = 5.000.000 m²."
+        },
+        {
+          "type": "mcq",
+          "q": "3 ha 25 m² bằng bao nhiêu mét vuông?",
+          "options": [
+            "3.025 m²",
+            "30.025 m²",
+            "325 m²",
+            "30.250 m²"
+          ],
+          "a": 1,
+          "explain": "3 ha = 3 x 10.000 = 30.000 m². Cộng thêm 25 m²: 30.000 + 25 = 30.025 m²."
+        },
+        {
+          "type": "mcq",
+          "q": "45.000 m² bằng bao nhiêu héc-ta?",
+          "options": [
+            "4,5 ha",
+            "45 ha",
+            "450 ha",
+            "0,45 ha"
+          ],
+          "a": 0,
+          "explain": "1 ha = 10.000 m², nên 45.000 m² = 45.000 : 10.000 = 4,5 ha."
+        },
+        {
+          "type": "fill",
+          "q": "1 ha bằng ___ m².",
+          "answer": "10.000",
+          "accept": [
+            "10.000",
+            "10000"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "2 km² 50 ha = ___ ha.",
+          "answer": "250",
+          "accept": [
+            "250",
+            "250 ha"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Một khu rừng trồng cây có diện tích 8 ha. Người ta muốn đổi diện tích đó ra mét vuông để ghi vào sổ quản lý đất. Hỏi khu rừng đó có diện tích bao nhiêu mét vuông?",
+          "hints": [
+            "Em nhớ lại 1 ha bằng bao nhiêu mét vuông nào?",
+            "Muốn đổi từ ha sang m², em nhân số ha với 10.000, đúng không nào?",
+            "Em thử tính 8 x 10.000 xem kết quả là bao nhiêu nhé."
+          ],
+          "loiGiai": "Bài giải\nDiện tích khu rừng đổi ra mét vuông là:\n8 x 10.000 = 80.000 (m²)\nĐáp số: 80.000 m²",
+          "dapSo": "80.000 m²"
+        },
+        {
+          "type": "solve",
+          "de": "Một nông trường có 2 thửa ruộng: thửa thứ nhất rộng 3 ha, thửa thứ hai rộng 25.000 m². Hỏi tổng diện tích hai thửa ruộng là bao nhiêu héc-ta?",
+          "hints": [
+            "Em đưa diện tích của cả hai thửa ruộng về cùng một đơn vị đo (ví dụ mét vuông) trước nhé.",
+            "Thửa thứ nhất là 3 ha, em đổi ra mét vuông rồi cộng với diện tích thửa thứ hai (25.000 m²).",
+            "Sau khi có tổng diện tích bằng mét vuông, em đổi lại ra héc-ta bằng cách chia cho 10.000 nhé."
+          ],
+          "loiGiai": "Bài giải\nĐổi 3 ha ra mét vuông:\n3 ha = 30.000 m²\nTổng diện tích hai thửa ruộng là:\n30.000 + 25.000 = 55.000 (m²)\nĐổi ra héc-ta:\n55.000 m² = 5,5 ha\nĐáp số: 5,5 ha",
+          "dapSo": "5,5 ha"
+        }
+      ]
+    },
+    {
+      "so": 35,
+      "ten": "Ôn tập chung",
+      "lyThuyet": "Chủ đề 6 giúp em ôn lại toàn bộ kiến thức của học kì 1: số thập phân và các phép tính với số thập phân, đặc điểm và cách tính diện tích, chu vi của hình tam giác, hình thang, hình tròn, cùng với bảng đơn vị đo diện tích. Trước khi làm bài, em hãy đọc thật kỹ đề, xác định dạng toán rồi mới chọn công thức phù hợp. Anh tin là em đã nắm chắc kiến thức rồi, chỉ cần bình tĩnh và cẩn thận là sẽ làm bài kiểm tra học kì 1 thật tốt!",
+      "cauHoi": [
+        {
+          "type": "mcq",
+          "q": "Số 15,758 làm tròn đến hàng phần trăm được số nào?",
+          "options": [
+            "15,75",
+            "15,76",
+            "15,8",
+            "15,7"
+          ],
+          "a": 1,
+          "explain": "Chữ số hàng phần nghìn của 15,758 là 8, mà 8 ≥ 5 nên làm tròn lên: hàng phần trăm từ 5 thành 6, được 15,76."
+        },
+        {
+          "type": "mcq",
+          "q": "Một hình tam giác có diện tích 24 cm² và đáy 8 cm. Hỏi chiều cao của hình tam giác đó là bao nhiêu?",
+          "options": [
+            "3 cm",
+            "6 cm",
+            "12 cm",
+            "16 cm"
+          ],
+          "a": 1,
+          "explain": "Từ công thức S = (đáy x chiều cao) : 2, suy ra chiều cao = (S x 2) : đáy = (24 x 2) : 8 = 48 : 8 = 6 (cm)."
+        },
+        {
+          "type": "mcq",
+          "q": "72.000 m² bằng bao nhiêu héc-ta?",
+          "options": [
+            "7,2 ha",
+            "72 ha",
+            "720 ha",
+            "0,72 ha"
+          ],
+          "a": 0,
+          "explain": "1 ha = 10.000 m², nên 72.000 m² = 72.000 : 10.000 = 7,2 ha."
+        },
+        {
+          "type": "mcq",
+          "q": "Hình tròn C có bán kính 3 cm, hình tròn D có đường kính 8 cm. Hình nào có diện tích lớn hơn?",
+          "options": [
+            "Hình tròn C",
+            "Hình tròn D",
+            "Bằng nhau",
+            "Không so sánh được"
+          ],
+          "a": 1,
+          "explain": "Diện tích hình tròn C = 3 x 3 x 3,14 = 28,26 (cm²). Hình tròn D có bán kính = 8 : 2 = 4 cm, diện tích = 4 x 4 x 3,14 = 50,24 (cm²). Vì 50,24 cm² > 28,26 cm² nên hình tròn D có diện tích lớn hơn."
+        },
+        {
+          "type": "fill",
+          "q": "9,6 : 100 = ___.",
+          "answer": "0,096",
+          "accept": [
+            "0,096",
+            "0.096"
+          ]
+        },
+        {
+          "type": "fill",
+          "q": "8,4 ha = ___ m².",
+          "answer": "84.000",
+          "accept": [
+            "84.000",
+            "84000"
+          ]
+        },
+        {
+          "type": "solve",
+          "de": "Một thửa ruộng hình thang có đáy lớn 100 m, đáy bé 60 m, chiều cao 100 m. Hỏi diện tích thửa ruộng đó là bao nhiêu mét vuông, và bằng bao nhiêu héc-ta?",
+          "hints": [
+            "Em nhớ lại công thức tính diện tích hình thang là gì nào?",
+            "Em thay số vào công thức (đáy lớn + đáy bé) x chiều cao : 2 để tính diện tích theo mét vuông trước nhé.",
+            "Sau khi có diện tích theo mét vuông, em đổi sang héc-ta bằng cách chia cho 10.000 nhé."
+          ],
+          "loiGiai": "Bài giải\nDiện tích thửa ruộng hình thang là:\n(100 + 60) x 100 : 2 = 16.000 : 2 = 8.000 (m²)\nĐổi ra héc-ta:\n8.000 m² = 0,8 ha\nĐáp số: 8.000 m², tức là 0,8 ha",
+          "dapSo": "8.000 m² (0,8 ha)"
+        },
+        {
+          "type": "solve",
+          "de": "Một mảnh đất hình tam giác có đáy 24,5 m và chiều cao 8 m được dùng để trồng hoa. Biết cứ mỗi mét vuông cần 4 chậu hoa. Hỏi cần bao nhiêu chậu hoa để trồng kín cả mảnh đất?",
+          "hints": [
+            "Em tính diện tích mảnh đất hình tam giác trước bằng công thức (đáy x chiều cao) : 2 nhé.",
+            "Sau khi có diện tích, mỗi mét vuông cần 4 chậu hoa, em dùng phép tính gì để tìm tổng số chậu hoa cần dùng?",
+            "Em thử lấy diện tích vừa tính nhân với 4 xem được bao nhiêu chậu hoa nhé."
+          ],
+          "loiGiai": "Bài giải\nDiện tích mảnh đất hình tam giác là:\n(24,5 x 8) : 2 = 196 : 2 = 98 (m²)\nSố chậu hoa cần dùng để trồng kín mảnh đất là:\n98 x 4 = 392 (chậu)\nĐáp số: 392 chậu hoa",
+          "dapSo": "392 chậu hoa"
+        }
+      ]
+    }
+  ]
+}

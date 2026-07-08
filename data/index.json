@@ -1,6 +1,6 @@
 {
  "on3": {
-  "ten": "Ôn hè lớp 3",
+  "ten": "Nền tảng lớp 3",
   "icon": "🌞",
   "nhom": [
    {
@@ -51,7 +51,7 @@
   ]
  },
  "toan": {
-  "ten": "Toán",
+  "ten": "Toán 4 · Ôn tập",
   "icon": "🔢",
   "nhom": [
    {
@@ -157,8 +157,61 @@
    }
   ]
  },
+ "toan5": {
+  "ten": "Toán 5",
+  "icon": "🔢",
+  "nhom": [
+   {
+    "ten": "Tập 1 · Học kỳ I",
+    "files": [
+     {
+      "f": "data/toan5/t1-cd1.json",
+      "chuDe": "Ôn tập và bổ sung",
+      "cdSo": 1,
+      "soBai": 9,
+      "soCau": 72
+     },
+     {
+      "f": "data/toan5/t1-cd2.json",
+      "chuDe": "Số thập phân",
+      "cdSo": 2,
+      "soBai": 5,
+      "soCau": 40
+     },
+     {
+      "f": "data/toan5/t1-cd3.json",
+      "chuDe": "Một số đơn vị đo diện tích",
+      "cdSo": 3,
+      "soBai": 4,
+      "soCau": 32
+     },
+     {
+      "f": "data/toan5/t1-cd4.json",
+      "chuDe": "Các phép tính với số thập phân",
+      "cdSo": 4,
+      "soBai": 6,
+      "soCau": 48
+     },
+     {
+      "f": "data/toan5/t1-cd5.json",
+      "chuDe": "Một số hình phẳng. Chu vi và diện tích",
+      "cdSo": 5,
+      "soBai": 5,
+      "soCau": 40
+     },
+     {
+      "f": "data/toan5/t1-cd6.json",
+      "chuDe": "Ôn tập học kì 1",
+      "cdSo": 6,
+      "soBai": 6,
+      "soCau": 48
+     }
+    ]
+   }
+  ]
+ },
  "tv": {
-  "ten": "Tiếng Việt",
+  "ten": "Tiếng Việt 4 · Ôn tập",
   "icon": "📖",
   "nhom": [
    {
@@ -280,6 +333,45 @@
       "cdSo": 99,
       "soBai": 3,
       "soCau": 24
+     }
+    ]
+   }
+  ]
+ },
+ "tv5": {
+  "ten": "Tiếng Việt 5",
+  "icon": "📖",
+  "nhom": [
+   {
+    "ten": "Tập 1 · Học kỳ I",
+    "files": [
+     {
+      "f": "data/tv5/t1-cd1.json",
+      "chuDe": "Thế giới tuổi thơ",
+      "cdSo": 1,
+      "soBai": 4,
+      "soCau": 32
+     },
+     {
+      "f": "data/tv5/t1-cd2.json",
+      "chuDe": "Thiên nhiên kì thú",
+      "cdSo": 2,
+      "soBai": 5,
+      "soCau": 40
+     },
+     {
+      "f": "data/tv5/t1-cd3.json",
+      "chuDe": "Trên con đường học tập",
+      "cdSo": 3,
+      "soBai": 4,
+      "soCau": 32
+     },
+     {
+      "f": "data/tv5/t1-cd4.json",
+      "chuDe": "Nghệ thuật muôn màu",
+      "cdSo": 4,
+      "soBai": 5,
+      "soCau": 40
      }
     ]
    }

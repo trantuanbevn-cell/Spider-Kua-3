@@ -56,7 +56,7 @@ function pcHome(){
   var w=pcWrong();
   var h=pcHead('🎯 LUYỆN TẬP','closePractice()');
   h+='<div style="font-size:13px;color:var(--tx2);margin-bottom:14px;">Chọn môn em muốn luyện. Làm đúng có xu — đúng nhanh và không cần gợi ý mới được thưởng lớn! ⚡</div>';
-  (P.idx.on3?['on3','toan','tv','ta']:['toan','tv','ta']).forEach(function(m){
+  ['toan5','tv5','ta','toan','tv','on3'].forEach(function(m){
     var M=P.idx[m]; if(!M) return;
     var tot=0,done=0,prog=pcProg();
     M.nhom.forEach(function(n){ n.files.forEach(function(f){ tot+=f.soBai;

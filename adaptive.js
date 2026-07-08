@@ -8,8 +8,8 @@
 function adToday(){ var d=new Date(); return d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'); }
 function adNames(){ return pcLS('bai_names','{}'); }
 function adSaveNames(d,f){ var n=adNames(); (d.bai||[]).forEach(function(b){ n[f+'|'+b.so]=b.ten; }); localStorage.setItem('bai_names',JSON.stringify(n)); }
-function adMonOf(f){ if(f.indexOf('/on3/')>=0) return 'on3'; return f.indexOf('/toan/')>=0?'toan':f.indexOf('/tv/')>=0?'tv':'ta'; }
-function adMonTen(m){ return m==='toan'?'Toán':m==='tv'?'Tiếng Việt':m==='on3'?'Ôn hè lớp 3':'Tiếng Anh'; }
+function adMonOf(f){ if(f.indexOf('/on3/')>=0) return 'on3'; if(f.indexOf('/toan5/')>=0) return 'toan5'; if(f.indexOf('/tv5/')>=0) return 'tv5'; return f.indexOf('/toan/')>=0?'toan':f.indexOf('/tv/')>=0?'tv':'ta'; }
+function adMonTen(m){ return {toan:'Toán 4',tv:'Tiếng Việt 4',toan5:'Toán 5',tv5:'Tiếng Việt 5',on3:'Nền tảng lớp 3',ta:'Tiếng Anh'}[m]||'Tiếng Anh'; }
 
 // ── NHẬT KÝ HỌC: mỗi câu trả lời là 1 dòng ──
 function adLog(ok){

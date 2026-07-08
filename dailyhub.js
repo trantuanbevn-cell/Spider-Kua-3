@@ -69,7 +69,7 @@ pcHome=function(){
 function pcCatalog(){
   var h=pcHead('📚 KHO TỰ LUYỆN','pcHome()');
   h+='<div style="font-size:12.5px;color:var(--tx2);margin-bottom:12px;">Muốn luyện thêm ngoài nhiệm vụ? Chọn môn bất kỳ — làm đúng vẫn có xu!</div>';
-  (P.idx.on3?['on3','toan','tv','ta']:['toan','tv','ta']).forEach(function(m){
+  ['toan5','tv5','ta','toan','tv','on3'].forEach(function(m){
     var M=P.idx[m]; if(!M) return;
     var tot=0,done=0,prog=pcProg();
     M.nhom.forEach(function(n){ n.files.forEach(function(f){ tot+=f.soBai; }); });
@@ -106,13 +106,14 @@ function dhContract(mon){
 
 // ═══ SINH ĐỀ CHO TỪNG CA MÔN ═══
 function dhFiles(mon){
-  var idx=P.idx, out={main:[],on3:[]};
+  // main = kiến thức MỚI lớp 5 · review = ôn tập lớp 4 (kho 1.100 câu có sẵn)
+  var idx=P.idx, out={main:[],review:[]};
   if(mon==='toan'){
-    (idx.toan?idx.toan.nhom:[]).forEach(function(n){n.files.forEach(function(f){out.main.push(f);});});
-    (idx.on3?idx.on3.nhom:[]).forEach(function(n){n.files.forEach(function(f){ if(f.f.indexOf('toan3')>=0) out.on3.push(f); });});
+    (idx.toan5?idx.toan5.nhom:[]).forEach(function(n){n.files.forEach(function(f){out.main.push(f);});});
+    (idx.toan?idx.toan.nhom:[]).forEach(function(n){n.files.forEach(function(f){out.review.push(f);});});
   } else if(mon==='tv'){
-    (idx.tv?idx.tv.nhom:[]).forEach(function(n){n.files.forEach(function(f){out.main.push(f);});});
-    (idx.on3?idx.on3.nhom:[]).forEach(function(n){n.files.forEach(function(f){ if(f.f.indexOf('tv3')>=0) out.on3.push(f); });});
+    (idx.tv5?idx.tv5.nhom:[]).forEach(function(n){n.files.forEach(function(f){out.main.push(f);});});
+    (idx.tv?idx.tv.nhom:[]).forEach(function(n){n.files.forEach(function(f){out.review.push(f);});});
   } else {
     (idx.ta?idx.ta.nhom:[]).forEach(function(n){n.files.forEach(function(f){out.main.push(f);});});
   }
@@ -267,8 +268,8 @@ adStartDaily=function(){ if(pcEl().style.display!=='block') openPractice(); else
 // ═══ ĐÁNH GIÁ CHU KỲ 5 NGÀY — máy tự nhìn lại & điều chỉnh lộ trình ═══
 function dhSubjectOf(f){
   if(!f) return 'khac';
-  if(f.indexOf('toan3')>=0||f.indexOf('/toan/')>=0) return 'toan';
-  if(f.indexOf('tv3')>=0||f.indexOf('/tv/')>=0) return 'tv';
+  if(f.indexOf('toan')>=0) return 'toan';
+  if(f.indexOf('tv')>=0) return 'tv';
   if(f.indexOf('/ta/')>=0||f==='vocab') return 'ta';
   return 'khac';
 }

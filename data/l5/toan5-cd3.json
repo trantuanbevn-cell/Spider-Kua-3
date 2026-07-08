@@ -1,0 +1,68 @@
+{
+  "mon": "toan5",
+  "tap": 1,
+  "chuDe": "Một số đơn vị đo diện tích",
+  "cdSo": 3,
+  "bai": [
+    {
+      "so": 15,
+      "ten": "Ki-lô-mét vuông. Héc-ta",
+      "lyThuyet": "Ở lớp 4, em đã học các đơn vị đo diện tích cm², dm², m². Lên lớp 5, anh sẽ giới thiệu cho em hai đơn vị đo diện tích lớn hơn nữa, dùng để đo đất đai, thành phố hay sân vận động rộng lớn: ki-lô-mét vuông (km²) và héc-ta (ha). Ki-lô-mét vuông là diện tích hình vuông có cạnh dài 1km, vậy 1 km² = 1.000.000 m². Héc-ta là diện tích hình vuông có cạnh dài 100m, tức 1 ha = 10.000 m², và 1 km² = 100 ha. Ví dụ, một nông trường trồng cây rộng lớn thường được đo bằng héc-ta, còn diện tích cả một huyện thì đo bằng ki-lô-mét vuông.",
+      "cauHoi": [
+        {"type":"mcq","q":"1 km² bằng bao nhiêu mét vuông?","options":["100.000 m²","1.000.000 m²","10.000 m²","10.000.000 m²"],"a":1,"explain":"1 km² là diện tích hình vuông cạnh 1000m, nên 1 km² = 1000 x 1000 = 1.000.000 m²."},
+        {"type":"mcq","q":"1 ha bằng bao nhiêu mét vuông?","options":["1.000 m²","10.000 m²","100.000 m²","1.000.000 m²"],"a":1,"explain":"1 ha là diện tích hình vuông cạnh 100m, nên 1 ha = 100 x 100 = 10.000 m²."},
+        {"type":"mcq","q":"1 km² bằng bao nhiêu héc-ta?","options":["10 ha","100 ha","1.000 ha","10.000 ha"],"a":1,"explain":"1 km² = 1.000.000 m², mà 1 ha = 10.000 m², nên 1 km² = 1.000.000 : 10.000 = 100 ha."},
+        {"type":"mcq","q":"So sánh 5 km² và 450 ha, kết quả nào đúng?","options":["5 km² > 450 ha","5 km² < 450 ha","5 km² = 450 ha","Không so sánh được"],"a":0,"explain":"Đổi 5 km² = 5 x 100 = 500 ha. Vì 500 ha > 450 ha nên 5 km² > 450 ha."},
+        {"type":"mcq","q":"Một khu rừng có diện tích 3 km² 25 ha. Diện tích khu rừng đó bằng bao nhiêu héc-ta?","options":["325 ha","3.025 ha","350 ha","300,25 ha"],"a":0,"explain":"Đổi 3 km² = 3 x 100 = 300 ha, cộng thêm 25 ha đã cho, ta được 300 + 25 = 325 ha."},
+        {"type":"fill","q":"Điền số thích hợp vào chỗ trống: 7 km² = ___ ha.","answer":"700","accept":["700","700 ha"]},
+        {"type":"solve","de":"Một nông trường trồng cây ăn quả có diện tích 2 km². Hỏi nông trường đó có diện tích bao nhiêu héc-ta?","hints":["Em nhớ lại xem 1 km² bằng bao nhiêu héc-ta nhé?","Mỗi 1 km² bằng 100 ha, vậy 2 km² sẽ bằng bao nhiêu ha nhỉ?","Em lấy 100 nhân với 2 xem được bao nhiêu héc-ta nhé."],"loiGiai":"Bài giải\n1 km² = 100 ha nên 2 km² = 100 x 2 = 200 (ha)\nĐáp số: 200 ha","dapSo":"200 ha"},
+        {"type":"solve","de":"Một thành phố có tổng diện tích 450 km², trong đó diện tích công viên cây xanh chiếm 900 ha. Hỏi diện tích còn lại của thành phố (không kể công viên) là bao nhiêu héc-ta?","hints":["Em đổi diện tích thành phố từ km² sang ha trước đã, nhớ 1 km² = 100 ha nhé.","Sau khi đổi xong, thành phố có tất cả bao nhiêu héc-ta?","Em lấy diện tích thành phố (theo ha) trừ đi diện tích công viên (900 ha) để tìm diện tích còn lại nhé."],"loiGiai":"Bài giải\nĐổi 450 km² = 450 x 100 = 45.000 (ha)\nDiện tích còn lại của thành phố (không kể công viên) là:\n45.000 - 900 = 44.100 (ha)\nĐáp số: 44.100 ha","dapSo":"44.100 ha"}
+      ]
+    },
+    {
+      "so": 16,
+      "ten": "Các đơn vị đo diện tích",
+      "lyThuyet": "Bảng đơn vị đo diện tích đầy đủ, xếp từ lớn đến bé, gồm: km², hm² (chính là ha), dam², m², dm², cm², mm². Điều quan trọng em cần nhớ: hai đơn vị đo diện tích liền nhau hơn kém nhau 100 lần, khác với đơn vị đo độ dài chỉ hơn kém nhau 10 lần. Ví dụ 1 m² = 100 dm², 1 dm² = 100 cm², vì hình vuông cạnh 1 đơn vị lớn sẽ chứa 100 hình vuông cạnh bằng 1/10 đơn vị đó. Nhờ vậy khi đổi đơn vị đo diện tích, mỗi lần chuyển sang đơn vị liền kề, em nhân hoặc chia cho 100 chứ không phải cho 10 như đo độ dài nhé.",
+      "cauHoi": [
+        {"type":"mcq","q":"Hai đơn vị đo diện tích liền nhau (ví dụ m² và dm²) hơn kém nhau bao nhiêu lần?","options":["10 lần","100 lần","1.000 lần","1 lần"],"a":1,"explain":"Khác với đơn vị đo độ dài (hơn kém 10 lần), hai đơn vị đo diện tích liền nhau luôn hơn kém nhau 100 lần."},
+        {"type":"mcq","q":"1 m² bằng bao nhiêu đề-xi-mét vuông (dm²)?","options":["10 dm²","100 dm²","1.000 dm²","10.000 dm²"],"a":1,"explain":"1 m² và 1 dm² là hai đơn vị đo diện tích liền nhau nên 1 m² = 100 dm²."},
+        {"type":"mcq","q":"1 dam² (đề-ca-mét vuông) bằng bao nhiêu mét vuông?","options":["10 m²","100 m²","1.000 m²","10.000 m²"],"a":1,"explain":"1 dam² và 1 m² là hai đơn vị liền nhau nên 1 dam² = 100 m²."},
+        {"type":"mcq","q":"Đổi 5 m² 8 dm² ra đơn vị dm², kết quả là bao nhiêu?","options":["508 dm²","58 dm²","5.008 dm²","580 dm²"],"a":0,"explain":"5 m² = 5 x 100 = 500 dm², cộng thêm 8 dm² đã cho, ta được 500 + 8 = 508 dm²."},
+        {"type":"mcq","q":"Sắp xếp các số đo sau theo thứ tự tăng dần: 3 m², 250 dm², 4.000 cm².","options":["4.000 cm² < 250 dm² < 3 m²","3 m² < 250 dm² < 4.000 cm²","250 dm² < 4.000 cm² < 3 m²","3 m² < 4.000 cm² < 250 dm²"],"a":0,"explain":"Đổi tất cả về cm²: 3 m² = 30.000 cm², 250 dm² = 25.000 cm², 4.000 cm² giữ nguyên. So sánh 4.000 < 25.000 < 30.000, vậy 4.000 cm² < 250 dm² < 3 m²."},
+        {"type":"fill","q":"Điền số thích hợp vào chỗ trống: 6 dm² 45 cm² = ___ cm².","answer":"645","accept":["645","645 cm²"]},
+        {"type":"solve","de":"Một mảnh bìa hình vuông có diện tích 4 dm². Hỏi mảnh bìa đó có diện tích bao nhiêu xăng-ti-mét vuông?","hints":["Em nhớ lại 1 dm² bằng bao nhiêu cm² nhé?","Mỗi 1 dm² bằng 100 cm², vậy 4 dm² sẽ bằng bao nhiêu cm² nhỉ?","Em lấy 100 nhân với 4 xem được bao nhiêu cm² nhé."],"loiGiai":"Bài giải\n1 dm² = 100 cm² nên 4 dm² = 100 x 4 = 400 (cm²)\nĐáp số: 400 cm²","dapSo":"400 cm²"},
+        {"type":"solve","de":"Một tấm thảm hình chữ nhật có diện tích 720 dm². Bạn An muốn đổi diện tích đó ra mét vuông để so sánh với diện tích căn phòng là 8 m². Hỏi tấm thảm đó có diện tích bao nhiêu mét vuông, và có phủ kín được cả căn phòng không?","hints":["Em đổi 720 dm² sang m² trước nhé, nhớ 1 m² = 100 dm².","Em lấy 720 chia cho 100 xem được bao nhiêu mét vuông nhé.","So sánh kết quả vừa tìm được với diện tích căn phòng 8 m² xem tấm thảm có đủ phủ kín không nhé."],"loiGiai":"Bài giải\nĐổi 720 dm² = 720 : 100 = 7,2 (m²)\nVì 7,2 m² < 8 m² nên tấm thảm không phủ kín được cả căn phòng.\nĐáp số: 7,2 m², không phủ kín được cả phòng","dapSo":"7,2 m² (không đủ phủ kín phòng)"}
+      ]
+    },
+    {
+      "so": 17,
+      "ten": "Thực hành và trải nghiệm với một số đơn vị đo đại lượng",
+      "lyThuyet": "Bài học này giúp em vận dụng các đơn vị đo diện tích đã học vào thực tế: ước lượng và tính toán diện tích những nơi quen thuộc như sân bóng đá, hồ bơi, sân trường hay mảnh vườn. Khi tính diện tích, em nhớ công thức cơ bản: diện tích hình chữ nhật bằng chiều dài nhân chiều rộng, diện tích hình vuông bằng cạnh nhân cạnh. Việc chọn đơn vị đo cũng rất quan trọng: nơi nhỏ như căn phòng nên đo bằng m², còn đất đai rộng lớn như nông trường hay thành phố thì đo bằng ha hoặc km² cho gọn số. Anh tin em sẽ tính nhanh và chính xác nếu đọc kỹ đề bài nhé.",
+      "cauHoi": [
+        {"type":"mcq","q":"Để đo diện tích một sân vận động bóng đá, đơn vị đo nào là phù hợp nhất?","options":["cm²","dm²","m²","mm²"],"a":2,"explain":"Sân vận động có diện tích khoảng vài nghìn mét vuông, dùng đơn vị m² là phù hợp nhất; các đơn vị nhỏ như cm², dm², mm² sẽ cho ra con số quá lớn, không tiện sử dụng."},
+        {"type":"mcq","q":"Để đo diện tích của cả một tỉnh hay thành phố, đơn vị đo nào là phù hợp nhất?","options":["m²","dm²","km² hoặc ha","cm²"],"a":2,"explain":"Diện tích một tỉnh hay thành phố rất lớn, nên người ta thường dùng đơn vị km² hoặc ha cho gọn."},
+        {"type":"mcq","q":"Một sân bóng đá hình chữ nhật có chiều dài khoảng 105m, chiều rộng khoảng 68m. Diện tích sân đó vào khoảng bao nhiêu?","options":["7.140 m²","1.734 m²","714 m²","71.400 m²"],"a":0,"explain":"Diện tích sân = chiều dài x chiều rộng = 105 x 68 = 7.140 m²."},
+        {"type":"mcq","q":"Một hồ bơi hình chữ nhật dài 25m, rộng 10m. Diện tích mặt nước hồ bơi đó là bao nhiêu?","options":["35 m²","250 m²","2.500 m²","125 m²"],"a":1,"explain":"Diện tích mặt nước = 25 x 10 = 250 m²."},
+        {"type":"mcq","q":"Một mảnh vườn hình chữ nhật có chu vi 60m, chiều dài gấp đôi chiều rộng. Diện tích mảnh vườn đó là bao nhiêu?","options":["200 m²","150 m²","300 m²","100 m²"],"a":0,"explain":"Nửa chu vi là 60 : 2 = 30m, đó là tổng chiều dài và chiều rộng. Vì chiều dài gấp đôi chiều rộng nên chia 30m thành 3 phần bằng nhau: chiều rộng = 30 : 3 = 10m, chiều dài = 20m. Diện tích = 20 x 10 = 200 m²."},
+        {"type":"fill","q":"Sân trường của Bình hình chữ nhật dài 40m, rộng 25m. Diện tích sân trường là ___ m².","answer":"1.000","accept":["1.000","1000","1.000 m²"]},
+        {"type":"solve","de":"Bố của Nam định rào một mảnh vườn hình vuông cạnh 15m để trồng rau. Hỏi diện tích mảnh vườn đó là bao nhiêu mét vuông?","hints":["Em nhớ lại công thức tính diện tích hình vuông là gì nhé?","Diện tích hình vuông bằng cạnh nhân với cạnh, đúng không nào?","Em lấy 15 nhân với 15 xem được bao nhiêu mét vuông nhé."],"loiGiai":"Bài giải\nDiện tích mảnh vườn hình vuông là:\n15 x 15 = 225 (m²)\nĐáp số: 225 m²","dapSo":"225 m²"},
+        {"type":"solve","de":"Một khu đất hình chữ nhật dùng để xây sân bóng đá mini có chiều dài 40m, chiều rộng 20m. Người ta dành riêng một phần đất hình vuông cạnh 10m ở góc sân để làm chỗ để xe. Hỏi diện tích phần sân còn lại (không tính chỗ để xe) là bao nhiêu mét vuông?","hints":["Em tính diện tích cả khu đất hình chữ nhật trước nhé, lấy chiều dài nhân chiều rộng.","Sau đó em tính diện tích phần đất hình vuông dùng làm chỗ để xe nhé.","Cuối cùng lấy diện tích cả khu đất trừ đi diện tích chỗ để xe để tìm diện tích còn lại nhé."],"loiGiai":"Bài giải\nDiện tích cả khu đất là:\n40 x 20 = 800 (m²)\nDiện tích chỗ để xe hình vuông là:\n10 x 10 = 100 (m²)\nDiện tích phần sân còn lại là:\n800 - 100 = 700 (m²)\nĐáp số: 700 m²","dapSo":"700 m²"}
+      ]
+    },
+    {
+      "so": 18,
+      "ten": "Luyện tập chung",
+      "lyThuyet": "Bài luyện tập chung này giúp em ôn lại toàn bộ kiến thức về đơn vị đo diện tích: đổi giữa các đơn vị km², ha, dam², m², dm², cm² (nhớ hai đơn vị liền nhau hơn kém nhau 100 lần), so sánh các số đo diện tích, và vận dụng để tính diện tích các hình thực tế như thửa ruộng, khu vườn, trang trại. Em hãy đọc kỹ đề bài, xác định rõ đơn vị đo trước khi tính toán nhé, chắc chắn em sẽ làm tốt thôi.",
+      "cauHoi": [
+        {"type":"mcq","q":"3 km² bằng bao nhiêu héc-ta?","options":["30 ha","300 ha","3.000 ha","30.000 ha"],"a":1,"explain":"1 km² = 100 ha nên 3 km² = 3 x 100 = 300 ha."},
+        {"type":"mcq","q":"6 m² 3 dm² bằng bao nhiêu đề-xi-mét vuông?","options":["603 dm²","63 dm²","6.003 dm²","630 dm²"],"a":0,"explain":"6 m² = 6 x 100 = 600 dm², cộng thêm 3 dm² đã cho, ta được 600 + 3 = 603 dm²."},
+        {"type":"mcq","q":"4 ha 25 m² bằng bao nhiêu mét vuông?","options":["40.025 m²","4.025 m²","40.250 m²","400.025 m²"],"a":0,"explain":"1 ha = 10.000 m² nên 4 ha = 4 x 10.000 = 40.000 m², cộng thêm 25 m² đã cho, ta được 40.000 + 25 = 40.025 m²."},
+        {"type":"mcq","q":"So sánh 2 dam² và 150 m², kết quả nào đúng?","options":["2 dam² > 150 m²","2 dam² < 150 m²","2 dam² = 150 m²","Không so sánh được"],"a":0,"explain":"Đổi 2 dam² = 2 x 100 = 200 m². Vì 200 m² > 150 m² nên 2 dam² > 150 m²."},
+        {"type":"mcq","q":"Một thửa ruộng hình chữ nhật có chiều dài 80m, chiều rộng 50m. Diện tích thửa ruộng đó bằng bao nhiêu héc-ta?","options":["0,4 ha","4 ha","40 ha","0,04 ha"],"a":0,"explain":"Diện tích thửa ruộng = 80 x 50 = 4.000 m². Đổi ra héc-ta: 4.000 : 10.000 = 0,4 ha."},
+        {"type":"fill","q":"Điền số thích hợp vào chỗ trống: 5 hm² = ___ dam².","answer":"500","accept":["500","500 dam²"]},
+        {"type":"solve","de":"Một khu vườn hình chữ nhật có chiều dài 60m, chiều rộng 30m. Hỏi diện tích khu vườn đó bằng bao nhiêu mét vuông, và bằng bao nhiêu héc-ta?","hints":["Em tính diện tích khu vườn bằng công thức chiều dài nhân chiều rộng trước nhé.","Sau khi có diện tích tính theo m², em đổi sang ha bằng cách chia cho 10.000 nhé.","Em thử tính 60 x 30 rồi lấy kết quả chia cho 10.000 xem được bao nhiêu héc-ta nhé."],"loiGiai":"Bài giải\nDiện tích khu vườn là:\n60 x 30 = 1.800 (m²)\nĐổi ra héc-ta: 1.800 : 10.000 = 0,18 (ha)\nĐáp số: 1.800 m², tức 0,18 ha","dapSo":"1.800 m² (0,18 ha)"},
+        {"type":"solve","de":"Một trang trại hình chữ nhật có chiều dài 500m, chiều rộng 200m. Người ta dùng 3 ha trong trang trại để trồng hoa, phần còn lại để trồng rau. Hỏi diện tích phần trồng rau là bao nhiêu héc-ta?","hints":["Em tính diện tích cả trang trại theo m² trước bằng cách lấy chiều dài nhân chiều rộng nhé.","Sau đó em đổi diện tích đó sang héc-ta bằng cách chia cho 10.000 nhé.","Cuối cùng lấy diện tích cả trang trại (theo ha) trừ đi 3 ha trồng hoa để tìm diện tích trồng rau nhé."],"loiGiai":"Bài giải\nDiện tích cả trang trại là:\n500 x 200 = 100.000 (m²)\nĐổi ra héc-ta: 100.000 : 10.000 = 10 (ha)\nDiện tích phần trồng rau là:\n10 - 3 = 7 (ha)\nĐáp số: 7 ha","dapSo":"7 ha"}
+      ]
+    }
+  ]
+}
