@@ -218,6 +218,39 @@ app.post('/notify', async (req, res) => {
   } catch (e) { res.status(500).json({ err: e.message }); }
 });
 
+
+// ── GỌI THOẠI TRONG APP (WebRTC signaling — 1 cuộc gọi 1 lúc) ──
+let rtc = null; // {offer, answer, candP, candK, status, ts}
+app.post('/rtc/start', (req, res) => {
+  const { key, offer } = req.body || {};
+  if (key !== ADMIN_KEY) return res.status(403).json({ err: 'sai mã' });
+  rtc = { offer: offer || null, answer: null, candP: [], candK: [], status: 'ringing', ts: Date.now() };
+  res.json({ ok: true });
+});
+app.post('/rtc/answer', (req, res) => {
+  if (!rtc) return res.status(404).json({ err: 'không có cuộc gọi' });
+  rtc.answer = (req.body || {}).answer; rtc.status = 'active';
+  res.json({ ok: true });
+});
+app.post('/rtc/cand', (req, res) => {
+  if (!rtc) return res.status(404).json({ err: 'không có cuộc gọi' });
+  const { from, cand } = req.body || {};
+  if (from === 'p') rtc.candP.push(cand); else rtc.candK.push(cand);
+  res.json({ ok: true });
+});
+app.get('/rtc/state', (req, res) => {
+  if (!rtc || Date.now() - rtc.ts > 10 * 60000) return res.json({ status: 'idle' });
+  const role = req.query.role, cp = parseInt(req.query.cp || '0'), ck = parseInt(req.query.ck || '0');
+  res.json({
+    status: rtc.status,
+    offer: role === 'k' ? rtc.offer : undefined,
+    answer: role === 'p' ? rtc.answer : undefined,
+    cands: role === 'k' ? rtc.candP.slice(cp) : rtc.candK.slice(ck),
+    cp: rtc.candP.length, ck: rtc.candK.length
+  });
+});
+app.post('/rtc/end', (_, res) => { if (rtc) rtc.status = 'ended'; res.json({ ok: true }); });
+
 // ── báo cáo 23h VN hằng ngày (thay thế GitHub Actions khi server chạy) ──
 setInterval(async () => {
   const vn = new Date(Date.now() + 7 * 3600e3);

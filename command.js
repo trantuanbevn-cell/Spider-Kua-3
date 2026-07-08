@@ -77,7 +77,7 @@ function cmdShowDirective(cmd,id,text){
     +'<div style="font-family:Rajdhani,sans-serif;font-weight:700;font-size:24px;color:#fff;letter-spacing:.06em;margin:8px 0;">'+(cmd==='call'?'BỐ MẸ ĐANG GỌI!':'S.H.I.E.L.D. TRIỆU TẬP!')+'</div>'
     +'<div style="background:rgba(0,0,0,.4);border-radius:14px;padding:16px;font-size:16px;color:#fff;line-height:1.7;margin-bottom:18px;">'+text.replace(/</g,'&lt;')+'</div>'
     +(cmd==='call'
-      ?'<button onclick="cmdAck(\''+id+'\',\'Con nghe đây ạ\');cmdOpenCall();" style="display:block;width:100%;background:#30d158;border:none;border-radius:14px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:18px;padding:16px;cursor:pointer;margin-bottom:10px;">📞 NGHE MÁY (mở Zalo)</button>'
+      ?'<button onclick="cmdAck(\''+id+'\',\'Con nghe máy\');kuaAnswerCall&&kuaAnswerCall();" style="display:block;width:100%;background:#30d158;border:none;border-radius:14px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:18px;padding:16px;cursor:pointer;margin-bottom:10px;">📞 NGHE MÁY</button>'
       :'<button onclick="cmdAck(\''+id+'\',\'Con vào học ngay\');cmdGoStudy();" style="display:block;width:100%;background:#30d158;border:none;border-radius:14px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:18px;padding:16px;cursor:pointer;margin-bottom:10px;">✅ CON VÀO HỌC NGAY</button>')
     +'<button onclick="cmdAck(\''+id+'\',\'Con đang học rồi ạ\')" style="display:block;width:100%;background:rgba(255,255,255,.15);border:1px solid rgba(255,255,255,.4);border-radius:14px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:15px;padding:12px;cursor:pointer;margin-bottom:10px;">📚 Con đang học rồi ạ</button>'
     +'<button onclick="cmdReplyVoice(\''+id+'\')" style="display:block;width:100%;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.3);border-radius:14px;color:#fff;font-size:13px;padding:10px;cursor:pointer;">🎤 Nhắn lại bố mẹ bằng giọng nói</button>'
@@ -93,11 +93,7 @@ function cmdAck(id,action){
 function cmdGoStudy(){
   setTimeout(function(){ if(typeof openPractice==='function'){ openPractice(); setTimeout(function(){ if(typeof adStartDaily==='function') adStartDaily(); },500); } },300);
 }
-function cmdOpenCall(){
-  var link=localStorage.getItem('call_link');
-  if(link) location.href=link;
-  else alert('Chưa cài link gọi (bố mẹ vào Bảng điều khiển → Server Command để thêm link Zalo).');
-}
+
 function cmdReplyVoice(id){
   var S=window.SpeechRecognition||window.webkitSpeechRecognition;
   if(!S){ alert('Máy không hỗ trợ mic.'); return; }
@@ -143,10 +139,10 @@ function adminServerSetup(){
   if(u===null) return;
   var k=prompt('ADMIN_KEY (đúng mã đã đặt trong Railway → Variables):', srvKey());
   if(k===null) return;
-  var z=prompt('Link gọi Zalo (tùy chọn — VD https://zalo.me/09xxxxxxxx):', localStorage.getItem('call_link')||'');
+
   localStorage.setItem('srv_url',(u||'').trim());
   localStorage.setItem('srv_key',(k||'').trim());
-  if(z!==null) localStorage.setItem('call_link',(z||'').trim());
+
   if(srvOn()){
     fetch(srvUrl()+'/health').then(function(r){return r.json();})
       .then(function(){ alert('✅ Kết nối server thành công! Giờ bấm "Bật nhận thông báo" trên CẢ máy này và máy của con.'); adminOpen(); })
