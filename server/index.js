@@ -22,6 +22,7 @@ const TG_TOKEN = process.env.TG_TOKEN || '';
 const TG_CHAT  = process.env.TG_CHAT || '';
 const ROOM     = process.env.ROOM || '';
 const ADMIN_KEY= process.env.ADMIN_KEY || ''; // mã bí mật cho lệnh của bố mẹ
+const ACTIVATE_PIN = process.env.ACTIVATE_PIN || ''; // mã kích hoạt nhập trong app
 const PORT     = process.env.PORT || 3000;
 
 // ── Supabase REST helper ──
@@ -99,6 +100,17 @@ async function pushTo(role, payload) {
 // ═══ API ═══
 app.get('/health', (_, res) => res.json({ ok: true, ts: Date.now() }));
 app.get('/vapid', (_, res) => res.json({ key: VAPID ? VAPID.pub : null }));
+
+// KÍCH HOẠT: app đổi mã PIN lấy chìa khóa admin (chống dò: tối đa 10 lần/giờ)
+let actFails = 0, actReset = Date.now();
+app.post('/activate', (req, res) => {
+  if (Date.now() - actReset > 3600e3) { actFails = 0; actReset = Date.now(); }
+  if (actFails >= 10) return res.status(429).json({ err: 'Sai quá nhiều — thử lại sau 1 giờ' });
+  const { pin } = req.body || {};
+  if (!ACTIVATE_PIN || String(pin) !== ACTIVATE_PIN) { actFails++; return res.status(403).json({ err: 'sai mã kích hoạt' }); }
+  actFails = 0;
+  res.json({ key: ADMIN_KEY });
+});
 
 // thiết bị đăng ký nhận thông báo (role: 'kua' | 'parent')
 app.post('/subscribe', async (req, res) => {

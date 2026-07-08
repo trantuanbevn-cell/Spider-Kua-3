@@ -4,7 +4,8 @@
 // xác nhận lệnh, hộp thư 2 chiều bố mẹ ↔ con
 // ═══════════════════════════════════════════════
 
-function srvUrl(){ return (localStorage.getItem('srv_url')||'').replace(/\/$/,''); }
+var SRV_DEFAULT='https://spider-kua-3-production.up.railway.app'; // server gia đình — nướng sẵn
+function srvUrl(){ return (localStorage.getItem('srv_url')||SRV_DEFAULT).replace(/\/$/,''); }
 function srvKey(){ return localStorage.getItem('srv_key')||''; }
 function srvOn(){ return !!srvUrl(); }
 
@@ -169,4 +170,21 @@ function kuaMsgParent(){
   } else {
     var t=prompt('Nhắn gì cho bố mẹ?'); send(t);
   }
+}
+
+
+// ═══ TỰ ĐỘNG KẾT NỐI SERVER SAU KHI ĐĂNG NHẬP — không phải gõ tay gì thêm ═══
+async function cmdAutoSetup(role, pin){
+  try{
+    if(role==='parent' && pin && !srvKey()){
+      try{
+        var r=await srvPost('/activate',{pin:String(pin)});
+        if(r&&r.key){ localStorage.setItem('srv_key',r.key); }
+      }catch(e){}
+    }
+    // đăng ký nhận thông báo đẩy (hỏi quyền ngay trong thao tác chạm của người dùng)
+    cmdSubscribe().then(function(ok){
+      if(ok && typeof speak==='function' && role==='kua') speak('Kênh liên lạc với bố mẹ đã mở!');
+    }).catch(function(){});
+  }catch(e){}
 }

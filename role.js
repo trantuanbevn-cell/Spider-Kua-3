@@ -196,7 +196,7 @@ function adminChangePin(){
         if(roleGet()==='parent'){ adminOpen(); return; }
         rolePinPad('BỐ MẸ — QUẢN LÝ','Nhập mã PIN quản trị','var(--blue2)',
           function(v){ return v===(localStorage.getItem('parent_pin')||''); },
-          function(){ adminOpen(); });
+          function(pin){ if(typeof cmdAutoSetup==='function') cmdAutoSetup('parent', pin); adminOpen(); });
       }
     });
   },600);
@@ -371,7 +371,7 @@ function pinKey(k){
     setTimeout(function(){
       if(_pinState.verify(_pinState.val)){
         document.getElementById('pinPad').style.display='none';
-        _pinState.ok();
+        _pinState.ok(_pinState.val);
       } else {
         var box=document.getElementById('pinBox');
         box.style.animation='pinShake .4s';
@@ -389,12 +389,15 @@ roleLoginKua=function(){
   if(!code){ roleSet('kua'); roleHide(); return; }
   rolePinPad('AGENT KUA','Nhập mã truy cập của em','var(--red2)',
     function(v){ return v===code; },
-    function(){ roleSet('kua'); roleHide();
+    function(pin){ roleSet('kua'); roleHide();
+      if(typeof cmdAutoSetup==='function') cmdAutoSetup('kua');
       if(typeof speak==='function') setTimeout(function(){speak('Chào mừng trở lại, Peter!');},600);
     });
 };
 roleLoginParent=function(){
   rolePinPad('BỐ MẸ — QUẢN LÝ','Nhập mã PIN quản trị','var(--blue2)',
     function(v){ return v===(localStorage.getItem('parent_pin')||''); },
-    function(){ roleSet('parent'); roleHide(); setTimeout(adminOpen,300); });
+    function(pin){ roleSet('parent'); roleHide();
+      if(typeof cmdAutoSetup==='function') cmdAutoSetup('parent', pin);
+      setTimeout(adminOpen,300); });
 };
