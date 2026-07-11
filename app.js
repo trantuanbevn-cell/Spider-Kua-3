@@ -907,7 +907,7 @@ async function callGemini(txt,imgs){
   const parts=[];
   if(imgs&&imgs.length)imgs.forEach(i=>parts.push({inlineData:{mimeType:'image/jpeg',data:i}}));
   parts.push({text:txt||'Đây là ảnh bài tập. Hướng dẫn em làm nhé.'});
-  const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+gemKey,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({systemInstruction:{parts:[{text:sys()}]},contents:[{role:'user',parts}],generationConfig:{maxOutputTokens:800,temperature:smartTemp()}})});
+  const r=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+gemKey,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({systemInstruction:{parts:[{text:sys()}]},contents:[{role:'user',parts}],generationConfig:{maxOutputTokens:800,temperature:smartTemp()},safetySettings:[{category:'HARM_CATEGORY_HARASSMENT',threshold:'BLOCK_LOW_AND_ABOVE'},{category:'HARM_CATEGORY_HATE_SPEECH',threshold:'BLOCK_LOW_AND_ABOVE'},{category:'HARM_CATEGORY_SEXUALLY_EXPLICIT',threshold:'BLOCK_LOW_AND_ABOVE'},{category:'HARM_CATEGORY_DANGEROUS_CONTENT',threshold:'BLOCK_LOW_AND_ABOVE'}]})});
   if(!r.ok){const e=await r.json();throw new Error(e.error?.message||'Gemini '+r.status);}
   const d=await r.json();return d.candidates[0].content.parts[0].text;
 }
@@ -989,7 +989,7 @@ async function doSend(){
   if((!txt&&!imgs.length)||busy)return;
   el.value='';resize(el);clearImg();stopSpeak();
   addUserMsg(txt,imgs);showTyp();busy=true;document.getElementById('sendBtn').disabled=true;
-  try{const r=await callAI(txt,imgs);hideTyp();addAIMsg(r);speak(r);}
+  try{const r=await callAI(txt,imgs);hideTyp();addAIMsg(r);speak(r);try{logFuryChat(txt,r);}catch(_e){}}
   catch(e){hideTyp();addRaw('ai','⚠️ Lỗi: '+e.message);}
   busy=false;document.getElementById('sendBtn').disabled=false;
 }
@@ -1184,7 +1184,7 @@ function sys(){
     +'3. SAU MỖI BÀI đúng: nhắc chép vào vở ("Chép đi, anh chờ 3 phút!").\n'
     +'4. NHIỀU ẢNH: đọc hết, liệt kê Bài 1, Bài 2... làm lần lượt từng bài.\n'
     +'5. DẠY THEO SGK Kết nối tri thức: khi có NỘI DUNG SGK trong context, dạy đúng phương pháp sách theo lớp của em (em vừa lên lớp 5), không dạy cách khác.\n'
-    +'6. KHI EM ĐANG LUYỆN TẬP TRONG APP (tin bắt đầu bằng [LUYỆN TẬP]): em đang làm bài trắc nghiệm/tự luận có sẵn. Fury chỉ gợi ý theo thang 3 bậc, TUYỆT ĐỐI không nói đáp án.\n7. KHI TIN BẮT ĐẦU BẰNG [HỌC LÝ THUYẾT]: em học bài MỚI lần đầu. Dạy đúng tiến trình: 1 ví dụ đời thường trực quan → dẫn dắt em TỰ nhận ra quy tắc → chốt kiến thức ngắn như SGK → đố 1 câu thật dễ. Kiên nhẫn, mỗi tin chỉ 1 bước nhỏ.'
+    +'6. KHI EM ĐANG LUYỆN TẬP TRONG APP (tin bắt đầu bằng [LUYỆN TẬP]): em đang làm bài trắc nghiệm/tự luận có sẵn. Fury chỉ gợi ý theo thang 3 bậc, TUYỆT ĐỐI không nói đáp án.\n7. KHI TIN BẮT ĐẦU BẰNG [HỌC LÝ THUYẾT]: em học bài MỚI lần đầu. Dạy đúng tiến trình: 1 ví dụ đời thường trực quan → dẫn dắt em TỰ nhận ra quy tắc → chốt kiến thức ngắn như SGK → đố 1 câu thật dễ. Kiên nhẫn, mỗi tin chỉ 1 bước nhỏ.\n8. AN TOÀN TUYỆT ĐỐI: Em là trẻ 10 tuổi. Chỉ trò chuyện về HỌC TẬP, trường lớp, sở thích lành mạnh và động viên tinh thần. Nếu em hỏi chủ đề không phù hợp (bạo lực, người lớn, tiền bạc người lớn, thông tin cá nhân người khác, cách nói dối bố mẹ...) — KHÔNG trả lời nội dung đó, nhẹ nhàng lái về bài học. Không bao giờ chê bai gia đình, thầy cô. Không gợi ý em giấu điều gì với bố mẹ.'
     +'\n\nPHƯƠNG PHÁP SƯ PHẠM — dạy ĐÚNG CÁCH giáo viên GDPT 2018 được đào tạo (rất quan trọng, để cách anh dạy khớp với cách cô dạy trên lớp):\n'
     +'1. TIẾN TRÌNH 4 BƯỚC với mỗi kiến thức mới: Khởi động (gợi 1 tình huống thực tế em từng gặp) → Khám phá (dẫn dắt bằng ví dụ CỤ THỂ, TRỰC QUAN để em TỰ phát hiện quy tắc — không đọc quy tắc trước) → Luyện tập (làm mẫu 1 câu, em làm câu tương tự) → Vận dụng (đố em áp dụng vào đời thực).\n'
     +'2. TOÁN: đi từ CỤ THỂ đến TRỪU TƯỢNG — luôn mở đầu bằng vật thật/hình ảnh gần gũi (viên bi, quả bóng, tiền, cầu thủ...) rồi mới sang con số. Đúng trình tự và ký hiệu của SGK Kết nối tri thức.\n'
@@ -1653,4 +1653,17 @@ if('serviceWorker' in navigator){
     if(_swReloaded) return; _swReloaded=true;
     location.reload();
   });
+}
+
+
+// ═══ NHẬT KÝ HỘI THOẠI FURY (bố mẹ xem lại trong Bảng điều khiển) ═══
+function logFuryChat(q,a){
+  var log=[];
+  try{log=JSON.parse(localStorage.getItem('fury_chat_log')||'[]');}catch(e){}
+  log.push({q:String(q||'').slice(0,400), a:String(a||'').slice(0,600), d:Date.now()});
+  localStorage.setItem('fury_chat_log', JSON.stringify(log.slice(-60)));
+  try{
+    sbFetch('chat_log',{method:'POST',prefer:'return=minimal',
+      body:JSON.stringify({room_code:room(),q:String(q||'').slice(0,400),a:String(a||'').slice(0,600)})}).catch(function(){});
+  }catch(e){}
 }

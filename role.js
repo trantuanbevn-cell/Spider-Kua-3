@@ -99,6 +99,7 @@ function adminOpen(){
        +'<button onclick="adminMsgKid()" style="flex:1;background:var(--blue2);border:none;border-radius:14px;color:#fff;font-family:Rajdhani,sans-serif;font-weight:700;font-size:15px;padding:14px 8px;cursor:pointer;">💬 NHẮN</button></div>'
       :'')
     +row('📚','Giao bài tập từ xa','Gửi bài — máy Kua nhận thông báo ngay','closePractice();document.getElementById(\'parentOL\').style.display=\'flex\';renderHW&&renderHW();','var(--red)')
+    +row('💬','Hội thoại với Fury','Xem lại toàn bộ con hỏi gì, Fury dạy gì — kiểm soát nội dung','adChatView&&adChatView()')
     +row('📖','Nhật ký buổi học','Khung giờ, nội dung, kết quả và nhận xét của Fury từng buổi','adJournal()','var(--gold)')
     +row('🧭','Đánh giá 5 ngày & định hướng','Trình độ từng môn, máy tự điều chỉnh lộ trình 5 ngày tới','dhReviewView&&dhReviewView()','var(--blue2)')
     +row('📊','Báo cáo tuần','% đúng từng môn, thời gian học, dạng cần bổ túc','adReport()','var(--green)')

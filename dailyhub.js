@@ -432,3 +432,34 @@ if(typeof adminOpen==='function'){
     if(head) head.insertAdjacentHTML('afterend', dhCharts());
   };
 }
+
+
+// ═══ BỐ MẸ XEM LẠI HỘI THOẠI CON ↔ FURY ═══
+function adChatView(){
+  pcEl().style.display='block';
+  pcBox().innerHTML=pcHead('💬 HỘI THOẠI VỚI FURY','closePractice()')+'<div style="text-align:center;color:var(--tx2);padding:30px 0;">🕸️ Đang tải...</div>';
+  var local=[];
+  try{local=JSON.parse(localStorage.getItem('fury_chat_log')||'[]');}catch(e){}
+  var render=function(rows){
+    var seen={},list=[];
+    rows.forEach(function(x){ var k=(x.d||x.ts||'')+(x.q||'').slice(0,20); if(!seen[k]){seen[k]=1;list.push(x);} });
+    list.sort(function(a,b){ return (b.d||new Date(b.ts).getTime())-(a.d||new Date(a.ts).getTime()); });
+    var h=pcHead('💬 HỘI THOẠI VỚI FURY','closePractice()');
+    if(!list.length){ pcBox().innerHTML=h+'<div style="text-align:center;color:var(--tx2);padding:40px 0;">Chưa có hội thoại nào được ghi.</div>'; return; }
+    list.slice(0,40).forEach(function(m){
+      var t=new Date(m.d||m.ts);
+      h+='<div style="background:var(--s1);border:1px solid var(--bd);border-radius:12px;padding:12px 14px;margin-bottom:8px;">'
+        +'<div style="font-size:10px;color:var(--tx3);margin-bottom:6px;">'+t.getDate()+'/'+(t.getMonth()+1)+' '+String(t.getHours()).padStart(2,'0')+':'+String(t.getMinutes()).padStart(2,'0')+'</div>'
+        +'<div style="font-size:12.5px;color:var(--gold);margin-bottom:6px;">🕷️ '+String(m.q||'').replace(/</g,'&lt;')+'</div>'
+        +'<div style="font-size:12.5px;color:var(--tx);line-height:1.7;">🛡️ '+String(m.a||'').replace(/</g,'&lt;')+'</div></div>';
+    });
+    pcBox().innerHTML=h;
+  };
+  try{
+    if(typeof sbFetch==='function'){
+      sbFetch('chat_log?room_code=eq.'+room()+'&order=ts.desc&limit=50')
+        .then(function(rows){ render(local.concat(rows||[])); })
+        .catch(function(){ render(local); });
+    } else render(local);
+  }catch(e){ render(local); }
+}
