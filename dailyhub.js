@@ -140,13 +140,13 @@ function dhGenRefs(mon){
   var fs=dhFiles(mon), refs=[], target=Math.max(0,dhTargetQ(mon)-dhState()[mon].done);
   if(target<=0) target=10;
   var summer=(typeof summerOn==='function'&&summerOn());
-  if(summer && fs.on3.length && mon!=='ta'){
-    // HÈ: 70% nền lớp 3 + 30% lớp 4 mới (có Fury dạy lý thuyết)
-    var nOn3=Math.round(target*0.7), nL4=target-nOn3, ex={}, taken=0, g;
-    while(taken<nOn3 && (g=dhGate(fs.on3,ex))){ ex[g.key]=1; g.n=Math.min(5,nOn3-taken); g._ord=0; refs.push(g); taken+=g.n; }
-    if(refs.length&&taken<nOn3) refs[0].n+=nOn3-taken;
-    var g4=dhGate(fs.main,{});
-    if(g4){ g4.n=nL4; g4._ord=1; g4.theory=(g4.mode==='new'); refs.push(g4); }
+  if(summer && fs.review && fs.review.length && mon!=='ta'){
+    // HÈ (lên lớp 5): 70% ôn chắc LỚP 4 + 30% LỚP 5 mới (Fury dạy lý thuyết trước)
+    var nOn=Math.round(target*0.7), nMoi=target-nOn, ex={}, taken=0, g;
+    while(taken<nOn && (g=dhGate(fs.review,ex))){ ex[g.key]=1; g.n=Math.min(5,nOn-taken); g._ord=0; refs.push(g); taken+=g.n; }
+    if(refs.length&&taken<nOn) refs[0].n+=nOn-taken;
+    var g5=dhGate(fs.main,{});
+    if(g5){ g5.n=nMoi; g5._ord=1; g5.theory=(g5.mode==='new'); refs.push(g5); }
   } else if(mon==='ta'){
     var ex3={}, taken3=0, g3, tMain=Math.max(4,target-3);
     while(taken3<tMain && (g3=dhGate(fs.main.filter(function(f){return f.f.indexOf('fun-')<0;}),ex3))){
@@ -173,18 +173,33 @@ function dhStart(mon){
     if(typeof tgNotify==='function') tgNotify('▶️ '+ten0+' bắt đầu '+(st0.done>0?'làm tiếp':'')+' ca '+DH_MON[mon].ten+' ('+st0.done+'/'+dhTargetQ(mon)+' câu đã xong trước đó)');
   }catch(e){}
   pcBox().innerHTML='<div style="text-align:center;padding:60px 0;color:var(--tx2);">🛡️ Fury đang soạn ca '+DH_MON[mon].ten+'...</div>';
+  var fail=function(msg){
+    pcBox().innerHTML=pcHead('⚠️ CÓ TRỤC TRẶC','pcHome()')
+      +'<div style="text-align:center;padding:30px 0;color:var(--tx2);font-size:13px;line-height:1.8;">Fury soạn bài bị lỗi:<br><span style="color:var(--red2);font-size:12px;">'+String(msg||'').replace(/</g,'&lt;')+'</span></div>'
+      +'<button onclick="dhStart(\''+mon+'\')" style="'+pcBtn()+'width:100%;">🔄 THỬ LẠI</button>'
+      +'<button onclick="pcHome()" style="'+pcBtn2()+'width:100%;margin-top:8px;">← Quay lại</button>';
+  };
   var go=function(){
-    var refs=dhGenRefs(mon);
-    if(!refs.length){ pcHome(); return; }
-    var files={}; refs.forEach(function(r){ files[r.f]=1; });
-    var fl=Object.keys(files), loaded={}, cnt=0;
-    fl.forEach(function(f){
-      fetch(f).then(function(r){return r.json();}).then(function(d){ loaded[f]=d; adSaveNames(d,f); })
-      .catch(function(){}).finally(function(){ cnt++; if(cnt===fl.length) dhAssemble(mon,refs,loaded); });
-    });
+    try{
+      var refs=dhGenRefs(mon);
+      if(!refs.length){ pcHome(); return; }
+      var files={}; refs.forEach(function(r){ files[r.f]=1; });
+      var fl=Object.keys(files), loaded={}, cnt=0;
+      fl.forEach(function(f){
+        fetch(f).then(function(r){return r.json();}).then(function(d){ loaded[f]=d; adSaveNames(d,f); })
+        .catch(function(){}).finally(function(){
+          cnt++;
+          if(cnt===fl.length){
+            try{ dhAssemble(mon,refs,loaded); }catch(e){ fail(e.message); }
+          }
+        });
+      });
+      // quá 15 giây chưa xong → báo lỗi thay vì treo
+      setTimeout(function(){ if(cnt<fl.length) fail('Mạng chậm hoặc thiếu file bài tập.'); }, 15000);
+    }catch(e){ fail(e.message); }
   };
   if(P.idx) go();
-  else fetch('data/index.json').then(function(r){return r.json();}).then(function(d){P.idx=d;go();}).catch(function(){pcHome();});
+  else fetch('data/index.json').then(function(r){return r.json();}).then(function(d){P.idx=d;go();}).catch(function(){fail('Không tải được mục lục.');});
 }
 function dhAssemble(mon, refs, loaded){
   var mast=adMastery(), wrong=pcWrong(), qs=[];

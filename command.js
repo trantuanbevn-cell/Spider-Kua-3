@@ -47,7 +47,7 @@ function sirenStart(sec){
     var ctx=_sirenCtx, t0=ctx.currentTime;
     var o=ctx.createOscillator(), g=ctx.createGain();
     o.type='sawtooth'; o.connect(g); g.connect(ctx.destination);
-    g.gain.value=0.4;
+    g.gain.value=0.75;
     for(var i=0;i<(sec||6)*2;i++){
       o.frequency.setValueAtTime(660,t0+i*0.5);
       o.frequency.linearRampToValueAtTime(990,t0+i*0.5+0.25);

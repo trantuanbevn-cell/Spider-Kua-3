@@ -12,9 +12,9 @@ var _ringTimer=null;
 function ringLoop(){
   ringStop();
   var n=0;
-  var fire=function(){ try{ sirenStart(2); if(navigator.vibrate) navigator.vibrate([400,150,400]); }catch(e){} };
+  var fire=function(){ try{ sirenStart(2); if(navigator.vibrate) navigator.vibrate([500,150,500,150,500]); }catch(e){} };
   fire();
-  _ringTimer=setInterval(function(){ n++; if(n>25){ ringStop(); return; } fire(); }, 2300);
+  _ringTimer=setInterval(function(){ n++; if(n>40){ ringStop(); return; } fire(); }, 2300);
 }
 function ringStop(){ if(_ringTimer){ clearInterval(_ringTimer); _ringTimer=null; } try{ sirenStop(); }catch(e){} }
 
@@ -247,3 +247,22 @@ function adminMsgKid(){ ccOpenChat(false); }
 
 // ── nút 💬 Bố mẹ phía con cũng mở bảng chat ──
 function kuaMsgParent(){ ccOpenChat(false); }
+
+
+// ═══ NHẬN TÍN HIỆU TỨC THÌ TỪ SERVICE WORKER (app đang mở là reo ngay, không chờ poll) ═══
+if('serviceWorker' in navigator){
+  navigator.serviceWorker.addEventListener('message', function(e){
+    try{
+      var d=e.data||{};
+      if(ccMy()!=='kua') return;
+      if(d.type==='call' && !window._ccInCall && !document.getElementById('ccCallOL')){
+        kuaIncomingCall();
+      } else if(d.type==='summon' && !document.getElementById('cmdOL')){
+        if(typeof cmdShowDirective==='function') cmdShowDirective('summon', d.id||'', d.text||'');
+      } else if(d.type==='msg'){
+        ccOpenChat(true);
+        if(typeof speak==='function') speak('Peter! Bố mẹ nhắn: '+(d.text||''));
+      }
+    }catch(err){}
+  });
+}

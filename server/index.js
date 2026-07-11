@@ -89,7 +89,7 @@ async function pushTo(role, payload) {
   const sub = await getSub(role);
   if (!sub) return false;
   try {
-    await webpush.sendNotification(sub, JSON.stringify(payload));
+    await webpush.sendNotification(sub, JSON.stringify(payload), { urgency: 'high', TTL: 120 });
     return true;
   } catch (e) {
     console.log('push lỗi', role, e.statusCode || e.message);
@@ -135,8 +135,8 @@ app.post('/summon', async (req, res) => {
 
     const fire = async () => {
       const s = summons[id];
-      if (!s || s.acked || s.tries >= 5) {
-        if (s && !s.acked && s.tries >= 5) {
+      if (!s || s.acked || s.tries >= (s.maxTries || 5)) {
+        if (s && !s.acked && s.tries >= (s.maxTries || 5)) {
           await notifyParent('🔴 Đã gọi 5 lần trong 10 phút — con KHÔNG phản hồi lệnh: "' + s.text + '"');
           clearInterval(s.timer);
         }
@@ -151,7 +151,14 @@ app.post('/summon', async (req, res) => {
       if (!ok && s.tries === 1) await notifyParent('⚠️ Không đẩy được thông báo tới tablet (tablet chưa đăng ký nhận thông báo?).');
     };
     await fire();
-    summons[id].timer = setInterval(fire, 2 * 60 * 1000);
+    // gọi thoại: đổ chuông dồn dập 15 giây/lần (như chuông điện thoại); triệu tập thường: 2 phút/lần
+    const isCall = (kind === 'call');
+    summons[id].maxTries = isCall ? 20 : 5;
+    summons[id].timer = setInterval(async () => {
+      // ngừng đổ chuông nếu cuộc gọi đã được nghe máy
+      if (isCall && rtc && rtc.status === 'active') { summons[id].acked = true; clearInterval(summons[id].timer); return; }
+      await fire();
+    }, isCall ? 15 * 1000 : 2 * 60 * 1000);
     res.json({ ok: true, id });
   } catch (e) { res.status(500).json({ err: e.message }); }
 });

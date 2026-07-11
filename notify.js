@@ -64,7 +64,7 @@ setTimeout(function(){
     var ten=(typeof getProfile==='function')?getProfile().ten:'Kua';
     tgNotify('🟢 '+ten+' vừa mở Spider-Kua lúc '+tgTime());
   }catch(e){}
-}, 6000);
+}, 1500);
 
 // ── SỰ KIỆN 2: bắt đầu Nhiệm vụ hôm nay (tối đa 1 tin / 10 phút) ──
 if(typeof adStartDaily==='function'){
