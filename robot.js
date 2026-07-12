@@ -101,7 +101,8 @@ function robotTap(){
   if(_rb.busy) return;
   var S=window.SpeechRecognition||window.webkitSpeechRecognition;
   if(!S){ robotSay('Máy này không có mic cho anh rồi. Em dùng Chrome nhé!'); return; }
-  try{ window.speechSynthesis&&speechSynthesis.cancel(); }catch(e){}
+  try{ if(typeof stopSpeakAll==='function') stopSpeakAll(); else if(window.speechSynthesis) speechSynthesis.cancel(); }catch(e){}
+  try{ if(typeof ttsUnlock==='function') ttsUnlock(); }catch(e){}
   var st=document.getElementById('rbStatus'), ring=document.getElementById('rbRing');
   var eyes=document.querySelectorAll('.rbEye');
   st.textContent='🎙️ ANH ĐANG NGHE...';
@@ -127,12 +128,27 @@ function robotTap(){
       if(typeof logFuryChat==='function') logFuryChat('[Robot] '+txt, r);
     }catch(err){
       st.textContent='CHẠM VÀO MẶT ANH ĐỂ NÓI CHUYỆN';
-      robotSay('Ối, mạng chập chờn. Em thử lại nhé!');
+      robotSay('Ối, anh gặp trục trặc: '+(err&&err.message?err.message:'mạng chập chờn')+'. Em thử lại nhé!');
     }
     _rb.busy=false;
   };
-  sr.onerror=sr.onend=function(){ if(!_rb.busy) reset(); };
-  sr.start();
+  sr.onerror=function(e){
+    reset();
+    var err=(e&&e.error)||'';
+    if(err==='not-allowed'||err==='service-not-allowed'){
+      st.textContent='⚠️ CHƯA CHO PHÉP MIC';
+      var t=document.getElementById('rbText');
+      if(t) t.textContent='Bố mẹ vào Chrome → biểu tượng 🔒 cạnh địa chỉ → Quyền → bật Micro cho trang này nhé.';
+    } else if(err==='no-speech'){
+      st.textContent='ANH CHƯA NGHE THẤY GÌ — CHẠM RỒI NÓI TO NHÉ!';
+    } else if(err&&err!=='aborted'){
+      st.textContent='LỖI MIC ('+err+') — EM THỬ LẠI NHÉ';
+    }
+  };
+  sr.onend=function(){ if(!_rb.busy&&st.textContent.indexOf('NGHE...')>-1) reset(); };
+  try{ sr.start(); }catch(e){ reset(); st.textContent='MIC ĐANG BẬN — EM THỬ LẠI NHÉ'; }
+  // chống kẹt: nếu 40 giây không xong thì tự mở khoá
+  setTimeout(function(){ if(_rb.busy){ _rb.busy=false; } }, 40000);
 }
 
 // nút bật trong hàng công cụ (chỉ máy Kua thấy cần thiết, bố mẹ cũng bật được)

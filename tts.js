@@ -70,14 +70,37 @@ async function _geminiTTS(text, instr){
   }catch(e){ return null; }
 }
 
-async function _playBlob(blob){
+// Audio element "đã được phép phát" — tạo & phát câm NGAY lúc người dùng chạm màn hình,
+// nhờ đó vài giây sau (khi Fury nghĩ xong) vẫn phát được tiếng dù quyền gesture đã hết hạn
+var _ttsEl = null;
+function ttsUnlock(){
+  try{
+    if(_ttsAudio && !_ttsAudio.paused) return; // đang phát thì đừng ngắt
+    if(!_ttsEl){ _ttsEl = new Audio(); _ttsEl.setAttribute('playsinline',''); }
+    _ttsEl.muted = true;
+    _ttsEl.src = 'data:audio/wav;base64,UklGRiQAAABXQVZFZm10IBAAAAABAAEAQB8AAIA+AAACABAAZGF0YQAAAAA=';
+    var p = _ttsEl.play(); if(p && p.catch) p.catch(function(){});
+  }catch(e){}
+}
+document.addEventListener('pointerdown', ttsUnlock, true);
+
+async function _playBlob(blob, fallbackText){
   return new Promise(function(res){
     stopSpeakAll();
-    _ttsAudio = new Audio(URL.createObjectURL(blob));
+    var a = _ttsEl || new Audio(); _ttsEl = a;
+    a.muted = false;
+    a.src = URL.createObjectURL(blob);
+    _ttsAudio = a;
     var el = document.getElementById('spkEl');
     if(el) el.classList.add('on');
-    _ttsAudio.onended = _ttsAudio.onerror = function(){ if(el) el.classList.remove('on'); _ttsAudio=null; res(); };
-    _ttsAudio.play().catch(function(){ if(el) el.classList.remove('on'); res(); });
+    a.onended = a.onerror = function(){ if(el) el.classList.remove('on'); _ttsAudio=null; res(); };
+    var p = a.play();
+    if(p && p.catch) p.catch(function(){
+      if(el) el.classList.remove('on'); _ttsAudio=null;
+      // bị chặn autoplay → đọc bằng giọng máy (speechSynthesis thường vẫn được phép)
+      if(fallbackText && typeof speakLocal==='function') speakLocal(fallbackText);
+      res();
+    });
   });
 }
 
@@ -90,7 +113,7 @@ async function speak(text){
     var blob = await _geminiTTS(c.slice(0,600),
       'Đọc bằng tiếng Việt, giọng nam trẻ ấm áp, thân thiện như anh trai nói chuyện với em nhỏ, tốc độ vừa phải, tự nhiên có ngữ điệu');
     _ttsBusy = false;
-    if(blob){ _playBlob(blob); return; }
+    if(blob){ _playBlob(blob, text); return; }
   }
   if(typeof speakLocal==='function') speakLocal(text); // fallback giọng máy
 }
@@ -98,7 +121,7 @@ async function speak(text){
 // Đọc tiếng Anh cho bài nghe (practice)
 async function speakEN(text, cb){
   var blob = await _geminiTTS(text, 'Read this in clear, natural English at a normal conversational pace, like a friendly native speaker');
-  if(blob){ _playBlob(blob).then(function(){ if(cb) cb(); }); return; }
+  if(blob){ _playBlob(blob, text).then(function(){ if(cb) cb(); }); return; }
   // fallback
   if(window.speechSynthesis){
     window.speechSynthesis.cancel();
