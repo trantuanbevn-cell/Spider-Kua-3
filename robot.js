@@ -96,16 +96,18 @@ function robotSay(text){
   }catch(e){ done(); }
 }
 
-// chạm mặt → nghe → hỏi Fury (kèm hồ sơ & luật an toàn như chat thường)
+// chạm mặt → nghe → hỏi Fury (giữ tham chiếu toàn cục, có đồng hồ canh chống treo)
 function robotTap(){
   if(_rb.busy) return;
   var S=window.SpeechRecognition||window.webkitSpeechRecognition;
   if(!S){ robotSay('Máy này không có mic cho anh rồi. Em dùng Chrome nhé!'); return; }
+  // đang nghe mà chạm lần nữa → chốt luôn câu vừa nói
+  if(_rb.sr){ try{_rb.sr.stop();}catch(e){} return; }
   try{ if(typeof stopSpeakAll==='function') stopSpeakAll(); else if(window.speechSynthesis) speechSynthesis.cancel(); }catch(e){}
   try{ if(typeof ttsUnlock==='function') ttsUnlock(); }catch(e){}
   var st=document.getElementById('rbStatus'), ring=document.getElementById('rbRing');
   var eyes=document.querySelectorAll('.rbEye');
-  st.textContent='🎙️ ANH ĐANG NGHE...';
+  st.textContent='🎙️ ANH ĐANG NGHE... (chạm lần nữa khi nói xong)';
   if(ring){ ring.style.borderColor='rgba(48,209,88,.8)'; ring.style.animation='rbPulse 1.1s infinite'; }
   eyes.forEach(function(e){ e.style.background='linear-gradient(180deg,#b8ffcf,#30d158)'; });
   var reset=function(){
@@ -113,27 +115,22 @@ function robotTap(){
     if(ring){ ring.style.borderColor='rgba(26,106,191,.4)'; ring.style.animation=''; }
     eyes.forEach(function(e){ e.style.background='linear-gradient(180deg,#9fd8ff,#1a6abf)'; });
   };
-  var sr=new S(); sr.lang='vi-VN'; sr.continuous=false; sr.interimResults=false;
-  sr.onresult=async function(e){
-    var txt=(e.results[0][0].transcript||'').trim();
-    reset();
-    if(!txt) return;
-    _rb.busy=true;
-    st.textContent='🕸️ FURY ĐANG NGHĨ...';
-    var t=document.getElementById('rbText'); if(t) t.textContent='🕷️ "'+txt+'"';
-    try{
-      var r=await callAI(txt);
-      st.textContent='CHẠM VÀO MẶT ANH ĐỂ NÓI CHUYỆN';
-      robotSay(r);
-      if(typeof logFuryChat==='function') logFuryChat('[Robot] '+txt, r);
-    }catch(err){
-      st.textContent='CHẠM VÀO MẶT ANH ĐỂ NÓI CHUYỆN';
-      robotSay('Ối, anh gặp trục trặc: '+(err&&err.message?err.message:'mạng chập chờn')+'. Em thử lại nhé!');
-    }
-    _rb.busy=false;
+  var sr=new S();
+  _rb.sr=sr; // GIỮ THAM CHIẾU TOÀN CỤC — không bị dọn rác giữa chừng
+  sr.lang='vi-VN'; sr.continuous=false; sr.interimResults=true; sr.maxAlternatives=1;
+  var finalTxt='', errored=false;
+  // đồng hồ canh: 12 giây không có kết quả → tự thoát, không treo
+  var wd=setTimeout(function(){ try{sr.stop();}catch(e){} }, 12000);
+  sr.onresult=function(e){
+    var t='';
+    for(var i=0;i<e.results.length;i++) t+=e.results[i][0].transcript;
+    var tEl=document.getElementById('rbText');
+    if(tEl) tEl.textContent='🕷️ "'+t+'"'; // hiện chữ NGAY khi đang nói — biết chắc mic hoạt động
+    if(e.results[e.results.length-1].isFinal) finalTxt=t.trim();
+    else finalTxt=t.trim(); // dự phòng: có máy không đánh dấu isFinal
   };
   sr.onerror=function(e){
-    reset();
+    errored=true; clearTimeout(wd); _rb.sr=null; reset();
     var err=(e&&e.error)||'';
     if(err==='not-allowed'||err==='service-not-allowed'){
       st.textContent='⚠️ CHƯA CHO PHÉP MIC';
@@ -145,10 +142,34 @@ function robotTap(){
       st.textContent='LỖI MIC ('+err+') — EM THỬ LẠI NHÉ';
     }
   };
-  sr.onend=function(){ if(!_rb.busy&&st.textContent.indexOf('NGHE...')>-1) reset(); };
-  try{ sr.start(); }catch(e){ reset(); st.textContent='MIC ĐANG BẬN — EM THỬ LẠI NHÉ'; }
-  // chống kẹt: nếu 40 giây không xong thì tự mở khoá
-  setTimeout(function(){ if(_rb.busy){ _rb.busy=false; } }, 40000);
+  sr.onend=function(){
+    clearTimeout(wd); _rb.sr=null;
+    if(errored) return;
+    if(finalTxt){ reset(); robotAsk(finalTxt); }
+    else{ reset(); st.textContent='ANH CHƯA NGHE THẤY GÌ — CHẠM RỒI NÓI TO NHÉ!'; }
+  };
+  try{ sr.start(); }
+  catch(e){ _rb.sr=null; clearTimeout(wd); reset(); st.textContent='MIC ĐANG BẬN — EM THỬ LẠI NHÉ'; }
+}
+
+// gửi câu hỏi cho Fury + đọc to trả lời
+async function robotAsk(txt){
+  var st=document.getElementById('rbStatus');
+  _rb.busy=true;
+  if(st) st.textContent='🕸️ FURY ĐANG NGHĨ...';
+  var tEl=document.getElementById('rbText'); if(tEl) tEl.textContent='🕷️ "'+txt+'"';
+  // chống kẹt tuyệt đối: 30 giây tự nhả
+  var wd=setTimeout(function(){ _rb.busy=false; }, 30000);
+  try{
+    var r=await callAI(txt);
+    robotSay(r);
+    if(typeof logFuryChat==='function') logFuryChat('[Robot] '+txt, r);
+  }catch(err){
+    robotSay('Ối, anh gặp trục trặc: '+(err&&err.message?String(err.message).slice(0,120):'mạng chập chờn')+'. Em thử lại nhé!');
+  }
+  clearTimeout(wd);
+  _rb.busy=false;
+  if(st) st.textContent='CHẠM VÀO MẶT ANH ĐỂ NÓI CHUYỆN';
 }
 
 // nút bật trong hàng công cụ (chỉ máy Kua thấy cần thiết, bố mẹ cũng bật được)
